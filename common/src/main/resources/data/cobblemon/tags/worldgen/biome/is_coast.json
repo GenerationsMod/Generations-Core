@@ -2,20 +2,20 @@
   "replace": false,
   "values": [
     "minecraft:stony_shore",
-	"#cobblemon:is_beach",
-	{
+    "#cobblemon:is_beach",
+    {
       "id": "#c:stony_shores",
       "required": false
     },
-	{
+    {
       "id": "terralith:basalt_cliffs",
       "required": false
     },
-	{
+    {
       "id": "terralith:granite_cliffs",
       "required": false
     },
-	{
+    {
       "id": "terralith:white_cliffs",
       "required": false
     },

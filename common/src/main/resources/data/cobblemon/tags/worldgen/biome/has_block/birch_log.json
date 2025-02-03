@@ -2,26 +2,26 @@
   "replace": false,
   "values": [
     "minecraft:birch_forest",
-	"minecraft:flower_forest",
-	"minecraft:forest",
-	"minecraft:old_growth_birch_forest",
+    "minecraft:flower_forest",
+    "minecraft:forest",
+    "minecraft:old_growth_birch_forest",
     {
       "id": "#c:birch_forest",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:aspen_glade",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:auroral_garden",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:seasonal_forest",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:seasonal_orchard",
       "required": false
     },
@@ -29,11 +29,11 @@
       "id": "biomeswevegone:aspen_forest",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:autumnal_forest",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:borealis_grove",
       "required": false
     },
@@ -45,11 +45,11 @@
       "id": "biomeswevegone:temperate_grove",
       "required": false
     },
-	{
+    {
       "id": "terralith:alpine_highlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:arid_highlands",
       "required": false
     },
@@ -57,27 +57,27 @@
       "id": "terralith:birch_taiga",
       "required": false
     },
-	{
+    {
       "id": "terralith:blooming_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:cloud_forest",
       "required": false
     },
-	{
+    {
       "id": "terralith:haze_mountain",
       "required": false
     },
-	{
+    {
       "id": "terralith:lavender_forest",
       "required": false
     },
-	{
+    {
       "id": "terralith:lavender_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:lush_valley",
       "required": false
     },
@@ -85,15 +85,15 @@
       "id": "terralith:orchid_swamp",
       "required": false
     },
-	{
+    {
       "id": "terralith:sakura_grove",
       "required": false
     },
-	{
+    {
       "id": "terralith:sakura_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:shield",
       "required": false
     },
@@ -105,23 +105,23 @@
       "id": "terralith:white_cliffs",
       "required": false
     },
-	{
+    {
       "id": "terralith:yosemite_lowlands",
       "required": false
     },
-	{
+    {
       "id": "wythers:aspen_crags",
       "required": false
     },
-	{
+    {
       "id": "wythers:autumnal_birch_forest",
       "required": false
     },
-	{
+    {
       "id": "wythers:autumnal_flower_forest",
       "required": false
     },
-	{
+    {
       "id": "wythers:autumnal_forest",
       "required": false
     },
@@ -129,43 +129,43 @@
       "id": "wythers:autumnal_forest_edge",
       "required": false
     },
-	{
+    {
       "id": "wythers:birch_swamp",
       "required": false
     },
-	{
+    {
       "id": "wythers:birch_taiga",
       "required": false
     },
-	{
+    {
       "id": "wythers:boreal_forest_red",
       "required": false
     },
-	{
+    {
       "id": "wythers:boreal_forest_yellow",
       "required": false
     },
-	{
+    {
       "id": "wythers:cool_forest_edge",
       "required": false
     },
-	{
+    {
       "id": "wythers:cool_forest",
       "required": false
     },
-	{
+    {
       "id": "wythers:eucalyptus_danei_forest",
       "required": false
     },
-	{
+    {
       "id": "wythers:eucalyptus_jungle_canyon",
       "required": false
     },
-	{
+    {
       "id": "wythers:eucalyptus_jungle",
       "required": false
     },
-	{
+    {
       "id": "wythers:eucalyptus_woodland",
       "required": false
     },
@@ -185,7 +185,7 @@
       "id": "wythers:thermal_taiga",
       "required": false
     },
-	{
+    {
       "id": "wythers:temperate_island",
       "required": false
     },

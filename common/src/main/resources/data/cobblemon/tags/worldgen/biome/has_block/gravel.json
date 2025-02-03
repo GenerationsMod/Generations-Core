@@ -1,16 +1,16 @@
 {
   "replace": false,
   "values": [
-	"minecraft:windswept_gravelly_hills",
-	{
+    "minecraft:windswept_gravelly_hills",
+    {
       "id": "biomesoplenty:cold_desert",
       "required": false
     },
-	{
+    {
       "id": "terralith:gravel_beach",
       "required": false
     },
-	{
+    {
       "id": "terralith:gravel_desert",
       "required": false
     },

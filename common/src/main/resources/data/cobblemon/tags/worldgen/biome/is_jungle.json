@@ -6,11 +6,11 @@
       "id": "terralith:cave/underground_jungle",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:floodplain",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:rainforest",
       "required": false
     },

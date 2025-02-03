@@ -1,28 +1,28 @@
 {
   "replace": false,
   "values": [
-	"minecraft:soul_sand_valley",
-	{
+    "minecraft:soul_sand_valley",
+    {
       "id": "betternether:gravel_desert",
       "required": false
     },
-	{
+    {
       "id": "betternether:soul_plain",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:quartz_desert",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:warped_desert",
       "required": false
     },
-	{
+    {
       "id": "incendium:infernal_dunes",
       "required": false
     },
-	{
+    {
       "id": "incendium:weeping_valley",
       "required": false
     }

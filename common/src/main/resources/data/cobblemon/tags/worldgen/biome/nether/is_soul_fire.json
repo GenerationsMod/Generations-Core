@@ -1,20 +1,20 @@
 {
   "replace": false,
   "values": [
-	"minecraft:soul_sand_valley",
-	{
+    "minecraft:soul_sand_valley",
+    {
       "id": "biomeswevegone:subzero_hypogeal",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:warped_desert",
       "required": false
     },
-	{
+    {
       "id": "incendium:quartz_flats",
       "required": false
     },
-	{
+    {
       "id": "incendium:weeping_valley",
       "required": false
     }

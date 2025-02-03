@@ -2,11 +2,11 @@
   "replace": false,
   "values": [
     "#minecraft:is_savanna",
-	{
+    {
       "id": "biomesoplenty:lush_desert",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:lush_savanna",
       "required": false
     },
@@ -14,39 +14,39 @@
       "id": "terralith:arid_highlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:ashen_savanna",
       "required": false
     },
-	{
+    {
       "id": "terralith:brushland",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:fractured_savanna",
       "required": false
     },
-	{
+    {
       "id": "terralith:hot_shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:red_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:savanna_badlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:savanna_slopes",
       "required": false
     },
-	{
+    {
       "id": "terralith:shrubland",
       "required": false
     },
@@ -62,7 +62,7 @@
       "id": "wythers:tropical_forest",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:dryland",
       "required": false
     }

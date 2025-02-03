@@ -1,28 +1,28 @@
 {
   "replace": false,
   "values": [
-	"#minecraft:is_jungle",
-	{
+    "#minecraft:is_jungle",
+    {
       "id": "biomesoplenty:fungal_jungle",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:rainforest",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:crag_gardens",
       "required": false
     },
-	{
+    {
       "id": "terralith:jungle_mountains",
       "required": false
     },
-	{
+    {
       "id": "terralith:rocky_jungle",
       "required": false
     },
-	{
+    {
       "id": "terralith:tropical_jungle",
       "required": false
     },
@@ -50,7 +50,7 @@
       "id": "wythers:eucalyptus_jungle_canyon",
       "required": false
     },
-	{
+    {
       "id": "wythers:eucalyptus_jungle",
       "required": false
     },

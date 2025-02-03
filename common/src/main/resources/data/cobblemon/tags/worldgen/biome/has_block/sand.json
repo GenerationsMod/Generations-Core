@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "minecraft:desert",
-	{
+    {
       "id": "biomeswevegone:mojave_desert",
       "required": false
     },
@@ -42,7 +42,7 @@
       "id": "wythers:cactus_desert",
       "required": false
     },
-	{
+    {
       "id": "wythers:deep_desert",
       "required": false
     },
@@ -50,11 +50,11 @@
       "id": "wythers:desert_island",
       "required": false
     },
-	{
+    {
       "id": "wythers:desert_pinnacles",
       "required": false
     },
-	{
+    {
       "id": "wythers:guelta",
       "required": false
     },

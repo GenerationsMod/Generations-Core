@@ -6,15 +6,15 @@
       "id": "terralith:fractured_savanna",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:fungal_jungle",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:dead_sea",
       "required": false
     },
-	{
+    {
       "id": "terralith:stony_spires",
       "required": false
     },

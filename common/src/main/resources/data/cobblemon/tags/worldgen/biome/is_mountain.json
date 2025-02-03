@@ -1,29 +1,29 @@
 {
   "replace": false,
   "values": [
-	"#minecraft:is_mountain",
+    "#minecraft:is_mountain",
     "#cobblemon:is_hills",
-	{
+    {
       "id": "#forge:is_mountain",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:crag",
       "required": false
     },
-	{
+    {
       "id": "terralith:stony_spires",
       "required": false
     },
-	{
+    {
       "id": "terralith:volcanic_peaks",
       "required": false
     },
-	{
+    {
       "id": "terralith:windswept_spires",
       "required": false
     },
-	{
+    {
       "id": "terralith:yosemite_cliffs",
       "required": false
     },

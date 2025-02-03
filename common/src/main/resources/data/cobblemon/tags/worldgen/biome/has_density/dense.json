@@ -3,7 +3,7 @@
   "values": [
     "minecraft:dark_forest",
     "minecraft:mangrove_swamp",
-	"#cobblemon:is_jungle",
+    "#cobblemon:is_jungle",
     {
       "id": "#c:vegetation_dense",
       "required": false 

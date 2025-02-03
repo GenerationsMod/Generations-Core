@@ -3,71 +3,71 @@
   "values": [
     "#cobblemon:is_plains",
     "#cobblemon:is_savanna",
-	{
+    {
       "id": "biomesoplenty:bog",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:dryland",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:field",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:fungal_jungle",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:lush_desert",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:mediterranean_forest",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:pumpkin_patch",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:scrubland",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:shrubland",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:rocky_shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:alpine_highlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:arid_highlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:brushland",
       "required": false
     },
-	{
+    {
       "id": "terralith:cold_shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:hot_shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:rocky_shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:shrubland",
       "required": false
     },

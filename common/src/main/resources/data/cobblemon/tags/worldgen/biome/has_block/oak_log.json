@@ -1,96 +1,96 @@
 {
   "replace": false,
   "values": [
-	"minecraft:flower_forest",
-	"minecraft:forest",
-	"minecraft:swamp",
-	"minecraft:windswept_forest",
-	"minecraft:wooded_badlands",
-	{
+    "minecraft:flower_forest",
+    "minecraft:forest",
+    "minecraft:swamp",
+    "minecraft:windswept_forest",
+    "minecraft:wooded_badlands",
+    {
       "id": "biomesoplenty:bamboo_grove",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:cherry_blossom_grove",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:dead_forest",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:dryland",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:floodplain",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:lavender_forest",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:maple_woods",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:muskeg",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:mystic_grove",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:old_growth_woodland",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:orchard",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:origin_valley",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:prairie",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:seasonal_forest",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:snowy_maple_woods",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:woodland",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:autumnal_forest",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:coconino_meadow",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:mojave_desert",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:orchard",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:prairie",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:red_oak_forest",
       "required": false
     },
@@ -102,11 +102,11 @@
       "id": "biomeswevegone:white_mangrove_marshes",
       "required": false
     },
-	{
+    {
       "id": "terralith:alpha_islands",
       "required": false
     },
-	{
+    {
       "id": "terralith:alpha_islands_winter",
       "required": false
     },
@@ -114,71 +114,71 @@
       "id": "terralith:birch_taiga",
       "required": false
     },
-	{
+    {
       "id": "terralith:blooming_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_spires",
       "required": false
     },
-	{
+    {
       "id": "terralith:forested_highlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:fractured_savanna",
       "required": false
     },
-	{
+    {
       "id": "terralith:haze_mountain",
       "required": false
     },
-	{
+    {
       "id": "terralith:ice_marsh",
       "required": false
     },
-	{
+    {
       "id": "terralith:lavender_forest",
       "required": false
     },
-	{
+    {
       "id": "terralith:lavender_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:lush_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:mirage_isles",
       "required": false
     },
-	{
+    {
       "id": "terralith:red_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:sakura_grove",
       "required": false
     },
-	{
+    {
       "id": "terralith:sakura_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:sandstone_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:temperate_highlands",
       "required": false
     },
@@ -214,15 +214,15 @@
       "id": "wythers:autumnal_swamp",
       "required": false
     },
-	{
+    {
       "id": "wythers:boreal_forest_yellow",
       "required": false
     },
-	{
+    {
       "id": "wythers:cool_forest_edge",
       "required": false
     },
-	{
+    {
       "id": "wythers:cool_forest",
       "required": false
     },
@@ -326,15 +326,15 @@
       "id": "wythers:subtropical_forest_edge",
       "required": false
     },
-	{
+    {
       "id": "wythers:temperate_island",
       "required": false
     },
-	{
+    {
       "id": "wythers:temperate_rainforest",
       "required": false
     },
-	{
+    {
       "id": "wythers:temperate_rainforest_crags",
       "required": false
     },

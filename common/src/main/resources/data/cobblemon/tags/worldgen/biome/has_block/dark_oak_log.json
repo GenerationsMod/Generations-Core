@@ -1,20 +1,20 @@
 {
   "replace": false,
   "values": [
-	"minecraft:dark_forest",
-	{
+    "minecraft:dark_forest",
+    {
       "id": "biomesoplenty:mystic_grove",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:pumpkin_patch",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:seasonal_forest",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:coconino_meadow",
       "required": false
     },
@@ -22,15 +22,15 @@
       "id": "biomeswevegone:temperate_rainforest",
       "required": false
     },
-	{
+    {
       "id": "terralith:lavender_forest",
       "required": false
     },
-	{
+    {
       "id": "terralith:lavender_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:mirage_isles",
       "required": false
     },

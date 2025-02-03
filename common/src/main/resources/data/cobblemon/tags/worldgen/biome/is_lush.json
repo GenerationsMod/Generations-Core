@@ -6,11 +6,11 @@
       "id": "#forge:is_lush",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:lush_stacks",
       "required": false
     },
-	{
+    {
       "id": "terralith:cave/underground_jungle",
       "required": false
     },
@@ -18,11 +18,11 @@
       "id": "wythers:dripleaf_swamp",
       "required": false
     },
-	{
+    {
       "id": "wythers:lichenous_caves",
       "required": false
     },
-	{
+    {
       "id": "wythers:lichenous_dripstone_caves",
       "required": false
     },

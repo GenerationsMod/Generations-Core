@@ -7,43 +7,43 @@
       "id": "#c:snowy_plains",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:cold_desert",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:muskeg",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:snowy_fir_clearing",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:tundra",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:cardinal_tundra",
       "required": false
     },
-	{
+    {
       "id": "terralith:cold_shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:gravel_desert",
       "required": false
     },
-	{
+    {
       "id": "terralith:rocky_shrubland",
       "required": false
     },
-	{
+    {
       "id": "terralith:snowy_badlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:yellowstone",
       "required": false
     },
@@ -63,11 +63,11 @@
       "id": "wythers:icy_crags",
       "required": false
     },
-	{
+    {
       "id": "wythers:snowy_tundra",
       "required": false
     },
-	{
+    {
       "id": "wythers:tundra",
       "required": false
     }

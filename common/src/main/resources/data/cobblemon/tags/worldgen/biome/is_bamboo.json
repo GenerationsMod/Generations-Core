@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "minecraft:bamboo_jungle",
-	{
+    {
       "id": "biomesoplenty:bamboo_grove",
       "required": false
     },

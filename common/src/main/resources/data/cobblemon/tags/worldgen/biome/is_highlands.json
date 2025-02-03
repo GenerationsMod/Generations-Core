@@ -2,27 +2,27 @@
   "replace": false,
   "values": [
     "minecraft:meadow",
-	{
+    {
       "id": "biomesoplenty:highland",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:highland_moor",
       "required": false
     },
-	{
+    {
       "id": "terralith:alpine_highlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:arid_highlands",
       "required": false
     },
-	{
+    {
       "id": "terralith:blooming_plateau",
       "required": false
     },
-	{
+    {
       "id": "terralith:highlands",
       "required": false
     },    

@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-	"minecraft:basalt_deltas",
-	{
+    "minecraft:basalt_deltas",
+    {
       "id": "incendium:volcanic_deltas",
       "required": false
     }

@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-	"minecraft:mangrove_swamp",
-	{
+    "minecraft:mangrove_swamp",
+    {
       "id": "terralith:cave/underground_jungle",
       "required": false
     },

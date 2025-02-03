@@ -6,51 +6,51 @@
       "id": "#byg:is_desert",
       "required": false
     },
-	{
+    {
       "id": "#c:desert",
       "required": false
     },
-	{
+    {
       "id": "#wythers:is_desert",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:lush_desert",
       "required": false
     },
-	{
+    {
       "id": "darkerdepths:sandy_catacombs",
       "required": false
     },
-	{
+    {
       "id": "terralith:ancient_sands",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_canyon",
       "required": false
     },
-	{
+    {
       "id": "terralith:cave/desert_caves",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_spires",
       "required": false
     },
-	{
+    {
       "id": "terralith:lush_desert",
       "required": false
     },
-	{
+    {
       "id": "terralith:red_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:sandstone_valley",
       "required": false
     },
@@ -78,19 +78,19 @@
       "id": "wythers:sandy_jungle",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:lush_desert",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:wasteland_steppe",
       "required": false
     },
-	{
+    {
       "id": "biomesoplenty:wasteland",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:windswept_desert",
       "required": false
     }

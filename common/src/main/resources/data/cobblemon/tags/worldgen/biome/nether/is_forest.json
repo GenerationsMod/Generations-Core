@@ -1,31 +1,31 @@
 {
   "replace": false,
   "values": [
-	{
+    {
       "id": "betternether:nether_jungle",
       "required": false
     },
-	{
+    {
       "id": "betternether:nether_swampland",
       "required": false
     },
-	{
+    {
       "id": "betternether:nether_swampland_terraces",
       "required": false
     },
-	{
+    {
       "id": "betternether:old_swampland",
       "required": false
     },
-	{
+    {
       "id": "betternether:upside_down_forest",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:weeping_mire",
       "required": false
     },
-	{
+    {
       "id": "biomeswevegone:withering_woods",
       "required": false
     }

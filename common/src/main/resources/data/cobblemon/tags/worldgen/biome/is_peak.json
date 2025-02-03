@@ -3,29 +3,29 @@
   "values": [
     "minecraft:frozen_peaks",
     "minecraft:jagged_peaks",
-	"minecraft:snowy_slopes",
+    "minecraft:snowy_slopes",
     "minecraft:stony_peaks",
     {
       "id": "#c:mountain_peak",
       "required": false
     },
-	{
+    {
       "id": "#forge:is_peak",
       "required": false
     },
-	{
+    {
       "id": "terralith:emerald_peaks",
       "required": false
     },
-	{
+    {
       "id": "terralith:rocky_mountains",
       "required": false
     },
-	{
+    {
       "id": "terralith:scarlet_mountains",
       "required": false
     },
-	{
+    {
       "id": "terralith:windswept_spires",
       "required": false
     },

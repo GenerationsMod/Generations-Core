@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-	"minecraft:mangrove_swamp",
+    "minecraft:mangrove_swamp",
     {
       "id": "terralith:cave/underground_jungle",
       "required": false 
@@ -22,7 +22,7 @@
       "id": "wythers:eucalyptus_jungle_canyon",
       "required": false
     },
-	{
+    {
       "id": "wythers:eucalyptus_jungle",
       "required": false
     },

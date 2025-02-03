@@ -1,32 +1,32 @@
 {
   "replace": false,
   "values": [
-	"minecraft:lush_caves",
-	{
+    "minecraft:lush_caves",
+    {
       "id": "terralith:amethyst_canyon",
       "required": false
     },
-	{
+    {
       "id": "terralith:amethyst_rainforest",
       "required": false
     },
-	{
+    {
       "id": "terralith:blooming_valley",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:desert_spires",
       "required": false
     },
-	{
+    {
       "id": "terralith:red_oasis",
       "required": false
     },
-	{
+    {
       "id": "terralith:sandstone_valley",
       "required": false
     },

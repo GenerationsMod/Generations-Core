@@ -2,7 +2,7 @@
   "replace": false,
   "values": [
     "#cobblemon:is_forest",
-	"#cobblemon:is_jungle",
-	"#cobblemon:is_lush"
+    "#cobblemon:is_jungle",
+    "#cobblemon:is_lush"
   ]
 }
