@@ -15,6 +15,10 @@
       "required": false
     },
     {
+      "id": "biomesoplenty:rocky_rainforest",
+      "required": false
+    },
+    {
       "id": "wythers:dripleaf_swamp",
       "required": false
     },

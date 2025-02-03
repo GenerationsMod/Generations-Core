@@ -11,6 +11,10 @@
       "required": false
     },
     {
+      "id": "biomesoplenty:rocky_rainforest",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:crag_gardens",
       "required": false
     },
