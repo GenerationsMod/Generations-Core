@@ -87,6 +87,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:dacite_ridges",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:dacite_shore",
       "required": false
     }

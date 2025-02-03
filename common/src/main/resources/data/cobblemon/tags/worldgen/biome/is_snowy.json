@@ -37,6 +37,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:crimson_tundra",
+      "required": false
+    },
+    {
       "id": "wythers:crimson_tundra",
       "required": false
     },

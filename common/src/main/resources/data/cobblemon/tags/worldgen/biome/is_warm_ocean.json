@@ -5,6 +5,10 @@
     {
       "id": "biomeswevegone:lush_stacks",
       "required": false
-    }
+    },
+    {
+      "id": "biomeswevegone:dead_sea",
+      "required": false
+    },
   ]
 }

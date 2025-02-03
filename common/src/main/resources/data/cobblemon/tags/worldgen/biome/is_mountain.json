@@ -8,7 +8,15 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:dacite_ridges",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:canadian_shield",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:crag_gardens",
       "required": false
     },
     {
