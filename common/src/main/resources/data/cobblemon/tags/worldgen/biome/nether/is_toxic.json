@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "biomesoplenty:visceral_heap",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:erupting_inferno",
       "required": false
     },

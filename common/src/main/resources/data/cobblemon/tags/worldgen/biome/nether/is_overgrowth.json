@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     {
+      "id": "biomesoplenty:undergrowth",
+      "required": false
+    },
+    {
       "id": "betternether:bone_reef",
       "required": false
     },
