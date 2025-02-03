@@ -24,6 +24,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:shattered_glacier",
+      "required": false
+    },
+    {
       "id": "wythers:glacial_cliffs",
       "required": false
     },

@@ -7,6 +7,14 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:sierra_badlands",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:rugged_badlands",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:red_rock_valley",
       "required": false
     },

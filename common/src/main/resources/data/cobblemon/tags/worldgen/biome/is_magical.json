@@ -55,6 +55,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:skyrise_vale",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:forgotten_forest",
       "required": false
     },

@@ -48,6 +48,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:redwood_thicket",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:wetland",
       "required": false
     },
