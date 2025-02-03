@@ -12,6 +12,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:eroded_borealis",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:coniferous_forest",
       "required": false
     },

@@ -53,6 +53,14 @@
     {
       "id": "wythers:snowy_thermal_taiga",
       "required": false
+    },
+    {
+      "id": "biomeswevegone:forgotten_forest",
+      "required": false
+    },
+    {
+      "id": "biomeswevegone:enchanted_tangle",
+      "required": false
     }
   ]
 }

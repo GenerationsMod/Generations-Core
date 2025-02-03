@@ -80,6 +80,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:firecracker_chaparral",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:crimson_tundra",
       "required": false
     },

@@ -7,6 +7,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:fragment_jungle",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:floodplain",
       "required": false
     },
