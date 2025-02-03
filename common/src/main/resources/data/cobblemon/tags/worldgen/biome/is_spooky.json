@@ -15,6 +15,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:weeping_witch_forest",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:black_forest",
       "required": false
     },

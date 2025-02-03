@@ -23,6 +23,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:tropical_rainforest",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:rocky_rainforest",
       "required": false
     },

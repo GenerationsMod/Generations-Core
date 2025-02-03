@@ -57,6 +57,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:temperate_grove",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:prairie",
       "required": false
     },

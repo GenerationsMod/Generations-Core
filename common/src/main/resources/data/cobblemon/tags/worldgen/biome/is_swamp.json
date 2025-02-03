@@ -20,6 +20,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:white_mangrove_marshes",
+      "required": false
+    },
+    {
       "id": "biomeswevegone:cypress_swamplands",
       "required": false
     },

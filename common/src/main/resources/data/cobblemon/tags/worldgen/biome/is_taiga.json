@@ -52,6 +52,10 @@
       "required": false
     },
     {
+      "id": "biomeswevegone:zelkova_forest",
+      "required": false
+    },
+    {
       "id": "biomesoplenty:wetland",
       "required": false
     },
