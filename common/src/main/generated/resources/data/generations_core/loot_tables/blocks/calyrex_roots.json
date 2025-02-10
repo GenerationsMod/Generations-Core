@@ -3,6 +3,19 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "chance": 0.001,
+          "condition": "minecraft:random_chance"
+        },
+        {
+          "block": "minecraft:carrots",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "7"
+          }
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:alternatives",
@@ -11,19 +24,12 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "generations_core:species_key",
-                  "key": "cobblemon:spectrier"
-                },
-                {
-                  "chance": 0.001,
+                  "chance": 0.5,
                   "condition": "minecraft:random_chance"
                 },
                 {
-                  "block": "minecraft:carrots",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "7"
-                  }
+                  "condition": "generations_core:species_key",
+                  "key": "cobblemon:spectrier"
                 }
               ],
               "name": "generations_core:shaderoot_carrot"
@@ -34,17 +40,6 @@
                 {
                   "condition": "generations_core:species_key",
                   "key": "cobblemon:glastrier"
-                },
-                {
-                  "chance": 0.001,
-                  "condition": "minecraft:random_chance"
-                },
-                {
-                  "block": "minecraft:carrots",
-                  "condition": "minecraft:block_state_property",
-                  "properties": {
-                    "age": "7"
-                  }
                 }
               ],
               "name": "generations_core:iceroot_carrot"
