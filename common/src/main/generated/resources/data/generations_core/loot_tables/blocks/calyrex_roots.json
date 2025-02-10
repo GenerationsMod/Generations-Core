@@ -5,7 +5,7 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "chance": 0.001,
+          "chance": 0.0025,
           "condition": "minecraft:random_chance"
         },
         {

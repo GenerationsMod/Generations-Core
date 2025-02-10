@@ -37,7 +37,7 @@ public class LootTableDatagen extends LootTableProvider {
         new SubProviderEntry(GenerationsCoreFishingLoot::new, LootContextParamSets.FISHING),
         new SubProviderEntry(() -> op -> op.accept(CALYREX_ROOTS, LootTable.lootTable().withPool(LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(1))
-                        .when(LootItemRandomChanceCondition.randomChance(1/1000f))
+                        .when(LootItemRandomChanceCondition.randomChance(1/400f))
                         .when(hasBlockStateProperties(Blocks.CARROTS).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7)))
                         .add(AlternativesEntry.alternatives(
                                 LootItem.lootTableItem(GenerationsItems.SHADEROOT_CARROT.get())
