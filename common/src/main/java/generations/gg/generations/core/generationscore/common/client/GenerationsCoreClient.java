@@ -42,6 +42,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock;
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.rendering.RareCandy;
+import gg.generations.rarecandy.renderer.rendering.RenderStage;
 import kotlin.Unit;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -454,7 +455,8 @@ public class GenerationsCoreClient {
         RenderSystem.enableDepthTest();
         BufferUploader.reset();
 
-        ModelRegistry.getWorldRareCandy().render(true, MinecraftClientGameProvider.getTimePassed());
+        ModelRegistry.getWorldRareCandy().render(RenderStage.SOLID, true, MinecraftClientGameProvider.getTimePassed());
+        ModelRegistry.getWorldRareCandy().render(RenderStage.TRANSPARENT, true, MinecraftClientGameProvider.getTimePassed());
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
     }
 

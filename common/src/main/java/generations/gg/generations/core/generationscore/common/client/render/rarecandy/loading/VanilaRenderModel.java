@@ -10,6 +10,7 @@ import gg.generations.rarecandy.renderer.components.RenderObject;
 import gg.generations.rarecandy.renderer.model.RenderModel;
 import gg.generations.rarecandy.renderer.model.material.Material;
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance;
+import gg.generations.rarecandy.renderer.rendering.RenderStage;
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -111,7 +112,7 @@ public class VanilaRenderModel implements RenderModel {
     }
 
     @Override
-    public <T extends RenderObject> void render(List<ObjectInstance> instances, T object) {
+    public <T extends RenderObject> void render(RenderStage renderStage, List<ObjectInstance> list, T t) {
 
     }
 
