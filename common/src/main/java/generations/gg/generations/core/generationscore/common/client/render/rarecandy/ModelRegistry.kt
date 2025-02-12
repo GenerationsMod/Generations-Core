@@ -11,6 +11,7 @@ import generations.gg.generations.core.generationscore.common.util.TimedCache
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import gg.generations.rarecandy.renderer.animation.Animation
+import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import gg.generations.rarecandy.renderer.rendering.RareCandy
 import gg.generations.rarecandy.shaded.caffeine.cache.CacheLoader
 import gg.generations.rarecandy.shaded.caffeine.cache.Caffeine

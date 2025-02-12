@@ -1,7 +1,8 @@
 #version 330 core
 
-in float vertexDistance;
 in vec2 texCoord0;
+in vec4 vertexColor;
+in float vertexDistance;
 
 out vec4 outColor;
 
@@ -13,8 +14,14 @@ uniform vec4 FogColor;
 uniform sampler2D diffuse;
 uniform sampler2D lightmap;
 uniform sampler2D emission;
+
 uniform ivec2 light;
 uniform bool useLight;
+
+uniform vec3 cobblemonTint;
+
+#define MINECRAFT_LIGHT_POWER   (0.6)
+#define MINECRAFT_AMBIENT_LIGHT (0.4)
 
 vec4 linear_fog(vec4 inColor, float vertexDistance, float fogStart, float fogEnd, vec4 fogColor) {
     if (vertexDistance <= fogStart) {
@@ -41,9 +48,23 @@ vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
 
 #process
 
+#color
+
 void main() {
-    outColor = process(texture(diffuse, texCoord0)) * ColorModulator;
-    if(outColor.a < 0.004) discard;
-    if(useLight) outColor *= mix(minecraft_sample_lightmap(lightmap, light), vec4(1,1,1,1), texture(emission, texCoord0).r);
+    outColor = process(getColor(texCoord0)) * ColorModulator;
+    if (outColor.a < 0.004) {
+        discard;
+    }
+
+    outColor.rgb *= cobblemonTint;
+
+    if (useLight) {
+        outColor *= vertexColor;
+        // Sample Minecraft's light level from the lightmap texture
+        vec4 minecraftLight = minecraft_sample_lightmap(lightmap, light);
+
+        outColor *= mix(minecraftLight, vec4(1, 1, 1, 1), texture(emission, texCoord0).r);
+    }
+
     outColor = linear_fog(outColor, vertexDistance, FogStart, FogEnd, FogColor);
 }

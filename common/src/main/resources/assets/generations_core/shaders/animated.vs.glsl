@@ -13,26 +13,14 @@ out vec2 texCoord0;
 
 uniform int FogShape;
 
-uniform vec3 Light0_Direction;
-uniform vec3 Light1_Direction;
-
 uniform mat4 viewMatrix;
 uniform mat4 modelMatrix;
 uniform mat4 projectionMatrix;
 uniform vec2 uvOffset;
 uniform vec2 uvScale;
 
-#define MINECRAFT_LIGHT_POWER   (0.6)
-#define MINECRAFT_AMBIENT_LIGHT (0.4)
-
-vec4 minecraft_mix_light(vec3 lightDir0, vec3 lightDir1, vec3 normal) {
-    lightDir0 = normalize(lightDir0);
-    lightDir1 = normalize(lightDir1);
-    float light0 = max(0.0, dot(lightDir0, normal));
-    float light1 = max(0.0, dot(lightDir1, normal));
-    float lightAccum = min(1.0, (light0 + light1) * MINECRAFT_LIGHT_POWER + MINECRAFT_AMBIENT_LIGHT);
-    return vec4(vec3(lightAccum), 1);
-}
+uniform vec3 Light0_Direction;
+uniform vec3 Light1_Direction;
 
 uniform mat4 boneTransforms[MAX_BONES];
 
@@ -55,13 +43,15 @@ float fog_distance(mat4 modelViewMat, vec3 pos, int shape) {
     }
 }
 
+#vert
+
 void main() {
     mat4 worldSpace = projectionMatrix * viewMatrix;
     mat4 modelTransform = modelMatrix * getBoneTransform();
     vec4 worldPosition = modelTransform * vec4(positions, 1.0);
 
-    texCoord0 = texcoords + uvOffset;
+    texCoord0 = (texcoords * uvScale) + uvOffset;
     gl_Position = worldSpace * worldPosition;
     vertexDistance = fog_distance(worldSpace * modelTransform, positions, FogShape);
-    vertexColor = minecraft_mix_light(Light0_Direction, Light1_Direction, inNormal);
+    vertexColor = getVertexColor(Light0_Direction, Light1_Direction, inNormal);
 }

@@ -63,6 +63,8 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 parserString
             ) { s: String -> parserString = s })
         updateButton = addRenderableWidget(Button.builder(Component.literal("Update")) { button: Button? ->
+
+
             statue.properties = parse(parserString, " ", "=")
             modelWidget?.pokemon = statue.properties.asRenderablePokemon()
             UpdateStatuePacket.Properties(statue.id, statue.properties).sendToServer()
@@ -211,9 +213,9 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         poseStack.enableScissor(x + 122, y + 25, x + 122 + 63, y + 25 + 63)
         poseStack.pose().translate((63 / 2f).toDouble(), 63 - 5.0, 0.0)
         (statue.delegate as StatueClientDelegate).setPose(statue.poseType.toString())
-        var data = statue.renderablePokemon()
+//        var data = statue.renderablePokemon()
 
-        var aspects = data.aspects
+//        var aspects = data.aspects
 
 //        if(statue.statueData.material() != null) {
 //            aspects = aspects.toMutableSet().let { it + (statue.statueData.material().toString()) }

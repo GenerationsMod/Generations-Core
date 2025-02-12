@@ -8,7 +8,7 @@ import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
-public class CobblemonInstance extends AnimatedObjectInstance implements BlockLightValueProvider, ModelContextProviders.TintProvider {
+public class CobblemonInstance extends AnimatedObjectInstance implements BlockLightValueProvider {
 
     public Matrix4f[] matrixTransforms;
     public Transform offsets;
@@ -48,7 +48,6 @@ public class CobblemonInstance extends AnimatedObjectInstance implements BlockLi
         this.light = light;
     }
 
-    @Override
     public Vector3f getTint() {
         return tint;
     }

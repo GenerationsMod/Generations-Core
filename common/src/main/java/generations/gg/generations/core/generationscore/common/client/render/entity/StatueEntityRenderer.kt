@@ -57,7 +57,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         buffer: MultiBufferSource,
         light: Int,
     ) {
-        val renderable = entity.renderablePokemon()
+        val renderable = entity.renderablePokemon() ?: return
 
         PokemonModelRepository.variations.getOrDefault(renderable.species.resourceIdentifier, null) ?: return
         stack.pushPose()
@@ -219,7 +219,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
             if (texture != null) return texture
         }
 
-        val renderable = entity.renderablePokemon()
+        val renderable = entity.renderablePokemon() ?: return MissingTextureAtlasSprite.getLocation()
 
         return PokemonModelRepository.getTexture(renderable.species.resourceIdentifier, renderable.aspects, 0f)
     }

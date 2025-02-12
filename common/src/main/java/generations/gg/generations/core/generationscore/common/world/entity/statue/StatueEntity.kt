@@ -242,7 +242,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         return false
     }
 
-    fun renderablePokemon() = properties.asRenderablePokemon()
+    fun renderablePokemon() = properties.takeUnless { it.species == null }?.asRenderablePokemon()
 
     override fun hasCustomName(): Boolean {
         return label?.isNotBlank() != null
