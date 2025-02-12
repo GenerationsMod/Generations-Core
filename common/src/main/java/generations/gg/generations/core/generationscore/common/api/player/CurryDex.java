@@ -24,6 +24,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.time.Instant;
 import java.util.*;
@@ -129,7 +130,7 @@ public class CurryDex extends PlayerDataExtension {
         public boolean newEntry = true;
 
         public CurryType type;
-        public Flavor flavor;
+        @Nullable public Flavor flavor;
         public CurryTasteRating rating;
 
         public static CurryDexEntry fromNbt(CompoundTag entry) {
@@ -157,7 +158,7 @@ public class CurryDex extends PlayerDataExtension {
 
             compound.putString("rating", rating.getSerializedName());
             compound.putString("type", type.getSerializedName());
-            compound.putString("flavor", flavor.name());
+            if(flavor != null) compound.putString("flavor", flavor.name());
 
             compound.putBoolean("newEntry", newEntry);
 
@@ -194,9 +195,10 @@ public class CurryDex extends PlayerDataExtension {
                     .writeResourceLocation(entry.biome)
                     .writeVarLong(entry.pos.asLong())
                     .writeBoolean(entry.newEntry)
-                    .writeByte(entry.type.ordinal())
-                    .writeByte(entry.flavor.ordinal())
-                    .writeByte(entry.rating.ordinal());
+                    .writeByte(entry.type.ordinal());
+
+                    byteBuf.writeNullable(entry.flavor, FriendlyByteBuf::writeEnum);
+                    byteBuf.writeByte(entry.rating.ordinal());
         }
 
         public static CurryDexEntry fromByteBuf(FriendlyByteBuf byteBuf) {
@@ -210,7 +212,7 @@ public class CurryDex extends PlayerDataExtension {
             entry.newEntry = byteBuf.readBoolean();
 
             entry.type = CurryType.getCurryTypeFromIndex(byteBuf.readByte());
-            entry.flavor = Flavor.values()[byteBuf.readByte()];
+            entry.flavor = byteBuf.readNullable(friendlyByteBuf -> friendlyByteBuf.readEnum(Flavor.class));
             entry.rating = CurryTasteRating.fromId(byteBuf.readByte());
             return entry;
         }
@@ -223,7 +225,7 @@ public class CurryDex extends PlayerDataExtension {
             json.add("pos", toBlockPosFromJson(pos));
             json.addProperty("newEntry", newEntry);
             json.addProperty("type", type.getSerializedName());
-            json.addProperty("flavor", flavor.name().toLowerCase());
+            if(flavor != null) json.addProperty("flavor", flavor.name().toLowerCase());
             json.addProperty("entry", rating.getSerializedName());
             return json;
         }
@@ -239,7 +241,7 @@ public class CurryDex extends PlayerDataExtension {
             entry.newEntry = byteBuf.getAsJsonPrimitive("newEntry").getAsBoolean();
 
             entry.type = CurryType.get(byteBuf.getAsJsonPrimitive("type").getAsString());
-            entry.flavor = Flavor.valueOf(byteBuf.getAsJsonPrimitive("flavor").getAsString().toUpperCase());
+            entry.flavor = byteBuf.has("flavor") ? Flavor.valueOf(byteBuf.getAsJsonPrimitive("flavor").getAsString().toUpperCase()) : null;
             entry.rating = CurryTasteRating.get(byteBuf.getAsJsonPrimitive("rating").getAsString());
             return entry;
         }
