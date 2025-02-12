@@ -754,7 +754,7 @@ object GenerationsItems {
 
     @JvmField val TEAL_MASK = registerHeldItem("teal_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "teal") }
     @JvmField val WELLSPRING_MASK = registerHeldItem("wellspring_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "wellspring") }
-    @JvmField val HEARTFLAME_MASK = registerHeldItem("heartflame_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "heartflame") }
+    @JvmField val HEARTHFLAME_MASK = registerHeldItem("hearthflame_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "hearthflame") }
     @JvmField val CORNERSTONE_MASK = registerHeldItem("cornerstone_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "cornerstone") }
 
     /**

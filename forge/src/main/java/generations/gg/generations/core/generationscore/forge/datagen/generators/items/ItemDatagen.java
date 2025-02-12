@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items;
 
-import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls;
 import generations.gg.generations.core.generationscore.common.world.item.*;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
@@ -18,7 +16,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Objects;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class ItemDatagen extends ItemModelProvider {
 
@@ -260,7 +257,7 @@ public class ItemDatagen extends ItemModelProvider {
         createHeldItem(GenerationsItems.FAIRY_FEATHER.get());
 
         createHeldItem(GenerationsItems.TEAL_MASK.get());
-        createHeldItem(GenerationsItems.HEARTFLAME_MASK.get());
+        createHeldItem(GenerationsItems.HEARTHFLAME_MASK.get());
         createHeldItem(GenerationsItems.WELLSPRING_MASK.get());
         createHeldItem(GenerationsItems.CORNERSTONE_MASK.get());
 
