@@ -1,0 +1,32 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "inputs": {
+    "A": {
+      "type": "item",
+      "key": "generations_core:heart_scale"
+    },
+    "B": {
+      "type": "item",
+      "key": "generations_core:orb"
+    }
+  },
+  "pattern": [
+    "A A",
+    " B ",
+    "A A"
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "value": {
+      "Count": 1,
+      "id": "generations_core:soul_heart",
+      "tag": {
+        "Damage": 0
+      }
+    }
+  },
+  "speciesKey": "cobblemon:magearna"
+}

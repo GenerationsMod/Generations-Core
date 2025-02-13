@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:rks/soul_heart_alt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "heart_scale": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "generations_core:heart_scale"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "heart_scale",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:rks/soul_heart_alt"
+    ]
+  },
+  "sends_telemetry_event": true
+}
