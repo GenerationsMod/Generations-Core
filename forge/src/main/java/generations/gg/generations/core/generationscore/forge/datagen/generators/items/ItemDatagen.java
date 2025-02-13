@@ -1065,9 +1065,10 @@ public class ItemDatagen extends ItemModelProvider {
     private void createCurry() {
         ItemModelBuilder model = generated(GenerationsItems.CURRY.getId().getPath(), CurryType.None.getResourceLocation());
         CurryType[] values = CurryType.values();
+
         for (int i = 0; i < values.length; i++) {
             CurryType type = values[i];
-            model.override().model(generated(type.getResourceLocation().getPath(), type.getResourceLocation())).predicate(GenerationsCore.id("curry_type"), i).end();
+            model.override().model(generated(type.getResourceLocation().getPath(), type.getResourceLocation())).predicate(GenerationsCore.id("curry_type"), i/100f).end();
         }
     }
 
@@ -1183,6 +1184,8 @@ public class ItemDatagen extends ItemModelProvider {
         ResourceLocation key = Objects.requireNonNull(getKey(block), "Tried to create json model for unregistered Item.");
         return generated(key.getPath(), GenerationsCore.id("item/blocks/" + directory + "/" + key.getPath()));
     }
+
+
 
     public ItemModelBuilder createCurryType(CurryType type) {
         return generated("item/curry/" + type.getSerializedName(), type.getResourceLocation());

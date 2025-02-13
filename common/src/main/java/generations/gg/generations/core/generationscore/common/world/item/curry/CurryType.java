@@ -49,7 +49,7 @@ public enum CurryType implements ICurryRarity, StringRepresentable {
     }
 
     public String getLocalizedName() {
-        return Language.getInstance().getOrDefault("pixelmon.curry." + this.toString().toLowerCase(Locale.ENGLISH));
+        return Language.getInstance().getOrDefault("generations_core.curry." + this.toString().toLowerCase(Locale.ENGLISH));
     }
 
     public static CurryType getCurryTypeFromIndex(int index) {

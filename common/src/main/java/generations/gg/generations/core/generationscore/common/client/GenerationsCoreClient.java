@@ -34,6 +34,8 @@ import generations.gg.generations.core.generationscore.common.world.entity.Gener
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.item.*;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
+import generations.gg.generations.core.generationscore.common.world.item.curry.ItemCurry;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWoodTypes;
@@ -175,7 +177,9 @@ public class GenerationsCoreClient {
             else return 0.00f;
         });
 
-        register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> CurryData.fromNbt(arg.getOrCreateTag()).getCurryType().ordinal());
+        register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> {
+            return ItemCurry.getData(arg).getCurryType().ordinal() / 100f;
+        });
         register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
             ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
 

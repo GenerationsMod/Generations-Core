@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.lang;
 
+import com.cobblemon.mod.common.api.berry.Flavor;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
@@ -8,6 +9,7 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip;
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
@@ -48,9 +50,7 @@ public class GeneralLang extends LanguageProvider {
         });
         addItemEntries(GenerationsItems.BADGES, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.RIBBONS, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.UNIMPLEMENTED, this::getNameGens, (item, function) -> {
-            add(item.get().asItem().getDescriptionId() + ".desc", "Not currently implemented");
-        });
+        addItemEntries(GenerationsItems.UNIMPLEMENTED, this::getNameGens, (item, function) -> add(item.get().asItem().getDescriptionId() + ".desc", "Not currently implemented"));
 
         addItemEntries(GenerationsItems.CUISINE, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.NATURAL, this::getNameGens, (item, function) -> {});
@@ -446,6 +446,15 @@ public class GeneralLang extends LanguageProvider {
 
         add("generations_core.pokemon.extracted_dna_fibers_max", "You have extracted all DNA fibers you could from %s.");
         add("generations_core.pokemon.extracted_dna_fiber_succeed", "DNA fiber extraction from %s successful!");
+        add("generations_core.pokemon.extracted_fibers_max", "Maximum amount of DNA fibers have been extracted from %s.");
+
+        for(var flavor : Flavor.values()) {
+            add("enum.flavor." + flavor.name().toLowerCase(), this.getNameGens(null, flavor.name().toLowerCase()));
+        }
+
+        for(var type : CurryType.values()) {
+            add("generations_core.curry." + type.name().toLowerCase(), this.getNameGens(null, type.getSerializedName()));
+        }
 
         this.add(ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), "Ultrite Upgrade Smithing Template");
 

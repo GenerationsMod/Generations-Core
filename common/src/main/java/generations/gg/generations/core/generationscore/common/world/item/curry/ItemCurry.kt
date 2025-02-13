@@ -8,10 +8,16 @@ import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.api.player.CurryDex
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.getFlavorLocalizedName
+import generations.gg.generations.core.generationscore.common.util.add
+import generations.gg.generations.core.generationscore.common.util.extensions.addComponent
+import generations.gg.generations.core.generationscore.common.util.extensions.addText
+import generations.gg.generations.core.generationscore.common.util.extensions.dsl
+import generations.gg.generations.core.generationscore.common.util.extensions.plusAssign
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.MutableComponent
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
@@ -34,21 +40,16 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        val info =
-            "" //Language.getInstance().getOrDefault("gui.shopkeeper." + this.getDescriptionId().getTranslationKey());
-        if (!hasHideFlag(stack)) {
+        tooltipComponents.dsl {
+            val data = getData(stack)
 
-            if (Screen.hasShiftDown()) {
-//                tooltipComponents.add(Component.nullToEmpty(info))
-                tooltipComponents.add(Component.nullToEmpty("Rating: " + getData(stack).rating.getName()))
-            } else {
-                tooltipComponents.add(Component.nullToEmpty("Hold shift for more info."))
-            }
+            +"Rating: ${data.rating.getName()}"
+            +"Restores PP: ${data.canRestorePP().text()}"
+            +"Heal Statue Effects: ${data.canHealStatus().text()}"
+            +"Friendship Given: ${data.friendship}"
+            +"Experience Given: ${data.experience}"
+            +"Health Restored: ${data.healthPercentage * 100}%"
         }
-    }
-
-    private fun hasHideFlag(stack: ItemStack): Boolean {
-        return stack.hasTag() && stack.tag!!.getBoolean("hide_tooltip")
     }
 
     override fun onCraftedBy(stack: ItemStack, level: Level, player: Player) {
@@ -82,6 +83,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
             }
         }
 
+        this.consumeItem(player, stack)
         return true
     }
 
@@ -102,12 +104,19 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
             return stack
         }
 
+        @JvmStatic
         fun setData(stack: ItemStack, data: CurryData) {
             stack.addTagElement("data", data.toNbt())
         }
 
+        @JvmStatic
         fun getData(stack: ItemStack): CurryData {
             return CurryData.fromNbt(stack.getOrCreateTagElement("data"))
         }
     }
 }
+
+private fun Boolean.text(): String {
+    return if(this) "Yes" else "No"
+}
+
