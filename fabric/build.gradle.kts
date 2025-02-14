@@ -1,6 +1,9 @@
 import com.hypherionmc.modpublisher.properties.CurseEnvironment
 import com.hypherionmc.modpublisher.properties.ModLoader
 import com.hypherionmc.modpublisher.properties.ReleaseType
+import java.nio.file.Path
+import kotlin.io.path.absolute
+import kotlin.io.path.absolutePathString
 
 plugins {
     id("com.gradleup.shadow")
@@ -136,4 +139,28 @@ private fun getPublishingCredentials(): Pair<String?, String?> {
     val curseForgeToken = (project.findProperty("curseforge_token") ?: System.getenv("CURSEFORGE_TOKEN") ?: "") as String?
     val modrinthToken = (project.findProperty("modrinth_token") ?: System.getenv("MODRINTH_TOKEN") ?: "") as String?
     return Pair(curseForgeToken, modrinthToken)
+}
+
+tasks.register("runMoveModels") {
+    group = "loom"
+    doLast {
+        var root = projectDir.toPath().absolute().parent
+
+        val fabricModels = root.resolve("fabric/src/main/generated/assets/generations_core/models").toFile()
+        val commonModels = root.resolve("common/src/main//generated/resources/assets/generations_core/models").toFile()
+
+        if (fabricModels.exists()) {
+
+            // Ensure the common models directory exists
+            commonModels.mkdirs()
+
+            // Move the folder (delete original after copying)
+            fabricModels.copyRecursively(commonModels, overwrite = true)
+            fabricModels.deleteRecursively() // Remove the old models folder
+
+            println("✅ Successfully moved models to common!")
+        } else {
+            println("⚠️ No models found in Fabric-generated resources! RunDatagen might have failed.")
+        }
+    }
 }

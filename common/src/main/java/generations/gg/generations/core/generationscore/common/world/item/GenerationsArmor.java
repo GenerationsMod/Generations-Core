@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class GenerationsArmor {
 	public static final DeferredRegister<Item> ARMOR = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM);
@@ -115,6 +116,11 @@ public class GenerationsArmor {
 		public static Builder builder(String name, Supplier<ArmorMaterial> armorMaterial) {
 			return new Builder(name, armorMaterial);
 		}
+
+		public Stream<RegistrySupplier<Item>> stream() {
+			return Stream.of(helmet, chestplate, leggings, boots);
+		}
+
 
 		public static ArmorSet create(String name, Supplier<ArmorMaterial> armorMaterial, ArmorEffect... armorEffects) {
 			return new ArmorSet(

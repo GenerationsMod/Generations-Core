@@ -20,6 +20,8 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.concurrent.CompletableFuture;
 
 /**

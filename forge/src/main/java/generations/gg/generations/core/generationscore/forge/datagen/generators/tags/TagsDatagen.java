@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor;
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools;
 import generations.gg.generations.core.generationscore.common.world.item.tools.GenerationsHammerItem;
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
@@ -29,6 +30,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
@@ -597,6 +599,8 @@ public class TagsDatagen {
                     STEEL_MEMORY_DRIVE.get(),
                     WATER_MEMORY_DRIVE.get()
             );
+
+            tag(ItemTags.TRIMMABLE_ARMOR).add(Streams.stream(GenerationsArmor.ARMOR.iterator()).map(Supplier::get).toArray(Item[]::new));
         }
     }
 
