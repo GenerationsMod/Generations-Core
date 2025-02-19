@@ -1,9 +1,7 @@
 import com.hypherionmc.modpublisher.properties.CurseEnvironment
 import com.hypherionmc.modpublisher.properties.ModLoader
 import com.hypherionmc.modpublisher.properties.ReleaseType
-import java.nio.file.Path
 import kotlin.io.path.absolute
-import kotlin.io.path.absolutePathString
 
 plugins {
     id("com.gradleup.shadow")
