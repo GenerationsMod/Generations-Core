@@ -45,7 +45,7 @@ public class VariantCouchBlock extends DyeableBlock<CouchBlockEntity, VariantCou
 
     @Override
     public double getOffset() {
-        return 0.3375;
+        return 0.4375;
     }
 
 
