@@ -46,7 +46,12 @@ public class CouchBlock extends GenericRotatableModelBlock<GenericModelProviding
 
     @Override
     public double getOffset() {
-        return 0.3375;
+        return 0.4375;
+    }
+
+    @Override
+    public float getYaw(BlockState state) {
+        return state.getValue(FACING).toYRot();
     }
 }
 

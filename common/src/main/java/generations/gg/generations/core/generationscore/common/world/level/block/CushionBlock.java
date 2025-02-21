@@ -42,11 +42,16 @@ public class CushionBlock extends GenericRotatableModelBlock<GenericModelProvidi
 
     @Override
     public double getOffset() {
-        return 0.3;
+        return 0.4;
     }
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         return SittableBlock.super.use(state, level, pos, player, hand, hit);
+    }
+
+    @Override
+    public float getYaw(BlockState state) {
+        return state.getValue(FACING).toYRot();
     }
 }

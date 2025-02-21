@@ -44,7 +44,12 @@ public class SwivelChairBlock extends DyeableBlock<GenericDyedVariantBlockEntity
 
     @Override
     public double getOffset() {
-        return 0.4;
+        return 0.5;
+    }
+
+    @Override
+    public float getYaw(BlockState state) {
+        return state.getValue(FACING).toYRot();
     }
 
     @Override

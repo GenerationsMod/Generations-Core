@@ -27,6 +27,11 @@ public class BeanBagBlock extends GenericRotatableModelBlock<GenericModelProvidi
 
     @Override
     public double getOffset() {
-        return 0.8f;
+        return 0.9f;
+    }
+
+    @Override
+    public float getYaw(BlockState state) {
+        return state.getValue(FACING).toYRot();
     }
 }

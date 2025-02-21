@@ -36,7 +36,7 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
     @Override
     protected InteractionResult serverUse(BlockState state, ServerLevel world, BlockPos pos, ServerPlayer player, InteractionHand handIn, BlockHitResult hit) {
         if (!world.isClientSide && !player.isShiftKeyDown())
-            return SittableEntity.mount(world, pos, 0.5f, player);
+            return SittableEntity.mount(world, pos, 0.5f, player, state.getValue(FACING).toYRot());
 
         return InteractionResult.PASS;
     }

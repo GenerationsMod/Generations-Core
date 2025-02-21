@@ -37,8 +37,6 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
     fun ItemModelGenerators.generateGenerationsArmorTrims(armorItem: ArmorItem) {
         val resourceLocation = ModelLocationUtils.getModelLocation(armorItem)
 
-        Item.BASE_ATTACK_DAMAGE_UUID
-
         // Modified texture references to include "armor/"
         val baseTexture = TextureMapping.getItemTexture(armorItem).toString().replace("item/", "item/armor/").asResource()
         val overlayTexture = TextureMapping.getItemTexture(armorItem, "_overlay").toString().replace("item/", "item/armor/").asResource()
