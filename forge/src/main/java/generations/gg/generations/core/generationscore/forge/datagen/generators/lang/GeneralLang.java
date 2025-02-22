@@ -174,7 +174,7 @@ public class GeneralLang extends LanguageProvider {
         add("painting.generations_core.blue_poster.author.author", "Pokemon");
         add("painting.generations_core.blue_poster.title.title", "Blue Poster");
         add("painting.generations_core.blue_poster_sprite.author", "Pokemon");
-        add("painting.generations_core.blue_poster_sprite.title", "Blue Poster SPrite");
+        add("painting.generations_core.blue_poster_sprite.title", "Blue Poster Sprite");
         add("painting.generations_core.blue_scroll.author", "Pokemon");
         add("painting.generations_core.blue_scroll.title", "Blue Scroll");
         add("painting.generations_core.clefairy_poster_sprite.author", "Pokemon");

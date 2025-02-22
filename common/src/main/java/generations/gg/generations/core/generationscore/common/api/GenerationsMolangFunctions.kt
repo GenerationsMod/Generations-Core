@@ -104,7 +104,12 @@ object GenerationsMolangFunctions {
                         it.getDoubleOrNull(0)?.
                         toInt()?.let {
                             party.get(it)
-                        }?.asMoLangValue() ?: DoubleValue(0.0) }
+                        }?.asMoLangValue() ?: DoubleValue(0.0) },
+                    "add" to java.util.function.Function {
+                        it.getStringOrNull(0)?.toProperties()?.also { party.add(it.create()) }
+
+                        return@Function Unit
+                    }
                 )
             })
 
@@ -118,6 +123,9 @@ object GenerationsMolangFunctions {
         }
 
         MoLangFunctions.playerFunctions.add { player ->
+            Struct
+
+            var selected = player.inventory.removeFromSelected(selected
             hashMapOf(
                 "capped" to Function<MoParams, Any> {
                     val speciesKey = it.getStringOrNull(0)?.let { SpeciesKey.fromString(it) }
@@ -127,7 +135,7 @@ object GenerationsMolangFunctions {
                     return@Function DoubleValue(if (GenerationsCore.CONFIG.caught.capped(player, speciesKey)) 1.0 else 0.0)
                 },
                 "main_hand" to Function<MoParams, Any> {
-                    player.mainHandItem.toMolang()
+                    player.inventory.get.mainHandItem.toMolang()
                 },
                 "party" to Function<MoParams, Any> {
                     player.party().asMoLangValue()
@@ -239,6 +247,9 @@ private fun ItemStack.toMolang(): ObjectValue<ItemStack> {
         "damage" to Function<MoParams, Any> {
             val value = it.getIntOrNull(0) ?: return@Function DoubleValue(this.damageValue)
             this.damageValue += value
+        },
+        "damage_as_string" to Function<MoParams, Any> {
+            return@Function StringValue(this.damageValue.toString())
         }
     ))
 }

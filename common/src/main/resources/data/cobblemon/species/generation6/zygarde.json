@@ -150,7 +150,7 @@
   "evolutions": [],
   "forms": [
     {
-      "name": "10%",
+      "name": "Zygarde-10%",
       "primaryType": "dragon",
       "secondaryType": "ground",
       "abilities": [
@@ -209,7 +209,7 @@
       "battleOnly": false
     },
     {
-      "name": "10% complete",
+      "name": "Zygarde-Complete",
       "primaryType": "dragon",
       "secondaryType": "ground",
       "abilities": [
@@ -254,7 +254,7 @@
       "battleOnly": true
     },
     {
-      "name": "50% complete",
+      "name": "Zygarde-Complete",
       "primaryType": "dragon",
       "secondaryType": "ground",
       "abilities": [

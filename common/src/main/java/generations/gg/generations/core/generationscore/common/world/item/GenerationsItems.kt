@@ -344,7 +344,7 @@ object GenerationsItems {
     @JvmField val TM_207 = registerTmRegular("tm_207", "temperflare")
     @JvmField val TM_208 = registerTmRegular("tm_208", "whirlpool")
     @JvmField val TM_209 = registerTmRegular("tm_209", "muddywater")
-    @JvmField val TM_210 = registerTmRegular("tm_210", "supercellslame")
+    @JvmField val TM_210 = registerTmRegular("tm_210", "supercellslam")
     @JvmField val TM_211 = registerTmRegular("tm_211", "electroweb")
     @JvmField val TM_212 = registerTmRegular("tm_212", "tripleaxel")
     @JvmField val TM_213 = registerTmRegular("tm_213", "coaching")

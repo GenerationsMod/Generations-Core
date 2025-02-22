@@ -21,9 +21,9 @@ class ZygardeCubeItem(properties: Properties) : Item(properties), LangTooltip {
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        tooltipComponents.add(Component.translatable("item.zygarde_cell.tooltip"))
-        tooltipComponents.add(Component.translatable("item.zygarde_cell.tooltip.lore1"))
-        tooltipComponents.add(Component.translatable("item.zygarde_cell.tooltip.lore2", stack.damageValue, stack.maxDamage))
+        tooltipComponents.add(Component.translatable("item.generations_core.zygarde_cube.tooltip"))
+        tooltipComponents.add(Component.translatable("item.generations_core.zygarde_cube.lore1"))
+        tooltipComponents.add(Component.translatable("item.generations_core.zygarde_cube.lore2", stack.damageValue, stack.maxDamage))
 //        LangTooltip.appendHoverText(stack, level, tooltipComponents, isAdvanced)
     }
 

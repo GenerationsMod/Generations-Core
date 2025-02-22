@@ -15,15 +15,26 @@
         "Select what you want to do.",
         {
           "type": "expression",
-          "expression": "'You currently have ' + q.player.main_hand.damage + ' cells available."
+          "expression": "'You currently have ' + q.player.main_hand.damage_as_string + ' cells available."
         }
       ],
       "input": {
         "type": "option",
-        "allowSkip": false,
-        "delay": 1,
-        "action": [
-          "v.cells = q.player.main_hand.damage;"
+        "options": [
+          {
+            "text": "Create",
+            "isVisible": "q.player.capped('cobblemon:zygarde')",
+            "action": [
+              "v.cells = q.player.main_hand.damage;",
+              "q.dialogue.set_page('form');"
+            ]
+          },
+          {
+            "text": "Modify",
+            "action": [
+              "v.cells = q.player.main_hand.damage;"
+            ]
+          }
         ]
       }
     },
@@ -38,21 +49,76 @@
           {
             "text": "10%",
             "value": "10",
-            "isVisible": "q.cells >= 10",
+            "isVisible": "v.cells >= 10",
             "action": [
               "v.form = '10%';",
-              "q.dialogue.close();"
+              "v.cells_needed = 10;",
+              "q.dialogue.set_page('ability');"
             ]
           },
           {
             "text": "50",
             "value": "50",
-            "isVisible": "q.cells >= 10",
+            "isVisible": "v.cells >= 10",
             "action": [
               "v.form = '50%';",
-              "q.dialogue.close();"
+              "v.cells_needed = 10;",
+              "q.dialogue.set_page('ability');"
             ]
           }
+        ]
+      }
+    },
+    {
+      "id": "ability",
+      "lines": [
+        "Which ability should your new Zygarde have?"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Aura Break",
+            "value": "aurabreak",
+            "action": [
+              "v.ability = 'aurabreak';",
+              "v.ability_name = 'Aura Break';",
+              "q.dialogue.set_page('create_congrats');"
+            ]
+          },
+          {
+            "text": "Power Construct",
+            "value": "powerconstruct",
+            "isVisible": "v.cells >= (100 - v.cell_needed)",
+            "action": [
+              "v.ability = 'powerconstruct';",
+              "v.ability_name = 'Power Construct';",
+              "v.cells_needed = 100",
+              "q.dialogue.set_page('create_congrats');"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "create_congrats",
+      "allowSkip": false,
+      "lines": [
+        "Congradulations!",
+        {
+          "type": "expression",
+          "expression": "'You created have created a ' + v.form + ' zygarde with the ability ' + v.ability_name + '."
+        },
+        "It was added to your party."
+      ],
+      "input": {
+        "type": "auto-continue",
+        "allowSkip": false,
+        "delay": 1,
+        "action": [
+          "q.player.main_hand.damage(v.cells_needed);",
+          "q.player.party.add('zygarde lvl=70 zygarde_form=' + v.form + ' ability=' + v.ability);",
+          "q.dialogue.close();"
         ]
       }
     }
