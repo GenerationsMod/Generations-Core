@@ -233,7 +233,7 @@ public class CurryDex extends PlayerDataExtension {
         public static CurryDexEntry fromJson(JsonObject byteBuf) {
             CurryDexEntry entry = new CurryDexEntry();
 
-            entry.instant = byteBuf.getAsJsonPrimitive("instnace").getAsLong();
+            entry.instant = byteBuf.getAsJsonPrimitive("instant").getAsLong();
             entry.pokemonName = byteBuf.getAsJsonPrimitive("pokemonName").getAsString();
             entry.biome = new ResourceLocation(byteBuf.getAsJsonPrimitive("biome").getAsString());
             entry.pos = fromJsonToBlockPos(byteBuf.getAsJsonArray("pos"));
