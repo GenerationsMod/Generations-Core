@@ -94,8 +94,8 @@ object Pipelines {
             .supplyMat4("modelMatrix") { it.instance().transformationMatrix() }
             .supplyMat4("projectionMatrix") { RenderSystem.getProjectionMatrix() }
             .supplyMat4s("boneTransforms") { ctx -> ctx.instance.instanceOrNull<AnimatedObjectInstance>()?.transforms ?: AnimationController.NO_ANIMATION }
-            .supplyVec2("uvOffset") { it.transform.offset() }
-            .supplyVec2("uvScale") { it.transform.scale() }
+            .supplyVec2("uvOffset") { it.transform.offset() ?: Transform.DEFAULT_OFFSET }
+            .supplyVec2("uvScale") { it.transform.scale() ?: Transform.DEFAULT_SCALE }
             .supplyTexture("diffuse", 0) {
                 it.getTextureOrOther("diffuse") { ITextureLoader.instance().nuetralFallback }
             }
@@ -156,7 +156,7 @@ object Pipelines {
                     "layered" -> builder.layered()
                 }
 
-                if (effect == "paradox") {
+                if (effect == "paradox" || effect == "galaxy") {
                     builder.paradox(color)
                 }
 
@@ -416,9 +416,6 @@ private fun Pipeline.Builder.shader(
 ): Pipeline.Builder {
     var shader = read(manager, "shaders/animated.fs.glsl", "process" shader effect, "color" shader color)
 
-    println("===============================================================================")
-    println(shader)
-    println("===============================================================================")
     return this.shader(
         read(manager, "shaders/animated.vs.glsl", "vert" shader extension),
         shader

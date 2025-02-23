@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.util
 
+import com.cobblemon.mod.common.api.moves.Moves
 import com.cobblemon.mod.common.api.net.Encodable
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
@@ -57,6 +58,18 @@ fun Pokemon.embedPokemon(pokemon: Pokemon, needsToBeInWorld: Boolean = true): Bo
     } else {
         false
     }
+}
+
+fun Pokemon.removeMove(moveName: String) {
+
+    for(move in moveSet) {
+        if(move.template.name == moveName) {
+            val index = moveSet.indexOf(move)
+            moveSet.setMove(index, null)
+        }
+    }
+
+    benchedMoves.remove(Moves.getByNameOrDummy(moveName))
 }
 
 fun Pokemon.hasEmbeddedPokemon(): Boolean {

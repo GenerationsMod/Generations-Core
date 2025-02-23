@@ -42,14 +42,8 @@ class NecroizerItemItem(private val properties: Properties, private val species:
                     feature.apply(entity)
                     player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
 
-                    for(move in entity.pokemon.moveSet) {
-                        if(move.template.name == this.move) {
-                            val index = entity.pokemon.moveSet.indexOf(move)
-                            entity.pokemon.moveSet.setMove(index, null)
-                        }
-                    }
 
-                    entity.pokemon.benchedMoves.remove(Moves.getByNameOrDummy(this.move))
+                    entity.pokemon.removeMove(move)
 
                     entity.pokemon.dembedPokemon()?.run { player.party().add(this) }
                     return true
