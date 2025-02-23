@@ -59,6 +59,23 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
                 player.sendSystemMessage("generations_core.pokemon.extracted_dna_fiber_succeed".asTranslated(pokemon.getDisplayName().string))
 
                 return true
+            } else if(pokemon.isSpecies("kyurem")) {
+                val dembeded: Pokemon = entity.pokemon.dembedPokemon()?.also { player.party().add(it) } ?: return false
+
+                val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("kyurem_form") ?: return false
+                val feature = provider.getOrCreate(entity.pokemon)
+
+                feature.value = "false"
+                feature.apply(entity)
+
+                player.sendSystemMessage(
+                    "generations_core.pokemon.defused".asTranslated(
+                        dembeded.getDisplayName().string,
+                        pokemon.getDisplayName().string
+                    )
+                )
+
+                return true
             }
         } else if (pokemon.isSpecies("kyurem")) {
 
@@ -91,20 +108,6 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
 
                     return true
                 }
-            } else {
-                val dembeded: Pokemon = entity.pokemon.dembedPokemon()?.also { player.party().add(it) } ?: return false
-
-                feature.value = "false"
-                feature.apply(entity)
-
-                player.sendSystemMessage(
-                    "generations_core.pokemon.defused".asTranslated(
-                        pokemon.getDisplayName().string,
-                        dembeded.getDisplayName().string
-                    )
-                )
-
-                return true
             }
         }
 

@@ -15,7 +15,7 @@
         "Select what you want to do.",
         {
           "type": "expression",
-          "expression": "'You currently have ' + q.player.main_hand.damage_as_string + ' cells available."
+          "expression": "'You currently have ' + q.player.selected_item.damage_as_string + ' cells available."
         }
       ],
       "input": {
@@ -23,16 +23,17 @@
         "options": [
           {
             "text": "Create",
-            "isVisible": "q.player.capped('cobblemon:zygarde')",
+            "isVisible": "q.player.capped('cobblemon:zygarde') && q.player.selected_item.damage >= 10",
             "action": [
-              "v.cells = q.player.main_hand.damage;",
+              "v.cells = q.player.selected_item.damage;",
               "q.dialogue.set_page('form');"
             ]
           },
           {
-            "text": "Modify",
+            "text": "No actions available",
+            "isVisible": "(!q.player.has_in_party('cobblemon:zygarde') || !q.player.capped('cobblemon:zygarde')) && q.player.selected_item.damage < 10",
             "action": [
-              "v.cells = q.player.main_hand.damage;"
+              "q.dialogue.close();"
             ]
           }
         ]
@@ -57,12 +58,12 @@
             ]
           },
           {
-            "text": "50",
+            "text": "50%",
             "value": "50",
             "isVisible": "v.cells >= 10",
             "action": [
               "v.form = '50%';",
-              "v.cells_needed = 10;",
+              "v.cells_needed = 50;",
               "q.dialogue.set_page('ability');"
             ]
           }
@@ -93,7 +94,7 @@
             "action": [
               "v.ability = 'powerconstruct';",
               "v.ability_name = 'Power Construct';",
-              "v.cells_needed = 100",
+              "v.cells_needed = 100;",
               "q.dialogue.set_page('create_congrats');"
             ]
           }
@@ -116,7 +117,7 @@
         "allowSkip": false,
         "delay": 1,
         "action": [
-          "q.player.main_hand.damage(v.cells_needed);",
+          "q.player.selected_item.damage(-v.cells_needed);",
           "q.player.party.add('zygarde lvl=70 zygarde_form=' + v.form + ' ability=' + v.ability);",
           "q.dialogue.close();"
         ]

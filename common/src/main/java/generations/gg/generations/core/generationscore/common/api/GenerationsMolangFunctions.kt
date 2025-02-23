@@ -123,9 +123,7 @@ object GenerationsMolangFunctions {
         }
 
         MoLangFunctions.playerFunctions.add { player ->
-            Struct
-
-            var selected = player.inventory.removeFromSelected(selected
+            var selected = player.inventory.selected;
             hashMapOf(
                 "capped" to Function<MoParams, Any> {
                     val speciesKey = it.getStringOrNull(0)?.let { SpeciesKey.fromString(it) }
@@ -135,8 +133,13 @@ object GenerationsMolangFunctions {
                     return@Function DoubleValue(if (GenerationsCore.CONFIG.caught.capped(player, speciesKey)) 1.0 else 0.0)
                 },
                 "main_hand" to Function<MoParams, Any> {
-                    player.inventory.get.mainHandItem.toMolang()
+                    player.mainHandItem.toMolang()
                 },
+                "selected_item" to Function<MoParams, Any> {
+                    player.inventory.getItem(selected).toMolang()
+                },
+
+
                 "party" to Function<MoParams, Any> {
                     player.party().asMoLangValue()
                 },
