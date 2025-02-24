@@ -183,6 +183,17 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     override fun transform(poseStack: PoseStack) {}
     override fun get(): Bone = this
 
+    fun getSprite(context: RenderContext): ResourceLocation {
+        var id = getTexture(context)
+        if (id != null) {
+            if (id.namespace == "pk") {
+                id = spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), id.path)
+            }
+        }
+
+        return id ?: MissingTextureAtlasSprite.getLocation()
+    }
+
     companion object {
         val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
         private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))

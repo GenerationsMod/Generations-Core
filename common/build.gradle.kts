@@ -9,6 +9,9 @@ loom.accessWidenerPath.set(file("src/main/resources/generationscore.accesswidene
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
+repositories {
+}
+
 dependencies {
     modImplementation("net.fabricmc:fabric-loader:${project.properties["fabric_loader_version"]}")
     modApi("dev.architectury:architectury:${project.properties["architectury_version"]}")
@@ -22,6 +25,8 @@ dependencies {
 
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-api:${project.properties["rei"]}")
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin:${project.properties["rei"]}")
+
+    modCompileOnly("maven.modrinth:journeymap:${project.properties["minecraft_version"]}-${project.properties["journeymap_version"]}-forge")
 
     //Cobblemon
     implementation(kotlin("stdlib-jdk8"))

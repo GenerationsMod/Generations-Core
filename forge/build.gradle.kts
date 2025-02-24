@@ -80,6 +80,9 @@ dependencies {
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-forge:${project.properties["rei"]}")
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-forge:${project.properties["rei"]}")
 
+    //JourneyMap
+    modCompileOnly("maven.modrinth:journeymap:${project.properties["minecraft_version"]}-${project.properties["journeymap_version"]}-forge")
+
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.11.0")
     modImplementation("com.cobblemon:forge:${project.properties["cobblemon_version"]}")

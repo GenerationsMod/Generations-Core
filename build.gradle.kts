@@ -39,6 +39,7 @@ subprojects {
         maven("https://maven.generations.gg/releases")
         maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
+        maven("https://api.modrinth.com/maven").content { includeGroup("maven.modrinth") }
         maven("https://maven.impactdev.net/repository/development/")
         maven("https://maven.parchmentmc.org")
         maven("https://maven2.bai.lol").content {
@@ -48,6 +49,7 @@ subprojects {
         maven("https://maven.tterrag.com/")
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
+        maven("https://jm.gserv.me/repository/maven-public/")
     }
 
     @Suppress("UnstableApiUsage")

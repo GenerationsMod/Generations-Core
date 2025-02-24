@@ -16,6 +16,9 @@
     "fabric-datagen": ["generations.gg.generations.core.generationscore.fabric.datagen.DataGen"],
     "rei_client": [
       "generations.gg.generations.core.generationscore.common.compat.rei.ReiCompatClient"
+    ],
+    "journeymap": [
+      "generations.gg.generations.core.generationscore.fabric.compat.JourneyMapCompatClientFabric"
     ]
   },
   "mixins": [
