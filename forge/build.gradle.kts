@@ -83,6 +83,9 @@ dependencies {
     //JourneyMap
     modCompileOnly("maven.modrinth:journeymap:${project.properties["minecraft_version"]}-${project.properties["journeymap_version"]}-forge")
 
+    //Xaero's Minimap
+    modCompileOnly("maven.modrinth:xaeros-minimap:${project.properties["xaeros_minimap_version"]}_Forge_1.20")
+
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.11.0")
     modImplementation("com.cobblemon:forge:${project.properties["cobblemon_version"]}")

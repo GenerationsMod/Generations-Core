@@ -68,6 +68,13 @@ dependencies {
         exclude("net.fabricmc", "fabric-loader")
     }
 
+
+    //Xaero's Minimap
+    modCompileOnly("maven.modrinth:xaeros-minimap:${project.properties["xaeros_minimap_version"]}_Fabric_1.20") {
+        exclude("net.fabricmc", "fabric-loader")
+    }
+
+
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
     modApi("net.fabricmc:fabric-language-kotlin:1.12.0+kotlin.2.0.10")

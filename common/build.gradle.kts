@@ -27,6 +27,8 @@ dependencies {
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin:${project.properties["rei"]}")
 
     modCompileOnly("maven.modrinth:journeymap:${project.properties["minecraft_version"]}-${project.properties["journeymap_version"]}-forge")
+    modCompileOnly("maven.modrinth:xaeros-minimap:${project.properties["xaeros_minimap_version"]}_Forge_1.20")
+
 
     //Cobblemon
     implementation(kotlin("stdlib-jdk8"))
