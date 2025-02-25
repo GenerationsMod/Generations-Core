@@ -72,12 +72,12 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
             }
         }
 
-    data class CurryDexEntry(var instant: Instant, var pokemonName: String, var biome: ResourceKey<Biome>, var pos: BlockPos, var newEntry: Boolean = true, var type: CurryType= CurryType.None, var flavor: Flavor?, var rating: CurryTasteRating) {
+    data class CurryDexEntry(var instant: Long, var pokemonName: String, var biome: ResourceKey<Biome>, var pos: BlockPos, var newEntry: Boolean = true, var type: CurryType= CurryType.None, var flavor: Flavor?, var rating: CurryTasteRating) {
 
         companion object {
             @JvmField val CODEC: Codec<CurryDexEntry> = RecordCodecBuilder.create { instance ->
                 instance.group(
-                    Codec.LONG.xmap({ Instant.ofEpochMilli(it)}, { it.toEpochMilli() }).fieldOf("instant").forGetter { it.instant },
+                    Codec.LONG.fieldOf("instant").forGetter { it.instant },
                     Codec.STRING.fieldOf("pokeName").forGetter { it.pokemonName },
                     ResourceKey.codec(Registries.BIOME).fieldOf("biome").forGetter { it.biome },
                     BlockPos.CODEC.fieldOf("pos").forGetter { it.pos },
@@ -107,7 +107,6 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
     }
 
     override fun serialize(): JsonObject {
-
         val json = super.serialize()
         CODEC.encode(this, JsonOps.INSTANCE, json)
         return json
@@ -139,7 +138,7 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
 
             if (data != null) {
                 val dexEntry = CurryDexEntry(
-                    Instant.now(),
+                    Instant.now().epochSecond,
                     player.party().firstOrNull()?.let { it.getDisplayName() }?.let { it.string } ?: "n/a",
                     player.level().getBiome(player.onPos).unwrapKey().get(),
                     player.onPos,
