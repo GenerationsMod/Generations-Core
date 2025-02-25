@@ -126,7 +126,7 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
         }
 
         private val comparator: Comparator<CurryDexEntry> =
-            Comparator.comparingInt { a: CurryDexEntry -> a.type!!.ordinal }
+            Comparator.comparingInt { a: CurryDexEntry -> a.type.ordinal }
                 .thenComparingInt { a: CurryDexEntry -> a.flavor!!.ordinal }
 
         fun of(player: ServerPlayer): CurryDex {

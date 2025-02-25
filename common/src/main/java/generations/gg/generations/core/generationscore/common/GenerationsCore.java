@@ -144,7 +144,7 @@ public class GenerationsCore {
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
-		PlayerDataExtensionRegistry.INSTANCE.register(CurryDex.KEY, CurryDex.class, false);
+//		PlayerDataExtensionRegistry.INSTANCE.register(CurryDex.KEY, CurryDex.class, false);
 
 		GenerationsMolangFunctions.init();
 

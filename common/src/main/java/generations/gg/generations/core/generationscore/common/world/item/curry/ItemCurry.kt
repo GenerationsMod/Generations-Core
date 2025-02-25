@@ -6,6 +6,7 @@ import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
 import generations.gg.generations.core.generationscore.common.api.player.CurryDex
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.getFlavorLocalizedName
 import generations.gg.generations.core.generationscore.common.util.add
@@ -54,12 +55,12 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
 
     override fun onCraftedBy(stack: ItemStack, level: Level, player: Player) {
         if (player is ServerPlayer) {
-            val rating = CurryDex.of(player).currentTaste
             val data = getData(stack)
+            val rating = CurryEvents.MODIFY_RATING.invoker().modifyRating(CurryTasteRating.Koffing, player, data)!! //CurryDex.of(player).currentTaste
             data.setRating(rating)
             rating.configureData(data)
             setData(stack, data)
-            CurryDex.add(player, data)
+//            CurryDex.add(player, data)
         }
     }
 

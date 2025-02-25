@@ -4,12 +4,18 @@ import com.cobblemon.mod.common.api.berry.Berry;
 import dev.architectury.event.Event;
 import dev.architectury.event.EventActor;
 import dev.architectury.event.EventFactory;
+import dev.architectury.event.EventResult;
 import generations.gg.generations.core.generationscore.common.api.player.CurryDex;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryTasteRating;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Function;
 
 public class  CurryEvents {
     public static final Event<EventActor<Cook>> COOK = EventFactory.createEventActorLoop();
@@ -43,6 +49,15 @@ public class  CurryEvents {
         }
     }
 
+    public static final Event<ModifyRating> MODIFY_RATING = EventFactory.of(eventActors -> (original, player, data) -> {
+        CurryTasteRating rating = null;
+
+        for (var actor : eventActors) {
+            rating = actor.modifyRating(original, player, data);
+        }
+
+        return rating != null ? rating : original;
+    });
 
     public static final Event<EventActor<AddEntry>> ADD_ENTRY = EventFactory.createEventActorLoop();
     public static class AddEntry {
@@ -71,5 +86,9 @@ public class  CurryEvents {
         public ServerPlayer getPlayer() {
             return player;
         }
+    }
+
+    public static interface ModifyRating {
+        public @Nullable CurryTasteRating modifyRating(@NotNull CurryTasteRating original, @NotNull ServerPlayer player, @NotNull CurryData data);
     }
 }
