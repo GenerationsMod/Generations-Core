@@ -6,6 +6,7 @@ import generations.gg.generations.core.generationscore.common.world.item.curry.C
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.container.slots.CurryResultSlot;
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -67,36 +68,62 @@ public class CookingPotContainer extends AbstractContainerMenu {
 
     @Override
     public @NotNull ItemStack quickMoveStack(@NotNull Player playerIn, int index) {
-        ItemStack stack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
+        if (!slot.hasItem()) return ItemStack.EMPTY;
 
-        if (slot.hasItem()) {
-            ItemStack slotStack = slot.getItem();
-            stack = slotStack.copy();
+        ItemStack slotStack = slot.getItem();
+        ItemStack originalStack = slotStack.copy(); // Copy to retain original data
 
-            if (index < 14) {
-                if (!this.moveItemStackTo(slotStack, 14, 49, false)) return ItemStack.EMPTY;
-                if (index == 13) slot.onQuickCraft(slotStack, stack);
-            } else if (index < 50) {
-                if (isBerryOrMaxMushrooms(stack)) {
-                    if (!this.moveItemStackTo(slotStack, 0, 10, false)) return ItemStack.EMPTY;
-                } else if (isBowl(stack)) {
-                    if (!this.moveItemStackTo(slotStack, 10, 11, false)) return ItemStack.EMPTY;
-                } else if (isCurryIngredientOrMaxHoney(stack)) {
-                    if (!this.moveItemStackTo(slotStack, 11, 12, false)) return ItemStack.EMPTY;
-                } else if (isLog(stack)) {
-                    if (!this.moveItemStackTo(slotStack, 12, 13, false)) return ItemStack.EMPTY;
-                }
-            }
+        // Store NBT for debugging before we move it
+        CompoundTag originalNBT = slotStack.hasTag() ? slotStack.getTag().copy() : null;
 
-            if (slotStack.getCount() == 0) slot.safeInsert(ItemStack.EMPTY);
-            else slot.setChanged();
+        // Debug Log: Initial State
+        System.out.println("[DEBUG] Shift-Click Event:");
+        System.out.println("  - Clicked Slot Index: " + index);
+        System.out.println("  - Original Stack: " + originalStack);
+        System.out.println("  - Original NBT: " + (originalNBT != null ? originalNBT : "None"));
 
-            if (slotStack.getCount() == stack.getCount()) return ItemStack.EMPTY;
-            slot.onTake(playerIn, stack);
+        boolean moved = false;
+
+        // If the slot is the crafting output (slot 13), ensure crafting logic is applied before moving
+        if (index == 13) {
+            System.out.println("  - Crafting Slot Detected! Running `onTake()` before moving.");
+            slot.onTake(playerIn, slotStack);
         }
 
-        return stack;
+        if (index < 14) {
+            this.moveItemStackTo(slotStack, 14, 49, false);
+        } else if (index < 50) {
+            if (isBerryOrMaxMushrooms(originalStack)) {
+                this.moveItemStackTo(slotStack, 0, 10, false);
+            } else if (isBowl(originalStack)) {
+                this.moveItemStackTo(slotStack, 10, 11, false);
+            } else if (isCurryIngredientOrMaxHoney(originalStack)) {
+                this.moveItemStackTo(slotStack, 11, 12, false);
+            } else if (isLog(originalStack)) {
+                this.moveItemStackTo(slotStack, 12, 13, false);
+            }
+        }
+
+        if (!ItemStack.matches(slotStack, originalStack)) {
+            slotStack.setTag(originalNBT);
+        }
+
+        if (slotStack.getCount() == 0) {
+            slot.safeInsert(ItemStack.EMPTY);
+        } else {
+            slot.setChanged();
+        }
+
+        if (slotStack.getCount() == originalStack.getCount()) {
+            return ItemStack.EMPTY;
+        }
+
+        if (index == 13) {
+            slot.onTake(playerIn, originalStack);
+        }
+
+        return originalStack;
     }
 
     public static boolean isLog(ItemStack stack) {

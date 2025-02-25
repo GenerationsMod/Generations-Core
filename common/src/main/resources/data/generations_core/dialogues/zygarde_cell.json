@@ -60,7 +60,7 @@
           {
             "text": "50%",
             "value": "50",
-            "isVisible": "v.cells >= 10",
+            "isVisible": "v.cells >= ",
             "action": [
               "v.form = '50%';",
               "v.cells_needed = 50;",

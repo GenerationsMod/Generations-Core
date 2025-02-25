@@ -55,8 +55,10 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
 
     override fun onCraftedBy(stack: ItemStack, level: Level, player: Player) {
         if (player is ServerPlayer) {
+
             val data = getData(stack)
             val rating = CurryEvents.MODIFY_RATING.invoker().modifyRating(CurryTasteRating.Koffing, player, data)!! //CurryDex.of(player).currentTaste
+
             data.setRating(rating)
             rating.configureData(data)
             setData(stack, data)

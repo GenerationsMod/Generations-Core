@@ -48,7 +48,18 @@ public class CurryData {
         this(mainIngredient, berries, CurryTasteRating.Unknown);
     }
 
-    public Flavor getFlavor() {
+    public CurryData(@Nullable Flavor flavor, CurryType curryType, int experience, double healthPercentage, boolean canHealStatus, boolean canRestorePP, int friendship, CurryTasteRating rating) {
+        this.flavor = flavor;
+        this.curryType = curryType;
+        this.experience = experience;
+        this.healthPercentage = healthPercentage;
+        this.canHealStatus = canHealStatus;
+        this.canRestorePP = canRestorePP;
+        this.friendship = friendship;
+        this.rating = rating;
+    }
+
+    public @Nullable Flavor getFlavor() {
         return flavor;
     }
 
@@ -144,15 +155,16 @@ public class CurryData {
             return curry;
         }
 
-        var flavor = nbt.getInt("flavor");
+        var flavorId = nbt.getInt("flavor");
+        var flavor = flavorId == -1 ? null : Flavor.values()[flavorId];
+        var type = CurryType.getCurryTypeFromIndex(nbt.getInt("type"));
+        var experience = nbt.getInt("experience");
+        var healthPercentage = nbt.getDouble("healthPercentage");
+        var canHealStatus = nbt.getBoolean("canHealStatus");
+        var canRestorePP = nbt.getBoolean("canRestorePP");
+        var friendship = nbt.getInt("friendship");
+        var rating = CurryTasteRating.fromId(nbt.getInt("rating"));
 
-        return curry.setFlavor(flavor == -1 ? null : Flavor.values()[flavor])
-                .setCurryType(CurryType.getCurryTypeFromIndex(nbt.getInt("type")))
-                .setRating(CurryTasteRating.fromId(nbt.getInt("rating")))
-                .setExperience(nbt.getInt("experience"))
-                .setHealthPercentage(nbt.getDouble("healthPercentage"))
-                .setCanHealStatus(nbt.getBoolean("canHealStatus"))
-                .setCanRestorePP(nbt.getBoolean("canRestorePP"))
-                .setFriendship(nbt.getInt("friendship"));
+        return new CurryData(flavor, type, experience, healthPercentage, canHealStatus, canRestorePP, friendship, rating);
     }
 }
