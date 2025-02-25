@@ -80,7 +80,7 @@ public class SittableEntity extends Entity {
             {
                 SittableEntity seat = new SittableEntity(level, pos, yOffset, direction);
                 level.addFreshEntity(seat);
-                player.startRiding(seat, false);
+                player.startRiding(seat, true);
             }
         }
         return InteractionResult.SUCCESS;
