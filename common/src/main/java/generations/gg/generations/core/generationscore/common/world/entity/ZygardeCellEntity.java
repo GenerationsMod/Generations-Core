@@ -48,13 +48,13 @@ public class ZygardeCellEntity extends Entity {
         if(stack.is(GenerationsItems.ZYGARDE_CUBE.get())) {
             if(stack.getDamageValue() != ZygardeCubeItem.FULL) {
                 stack.setDamageValue(stack.getDamageValue() + 1);
-                player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.add"), false);
-                level().playSound(null, blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f);
+                player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.cell_add"), false);
+                level().playSound(null, blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.2f, 1.0f);
                 remove(RemovalReason.DISCARDED);
 
                 return InteractionResult.SUCCESS;
             } else {
-                player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.full"), false);
+                player.displayClientMessage(Component.translatable("item.generations_core.zygarde_cube.cell_full"), false);
             }
         }
 
