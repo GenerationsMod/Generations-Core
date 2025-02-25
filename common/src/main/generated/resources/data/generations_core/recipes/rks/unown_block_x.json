@@ -10,7 +10,7 @@
     {
       "type": "pokemon_item",
       "aspects": [
-        "glyph-x"
+        "x"
       ],
       "species": "cobblemon:unown"
     }

@@ -325,7 +325,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     private void unownBlock(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Block> createdBlock, String form){
         ShapelessRksRecipeJsonBuilder.create(createdBlock.get())
                 .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
-                .requires(new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of("glyph-" + form)))
+                .requires(new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of(form)))
                 .criterion(getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()), has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()))
                 .offerTo(consumer, createdBlock.getId());
     }

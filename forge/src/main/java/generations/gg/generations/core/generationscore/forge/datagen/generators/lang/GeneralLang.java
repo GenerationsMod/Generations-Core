@@ -168,6 +168,9 @@ public class GeneralLang extends LanguageProvider {
         add("cobblemon.move.psychicnoise", "Psychic Noise");
         add("cobblemon.move.psychicnoise.name", "Psychic Noise");
         add("cobblemon.move.psychicnoise.desc", "The user attacks with unpleasant sound waves, preventing the target from recovering HP through moves, abilities, or held items for two turns.");
+        add("cobblemon.move.supercellslam", "Supercell Slam");
+        add("cobblemon.move.supercellslam.name", "Supercell Slam");
+        add("cobblemon.move.supercellslam.desc", "The user electrifies its body and drops onto the target to inflict damage. If this move misses, the user takes damage instead.");
         add("cobblemon.species.ponytagalar.name", "Galarian Ponyta");
 
         //Posters

@@ -1,5 +1,9 @@
 {
   "values": [
+    "generations_core:burn_drive",
+    "generations_core:chill_drive",
+    "generations_core:douse_drive",
+    "generations_core:shock_drive",
     "generations_core:bug_memory_drive",
     "generations_core:dark_memory_drive",
     "generations_core:dragon_memory_drive",
