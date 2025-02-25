@@ -92,14 +92,18 @@
   "evolutions": [
     {
       "id": "dipplin_hydrapple",
-      "variant": "item_interact",
+      "variant": "level_up",
       "result": "hydrapple",
       "consumeHeldItem": false,
       "learnableMoves": [
         "ficklebeam"
       ],
-      "requirements": [],
-      "requiredContext": "minecraft:golden_apple"
+      "requirements": [
+        {
+          "variant": "has_move",
+          "type": "dragoncheer"
+        }
+      ]
     }
   ],
   "cannotDynamax": false,
