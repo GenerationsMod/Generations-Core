@@ -84,8 +84,7 @@ public class RksMachineContainer extends AbstractContainerMenu {
 				}
 
 				this.rksMachine.setChanged();
-				this.broadcastChanges();     
-0
+				this.broadcastChanges();
 				if (slotStack.getCount() == returnStack.getCount()) {
 					return ItemStack.EMPTY;
 				}
