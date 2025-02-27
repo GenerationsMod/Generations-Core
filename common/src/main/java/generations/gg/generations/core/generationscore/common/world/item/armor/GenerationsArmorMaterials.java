@@ -4,12 +4,14 @@ import com.cobblemon.mod.common.CobblemonItems;
 import com.google.common.base.Suppliers;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import net.minecraft.Util;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum GenerationsArmorMaterials implements ArmorMaterial {
@@ -39,7 +41,7 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
 
 	private final String name;
     private final int durabilityMultiplier;
-    private final int[] slotProtections;
+    private final EnumMap<ArmorItem.Type, Integer> slotProtections;
     private final int enchantmentValue;
     private final SoundEvent sound;
     private final float toughness;
@@ -49,7 +51,12 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
     GenerationsArmorMaterials(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Supplier<Item> repairIngredient, float toughness, float knockbackResistance) {
         this.name = GenerationsCore.MOD_ID + ":" + name;
         this.durabilityMultiplier = durabilityMultiplier;
-        this.slotProtections = slotProtections;
+        this.slotProtections = Util.make(new EnumMap<ArmorItem.Type, Integer>(ArmorItem.Type.class), map -> {
+            map.put(ArmorItem.Type.BOOTS, slotProtections[0]);
+            map.put(ArmorItem.Type.LEGGINGS, slotProtections[1]);
+            map.put(ArmorItem.Type.CHESTPLATE, slotProtections[2]);
+            map.put(ArmorItem.Type.HELMET, slotProtections[3]);
+        });
         this.enchantmentValue = enchantmentValue;
         this.sound = SoundEvents.ARMOR_EQUIP_IRON;
         this.toughness = toughness;
@@ -68,7 +75,7 @@ public enum GenerationsArmorMaterials implements ArmorMaterial {
 
     @Override
     public int getDefenseForType(ArmorItem.Type type) {
-        return this.slotProtections[type.getSlot().getIndex()];
+        return this.slotProtections.get(type);
     }
 
     public int getEnchantmentValue() {

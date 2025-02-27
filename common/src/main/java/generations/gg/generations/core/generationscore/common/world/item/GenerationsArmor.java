@@ -127,7 +127,7 @@ public class GenerationsArmor {
 					register(name + "_helmet", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.HELMET, properties)),
 					register(name + "_chestplate", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.CHESTPLATE, properties)),
 					register(name + "_leggings", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.LEGGINGS, properties)),
-					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.BOOTS, properties).addArmorEffects(armorEffects)),
+					register(name + "_boots", properties -> new GenerationsArmorItem(armorMaterial.get(), ArmorItem.Type.BOOTS, properties, armorEffects)),
 					armorMaterial
 			);
 		}

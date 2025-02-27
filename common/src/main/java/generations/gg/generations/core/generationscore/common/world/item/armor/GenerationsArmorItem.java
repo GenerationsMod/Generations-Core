@@ -3,20 +3,21 @@ package generations.gg.generations.core.generationscore.common.world.item.armor;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import dev.architectury.extensions.ItemExtension;
+import net.minecraft.Util;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ArmorItem;
-import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -24,11 +25,9 @@ public class GenerationsArmorItem extends ArmorItem implements ItemExtension {
     public final Set<ArmorTickEffect> armorEffects = new HashSet<>();
     public final Set<CustomAttributeModifier> customAttributeModifiers = new HashSet<>();
 
-    public GenerationsArmorItem(ArmorMaterial armorMaterial, Type equipmentSlot, Properties properties) {
+    public GenerationsArmorItem(ArmorMaterial armorMaterial, Type equipmentSlot, Properties properties, ArmorEffect... armorEffects) {
         super(armorMaterial, equipmentSlot, properties);
-    }
 
-    public GenerationsArmorItem addArmorEffects(ArmorEffect... armorEffects) {
         for (ArmorEffect armorEffect : armorEffects) {
             if (armorEffect instanceof ArmorTickEffect effect) {
                 this.armorEffects.add(effect);
@@ -36,7 +35,6 @@ public class GenerationsArmorItem extends ArmorItem implements ItemExtension {
                 this.customAttributeModifiers.add(effect);
             }
         }
-        return this;
     }
 
     //Method for Forge
@@ -45,6 +43,8 @@ public class GenerationsArmorItem extends ArmorItem implements ItemExtension {
         for (CustomAttributeModifier customAttributeModifier : customAttributeModifiers) {
             customAttributeModifier.getAttributeModifiers(builder, equipmentSlot, itemStack, this);
         }
+
+        builder.putAll(this.getDefaultAttributeModifiers(equipmentSlot));
 
         return builder.build();
     }
