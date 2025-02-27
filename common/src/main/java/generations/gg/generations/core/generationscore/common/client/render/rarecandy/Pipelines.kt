@@ -405,7 +405,7 @@ private val UniformUploadContext.statueMaterial: String?
 
 private val UniformUploadContext.transform: Transform
     get() {
-        return this.instance.instanceOrNull<AnimatedObjectInstance>()?.getTransform(this.material.materialName) ?: this.`object`().getTransform(this.instance.variant())
+        return this.instance.instanceOrNull<AnimatedObjectInstance>()?.getTransform(this.material.materialName)?.takeIf { !it.isUnit } ?: this.`object`().getTransform(this.instance.variant())
     }
 
 private fun Pipeline.Builder.shader(
