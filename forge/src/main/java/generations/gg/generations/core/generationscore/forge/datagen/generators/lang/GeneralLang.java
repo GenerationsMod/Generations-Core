@@ -369,11 +369,12 @@ public class GeneralLang extends LanguageProvider {
         this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot");
         addTooltip(MELOETTA_MUSIC_BOX, "§7HINT: You hear a wonderful melody from within. You need to hear more.”");
         //Zygarde
-        addTooltip(ZYGARDE_CUBE, "A strange cube capable of storing up to 100 Zygarde Cells, as well as fusing them together to reconstruct the legendary Zygarde.");
-        add("item.generations_core.zygarde_cube.cell_add", "Zygarde Cell collected!");
-        add("item.generations_core.zygarde_cube.cell_add", "The Zygarde Cube is full!");
-        addTooltip(ZYGARDE_CUBE, "lore1", "Collect Zygarde Cells to summon the balance.");
-        addTooltip(ZYGARDE_CUBE, "lore2", "Cells collected: %s/%s");
+        addTooltip(ZYGARDE_CUBE, "cell_add", "Zygarde Cell collected!");
+        addTooltip(ZYGARDE_CUBE, "cell_full", "The Zygarde Cube is full!");
+        addTooltip(ZYGARDE_CUBE, "lore1", "A strange cube capable of storing up to 100 Zygarde Cells,");
+        addTooltip(ZYGARDE_CUBE, "lore2", "as well as fusing them together to reconstruct the legendary Zygarde.");
+        addTooltip(ZYGARDE_CUBE, "lore3", "Collect Zygarde Cells to summon the balance.");
+        addTooltip(ZYGARDE_CUBE, "lore4", "Cells collected: %s/%s");
 
         addEntityType(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells");
         add("gui.zygarde_cube", "Zygarde Cube");
