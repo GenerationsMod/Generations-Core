@@ -101,7 +101,7 @@
       "requirements": [
         {
           "variant": "has_move",
-          "type": "dragoncheer"
+          "move": "dragoncheer"
         }
       ]
     }

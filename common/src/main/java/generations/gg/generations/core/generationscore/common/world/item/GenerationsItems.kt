@@ -1517,12 +1517,8 @@ object GenerationsItems {
     private fun registerMail(name: String, type: MailType): RegistrySupplier<MailItem> = register(name, type::createMailItem, POKEMAIL)
 
     private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { createFormChangingItem(it, "type", type.name, cobblemonResource("arceus")).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "")) } }, FORM_ITEMS)
-    private fun registerDrive(name: String, type: String): RegistrySupplier<FormChangingItem> = register(name, { createFormChangingItem(it, "drive", type, cobblemonResource("genesect")).also {
-        CobblemonHeldItemManager.registerRemap(it, name.replace("_", ""))
-    } }, FORM_ITEMS)
-    private fun registerMemory(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { createFormChangingItem(it, "type", type.name, cobblemonResource("silvally")).also {
-        CobblemonHeldItemManager.registerRemap(it, name.replace("_", "").replace("drive", ""))
-    } }, FORM_ITEMS)
+    private fun registerDrive(name: String, type: String): RegistrySupplier<FormChangingItem> = register(name, { createFormChangingItem(it, "drive", type, cobblemonResource("genesect")).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "")) } }, FORM_ITEMS)
+    private fun registerMemory(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(name, { createFormChangingItem(it, "type", type.name, cobblemonResource("silvally")).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "").replace("drive", "")) } }, FORM_ITEMS)
 
     private fun registerCap(name: String): RegistrySupplier<FormChangingItem> = register("${name}_cap", { createFormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
 
