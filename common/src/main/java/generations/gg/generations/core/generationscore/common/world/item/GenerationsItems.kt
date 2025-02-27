@@ -371,6 +371,7 @@ object GenerationsItems {
     @JvmField val TM_234 = registerTmRegular("tm_234", "workup")
     @JvmField val TM_235 = registerTmRegular("tm_235", "allyswitch")
     @JvmField val TM_236 = registerTmRegular("tm_236", "triattack")
+    @JvmField val TM_237 = registerTmRegular("tm_237", "return")
 
 
 
