@@ -160,7 +160,7 @@ public class RksMachineContainer extends AbstractContainerMenu implements Toggle
 
 		@Override
 		public void onTake(@NotNull Player player, @NotNull ItemStack stack) {
-			if(container instanceof RksMachineBlockEntity rks && rks.getRecipeUsed() instanceof RksRecipe recipe) recipe.proces- s(player, rks, stack);
+			if(container instanceof RksMachineBlockEntity rks && rks.getRecipeUsed() instanceof RksRecipe recipe) recipe.process(player, rks, stack);
 			this.checkTakeAchievements(stack);
 			super.onTake(player, stack);
 		}
