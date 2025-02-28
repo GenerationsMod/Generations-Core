@@ -7,8 +7,7 @@
             "id": "grapploct-1",
             "pokemon": "grapploct",
             "presets": [
-                "underwater",
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",

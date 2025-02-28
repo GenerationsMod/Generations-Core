@@ -7,8 +7,7 @@
             "id": "clobbopus-1",
             "pokemon": "clobbopus",
             "presets": [
-                "underwater",
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",

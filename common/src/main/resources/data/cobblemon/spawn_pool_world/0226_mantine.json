@@ -7,8 +7,7 @@
             "id": "mantine-1",
             "pokemon": "mantine",
             "presets": [
-                "underwater",
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",
