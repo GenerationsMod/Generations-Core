@@ -2009,7 +2009,7 @@
         },
         {
           "variant": "biome",
-          "biomeAnticondition": "#minecraft:is_freezing"
+          "biomeAnticondition": "#cobblemon:is_freezing"
         }
       ],
       "requiredContext": "cobblemon:thunder_stone"
@@ -2017,7 +2017,7 @@
     {
       "id": "pikachu_raichu",
       "variant": "item_interact",
-      "result": "raichu alolan=false",
+      "result": "raichu",
       "consumeHeldItem": false,
       "learnableMoves": [
         "thunderpunch"
