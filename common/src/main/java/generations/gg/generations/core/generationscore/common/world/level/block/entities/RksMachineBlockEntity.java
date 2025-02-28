@@ -27,11 +27,13 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.Containers;
+import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
@@ -47,7 +49,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuRegistry.ExtendedMenuTypeFactory<RksMachineContainer>, ExtendedMenuProvider, Container, RecipeHolder, StackedContentsCompatible, Toggleable {
+public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuProvider, Container, RecipeHolder, StackedContentsCompatible, Toggleable {
 
     private static final int[] OUTPUT_SLOTS = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     private static final int[] INPUT_SLOTS = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -57,6 +59,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     private static final String PROCESSING_TIME_TAG = "ProcessingTime";
     private static final String PROCESSING_TIME_TOTAL_TAG = "ProcessingTimeTotal";
     private static final String IS_PROCESSING_TAG = "IsProcessing";
+    private final ContainerData dataAccess;
 
     public int processingTime;
     public int processTimeTotal;
@@ -71,10 +74,36 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
 
     private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
 
-
     public RksMachineBlockEntity(BlockPos pos, BlockState state) {
         super(GenerationsBlockEntities.RKS_MACHINE.get(), pos, state);
         this.inventory = NonNullList.withSize(9, ItemStack.EMPTY);
+
+        this.dataAccess = new ContainerData() {
+
+            @Override
+            public int get(int index) {
+                return switch (index) {
+                    case 0 -> RksMachineBlockEntity.this.processingTime;
+                    case 1 -> RksMachineBlockEntity.this.processTimeTotal;
+                    case 2 -> RksMachineBlockEntity.this.isProcessing ? 1 : 0;
+                    case 3 -> RksMachineBlockEntity.this.pokemon.isPresent() ? 1 : 0;
+                    default -> 0;
+                };
+            }
+
+            @Override
+            public void set(int index, int value) {
+                switch (index) {
+                    case 2 -> RksMachineBlockEntity.this.isProcessing = value == 1;
+                }
+                RksMachineBlockEntity.this.setChanged();
+            }
+
+            @Override
+            public int getCount() {
+                return 4;
+            }
+        };
     }
 
     @Override
@@ -107,7 +136,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int syncId, @NotNull Inventory inv, @NotNull Player player) {
-        return new RksMachineContainer(new GenerationsContainers.CreationContext<>(syncId, inv, this));
+        return new RksMachineContainer(syncId, inv, this, dataAccess);
     }
 
 //    @Override
@@ -184,12 +213,6 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         }
         inventory.set(slot - 1, stack);
         setChanged();
-    }
-
-    @Override
-    public void setChanged() {
-        super.setChanged();
-        for (RksMachineContainer c : openContainers) c.slotsChanged(this);
     }
 
     @Override
@@ -393,17 +416,17 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         return isProcessing;
     }
 
-    @Override
-    public void saveExtraData(FriendlyByteBuf buf) {
-        buf.writeBlockPos(getBlockPos());
+    public void addMenu(RksMachineContainer rksMachineContainer) {
+        openContainers.add(rksMachineContainer);
+    }
+
+    public void removeMenu(RksMachineContainer rksMachineContainer) {
+        openContainers.remove(rksMachineContainer);
     }
 
     @Override
-    public RksMachineContainer create(int id, Inventory inventory, FriendlyByteBuf buf) {
-        if (inventory.player.level().getBlockEntity(buf.readBlockPos()) instanceof RksMachineBlockEntity cookingPot) {
-            return new RksMachineContainer(new GenerationsContainers.CreationContext<>(id, inventory, cookingPot));
-        } else {
-            return null;
-        }
+    public void setChanged() {
+        super.setChanged();
+        openContainers.forEach(AbstractContainerMenu::broadcastChanges);
     }
 }

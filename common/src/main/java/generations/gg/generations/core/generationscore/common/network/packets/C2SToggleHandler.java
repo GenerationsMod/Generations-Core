@@ -9,7 +9,15 @@ import org.jetbrains.annotations.NotNull;
 public class C2SToggleHandler implements ServerNetworkPacketHandler<C2STogglePacket> {
     @Override
     public void handle(@NotNull C2STogglePacket packet, @NotNull MinecraftServer minecraftServer, @NotNull ServerPlayer player) {
-        if (player.level().getBlockEntity(packet.pos()) instanceof Toggleable te)
-            te.setToggled(!te.isToggled());
+        Toggleable toggleable = null;
+
+        if (packet.pos() != null && player.level().getBlockEntity(packet.pos()) instanceof Toggleable te) {
+            toggleable = te;
+
+        } else if(player.containerMenu instanceof Toggleable te) {
+            toggleable = te;
+        }
+
+        if(toggleable != null) toggleable.setToggled(!toggleable.isToggled());
     }
 }

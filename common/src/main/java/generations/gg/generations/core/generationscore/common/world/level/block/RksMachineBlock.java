@@ -83,7 +83,7 @@ public class RksMachineBlock extends GenericRotatableModelBlock<RksMachineBlockE
     protected void openContainer(Level level, BlockPos bpos, Player player) {
         var rksMachine = getAssoicatedBlockEntity(level, bpos).orElseThrow(() -> new IllegalStateException("Our named container provider is missing!"));
         if (rksMachine != null) {
-            MenuRegistry.openExtendedMenu((ServerPlayer) player, rksMachine);
+            MenuRegistry.openMenu((ServerPlayer) player, rksMachine);
             player.awardStat(Stats.INTERACT_WITH_FURNACE);
         }
     }
