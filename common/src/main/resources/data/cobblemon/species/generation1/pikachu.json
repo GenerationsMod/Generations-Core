@@ -36,42 +36,55 @@
     "alolan",
     "region_bias"
   ],
-  "forms":[
-    {
-      "name":"base"
+  "behaviour": {
+    "moving": {
+      "walk": {
+        "walkSpeed": 0.42
+      }
     },
+    "resting": {
+      "canSleep": true,
+      "willSleepOnBed": true,
+      "depth": "normal",
+      "light": "0-4"
+    }
+  },
+  "catchRate": 190,
+  "maleRatio": 0.5,
+  "shoulderMountable": true,
+  "forms": [
     {
-      "name":"Cosplay",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Cosplay",
+      "primaryType": "electric",
+      "abilities": [
         "lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":0,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:tailwhip",
         "1:thundershock",
         "5:growl",
@@ -137,293 +150,281 @@
         "tutor:thundershock",
         "tutor:thunderwave"
       ],
-      "labels":[
+      "labels": [
         "gen6"
       ],
-      "aspects":[
+      "aspects": [
         "cosplay"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Rock-Star",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Rock-Star",
+      "primaryType": "electric",
+      "abilities": [
         "lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":0,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "form_change:meteormash"
       ],
-      "labels":[
+      "labels": [
         "gen6"
       ],
-      "aspects":[
+      "aspects": [
         "rock-star"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Belle",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Belle",
+      "primaryType": "electric",
+      "abilities": [
         "lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":0,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "form_change:iciclecrash"
       ],
-      "labels":[
+      "labels": [
         "gen6"
       ],
-      "aspects":[
+      "aspects": [
         "belle"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Pop-Star",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Pop-Star",
+      "primaryType": "electric",
+      "abilities": [
         "lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":0,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "form_change:drainingkiss"
       ],
-      "labels":[
+      "labels": [
         "gen6"
       ],
-      "aspects":[
+      "aspects": [
         "pop-star"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"PhD",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "PhD",
+      "primaryType": "electric",
+      "abilities": [
         "lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":0,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "form_change:electricterrain"
       ],
-      "labels":[
+      "labels": [
         "gen6"
       ],
-      "aspects":[
+      "aspects": [
         "phd"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Libre",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Libre",
+      "primaryType": "electric",
+      "abilities": [
         "lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":0,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "form_change:flyingpress"
       ],
-      "labels":[
+      "labels": [
         "gen6"
       ],
-      "aspects":[
+      "aspects": [
         "libre"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Original",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Original",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -454,9 +455,11 @@
         "egg:tickle",
         "egg:wish",
         "tm:agility",
+        "tm:alluringvoice",
         "tm:attract",
         "tm:bodyslam",
         "tm:brickbreak",
+        "tm:charge",
         "tm:chargebeam",
         "tm:charm",
         "tm:confide",
@@ -470,15 +473,18 @@
         "tm:electroball",
         "tm:electroweb",
         "tm:encore",
+        "tm:endeavor",
         "tm:endure",
         "tm:facade",
         "tm:faketears",
         "tm:fling",
+        "tm:focuspunch",
         "tm:frustration",
         "tm:grassknot",
         "tm:helpinghand",
         "tm:hiddenpower",
         "tm:irontail",
+        "tm:knockoff",
         "tm:lightscreen",
         "tm:megakick",
         "tm:megapunch",
@@ -508,6 +514,7 @@
         "tm:toxic",
         "tm:trailblaze",
         "tm:uproar",
+        "tm:upperhand",
         "tm:voltswitch",
         "tm:wildcharge",
         "tutor:agility",
@@ -529,53 +536,51 @@
         "tutor:thunderpunch",
         "tutor:volttackle"
       ],
-      "labels":[
+      "labels": [
         "gen7"
       ],
-      "aspects":[
+      "aspects": [
         "original"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Hoenn",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Hoenn",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -606,9 +611,11 @@
         "egg:tickle",
         "egg:wish",
         "tm:agility",
+        "tm:alluringvoice",
         "tm:attract",
         "tm:bodyslam",
         "tm:brickbreak",
+        "tm:charge",
         "tm:chargebeam",
         "tm:charm",
         "tm:confide",
@@ -622,15 +629,18 @@
         "tm:electroball",
         "tm:electroweb",
         "tm:encore",
+        "tm:endeavor",
         "tm:endure",
         "tm:facade",
         "tm:faketears",
         "tm:fling",
+        "tm:focuspunch",
         "tm:frustration",
         "tm:grassknot",
         "tm:helpinghand",
         "tm:hiddenpower",
         "tm:irontail",
+        "tm:knockoff",
         "tm:lightscreen",
         "tm:megakick",
         "tm:megapunch",
@@ -659,6 +669,7 @@
         "tm:thunderwave",
         "tm:toxic",
         "tm:trailblaze",
+        "tm:upperhand",
         "tm:uproar",
         "tm:voltswitch",
         "tm:wildcharge",
@@ -680,53 +691,51 @@
         "tutor:thunderpunch",
         "tutor:volttackle"
       ],
-      "labels":[
+      "labels": [
         "gen7"
       ],
-      "aspects":[
+      "aspects": [
         "hoenn"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Sinnoh",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Sinnoh",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -757,9 +766,11 @@
         "egg:tickle",
         "egg:wish",
         "tm:agility",
+        "tm:alluringvoice",
         "tm:attract",
         "tm:bodyslam",
         "tm:brickbreak",
+        "tm:charge",
         "tm:chargebeam",
         "tm:charm",
         "tm:confide",
@@ -773,15 +784,18 @@
         "tm:electroball",
         "tm:electroweb",
         "tm:encore",
+        "tm:endeavor",
         "tm:endure",
         "tm:facade",
         "tm:faketears",
         "tm:fling",
+        "tm:focuspunch",
         "tm:frustration",
         "tm:grassknot",
         "tm:helpinghand",
         "tm:hiddenpower",
         "tm:irontail",
+        "tm:knockoff",
         "tm:lightscreen",
         "tm:megakick",
         "tm:megapunch",
@@ -810,6 +824,7 @@
         "tm:thunderwave",
         "tm:toxic",
         "tm:trailblaze",
+        "tm:upperhand",
         "tm:uproar",
         "tm:voltswitch",
         "tm:wildcharge",
@@ -830,53 +845,51 @@
         "tutor:thunderpunch",
         "tutor:volttackle"
       ],
-      "labels":[
+      "labels": [
         "gen7"
       ],
-      "aspects":[
+      "aspects": [
         "sinnoh"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Unova",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Unova",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -907,9 +920,11 @@
         "egg:tickle",
         "egg:wish",
         "tm:agility",
+        "tm:alluringvoice",
         "tm:attract",
         "tm:bodyslam",
         "tm:brickbreak",
+        "tm:charge",
         "tm:chargebeam",
         "tm:charm",
         "tm:confide",
@@ -923,15 +938,18 @@
         "tm:electroball",
         "tm:electroweb",
         "tm:encore",
+        "tm:endeavor",
         "tm:endure",
         "tm:facade",
         "tm:faketears",
         "tm:fling",
+        "tm:focuspunch",
         "tm:frustration",
         "tm:grassknot",
         "tm:helpinghand",
         "tm:hiddenpower",
         "tm:irontail",
+        "tm:knockoff",
         "tm:lightscreen",
         "tm:megakick",
         "tm:megapunch",
@@ -960,6 +978,7 @@
         "tm:thunderwave",
         "tm:toxic",
         "tm:trailblaze",
+        "tm:upperhand",
         "tm:uproar",
         "tm:voltswitch",
         "tm:wildcharge",
@@ -980,53 +999,51 @@
         "tutor:thunderpunch",
         "tutor:volttackle"
       ],
-      "labels":[
+      "labels": [
         "gen7"
       ],
-      "aspects":[
+      "aspects": [
         "unova"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Kalos",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Kalos",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -1057,9 +1074,11 @@
         "egg:tickle",
         "egg:wish",
         "tm:agility",
+        "tm:alluringvoice",
         "tm:attract",
         "tm:bodyslam",
         "tm:brickbreak",
+        "tm:charge",
         "tm:chargebeam",
         "tm:charm",
         "tm:confide",
@@ -1073,15 +1092,18 @@
         "tm:electroball",
         "tm:electroweb",
         "tm:encore",
+        "tm:endeavor",
         "tm:endure",
         "tm:facade",
         "tm:faketears",
         "tm:fling",
+        "tm:focuspunch",
         "tm:frustration",
         "tm:grassknot",
         "tm:helpinghand",
         "tm:hiddenpower",
         "tm:irontail",
+        "tm:knockoff",
         "tm:lightscreen",
         "tm:megakick",
         "tm:megapunch",
@@ -1110,6 +1132,7 @@
         "tm:thunderwave",
         "tm:toxic",
         "tm:trailblaze",
+        "tm:upperhand",
         "tm:uproar",
         "tm:voltswitch",
         "tm:wildcharge",
@@ -1131,53 +1154,51 @@
         "tutor:thunderpunch",
         "tutor:volttackle"
       ],
-      "labels":[
+      "labels": [
         "gen7"
       ],
-      "aspects":[
+      "aspects": [
         "kalos"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Alola",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Alola",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -1208,9 +1229,11 @@
         "egg:tickle",
         "egg:wish",
         "tm:agility",
+        "tm:alluringvoice",
         "tm:attract",
         "tm:bodyslam",
         "tm:brickbreak",
+        "tm:charge",
         "tm:chargebeam",
         "tm:charm",
         "tm:confide",
@@ -1224,15 +1247,18 @@
         "tm:electroball",
         "tm:electroweb",
         "tm:encore",
+        "tm:endeavor",
         "tm:endure",
         "tm:facade",
         "tm:faketears",
         "tm:fling",
+        "tm:focuspunch",
         "tm:frustration",
         "tm:grassknot",
         "tm:helpinghand",
         "tm:hiddenpower",
         "tm:irontail",
+        "tm:knockoff",
         "tm:lightscreen",
         "tm:megakick",
         "tm:megapunch",
@@ -1261,6 +1287,7 @@
         "tm:thunderwave",
         "tm:toxic",
         "tm:trailblaze",
+        "tm:upperhand",
         "tm:uproar",
         "tm:voltswitch",
         "tm:wildcharge",
@@ -1282,53 +1309,52 @@
         "tutor:thunderpunch",
         "tutor:volttackle"
       ],
-      "labels":[
-        "gen7"
+      "labels": [
+        "gen7",
+        "alola_regional"
       ],
-      "aspects":[
+      "aspects": [
         "alola"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Partner",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Partner",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -1359,9 +1385,11 @@
         "egg:tickle",
         "egg:wish",
         "tm:agility",
+        "tm:alluringvoice",
         "tm:attract",
         "tm:bodyslam",
         "tm:brickbreak",
+        "tm:charge",
         "tm:chargebeam",
         "tm:charm",
         "tm:confide",
@@ -1375,15 +1403,18 @@
         "tm:electroball",
         "tm:electroweb",
         "tm:encore",
+        "tm:endeavor",
         "tm:endure",
         "tm:facade",
         "tm:faketears",
         "tm:fling",
+        "tm:focuspunch",
         "tm:frustration",
         "tm:grassknot",
         "tm:helpinghand",
         "tm:hiddenpower",
         "tm:irontail",
+        "tm:knockoff",
         "tm:lightscreen",
         "tm:megakick",
         "tm:megapunch",
@@ -1412,6 +1443,7 @@
         "tm:thunderwave",
         "tm:toxic",
         "tm:trailblaze",
+        "tm:upperhand",
         "tm:uproar",
         "tm:voltswitch",
         "tm:wildcharge",
@@ -1433,53 +1465,51 @@
         "tutor:thunderpunch",
         "tutor:volttackle"
       ],
-      "labels":[
+      "labels": [
         "gen7"
       ],
-      "aspects":[
+      "aspects": [
         "partner"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Starter",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Starter",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":45,
-        "attack":80,
-        "defence":50,
-        "special_attack":75,
-        "special_defence":60,
-        "speed":120
+      "baseStats": {
+        "hp": 45,
+        "attack": 80,
+        "defence": 50,
+        "special_attack": 75,
+        "special_defence": 60,
+        "speed": 120
       },
-      "catchRate":190,
-      "maleRatio":0.5,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:growl",
         "1:thundershock",
         "3:tailwhip",
@@ -1543,101 +1573,97 @@
         "tutor:toxic",
         "tutor:zippyzap"
       ],
-      "labels":[
+      "labels": [
         "gen7"
       ],
-      "aspects":[
+      "aspects": [
         "starter"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Gmax",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "Gmax",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":0.5,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 0.5,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "field",
         "fairy"
       ],
-      "labels":[
+      "labels": [
         "gen8",
         "gmax"
       ],
-      "aspects":[
+      "aspects": [
         "gmax"
       ],
-      "height":210,
-      "weight":0,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 210,
+      "weight": 0,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"World",
-      "primaryType":"electric",
-      "abilities":[
+      "name": "World",
+      "primaryType": "electric",
+      "abilities": [
         "static",
         "h:lightningrod"
       ],
-      "baseStats":{
-        "hp":35,
-        "attack":55,
-        "defence":40,
-        "special_attack":50,
-        "special_defence":50,
-        "speed":90
+      "baseStats": {
+        "hp": 35,
+        "attack": 55,
+        "defence": 40,
+        "special_attack": 50,
+        "special_defence": 50,
+        "speed": 90
       },
-      "catchRate":190,
-      "maleRatio":1,
-      "baseExperienceYield":112,
-      "baseFriendship":50,
-      "evYield":{
-        "hp":0,
-        "attack":0,
-        "defence":0,
-        "special_attack":0,
-        "special_defence":0,
-        "speed":2
+      "catchRate": 190,
+      "maleRatio": 1,
+      "baseExperienceYield": 112,
+      "baseFriendship": 50,
+      "evYield": {
+        "hp": 0,
+        "attack": 0,
+        "defence": 0,
+        "special_attack": 0,
+        "special_defence": 0,
+        "speed": 2
       },
-      "experienceGroup":"medium_fast",
-      "eggCycles":10,
-      "eggGroups":[
+      "experienceGroup": "medium_fast",
+      "eggCycles": 10,
+      "eggGroups": [
         "undiscovered"
       ],
-      "moves":[
+      "moves": [
         "1:charm",
         "1:growl",
         "1:nastyplot",
@@ -1722,83 +1748,62 @@
         "tutor:thunderbolt",
         "tutor:volttackle"
       ],
-      "labels":[
+      "labels": [
         "gen8"
       ],
-      "aspects":[
+      "aspects": [
         "world"
       ],
-      "height":4,
-      "weight":60,
-      "evolutions":[
-        
-      ],
-      "cannotDynamax":false,
-      "battleOnly":false
+      "height": 4,
+      "weight": 60,
+      "evolutions": [],
+      "cannotDynamax": false,
+      "battleOnly": false
     },
     {
-      "name":"Alolan",
-      "maleRatio":0.5,
-      "labels":[
+      "name": "Alola Bias",
+      "maleRatio": 0.5,
+      "labels": [
         "alola_regional"
       ],
-      "aspects":[
-        "alolan"
+      "aspects": [
+        "region-bias-alola"
       ],
-      "evolutions":[
+      "evolutions": [
         {
-          "id":"pikachu_raichu_alolan_kantonian",
-          "variant":"item_interact",
-          "result":"raichu alolan=false",
-          "consumeHeldItem":false,
-          "learnableMoves":[
+          "id": "alola_pikachu_raichu",
+          "variant": "item_interact",
+          "result": "raichu alolan=false",
+          "consumeHeldItem": false,
+          "learnableMoves": [
             "thunderpunch"
           ],
-          "requirements":[
+          "requirements": [
             {
-              "variant":"biome",
-              "biomeCondition":"#cobblemon:is_temperate"
+              "variant": "biome",
+              "biomeCondition": "#cobblemon:is_forest"
+            },
+            {
+              "variant": "biome",
+              "biomeAnticondition": "#cobblemon:is_spooky"
             }
           ],
-          "requiredContext":"cobblemon:thunder_stone"
+          "requiredContext": "cobblemon:thunder_stone"
         },
         {
-          "id":"pikachu_raichu_alolan",
-          "variant":"item_interact",
-          "result":"raichu alolan",
-          "consumeHeldItem":false,
-          "learnableMoves":[
+          "id": "alola_pikachu_alola_raichu",
+          "variant": "item_interact",
+          "result": "raichu alolan",
+          "consumeHeldItem": false,
+          "learnableMoves": [
             "psychic"
           ],
-          "requirements":[
-            {
-              "variant":"biome",
-              "biomeAnticondition":"#cobblemon:is_temperate"
-            }
-          ],
-          "requiredContext":"cobblemon:thunder_stone"
+          "requirements": [],
+          "requiredContext": "cobblemon:thunder_stone"
         }
       ]
     }
   ],
-  "behaviour":{
-    "moving":{
-      "swim":{
-        "canSwimInWater":true,
-        "canBreatheUnderwater":true
-      }
-    },
-    "resting":{
-      "canSleep":true,
-      "willSleepOnBed":false,
-      "depth":"normal",
-      "light":"0-4"
-    }
-  },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": true,
-
   "baseExperienceYield": 112,
   "experienceGroup": "medium_fast",
   "eggCycles": 10,
@@ -2009,7 +2014,7 @@
         },
         {
           "variant": "biome",
-          "biomeAnticondition": "#cobblemon:is_freezing"
+          "biomeAnticondition": "#minecraft:is_freezing"
         }
       ],
       "requiredContext": "cobblemon:thunder_stone"
@@ -2017,7 +2022,7 @@
     {
       "id": "pikachu_raichu",
       "variant": "item_interact",
-      "result": "raichu",
+      "result": "raichu alolan=false",
       "consumeHeldItem": false,
       "learnableMoves": [
         "thunderpunch"
