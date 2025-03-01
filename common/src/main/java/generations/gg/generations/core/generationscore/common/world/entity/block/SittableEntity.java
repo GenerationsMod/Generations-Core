@@ -96,11 +96,16 @@ public class SittableEntity extends Entity {
             List<SittableEntity> seats = level.getEntitiesOfClass(SittableEntity.class, new AABB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() + 1.0, pos.getZ() + 1.0));
             if(seats.isEmpty()) {
                 SittableEntity seat = new SittableEntity(level, pos, yOffset, direction);
-                level.addFreshEntity(seat);
-                player.startRiding(seat);
+                if(level.addFreshEntity(seat)) {
+                    player.startRiding(seat);
+                    return InteractionResult.SUCCESS;
+                } else {
+                    return InteractionResult.FAIL;
+                }
             }
         }
-        return InteractionResult.SUCCESS;
+
+        return InteractionResult.PASS;
     }
 
 
