@@ -174,8 +174,8 @@ public class GeneralLang extends LanguageProvider {
         add("cobblemon.species.ponytagalar.name", "Galarian Ponyta");
 
         //Posters
-        add("painting.generations_core.blue_poster.author.author", "Pokemon");
-        add("painting.generations_core.blue_poster.title.title", "Blue Poster");
+        add("painting.generations_core.blue_poster.author", "Pokemon");
+        add("painting.generations_core.blue_poster.title", "Blue Poster");
         add("painting.generations_core.blue_poster_sprite.author", "Pokemon");
         add("painting.generations_core.blue_poster_sprite.title", "Blue Poster Sprite");
         add("painting.generations_core.blue_scroll.author", "Pokemon");
