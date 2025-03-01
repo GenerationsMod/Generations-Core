@@ -15,6 +15,9 @@ public class GenerationsIngredidents {
     }
 
     public static GenerationsIngredientSerializer<?> getSerializer(String id) {
+        System.out.println("Trying to get rks ingredient serializer with id " + id);
+        System.out.println("The returned value is " + SERIALIZER.getOrDefault(id, null));
+
         return SERIALIZER.get(id);
     }
 
