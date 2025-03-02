@@ -19,6 +19,7 @@ import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
 import generations.gg.generations.core.generationscore.common.api.player.Caught
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
@@ -150,13 +151,16 @@ class GenerationsCobblemonEvents {
             }
 
             HELD_ITEM_POST.subscribe {
-                val received = it.received.item
-                val returned = it.returned.item
+                it.returned.item.instanceOrNull<FormChanging>()?.let { formChanging ->
+                    if(formChanging.process(it.pokemon, true)) {
+                        it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
+                    }
+                }
 
-                var formchanging = if(received is FormChanging) received else if(returned is FormChanging) returned else null ?: return@subscribe
-
-                if(formchanging.process(it.pokemon, returned == formchanging)) {
-                    it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
+                it.received.item.instanceOrNull<FormChanging>()?.let { formChanging ->
+                    if(formChanging.process(it.pokemon, false)) {
+                        it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
+                    }
                 }
             }
 
