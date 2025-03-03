@@ -7,7 +7,6 @@
             "id": "milotic-1",
             "pokemon": "milotic",
             "presets": [
-                "freshwater",
                 "underwater"
             ],
             "type": "pokemon",
@@ -16,7 +15,10 @@
             "level": "20-55",
             "weight": 9.9,
             "condition": {
-                "canSeeSky": true
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_freshwater"
+                ]
             }
         }
     ]
