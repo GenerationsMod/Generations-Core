@@ -7,8 +7,7 @@
             "id": "octillery-1",
             "pokemon": "octillery",
             "presets": [
-                "underwater",
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",
