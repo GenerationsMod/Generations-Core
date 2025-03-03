@@ -124,7 +124,7 @@ public class ShapelessRksRecipe extends RksRecipe {
         @Override
         public @NotNull ShapelessRksRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
             var group = buffer.readUtf();
-            var ingredients = buffer.readCollection(size -> NonNullList.withSize(size, GenerationsIngredient.EmptyIngredient.INSTANCE), GenerationsIngredidents::fromNetwork);
+            var ingredients = buffer.readCollection(NonNullList::createWithCapacity, GenerationsIngredidents::fromNetwork);
             var result = RksResultType.RKS_RESULT.get(buffer.readResourceLocation()).fromBuffer().apply(buffer);
             var consumesTimeCapsules = buffer.readBoolean();
             var key = buffer.readNullable(TimeCapsuleIngredientKt::readSpeciesKey);

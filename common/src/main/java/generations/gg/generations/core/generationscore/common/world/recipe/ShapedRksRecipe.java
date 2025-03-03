@@ -232,7 +232,7 @@ public class ShapedRksRecipe extends RksRecipe {
             var width = buffer.readVarInt();
             var height = buffer.readVarInt();
             var group = buffer.readUtf();
-            var recipeItems = buffer.readCollection(size -> NonNullList.withSize(size, GenerationsIngredient.EmptyIngredient.INSTANCE), GenerationsIngredidents::fromNetwork);
+            var recipeItems = buffer.readCollection(NonNullList::createWithCapacity, GenerationsIngredidents::fromNetwork);
             var result = RksResultType.RKS_RESULT.get(buffer.readResourceLocation()).fromBuffer().apply(buffer);
             var consumesTimeCapsules = buffer.readBoolean();
             var key = buffer.readNullable(TimeCapsuleIngredientKt::readSpeciesKey);
