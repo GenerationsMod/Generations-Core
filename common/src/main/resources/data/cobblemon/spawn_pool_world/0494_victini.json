@@ -7,8 +7,7 @@
             "id": "victini-1",
             "pokemon": "victini",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
