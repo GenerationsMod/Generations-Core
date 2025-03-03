@@ -6,10 +6,6 @@
         {
             "id": "azurill-1",
             "pokemon": "azurill",
-            "presets": [
-                "natural",
-                "river"
-            ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "common",
