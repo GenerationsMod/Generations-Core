@@ -18,7 +18,8 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_temperate"
+                    "#cobblemon:is_temperate",
+                    "#cobblemon:is_end"
                 ],
                 "timeRange": "night",
                 "isRaining": false
