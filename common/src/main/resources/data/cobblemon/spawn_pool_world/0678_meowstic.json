@@ -7,8 +7,7 @@
             "id": "meowstic-1",
             "pokemon": "meowstic",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
