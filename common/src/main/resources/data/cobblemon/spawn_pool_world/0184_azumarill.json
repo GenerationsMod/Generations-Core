@@ -6,10 +6,6 @@
         {
             "id": "azumarill-1",
             "pokemon": "azumarill",
-            "presets": [
-                "natural",
-                "river"
-            ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "rare",
