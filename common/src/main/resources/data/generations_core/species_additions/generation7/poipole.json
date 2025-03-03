@@ -7,5 +7,18 @@
             "depth": "normal",
             "light": "0-4"
         }
+    },
+    "drops": {
+        "amount": 2,
+        "entries": [
+            {
+                "item": "generations_core:ultrite_remnant",
+                "quantityRange": "1-2"
+            },
+            {
+                "item": "minecraft:echo_shard",
+                "quantityRange": "1-2"
+            }
+        ]
     }
 }
