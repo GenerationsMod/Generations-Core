@@ -17,7 +17,8 @@
             "condition": {
                 "canSeeSky": false,
                 "biomes": [
-                    "#cobblemon:is_overworld"
+                    "#cobblemon:is_overworld",
+                    "#cobblemon:is_end"
                 ]
             },
             "anticondition": {
