@@ -7,8 +7,7 @@
             "id": "shuppet-1",
             "pokemon": "shuppet",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
