@@ -7,8 +7,7 @@
             "id": "finizen-1",
             "pokemon": "finizen",
             "presets": [
-                "underwater",
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",
