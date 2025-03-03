@@ -7,8 +7,7 @@
             "id": "remoraid-1",
             "pokemon": "remoraid",
             "presets": [
-                "underwater",
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",
