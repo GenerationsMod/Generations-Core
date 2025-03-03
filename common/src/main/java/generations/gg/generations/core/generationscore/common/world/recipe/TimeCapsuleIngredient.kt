@@ -52,9 +52,9 @@ object TimeCapsuleIngredientSerializer : GenerationsIngredientSerializer<TimeCap
     }
 }
 
-private fun FriendlyByteBuf.readSpeciesKey(): SpeciesKey =
+fun FriendlyByteBuf.readSpeciesKey(): SpeciesKey =
     SpeciesKey(
         this.readResourceLocation(),
         this.readCollection<String, HashSet<String>>(::HashSet, FriendlyByteBuf::readUtf)
     )
-private fun FriendlyByteBuf.writeSpeciesKey(key: SpeciesKey): FriendlyByteBuf = this.writeResourceLocation(key.species).writeCollection(key.aspects, FriendlyByteBuf::writeUtf).let { this }
+fun FriendlyByteBuf.writeSpeciesKey(key: SpeciesKey): FriendlyByteBuf = this.writeResourceLocation(key.species).writeCollection(key.aspects, FriendlyByteBuf::writeUtf).let { this }

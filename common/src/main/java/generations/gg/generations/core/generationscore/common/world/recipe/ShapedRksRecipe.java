@@ -229,29 +229,18 @@ public class ShapedRksRecipe extends RksRecipe {
 
         @Override
         public @NotNull ShapedRksRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
-            int i = buffer.readVarInt();
-            int j = buffer.readVarInt();
-            String string = buffer.readUtf();
-            NonNullList<GenerationsIngredient> nonNullList = NonNullList.withSize(i * j, GenerationsIngredient.EmptyIngredient.INSTANCE);
-            nonNullList.replaceAll(ignored -> GenerationsIngredidents.fromNetwork(buffer));
-
-
+            var width = buffer.readVarInt();
+            var height = buffer.readVarInt();
+            var group = buffer.readUtf();
+            var recipeItems = buffer.readCollection(size -> NonNullList.withSize(size, GenerationsIngredient.EmptyIngredient.INSTANCE), GenerationsIngredidents::fromNetwork);
             var result = RksResultType.RKS_RESULT.get(buffer.readResourceLocation()).fromBuffer().apply(buffer);
-
             var consumesTimeCapsules = buffer.readBoolean();
+            var key = buffer.readNullable(TimeCapsuleIngredientKt::readSpeciesKey);
+            var experience = buffer.readFloat();
+            var processingTime = buffer.readInt();
+            var showNotification = buffer.readBoolean();
 
-            var speciesKey = buffer.readNullable(buf -> {
-                var location = buf.readResourceLocation();
-                var aspects = buf.readNullable((FriendlyByteBuf.Reader<Set<String>>) buf1 -> buf1.readCollection(HashSet::new, FriendlyByteBuf::readUtf));
-
-                return new SpeciesKey(location, aspects);
-            });
-
-            float experience = buffer.readFloat();
-            int weavingTime = buffer.readInt();
-            boolean bl = buffer.readBoolean();
-
-            return new ShapedRksRecipe(recipeId, string, i, j, nonNullList, result, consumesTimeCapsules, speciesKey, experience, weavingTime, bl);
+            return new ShapedRksRecipe(recipeId, group, width, height, recipeItems, result, consumesTimeCapsules, key, experience, processingTime, showNotification);
         }
 
         @Override
@@ -259,20 +248,10 @@ public class ShapedRksRecipe extends RksRecipe {
             buffer.writeVarInt(recipe.width);
             buffer.writeVarInt(recipe.height);
             buffer.writeUtf(recipe.group);
-
-            for (GenerationsIngredient generationsIngredient : recipe.recipeItems) {
-                GenerationsIngredidents.toNetwork(buffer, generationsIngredient);
-            }
-
+            buffer.writeCollection(recipe.recipeItems, GenerationsIngredidents::toNetwork);
             recipe.result.toBuffer(buffer);
-
             buffer.writeBoolean(recipe.consumesTimeCapsules);
-
-            buffer.writeNullable(recipe.key, (buf, speciesKey) -> {
-                buffer.writeResourceLocation(speciesKey.species());
-                buffer.writeNullable(speciesKey.aspects(), (buf1, strings) -> buf1.writeCollection(strings, FriendlyByteBuf::writeUtf));
-            });
-
+            buffer.writeNullable(recipe.key, TimeCapsuleIngredientKt::writeSpeciesKey);
             buffer.writeFloat(recipe.experience());
             buffer.writeInt(recipe.processingTime());
             buffer.writeBoolean(recipe.showNotification);

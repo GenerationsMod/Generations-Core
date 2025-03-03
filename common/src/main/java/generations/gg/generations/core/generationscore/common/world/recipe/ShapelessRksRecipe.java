@@ -123,49 +123,25 @@ public class ShapelessRksRecipe extends RksRecipe {
 
         @Override
         public @NotNull ShapelessRksRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
-            String string = buffer.readUtf();
-
-            int i = buffer.readInt();
-            NonNullList<GenerationsIngredient> nonNullList = NonNullList.withSize(i, GenerationsIngredient.EmptyIngredient.INSTANCE);
-            nonNullList.replaceAll(ignored -> GenerationsIngredidents.fromNetwork(buffer));
-
-
+            var group = buffer.readUtf();
+            var ingredients = buffer.readCollection(size -> NonNullList.withSize(size, GenerationsIngredient.EmptyIngredient.INSTANCE), GenerationsIngredidents::fromNetwork);
             var result = RksResultType.RKS_RESULT.get(buffer.readResourceLocation()).fromBuffer().apply(buffer);
-
             var consumesTimeCapsules = buffer.readBoolean();
-
-            var speciesKey = buffer.readNullable(buf -> {
-                var location = buf.readResourceLocation();
-                var aspects = buf.readNullable((FriendlyByteBuf.Reader<Set<String>>) buf1 -> buf1.readCollection(HashSet::new, FriendlyByteBuf::readUtf));
-
-                return new SpeciesKey(location, aspects);
-            });
-
+            var key = buffer.readNullable(TimeCapsuleIngredientKt::readSpeciesKey);
             float experience = buffer.readFloat();
-            int weavingTime = buffer.readInt();
-            boolean bl = buffer.readBoolean();
+            int processingTime = buffer.readInt();
+            boolean showNotification = buffer.readBoolean();
 
-            return new ShapelessRksRecipe(recipeId, string, result, nonNullList, consumesTimeCapsules, speciesKey, experience, weavingTime, bl);
+            return new ShapelessRksRecipe(recipeId, group, result, ingredients, consumesTimeCapsules, key, experience, processingTime, showNotification);
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf buffer, ShapelessRksRecipe recipe) {
             buffer.writeUtf(recipe.group);
-
-            buffer.writeVarInt(recipe.ingredients.size());
-            for (GenerationsIngredient generationsIngredient : recipe.ingredients) {
-                GenerationsIngredidents.toNetwork(buffer, generationsIngredient);
-            }
-
+            buffer.writeCollection(recipe.ingredients, GenerationsIngredidents::toNetwork);
             recipe.result.toBuffer(buffer);
-
             buffer.writeBoolean(recipe.consumesTimeCapsules);
-
-            buffer.writeNullable(recipe.key, (buf, speciesKey) -> {
-                buffer.writeResourceLocation(speciesKey.species());
-                buffer.writeNullable(speciesKey.aspects(), (buf1, strings) -> buf1.writeCollection(strings, FriendlyByteBuf::writeUtf));
-            });
-
+            buffer.writeNullable(recipe.key, TimeCapsuleIngredientKt::writeSpeciesKey);
             buffer.writeFloat(recipe.experience());
             buffer.writeInt(recipe.processingTime());
             buffer.writeBoolean(recipe.showNotification);
