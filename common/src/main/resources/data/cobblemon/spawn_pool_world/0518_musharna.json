@@ -7,8 +7,7 @@
             "id": "musharna-1",
             "pokemon": "musharna",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
