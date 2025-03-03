@@ -7,8 +7,7 @@
             "id": "delcatty-1",
             "pokemon": "delcatty",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
