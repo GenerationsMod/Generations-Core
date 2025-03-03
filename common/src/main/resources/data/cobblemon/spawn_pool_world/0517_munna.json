@@ -7,8 +7,7 @@
             "id": "munna-1",
             "pokemon": "munna",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
