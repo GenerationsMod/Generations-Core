@@ -7,8 +7,7 @@
             "id": "espurr-1",
             "pokemon": "espurr",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -19,7 +18,7 @@
                 "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_temperate",
-                    "#cobblemon:is_end"
+                    "#minecraft:is_end"
                 ],
                 "timeRange": "night",
                 "isRaining": false
