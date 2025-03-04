@@ -17,7 +17,7 @@
             "condition": {
                 "biomes": [
                     "#cobblemon:is_spooky",
-                    "#cobblemon:is_end"
+                    "#minecraft:is_end"
                 ]
             }
         }
