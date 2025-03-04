@@ -26,6 +26,10 @@ dependencies {
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-api:${project.properties["rei"]}")
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin:${project.properties["rei"]}")
 
+    modCompileOnlyApi("mezz.jei:jei-${project.properties["minecraft_version"]}-lib:${project.properties["jei"]}")
+    modCompileOnlyApi("mezz.jei:jei-${project.properties["minecraft_version"]}-common-api:${project.properties["jei"]}")
+    modRuntimeOnly("mezz.jei:jei-${project.properties["minecraft_version"]}-common:${project.properties["jei"]}")
+
     modCompileOnly("maven.modrinth:journeymap:${project.properties["minecraft_version"]}-${project.properties["journeymap_version"]}-forge")
 
     //Cobblemon

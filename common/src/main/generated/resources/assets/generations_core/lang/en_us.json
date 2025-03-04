@@ -1489,6 +1489,7 @@
   "generations_core.timeglass.wrongbiome": "§7This item only works in a Flower Forest biome!",
   "generations_core.ui.dna_fibers_extracted": "DNA Fibers",
   "generations_core.ui.interact.head_pat": "Head Pat",
+  "gui.recipe_viewer.category.rks_machine": "RKS Machine",
   "gui.zygarde_cube": "Zygarde Cube",
   "gui.zygarde_cube.merge_10.accept": "Your Cells merged to form a Zygarde 10%!",
   "gui.zygarde_cube.merge_10.name": "Create 10%",

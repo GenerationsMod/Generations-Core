@@ -9,6 +9,7 @@ import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
 import me.shedaniel.rei.api.client.registry.display.DisplayRegistry;
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry;
+import me.shedaniel.rei.api.client.registry.screen.SimpleClickArea;
 import me.shedaniel.rei.api.client.registry.transfer.TransferHandlerRegistry;
 import me.shedaniel.rei.api.client.registry.transfer.simple.SimpleTransferHandler;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
@@ -27,9 +28,11 @@ public class ReiCompatClient implements REIClientPlugin {
         registry.registerFiller(RksRecipe.class, DefaultRksMachineRecipeDisplay::of);
     }
 
+
+
     @Override
     public void registerScreens(ScreenRegistry registry) {
-        registry.registerContainerClickArea(new Rectangle(90, 35, 22, 15), RksMachineScreen.class, RKS_MACHINE);
+        registry.registerContainerClickArea (rksMachineScreen -> new Rectangle(90, 35, 22, 15), RksMachineScreen.class, RKS_MACHINE);
     }
 
     @Override

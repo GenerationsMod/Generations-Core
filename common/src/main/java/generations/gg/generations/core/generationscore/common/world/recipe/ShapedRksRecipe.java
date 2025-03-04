@@ -28,14 +28,12 @@ import java.util.Set;
 public class ShapedRksRecipe extends RksRecipe {
     public final int width;
     public final int height;
-    public final NonNullList<GenerationsIngredient> recipeItems;
 
     public ShapedRksRecipe(ResourceLocation id, String group, int width, int height, NonNullList<GenerationsIngredient> recipeItems, RksResult<?> result, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
-        super(id, group, result, consumesTimeCapsules, key, experience, processingTime, showNotification);
+        super(id, group, result, recipeItems, consumesTimeCapsules, key, experience, processingTime, showNotification);
 
         this.width = width;
         this.height = height;
-        this.recipeItems = recipeItems;
     }
 
     public static NonNullList<GenerationsIngredient> dissolvePattern(String[] pattern, Map<String, GenerationsIngredient> keys, int patternWidth, int patternHeight) {
@@ -232,8 +230,8 @@ public class ShapedRksRecipe extends RksRecipe {
             var width = buffer.readVarInt();
             var height = buffer.readVarInt();
             var group = buffer.readUtf();
-            var recipeItems = buffer.readCollection(NonNullList::createWithCapacity, GenerationsIngredidents::fromNetwork);
             var result = RksResultType.RKS_RESULT.get(buffer.readResourceLocation()).fromBuffer().apply(buffer);
+            var recipeItems = buffer.readCollection(NonNullList::createWithCapacity, GenerationsIngredidents::fromNetwork);
             var consumesTimeCapsules = buffer.readBoolean();
             var key = buffer.readNullable(TimeCapsuleIngredientKt::readSpeciesKey);
             var experience = buffer.readFloat();
@@ -248,8 +246,8 @@ public class ShapedRksRecipe extends RksRecipe {
             buffer.writeVarInt(recipe.width);
             buffer.writeVarInt(recipe.height);
             buffer.writeUtf(recipe.group);
-            buffer.writeCollection(recipe.recipeItems, GenerationsIngredidents::toNetwork);
             recipe.result.toBuffer(buffer);
+            buffer.writeCollection(recipe.recipeItems, GenerationsIngredidents::toNetwork);
             buffer.writeBoolean(recipe.consumesTimeCapsules);
             buffer.writeNullable(recipe.key, TimeCapsuleIngredientKt::writeSpeciesKey);
             buffer.writeFloat(recipe.experience());

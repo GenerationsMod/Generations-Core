@@ -467,6 +467,8 @@ public class GeneralLang extends LanguageProvider {
         this.add("item.minecraft.smithing_template.ultrite_upgrade.additions_slot_description", "Add Ultrite Ingot");
         this.add("item.minecraft.smithing_template.ultrite_upgrade.applies_to", "Netherite Equipment");
         this.add("upgrade.minecraft.ultrite_upgrade", "Ultrite Upgrade Smithing Template");
+
+        this.add("gui.recipe_viewer.category.rks_machine", "RKS Machine");
     }
 
 

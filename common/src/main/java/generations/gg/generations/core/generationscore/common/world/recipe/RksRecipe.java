@@ -27,22 +27,21 @@ import java.util.*;
 
 public abstract class RksRecipe implements Recipe<RksMachineBlockEntity> {
 
-    public final RksResult<?> result;
-
     private final ResourceLocation id;
-    public final SpeciesKey key;
     public final String group;
-
+    public final RksResult<?> result;
+    public final NonNullList<GenerationsIngredient> recipeItems;
     public final boolean consumesTimeCapsules;
+    public final SpeciesKey key;
     public final float experience;
     public final int processingTime;
-
     public final boolean showNotification;
 
-    public RksRecipe(ResourceLocation id, String group, RksResult<?> result, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
+    public RksRecipe(ResourceLocation id, String group, RksResult<?> result, NonNullList<GenerationsIngredient> recipeItems, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
         this.id = id;
         this.group = group;
         this.result = result;
+        this.recipeItems = recipeItems;
         this.consumesTimeCapsules = consumesTimeCapsules;
         this.key = key;
         this.experience = experience;
@@ -50,9 +49,8 @@ public abstract class RksRecipe implements Recipe<RksMachineBlockEntity> {
         this.showNotification = showNotification;
     }
 
-
-    public RksRecipe(ResourceLocation id, String group, RksResult<?> result, boolean consumesTimeCapsules, float experience, int processingTime) {
-        this(id, group, result, consumesTimeCapsules, null, experience, processingTime, true);
+    public RksRecipe(ResourceLocation id, String group, RksResult<?> result, NonNullList<GenerationsIngredient> recipeItems, boolean consumesTimeCapsules, float experience, int processingTime) {
+        this(id, group, result, recipeItems, consumesTimeCapsules, null, experience, processingTime, true);
     }
 
     @Override

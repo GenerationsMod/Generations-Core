@@ -50,6 +50,10 @@ subprojects {
         maven("https://nexus.resourcefulbees.com/repository/maven-public/")
         maven("https://maven.neoforged.net/releases")
         maven("https://jm.gserv.me/repository/maven-public/")
+        maven(
+            // location of the maven that hosts JEI files since January 2023
+            url = "https://maven.blamejared.com/"
+        )
     }
 
     @Suppress("UnstableApiUsage")

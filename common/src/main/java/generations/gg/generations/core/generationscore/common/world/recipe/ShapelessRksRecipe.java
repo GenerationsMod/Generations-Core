@@ -25,11 +25,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class ShapelessRksRecipe extends RksRecipe {
-    final NonNullList<GenerationsIngredient> ingredients;
-
-    public ShapelessRksRecipe(ResourceLocation id, String group, RksResult<?> result, NonNullList<GenerationsIngredient> ingredients, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
-        super(id, group, result, consumesTimeCapsules, key, experience, processingTime, showNotification);
-        this.ingredients = ingredients;
+    public ShapelessRksRecipe(ResourceLocation id, String group, RksResult<?> result, NonNullList<GenerationsIngredient> recipeItems, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime, boolean showNotification) {
+        super(id, group, result, recipeItems, consumesTimeCapsules, key, experience, processingTime, showNotification);
     }
 
     public ShapelessRksRecipe(ResourceLocation id, String group, RksResult<?> result, NonNullList<GenerationsIngredient> ingredients, boolean consumesTimeCapsules, SpeciesKey key, float experience, int processingTime) {
@@ -39,7 +36,7 @@ public class ShapelessRksRecipe extends RksRecipe {
     @Override
     public boolean matches(RksMachineBlockEntity inv, Level level) {
         // Track which ingredients have been matched
-        boolean[] matchedIngredients = new boolean[this.ingredients.size()];
+        boolean[] matchedIngredients = new boolean[this.recipeItems.size()];
 
         int matchedCount = 0;
 
@@ -51,8 +48,8 @@ public class ShapelessRksRecipe extends RksRecipe {
                 boolean foundMatch = false;
 
                 // Match the stack against ingredients
-                for (int j = 0; j < this.ingredients.size(); j++) {
-                    if (!matchedIngredients[j] && this.ingredients.get(j).matches(stack)) {
+                for (int j = 0; j < this.recipeItems.size(); j++) {
+                    if (!matchedIngredients[j] && this.recipeItems.get(j).matches(stack)) {
                         matchedIngredients[j] = true; // Mark ingredient as matched
                         matchedCount++;
                         foundMatch = true;
@@ -68,13 +65,13 @@ public class ShapelessRksRecipe extends RksRecipe {
         }
 
         // Ensure all ingredients were matched
-        return matchedCount == this.ingredients.size();
+        return matchedCount == this.recipeItems.size();
     }
 
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
-        return width * height >= this.ingredients.size();
+        return width * height >= this.recipeItems.size();
     }
 
     @Override
@@ -124,22 +121,22 @@ public class ShapelessRksRecipe extends RksRecipe {
         @Override
         public @NotNull ShapelessRksRecipe fromNetwork(@NotNull ResourceLocation recipeId, FriendlyByteBuf buffer) {
             var group = buffer.readUtf();
-            var ingredients = buffer.readCollection(NonNullList::createWithCapacity, GenerationsIngredidents::fromNetwork);
             var result = RksResultType.RKS_RESULT.get(buffer.readResourceLocation()).fromBuffer().apply(buffer);
+            var recipeItems = buffer.readCollection(NonNullList::createWithCapacity, GenerationsIngredidents::fromNetwork);
             var consumesTimeCapsules = buffer.readBoolean();
             var key = buffer.readNullable(TimeCapsuleIngredientKt::readSpeciesKey);
             float experience = buffer.readFloat();
             int processingTime = buffer.readInt();
             boolean showNotification = buffer.readBoolean();
 
-            return new ShapelessRksRecipe(recipeId, group, result, ingredients, consumesTimeCapsules, key, experience, processingTime, showNotification);
+            return new ShapelessRksRecipe(recipeId, group, result, recipeItems, consumesTimeCapsules, key, experience, processingTime, showNotification);
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf buffer, ShapelessRksRecipe recipe) {
             buffer.writeUtf(recipe.group);
-            buffer.writeCollection(recipe.ingredients, GenerationsIngredidents::toNetwork);
             recipe.result.toBuffer(buffer);
+            buffer.writeCollection(recipe.recipeItems, GenerationsIngredidents::toNetwork);
             buffer.writeBoolean(recipe.consumesTimeCapsules);
             buffer.writeNullable(recipe.key, TimeCapsuleIngredientKt::writeSpeciesKey);
             buffer.writeFloat(recipe.experience());

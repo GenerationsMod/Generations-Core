@@ -29,7 +29,7 @@ public class DefaultRksCategory implements DisplayCategory<DefaultRksMachineReci
 
     @Override
     public Component getTitle() {
-        return Component.translatable("category.generationscore.rksmachine");
+        return Component.translatable("gui.recipe_viewer.category.rks_machine");
     }
 
     @Override

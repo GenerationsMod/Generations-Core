@@ -60,7 +60,15 @@ dependencies {
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
-    modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-fabric:${project.properties["rei"]}")
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:${project.properties["rei"]}")
+
+    modCompileOnlyApi("mezz.jei:jei-${project.properties["minecraft_version"]}-fabric-api:${project.properties["jei"]}")
+
+
+    when(project.properties["recipe_viewer"]) {
+        "rei" -> modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-fabric:${project.properties["rei"]}")
+        "jei" -> modRuntimeOnly("mezz.jei:jei-${project.properties["minecraft_version"]}-fabric:${project.properties["jei"]}")
+    }
 
     //JourneyMap
     modCompileOnlyApi("info.journeymap:journeymap-api:${project.properties["journeymap_api_version_fabric"]}") { isChanging = true }

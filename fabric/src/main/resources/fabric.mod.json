@@ -17,6 +17,9 @@
     "rei_client": [
       "generations.gg.generations.core.generationscore.common.compat.rei.ReiCompatClient"
     ],
+    "jei_mod_plugin": [
+      "generations.gg.generations.core.generationscore.common.compat.jei.GenerationsCoreJeiCompat"
+    ],
     "journeymap": [
       "generations.gg.generations.core.generationscore.fabric.compat.JourneyMapCompatClientFabric"
     ]
