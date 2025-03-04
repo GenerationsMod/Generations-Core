@@ -17,8 +17,7 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_forest",
-                    "#minecraft:is_end"
+                    "#cobblemon:is_forest"
                 ],
                 "timeRange": "day"
             },
