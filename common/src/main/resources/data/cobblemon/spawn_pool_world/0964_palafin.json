@@ -7,8 +7,7 @@
             "id": "palafin-1",
             "pokemon": "palafin",
             "presets": [
-                "underwater",
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",
@@ -18,7 +17,7 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_lukewarm"
+                    "#cobblemon:is_lukewarm_ocean"
                 ]
             }
         }

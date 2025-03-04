@@ -7,8 +7,7 @@
             "id": "mrrime-1",
             "pokemon": "mrrime",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

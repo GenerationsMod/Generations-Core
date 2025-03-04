@@ -7,8 +7,7 @@
             "id": "shuppet-1",
             "pokemon": "shuppet",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -16,7 +15,6 @@
             "level": "12-39",
             "weight": 9.0,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_spooky"
                 ],

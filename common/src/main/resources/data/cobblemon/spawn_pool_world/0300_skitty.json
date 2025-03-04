@@ -7,8 +7,7 @@
             "id": "skitty-1",
             "pokemon": "skitty",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

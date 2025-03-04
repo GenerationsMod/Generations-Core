@@ -7,7 +7,6 @@
             "id": "feebas-1",
             "pokemon": "feebas",
             "presets": [
-                "freshwater",
                 "underwater"
             ],
             "type": "pokemon",
@@ -16,7 +15,10 @@
             "level": "1-20",
             "weight": 9.9,
             "condition": {
-                "canSeeSky": true
+                "canSeeSky": true,
+                "biomes": [
+                    "#cobblemon:is_freshwater"
+                ]
             }
         }
     ]

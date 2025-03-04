@@ -7,8 +7,7 @@
             "id": "banette-1",
             "pokemon": "banette",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
@@ -16,7 +15,6 @@
             "level": "37-55",
             "weight": 9.0,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_spooky"
                 ],

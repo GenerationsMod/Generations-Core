@@ -6,10 +6,6 @@
         {
             "id": "marill-1",
             "pokemon": "marill",
-            "presets": [
-                "natural",
-                "river"
-            ],
             "type": "pokemon",
             "context": "grounded",
             "bucket": "uncommon",

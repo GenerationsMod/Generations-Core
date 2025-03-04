@@ -7,8 +7,7 @@
             "id": "purugly-1",
             "pokemon": "purugly",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

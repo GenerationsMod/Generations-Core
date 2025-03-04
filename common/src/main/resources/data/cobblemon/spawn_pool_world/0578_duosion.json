@@ -7,8 +7,7 @@
             "id": "duosion-1",
             "pokemon": "duosion",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",

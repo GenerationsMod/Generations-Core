@@ -7,8 +7,7 @@
             "id": "glameow-1",
             "pokemon": "glameow",
             "presets": [
-                "natural",
-                "urban"
+                "natural"
             ],
             "type": "pokemon",
             "context": "grounded",
