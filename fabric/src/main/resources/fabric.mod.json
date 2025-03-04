@@ -37,5 +37,12 @@
   },
   "suggests": {
     "wthit": ">=8.15.0"
+  },
+  "custom": {
+    "catalogue": {
+      "icon": {
+        "image": "generations.png"
+      }
+    }
   }
 }
