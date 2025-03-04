@@ -1489,6 +1489,7 @@
 "generations_core.timeglass.wrongbiome": "§7Cet objet ne fonctionne que dans un biome de forêt fleurie !",
 "generations_core.ui.dna_fibers_extracted": "Fibres d'ADN",
 "generations_core.ui.interact.head_pat": "Tête Pat",
+"gui.recipe_viewer.category.rks_machine": "Machine RKS",
 "gui.zygarde_cube": "Cube Zygarde",
 "gui.zygarde_cube.merge_10.accept": "Vos cellules ont fusionné pour former un Zygarde 10% !",
 "gui.zygarde_cube.merge_10.name": "Créer 10 %",
