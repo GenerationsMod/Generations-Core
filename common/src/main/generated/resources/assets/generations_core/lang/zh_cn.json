@@ -1489,6 +1489,7 @@
 "generations_core.timeglass.wrongbiome": "§7此物品仅适用于花卉森林生物群系！",
 "generations_core.ui.dna_fibers_extracted": "DNA 纤维",
 "generations_core.ui.interact.head_pat": "拍拍头",
+"gui.recipe_viewer.category.rks_machine": "A R 机器",
 "gui.zygarde_cube": "基格尔德立方体",
 "gui.zygarde_cube.merge_10.accept": "你的细胞已合并形成 基格尔德10%！",
 "gui.zygarde_cube.merge_10.name": "创建 10%",
