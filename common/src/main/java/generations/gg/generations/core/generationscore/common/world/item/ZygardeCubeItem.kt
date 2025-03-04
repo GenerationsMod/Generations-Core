@@ -25,12 +25,11 @@ class ZygardeCubeItem(properties: Properties) : Item(properties), LangTooltip {
         tooltipComponents.add(Component.translatable("item.generations_core.zygarde_cube.tooltip.lore2"))
         tooltipComponents.add(Component.translatable("item.generations_core.zygarde_cube.tooltip.lore3"))
         tooltipComponents.add(Component.translatable("item.generations_core.zygarde_cube.tooltip.lore4", stack.damageValue, stack.maxDamage))
-//        LangTooltip.appendHoverText(stack, level, tooltipComponents, isAdvanced)
     }
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         if(player is ServerPlayer && usedHand == InteractionHand.MAIN_HAND) {
-            val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("zygarde_cell")] ?: return InteractionResultHolder.fail(player.mainHandItem)
+            val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("zygarde_cube")] ?: return InteractionResultHolder.fail(player.mainHandItem)
             player.openDialogue(dialogue)
 
             return InteractionResultHolder.success(player.mainHandItem)

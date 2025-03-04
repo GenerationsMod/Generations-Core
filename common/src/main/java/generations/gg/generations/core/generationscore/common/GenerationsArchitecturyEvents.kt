@@ -57,7 +57,7 @@ object GenerationsArchitecturyEvents {
 
                     return@register EventResult.interruptTrue()
                 } else if(player.level().getBlockState(pos).block is VendingMachineBlock) { //TODO: upgrade to a vending machines tag.
-
+//TODO: Restore shopss post release
                 }
             }
 
@@ -68,20 +68,9 @@ object GenerationsArchitecturyEvents {
             if(player !is ServerPlayer) return@register EventResult.pass()
 
             val stack = player.getItemInHand(hand)
-            if (stack.`is`(GenerationsItems.ZYGARDE_CUBE.get()) && entity is ZygardeCellEntity) {
-                if (stack.damageValue != ZygardeCubeItem.FULL) {
-                    stack.damageValue += 1
-                    player.displayClientMessage("item.generations_core.zygarde_cube.tooltip.cell_add".asTranslated(), false)
-                    player.level().playSound(null, player.blockPosition(), GenerationsSounds.ZYGARDE_CELL.get(), SoundSource.BLOCKS, 0.5f, 1.0f)
-                    entity.remove(Entity.RemovalReason.DISCARDED)
-                    return@register EventResult.interruptTrue()
-                } else {
-                    player.displayClientMessage("item.generations_core.zygarde_cube.tooltip.cell_full".asTranslated(), false)
-                }
-            } else {
-                if(entity is PokemonEntity) {
-                    return@register if(GenerationsCobblemonInteractions.triggerCustomInteraction(entity, player, stack)) EventResult.interruptTrue() else EventResult.pass()
-                }
+
+            if(entity is PokemonEntity) {
+                return@register if(GenerationsCobblemonInteractions.triggerCustomInteraction(entity, player, stack)) EventResult.interruptTrue() else EventResult.pass()
             }
 
             return@register EventResult.pass()

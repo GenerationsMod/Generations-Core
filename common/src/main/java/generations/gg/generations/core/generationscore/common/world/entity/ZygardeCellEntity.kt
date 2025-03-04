@@ -37,14 +37,14 @@ class ZygardeCellEntity : Entity {
     override fun addAdditionalSaveData(compound: CompoundTag) {
     }
 
-    override fun hurt(source: DamageSource, amount: Float): Boolean {
-        var player = source.entity.instanceOrNull<ServerPlayer>() ?: return true
-
-        var stack = player.mainHandItem.takeIf { it.`is`(GenerationsItems.ZYGARDE_CUBE.get()) } ?: return true
+    override fun interact(player: Player, hand: InteractionHand): InteractionResult {
+        if(hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
+        val serverPlayer = player.instanceOrNull<ServerPlayer>() ?: return InteractionResult.PASS;
+        val stack = player.mainHandItem.takeIf { it.`is`(GenerationsItems.ZYGARDE_CUBE.get()) } ?: return InteractionResult.PASS
 
         if (stack.damageValue != ZygardeCubeItem.FULL) {
             stack.damageValue += 1
-            player.displayClientMessage(
+            serverPlayer.displayClientMessage(
                 Component.translatable("item.generations_core.zygarde_cube.tooltip.cell_add"),
                 false
             )
@@ -57,6 +57,10 @@ class ZygardeCellEntity : Entity {
                 1.0f
             )
             remove(RemovalReason.DISCARDED)
+
+            player.cooldowns.addCooldown(stack.item, 20)
+
+            return InteractionResult.SUCCESS
         } else {
             player.displayClientMessage(
                 Component.translatable("item.generations_core.zygarde_cube.tooltip.cell_full"),
@@ -64,11 +68,11 @@ class ZygardeCellEntity : Entity {
             )
         }
 
-        return false
+        return InteractionResult.PASS
     }
 
     override fun isPushable(): Boolean {
-        return true
+        return false
     }
 
     override fun isPickable(): Boolean {
