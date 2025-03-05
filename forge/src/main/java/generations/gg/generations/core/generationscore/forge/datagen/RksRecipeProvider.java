@@ -160,7 +160,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createMegaStone(GENGARITE, "gengar", exporter);
         createMegaStone(GARDEVOIRITE, "gardevoir", exporter);
         createMegaStone(AMPHAROSITE, "ampharos", exporter);
-        createMegaStone(VENUSAURITE, "venasuar", exporter);
+        createMegaStone(VENUSAURITE, "venusaur", exporter);
         createMegaStone(CHARIZARDITE_X, "charizard", exporter);
         createMegaStone(BLASTOISINITE, "blastoise", exporter);
         createMegaStone(MEWTWONITE_X, "mewtwo", exporter);
@@ -181,7 +181,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createMegaStone(ABSOLITE, "absol", exporter);
         createMegaStone(CHARIZARDITE_Y, "charizard", exporter);
         createMegaStone(ALAKAZITE, "alakazam", exporter);
-        createMegaStone(HERACRONITE, "heracros", exporter);
+        createMegaStone(HERACRONITE, "heracross", exporter);
         createMegaStone(MAWILITE, "mawile", exporter);
         createMegaStone(MANECTITE, "manectric", exporter);
         createMegaStone(GARCHOMPITE, "garchomp", exporter);
@@ -200,7 +200,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createMegaStone(GLALITITE, "glalie", exporter);
         createMegaStone(DIANCITE, "diancie", exporter);
         createMegaStone(CAMERUPTITE, "camerupt", exporter);
-        createMegaStone(LOPUNNNITE, "lopuuny", exporter);
+        createMegaStone(LOPUNNNITE, "lopunny", exporter);
         createMegaStone(SALAMENCITE, "salamence", exporter);
         createMegaStone(BEEDRILLITE, "beedrill", exporter);
 
@@ -229,8 +229,8 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createZCyrstal(INCINIUM_Z, "incinium", exporter);
         createZCyrstal(KOMMONIUM_Z, "kommoo", exporter);
         createZCyrstal(LUNALIUM_Z, "lunala", exporter);
-        createZCyrstal(LYCANIUM_Z, "lycanrock", exporter);
-        createZCyrstal(MARSHADIUM_Z, "marashadow", exporter);
+        createZCyrstal(LYCANIUM_Z, "lycanroc", exporter);
+        createZCyrstal(MARSHADIUM_Z, "marshadow", exporter);
         createZCyrstal(MEWNIUM_Z, "mew", exporter);
         createZCyrstal(MIMIKIUM_Z, "mimikyu", exporter);
         createZCyrstal(PIKANIUM_Z, "pikachu", exporter);
@@ -284,7 +284,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     private <E> void createZCyrstal(RegistrySupplier<Item> result, String pokemon, String aspects, Consumer<FinishedRecipe> exporter) {
         ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
-                .input('B', new TimeCapsuleIngredient(new SpeciesKey(pokemon, Set.of(aspects)), false))
+                .input('B', new TimeCapsuleIngredient(new SpeciesKey(new ResourceLocation("cobblemon", pokemon), Set.of(aspects)), false))
                 .input('X', Z_INGOT.get())
                 .pattern("XXX")
                 .pattern("ABA")
