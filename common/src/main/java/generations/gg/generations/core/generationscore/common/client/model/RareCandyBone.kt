@@ -1,18 +1,23 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
+import com.cobblemon.mod.common.client.render.VaryingRenderableResolver
 import com.cobblemon.mod.common.client.render.layer.CobblemonRenderLayers
+import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel
+import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.PokemonPoseableModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext.RenderState
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.net.messages.client.pokemon.update.AspectsUpdatePacket
 import com.cobblemon.mod.common.pokemon.FormData
 import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.util.asResource
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
+import generations.gg.generations.core.generationscore.common.client.IVariant
 import generations.gg.generations.core.generationscore.common.client.model.SpriteRegistry.getPokemonSprite
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
@@ -20,6 +25,7 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
+import generations.gg.generations.core.generationscore.common.mixin.client.ModelAssetVariationMixin
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.geom.ModelPart
 import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
@@ -82,14 +88,9 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         a: Float,
         isSprite: Boolean = false
     ) {
-        var id = getTexture(context)
-        if (id != null) {
-            if (id.namespace == "pk") {
-                id = spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), id.path)
-            }
-        }
+        val id = getSprite(context)
         val sources = Minecraft.getInstance().renderBuffers().bufferSource()
-        val buffer = sources.getBuffer(CobblemonRenderLayers.ENTITY_CUTOUT.apply(id!!))
+        val buffer = sources.getBuffer(CobblemonRenderLayers.ENTITY_CUTOUT.apply(id))
         val scale = if (isSprite) 1f else 2f
         val matrix = stack.last()
         matrix.pose().translate(-scale / 2f, 0f, 0f)
@@ -147,10 +148,9 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         if (model.renderObject!!.isReady) {
             instance.light = packedLight
             instance.tint.set(r, g, b)
-            val id = getTexture(context)
-            if (id != null) {
-                val namespace = id.namespace
-                if (namespace == "pk") instance.setVariant(id.path)
+            val variant = getVariant(context)
+            if (variant != null) {
+                instance.setVariant(variant)
             }
             stack.pushPose()
             stack.mulPose(ROTATION_CORRECTION)
@@ -170,11 +170,11 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     val compiledModel: CompiledModel?
         get() = objectSupplier.invoke()
 
-    private fun getTexture(context: RenderContext): ResourceLocation? {
+    private fun getVariant(context: RenderContext): String? {
         return try {
             val aspects = context.request<Set<String>>(RenderContext.Companion.ASPECTS)
             val species = context.request<ResourceLocation>(RenderContext.Companion.SPECIES)!!
-            PokemonModelRepository.variations[species]!!.getTexture(aspects ?: emptySet<String>(), 0.0f)
+            return PokemonModelRepository.variations[species]?.getResolvedVariant(aspects ?: emptySet<String>())
         } catch (e: Exception) {
             null
         }
@@ -183,16 +183,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     override fun transform(poseStack: PoseStack) {}
     override fun get(): Bone = this
 
-    fun getSprite(context: RenderContext): ResourceLocation {
-        var id = getTexture(context)
-        if (id != null) {
-            if (id.namespace == "pk") {
-                id = spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), id.path)
-            }
-        }
-
-        return id ?: MissingTextureAtlasSprite.getLocation()
-    }
+    fun getSprite(context: RenderContext): ResourceLocation = getVariant(context)?.let { spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), it) } ?: MissingTextureAtlasSprite.getLocation()
 
     companion object {
         val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
@@ -201,4 +192,8 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)
         private val DUMMY = emptyMap<String, Bone>()
     }
+}
+
+private fun VaryingRenderableResolver<PokemonEntity, PokemonPoseableModel>.getResolvedVariant(aspects: Set<String>): String? {
+     return variations.lastOrNull { it.aspects.all { it in aspects } && (it as IVariant).variant != null }?.let { (it as IVariant).variant }
 }

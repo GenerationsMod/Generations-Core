@@ -12,6 +12,7 @@
     "ServerPlayerMixin",
     "ShowdownSpeciesMixin",
     "client.GuiUtilsMixin",
+    "client.ModelAssetVariationMixin",
     "client.PokemonGuiUtilsMixin",
     "client.PokemonItemRendererMixin",
     "showdown.DetailsChangeInstructionMixin",

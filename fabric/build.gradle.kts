@@ -70,12 +70,6 @@ dependencies {
         "jei" -> modRuntimeOnly("mezz.jei:jei-${project.properties["minecraft_version"]}-fabric:${project.properties["jei"]}")
     }
 
-    //JourneyMap
-    modCompileOnlyApi("info.journeymap:journeymap-api:${project.properties["journeymap_api_version_fabric"]}") { isChanging = true }
-    modCompileOnly("maven.modrinth:journeymap:${project.properties["minecraft_version"]}-${project.properties["journeymap_version"]}-fabric") {
-        exclude("net.fabricmc", "fabric-loader")
-    }
-
     //Cobblemon
     modApi("com.cobblemon:fabric:${project.properties["cobblemon_version"]}")
     modApi("net.fabricmc:fabric-language-kotlin:1.12.0+kotlin.2.0.10")
