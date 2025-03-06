@@ -30,10 +30,6 @@ dependencies {
     modCompileOnlyApi("mezz.jei:jei-${project.properties["minecraft_version"]}-common-api:${project.properties["jei"]}")
     modRuntimeOnly("mezz.jei:jei-${project.properties["minecraft_version"]}-common:${project.properties["jei"]}")
 
-    modCompileOnly("maven.modrinth:journeymap:${project.properties["minecraft_version"]}-${project.properties["journeymap_version"]}-fabric")
-    modCompileOnly("curse.maven:xaeros-minimap-263420:6184432")
-
-
     //Cobblemon
     implementation(kotlin("stdlib-jdk8"))
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")

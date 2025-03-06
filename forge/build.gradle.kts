@@ -76,6 +76,17 @@ dependencies {
 
     modLocalRuntime("curse.maven:worldedit-225608:4586218")
 
+
+
+//    modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-forge:${project.properties["rei"]}")
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-forge:${project.properties["rei"]}")
+    modCompileOnlyApi("mezz.jei:jei-${project.properties["minecraft_version"]}-forge-api:${project.properties["jei"]}")
+
+    when(project.properties["recipe_viewer"]) {
+        "rei" -> modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-forge:${project.properties["rei"]}")
+        "jei" -> modRuntimeOnly("mezz.jei:jei-${project.properties["minecraft_version"]}-forge:${project.properties["jei"]}")
+    }
+
     //Cobblemon
     implementation("thedarkcolour:kotlinforforge:4.11.0")
     modImplementation("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
