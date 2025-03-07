@@ -86,8 +86,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.joml.Vector4f;
 import org.lwjgl.glfw.GLFW;
-import xaero.common.icon.XaeroIcon;
-import xaero.common.server.XaeroMinimapServer;
 
 import java.io.File;
 import java.util.Map;
