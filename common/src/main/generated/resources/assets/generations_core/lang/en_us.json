@@ -3325,6 +3325,7 @@
   "item.generations_core.zygarde_cube": "Zygarde Cube",
   "item.generations_core.zygarde_cube.tooltip.cell_add": "Zygarde Cell collected!",
   "item.generations_core.zygarde_cube.tooltip.cell_full": "The Zygarde Cube is full!",
+  "item.generations_core.zygarde_cube.tooltip.cell_overflow": "Due to Zygarde Cube being full, the zygarde cell atomizes.",
   "item.generations_core.zygarde_cube.tooltip.lore1": "A strange cube capable of storing up to 100 Zygarde Cells,",
   "item.generations_core.zygarde_cube.tooltip.lore2": "as well as fusing them together to reconstruct the legendary Zygarde.",
   "item.generations_core.zygarde_cube.tooltip.lore3": "Collect Zygarde Cells to summon the balance.",

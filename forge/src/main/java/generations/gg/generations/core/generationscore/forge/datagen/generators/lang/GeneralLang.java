@@ -370,6 +370,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(MELOETTA_MUSIC_BOX, "§7HINT: You hear a wonderful melody from within. You need to hear more.”");
         //Zygarde
         addTooltip(ZYGARDE_CUBE, "cell_add", "Zygarde Cell collected!");
+        addTooltip(ZYGARDE_CUBE, "cell_overflow", "Due to Zygarde Cube being full, the zygarde cell atomizes.");
         addTooltip(ZYGARDE_CUBE, "cell_full", "The Zygarde Cube is full!");
         addTooltip(ZYGARDE_CUBE, "lore1", "A strange cube capable of storing up to 100 Zygarde Cells,");
         addTooltip(ZYGARDE_CUBE, "lore2", "as well as fusing them together to reconstruct the legendary Zygarde.");

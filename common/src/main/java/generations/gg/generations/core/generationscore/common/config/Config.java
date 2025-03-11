@@ -25,6 +25,8 @@ public class Config {
     public Blocks blocks = new Blocks();
     public Special special = new Special();
 
+    public Legendary legendary = new Legendary();
+
     public Client client = new Client();
 
     public Economy economy = new Economy();
@@ -161,5 +163,9 @@ public class Config {
 
     public static class Breeding {
         public int blocksPerEggCcyle = 256;
+    }
+
+    public static class Legendary {
+        public boolean enableZygardeCubeOverflow = false;
     }
 }
