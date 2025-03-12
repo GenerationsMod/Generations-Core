@@ -22,7 +22,7 @@ public abstract class PokemonBattleMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"), remap = false)
     private void onConstruct(BattleFormat format, BattleSide side1, BattleSide side2, CallbackInfo ci) {
-        this.setMute(false);
+//        this.setMute(false);
     }
 
     @Inject(method = "end", at = @At("TAIL"), remap = false)

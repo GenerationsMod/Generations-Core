@@ -77,17 +77,12 @@ public class CookingPotContainer extends AbstractContainerMenu {
         // Store NBT for debugging before we move it
         CompoundTag originalNBT = slotStack.hasTag() ? slotStack.getTag().copy() : null;
 
-        // Debug Log: Initial State
-        System.out.println("[DEBUG] Shift-Click Event:");
-        System.out.println("  - Clicked Slot Index: " + index);
-        System.out.println("  - Original Stack: " + originalStack);
-        System.out.println("  - Original NBT: " + (originalNBT != null ? originalNBT : "None"));
 
         boolean moved = false;
 
         // If the slot is the crafting output (slot 13), ensure crafting logic is applied before moving
         if (index == 13) {
-            System.out.println("  - Crafting Slot Detected! Running `onTake()` before moving.");
+//            System.out.println("  - Crafting Slot Detected! Running `onTake()` before moving.");
             slot.onTake(playerIn, slotStack);
         }
 

@@ -30,7 +30,6 @@ public class InteractShrineBlockEntity extends ShrineBlockEntity {
     public void triggerCountDown() {
         if(getBlockState().getBlock() instanceof InteractShrineBlock<?> shrine) {
             if(shrine.waitToDeactivateTime() > 0) {
-                System.out.println("Activating countdown");
 
                 this.countdown = shrine.waitToDeactivateTime();
             }
@@ -40,7 +39,7 @@ public class InteractShrineBlockEntity extends ShrineBlockEntity {
     protected void tick() {
         if(getBlockState().getBlock() instanceof InteractShrineBlock<?> shrine) {
             if(this.countdown > 0) {
-                System.out.println(getClass().getSimpleName() + ": " + countdown);
+//                System.out.println(getClass().getSimpleName() + ": " + countdown);
 
                 this.countdown--;
 
