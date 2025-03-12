@@ -62,7 +62,7 @@ data class PokemonResult(
 
             pokemon = rksMachineBlockEntity.pokemon.get()
             properties.apply(pokemon)
-            var list = pokemon.species.moves.allMoves
+            var list = pokemon.form.moves.allMoves
 
             pokemon.benchedMoves.doThenEmit {
                 val movesToRemove = mutableListOf<BenchedMove>()
@@ -72,16 +72,55 @@ data class PokemonResult(
                 }
 
                 movesToRemove.forEach { pokemon!!.benchedMoves.remove(it) }
+
             }
+
+            var slot: Int? = null
 
             pokemon.moveSet.doWithoutEmitting {
                 var moveset = pokemon!!.moveSet;
 
-                moveset[0]?.takeIf { !list.contains(it.template) }?.let { moveset.setMove(0, null) }
-                moveset[1]?.takeIf { !list.contains(it.template) }?.let { moveset.setMove(1, null) }
-                moveset[2]?.takeIf { !list.contains(it.template) }?.let { moveset.setMove(2, null) }
-                moveset[3]?.takeIf { !list.contains(it.template) }?.let { moveset.setMove(3, null) }
+                moveset[0]?.takeIf { !list.contains(it.template) }?.let {
+                    if (slot != null) {
+                        slot = 0
+                    } else {
+                        moveset.setMove(0, null)
+                    }
+                }
+                moveset[1]?.takeIf { !list.contains(it.template) }?.let {
+                    if (slot != null) {
+                        slot = 1
+                    } else {
+                        moveset.setMove(1, null)
+                    }
+                }
+                moveset[2]?.takeIf { !list.contains(it.template) }?.let {
+                    if (slot != null) {
+                        slot = 2
+                    } else {
+                        moveset.setMove(2, null)
+                    }
+                }
+                moveset[3]?.takeIf { !list.contains(it.template) }?.let {
+                    if (slot != null) {
+                        slot = 3
+                    } else {
+                        moveset.setMove(3, null)
+                    }
+                }
             }
+
+            var moveset = pokemon.moveSet
+
+            if(slot != null && moveset.filterIndexed { i,_ -> i != slot }.isEmpty()) {
+                var first = pokemon.allAccessibleMoves.first()
+
+                pokemon.exchangeMove(moveset.get(slot!!)!!.template, first)
+            } else {
+                pokemon.initializeMoveset()
+            }
+
+
         } else {
             val properties = PokemonProperties()
             properties.aspects = aspects
