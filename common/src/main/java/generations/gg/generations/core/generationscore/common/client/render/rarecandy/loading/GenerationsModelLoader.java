@@ -29,11 +29,11 @@ public class GenerationsModelLoader extends ModelLoader {
                 (gltfModel, animResources, textures, config, object) -> {
                     var glCalls = new ArrayList<Runnable>();
                     try {
-                        if(GenerationsCore.CONFIG.client.useVanilla) {
+//                        if(GenerationsCore.CONFIG.client.useVanilla) {
                             VanillaModelLoader.processModel(object, gltfModel, animResources, textures, config, glCalls, supplier);
-                        } else {
-                            processModel(object, gltfModel, animResources, textures, config, glCalls, supplier, GLModel::new);
-                        }
+//                        } else {
+//                            processModel(object, gltfModel, animResources, textures, config, glCalls, supplier, GLModel::new);
+//                        }
                     } catch (Exception e) {
                         System.out.println("Oh no! Model : " + name + " didn't properly load!");
                         e.printStackTrace();

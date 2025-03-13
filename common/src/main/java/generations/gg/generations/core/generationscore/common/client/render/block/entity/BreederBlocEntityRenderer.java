@@ -21,11 +21,11 @@ public class BreederBlocEntityRenderer extends GeneralUseBlockEntityRenderer<Bre
     protected void renderModels(PoseStack stack, MultiBufferSource buffersource, BreederBlockEntity blockEntity, int packedLight) {
         super.renderModels(stack, buffersource, blockEntity, packedLight);
         ((BlockObjectInstance) blockEntity.objectInstance[1]).setLight(packedLight);
-        renderResourceLocation(buffersource, AUTO_FEEDER_FILL, stack, blockEntity.objectInstance[1]);
+        renderResourceLocation(AUTO_FEEDER_FILL, stack, blockEntity.objectInstance[1]);
         ((BlockObjectInstance) blockEntity.objectInstance[2]).setLight(packedLight);
-        renderResourceLocation(buffersource, AUTO_FEEDER, stack, blockEntity.objectInstance[2]);
+        renderResourceLocation(AUTO_FEEDER, stack, blockEntity.objectInstance[2]);
         ((BlockObjectInstance) blockEntity.objectInstance[3]).setLight(packedLight);
-        renderResourceLocation(buffersource, EGG, stack, blockEntity.objectInstance[3]);
+        renderResourceLocation(EGG, stack, blockEntity.objectInstance[3]);
     }
 
     @Override

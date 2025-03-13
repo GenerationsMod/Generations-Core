@@ -14,6 +14,7 @@ import com.cobblemon.mod.common.net.messages.client.pokemon.update.AspectsUpdate
 import com.cobblemon.mod.common.pokemon.FormData
 import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.util.asResource
+import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
@@ -157,13 +158,16 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             stack.scale(-scale, -scale, scale)
             stack.translate(0.0, -1.501 / scale, 0.0)
             instance.transformationMatrix().set(stack.last().pose())
-            stack.popPose()
+//            instance.viewMatrix().set(RenderSystem.getModelViewMatrix())
+
 
 //            if(!isGui) {
-            model.render(instance, Minecraft.getInstance().renderBuffers().bufferSource())
+            model.render(instance)
             //            } else {
 //                model.renderGui(instance);
 //            }
+
+            stack.popPose()
         }
     }
 

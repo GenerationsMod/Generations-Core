@@ -64,7 +64,7 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             instance.transformationMatrix().set(stack.last().pose());
             ((BlockObjectInstance) instance).setLight(packedLight);
             if(blockEntity instanceof ModelContextProviders.TintProvider provider) ((BlockObjectInstance) instance).setTint(provider.getTint());
-            model.render(instance, buffersource);
+            model.render(instance);
         }
     }
 
@@ -114,14 +114,14 @@ public class GeneralUseBlockEntityRenderer<T extends ModelProvidingBlockEntity> 
             fixedAnimation.setCurrentTime(frameProvider.getFrame());
         }
 
-        model.render(instance, buffersource);
+        model.render(instance);
     }
 
-    protected void renderResourceLocation(MultiBufferSource source, ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
+    protected void renderResourceLocation(ResourceLocation location, PoseStack stack, ObjectInstance objectInstance) {
         objectInstance.transformationMatrix().set(stack.last().pose());
 
         var model = ModelRegistry.get(location);
-        if(model != null) model.render(objectInstance, source);
+        if(model != null) model.render(objectInstance);
     }
 
     @Override

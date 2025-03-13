@@ -4,7 +4,7 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.GenerationsModelLoader
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.VanilaRenderModel
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.VanillaRenderModel
 import generations.gg.generations.core.generationscore.common.util.TaskQueue
 import gg.generations.rarecandy.renderer.animation.AnimationController
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
@@ -13,10 +13,8 @@ import gg.generations.rarecandy.renderer.components.MultiRenderObject
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance
 import gg.generations.rarecandy.renderer.storage.ObjectManager
-import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
-import java.io.IOException
 import java.util.function.Supplier
 
 /**
@@ -51,28 +49,26 @@ class CompiledModel @JvmOverloads constructor(
         ObjectManager.render(renderObject, instance)
     }
 
-    fun render(instance: ObjectInstance, source: MultiBufferSource) {
+    fun render(instance: ObjectInstance) {
         if (renderObject == null) return
         if (!renderObject!!.isReady) return
 
-        if(GenerationsCore.CONFIG.client.useVanilla) {
-            renderVanilla(instance, source)
-        } else {
-        renderRareCandy(instance, ModelRegistry.worldRareCandy.objectManager)
-        }
+
+
+//        if(GenerationsCore.CONFIG.client.useVanilla) {
+            renderVanilla(instance)
+//        } else {
+//        renderRareCandy(instance, ModelRegistry.worldRareCandy.objectManager)
+//        }
     }
 
-    private fun renderVanilla(instance: ObjectInstance, source: MultiBufferSource) {
+    private fun renderVanilla(instance: ObjectInstance) {
         var list = renderObject!!.objects
 
-        var transforms = instance.takeIf { it is AnimatedObjectInstance }?.let { it as AnimatedObjectInstance }?.transforms ?: AnimationController.NO_ANIMATION
-
         list.forEach {
-            var model = it.model.takeIf { it is VanilaRenderModel }?.let { it as VanilaRenderModel } ?: return
+            var model = it.model.takeIf { it is VanillaRenderModel }?.let { it as VanillaRenderModel } ?: return
 
-            model.bufferSource = source
-
-            model.render(instance, it, transforms)
+            model.render(instance, it)
         }
     }
 

@@ -28,13 +28,12 @@ import generations.gg.generations.core.generationscore.common.client.render.enti
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.MinecraftClientGameProvider;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines;
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.VanillaRenderModel;
 import generations.gg.generations.core.generationscore.common.client.screen.container.*;
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.item.*;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.common.world.item.curry.ItemCurry;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
@@ -72,10 +71,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -149,6 +146,8 @@ public class GenerationsCoreClient {
             Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines);
 
             Pipelines.onInitialize(event.getResourceManager());
+
+            VanillaRenderModel.initBuffers();
 
             registerScreens();
         });
@@ -451,17 +450,17 @@ public class GenerationsCoreClient {
     }
 
     public static void renderRareCandy(ClientLevel level) {
-        if(GenerationsCore.CONFIG.client.useVanilla) return;
+//        if(GenerationsCore.CONFIG.client.useVanilla) return;
+//
+//        var startTime = System.currentTimeMillis();
+//        assert level != null;
+//        level.getProfiler().popPush("render_models");
+//        RenderSystem.enableDepthTest();
+//        BufferUploader.reset();
 
-        var startTime = System.currentTimeMillis();
-        assert level != null;
-        level.getProfiler().popPush("render_models");
-        RenderSystem.enableDepthTest();
-        BufferUploader.reset();
-
-        ModelRegistry.getWorldRareCandy().render(RenderStage.SOLID, true, MinecraftClientGameProvider.getTimePassed());
-        ModelRegistry.getWorldRareCandy().render(RenderStage.TRANSPARENT, true, MinecraftClientGameProvider.getTimePassed());
-        if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
+//        ModelRegistry.getWorldRareCandy().render(RenderStage.SOLID, true, MinecraftClientGameProvider.getTimePassed());
+//        ModelRegistry.getWorldRareCandy().render(RenderStage.TRANSPARENT, true, MinecraftClientGameProvider.getTimePassed());
+//        if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms");
     }
 
     private static boolean shouldRenderFpsPie() {

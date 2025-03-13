@@ -364,7 +364,7 @@ public class VanillaModelLoader {
 
         var indexSize = mesh.mNumFaces() * 3;
 
-        return new VanilaRenderModel(indexBuffer, positions, uvs, normals, boneIds, boneWeights, indexSize);
+        return new VanillaRenderModel(indexBuffer, positions, uvs, normals, boneIds, boneWeights, indexSize);
     }
 
     public static void addBoneData(int[] ids, float[] weights, int vertexId, int boneId, float weight) {
