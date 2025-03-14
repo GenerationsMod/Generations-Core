@@ -5,13 +5,17 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -62,6 +66,21 @@ public class CookingPotBlock extends GenericRotatableModelBlock<CookingPotBlockE
 
         return InteractionResult.SUCCESS;
     }
+
+    @Override
+    public void onRemove(BlockState oldState, Level worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+        if (!oldState.is(newState.getBlock())) {
+            BlockEntity tileEntity = worldIn.getBlockEntity(pos);
+            if (tileEntity instanceof CookingPotBlockEntity machine) {
+                final NonNullList<ItemStack> inventory = machine.getContainer().getItems();
+                Containers.dropContents(worldIn, pos, inventory);
+
+                worldIn.updateNeighbourForOutputSignal(pos, this);
+            }
+        }
+        super.onRemove(oldState, worldIn, pos, newState, isMoving);
+    }
+
 
     @Nullable
     @Override
