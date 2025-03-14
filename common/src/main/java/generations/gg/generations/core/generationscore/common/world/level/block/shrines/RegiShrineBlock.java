@@ -95,12 +95,16 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     }
 
     public static List<BlockPos> searchForBlock(Level world, BlockPos pos, int radius, int amount, BiPredicate<Level, BlockPos> block) {
+        return searchForBlock(world, pos, radius, radius, radius, amount, block);
+    }
+
+    public static List<BlockPos> searchForBlock(Level world, BlockPos pos, int xRadius, int yRadius, int zRadius, int amount, BiPredicate<Level, BlockPos> block) {
 
         List<BlockPos> states = new ArrayList<>();
 
-        for (int x = -radius; x < radius; x++) {
-            for (int y = -radius; y < radius; y++) {
-                for (int z = -radius; z < radius; z++) {
+        for (int x = -xRadius; x < xRadius; x++) {
+            for (int y = -yRadius; y < yRadius; y++) {
+                for (int z = -zRadius; z < zRadius; z++) {
                     BlockPos blockPos = pos.offset(x, y, z);
                     if (block.test(world, blockPos)) {
                         states.add(blockPos);

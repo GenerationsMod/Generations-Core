@@ -53,14 +53,12 @@ class GenerationsCobblemonEvents {
         @JvmStatic
         fun init() {
 
-            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
-                val list = RegiShrineBlock.searchForBlock(it.entity.level(), it.entity.blockPosition(), 32, 1) {
-                        world, pos -> world.getBlockState(pos).`is`(SCARECROW.get()) }
-                if(list.isNotEmpty()) {
-                    it.cancel()
-                }
+//            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
+//
+//
+//            }
 
-            }
+            GenerationsArchitecturyEvents
 
             BATTLE_VICTORY.subscribe(Priority.HIGH) { event ->
                 val data = mutableListOf<BattleData>()

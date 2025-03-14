@@ -4,6 +4,7 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.*;
+import net.minecraft.core.Vec3i;
 import net.minecraft.world.entity.player.Player;
 
 import java.lang.reflect.Type;
@@ -144,6 +145,7 @@ public class Config {
 
     public static class Blocks {
         public int elevatorRange = 15;
+        public Vec3i scarecrowRadius = new Vec3i(32,32,32);
     }
 
     public static class Special {
