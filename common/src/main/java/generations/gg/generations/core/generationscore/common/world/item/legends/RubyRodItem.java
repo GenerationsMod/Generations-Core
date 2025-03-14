@@ -23,6 +23,11 @@ public class RubyRodItem extends TieredFishingRodItem implements LangTooltip {
         super(properties, tier);
     }
 
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
+
     public static ObjectArrayList<ItemStack> sanitizeList(ObjectArrayList<ItemStack> list, Map<RubyRodItem.LakeTrioShardType, Byte> currentShards) {
         list.removeIf(itemStack -> !isShard(itemStack));
 
@@ -84,6 +89,12 @@ public class RubyRodItem extends TieredFishingRodItem implements LangTooltip {
     private static boolean isShard(ItemStack itemStack) {
         var item = itemStack.getItem();
         return item == GenerationsItems.SHARD_OF_EMOTION.get() || item == GenerationsItems.SHARD_OF_KNOWLEDGE.get() || item == GenerationsItems.SHARD_OF_WILLPOWER.get();
+    }
+
+    public static boolean isFinished(ItemStack itemstack) {
+        var map = getFishedShard(itemstack);
+
+        return map.get(LakeTrioShardType.WILLPOWER) >= 9 && map.get(LakeTrioShardType.KNOWLEDGE) >= 9 && map.get(LakeTrioShardType.KNOWLEDGE) >= 9;
     }
 
     @Override

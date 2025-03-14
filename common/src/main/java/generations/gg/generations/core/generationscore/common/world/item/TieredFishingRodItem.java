@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
 import generations.gg.generations.core.generationscore.common.world.entity.TieredFishingHookEntity;
+import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -29,6 +31,17 @@ public class TieredFishingRodItem extends FishingRodItem {
             if (!level.isClientSide) {
                 int i = player.fishing.retrieve(itemstack);
                 itemstack.hurtAndBreak(i, player, arg2 -> arg2.broadcastBreakEvent(usedHand));
+
+                //Because of guys cheesing this with mending and /repair from some plugins.
+                if(this.tier == TieredFishingHookEntity.Teir.RUBY) {
+                    if(RubyRodItem.isFinished(itemstack)) {
+                        player.broadcastBreakEvent(usedHand);
+                        itemstack.setDamageValue(0);
+                        itemstack.shrink(1);
+
+                        player.sendSystemMessage(Component.translatable("item.generations_core.ruby_rod.fate_defied"));
+                    }
+                }
             }
             level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FISHING_BOBBER_RETRIEVE, SoundSource.NEUTRAL, 1.0f, 0.4f / (level.getRandom().nextFloat() * 0.4f + 0.8f));
             player.gameEvent(GameEvent.ITEM_INTERACT_FINISH);
