@@ -71,6 +71,7 @@ public class LegendKeys {
     public static SpeciesKey SPECTRIER = create("spectrier");
     public static SpeciesKey ZAMAZENTA = create("zamazenta");
     public static SpeciesKey ZACIAN = create("zacian");
+    public static SpeciesKey ZYGARDE = create("zygarde");
 
     private static SpeciesKey create(String species) {
         return new SpeciesKey(new ResourceLocation("cobblemon", species));
