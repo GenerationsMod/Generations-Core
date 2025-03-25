@@ -7,6 +7,9 @@
             "id": "marill-1",
             "pokemon": "marill",
             "type": "pokemon",
+            "presets": [
+                "natural"
+            ],
             "context": "grounded",
             "bucket": "uncommon",
             "level": "12-24",
