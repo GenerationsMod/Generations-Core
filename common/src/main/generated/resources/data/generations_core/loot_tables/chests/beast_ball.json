@@ -331,6 +331,10 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:mt_pyre_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:ultrite_upgrade_smithing_template"
         }
       ],
       "rolls": {
