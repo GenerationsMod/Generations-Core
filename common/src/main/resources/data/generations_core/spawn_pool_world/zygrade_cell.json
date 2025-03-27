@@ -13,35 +13,8 @@
       "bucket": "common",
       "weight": 0.18,
       "condition": {
-      "minSkyLight": 8,
-      "maxSkyLight": 15,
-		  "biomes": [
-  			"#cobblemon:is_plains",
-  			"#cobblemon:is_forest",
-  			"#cobblemon:is_glacial",
-  			"#cobblemon:is_tundra",
-  			"#cobblemon:is_desert",
-  			"#cobblemon:is_grassland",
-  			"#cobblemon:is_jungle",
-  			"#cobblemon:is_hills",
-  			"#cobblemon:is_savanna",
-  			"#cobblemon:is_spooky",
-  			"#cobblemon:is_badlands",
-  			"#cobblemon:is_arid",
-  			"#cobblemon:is_magical",
-  			"#cobblemon:is_floral",
-  			"#cobblemon:is_mountain",
-  			"#cobblemon:is_taiga",
-  			"#cobblemon:is_snowy_forest",
-  			"#cobblemon:is_snowy_taiga",
-  			"#cobblemon:is_swamp",
-  			"#cobblemon:is_lush",
-  			"#cobblemon:is_beach",
-  			"#cobblemon:is_tropical_island",
-  			"#cobblemon:is_coast",
-  			"#cobblemon:is_plateau",
-  			"#cobblemon:is_mushroom",
-  			"#cobblemon:is_cherry_blossom"
+        "biomes": [
+          "#cobblemon:is_overworld"
         ]
       }
     }
