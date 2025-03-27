@@ -14,12 +14,12 @@
             "bucket": "uncommon",
             "level": "32-44",
             "weight": 9.0,
+            "minSkyLight": 8,
+            "maxSkyLight": 15,
             "condition": {
-                "canSeeSky": true,
                 "biomes": [
                     "#cobblemon:is_temperate"
                 ],
-                "timeRange": "night",
                 "isRaining": false
             }
         }
