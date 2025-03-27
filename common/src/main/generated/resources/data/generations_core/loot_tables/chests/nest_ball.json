@@ -330,6 +330,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:tm_233"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:tm_131"
         },
         {
