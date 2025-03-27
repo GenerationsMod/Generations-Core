@@ -358,6 +358,18 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:tm_234"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_236"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_237"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:tm_173"
         },
         {
