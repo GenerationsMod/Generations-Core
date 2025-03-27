@@ -15,11 +15,11 @@
             "level": "5-36",
             "weight": 9.0,
             "condition": {
-                "canSeeSky": true,
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
                 "biomes": [
                     "#cobblemon:is_temperate"
                 ],
-                "timeRange": "night",
                 "isRaining": false
             }
         }
