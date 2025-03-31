@@ -34,6 +34,11 @@ public class GenerationsFabricBiomemodifiers {
 
         registerUnderGroundOres(BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_COLD), GenerationsPlacedFeatures.ORE_CRYSTAL, GenerationsPlacedFeatures.ORE_CRYSTAL_BURIED);
         registerUnderGroundOres(GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_SMALL, GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_LARGE, GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_BURIED);
+
+        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_MEGASTONE);
+        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_Z_CRYSTAL);
+        registerUnderGroundOres(GenerationsPlacedFeatures.ORE_METEORITE);
+        
         registerSurfaceFeatures(GenerationsPlacedFeatures.POKE_BALL_LOOT);
         registerSurfaceFeatures(GenerationsPlacedFeatures.BEAST_BALL_LOOT, BiomeSelectors.foundInTheEnd());
         registerSurfaceFeatures(GenerationsPlacedFeatures.CHERISH_BALL_LOOT, BiomeSelectors.tag(GenerationsBiomeTags.IS_FLORAL));
