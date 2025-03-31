@@ -765,7 +765,7 @@ object GenerationsItems {
     @JvmField val ULTRITE_INGOT = register("ultrite_ingot", ::Item, PLAYER_ITEMS)
     @JvmField val ULTRITE_REMNANT = register("ultrite_remnant", ::Item, PLAYER_ITEMS)
     @JvmField val DYNITE_ORE = register("dynite_ore", ::Item, PLAYER_ITEMS)
-    @JvmField val MEGASTONE_SHARD = register("mega_stone_shard", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
+    @JvmField val MEGASTONE_SHARD = register("mega_stone_shard", ::Item, PLAYER_ITEMS)
     @JvmField val KEY_STONE = register("key_stone", ::Item, PLAYER_ITEMS)
 
     @JvmField val ULTRITE_UPGRADE_SMITHING_TEMPLATE = register("ultrite_upgrade_smithing_template", { UltriteSmithingTemplateItem() }, PLAYER_ITEMS)
