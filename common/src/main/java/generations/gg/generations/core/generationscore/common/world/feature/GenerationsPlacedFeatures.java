@@ -37,6 +37,10 @@ public class GenerationsPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_LARGE = registerKey("ore_crystal_overworld_large");
     public static final ResourceKey<PlacedFeature> ORE_CRYSTAL_OVERWORLD_BURIED = registerKey("ore_crystal_overworld_buried");
 
+    public static final ResourceKey<PlacedFeature> ORE_MEGASTONE = registerKey("ore_megastone");
+    public static final ResourceKey<PlacedFeature> ORE_Z_CRYSTAL = registerKey("ore_z_crystal");
+    public static final ResourceKey<PlacedFeature> ORE_METEORITE = registerKey("ore_meteorite");
+
     public static final ResourceKey<PlacedFeature> POKE_BALL_LOOT = registerKey("poke_ball_loot");
     public static final ResourceKey<PlacedFeature> BEAST_BALL_LOOT = registerKey("beast_ball_loot");
     public static final ResourceKey<PlacedFeature> CHERISH_BALL_LOOT = registerKey("cherish_ball_loot");
@@ -96,6 +100,10 @@ public class GenerationsPlacedFeatures {
         register(context, ORE_CRYSTAL_OVERWORLD_LARGE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_CRYSTAL_OVERWORLD_LARGE), GenerationsOrePlacements.rareOrePlacement(9, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
         register(context, ORE_CRYSTAL_OVERWORLD_BURIED, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_CRYSTAL_OVERWORLD_SMALL), GenerationsOrePlacements.commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(80))));
         
+        register(context, ORE_MEGASTONE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_MEGASTONE), GenerationsOrePlacements.rareOrePlacement(20, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(-64))));
+        register(context, ORE_Z_CRYSTAL, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_Z_CRYSTAL), GenerationsOrePlacements.rareOrePlacement(20, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(-64))));
+        register(context, ORE_METEORITE, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_METEORITE), GenerationsOrePlacements.rareOrePlacement(20, HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(-64))));
+
         register(context, POKE_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.POKE_BALL_LOOT), oceanFloorSquaredWithChance(250));
         register(context, BEAST_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.BEAST_BALL_LOOT), oceanFloorSquaredWithChance(200));
         register(context, CHERISH_BALL_LOOT, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.CHERISH_BALL_LOOT), oceanFloorSquaredWithChance(200));

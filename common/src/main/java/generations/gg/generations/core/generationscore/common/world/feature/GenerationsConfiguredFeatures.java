@@ -78,6 +78,9 @@ public class GenerationsConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL_OVERWORLD_LARGE = registerKey("ore_crystal_overworld_large");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL_OVERWORLD_BURIED = registerKey("ore_crystal_overworld_buried");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_MEGASTONE = registerKey("ore_megastone");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_Z_CRYSTAL = registerKey("ore_z_crystal");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_METEORITE = registerKey("ore_meteorite");
 
     public static void bootStrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -106,6 +109,15 @@ public class GenerationsConfiguredFeatures {
         register(context, ORE_CRYSTAL_OVERWORLD_SMALL, Feature.ORE, new OreConfiguration(crystalOres, 2, 0.5F));
         register(context, ORE_CRYSTAL_OVERWORLD_LARGE, Feature.ORE, new OreConfiguration(crystalOres, 2, 0.7F));
         register(context, ORE_CRYSTAL_OVERWORLD_BURIED, Feature.ORE, new OreConfiguration(crystalOres, 4, 1.0F));
+
+        List<OreConfiguration.TargetBlockState> megastoneOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.MEGASTONE_ORE_SET);
+        register(context, ORE_MEGASTONE, Feature.ORE, new OreConfiguration(megastoneOres, 3, 0.0F));
+
+        List<OreConfiguration.TargetBlockState> z_crystalOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.Z_CRYSTAL_ORE_SET);
+        register(context, ORE_Z_CRYSTAL, Feature.ORE, new OreConfiguration(z_crystalOres, 3, 0.0F));
+
+        List<OreConfiguration.TargetBlockState> meteoriteOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.METEORITE_ORE_SET);
+        register(context, ORE_METEORITE, Feature.ORE, new OreConfiguration(meteoriteOres, 3, 0.0F));
 
         register(context, POKE_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.POKE_BALL_LOOT.get())));
         register(context, BEAST_BALL_LOOT, Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.BEAST_BALL_LOOT.get())));
