@@ -137,7 +137,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                     false
                 }
             ) { s: String ->
-                var scale = parseFloat(s).coerceIn(0.1f, 5.0f)
+                var scale = parseFloat(s).coerceIn(0.5f, 5.0f)
 
                 statue.scale = scale
                 UpdateStatuePacket.Scale(statue.id, scale).sendToServer()
