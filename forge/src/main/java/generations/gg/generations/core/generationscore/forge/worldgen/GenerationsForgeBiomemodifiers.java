@@ -68,6 +68,18 @@ public class GenerationsForgeBiomemodifiers {
                 placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_CRYSTAL_OVERWORLD_BURIED))
         );
 
+        registerUnderGroundOres(context, "add_ore_megastone_overworld", HolderSet.direct(
+                placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_MEGASTONE))
+        );
+
+        registerUnderGroundOres(context, "add_ore_z_crystal_overworld", HolderSet.direct(
+                placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_Z_CRYSTAL))
+        );
+
+        registerUnderGroundOres(context, "add_ore_meteorite_overworld", HolderSet.direct(
+                placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_METEORITE))
+        );
+
         registerSurfaceFeatures(context, "add_poke_ball_loot",
                 HolderSet.direct(placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.POKE_BALL_LOOT)));
 
