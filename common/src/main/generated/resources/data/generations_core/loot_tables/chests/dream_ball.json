@@ -430,6 +430,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:tm_232"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:tm_10"
         },
         {
@@ -495,6 +499,10 @@
         {
           "type": "minecraft:item",
           "name": "generations_core:tm_161"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_235"
         },
         {
           "type": "minecraft:item",

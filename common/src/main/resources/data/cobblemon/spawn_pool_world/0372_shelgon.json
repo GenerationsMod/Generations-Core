@@ -13,7 +13,7 @@
             "context": "grounded",
             "bucket": "rare",
             "level": "30-50",
-            "weight": 0.54,
+            "weight": 2.0,
             "condition": {
                 "biomes": [
                     "#cobblemon:is_badlands"

@@ -13,12 +13,13 @@
             "context": "grounded",
             "bucket": "rare",
             "level": "4-55",
-            "weight": 2,
+            "weight": 9.0,
+            "minSkyLight": 0,
+            "maxSkyLight": 7,
             "condition": {
                 "biomes": [
                     "#cobblemon:is_spooky"
-                ],
-                "maxLight": 7
+                ]
             }
         }
     ]

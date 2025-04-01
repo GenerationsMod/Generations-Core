@@ -442,6 +442,14 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:tm_230"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_231"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:iris_disc"
         },
         {

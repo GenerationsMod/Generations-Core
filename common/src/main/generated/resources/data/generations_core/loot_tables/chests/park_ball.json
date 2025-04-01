@@ -454,6 +454,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:tm_232"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:tm_20"
         },
         {

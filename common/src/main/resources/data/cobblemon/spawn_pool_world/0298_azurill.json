@@ -7,6 +7,9 @@
             "id": "azurill-1",
             "pokemon": "azurill",
             "type": "pokemon",
+            "presets": [
+                "natural"
+            ],
             "context": "grounded",
             "bucket": "common",
             "level": "4-18",
