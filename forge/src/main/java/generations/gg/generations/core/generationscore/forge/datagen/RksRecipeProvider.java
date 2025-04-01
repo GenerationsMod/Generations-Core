@@ -203,6 +203,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createMegaStone(LOPUNNNITE, "lopunny", exporter);
         createMegaStone(SALAMENCITE, "salamence", exporter);
         createMegaStone(BEEDRILLITE, "beedrill", exporter);
+        createMegaStone(SLOWBRONITE, "slowbro", exporter);
 
         createZCyrstal(BUGINIUM_Z, BUG_GEM, exporter);
         createZCyrstal(DARKINIUM_Z, DARK_GEM, exporter);
@@ -226,7 +227,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         createZCyrstal(ALORAICHIUM_Z, "raichu", "alolan", exporter);
         createZCyrstal(DECIDIUM_Z, "decidueye", exporter);
         createZCyrstal(EEVIUM_Z, "eevee", exporter);
-        createZCyrstal(INCINIUM_Z, "incinium", exporter);
+        createZCyrstal(INCINIUM_Z, "incineroar", exporter);
         createZCyrstal(KOMMONIUM_Z, "kommoo", exporter);
         createZCyrstal(LUNALIUM_Z, "lunala", exporter);
         createZCyrstal(LYCANIUM_Z, "lycanroc", exporter);
@@ -277,8 +278,8 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Y, "y");
         unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Z, "z");
 
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK, "!");
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK, "?");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK, "exclamation");
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK, "questionmark");
     }
 
     private <E> void createZCyrstal(RegistrySupplier<Item> result, String pokemon, String aspects, Consumer<FinishedRecipe> exporter) {
