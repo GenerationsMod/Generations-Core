@@ -4,19 +4,14 @@
   "neededUninstalledMods": [],
   "spawns": [
     {
-      "id": "zygardecell-1",
+      "id": "zygardecell-2",
       "presets": [
         "natural"
       ],
       "type": "zygarde",
       "context": "grounded",
-      "bucket": "common",
-      "weight": 0.18,
-      "condition": {
-        "biomes": [
-          "#cobblemon:is_overworld"
-        ]
-      }
+      "bucket": "collectibles",
+      "weight": 1.0
     }
   ]
 }
