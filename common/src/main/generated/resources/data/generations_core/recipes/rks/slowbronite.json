@@ -5,27 +5,25 @@
   "inputs": {
     "A": {
       "type": "item",
-      "key": "minecraft:netherite_scrap"
+      "key": "generations_core:key_stone"
     },
     "B": {
       "type": "time_capsule",
       "aspects": [],
-      "species": "cobblemon:incineroar",
+      "species": "cobblemon:slowbro",
       "strictAspects": false
     },
-    "X": {
+    "C": {
       "type": "item",
-      "key": "generations_core:z_ingot"
+      "key": "minecraft:netherite_scrap"
     }
   },
   "pattern": [
-    "XXX",
-    "ABA",
-    "XXX"
+    "ABC"
   ],
   "processingTime": 240,
   "result": {
     "type": "generations_core:item",
-    "value": "generations_core:incinium_z"
+    "value": "generations_core:slowbronite"
   }
 }

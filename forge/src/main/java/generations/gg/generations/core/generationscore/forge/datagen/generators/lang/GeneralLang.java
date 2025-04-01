@@ -318,7 +318,7 @@ public class GeneralLang extends LanguageProvider {
         addTooltip(CRYSTAL_OF_KNOWLEDGE, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.");
         addTooltip(CRYSTAL_OF_WILLPOWER, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.");
         addTooltip(RUBY_ROD, "§7HINT: Fish… Lake… Guardian…");
-        add("item.generations_core.ruby_rod.fate_defied", "The Ruby Rod shatter as it resists its altered fate");
+        add("item.generations_core.ruby_rod.fate_defied", "The Ruby Rod shatters as it resists its altered fate");
         //Creation Trio
         addTooltip(RED_CHAIN, "§7HINT: It doesn’t seem to be reacting to anything. The Crystals used may have used up all their energy. Try enchanting it to give it some power.");
         addTooltip(RED_CHAIN, "enchanted", "“HINT: This item appears to be related to the Creation Trio, perhaps if you had their respected Orbs you could activate an altar.");

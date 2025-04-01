@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "generations_core:ore_meteorite",
+  "step": "underground_ores"
+}

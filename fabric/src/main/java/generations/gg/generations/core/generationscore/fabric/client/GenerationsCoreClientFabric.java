@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.client;
 
+import com.mojang.authlib.minecraft.client.MinecraftClient;
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock;
@@ -36,7 +37,7 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
     public void onInitializeClient() {
         WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> GenerationsCoreClient.renderHighlightedPath(context.matrixStack(), Minecraft.getInstance().levelRenderer.ticks, context.camera()));
 
-        WorldRenderEvents.BEFORE_DEBUG_RENDER.register(context -> GenerationsCoreClient.renderRareCandy(context.world()));
+        WorldRenderEvents.AFTER_ENTITIES.register(context -> GenerationsCoreClient.renderRareCandy(context.world()));
 
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         registerRenderTypes();

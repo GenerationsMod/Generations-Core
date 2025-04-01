@@ -457,7 +457,9 @@ public class GenerationsCoreClient {
         assert level != null;
         level.getProfiler().popPush("render_models");
         RenderSystem.enableDepthTest();
-        BufferUploader.reset();
+//        BufferUploader.reset();
+
+
 
         ModelRegistry.getWorldRareCandy().render(RenderStage.SOLID, true, MinecraftClientGameProvider.getTimePassed());
         ModelRegistry.getWorldRareCandy().render(RenderStage.TRANSPARENT, true, MinecraftClientGameProvider.getTimePassed());
