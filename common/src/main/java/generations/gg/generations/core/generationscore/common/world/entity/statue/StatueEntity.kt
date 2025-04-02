@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.api.scheduling.Schedulable
 import com.cobblemon.mod.common.api.scheduling.SchedulingTracker
 import com.cobblemon.mod.common.api.text.text
+import com.cobblemon.mod.common.entity.PosableEntity
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.entity.Poseable
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers
@@ -33,7 +34,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.Level
 import net.minecraft.world.phys.Vec3
 
-class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(), level), Poseable, Schedulable {
+class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(), level), PosableEntity, Schedulable {
     companion object {
         val PROPERTIES = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.PROPERTIES)
         val LABEL = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.NULLABLE_STRING)
@@ -129,17 +130,17 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
             this.entityData[ORIENTATION] = value
         }
 
-    override fun defineSynchedData() {
-        this.entityData.define(PROPERTIES, parse("charizard"))
-        this.entityData.define(LABEL, "Statue")
-        this.entityData.define(SCALE, 1.0f)
-        this.entityData.define(POSE_TYPE, PoseType.NONE)
-        this.entityData.define(STATIC_TOGGLE, false)
-        this.entityData.define(STATIC_PARTIAL, 0.0f)
-        this.entityData.define(STATIC_AGE, 0)
-        this.entityData.define(INTERACTABLE, false)
-        this.entityData.define(MATERIAL, "")
-        this.entityData.define(ORIENTATION, 0.0f)
+    override fun defineSynchedData(builder: SynchedEntityData.Builder) {
+        builder.define(PROPERTIES, parse("charizard"))
+        builder.define(LABEL, "Statue")
+        builder.define(SCALE, 1.0f)
+        builder.define(POSE_TYPE, PoseType.NONE)
+        builder.define(STATIC_TOGGLE, false)
+        builder.define(STATIC_PARTIAL, 0.0f)
+        builder.define(STATIC_AGE, 0)
+        builder.define(INTERACTABLE, false)
+        builder.define(MATERIAL, "")
+        builder.define(ORIENTATION, 0.0f)
     }
 
     override fun readAdditionalSaveData(compound: CompoundTag) {
@@ -185,7 +186,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
 
     override fun getCurrentPoseType(): PoseType = poseType
 
-    override fun getAddEntityPacket() = GenerationsNetwork.asVanillaClientBound(
+    override fun getAddEntityPacket(entity: Entity) = GenerationsNetwork.asVanillaClientBound(
         SpawnStatuePacket(
             properties = properties,
             label = label,
@@ -197,7 +198,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
             interactable = interactable,
             material = material,
             orientation = orientation,
-            vanillaSpawnPacket = super.getAddEntityPacket() as ClientboundAddEntityPacket
+            vanillaSpawnPacket = super.getAddEntityPacket(entity) as ClientboundAddEntityPacket
         )
     )
 

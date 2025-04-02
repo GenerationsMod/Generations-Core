@@ -5,6 +5,7 @@ import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.JsonObject;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -66,7 +67,7 @@ public class Caught extends PlayerDataExtension {
         return new Caught(multiset);
     }
 
-    public static Caught get(Player player) {
-        return (Caught) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new Caught());
+    public static Caught get(ServerPlayer player) {
+        return (Caught) Cobblemon.playerDataManager.getGenericData(player).getExtraData().computeIfAbsent(KEY, key -> new Caught());
     }
 }

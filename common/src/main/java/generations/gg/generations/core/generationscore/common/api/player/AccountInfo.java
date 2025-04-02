@@ -49,6 +49,6 @@ public class AccountInfo extends PlayerDataExtension {
     }
 
     public static AccountInfo get(Player player) {
-        return (AccountInfo) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new AccountInfo(GenerationsCore.CONFIG.economy.startingFunds));
+        return (AccountInfo) new AccountInfo(GenerationsCore.CONFIG.economy.startingFunds); //Cobblemon.playerDataManager.getGenericData(player).getExtraData().computeIfAbsent(KEY, key -> new AccountInfo(GenerationsCore.CONFIG.economy.startingFunds)); TODO: rework
     }
 }

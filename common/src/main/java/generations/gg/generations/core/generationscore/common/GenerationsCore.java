@@ -103,9 +103,10 @@ public class GenerationsCore {
 //		GenerationsDataProvider.INSTANCE.register(ShopPresets.instance());
 //		GenerationsDataProvider.INSTANCE.register(Shops.instance());
 
-		LootEvent.MODIFY_LOOT_TABLE.register((lootDataManager, id, context, builtin) -> {
+		LootEvent.MODIFY_LOOT_TABLE.register((lootId, context, builtin) -> {
+			var id = lootId.location();
             if(id.getNamespace().equals("minecraft") && id.getPath().contains("chests") && !id.getPath().contains("inject")) {
-                var inject = new ResourceLocation(id.getNamespace(), id.getPath().replace("chests", "chests/inject"));
+                var inject = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), id.getPath().replace("chests", "chests/inject"));
                 context.addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(inject)));
             } else if(id.toString().equals("minecraft:blocks/carrots")) {
 				context.addPool(LootPool.lootPool().add(LootTableReference.lootTableReference(GenerationsCore.id("blocks/calyrex_roots"))));
@@ -141,6 +142,7 @@ public class GenerationsCore {
 
 		GenerationsDataProvider.INSTANCE.registerDefaults();
 
+		//TODO: Convert to our data thingy.
 		PlayerDataExtensionRegistry.INSTANCE.register(AccountInfo.KEY, AccountInfo.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(Caught.KEY, Caught.class, false);
 		PlayerDataExtensionRegistry.INSTANCE.register(BiomesVisited.KEY, BiomesVisited.class, false);
@@ -194,7 +196,7 @@ public class GenerationsCore {
 	 * Creates a {@link ResourceLocation} with the Generations-Core Mod id.
 	 */
 	public static ResourceLocation id(String path) {
-		return new ResourceLocation(MOD_ID, path);
+		return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
 	}
 
 	public static GenerationsImplementation getImplementation() {

@@ -20,6 +20,9 @@ import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Collection;
 import java.util.stream.Stream;
@@ -40,11 +43,20 @@ public abstract class ServerPlayerMixin extends Player {
         super(level, pos, yRot, gameProfile);
     }
 
-    @Override
-    public void checkMovementStatistics(double distanceX, double distanceY, double distanceZ) {
+    @Inject(method = "checkRidingStatistics", at = @At("TAIL"))
+    public void ridingCheck(double dx, double dy, double dz, CallbackInfo ci) {
+        generations_Core$processStatistics(dx, dy, dz);
+    }
+
+    @Inject(method = "checkMovementStatistics", at = @At("TAIL"))
+    public void movingCheck(double dx, double dy, double dz, CallbackInfo ci) {
+        generations_Core$processStatistics(dx, dy, dz);
+    }
+
+    @Unique
+    public void generations_Core$processStatistics(double distanceX, double distanceY, double distanceZ) {
         if (!GenerationsCore.CONFIG.enigmaFragment.enabled) return;
-        super.checkMovementStatistics(distanceX, distanceY, distanceZ);
-        BiomesVisited biomesVisited = BiomesVisited.get(this);
+        BiomesVisited biomesVisited = BiomesVisited.get((ServerPlayer) (Object) this);
         if(biomesVisited.numberOfVisitedBiomes() < GenerationsCore.CONFIG.enigmaFragment.limit)
             serverLevel().getBiome(blockPosition()).unwrapKey().filter(a -> !a.equals(currentBiome)).ifPresent(biomeResourceKey -> {
             this.currentBiome = biomeResourceKey;

@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.biome.Biome;
 import org.jetbrains.annotations.NotNull;
@@ -54,12 +55,12 @@ public class BiomesVisited extends PlayerDataExtension {
     @NotNull
     @Override
     public PlayerDataExtension deserialize(@NotNull JsonObject jsonObject) {
-        var biomes = jsonObject.getAsJsonArray("biomes").asList().stream().map(JsonElement::getAsString).map(ResourceLocation::new).map(a -> ResourceKey.create(Registries.BIOME, a)).collect(Collectors.toCollection(HashSet::new));
+        var biomes = jsonObject.getAsJsonArray("biomes").asList().stream().map(JsonElement::getAsString).map(ResourceLocation::parse).map(a -> ResourceKey.create(Registries.BIOME, a)).collect(Collectors.toCollection(HashSet::new));
         return new BiomesVisited(biomes);
     }
 
-    public static BiomesVisited get(Player player) {
-        return (BiomesVisited) Cobblemon.playerData.get(player).getExtraData().computeIfAbsent(KEY, key -> new BiomesVisited());
+    public static BiomesVisited get(ServerPlayer player) {
+        return (BiomesVisited) Cobblemon.playerDataManager.getGenericData(player).getExtraData().computeIfAbsent(KEY, key -> new BiomesVisited());
     }
 
     public boolean hasVisited(ResourceKey<Biome> biome) {

@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.client.entity
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
+import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
@@ -12,16 +13,17 @@ import generations.gg.generations.core.generationscore.common.world.entity.Statu
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.entity.Entity
 import org.joml.Matrix4f
 
-class StatueClientDelegate : StatueSideDelegate, PoseableEntityState<PokemonEntity>(), CobblemonInstanceProvider {
+class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstanceProvider {
     private var modelEntity: PokemonEntity = PokemonEntity(Minecraft.getInstance().level!!)
     private var instance = StatueInstance(Matrix4f(), Matrix4f(), null)
     lateinit var currentEntity: StatueEntity
 
-    var trueAge = 0
+    var trueAge: Int = 0
 
-    val activeAge: Int
+    val activeAge: Float
         get() = if(currentEntity.staticToggle) currentEntity.staticAge else trueAge
 
     override val schedulingTracker
@@ -46,7 +48,7 @@ class StatueClientDelegate : StatueSideDelegate, PoseableEntityState<PokemonEnti
 
         val model = currentModel!!
         model.context.put(RenderContext.ENTITY, entity)
-        currentModel!!.updateLocators(this)
+        currentModel!!.updateLocators(entity, this)
         updateLocatorPosition(entity.position())
 
         val currentPoseType = entity.getCurrentPoseType()
@@ -62,7 +64,7 @@ class StatueClientDelegate : StatueSideDelegate, PoseableEntityState<PokemonEnti
         incrementAge(modelEntity)
     }
 
-    override fun incrementAge(entity: PokemonEntity) {
+    override fun incrementAge(entity: Entity) {
         val previousAge = this.activeAge
         updateAge(trueAge + 1)
         runEffects(entity, previousAge, this.activeAge)

@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.common.api.player
 
-import com.cobblemon.mod.common.Cobblemon.playerData
+import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.api.berry.Flavor
 import com.cobblemon.mod.common.util.party
 import com.google.gson.JsonObject
@@ -113,7 +113,7 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
     }
 
     override fun deserialize(jsonObject: JsonObject): PlayerDataExtension {
-        return CODEC.decode(JsonOps.INSTANCE, jsonObject).getOrThrow(false, System.out::println).first
+        return CODEC.decode(JsonOps.INSTANCE, jsonObject).getOrThrow().first
     }
 
     companion object {
@@ -130,7 +130,7 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
                 .thenComparingInt { a: CurryDexEntry -> a.flavor!!.ordinal }
 
         fun of(player: ServerPlayer): CurryDex {
-            return playerData.get(player).extraData.computeIfAbsent(KEY) { key: String -> CurryDex() }.let { it as CurryDex }
+            return Cobblemon.playerDataManager.getGenericData(player).extraData.computeIfAbsent(KEY) { key: String -> CurryDex() }.let { it as CurryDex }
         }
 
         fun add(player: ServerPlayer, data: CurryData?) {

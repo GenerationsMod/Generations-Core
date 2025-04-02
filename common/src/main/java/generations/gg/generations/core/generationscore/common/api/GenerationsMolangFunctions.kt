@@ -141,18 +141,24 @@ object GenerationsMolangFunctions {
 
 
                 "party" to Function<MoParams, Any> {
-                    player.party().asMoLangValue()
+                    if(player is ServerPlayer) player.party().asMoLangValue()
+                    else DoubleValue.ZERO
                 },
 
                 "has_in_party" to Function<MoParams, Any> {
-                    val properties = it.getStringOrNull(0)?.let { SpeciesKey.fromString(it) }?.createProperties()
+                    if(player is ServerPlayer) {
+                        val properties = it.getStringOrNull(0)?.let { SpeciesKey.fromString(it) }?.createProperties()
 
-                    if(properties == null) return@Function DoubleValue(1.0)
+                        if (properties == null) return@Function DoubleValue(1.0)
 
-                    val index = it.getDoubleOrNull(1)?.toInt()
+                        val index = it.getDoubleOrNull(1)?.toInt()
 
-                    if(index != null) return@Function DoubleValue(if (player.party().get(index)?.takeIf { properties.matches(it) } != null) 1.0 else 0.0)
-                    else return@Function DoubleValue(if (player.party().any { properties.matches(it) }) 1.0 else 0.0)
+                        if (index != null) return@Function DoubleValue(
+                            if (player.party().get(index)?.takeIf { properties.matches(it) } != null) 1.0 else 0.0)
+                        else return@Function DoubleValue(
+                            if (player.party().any { properties.matches(it) }) 1.0 else 0.0
+                        )
+                    } else DoubleValue.ZERO
                 })
             //TODO: Add money support
         }

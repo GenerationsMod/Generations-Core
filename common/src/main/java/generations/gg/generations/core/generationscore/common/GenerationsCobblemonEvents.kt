@@ -10,6 +10,8 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_POST
 import com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
+import com.cobblemon.mod.common.api.storage.player.PlayerInstancedDataStoreType
+import com.cobblemon.mod.common.api.storage.player.PlayerInstancedDataStoreTypes
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
@@ -113,7 +115,7 @@ class GenerationsCobblemonEvents {
             CobblemonEvents.BATTLE_STARTED_PRE.subscribe(Priority.HIGHEST)  {
                 it.battle.actors.filterIsInstance<PlayerBattleActor>()
                     .mapNotNull { it.entity }.forEach {
-                    val keyItems = Cobblemon.playerData.get(it).keyItems
+                    val keyItems = Cobblemon.playerDataManager.getGenericData(it).keyItems
 
                     keyItems.removeAll(gimmackItems)
 
@@ -142,7 +144,7 @@ class GenerationsCobblemonEvents {
 
                 it.addOption(Orientation.BOTTOM_LEFT, InteractWheelOption(
                     iconResource = GenerationsCore.id("textures/ui/interact/head_pat.png"),
-                    "generations_core.ui.interact.head_pat", { Vector3f(1F, 0F, 0F) }, {
+                    tooltipText = "generations_core.ui.interact.head_pat", colour = { Vector3f(1F, 0F, 0F) }, onPress = {
                     HeadPatPacket(it.pokemonID).sendToServer()
                     Minecraft.getInstance().screen = null
                 }))
