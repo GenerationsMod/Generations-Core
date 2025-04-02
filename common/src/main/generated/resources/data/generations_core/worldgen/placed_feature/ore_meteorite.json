@@ -1,27 +1,27 @@
 {
-  "feature": "generations_core:ore_meteorite",
-  "placement": [
-    {
-      "type": "minecraft:rarity_filter",
-      "chance": 20
-    },
-    {
-      "type": "minecraft:in_square"
-    },
-    {
-      "type": "minecraft:height_range",
-      "height": {
-        "type": "minecraft:trapezoid",
-        "max_inclusive": {
-          "absolute": -64
-        },
-        "min_inclusive": {
-          "absolute": 0
+    "feature": "generations_core:ore_meteorite",
+    "placement": [
+      {
+        "type": "minecraft:count",
+        "count": 16
+      },
+      {
+        "type": "minecraft:in_square"
+      },
+      {
+        "type": "minecraft:height_range",
+        "height": {
+          "type": "minecraft:trapezoid",
+          "max_inclusive": {
+            "absolute": 0
+          },
+          "min_inclusive": {
+            "absolute": -64
+          }
         }
+      },
+      {
+        "type": "minecraft:biome"
       }
-    },
-    {
-      "type": "minecraft:biome"
-    }
-  ]
-}
+    ]
+  }
