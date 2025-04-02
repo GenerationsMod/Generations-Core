@@ -9,97 +9,102 @@ plugins {
 
 architectury {
     platformSetupLoomIde()
-    forge()
+    neoForge()
 }
 
 val minecraftVersion = project.properties["minecraft_version"] as String
 
 configurations {
     create("common")
-    "common" {
-        isCanBeResolved = true
-        isCanBeConsumed = false
-    }
-    create("shadowBundle")
-    compileClasspath.get().extendsFrom(configurations["common"])
-    runtimeClasspath.get().extendsFrom(configurations["common"])
-    getByName("developmentForge").extendsFrom(configurations["common"])
-    "shadowBundle" {
-        isCanBeResolved = true
-        isCanBeConsumed = false
-    }
-}
+        "common" {
+            isCanBeResolved = true
+            isCanBeConsumed = false
+        }
 
-loom {
-    accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+        compileClasspath.get().extendsFrom(configurations["common"])
+        runtimeClasspath.get().extendsFrom(configurations["common"])
+        getByName("developmentNeoForge").extendsFrom(configurations["common"])
 
-    forge {
-        convertAccessWideners.set(true)
-        extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
-        mixinConfig("GenerationsCore-common.mixins.json")
+        create("shadowBundle")
+        "shadowBundle" {
+            isCanBeResolved = true
+            isCanBeConsumed = false
+        }
     }
 
-    runs.create("data") {
+    loom {
+        accessWidenerPath.set(project(":common").loom.accessWidenerPath)
+
+//        neoForge {
+//            convertAccessWideners.set(true)
+//            extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
+//            mixinConfig("GenerationsCore-common.mixins.json")
+//        }
+
+        runs.create("data") {
             data()
             programArgs("--all", "--mod", "generations_core")
             programArgs("--output", project(":common").file("src/main/generated/resources").absolutePath)
             programArgs("--existing", project(":common").file("src/main/resources").absolutePath)
+        }
     }
-}
 
-repositories {
-    maven("https://thedarkcolour.github.io/KotlinForForge/")
-    mavenCentral()
-}
+    repositories {
+        maven("https://thedarkcolour.github.io/KotlinForForge/")
+        mavenCentral()
+    }
 
-dependencies {
-    if ((project.properties["use_neoforge"] as String).toBoolean())
-        forge("net.neoforged:forge:$minecraftVersion-${project.properties["neoforge_version"]}")
-    else forge("net.minecraftforge:forge:$minecraftVersion-${project.properties["forge_version"]}")
+    dependencies {
+        neoForge("net.neoforged:neoforge:${project.properties["neoforge_version"]}")
 
-    modApi("dev.architectury:architectury-forge:${project.properties["architectury_version"]}")
+        modApi("dev.architectury:architectury-neoforge:${project.properties["architectury_version"]}")
 
-    "common"(project(":common", "namedElements")) { isTransitive = false }
-    "shadowBundle"(project(":common", "transformProductionForge"))
+        "common"(project(":common", "namedElements")) { isTransitive = false }
+        "shadowBundle"(project(":common", "transformProductionForge"))
 
-    modLocalRuntime("me.djtheredstoner:DevAuth-forge-latest:${project.properties["devauth_version"]}")
+//        modLocalRuntime("me.djtheredstoner:DevAuth-neoforge-latest:${project.properties["devauth_version"]}") TODO: renable
 
-    modApi("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!
+//    modApi("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!
 
-    forgeRuntimeLibrary("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}") {isTransitive = false})!!
+        forgeRuntimeLibrary(
+            "shadowBundle"(
+                "gg.generations",
+                "RareCandy",
+                "${project.properties["rareCandy"]}"
+            ) { isTransitive = false })!!
 
-    modCompileOnly("mcp.mobius.waila:wthit-api:forge-${project.properties["WTHIT"]}")
-    modRuntimeOnly("mcp.mobius.waila:wthit:forge-${project.properties["WTHIT"]}")
-    modRuntimeOnly("lol.bai:badpackets:forge-${project.properties["badPackets"]}")
+        modCompileOnly("mcp.mobius.waila:wthit-api:neo-${project.properties["WTHIT"]}")
+        modRuntimeOnly("mcp.mobius.waila:wthit:neo-${project.properties["WTHIT"]}")
+        modRuntimeOnly("lol.bai:badpackets:neo-${project.properties["badPackets"]}")
 
-    modLocalRuntime("curse.maven:spit-it-out-857141:4888754")
+//        modLocalRuntime("curse.maven:spit-it-out-857141:4888754")
 
-    modLocalRuntime("curse.maven:worldedit-225608:4586218")
-
+        modLocalRuntime("curse.maven:worldedit-225608:5830452")
 
 
 //    modRuntimeOnly("me.shedaniel:RoughlyEnoughItems-forge:${project.properties["rei"]}")
-    modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-forge:${project.properties["rei"]}")
-    modCompileOnlyApi("mezz.jei:jei-${project.properties["minecraft_version"]}-forge-api:${project.properties["jei"]}")
+        modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-neoforge:${project.properties["rei"]}")
+        modCompileOnlyApi("mezz.jei:jei-${project.properties["minecraft_version"]}-neoforge-api:${project.properties["jei"]}")
 
-    when(project.properties["recipe_viewer"]) {
-        "rei" -> modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-forge:${project.properties["rei"]}")
-        "jei" -> modRuntimeOnly("mezz.jei:jei-${project.properties["minecraft_version"]}-forge:${project.properties["jei"]}")
+        when (project.properties["recipe_viewer"]) {
+            "rei" -> modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-neoforge:${project.properties["rei"]}")
+            "jei" -> modRuntimeOnly("mezz.jei:jei-${project.properties["minecraft_version"]}-neoforge:${project.properties["jei"]}")
+        }
+
+        //Cobblemon
+        implementation("thedarkcolour:kotlinforforge:5.4.0")
+        modImplementation("com.cobblemon:neoforge:${project.properties["cobblemon_version"]}")
+
+        implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
+        include("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
     }
 
-    //Cobblemon
-    implementation("thedarkcolour:kotlinforforge:4.11.0")
-    modImplementation("com.cobblemon:forge:${project.properties["cobblemon_version"]}")
-
-    implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
-    include("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")
-}
 
 tasks {
     processResources {
         inputs.property("version", project.version)
 
-        filesMatching("META-INF/mods.toml") {
+        filesMatching("META-INF/neoforge.mods.toml") {
             expand(mapOf("version" to project.version))
         }
     }
