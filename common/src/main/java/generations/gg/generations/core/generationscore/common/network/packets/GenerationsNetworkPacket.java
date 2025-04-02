@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 
 import static com.cobblemon.mod.common.util.DistributionUtilsKt.server;
 
-public interface GenerationsNetworkPacket<T> extends Encodable {
+public interface GenerationsNetworkPacket<T> extends Encodable  {
     ResourceLocation getId();
     default void sendToPlayer(ServerPlayer player) {
         GenerationsNetwork.INSTANCE.sendPacketToPlayer(player, this);

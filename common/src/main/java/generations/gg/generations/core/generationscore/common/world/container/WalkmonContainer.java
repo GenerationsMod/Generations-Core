@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.container;
 
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
 import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.Container;
@@ -22,14 +23,15 @@ public class WalkmonContainer extends GenericChestContainer {
     @Override
     public Slot getSlot(Container container, int slot, int x, int y) {
         if(container instanceof Inventory) return super.getSlot(container, slot, x, y);
-        return new PredicateSlotItemHandler(container, slot, x, y, itemStack -> itemStack.is(ItemTags.MUSIC_DISCS));
+        return new PredicateSlotItemHandler(container, slot, x, y, itemStack -> itemStack.has(DataComponents.JUKEBOX_PLAYABLE));
     }
 
     @Override
     public void save(Player player) {
         var stack = getPlayerInventory().getItem(this.getLocked());
         if(stack.getItem() instanceof WalkmonItem walkmon) {
-            var holder = walkmon.load(stack, (GenericContainer.SimpleGenericContainer) this.getContainer());
+            var holder = walkmon.load(stack);
+
             holder.save(stack);
         }
     }
