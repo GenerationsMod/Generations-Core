@@ -18,7 +18,7 @@
                 "canSeeSky": false,
                 "timeRange": "night",
                 "biomes": [
-                    "#cobblemon:is_abyss"
+                    "#cobblemon:is_deep_dark"
                 ]
             }
         }
