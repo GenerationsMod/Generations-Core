@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -28,16 +29,16 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
     }
 
     @Override
-    public int neededEnchantmentLevel(Player player) {
+    public int neededEnchantmentLevel(ServerPlayer player) {
         return 0;
     }
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
-        if (!level.isClientSide() && !GenerationsCore.CONFIG.caught.capped(player, speciesKey)) {
+        if (!level.isClientSide() && !GenerationsCore.CONFIG.caught.capped((ServerPlayer) player, speciesKey)) {
             ItemStack stack = player.getItemInHand(usedHand);
 
-            if (!isEnchanted(stack) && stack.getDamageValue() >= getMaxDamage()) {
+            if (!isEnchanted(stack) && stack.getDamageValue() >= stack.getMaxDamage()) {
                 PokemonUtil.spawn(pokemonProperties.createPokemon(70), level, player.getOnPos(), player.getYRot());
                 stack.getOrCreateTag().putBoolean("enchanted", true);
                 return InteractionResultHolder.success(stack);

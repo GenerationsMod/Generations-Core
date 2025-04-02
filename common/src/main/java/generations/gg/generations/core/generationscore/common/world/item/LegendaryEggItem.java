@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.block
 import generations.gg.generations.core.generationscore.common.world.item.legends.DistanceTraveledImplItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -39,7 +40,7 @@ public class LegendaryEggItem extends DistanceTraveledImplItem implements LangTo
     }
 
     @Override
-    public boolean checkPlayerState(Player player) {
+    public boolean checkPlayerState(ServerPlayer player) {
         return GenerationsCore.CONFIG.caught.capped(player, speciesKey);
     }
 

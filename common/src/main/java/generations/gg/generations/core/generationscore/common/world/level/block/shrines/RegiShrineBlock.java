@@ -13,9 +13,12 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -59,8 +62,8 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
     }
 
     @Override
-    public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        if (!level.isClientSide() && player.getItemInHand(hand).getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesKey().equals(species) && GenerationsCore.CONFIG.caught.capped(player, species)) {
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (!level.isClientSide() && stack.getItem() instanceof RegiKeyItem keyItem && keyItem.getSpeciesKey().equals(species) && GenerationsCore.CONFIG.caught.capped((ServerPlayer) player, species)) {
             List<BlockPos> blockPos = searchForBlock(level, pos, 15, 1, (level1, pos1) -> level1.getBlockState(pos1).getBlock() instanceof UnownBlock);
 
             if (!blockPos.isEmpty()) {
@@ -81,10 +84,10 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
                 }
             }
 
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }
 
-        return super.use(state, level, pos, player, hand, hit);
+        return super.useItemOn(stack, state, level, pos, player, hand, hit);
     }
 
     public List<BlockPos> checkForUnownSequence(Level world, BlockPos pos) {

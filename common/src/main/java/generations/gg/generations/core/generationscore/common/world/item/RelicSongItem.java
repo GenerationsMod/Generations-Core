@@ -1,9 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
-import dev.architectury.core.item.ArchitecturyRecordItem;
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -13,11 +10,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class RelicSongItem extends ArchitecturyRecordItem implements LangTooltip {
+public class RelicSongItem extends Item implements LangTooltip {
     private final boolean notInert;
 
     public RelicSongItem(Item.Properties properties, boolean notInert) {
-        super(0, GenerationsSounds.MELOETTAS_RELIC_SONG, properties, 30);
+        super(properties.jukeboxPlayable(RecordSongs.INSTANCE.getMELOETTAS_RELIC_SONG()));
         this.notInert = notInert;
     }
 

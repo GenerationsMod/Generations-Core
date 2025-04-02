@@ -13,10 +13,9 @@ import generations.gg.generations.core.generationscore.common.world.item.curry.C
 import generations.gg.generations.core.generationscore.common.world.level.block.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.LanguageProvider;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.BiConsumer;
@@ -55,26 +54,16 @@ public class GeneralLang extends LanguageProvider {
         addItemEntries(GenerationsItems.CUISINE, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.NATURAL, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.RESTORATION, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.PLAYER_ITEMS, this::getNameGens, (item, function) -> {
-            var item1 = item.get();
-
-            if(item1 instanceof RecordItem) {
-                add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
-            }
-        });
+        addItemEntries(GenerationsItems.PLAYER_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.HELD_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.LEGENDARY_ITEMS, this::getNameGens, (item, function) -> {});
-        addItemEntries(GenerationsItems.UTILITY, this::getNameGens, (item, function) -> {
-            var item1 = item.get();
-
-            if(item1 instanceof RecordItem) {
-                add(item.get().asItem().getDescriptionId() + ".desc", "GlitchxCity - " + function.apply(item, item.getId().toString().replace("_disc", "")));
-            }
-        });
+        addItemEntries(GenerationsItems.UTILITY, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.VALUABLES, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.FORM_ITEMS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.BUILDING_BLOCKS, this::getNameGens, (item, function) -> {});
         addItemEntries(GenerationsItems.POKEMAIL, this::getNameGens, (item, function) -> {});
+
+        recordDescriptions();
 
         //Manually add Creative Tabs
         add("itemGroup.generations_core.restoration", "Restoration");
@@ -470,6 +459,46 @@ public class GeneralLang extends LanguageProvider {
         this.add("upgrade.minecraft.ultrite_upgrade", "Ultrite Upgrade Smithing Template");
 
         this.add("gui.recipe_viewer.category.rks_machine", "RKS Machine");
+    }
+
+    private void recordDescriptions() {
+        glitchCityRecordDescription(AZALEA_TOWN_DISC);
+        glitchCityRecordDescription(CASCARRAFA_CITY_DISC);
+        glitchCityRecordDescription(CERULEAN_CITY_DISC);
+        glitchCityRecordDescription(ETERNA_CITY_DISC);
+        glitchCityRecordDescription(GOLDENROD_CITY_DISC);
+        glitchCityRecordDescription(ICIRRUS_CITY_DISC);
+        glitchCityRecordDescription(JUBILIFE_VILLAGE_DISC);
+        glitchCityRecordDescription(LAKE_OF_RAGE_DISC);
+        glitchCityRecordDescription(LAVERRE_CITY_DISC);
+        glitchCityRecordDescription(LILLIE_DISC);
+        glitchCityRecordDescription(POKEMON_CENTER_DISC);
+        glitchCityRecordDescription(ROUTE_228_DISC);
+        glitchCityRecordDescription(SLUMBERING_WEALD_DISC);
+        glitchCityRecordDescription(SURF_DISC);
+        glitchCityRecordDescription(VERMILION_CITY_DISC);
+        glitchCityRecordDescription(CYNTHIA_DISC);
+        glitchCityRecordDescription(DEOXYS_DISC);
+        glitchCityRecordDescription(IRIS_DISC);
+        glitchCityRecordDescription(KANTO_DISC);
+        glitchCityRecordDescription(LUSAMINE_DISC);
+        glitchCityRecordDescription(NEMONA_DISC);
+        glitchCityRecordDescription(NESSA_DISC);
+        glitchCityRecordDescription(PENNY_DISC);
+        glitchCityRecordDescription(RIVAL_DISC);
+        glitchCityRecordDescription(SADA_AND_TURO_DISC);
+        glitchCityRecordDescription(SOUTH_PROVINCE_DISC);
+        glitchCityRecordDescription(TEAM_ROCKET_DISC);
+        glitchCityRecordDescription(ULTRA_NECROZMA_DISC);
+        glitchCityRecordDescription(XY_LEGENDARY_DISC);
+        glitchCityRecordDescription(ZINNIA_DISC);
+        glitchCityRecordDescription(LAVENDER_TOWN_DISC);
+        glitchCityRecordDescription(LUGIA_DISC);
+        glitchCityRecordDescription(MT_PYRE_DISC);
+    }
+
+    private void glitchCityRecordDescription(RegistrySupplier<Item> item) {
+        add(item.get().getDescriptionId() + ".desc", "GlitchxCity - " + getNameGens(item, item.getId().toString().replace("_disc", "")));
     }
 
 

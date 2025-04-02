@@ -5,7 +5,6 @@ import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.item.PokeBallItem
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager
 import com.cobblemon.mod.common.util.cobblemonResource
-import dev.architectury.core.item.ArchitecturyRecordItem
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
@@ -21,11 +20,13 @@ import generations.gg.generations.core.generationscore.common.world.item.legends
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.CreativeModeTabs
 import net.minecraft.world.item.HangingSignItem
 import net.minecraft.world.item.Item
+import net.minecraft.world.item.JukeboxSong
 import net.minecraft.world.item.SignItem
 import java.util.function.Function
 
@@ -908,8 +909,8 @@ object GenerationsItems {
     @JvmField val LAVA_CRYSTAL = register("lava_crystal", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val JEWEL_OF_LIFE = register("jewel_of_life", ::Item, LEGENDARY_ITEMS)
     @JvmField val MIRROR = register("mirror", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
-    @JvmField val ICEROOT_CARROT = register("iceroot_carrot", { CalyrexSteedItem("iceroot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEat().build()), LegendKeys.GLASTRIER) }, LEGENDARY_ITEMS)
-    @JvmField val SHADEROOT_CARROT = register("shaderoot_carrot", { CalyrexSteedItem("shaderoot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEat().build()), LegendKeys.SPECTRIER) }, LEGENDARY_ITEMS)
+    @JvmField val ICEROOT_CARROT = register("iceroot_carrot", { CalyrexSteedItem("iceroot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEdible().build()), LegendKeys.GLASTRIER) }, LEGENDARY_ITEMS)
+    @JvmField val SHADEROOT_CARROT = register("shaderoot_carrot", { CalyrexSteedItem("shaderoot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEdible().build()), LegendKeys.SPECTRIER) }, LEGENDARY_ITEMS)
     @JvmField val ENIGMA_STONE = register("enigma_stone", { EnigmaStoneItem(it.stacksTo(1).durability(100)) }, LEGENDARY_ITEMS)
     @JvmField val ENIGMA_SHARD = register("enigma_shard", { ItemWithLangTooltipImpl(it.stacksTo(64)) }, LEGENDARY_ITEMS)
     @JvmField val ENIGMA_FRAGMENT = register("enigma_fragment", { ItemWithLangTooltipImpl(it.stacksTo(64).fireResistant() /* just incase it falls into lava while in nether*/) }, LEGENDARY_ITEMS)
@@ -1184,11 +1185,11 @@ object GenerationsItems {
     /**
      * Player Consumables
      */
-    @JvmField val KOMALA_COFFEE = register("komala_coffee", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
-    @JvmField val OMELETTE = register("omelette", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
-    @JvmField val PINAP_JUICE = register("pinap_juice", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
-    @JvmField val ROSERADE_TEA = register("roserade_tea", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
-    @JvmField val TAPU_COCOA = register("tapu_cocoa", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationMod(0.8f).alwaysEat().build())) }, CUISINE)
+    @JvmField val KOMALA_COFFEE = register("komala_coffee", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).alwaysEdible().build())) }, CUISINE)
+    @JvmField val OMELETTE = register("omelette", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).alwaysEdible().build())) }, CUISINE)
+    @JvmField val PINAP_JUICE = register("pinap_juice", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).alwaysEdible().build())) }, CUISINE)
+    @JvmField val ROSERADE_TEA = register("roserade_tea", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).alwaysEdible().build())) }, CUISINE)
+    @JvmField val TAPU_COCOA = register("tapu_cocoa", { Item(it.food(FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).alwaysEdible().build())) }, CUISINE)
 
     //Walkmons
 
@@ -1201,39 +1202,39 @@ object GenerationsItems {
 
     //Discs
 
-    @JvmField val AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", GenerationsSounds.AZALEA_TOWN, 200)
-    @JvmField val CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", GenerationsSounds.CASCARRAFA_CITY, 169)
-    @JvmField val CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", GenerationsSounds.CERULEAN_CITY, 184)
-    @JvmField val ETERNA_CITY_DISC = createMusicDisc("eterna_city_disc", GenerationsSounds.ETERNA_CITY, 136)
-    @JvmField val GOLDENROD_CITY_DISC = createMusicDisc("goldenrod_city_disc", GenerationsSounds.GOLDENROD_CITY, 182)
-    @JvmField val ICIRRUS_CITY_DISC = createMusicDisc("icirrus_city_disc", GenerationsSounds.ICIRRUS_CITY, 148)
-    @JvmField val JUBILIFE_VILLAGE_DISC = createMusicDisc("jubilife_village_disc", GenerationsSounds.JUBILIFE_VILLAGE, 202)
-    @JvmField val LAKE_OF_RAGE_DISC = createMusicDisc("lake_of_rage_disc", GenerationsSounds.LAKE_OF_RAGE, 139)
-    @JvmField val LAVERRE_CITY_DISC = createMusicDisc("laverre_city_disc", GenerationsSounds.LAVERRE_CITY, 281)
-    @JvmField val LILLIE_DISC = createMusicDisc("lillie_disc", GenerationsSounds.LILLIE, 312)
-    @JvmField val POKEMON_CENTER_DISC = createMusicDisc("pokemon_center_disc", GenerationsSounds.POKEMON_CENTER, 240)
-    @JvmField val ROUTE_228_DISC = createMusicDisc("route_228_disc", GenerationsSounds.ROUTE_228, 418)
-    @JvmField val SLUMBERING_WEALD_DISC = createMusicDisc("slumbering_weald_disc", GenerationsSounds.SLUMBERING_WEALD, 262)
-    @JvmField val SURF_DISC = createMusicDisc("surf_disc", GenerationsSounds.SURF, 261)
-    @JvmField val VERMILION_CITY_DISC = createMusicDisc("vermilion_city_disc", GenerationsSounds.VERMILION_CITY, 216)
-    @JvmField val CYNTHIA_DISC = createMusicDisc("cynthia_disc", GenerationsSounds.CYNTHIA, 385)
-    @JvmField val DEOXYS_DISC = createMusicDisc("deoxys_disc", GenerationsSounds.DEOXYS, 414)
-    @JvmField val IRIS_DISC = createMusicDisc("iris_disc", GenerationsSounds.IRIS, 291)
-    @JvmField val KANTO_DISC = createMusicDisc("kanto_disc", GenerationsSounds.KANTO, 337)
-    @JvmField val LUSAMINE_DISC = createMusicDisc("lusamine_disc", GenerationsSounds.LUSAMINE, 337)
-    @JvmField val NEMONA_DISC = createMusicDisc("nemona_disc", GenerationsSounds.NEMONA, 158)
-    @JvmField val NESSA_DISC = createMusicDisc("nessa_disc", GenerationsSounds.NESSA, 263)
-    @JvmField val PENNY_DISC = createMusicDisc("penny_disc", GenerationsSounds.PENNY, 267)
-    @JvmField val RIVAL_DISC = createMusicDisc("rival_disc", GenerationsSounds.RIVAL, 221)
-    @JvmField val SADA_AND_TURO_DISC = createMusicDisc("sada_and_turo_disc", GenerationsSounds.SADA_AND_TURO, 349)
-    @JvmField val SOUTH_PROVINCE_DISC = createMusicDisc("south_province_disc", GenerationsSounds.SOUTH_PROVINCE, 214)
-    @JvmField val TEAM_ROCKET_DISC = createMusicDisc("team_rocket_disc", GenerationsSounds.TEAM_ROCKET, 186)
-    @JvmField val ULTRA_NECROZMA_DISC = createMusicDisc("ultra_necrozma_disc", GenerationsSounds.ULTRA_NECROZMA, 296)
-    @JvmField val XY_LEGENDARY_DISC = createMusicDisc("xy_legendary_disc", GenerationsSounds.XY_LEGENDARY, 261)
-    @JvmField val ZINNIA_DISC = createMusicDisc("zinnia_disc", GenerationsSounds.ZINNIA, 320)
-    @JvmField val LAVENDER_TOWN_DISC = createMusicDisc("lavender_town_disc", GenerationsSounds.LAVENDER_TOWN, 369)
-    @JvmField val LUGIA_DISC = createMusicDisc("lugia_disc", GenerationsSounds.LUGIA, 341)
-    @JvmField val MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", GenerationsSounds.MT_PYRE, 219)
+    @JvmField val AZALEA_TOWN_DISC = createMusicDisc("azalea_town_disc", RecordSongs.AZALEA_TOWN);
+    @JvmField val CASCARRAFA_CITY_DISC = createMusicDisc("cascarrafa_city_disc", RecordSongs.CASCARRAFA_CITY);
+    @JvmField val CERULEAN_CITY_DISC = createMusicDisc("cerulean_city_disc", RecordSongs.CERULEAN_CITY);
+    @JvmField val ETERNA_CITY_DISC = createMusicDisc("eterna_city_disc", RecordSongs.ETERNA_CITY);
+    @JvmField val GOLDENROD_CITY_DISC = createMusicDisc("goldenrod_city_disc", RecordSongs.GOLDENROD_CITY);
+    @JvmField val ICIRRUS_CITY_DISC = createMusicDisc("icirrus_city_disc", RecordSongs.ICIRRUS_CITY);
+    @JvmField val JUBILIFE_VILLAGE_DISC = createMusicDisc("jubilife_village_disc", RecordSongs.JUBILIFE_VILLAGE);
+    @JvmField val LAKE_OF_RAGE_DISC = createMusicDisc("lake_of_rage_disc", RecordSongs.LAKE_OF_RAGE);
+    @JvmField val LAVERRE_CITY_DISC = createMusicDisc("laverre_city_disc", RecordSongs.LAVERRE_CITY);
+    @JvmField val LILLIE_DISC = createMusicDisc("lillie_disc", RecordSongs.LILLIE);
+    @JvmField val POKEMON_CENTER_DISC = createMusicDisc("pokemon_center_disc", RecordSongs.POKEMON_CENTER);
+    @JvmField val ROUTE_228_DISC = createMusicDisc("route_228_disc", RecordSongs.ROUTE_228);
+    @JvmField val SLUMBERING_WEALD_DISC = createMusicDisc("slumbering_weald_disc", RecordSongs.SLUMBERING_WEALD);
+    @JvmField val SURF_DISC = createMusicDisc("surf_disc", RecordSongs.SURF);
+    @JvmField val VERMILION_CITY_DISC = createMusicDisc("vermilion_city_disc", RecordSongs.VERMILION_CITY);
+    @JvmField val CYNTHIA_DISC = createMusicDisc("cynthia_disc", RecordSongs.CYNTHIA);
+    @JvmField val DEOXYS_DISC = createMusicDisc("deoxys_disc", RecordSongs.DEOXYS);
+    @JvmField val IRIS_DISC = createMusicDisc("iris_disc", RecordSongs.IRIS);
+    @JvmField val KANTO_DISC = createMusicDisc("kanto_disc", RecordSongs.KANTO);
+    @JvmField val LUSAMINE_DISC = createMusicDisc("lusamine_disc", RecordSongs.LUSAMINE);
+    @JvmField val NEMONA_DISC = createMusicDisc("nemona_disc", RecordSongs.NEMONA);
+    @JvmField val NESSA_DISC = createMusicDisc("nessa_disc", RecordSongs.NESSA);
+    @JvmField val PENNY_DISC = createMusicDisc("penny_disc", RecordSongs.PENNY);
+    @JvmField val RIVAL_DISC = createMusicDisc("rival_disc", RecordSongs.RIVAL);
+    @JvmField val SADA_AND_TURO_DISC = createMusicDisc("sada_and_turo_disc", RecordSongs.SADA_AND_TURO);
+    @JvmField val SOUTH_PROVINCE_DISC = createMusicDisc("south_province_disc", RecordSongs.SOUTH_PROVINCE);
+    @JvmField val TEAM_ROCKET_DISC = createMusicDisc("team_rocket_disc", RecordSongs.TEAM_ROCKET);
+    @JvmField val ULTRA_NECROZMA_DISC = createMusicDisc("ultra_necrozma_disc", RecordSongs.ULTRA_NECROZMA);
+    @JvmField val XY_LEGENDARY_DISC = createMusicDisc("xy_legendary_disc", RecordSongs.XY_LEGENDARY);
+    @JvmField val ZINNIA_DISC = createMusicDisc("zinnia_disc", RecordSongs.ZINNIA);
+    @JvmField val LAVENDER_TOWN_DISC = createMusicDisc("lavender_town_disc", RecordSongs.LAVENDER_TOWN);
+    @JvmField val LUGIA_DISC = createMusicDisc("lugia_disc", RecordSongs.LUGIA);
+    @JvmField val MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", RecordSongs.MT_PYRE);
 
     /**
      * Un-Implemented Items : Items currently have no in-game function
@@ -1510,7 +1511,7 @@ object GenerationsItems {
 
     private fun createRibbon(id: String): RegistrySupplier<Item> = register(id, ::RibbonItem, RIBBONS)
 
-    private fun createMusicDisc(name: String, sound: RegistrySupplier<SoundEvent>, ticks: Int): RegistrySupplier<Item> = register(name, { ArchitecturyRecordItem(0, sound, it.`arch$tab`(CreativeModeTabs.TOOLS_AND_UTILITIES).stacksTo(1), ticks) }, PLAYER_ITEMS)
+    private fun createMusicDisc(name: String, jukeboxSong: ResourceKey<JukeboxSong>): RegistrySupplier<Item> = register(name, { Item(it.`arch$tab`(CreativeModeTabs.TOOLS_AND_UTILITIES).jukeboxPlayable(jukeboxSong).stacksTo(1)) }, PLAYER_ITEMS)
 
     private fun registerClosedMail(name: String, type: MailType): RegistrySupplier<ClosedMailItem> = register(name, type::createClosedMailItem, POKEMAIL)
 

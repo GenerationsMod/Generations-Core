@@ -8,12 +8,9 @@
 
 package generations.gg.generations.core.generationscore.common;
 
-import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
-import com.cobblemon.mod.common.client.render.layer.PokemonOnShoulderRenderer;
-import com.cobblemon.mod.common.platform.events.ServerEvent;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.events.common.LootEvent;
@@ -22,11 +19,8 @@ import generations.gg.generations.core.generationscore.common.api.data.Generatio
 import generations.gg.generations.core.generationscore.common.api.player.AccountInfo;
 import generations.gg.generations.core.generationscore.common.api.player.BiomesVisited;
 import generations.gg.generations.core.generationscore.common.api.player.Caught;
-import generations.gg.generations.core.generationscore.common.api.player.CurryDex;
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry;
 import generations.gg.generations.core.generationscore.common.config.Config;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents;
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
@@ -40,30 +34,17 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.loot.LootItemConditionTypes;
 import generations.gg.generations.core.generationscore.common.world.loot.LootPoolEntryTypes;
-import generations.gg.generations.core.generationscore.common.world.loot.SpeciesKeyCondition;
 import generations.gg.generations.core.generationscore.common.world.recipe.*;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.*;
-import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
-import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.entries.LootTableReference;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType;
-import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.apache.logging.log4j.util.TriConsumer;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -185,7 +166,7 @@ public class GenerationsCore {
 	}
 
 	public static void onAnvilChange(ItemStack left, ItemStack right, Player player, Consumer<ItemStack> output, IntConsumer cost, IntConsumer materialCost) {
-		if(player instanceof ServerPlayer && left.getItem() instanceof EnchantableItem enchantableItem && enchantableItem.neededEnchantmentLevel(player) > 0 && !EnchantableItem.isEnchanted(left) && !EnchantableItem.isUsed(left) && right.isEmpty()) {
+		if(player instanceof ServerPlayer serverPlayer && left.getItem() instanceof EnchantableItem enchantableItem && enchantableItem.neededEnchantmentLevel(serverPlayer) > 0 && !EnchantableItem.isEnchanted(left) && !EnchantableItem.isUsed(left) && right.isEmpty()) {
 			output.accept(EnchantableItem.setEnchanted(left.copy(), true));
 			cost.accept(100);
 			materialCost.accept(0);

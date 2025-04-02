@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableMultiset;
 import com.google.common.collect.Multiset;
 import com.google.gson.*;
 import net.minecraft.core.Vec3i;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 
 import java.lang.reflect.Type;
@@ -90,7 +91,7 @@ public class Config {
                 .setCount(ZYGARDE, 2)
                 .build();
 
-        public boolean capped(Player player, SpeciesKey speciesKey) {
+        public boolean capped(ServerPlayer player, SpeciesKey speciesKey) {
             if(!limits.contains(speciesKey)) return true;
 
             var limit = limits.count(speciesKey);

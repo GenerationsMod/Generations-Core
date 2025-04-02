@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.block
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem;
 import generations.gg.generations.core.generationscore.common.world.item.TriPredicate;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -31,15 +32,15 @@ public class PostBattleUpdatingItemImpl extends Item implements PostBattleUpdati
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         var stack = player.getItemInHand(usedHand);
 
-        if (!level.isClientSide() && GenerationsCore.CONFIG.caught.capped(player, speciesId)) {
+        if (!level.isClientSide() && GenerationsCore.CONFIG.caught.capped((ServerPlayer) player, speciesId)) {
             int damage = stack.getDamageValue();
 
-            if (damage >= getMaxDamage()) {
+            if (damage >= stack.getMaxDamage()) {
                 stack.shrink(1);
                 if(spawnPokemon()) PokemonUtil.spawn(speciesId.createPokemon(spawnedLevel()), level, player.getOnPos(), player.getYRot());
                 postSpawn(level, player, usedHand);
             } else {
-                player.displayClientMessage(Component.translatable(lang, getMaxDamage() - damage), true);
+                player.displayClientMessage(Component.translatable(lang, stack.getMaxDamage() - damage), true);
             }
 
             return InteractionResultHolder.success(stack);

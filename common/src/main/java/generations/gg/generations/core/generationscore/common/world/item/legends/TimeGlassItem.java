@@ -10,6 +10,7 @@ import generations.gg.generations.core.generationscore.common.world.item.ItemWit
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
@@ -27,7 +28,7 @@ public class TimeGlassItem extends ItemWithLangTooltipImpl implements PostBattle
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         ItemStack stack = player.getItemInHand(usedHand);
-        if(!level.isClientSide() && GenerationsCore.CONFIG.caught.capped(player, LegendKeys.CELEBI)) {
+        if(!level.isClientSide() && GenerationsCore.CONFIG.caught.capped((ServerPlayer) player, LegendKeys.CELEBI)) {
             int damage = stack.getDamageValue();
             if (damage >= stack.getMaxDamage()) {
                 if (level.getBiome(player.getOnPos()).is(Biomes.FLOWER_FOREST)) {
