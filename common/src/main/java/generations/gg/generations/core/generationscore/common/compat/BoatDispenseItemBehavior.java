@@ -4,8 +4,8 @@ import generations.gg.generations.core.generationscore.common.world.entity.Gener
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsChestBoatEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockSource;
 import net.minecraft.core.Direction;
+import net.minecraft.core.dispenser.BlockSource;
 import net.minecraft.core.dispenser.DefaultDispenseItemBehavior;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.item.ItemStack;
@@ -28,14 +28,14 @@ public class BoatDispenseItemBehavior extends DefaultDispenseItemBehavior {
 	}
 
 	@Override
-	public @NotNull ItemStack execute(BlockSource source, @NotNull ItemStack stack) {
-		Direction direction = source.getBlockState().getValue(DispenserBlock.FACING);
-		Level level = source.getLevel();
+	public @NotNull ItemStack execute(net.minecraft.core.dispenser.BlockSource source, @NotNull ItemStack stack) {
+		Direction direction = source.state().getValue(DispenserBlock.FACING);
+		Level level = source.level();
 		double d = 0.5625 + (double) GenerationsEntities.BOAT_ENTITY.get().getWidth() / 2.0;
-		double e = source.x() + (double)direction.getStepX() * d;
-		double f = source.y() + (double)((float)direction.getStepY() * 1.125F);
-		double g = source.z() + (double)direction.getStepZ() * d;
-		BlockPos blockPos = source.getPos().relative(direction);
+		double e = source.pos().getX() + (double)direction.getStepX() * d;
+		double f = source.pos().getY() + (double)((float)direction.getStepY() * 1.125F);
+		double g = source.pos().getZ() + (double)direction.getStepZ() * d;
+		BlockPos blockPos = source.pos().relative(direction);
 		double h;
 		if (level.getFluidState(blockPos).is(FluidTags.WATER))
 			h = 1.0;
