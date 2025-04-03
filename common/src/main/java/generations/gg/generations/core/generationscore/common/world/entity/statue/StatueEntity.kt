@@ -20,10 +20,14 @@ import generations.gg.generations.core.generationscore.common.world.entity.Gener
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
+import net.minecraft.network.protocol.Packet
+import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket
+import net.minecraft.network.protocol.game.ClientGamePacketListener
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
+import net.minecraft.server.level.ServerEntity
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
@@ -186,7 +190,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
 
     override fun getCurrentPoseType(): PoseType = poseType
 
-    override fun getAddEntityPacket(entity: Entity) = GenerationsNetwork.asVanillaClientBound(
+    override fun getAddEntityPacket(entity: ServerEntity): Packet<ClientGamePacketListener> = ClientboundCustomPayloadPacket(
         SpawnStatuePacket(
             properties = properties,
             label = label,
@@ -200,7 +204,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
             orientation = orientation,
             vanillaSpawnPacket = super.getAddEntityPacket(entity) as ClientboundAddEntityPacket
         )
-    )
+    ) as Packet<ClientGamePacketListener>
 
     override fun tick() {
         super.tick()

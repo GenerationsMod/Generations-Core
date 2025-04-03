@@ -1,7 +1,8 @@
 package generations.gg.generations.core.generationscore.common.network.packets
 
+import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import generations.gg.generations.core.generationscore.common.GenerationsDataProvider
-import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler
+
 import net.minecraft.client.Minecraft
 
 object UnlockReloadPacketHandler : ClientNetworkPacketHandler<S2CUnlockReloadPacket> {

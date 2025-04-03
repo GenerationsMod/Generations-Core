@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -29,19 +30,19 @@ public abstract class SimpleBlockEntity extends BlockEntity implements ModelCont
     }
 
     @Override
-    public void load(@NotNull CompoundTag nbt) {
-        super.load(nbt);
+    public void loadAdditional(@NotNull CompoundTag nbt, @NotNull HolderLookup.Provider provider) {
+        super.loadAdditional(nbt, provider);
         readNbt(nbt);
     }
 
     @Override
-    protected void saveAdditional(@NotNull CompoundTag nbt) {
-        super.saveAdditional(nbt);
+    protected void saveAdditional(@NotNull CompoundTag nbt, @NotNull HolderLookup.Provider provider) {
+        super.saveAdditional(nbt, provider);
         writeNbt(nbt);
     }
 
     @Override
-    public @NotNull CompoundTag getUpdateTag() {
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
         writeNbt(tag);
         return tag;

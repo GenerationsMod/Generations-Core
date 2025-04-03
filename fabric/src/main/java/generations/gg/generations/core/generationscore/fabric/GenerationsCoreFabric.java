@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.fabric;
 import dev.architectury.registry.registries.DeferredRegister;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.common.NetworkManager;
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
@@ -13,7 +14,6 @@ import generations.gg.generations.core.generationscore.fabric.world.item.creativ
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;

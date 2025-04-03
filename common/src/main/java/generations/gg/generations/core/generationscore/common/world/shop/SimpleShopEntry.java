@@ -17,12 +17,12 @@ public class SimpleShopEntry {
     private final int order;
 
     public SimpleShopEntry(ShopEntry shopEntry) {
-        this.item = shopEntry.getItem();
-        this.item.setCount(shopEntry.getAmount());
-        this.description = shopEntry.getDescription();
-        this.buyPrice = applyVariation(shopEntry.getBuyPrice(), shopEntry.getPriceVariation());
-        this.sellPrice = applyVariation(shopEntry.getSellPrice(), shopEntry.getPriceVariation());
-        this.order = shopEntry.getOrder();
+        this.item = shopEntry.item;
+        this.item.setCount(shopEntry.amount);
+        this.description = shopEntry.description;
+        this.buyPrice = applyVariation(shopEntry.buyPrice, shopEntry.priceVariation);
+        this.sellPrice = applyVariation(shopEntry.sellPrice, shopEntry.priceVariation);
+        this.order = shopEntry.order;
     }
 
     public SimpleShopEntry(CompoundTag tag) {

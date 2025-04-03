@@ -2,15 +2,15 @@ package generations.gg.generations.core.generationscore.common.network.spawn
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.entity.PoseType
+import com.cobblemon.mod.common.net.messages.client.spawn.SpawnExtraDataEntityPacket
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.readNullableString
 import generations.gg.generations.core.generationscore.common.util.readPokemonProperties
 import generations.gg.generations.core.generationscore.common.util.writeNullableString
 import generations.gg.generations.core.generationscore.common.util.writePokemonProperties
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
-import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 
 class SpawnStatuePacket(
@@ -26,8 +26,8 @@ class SpawnStatuePacket(
     val orientation: Float,
     vanillaSpawnPacket: ClientboundAddEntityPacket
 ) : SpawnExtraDataEntityPacket<SpawnStatuePacket, StatueEntity>(vanillaSpawnPacket) {
-    override fun getId(): ResourceLocation = ID
-    override fun encodeEntityData(buffer: FriendlyByteBuf) {
+    override val id = ID
+    override fun encodeEntityData(buffer: RegistryFriendlyByteBuf) {
         buffer.writePokemonProperties(properties)
         buffer.writeNullableString(label)
         buffer.writeFloat(scale)
@@ -59,11 +59,11 @@ class SpawnStatuePacket(
 
     companion object {
         val ID = GenerationsCore.id("spawn_statue_entity")
-        fun decode(buffer: FriendlyByteBuf): SpawnStatuePacket {
+        fun decode(buffer: RegistryFriendlyByteBuf): SpawnStatuePacket {
             val properties = buffer.readPokemonProperties()
             val label = buffer.readNullableString()
             val scale = buffer.readFloat()
-            val pose_type = buffer.readEnum(PoseType::class.java)
+            val poseType = buffer.readEnum(PoseType::class.java)
             val staticToggle = buffer.readBoolean()
             val staticPartial = buffer.readFloat()
             val staticAge = buffer.readVarInt()
@@ -71,7 +71,7 @@ class SpawnStatuePacket(
             val material = buffer.readNullableString()
             val orientation = buffer.readFloat()
             val vanillaPacket = decodeVanillaPacket(buffer)
-            return SpawnStatuePacket(properties, label, scale, pose_type, staticToggle, staticPartial, staticAge, interactable, material, orientation, vanillaPacket)
+            return SpawnStatuePacket(properties, label, scale, poseType, staticToggle, staticPartial, staticAge, interactable, material, orientation, vanillaPacket)
         }
     }
 }

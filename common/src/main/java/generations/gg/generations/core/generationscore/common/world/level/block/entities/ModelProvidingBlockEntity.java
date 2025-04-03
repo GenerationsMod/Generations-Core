@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4f;
 
 public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implements ModelContextProviders.ModelProvider, ModelContextProviders.VariantProvider {
@@ -35,7 +36,7 @@ public abstract class ModelProvidingBlockEntity extends SimpleBlockEntity implem
     }
 
     public static AABB defaultAABB(BlockPos pos) {
-        return new AABB(pos, pos.offset(1,1,1));
+        return new AABB(Vec3.atLowerCornerOf(pos), Vec3.atLowerCornerOf(pos.offset(1,1,1)));
     }
 
     public ObjectInstance generateInstance() {

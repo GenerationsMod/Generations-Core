@@ -1,20 +1,14 @@
 package generations.gg.generations.core.generationscore.forge
 
-import dev.architectury.utils.Env
-import dev.architectury.utils.EnvExecutor
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.GenerationsImplementation
+import generations.gg.generations.core.generationscore.common.NetworkManager
 import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork
-import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket
-import net.minecraft.client.Minecraft
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.protocol.Packet
 import net.minecraft.network.protocol.game.ClientGamePacketListener
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity
-import net.minecraft.world.entity.player.Player
 import net.minecraftforge.fml.LogicalSide
 import net.minecraftforge.network.NetworkDirection
 import net.minecraftforge.network.NetworkEvent
@@ -27,7 +21,8 @@ import java.util.function.Function
 import java.util.function.Supplier
 import kotlin.reflect.KClass
 
-object GenerationsForgeNetworkManager : GenerationsImplementation.NetworkManager {
+object GenerationsForgeNetworkManager :
+    NetworkManager {
     private var id = 0
     private val channel = NetworkRegistry.newSimpleChannel(
         GenerationsCore.id("main"),

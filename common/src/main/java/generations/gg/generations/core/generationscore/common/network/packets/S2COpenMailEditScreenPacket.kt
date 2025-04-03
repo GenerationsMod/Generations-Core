@@ -5,17 +5,18 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
-import java.util.*
+import net.minecraft.world.InteractionHand
 
-class HeadPatPacket(val pokemonId: UUID) : NetworkPacket<HeadPatPacket> {
-    override val id: ResourceLocation = ID
-    constructor(buffer: RegistryFriendlyByteBuf) : this(buffer.readUUID())
+class S2COpenMailEditScreenPacket(val hand: InteractionHand) : NetworkPacket<S2COpenMailEditScreenPacket> {
+    override val id: ResourceLocation = ID;
 
     override fun encode(buffer: RegistryFriendlyByteBuf) {
-        buffer.writeUUID(pokemonId)
+        buffer.writeEnum(hand)
     }
 
     companion object {
-        val ID = GenerationsCore.id("interact_pokemon")!!
+        val ID: ResourceLocation = GenerationsCore.id("open_mail_edit_screen")
+
+        fun decode(buf: FriendlyByteBuf): S2COpenMailEditScreenPacket = S2COpenMailEditScreenPacket(buf.readEnum(InteractionHand::class.java))
     }
 }

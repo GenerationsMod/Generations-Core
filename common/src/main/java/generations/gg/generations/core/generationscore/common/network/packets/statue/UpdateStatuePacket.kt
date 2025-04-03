@@ -1,97 +1,96 @@
 package generations.gg.generations.core.generationscore.common.network.packets.statue
 
+import com.cobblemon.mod.common.api.net.NetworkPacket
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket
 import generations.gg.generations.core.generationscore.common.util.readNullableString
 import generations.gg.generations.core.generationscore.common.util.readPokemonProperties
 import generations.gg.generations.core.generationscore.common.util.writeNullableString
 import generations.gg.generations.core.generationscore.common.util.writePokemonProperties
-import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import net.minecraft.network.FriendlyByteBuf
-import net.minecraft.network.syncher.EntityDataAccessor
+import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 
-abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId: Int, var value: V) : GenerationsNetworkPacket<T> {
-    override fun encode(buf: FriendlyByteBuf) {
+abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId: Int, var value: V) : NetworkPacket<T> {
+    override fun encode(buf: RegistryFriendlyByteBuf) {
         buf.writeInt(entityId).also { encodeValue(buf) }
     }
 
-    abstract fun encodeValue(buf: FriendlyByteBuf)
+    abstract fun encodeValue(buf: RegistryFriendlyByteBuf)
 
     class Properties(entityId: Int, value: PokemonProperties) : UpdateStatuePacket<PokemonProperties, Properties>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) = buf.writePokemonProperties(value)
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) = buf.writePokemonProperties(value)
 
-        override fun getId(): ResourceLocation = PROPERTIES_ID
+        override val id: ResourceLocation = PROPERTIES_ID
     }
 
     class Label(entityId: Int, value: String?) : UpdateStatuePacket<String?, Label>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) = buf.writeNullableString(value)
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) = buf.writeNullableString(value)
 
-        override fun getId(): ResourceLocation = LABEL_ID
+        override val id: ResourceLocation = LABEL_ID
     }
 
     class Scale(entityId: Int, value: Float) : UpdateStatuePacket<Float, Scale>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeFloat(value)
         }
 
-        override fun getId(): ResourceLocation = SCALE_ID
+        override val id: ResourceLocation = SCALE_ID
     }
 
     class PoseType(entityId: Int, value: com.cobblemon.mod.common.entity.PoseType) : UpdateStatuePacket<com.cobblemon.mod.common.entity.PoseType, PoseType>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeEnum(value)
         }
 
-        override fun getId(): ResourceLocation = POSE_TYPE_ID
+        override val id: ResourceLocation = POSE_TYPE_ID
     }
 
     class StaticToggle(entityId: Int, value: Boolean) : UpdateStatuePacket<Boolean, StaticToggle>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeBoolean(value)
         }
 
-        override fun getId(): ResourceLocation = STATIC_TOGGLE_ID
+        override val id: ResourceLocation = STATIC_TOGGLE_ID
     }
 
     class StaticPartial(entityId: Int, value: Float) : UpdateStatuePacket<Float, StaticPartial>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeFloat(value)
         }
 
-        override fun getId(): ResourceLocation = STATIC_PARTIAL_ID
+        override val id: ResourceLocation = STATIC_PARTIAL_ID
     }
 
     class StaticAge(entityId: Int, value: Int) : UpdateStatuePacket<Int, StaticAge>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeInt(value)
         }
-        override fun getId(): ResourceLocation = STATIC_AGE_ID
+        override val id: ResourceLocation = STATIC_AGE_ID
     }
 
     class Interactable(entityId: Int, value: Boolean) : UpdateStatuePacket<Boolean, Interactable>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeBoolean(value)
         }
 
-        override fun getId(): ResourceLocation = INTERACTABLE_ID
+        override val id: ResourceLocation = INTERACTABLE_ID
     }
 
     class Material(entityId: Int, value: String?) : UpdateStatuePacket<String?, Material>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeNullableString(value)
         }
 
-        override fun getId(): ResourceLocation = MATERIAL_ID
+        override val id: ResourceLocation = MATERIAL_ID
     }
 
     class Orientation(entityId: Int, value: Float) : UpdateStatuePacket<Float, Orientation>(entityId, value) {
-        override fun encodeValue(buf: FriendlyByteBuf) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
             buf.writeFloat(value)
         }
 
-        override fun getId(): ResourceLocation = ORIENTATION_ID
+        override val id: ResourceLocation = ORIENTATION_ID
     }
 
     companion object {

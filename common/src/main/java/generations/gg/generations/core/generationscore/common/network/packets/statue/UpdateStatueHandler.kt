@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.common.network.packets.statue
 
+import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
-import generations.gg.generations.core.generationscore.common.network.ServerNetworkPacketHandler
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.server.MinecraftServer
@@ -9,10 +9,10 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import java.util.function.BiConsumer
 
-open class UpdateStatueHandler<V, T : UpdateStatuePacket<V, T>>(var accessor: EntityDataAccessor<V>) : BiConsumer<T, Player> { //: ServerNetworkPacketHandler<T> {
+open class UpdateStatueHandler<V, T : UpdateStatuePacket<V, T>>(private var accessor: EntityDataAccessor<V>) : ServerNetworkPacketHandler<T> {
 
 
-    override fun accept(packet: T, player: Player) {
+    override fun handle(packet: T, server: MinecraftServer, player: ServerPlayer) {
         player.level().getEntity(packet.entityId).takeIf { it is StatueEntity }?.let { it as StatueEntity }?.run {
             entityData.set(accessor, packet.value)
         }
@@ -28,5 +28,4 @@ open class UpdateStatueHandler<V, T : UpdateStatuePacket<V, T>>(var accessor: En
     object Interactable : UpdateStatueHandler<Boolean, UpdateStatuePacket.Interactable>(StatueEntity.INTERACTABLE)
     object Material : UpdateStatueHandler<String?, UpdateStatuePacket.Material>(StatueEntity.MATERIAL)
     object Orientation : UpdateStatueHandler<Float, UpdateStatuePacket.Orientation>(StatueEntity.ORIENTATION)
-
 }

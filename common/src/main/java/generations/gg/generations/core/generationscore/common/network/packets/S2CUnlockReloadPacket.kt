@@ -5,19 +5,17 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.InteractionHand
 
-class S2COpenMailPacket(val hand: InteractionHand) : NetworkPacket<S2COpenMailPacket> {
+class S2CUnlockReloadPacket : NetworkPacket<S2CUnlockReloadPacket> {
     override val id: ResourceLocation = ID
 
-    override fun encode(buf: RegistryFriendlyByteBuf) {
-        buf.writeEnum(hand)
-    }
+    override fun encode(buffer: RegistryFriendlyByteBuf) {}
 
     companion object {
-        var ID = GenerationsCore.id("open_mail")
-        fun decode(buf: RegistryFriendlyByteBuf): S2COpenMailPacket {
-            return S2COpenMailPacket(buf.readEnum(InteractionHand::class.java))
+        var ID: ResourceLocation = GenerationsCore.id("unlock_reload")
+
+        fun decode(buffer: RegistryFriendlyByteBuf): S2CUnlockReloadPacket {
+            return S2CUnlockReloadPacket()
         }
     }
 }

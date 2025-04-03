@@ -27,7 +27,7 @@ object GenerationsItemComponents {
     var DISC_HOLDER = register(DataKeys.DISC_HOLDER, WalkmonItem.DiscHolder.CODEC)
 
     @JvmStatic
-    fun register() = REGISTER.register()
+    fun init() = REGISTER.register()
 
     private fun <T> register(name: String, codec: Codec<T>, streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>? = null, cache: Boolean = true): RegistrySupplier<DataComponentType<T>> {
         return REGISTER.register(name) {

@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.network;
 
-import generations.gg.generations.core.generationscore.common.network.packets.GenerationsNetworkPacket;
 import net.minecraft.client.Minecraft;
 
 public interface ClientNetworkPacketHandler<T extends GenerationsNetworkPacket<T>> {

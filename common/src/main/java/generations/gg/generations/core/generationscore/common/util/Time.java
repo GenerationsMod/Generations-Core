@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.common.util;
 
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.network.FriendlyByteBuf;
 import org.jetbrains.annotations.Range;
 
@@ -8,7 +10,6 @@ import java.time.Instant;
 import java.time.LocalTime;
 
 public class Time implements Comparable<Time> {
-
     private byte hour, minute, second;
 
     private Time(@Range(from = 0, to = 23) byte hour,

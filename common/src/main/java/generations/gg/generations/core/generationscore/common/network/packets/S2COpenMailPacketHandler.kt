@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.common.network.packets
 
+import com.cobblemon.mod.common.api.net.ClientNetworkPacketHandler
 import dev.architectury.utils.Env
 import dev.architectury.utils.EnvExecutor
 import generations.gg.generations.core.generationscore.common.client.screen.mails.MailEditScreen
 import generations.gg.generations.core.generationscore.common.client.screen.mails.MailViewScreen
-import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import net.minecraft.client.Minecraft
 

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
+import com.cobblemon.mod.common.CobblemonNetwork.sendPacketToPlayer
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.menu.MenuRegistry
@@ -14,7 +15,6 @@ import generations.gg.generations.core.generationscore.common.world.container.Wa
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
 import net.minecraft.core.component.DataComponents
 import net.minecraft.nbt.CompoundTag
-import net.minecraft.nbt.Tag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.server.level.ServerPlayer
@@ -52,14 +52,14 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
     }
 
     private fun startPlayingSong(record: JukeboxPlayable, player: ServerPlayer) {
-        sendPacketToPlayer(player, S2CPlaySoundPacket(record))
+        sendPacketToPlayer(player, S2CPlaySoundPacket(record.song.unwrap(player.serverLevel().registryAccess()).get().value()));
     }
 
     private fun stopPlayingSong(sound: SoundEvent, player: ServerPlayer) {
         sendPacketToPlayer(player, S2CPlaySoundPacket(sound))
     }
 
-    fun load(stack: ItemStack, discs: SimpleGenericContainer? = null): DiscHolder {
+    fun load(stack: ItemStack): DiscHolder {
         return stack.get(GenerationsItemComponents.DISC_HOLDER) ?: DiscHolder(row, Component.translatable(defaultTranslation))
     }
 

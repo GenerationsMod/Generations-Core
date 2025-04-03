@@ -1,12 +1,12 @@
 package generations.gg.generations.core.generationscore.forge;
 
 import com.google.common.collect.ImmutableMap;
-import com.google.gson.Gson;
 import com.mojang.datafixers.util.Pair;
 import dev.architectury.platform.forge.EventBuses;
 import dev.architectury.registry.registries.DeferredRegister;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
+import generations.gg.generations.core.generationscore.common.NetworkManager;
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents;
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
