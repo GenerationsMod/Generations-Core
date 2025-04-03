@@ -358,6 +358,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:wellspring_mask"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:tm_11"
         },
         {

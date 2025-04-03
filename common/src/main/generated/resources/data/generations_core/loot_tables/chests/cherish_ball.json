@@ -338,6 +338,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:chill_drive"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:serious_mint"
         },
         {
