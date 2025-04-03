@@ -37,7 +37,7 @@ public class GenerationsCoreClientFabric implements ClientModInitializer {
     public void onInitializeClient() {
         WorldRenderEvents.AFTER_TRANSLUCENT.register(context -> GenerationsCoreClient.renderHighlightedPath(context.matrixStack(), Minecraft.getInstance().levelRenderer.ticks, context.camera()));
 
-        WorldRenderEvents.AFTER_ENTITIES.register(context -> GenerationsCoreClient.renderRareCandy(context.world()));
+        WorldRenderEvents.BEFORE_DEBUG_RENDER.register(context -> GenerationsCoreClient.renderRareCandy(context.world()));
 
         GenerationsCoreClient.onInitialize(Minecraft.getInstance());
         registerRenderTypes();
