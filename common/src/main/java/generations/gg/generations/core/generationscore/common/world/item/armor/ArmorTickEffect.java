@@ -19,7 +19,7 @@ public interface ArmorTickEffect extends ArmorEffect {
 
             ItemStack equippedItemStack = player.getItemBySlot(equipmentSlot);
             if (!(equippedItemStack.getItem() instanceof ArmorItem)) return false;
-            if (((ArmorItem) equippedItemStack.getItem()).getMaterial() != material) return true;
+            if (((ArmorItem) equippedItemStack.getItem()).getMaterial() != material) return false;
         }
 
         return true;
