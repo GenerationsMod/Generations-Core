@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.fabric.client;
 
-import com.mojang.authlib.minecraft.client.MinecraftClient;
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock;

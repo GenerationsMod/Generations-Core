@@ -12,7 +12,6 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Varyi
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent;
 import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.BufferUploader;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
@@ -33,8 +32,6 @@ import generations.gg.generations.core.generationscore.common.world.container.Ge
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.item.*;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import generations.gg.generations.core.generationscore.common.world.item.curry.ItemCurry;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
@@ -72,10 +69,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
