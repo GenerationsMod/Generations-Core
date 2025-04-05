@@ -115,7 +115,7 @@ private fun Stat.color(): String {
 }
 
 private fun String.properCase(): String {
-    return this.get(0) + this.substring(1).toLowerCase()
+    return this.get(0) + this.substring(1).lowercase()
 }
 
 fun MutableList<Component>.add(pokemon: Pokemon) {

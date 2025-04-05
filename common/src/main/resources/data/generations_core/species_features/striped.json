@@ -1,0 +1,12 @@
+{
+  "type": "choice",
+  "keys": ["striped"],
+  "default": "random",
+  "choices": [
+    "blue",
+    "white",
+    "red"
+  ],
+  "isAspect": true,
+  "aspectFormat": "{{choice}}striped"
+}
