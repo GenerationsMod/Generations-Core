@@ -73,9 +73,9 @@ class GenerationsCobblemonEvents {
                     val list = RegiShrineBlock.searchForBlock(
                         entity.level(),
                         entity.blockPosition(),
-                        32, //GenerationsCore.CONFIG.blocks.scarecrowRadius.x,
-                        32, //GenerationsCore.CONFIG.blocks.scarecrowRadius.y,
-                        32, //GenerationsCore.CONFIG.blocks.scarecrowRadius.z,
+                        GenerationsCore.CONFIG.blocks.scarecrowRadius.x,
+                        GenerationsCore.CONFIG.blocks.scarecrowRadius.y,
+                        GenerationsCore.CONFIG.blocks.scarecrowRadius.z,
                         1
                     ) { world, pos -> world.getBlockState(pos).block is ScarecrowBlock }
                     if (list.isNotEmpty()) {
