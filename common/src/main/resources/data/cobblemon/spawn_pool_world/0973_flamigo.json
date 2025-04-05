@@ -18,7 +18,8 @@
                 "canSeeSky": true,
                 "timeRange": "day",
                 "biomes": [
-                    "#cobblemon:is_swamp"
+                    "#cobblemon:is_swamp",
+                    "#cobblemon:is_ocean"
                 ]
             }
         }
