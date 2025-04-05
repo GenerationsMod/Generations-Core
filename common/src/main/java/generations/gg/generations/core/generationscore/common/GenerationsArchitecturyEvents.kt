@@ -37,25 +37,6 @@ object GenerationsArchitecturyEvents {
                 .let { it as? ElevatorBlock }?.takeElevator(it.level(), it.blockPosition().below(), it, Direction.UP)
         }
 
-        EntityEvent.ADD.register { entity, level ->
-            if(entity.type == CobblemonEntities.POKEMON || entity.type == GenerationsEntities.ZYGARDE_CELL) {
-
-                val list = RegiShrineBlock.searchForBlock(
-                    level,
-                    entity.blockPosition(),
-                    GenerationsCore.CONFIG.blocks.scarecrowRadius.x,
-                    GenerationsCore.CONFIG.blocks.scarecrowRadius.y,
-                    GenerationsCore.CONFIG.blocks.scarecrowRadius.z,
-                    1
-                ) { world, pos -> world.getBlockState(pos).`is`(SCARECROW.get()) }
-                if (list.isNotEmpty()) {
-                    EventResult.interruptTrue()
-                }
-            }
-
-            EventResult.pass()
-        }
-
         InteractionEvent.RIGHT_CLICK_BLOCK.register { player, hand, pos, _ ->
 
             if (player is ServerPlayer) {

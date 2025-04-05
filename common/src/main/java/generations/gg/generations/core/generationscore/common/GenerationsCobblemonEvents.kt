@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common
 
 import com.cobblemon.mod.common.Cobblemon
+import com.cobblemon.mod.common.CobblemonEntities
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
@@ -14,10 +15,13 @@ import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.platform.events.PlatformEvents
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
+import dev.architectury.event.EventResult
+import dev.architectury.event.events.common.EntityEvent
 import generations.gg.generations.core.generationscore.common.api.player.Caught
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
@@ -25,12 +29,15 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags.*
 import generations.gg.generations.core.generationscore.common.util.DataKeys
+import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
+import generations.gg.generations.core.generationscore.common.world.entity.ZygardeCellEntity
 import generations.gg.generations.core.generationscore.common.world.item.FormChanging
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem.BattleData
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.RegiShrineBlock
+import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.ScarecrowBlock
 import net.minecraft.client.Minecraft
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
@@ -58,7 +65,24 @@ class GenerationsCobblemonEvents {
 //
 //            }
 
-            GenerationsArchitecturyEvents
+            CobblemonEvents.ENTITY_SPAWN.subscribe { it ->
+                val entity = it.entity
+
+                if(entity is PokemonEntity || entity is ZygardeCellEntity) {
+
+                    val list = RegiShrineBlock.searchForBlock(
+                        entity.level(),
+                        entity.blockPosition(),
+                        32, //GenerationsCore.CONFIG.blocks.scarecrowRadius.x,
+                        32, //GenerationsCore.CONFIG.blocks.scarecrowRadius.y,
+                        32, //GenerationsCore.CONFIG.blocks.scarecrowRadius.z,
+                        1
+                    ) { world, pos -> world.getBlockState(pos).block is ScarecrowBlock }
+                    if (list.isNotEmpty()) {
+                        it.cancel()
+                    }
+                }
+            }
 
             BATTLE_VICTORY.subscribe(Priority.HIGH) { event ->
                 val data = mutableListOf<BattleData>()
