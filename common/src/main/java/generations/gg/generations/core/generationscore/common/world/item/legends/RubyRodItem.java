@@ -40,8 +40,8 @@ public class RubyRodItem extends TieredFishingRodItem implements LangTooltip {
                 int currentCount = currentShards.getOrDefault(shardType, (byte) 0);
                 int stackCount = itemStack.getCount();
 
-                if (currentCount < 9) {
-                    int allowableCount = Math.min(stackCount, 9 - currentCount);
+                if (currentCount < 11) {
+                    int allowableCount = Math.min(stackCount, 11 - currentCount);
                     ItemStack cappedStack = itemStack.copy();
                     cappedStack.setCount(allowableCount);
 
@@ -94,7 +94,7 @@ public class RubyRodItem extends TieredFishingRodItem implements LangTooltip {
     public static boolean isFinished(ItemStack itemstack) {
         var map = getFishedShard(itemstack);
 
-        return map.get(LakeTrioShardType.WILLPOWER) >= 9 && map.get(LakeTrioShardType.KNOWLEDGE) >= 9 && map.get(LakeTrioShardType.KNOWLEDGE) >= 9;
+        return map.get(LakeTrioShardType.WILLPOWER) >= 11 && map.get(LakeTrioShardType.KNOWLEDGE) >= 11 && map.get(LakeTrioShardType.KNOWLEDGE) >= 11;
     }
 
     @Override
