@@ -7,7 +7,7 @@
             "id": "corphish-1",
             "pokemon": "corphish",
             "presets": [
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",

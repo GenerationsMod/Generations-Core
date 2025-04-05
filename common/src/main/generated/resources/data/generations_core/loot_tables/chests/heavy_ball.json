@@ -302,6 +302,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:cornerstone_mask"
+        },
+        {
+          "type": "minecraft:item",
           "name": "generations_core:rock_candy"
         },
         {

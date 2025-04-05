@@ -250,6 +250,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:hearthflame_mask"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:serious_mint"
         },
         {

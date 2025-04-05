@@ -39,7 +39,7 @@
                 "mega"
             ],
             "aspects": [
-                "mega-x"
+                "mega_x"
             ],
             "height": 17,
             "weight": 1105,
@@ -85,7 +85,7 @@
                 "mega"
             ],
             "aspects": [
-                "mega-y"
+                "mega_y"
             ],
             "height": 17,
             "weight": 1005,

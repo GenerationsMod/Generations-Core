@@ -22,26 +22,24 @@ object GenerationsInstructionProcessor {
         val s1 = message.argumentAt(1) ?: return
         val s2 = s1.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
         if (s2.isEmpty()) return
-        val s3 = s2[0].split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        val s3 = s2[0].lowercase().split("-".toRegex(), 2).dropLastWhile { it.isEmpty() }.toTypedArray()
 
         if (s3.size < 2) return
 
         val battlePokemon = message.battlePokemon(0, battle) ?: return
 
-        val name = s3[1].lowercase()
+        val name = s3[1]
 
         var pair: Pair<String, Any> = when(name) {
-            "mega" -> {
-                val megaStone = battlePokemon.heldItemManager.showdownId(battlePokemon) ?: return
-                when {
-                    megaStone.endsWith("x") -> "mega_x"
-                    megaStone.endsWith("y") -> "mega_y"
-                    else -> "mega"
-                } to true
-            }
+            "mega" -> "mega" to true
+            "mega-x" -> "mega_x" to true
+            "mega-y" -> "mega_y" to true
             "sunshine" -> "sunny" to true
             "school" -> "schooling" to true
+            "primal" -> "primal" to true
+            "ash" -> "ash" to true
             "wellspring", "hearthflame", "cornerstone", "teal" -> s3.getOrNull(2)?.takeIf { it == "Tera" }.let { "terastal" to true } ?: null
+
             else -> name to true
         } ?: let {
             battlePokemon.originalPokemon.removeBattleFeature()
@@ -115,7 +113,6 @@ private fun Pokemon.removeBattleFeature() {
 
 private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
     this.persistentData.putString("form_name", feature.name)
-
     if(feature is StringSpeciesFeature) {
         this.persistentData.putString("form_value", feature.value)
         feature.apply(this)

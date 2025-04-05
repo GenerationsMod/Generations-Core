@@ -254,6 +254,10 @@
         },
         {
           "type": "minecraft:item",
+          "name": "generations_core:shock_drive"
+        },
+        {
+          "type": "minecraft:item",
           "name": "cobblemon:sassy_mint"
         },
         {

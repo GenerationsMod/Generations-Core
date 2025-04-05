@@ -7,7 +7,7 @@
             "id": "crawdaunt-1",
             "pokemon": "crawdaunt",
             "presets": [
-                "natural"
+                "underwater"
             ],
             "type": "pokemon",
             "context": "submerged",
