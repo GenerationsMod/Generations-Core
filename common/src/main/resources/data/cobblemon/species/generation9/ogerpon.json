@@ -97,7 +97,8 @@
     "tm:zenheadbutt"
   ],
   "labels": [
-    "gen9"
+    "gen9",
+    "legendary"
   ],
   "aspects": [],
   "height": 12,
@@ -138,7 +139,8 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
         "wellspring"
@@ -181,7 +183,8 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
         "hearthflame"
@@ -224,7 +227,8 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
         "cornerstone"
@@ -266,7 +270,8 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
         "teal-tera"
@@ -309,7 +314,8 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
         "wellspring-tera"
@@ -352,7 +358,8 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
         "hearthflame-tera"
