@@ -7,7 +7,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.*;
 import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.contents.LiteralContents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -38,7 +37,7 @@ public abstract class BattleMoveSelectionGUIMixin {
                     moveTemplate.getDescription(), 250, Style.EMPTY.withColor(moveTemplate.getElementalType().getHue()));
 
             for (FormattedText formattedText : description) {
-                tooltipInfo.add(MutableComponent.create(new LiteralContents(formattedText.getString())).withStyle(ChatFormatting.GRAY));
+                tooltipInfo.add(Component.literal(formattedText.getString()).withStyle(ChatFormatting.GRAY));
             }
 
             context.renderComponentTooltip(Minecraft.getInstance().font, tooltipInfo, mouseX, mouseY);

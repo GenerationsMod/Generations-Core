@@ -18,7 +18,7 @@ class DarkCrystalItem(block: Block?, properties: Properties?) : BlockItemWithLan
 
             if (entity.pokemon.aspects.contains("shadow")) {
                 player.displayClientMessage(
-                    "generations_core.special.shadow.already".asTranslated(entity.displayName.string),
+                    "generations_core.special.shadow.already".asTranslated(entity.displayName?.string),
                     false
                 )
             } else {

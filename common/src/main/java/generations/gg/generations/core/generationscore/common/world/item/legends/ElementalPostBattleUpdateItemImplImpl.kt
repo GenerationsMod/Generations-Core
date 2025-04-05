@@ -25,12 +25,12 @@ open class ElementalPostBattleUpdateItemImplImpl(
         if (!level.isClientSide()) {
             val damage = stack.damageValue
 
-            if (damage >= maxDamage) {
+            if (damage >= stack.maxDamage) {
                 stack.shrink(1)
                 PokemonUtil.spawn(key.createProperties(70), level, player.onPos)
                 postSpawn(level, player, usedHand)
             } else {
-                player.displayClientMessage(Component.translatable(lang, maxDamage - damage), true)
+                player.displayClientMessage(Component.translatable(lang, stack.maxDamage - damage), true)
             }
 
             return InteractionResultHolder.success(stack)

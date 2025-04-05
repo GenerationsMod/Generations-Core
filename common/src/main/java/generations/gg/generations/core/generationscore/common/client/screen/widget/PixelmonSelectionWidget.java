@@ -65,7 +65,7 @@ public class PixelmonSelectionWidget extends AbstractButton {
 
                     var pixelmon = shownData.get(j);
 
-                    GuiUtilsKt.drawPortraitPokemon(pixelmon.data().getSpecies(), pixelmon.data.getAspects(), graphics.pose(), 9.28f, true, null, partialTick);
+//                    GuiUtilsKt.drawPortraitPokemon(pixelmon.data().getSpecies(), pixelmon.data.getAspects(), graphics.pose(), 9.28f, true, null, partialTick); //TODO: Figure out
                     graphics.disableScissor();
                     if (isMouseOverPixelmon(mouseX, mouseY, x, y)) {
                         this.setTooltip(Tooltip.create(Component.literal(pixelmon.getName())));
@@ -84,14 +84,14 @@ public class PixelmonSelectionWidget extends AbstractButton {
     }
 
     @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
-        if (delta > 0) {
-            this.scrollY = clampScroll(scrollY - 1);
+    public boolean mouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
+        if (scrollY > 0) {
+            this.scrollY = clampScroll(this.scrollY - 1);
         } else {
-            this.scrollY = clampScroll(scrollY + 1);
+            this.scrollY = clampScroll(this.scrollY + 1);
         }
         updateShownData();
-        return super.mouseScrolled(mouseX, mouseY, delta);
+        return super.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
     }
 
     public int clampScroll(int newScroll) {

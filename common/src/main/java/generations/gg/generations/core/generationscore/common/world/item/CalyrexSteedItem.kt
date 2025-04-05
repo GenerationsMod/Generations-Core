@@ -26,7 +26,7 @@ import net.minecraft.world.item.Items
 import net.minecraft.world.level.Level
 import java.util.stream.IntStream
 
-class CalyrexSteedItem(name: String, arg: Properties, private val speices: SpeciesKey) : Item(arg) {
+class CalyrexSteedItem(name: String, arg: Properties, private val speices: SpeciesKey) : Item(arg), im {
     private val defaultTranslation = "container." + name + "_carrot"
 
     //    @Override

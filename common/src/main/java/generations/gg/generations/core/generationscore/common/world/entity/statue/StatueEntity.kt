@@ -70,6 +70,8 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
     override fun onSyncedDataUpdated(key: EntityDataAccessor<*>) {
         super.onSyncedDataUpdated(key)
 
+        delegate.onSyncedDataUpdated(key)
+
         when(key) {
             PROPERTIES -> delegate.updatePoke(properties)
             SCALE -> refreshDimensions()

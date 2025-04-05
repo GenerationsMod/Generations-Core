@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic;
 
+import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
@@ -143,6 +144,11 @@ public class GenericModelBlock<T extends BlockEntity & ModelContextProviders.Mod
 
     @Override
     public String getVariant() {
+        return null;
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
         return null;
     }
 }

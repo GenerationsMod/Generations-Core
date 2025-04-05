@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.mixin.client;
 
 import generations.gg.generations.core.generationscore.common.client.screen.Overlays;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiGraphics;
@@ -16,12 +17,8 @@ public class GuiMixin {
 
     @Shadow @Final protected Minecraft minecraft;
 
-    @Shadow protected int screenWidth;
-
-    @Shadow protected int screenHeight;
-
     @Inject(method = "render", at = @At("HEAD"))
-    public void render(GuiGraphics guiGraphics, float partialTick, CallbackInfo ci) {
-        Overlays.render(minecraft, guiGraphics, partialTick, guiGraphics.guiWidth(), guiGraphics.guiHeight());
+    public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
+        Overlays.render(minecraft, guiGraphics, deltaTracker.getGameTimeDeltaTicks(), guiGraphics.guiWidth(), guiGraphics.guiHeight());
     }
 }

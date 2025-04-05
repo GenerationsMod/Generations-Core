@@ -130,7 +130,7 @@ object GenerationsMolangFunctions {
 
                     if(speciesKey == null) return@Function DoubleValue(1.0)
 
-                    return@Function DoubleValue(if (GenerationsCore.CONFIG.caught.capped(player, speciesKey)) 1.0 else 0.0)
+                    return@Function DoubleValue(if (player is ServerPlayer && GenerationsCore.CONFIG.caught.capped(player, speciesKey)) 1.0 else 0.0)
                 },
                 "main_hand" to Function<MoParams, Any> {
                     player.mainHandItem.toMolang()

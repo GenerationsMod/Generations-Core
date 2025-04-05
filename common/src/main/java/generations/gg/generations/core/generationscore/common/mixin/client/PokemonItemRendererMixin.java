@@ -11,9 +11,9 @@ import org.spongepowered.asm.mixin.Mixin;
 
 //TODO: Remove once on cobblemon version with whole context needed.
 
-@Mixin(PokemonItemRenderer.class)
-public class PokemonItemRendererMixin implements CobblemonBuiltinItemRenderer {
-    public void render(ItemStack stack, ItemDisplayContext mode, PoseStack matrices, MultiBufferSource vertexConsumers, int light, int overlay) {
-        TimeCapsuleItemRenderer.INSTANCE.render(stack, mode, matrices, vertexConsumers, light, overlay);
-    }
-}
+//@Mixin(PokemonItemRenderer.class)
+//public class PokemonItemRendererMixin implements CobblemonBuiltinItemRenderer {
+//    public void render(ItemStack stack, ItemDisplayContext mode, PoseStack matrices, MultiBufferSource vertexConsumers, int light, int overlay) {
+//        TimeCapsuleItemRenderer.INSTANCE.render(stack, mode, matrices, vertexConsumers, light, overlay);
+//    }
+//}

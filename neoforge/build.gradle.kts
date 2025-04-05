@@ -62,9 +62,7 @@ configurations {
         "common"(project(":common", "namedElements")) { isTransitive = false }
         "shadowBundle"(project(":common", "transformProductionForge"))
 
-//        modLocalRuntime("me.djtheredstoner:DevAuth-neoforge-latest:${project.properties["devauth_version"]}") TODO: renable
-
-//    modApi("earth.terrarium.botarium:botarium-forge-$minecraftVersion:${project.properties["botarium_version"]}")!!
+        modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-neoforge-1.21.1", version = "0.0.7")
 
         forgeRuntimeLibrary(
             "shadowBundle"(

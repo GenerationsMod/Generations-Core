@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.client.entity
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
-import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
@@ -12,24 +11,24 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.world.entity.StatueSideDelegate
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
 import net.minecraft.client.Minecraft
+import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import org.joml.Matrix4f
 
 class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstanceProvider {
-    private var modelEntity: PokemonEntity = PokemonEntity(Minecraft.getInstance().level!!)
     private var instance = StatueInstance(Matrix4f(), Matrix4f(), null)
     lateinit var currentEntity: StatueEntity
 
     var trueAge: Int = 0
 
-    val activeAge: Float
+    val activeAge: Int
         get() = if(currentEntity.staticToggle) currentEntity.staticAge else trueAge
 
     override val schedulingTracker
         get() = currentEntity.schedulingTracker
 
-    override fun getEntity() = modelEntity
+    override fun getEntity() = currentEntity
     override fun updatePoke(properties: PokemonProperties) {
 
         modelEntity.pokemon = properties.create()
@@ -39,12 +38,16 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
         instance.material = value
     }
 
+    override fun onSyncedDataUpdated(data: EntityDataAccessor<*>) {
+        super.onSyncedDataUpdated(data)
+
+    }
 
     override fun initialize(entity: StatueEntity) {
         super.initialize(entity)
         this.currentEntity = entity
         this.age = entity.tickCount
-        this.currentModel = PokemonModelRepository.getPoser(modelEntity.pokemon.species.resourceIdentifier, modelEntity.pokemon.aspects)
+        this.currentModel = PokemonModelRepository.getPoser(modelEntity.pokemon.species.resourceIdentifier, this)
 
         val model = currentModel!!
         model.context.put(RenderContext.ENTITY, entity)
@@ -52,7 +55,7 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
         updateLocatorPosition(entity.position())
 
         val currentPoseType = entity.getCurrentPoseType()
-        val pose = this.currentModel!!.poses.values.firstOrNull { currentPoseType in it.poseTypes && (it.condition == null || it.condition?.invoke(modelEntity) == true) }
+        val pose = this.currentModel!!.poses.values.firstOrNull { currentPoseType in it.poseTypes && (it.condition == null || it.condition?.invoke(this) == true) }
         if (pose != null) {
             doLater { setPose(pose.poseName) }
         }
@@ -67,7 +70,7 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
     override fun incrementAge(entity: Entity) {
         val previousAge = this.activeAge
         updateAge(trueAge + 1)
-        runEffects(entity, previousAge, this.activeAge)
+        runEffects(entity, previousAge.toFloat(), this.activeAge.toFloat()) //TODO: Check if this goes bad. I get a funny feeling
 
         age = this.activeAge
 

@@ -7,6 +7,7 @@ import com.mojang.serialization.DataResult
 import com.mojang.serialization.Dynamic
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.menu.MenuRegistry
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import generations.gg.generations.core.generationscore.common.api.data.Codecs
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
@@ -34,7 +35,7 @@ import java.util.*
 import java.util.function.Function
 import kotlin.collections.ArrayList
 
-interface GenericContainer : Container, MenuProvider {
+interface GenericContainer : SimpleItemStorage, MenuProvider {
     val width: Int
     val height: Int
 
@@ -58,8 +59,7 @@ interface GenericContainer : Container, MenuProvider {
         override val height: Int,
         items: List<Pair<Int, ItemStack>> = emptyList(),
         val title: MutableComponent = Component.empty()
-    ) :
-        SimpleContainer(width * height), GenericContainer {
+    ) : SimpleItemStorage(width * height), GenericContainer {
 
         init {
             for (pair in items) {

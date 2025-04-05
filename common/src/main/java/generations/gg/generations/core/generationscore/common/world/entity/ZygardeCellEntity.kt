@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.common.world.item.Zygarde
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
+import net.minecraft.network.syncher.SynchedEntityData
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionHand
@@ -29,8 +30,7 @@ class ZygardeCellEntity : Entity {
     constructor(entityType: EntityType<*>, level: Level) : super(entityType, level)
 
 
-    override fun defineSynchedData() {
-    }
+    override fun defineSynchedData(builder: SynchedEntityData.Builder) {}
 
     override fun readAdditionalSaveData(compound: CompoundTag) {
     }

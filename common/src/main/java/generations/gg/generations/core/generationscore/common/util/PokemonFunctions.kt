@@ -52,7 +52,7 @@ fun Pokemon.embedPokemon(pokemon: Pokemon, needsToBeInWorld: Boolean = true): Bo
     val removedFromWorld = pokemon.storeCoordinates.get()?.remove() == true
 
     return if (!needsToBeInWorld || removedFromWorld) {
-        this.persistentData.put(DataKeys.EMBEDDED_POKEMON, pokemon.saveToNBT(CompoundTag()))
+        this.persistentData.put(DataKeys.EMBEDDED_POKEMON, Pokemon.CODEC.pokemon.saveToNBT(CompoundTag()))
         this.anyChangeObservable.emit(this)
         true
     } else {

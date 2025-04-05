@@ -89,16 +89,14 @@ public class VanilaRenderModel implements RenderModel {
 
         modelMatrix.transform(SKELETAL_VECTOR);
 
-        consumer.vertex(SKELETAL_VECTOR.x(),
+        consumer.addVertex(SKELETAL_VECTOR.x(),
                         SKELETAL_VECTOR.y(),
                         SKELETAL_VECTOR.z())
-                .color(tint.x, tint.y, tint.z, 1.0f)
-                .uv(UV_VECTOR.x(), UV_VECTOR.y())
-                .overlayCoords(OverlayTexture.NO_OVERLAY)
-                .uv2(light)
-                .normal(normals[posIndex], normals[posIndex+1], normals[posIndex+2])
-                .endVertex();
-    }
+                .setColor(tint.x, tint.y, tint.z, 1.0f)
+                .setUv(UV_VECTOR.x(), UV_VECTOR.y())
+                .setOverlay(OverlayTexture.NO_OVERLAY)
+                .setLight(light)
+                .setNormal(normals[posIndex], normals[posIndex+1], normals[posIndex+2]);}
 
 //    private Matrix4f getBoneTransform(Matrix4f[] boneTransforms, int boneIndex) {
 //        var boneTransform = boneTransforms[boneIds[boneIndex]].scale(boneWeights[boneIndex], new Matrix4f()).add(boneTransforms[boneIds[boneIndex+1]].scale(boneWeights[boneIndex+1], new Matrix4f()).add(boneTransforms[boneIds[boneIndex+2]].scale(boneWeights[boneIndex+2], new Matrix4f()).add(boneTransforms[boneIds[boneIndex+3]].scale(boneWeights[boneIndex+2], new Matrix4f()))));

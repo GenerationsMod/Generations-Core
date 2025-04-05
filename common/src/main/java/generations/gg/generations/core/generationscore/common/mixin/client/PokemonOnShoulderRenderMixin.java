@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.mixin.client;
 
 import com.cobblemon.mod.common.client.render.layer.PokemonOnShoulderRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
-import generations.gg.generations.core.generationscore.common.client.render.entity.GenerationsPokemonOnShoulderProxy;
 import generations.gg.generations.core.generationscore.common.client.render.entity.PokemonOnShoulderRenderAccess;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -30,7 +29,7 @@ public abstract class PokemonOnShoulderRenderMixin<T extends Player> extends Ren
 
     @Inject(method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/player/Player;FFFFFFZ)V", at = @At("HEAD"), cancellable = true)
     public void render(PoseStack matrixStack, MultiBufferSource buffer, int packedLight, T livingEntity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, boolean pLeftShoulder, CallbackInfo ci) {
-        GenerationsPokemonOnShoulderProxy.render(this, matrixStack, buffer, packedLight, livingEntity, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, pLeftShoulder);
-        ci.cancel();
+//        GenerationsPokemonOnShoulderProxy.render(this, matrixStack, buffer, packedLight, livingEntity, limbSwing, limbSwingAmount, partialTicks, ageInTicks, netHeadYaw, headPitch, pLeftShoulder);
+//        ci.cancel();
     }
 }

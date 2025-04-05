@@ -94,7 +94,8 @@ public class MailViewScreen extends Screen {
 
     @Override
     public void render(GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
-        this.renderBackground(poseStack);
+        this.renderBackground(poseStack, mouseX, mouseY, partialTick);
+
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         int x = (this.width - IMAGE_WIDTH) / 2;
         int y = (this.height - IMAGE_HEIGHT) / 2;

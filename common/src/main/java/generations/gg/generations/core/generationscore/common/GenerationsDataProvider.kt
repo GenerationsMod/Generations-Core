@@ -3,9 +3,7 @@ package generations.gg.generations.core.generationscore.common
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.data.DataProvider
 import com.cobblemon.mod.common.api.data.DataRegistry
-import com.cobblemon.mod.common.api.reactive.SimpleObservable.subscribe
 import com.cobblemon.mod.common.platform.events.PlatformEvents
-import com.cobblemon.mod.common.platform.events.ServerPlayerEvent.Logout.player
 import com.cobblemon.mod.common.util.ifClient
 import com.cobblemon.mod.common.util.server
 import dev.architectury.platform.Platform
@@ -22,8 +20,6 @@ import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener
 import java.util.*
 import java.util.function.Consumer
-import kotlin.jvm.functions.Function0
-import kotlin.jvm.functions.Function0.invoke
 
 class GenerationsDataProvider : DataProvider {
     // Both Forge n Fabric keep insertion order so if a registry depends on another simply register it after

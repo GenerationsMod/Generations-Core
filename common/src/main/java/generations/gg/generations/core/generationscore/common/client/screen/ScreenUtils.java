@@ -1,10 +1,7 @@
 package generations.gg.generations.core.generationscore.common.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.DefaultVertexFormat;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.Tesselator;
-import com.mojang.blaze3d.vertex.VertexFormat;
+import com.mojang.blaze3d.vertex.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -202,13 +199,12 @@ public class ScreenUtils {
 
         RenderSystem.setShader(GameRenderer::getPositionColorShader);
         var tessellator = Tesselator.getInstance();
-        var buffer = tessellator.getBuilder();
-        buffer.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-        buffer.vertex(mat, right, top, zLevel).color(startRed, startGreen, startBlue, startAlpha).endVertex();
-        buffer.vertex(mat, left, top, zLevel).color(startRed, startGreen, startBlue, startAlpha).endVertex();
-        buffer.vertex(mat, left, bottom, zLevel).color(startRed, startGreen, startBlue, startAlpha).endVertex();
-        buffer.vertex(mat, right, bottom, zLevel).color(startRed, startGreen, startBlue, startAlpha).endVertex();
-        tessellator.end();
+        var buffer = tessellator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
+        buffer.addVertex(mat, right, top, zLevel).setColor(startRed, startGreen, startBlue, startAlpha);
+        buffer.addVertex(mat, left, top, zLevel).setColor(startRed, startGreen, startBlue, startAlpha);
+        buffer.addVertex(mat, left, bottom, zLevel).setColor(startRed, startGreen, startBlue, startAlpha);
+        buffer.addVertex(mat, right, bottom, zLevel).setColor(startRed, startGreen, startBlue, startAlpha);
+        BufferUploader.drawWithShader(buffer.buildOrThrow());
     }
 
     // FIXME: this code breaks if you raise the line above around half way on the Y axis
@@ -221,13 +217,12 @@ public class ScreenUtils {
         RenderSystem.setShader(GameRenderer::getRendertypeLinesShader);
         RenderSystem.lineWidth(2.0F);
         var tessellator = Tesselator.getInstance();
-        var buffer = tessellator.getBuilder();
-        buffer.begin(VertexFormat.Mode.LINES, DefaultVertexFormat.POSITION_COLOR_NORMAL);
+        var buffer = tessellator.begin(VertexFormat.Mode.LINES, DefaultVertexFormat.POSITION_COLOR_NORMAL);
         var direction = new Vector2f();
         end.sub(start, direction).normalize(direction);
-        buffer.vertex(mat, start.x, start.y, zLevel).color(startRed, startGreen, startBlue, startAlpha).normal(direction.x, direction.y, 0).endVertex();
-        buffer.vertex(mat, end.x, end.y, zLevel).color(startRed, startGreen, startBlue, startAlpha).normal(direction.x, direction.y, 0).endVertex();
-        tessellator.end();
+        buffer.addVertex(mat, start.x, start.y, zLevel).setColor(startRed, startGreen, startBlue, startAlpha).setNormal(direction.x, direction.y, 0);
+        buffer.addVertex(mat, end.x, end.y, zLevel).setColor(startRed, startGreen, startBlue, startAlpha).setNormal(direction.x, direction.y, 0);
+        BufferUploader.drawWithShader(buffer.buildOrThrow());
     }
 
     /**

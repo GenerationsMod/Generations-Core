@@ -126,9 +126,9 @@ public class ShopListWidget extends AbstractWidget {
     }
 
     @Override
-    public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
-        this.scroll = (int)Mth.clamp(scroll - delta, 0, maxScroll);
-        return super.mouseScrolled(mouseX, mouseY, delta);
+    public boolean mouseScrolled(double mouseX, double mouseY, double scrollX, double scrollY) {
+        this.scroll = (int)Mth.clamp(scroll - scrollY, 0, maxScroll);
+        return super.mouseScrolled(mouseX, mouseY, scrollX, scrollY);
     }
 
     public void select(int index) {

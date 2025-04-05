@@ -15,22 +15,18 @@ import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.hasKeyItem
 import com.mojang.datafixers.util.Unit
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
+import java.util.*
 
+//TODO Use
 object GenerationsInstructionProcessor {
     @JvmStatic
-    fun processDetailsChange(battle: PokemonBattle, message: BattleMessage) {
-        val s1 = message.argumentAt(1) ?: return
-        val s2 = s1.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-        if (s2.isEmpty()) return
-        val s3 = s2[0].split("-".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+    fun processDetailsChange(battle: PokemonBattle, pokemon: BattlePokemon, formeName: String) {
 
-        if (s3.size < 2) return
+        val battlePokemon = pokemon
 
-        val battlePokemon = message.battlePokemon(0, battle) ?: return
+        val name = formeName
 
-        val name = s3[1].lowercase()
-
-        var pair: Pair<String, Any> = when(name) {
+        val pair: Pair<String, Any> = when(name) {
             "mega" -> {
                 val megaStone = battlePokemon.heldItemManager.showdownId(battlePokemon) ?: return
                 when {
@@ -41,13 +37,15 @@ object GenerationsInstructionProcessor {
             }
             "sunshine" -> "sunny" to true
             "school" -> "schooling" to true
-            "wellspring", "hearthflame", "cornerstone", "teal" -> s3.getOrNull(2)?.takeIf { it == "Tera" }.let { "terastal" to true } ?: null
+//            "wellspring", "hearthflame", "cornerstone", "teal" -> s3.getOrNull(2)?.takeIf { it == "Tera" }.let { "terastal" to true } ?: null TODO: Figure out what ogrepon here uses in the new system.
             else -> name to true
         } ?: let {
             battlePokemon.originalPokemon.removeBattleFeature()
             battlePokemon.effectedPokemon.removeBattleFeature()
             return
         }
+
+        println(arrayOf("A", "A").contentToString())
 
         pair.let {
             when (it.second) {
@@ -122,4 +120,6 @@ private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
     } else {
         (feature as FlagSpeciesFeature).apply(this)
     }
+
+    updateForm()
 }

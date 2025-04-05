@@ -5,6 +5,7 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.CobblemonEvents.BATTLE_VICTORY
+import com.cobblemon.mod.common.api.events.CobblemonEvents.FORME_CHANGE
 import com.cobblemon.mod.common.api.events.CobblemonEvents.FRIENDSHIP_UPDATED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_POST
 import com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED
@@ -21,6 +22,7 @@ import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
 import generations.gg.generations.core.generationscore.common.api.player.Caught
+import generations.gg.generations.core.generationscore.common.battle.GenerationsInstructionProcessor
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -54,13 +56,12 @@ class GenerationsCobblemonEvents {
 
         @JvmStatic
         fun init() {
+            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
 
 //            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
 //
 //
 //            }
-
-            GenerationsArchitecturyEvents
 
             BATTLE_VICTORY.subscribe(Priority.HIGH) { event ->
                 val data = mutableListOf<BattleData>()

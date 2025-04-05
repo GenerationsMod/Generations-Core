@@ -17,7 +17,7 @@ class C2SShopItemHandler : ServerNetworkPacketHandler<C2SShopItemPacket> {
         }
 
         if (offerProvider != null
-            && ShopUtils.validateItemForNpc(offerProvider, packet.itemStack, packet.price, packet.isBuy)
+            && ShopUtils.validateItemForProvider(offerProvider, packet.itemStack, packet.price, packet.isBuy)
         ) {
             if (packet.isBuy) {
                 ShopUtils.buy(player, packet.itemStack, packet.price, packet.amount)

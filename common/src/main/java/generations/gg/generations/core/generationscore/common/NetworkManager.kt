@@ -13,7 +13,6 @@ import kotlin.reflect.KClass
 
 
 interface NetworkManager {
-    fun
 
     fun registerClientBound()
 

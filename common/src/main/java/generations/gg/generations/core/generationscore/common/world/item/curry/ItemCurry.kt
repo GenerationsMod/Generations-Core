@@ -15,7 +15,9 @@ import generations.gg.generations.core.generationscore.common.util.extensions.ad
 import generations.gg.generations.core.generationscore.common.util.extensions.dsl
 import generations.gg.generations.core.generationscore.common.util.extensions.plusAssign
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
 import net.minecraft.client.gui.screens.Screen
+import net.minecraft.core.component.DataComponents
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
@@ -37,7 +39,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
 
     override fun appendHoverText(
         stack: ItemStack,
-        level: Level?,
+        contex: TooltipContext,
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
@@ -61,7 +63,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
 
             data.setRating(rating)
             rating.configureData(data)
-            setData(stack, data)
+            stack.set(GenerationsItemComponents.CURRY_DATA, data)
 //            CurryDex.add(player, data)
         }
     }
@@ -92,7 +94,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
 
     class CurryExperienceSource(val player: ServerPlayer, val stack: ItemStack) : SidemodExperienceSource(
         GenerationsCore.MOD_ID) {
-        val curry = getData(stack)
+        val curry = stack.get(GenerationsItemComponents.CURRY_DATA
 
         override fun isInteraction(): Boolean {
             return true
@@ -107,15 +109,17 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
             return stack
         }
 
-        @JvmStatic
-        fun setData(stack: ItemStack, data: CurryData) {
-            stack.addTagElement("data", data.toNbt())
-        }
+        //TODO: data -> generations_core:curry_data via world converter
 
-        @JvmStatic
-        fun getData(stack: ItemStack): CurryData {
-            return CurryData.fromNbt(stack.getOrCreateTagElement("data"))
-        }
+//        @JvmStatic
+//        fun setData(stack: ItemStack, data: CurryData) {
+//            stack.addTagElement("data", data.toNbt())
+//        }
+//
+//        @JvmStatic
+//        fun getData(stack: ItemStack): CurryData {
+//            return CurryData.fromNbt(stack.getOrCreateTagElement("data"))
+//        }
     }
 }
 

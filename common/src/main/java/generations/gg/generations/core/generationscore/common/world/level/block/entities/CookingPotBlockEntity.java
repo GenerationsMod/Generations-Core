@@ -2,10 +2,11 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.cobblemon.mod.common.api.berry.Berry;
 import com.cobblemon.mod.common.api.berry.Flavor;
-import com.cobblemon.mod.common.item.BerryItem;
+import com.cobblemon.mod.common.item.berry.BerryItem;
 import dev.architectury.registry.menu.ExtendedMenuProvider;
 import dev.architectury.registry.menu.MenuRegistry;
 import earth.terrarium.botarium.common.item.ItemContainerBlock;
+import earth.terrarium.common_storage_lib.item.ItemApi;
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer;
@@ -40,7 +41,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements ItemContainerBlock, MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer>, ExtendedMenuProvider, ModelContextProviders.VariantProvider, Toggleable {
+public class CookingPotBlockEntity extends ModelProvidingBlockEntity implements MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer>, ExtendedMenuProvider, ModelContextProviders.VariantProvider, Toggleable {
 
     public CookingPotBlockEntity(BlockPos arg2, BlockState arg3) {
         super(GenerationsBlockEntities.COOKING_POT.get(), arg2, arg3);

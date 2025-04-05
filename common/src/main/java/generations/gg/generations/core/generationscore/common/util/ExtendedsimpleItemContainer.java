@@ -1,24 +1,17 @@
 package generations.gg.generations.core.generationscore.common.util;
 
 import earth.terrarium.botarium.common.item.SimpleItemContainer;
-import net.minecraft.world.entity.player.Player;
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage;
+import generations.gg.generations.core.generationscore.common.GenerationsStorage;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.Predicate;
-
-public class ExtendedsimpleItemContainer extends SimpleItemContainer {
+public class ExtendedsimpleItemContainer extends SimpleItemStorage {
     private final boolean hasEntity;
 
-    public ExtendedsimpleItemContainer(BlockEntity entity, int size, Predicate<Player> canPlayerAccess) {
-        super(entity, size, canPlayerAccess);
-
-        hasEntity = entity != null;
-    }
-
     public ExtendedsimpleItemContainer(BlockEntity entity, int size) {
-        super(entity, size);
+        super(entity, GenerationsStorage.INSTANCE.getItem_contents(), size);
         hasEntity = entity != null;
     }
 
@@ -49,6 +42,7 @@ public class ExtendedsimpleItemContainer extends SimpleItemContainer {
         boolean reachedLimit = stack.getCount() > limit;
 
         if (!simulate) {
+            ItemResource
             if (existing.isEmpty()) {
                 this.setItem(slot, reachedLimit ? copyStackWithSize(stack, limit) : stack);
             } else {

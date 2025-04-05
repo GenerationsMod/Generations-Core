@@ -13,10 +13,10 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
 
 public class Overlays {
-    private static final ResourceLocation CAMERA_OVERLAY_BORDER = new ResourceLocation("generations_core:textures/gui/camera_overlay_border.png");
-    private static final ResourceLocation CAMERA_OVERLAY_FOCUS = new ResourceLocation("generations_core:textures/gui/camera_overlay_focus.png");
-    private static final ResourceLocation CAMERA_OVERLAY_MIDDLE = new ResourceLocation("generations_core:textures/gui/camera_overlay_middle.png");
-    private static final ResourceLocation PUMPKIN_BLUR_LOCATION = new ResourceLocation("textures/misc/pumpkinblur.png");
+    private static final ResourceLocation CAMERA_OVERLAY_BORDER = ResourceLocation.parse("generations_core:textures/gui/camera_overlay_border.png");
+    private static final ResourceLocation CAMERA_OVERLAY_FOCUS = ResourceLocation.parse("generations_core:textures/gui/camera_overlay_focus.png");
+    private static final ResourceLocation CAMERA_OVERLAY_MIDDLE = ResourceLocation.parse("generations_core:textures/gui/camera_overlay_middle.png");
+    private static final ResourceLocation PUMPKIN_BLUR_LOCATION = ResourceLocation.parse("textures/misc/pumpkinblur.png");
 
 
 

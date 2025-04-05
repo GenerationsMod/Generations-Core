@@ -3,8 +3,7 @@ package generations.gg.generations.core.generationscore.common.client.model
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.client.render.VaryingRenderableResolver
 import com.cobblemon.mod.common.client.render.layer.CobblemonRenderLayers
-import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityModel
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.PokemonPoseableModel
+import com.cobblemon.mod.common.client.render.models.blockbench.PosableModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
@@ -25,7 +24,6 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
-import generations.gg.generations.core.generationscore.common.mixin.client.ModelAssetVariationMixin
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.geom.ModelPart
 import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
@@ -43,7 +41,7 @@ private val RenderContext.species: Species?
     get() = this.request(RenderContext.SPECIES)?.let { PokemonSpecies.getByIdentifier(it) }
 
 class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assumes Bone will always be a ModelPart */(
-    location: ResourceLocation) : ModelPart(CUBE_LIST, BLANK_MAP), Supplier<Bone>, Bone {
+    location: ResourceLocation) : Supplier<Bone>, Bone {
     private val objectSupplier: () -> CompiledModel?
     private val spriteProvider: (RenderState, String) -> ResourceLocation
 
@@ -68,12 +66,9 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         buffer: VertexConsumer,
         packedLight: Int,
         packedOverlay: Int,
-        r: Float,
-        g: Float,
-        b: Float,
-        a: Float
+        color: Int
     ) {
-        renderModel(context, buffer, stack, packedLight, packedOverlay, r, g, b, a)
+        renderModel(context, buffer, stack, packedLight, packedOverlay, color)
     }
 
     @JvmOverloads
@@ -94,14 +89,14 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         val scale = if (isSprite) 1f else 2f
         val matrix = stack.last()
         matrix.pose().translate(-scale / 2f, 0f, 0f)
-        buffer.vertex(matrix.pose(), scale, 0f, 0.0f).color(r, g, b, a).uv(1f, 0f).overlayCoords(packedOverlay)
-            .uv2(packedLight).normal(matrix.normal(), 0f, 1f, 0f).endVertex()
-        buffer.vertex(matrix.pose(), 0f, 0f, 0.0f).color(r, g, b, a).uv(0f, 0f).overlayCoords(packedOverlay)
-            .uv2(packedLight).normal(matrix.normal(), 0f, 1f, 0f).endVertex()
-        buffer.vertex(matrix.pose(), 0f, scale, 0.0f).color(r, g, b, a).uv(0f, 1f).overlayCoords(packedOverlay)
-            .uv2(packedLight).normal(matrix.normal(), 0f, 1f, 0f).endVertex()
-        buffer.vertex(matrix.pose(), scale, scale, 0.0f).color(r, g, b, a).uv(1f, 1f).overlayCoords(packedOverlay)
-            .uv2(packedLight).normal(matrix.normal(), 0f, 1f, 0f).endVertex()
+        buffer.addVertex(matrix.pose(), scale, 0f, 0.0f).setColor(r, g, b, a).setUv(1f, 0f).setOverlay(packedOverlay)
+            .setLight(packedLight).setNormal(matrix, 0f, 1f, 0f)
+        buffer.addVertex(matrix.pose(), 0f, 0f, 0.0f).setColor(r, g, b, a).setUv(0f, 0f).setOverlay(packedOverlay)
+            .setLight(packedLight).setNormal(matrix, 0f, 1f, 0f)
+        buffer.addVertex(matrix.pose(), 0f, scale, 0.0f).setColor(r, g, b, a).setUv(0f, 1f).setOverlay(packedOverlay)
+            .setLight(packedLight).setNormal(matrix, 0f, 1f, 0f)
+        buffer.addVertex(matrix.pose(), scale, scale, 0.0f).setColor(r, g, b, a).setUv(1f, 1f).setOverlay(packedOverlay)
+            .setLight(packedLight).setNormal(matrix, 0f, 1f, 0f)
         sources.endBatch()
     }
 
@@ -111,10 +106,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         stack: PoseStack,
         packedLight: Int,
         packedOverlay: Int,
-        r: Float,
-        g: Float,
-        b: Float,
-        a: Float
+        color: Int
     ) {
         val model = objectSupplier.invoke()
         if (model?.renderObject == null) return
@@ -147,7 +139,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         }
         if (model.renderObject!!.isReady) {
             instance.light = packedLight
-            instance.tint.set(r, g, b)
+//            instance.tint.set(r, g, b) TODO: convert color int into its float components for tint.
             val variant = getVariant(context)
             if (variant != null) {
                 instance.setVariant(variant)
@@ -186,14 +178,14 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     fun getSprite(context: RenderContext): ResourceLocation = getVariant(context)?.let { spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), it) } ?: MissingTextureAtlasSprite.getLocation()
 
     companion object {
-        val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
-        private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
-        private val temp = Vector3f()
+        //        val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
+//        private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
+//        private val temp = Vector3f()
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)
         private val DUMMY = emptyMap<String, Bone>()
     }
 }
 
-private fun VaryingRenderableResolver<PokemonEntity, PokemonPoseableModel>.getResolvedVariant(aspects: Set<String>): String? {
-     return variations.lastOrNull { it.aspects.all { it in aspects } && (it as IVariant).variant != null }?.let { (it as IVariant).variant }
+private fun <T : PosableModel> VaryingRenderableResolver<T>.getResolvedVariant(aspects: Set<String>): String? {
+    return variations.lastOrNull { it.aspects.all { it in aspects } && (it as IVariant).variant != null }?.let { (it as IVariant).variant }
 }

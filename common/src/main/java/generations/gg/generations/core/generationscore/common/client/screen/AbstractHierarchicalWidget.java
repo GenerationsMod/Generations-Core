@@ -43,12 +43,6 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
     }
 
     @Override
-    public void render(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
-        super.render(poseStack, mouseX, mouseY, partialTick);
-        if (this.visible) this.isHovered = isMouseOver(mouseX, mouseY);
-    }
-
-    @Override
     public void onParentMove(int parentX, int parentY) {
         setX(relativeX + parentX);
         setY(relativeY + parentY);
@@ -81,7 +75,10 @@ public abstract class AbstractHierarchicalWidget extends AbstractWidget implemen
     protected void updateWidgetNarration(@NotNull NarrationElementOutput narrationElementOutput) {}
 
     @Override
-    public void renderWidget(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {}
+    public void renderWidget(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
+        super.render(poseStack, mouseX, mouseY, partialTick);
+        if (this.visible) this.isHovered = isMouseOver(mouseX, mouseY);
+    }
 
     @Override
     public void onScreenClose(Screen screen) {

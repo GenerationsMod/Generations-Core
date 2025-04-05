@@ -1,7 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks;
 
-import generations.gg.generations.core.generationscore.common.client.render.block.entity.BoxBlockEntity;
+import com.mojang.serialization.MapCodec;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.BoxBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -44,6 +45,8 @@ public class BoxBlock extends BaseEntityBlock {
                     Shapes.box(0.0625, 0, 0.0625, 0.9375, 0.875, 0.125)));
     public static final VoxelShape CLOSED_SHAPE = Shapes.box(0.0625, 0, 0.0625, 0.9375, 0.875, 0.9375);
 
+    public static final MapCodec<BoxBlock> CODEC = simpleCodec(BoxBlock::new);
+
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty OPEN = BlockStateProperties.OPEN;
 
@@ -53,7 +56,12 @@ public class BoxBlock extends BaseEntityBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
+    }
+
+    @Override
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
         if (level.isClientSide) {
             return InteractionResult.SUCCESS;
         }
@@ -111,12 +119,12 @@ public class BoxBlock extends BaseEntityBlock {
         return RenderShape.MODEL;
     }
 
-    @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        if (stack.hasCustomHoverName() && level.getBlockEntity(pos) instanceof BoxBlockEntity boxBlockEntity) {
-            boxBlockEntity.setCustomName(stack.getHoverName());
-        }
-    }
+//    @Override
+//    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+//        if (stack.getDisplayName().hasCustomHoverName() && level.getBlockEntity(pos) instanceof BoxBlockEntity boxBlockEntity) {
+//            boxBlockEntity.setCustomName(stack.getHoverName());
+//        }
+//    }
 
     @Override
     public boolean hasAnalogOutputSignal(BlockState state) {

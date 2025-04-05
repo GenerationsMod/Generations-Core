@@ -151,7 +151,7 @@ public class ShopUtils {
         return PlayerMoneyHandler.of(player).withdraw(BigDecimal.valueOf(pokedollars));
     }
 
-    public static boolean validateItemForNpc(ShopOfferProvider provider, ItemStack stack, int price, boolean isBuy) {
+    public static boolean validateItemForProvider(ShopOfferProvider provider, ItemStack stack, int price, boolean isBuy) {
         if (provider.getOffers() == null)
             return false;
 

@@ -4,11 +4,16 @@ import generations.gg.generations.core.generationscore.common.tags.GenerationsIt
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -28,13 +33,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public class CursedPumpkinBlock extends PumpkinBlock {
     public CursedPumpkinBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.PUMPKIN));
+        super(BlockBehaviour.Properties.ofFullCopy(Blocks.PUMPKIN));
     }
 
     @Override
-    public @NotNull InteractionResult use(@NotNull BlockState state, @NotNull Level level, @NotNull BlockPos pos, Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult hit) {
-        ItemStack itemstack = player.getItemInHand(hand);
-        if (itemstack.is(GenerationsItemTags.SHEARS)) {
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (stack.is(GenerationsItemTags.SHEARS)) {
             if (!level.isClientSide) {
                 Direction direction = hit.getDirection();
                 Direction direction1 = direction.getAxis() == Direction.Axis.Y ? player.getDirection().getOpposite() : direction;
@@ -43,13 +47,13 @@ public class CursedPumpkinBlock extends PumpkinBlock {
                 ItemEntity itementity = new ItemEntity(level, (double)pos.getX() + 0.5 + (double)direction1.getStepX() * 0.65, (double)pos.getY() + 0.1, (double)pos.getZ() + 0.5 + (double)direction1.getStepZ() * 0.65, new ItemStack(Items.PUMPKIN_SEEDS, 4));
                 itementity.setDeltaMovement(0.05 * (double)direction1.getStepX() + level.random.nextDouble() * 0.02, 0.05, 0.05 * (double)direction1.getStepZ() + level.random.nextDouble() * 0.02);
                 level.addFreshEntity(itementity);
-                itemstack.hurtAndBreak(1, player, (arg2) -> arg2.broadcastBreakEvent(hand));
+                stack.hurtAndBreak(1, player, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
                 level.gameEvent(player, GameEvent.SHEAR, pos);
                 player.awardStat(Stats.ITEM_USED.get(Items.SHEARS));
             }
 
-            return InteractionResult.sidedSuccess(level.isClientSide);
-        } else return super.use(state, level, pos, player, hand, hit);
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+        } else return super.useItemOn(stack, state, level, pos, player, hand, hit);
     }
 
     public @NotNull StemBlock getStem() {
