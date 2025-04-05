@@ -42,11 +42,14 @@ public class RubyRodItem extends TieredFishingRodItem implements LangTooltip {
 
                 if (currentCount < 9) {
                     int allowableCount = Math.min(stackCount, 9 - currentCount);
-                    ItemStack cappedStack = itemStack.copy();
-                    cappedStack.setCount(allowableCount);
 
-                    sanitizedList.add(cappedStack);
-                    currentShards.put(shardType, (byte) (currentCount + allowableCount)); // Update currentShards in place
+                    if (allowableCount > 0) {
+                        ItemStack cappedStack = itemStack.copy();
+                        cappedStack.setCount(allowableCount);
+
+                        sanitizedList.add(cappedStack);
+                        currentShards.put(shardType, (byte) (currentCount + allowableCount));
+                    }
                 }
             }
         }
