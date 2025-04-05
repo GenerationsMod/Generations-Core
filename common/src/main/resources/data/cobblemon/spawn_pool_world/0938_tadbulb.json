@@ -17,7 +17,8 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_swamp"
+                    "#cobblemon:is_swamp",
+                    "#cobblemon:is_ocean"
                 ]
             }
         }

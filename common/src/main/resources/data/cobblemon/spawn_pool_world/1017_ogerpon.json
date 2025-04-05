@@ -13,7 +13,7 @@
             "context": "grounded",
             "bucket": "ultra-rare",
             "level": "70-75",
-            "weight": 0.001,
+            "weight": 0.1,
             "condition": {
                 "timeRange": "day",
                 "biomes": [
