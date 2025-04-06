@@ -36,10 +36,10 @@ public class TieredFishingRodItem extends FishingRodItem {
                 if(this.tier == TieredFishingHookEntity.Teir.RUBY) {
                     if(RubyRodItem.isFinished(itemstack)) {
                         player.broadcastBreakEvent(usedHand);
-                        itemstack.setDamageValue(0);
+//                        itemstack.setDamageValue(0);
                         itemstack.shrink(1);
 
-                        player.sendSystemMessage(Component.translatable("item.generations_core.ruby_rod.fate_defied"));
+//                        player.sendSystemMessage(Component.translatable("item.generations_core.ruby_rod.fate_defied"));
                     }
                 }
             }

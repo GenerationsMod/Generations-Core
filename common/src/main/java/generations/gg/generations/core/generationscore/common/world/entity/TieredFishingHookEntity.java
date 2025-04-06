@@ -1,7 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.entity;
 
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem;
 import generations.gg.generations.core.generationscore.common.world.loot.GenerationCoreLootTables;
+import gg.generations.rarecandy.shaded.commons.lang3.RandomUtils;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.resources.ResourceLocation;
@@ -25,7 +27,11 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 
 public class TieredFishingHookEntity extends FishingHook {
     private final Teir tier;
@@ -80,7 +86,7 @@ public class TieredFishingHookEntity extends FishingHook {
             } else if (this.nibble > 0) {
                 LootParams lootParams = (new LootParams.Builder((ServerLevel)this.level())).withParameter(LootContextParams.ORIGIN, this.position()).withParameter(LootContextParams.TOOL, stack).withParameter(LootContextParams.THIS_ENTITY, this).withLuck((float)this.luck + player.getLuck()).create(LootContextParamSets.FISHING);
 
-                ObjectArrayList<ItemStack> list = tier.process(lootParams, stack);
+                var list = tier.process(lootParams, stack);
 
                 CriteriaTriggers.FISHING_ROD_HOOKED.trigger((ServerPlayer)player, stack, this, list);
                 for (ItemStack itemstack : list) {
@@ -124,39 +130,31 @@ public class TieredFishingHookEntity extends FishingHook {
             this.resourceLocation = resourceLocation;
         }
 
-        public ObjectArrayList<ItemStack> process(LootParams lootParams, ItemStack stack) {
+        public List<ItemStack> process(LootParams lootParams, ItemStack stack) {
             var level = lootParams.getLevel();
+
+            if (this == RUBY) {
+                Map<RubyRodItem.LakeTrioShardType, Byte> currentShards = RubyRodItem.getFishedShard(stack);
+
+                var availableShardTypes = currentShards.entrySet().stream().filter(a -> a.getValue() < 9).map(Map.Entry::getKey).toList();
+
+                if(availableShardTypes.isEmpty()) return Collections.emptyList();
+                else {
+                    var randomType = availableShardTypes.get(level.random.nextInt(availableShardTypes.size()));
+                    currentShards.compute(randomType, (key, value) -> (byte) ((value == null ? 0 : value) + 1));
+                    RubyRodItem.saveShardCounts(stack, currentShards);
+
+                    return Collections.singletonList((switch (randomType) {
+                        case EMOTION -> GenerationsItems.SHARD_OF_EMOTION;
+                        case KNOWLEDGE -> GenerationsItems.SHARD_OF_KNOWLEDGE;
+                        case WILLPOWER -> GenerationsItems.SHARD_OF_WILLPOWER;
+                    }).get().getDefaultInstance());
+                }
+            }
+
             var loottable = level.getServer().getLootData().getLootTable(resourceLocation);
 
             ObjectArrayList<ItemStack> list = loottable.getRandomItems(lootParams);
-
-            if (this == RUBY) {
-                int tries = 0;
-
-                // Get the initial shard counts from the rod
-                Map<RubyRodItem.LakeTrioShardType, Byte> currentShards = RubyRodItem.getFishedShard(stack);
-
-                while (tries < 3) {
-                    // Step 1: Sanitize the list using the current shard counts
-                    list = RubyRodItem.sanitizeList(list, currentShards);
-
-                    // Step 2: If the list is empty after sanitization, retry
-                    if (list.isEmpty()) {
-                        tries++;
-                        list = loottable.getRandomItems(lootParams);
-                        continue;
-                    }
-
-                    // Step 3: Save the updated shard counts to the rod's NBT
-                    RubyRodItem.saveShardCounts(stack, currentShards);
-
-                    // Step 4: Return the sanitized and valid list
-                    return list;
-                }
-
-                // If no valid list is found after 3 tries, return an empty list
-                return new ObjectArrayList<>();
-            }
 
             return list;
         }
