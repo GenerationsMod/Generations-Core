@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["embody-aspect"],
+  "default": false,
+  "isAspect": true
+}
