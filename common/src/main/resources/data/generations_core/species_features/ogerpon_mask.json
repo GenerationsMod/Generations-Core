@@ -1,7 +1,7 @@
 {
   "type": "choice",
   "keys": ["ogerpon_mask"],
-  "default": "false",
+  "default": "teal",
   "choices": [
     "teal",
     "wellspring",
