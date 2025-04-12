@@ -76,7 +76,7 @@ object GenerationsInstructionProcessor {
 //            }
 //        }
     }
-
+    
     @JvmStatic
     fun processBattleEnd(battle: PokemonBattle) {
         battle.actors.forEach { actor ->
@@ -84,8 +84,7 @@ object GenerationsInstructionProcessor {
             actor.pokemonList.forEach { battlePokemon ->
                 val tempAbility = battlePokemon.originalPokemon.ability
                 val data = battlePokemon.effectedPokemon.persistentData
-                val name = if(data.contains("form_name")) data.getString("form_name") else return
-
+                val name = if(data.contains("form_name")) data.getString("form_name") else ""
                 battlePokemon.originalPokemon.removeBattleFeature()
                 battlePokemon.effectedPokemon.removeBattleFeature()
 
