@@ -167,10 +167,6 @@ public class GenerationsUtils {
         }
     }
 
-    public static CompoundTag serializeStack(ItemStack itemStack) {
-        return GenerationsCore.getImplementation().serializeStack(itemStack);
-    }
-
     public static HitResult raycast(Entity entity, double maxDistance, float tickDelta, Predicate<Entity> predicate) {
         Vec3 vec3d = entity.getEyePosition(tickDelta);
         Vec3 vec3d2 = entity.getViewVector(tickDelta);

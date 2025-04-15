@@ -6,6 +6,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.common.world.item.CameraItem;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
@@ -122,22 +123,22 @@ public class Overlays {
         guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
-    public static void render(Minecraft minecraft, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
-        if (minecraft.options.getCameraType().isFirstPerson()) {
-            assert minecraft.player != null;
-            if (!minecraft.player.isScoping()) {
-                if (!renderCamera(guiGraphics, partialTick)) renderPumpkin(minecraft, guiGraphics, screenWidth, screenHeight);
+    public static void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+        if (Minecraft.getInstance().options.getCameraType().isFirstPerson()) {
+            assert Minecraft.getInstance().player != null;
+            if (!Minecraft.getInstance().player.isScoping()) {
+                if (!renderCamera(guiGraphics, deltaTracker.getGameTimeDeltaTicks())) renderPumpkin(guiGraphics,deltaTracker);
             }
         }
     }
 
-    public static boolean renderPumpkin(Minecraft minecraft, GuiGraphics guiGraphics, int screenWidth, int screenHeight) {
-        if (minecraft.player.getInventory().getArmor(3).is(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem())) {
+    public static boolean renderPumpkin(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+        if (Minecraft.getInstance().player.getInventory().getArmor(3).is(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem())) {
             RenderSystem.disableDepthTest();
             RenderSystem.enableBlend();
             RenderSystem.depthMask(false);
             guiGraphics.setColor(1.0F, 1.0F, 1.0F, 1.0F);
-            guiGraphics.blit(PUMPKIN_BLUR_LOCATION, 0, 0, -90, 0.0F, 0.0F, screenWidth, screenHeight, screenWidth, screenHeight);
+            guiGraphics.blit(PUMPKIN_BLUR_LOCATION, 0, 0, -90, 0.0F, 0.0F, guiGraphics.guiWidth(), guiGraphics.guiHeight(), guiGraphics.guiWidth(), guiGraphics.guiHeight());
             RenderSystem.depthMask(true);
             RenderSystem.enableDepthTest();
             RenderSystem.disableBlend();

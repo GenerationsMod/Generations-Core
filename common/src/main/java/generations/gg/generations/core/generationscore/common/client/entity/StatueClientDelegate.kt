@@ -1,23 +1,23 @@
 package generations.gg.generations.core.generationscore.common.client.entity
 
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
 import generations.gg.generations.core.generationscore.common.world.entity.StatueSideDelegate
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
-import net.minecraft.client.Minecraft
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import org.joml.Matrix4f
 
 class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstanceProvider {
-    private var instance = StatueInstance(Matrix4f(), Matrix4f(), null)
+    override var instance = StatueInstance(Matrix4f(), Matrix4f(), null)
     lateinit var currentEntity: StatueEntity
 
     var trueAge: Int = 0
@@ -28,19 +28,25 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
     override val schedulingTracker
         get() = currentEntity.schedulingTracker
 
+
+
     override fun getEntity() = currentEntity
     override fun updatePoke(properties: PokemonProperties) {
+        currentEntity.properties = properties
 
-        modelEntity.pokemon = properties.create()
+        var species = properties.species?.asIdentifierDefaultingNamespace()
+
+        currentModel = species?.let { PokemonModelRepository.getPoser(it, this) }
+
+        if(currentModel != null) {
+            this.currentAspects = properties.aspects
+        } else {
+            this.currentAspects = emptySet()
+        }
     }
 
     override fun updateMaterial(value: String?) {
         instance.material = value
-    }
-
-    override fun onSyncedDataUpdated(data: EntityDataAccessor<*>) {
-        super.onSyncedDataUpdated(data)
-
     }
 
     override fun initialize(entity: StatueEntity) {
@@ -91,8 +97,5 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
 
     override fun getInstance(): CobblemonInstance = instance
 
-    override fun species(): ResourceLocation = modelEntity.exposedSpecies.resourceIdentifier
-
-    override fun aspects(): Set<String> = modelEntity.aspects
     fun getAge(): Float = age + currentPartialTicks
 }

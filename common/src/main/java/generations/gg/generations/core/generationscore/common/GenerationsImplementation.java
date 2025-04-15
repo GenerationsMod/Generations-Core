@@ -1,12 +1,9 @@
 package generations.gg.generations.core.generationscore.common;
 
 import dev.architectury.registry.registries.DeferredRegister;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
@@ -17,7 +14,6 @@ import java.util.Collection;
 import java.util.function.Supplier;
 
 public interface GenerationsImplementation {
-    NetworkManager getNetworkManager();
 
     void registerResourceReloader(ResourceLocation identifier, PreparableReloadListener reloader, PackType type, Collection<ResourceLocation> dependencies);
 
@@ -44,10 +40,6 @@ public interface GenerationsImplementation {
     void registerCompostables(@NotNull Block block, float chance);
 
     Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister);
-
-    boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity);
-
-    CompoundTag serializeStack(ItemStack itemStack);
 
     enum ModAPI {
         FABRIC,

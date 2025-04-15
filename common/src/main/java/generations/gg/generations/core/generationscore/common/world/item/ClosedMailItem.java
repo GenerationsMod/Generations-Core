@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
+import com.cobblemon.mod.common.Cobblemon;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
@@ -76,7 +77,7 @@ public class ClosedMailItem extends Item {
                 serverPlayer.containerMenu.broadcastChanges();
             }
 
-            GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(serverPlayer, new S2COpenMailPacket(usedHand));
+            Cobblemon.INSTANCE.getImplementation().getNetworkManager().sendPacketToPlayer(serverPlayer, new S2COpenMailPacket(usedHand));
         }
         player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());

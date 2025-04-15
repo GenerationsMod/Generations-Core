@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.screen.mails;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -127,7 +128,7 @@ public class MailEditScreen extends Screen {
 //        }
         this.updateLocalCopy(publish);
         int i = this.hand == InteractionHand.MAIN_HAND ? this.owner.getInventory().selected : 40;
-        GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2SEditMailPacket(i, this.contents, publish ? Optional.of("") : Optional.empty()));
+        Cobblemon.INSTANCE.getImplementation().getNetworkManager().sendToServer(new C2SEditMailPacket(i, this.contents, publish ? Optional.of("") : Optional.empty()));
     }
 
     private void updateLocalCopy(boolean sign) {

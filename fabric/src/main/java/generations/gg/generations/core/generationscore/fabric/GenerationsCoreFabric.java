@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.fabric;
 import dev.architectury.registry.registries.DeferredRegister;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
-import generations.gg.generations.core.generationscore.common.NetworkManager;
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
@@ -22,15 +21,11 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
@@ -54,9 +49,6 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
     public void onInitialize() {
         GenerationsCore.init(this);
         VanillaCompat.setup();
-
-        this.getNetworkManager().registerClientBound();
-        this.getNetworkManager().registerServerBound();
 
         if (FabricLoader.getInstance().isModLoaded("impactor"))
             ImpactorCompat.init();
@@ -101,21 +93,6 @@ public class GenerationsCoreFabric implements ModInitializer, GenerationsImpleme
     @Override
     public final Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> supplier, DeferredRegister<? extends ItemLike>... deferredRegister) {
         return GenerationsCreativeTabsFabric.create(name, supplier, deferredRegister);
-    }
-
-    @Override
-    public boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity) {
-        return Mob.getEquipmentSlotForItem(carried) == equipmentslottype;
-    }
-
-    @Override
-    public CompoundTag serializeStack(ItemStack itemStack) {
-        return itemStack.save(new CompoundTag());
-    }
-
-    @Override
-    public NetworkManager getNetworkManager() {
-        return GenerationsFabricNetworkManager.INSTANCE;
     }
 
     @Override

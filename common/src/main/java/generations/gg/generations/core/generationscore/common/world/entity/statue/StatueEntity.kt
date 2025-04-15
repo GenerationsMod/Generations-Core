@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.entity.statue
 
+import com.bedrockk.molang.runtime.struct.QueryStruct
+import com.cobblemon.mod.common.Cobblemon
 import com.cobblemon.mod.common.api.net.serializers.PoseTypeDataSerializer
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties.Companion.parse
@@ -9,10 +11,8 @@ import com.cobblemon.mod.common.api.scheduling.SchedulingTracker
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.entity.PosableEntity
 import com.cobblemon.mod.common.entity.PoseType
-import com.cobblemon.mod.common.entity.Poseable
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers
 import generations.gg.generations.core.generationscore.common.api.events.general.StatueEvents
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
 import generations.gg.generations.core.generationscore.common.util.DataKeys
@@ -53,19 +53,21 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
     }
 
     var savesToWorld = true
-
     override val schedulingTracker = SchedulingTracker()
+    override val delegate = if (level.isClientSide) {
+        generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate()
+    } else {
+        StatueServerDelegate()
+    }
+
+    override val struct: QueryStruct = QueryStruct(hashMapOf())
+
 
     override fun isCustomNameVisible(): Boolean {
         return true
     }
 
 
-    override val delegate = if (level.isClientSide) {
-        generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate()
-    } else {
-        StatueServerDelegate()
-    }
 
     override fun onSyncedDataUpdated(key: EntityDataAccessor<*>) {
         super.onSyncedDataUpdated(key)
@@ -179,19 +181,14 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         isNoGravity = true
         isInvulnerable = true
         noPhysics = true
-//        EnvExecutor.runInEnv(Env.CLIENT) { Runnable { delegate = StatueEntityClient(this) } }
     }
 
     override fun isPickable(): Boolean = true
-
     override fun canBeCollidedWith(): Boolean = true
 
     override fun shouldBeSaved(): Boolean = super.shouldBeSaved() && this.savesToWorld
-
     override fun getDimensions(pose: Pose): EntityDimensions = (properties.getHitBox() ?: this.type.dimensions).scale(scale)
-
     override fun getCurrentPoseType(): PoseType = poseType
-
     override fun getAddEntityPacket(entity: ServerEntity): Packet<ClientGamePacketListener> = ClientboundCustomPayloadPacket(
         SpawnStatuePacket(
             properties = properties,
@@ -233,7 +230,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
                 if (player.isShiftKeyDown) {
                     this.remove(RemovalReason.KILLED)
                 } else {
-                    GenerationsNetwork.sendPacketToPlayer(player as ServerPlayer, S2COpenStatueEditorScreenPacket(id))
+                    Cobblemon.implementation.networkManager.sendPacketToPlayer(player, S2COpenStatueEditorScreenPacket(id))
                 }
                 return InteractionResult.SUCCESS
             }
@@ -241,19 +238,13 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         return super.interact(player, hand)
     }
 
-    override fun isPushable(): Boolean {
-        return false
-    }
+    override fun isPushable(): Boolean = false
 
-    override fun isPushedByFluid(): Boolean {
-        return false
-    }
+    override fun isPushedByFluid(): Boolean = false
 
     fun renderablePokemon() = properties.takeUnless { it.species == null }?.asRenderablePokemon()
 
-    override fun hasCustomName(): Boolean {
-        return label?.isNotBlank() != null
-    }
+    override fun hasCustomName(): Boolean = label?.isNotBlank() != null
 
     override fun getCustomName(): Component? = label?.text()
 }

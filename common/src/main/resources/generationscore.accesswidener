@@ -49,3 +49,4 @@ accessible class com/mojang/blaze3d/platform/GlStateManager$BlendState
 accessible field com/mojang/blaze3d/platform/GlStateManager$BooleanState enabled Z
 
 extendable class net/minecraft/client/model/geom/ModelPart
+accessible field net/minecraft/server/network/ServerCommonPacketListenerImpl connection Lnet/minecraft/network/Connection;

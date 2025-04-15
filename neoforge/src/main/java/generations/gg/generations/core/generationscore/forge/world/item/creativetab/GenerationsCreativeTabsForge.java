@@ -7,9 +7,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
@@ -38,7 +38,7 @@ public class GenerationsCreativeTabsForge {
                 .build());
     }
 
-    private static RegistryObject<CreativeModeTab> register(String name, CreativeModeTab tab) {
+    private static DeferredHolder<CreativeModeTab, CreativeModeTab> register(String name, CreativeModeTab tab) {
         return CREATIVE_TABS.register(name, () -> tab);
     }
 

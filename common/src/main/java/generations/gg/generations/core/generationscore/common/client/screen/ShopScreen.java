@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.screen;
 
+import com.cobblemon.mod.common.Cobblemon;
 import com.mojang.blaze3d.systems.RenderSystem;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.api.player.ClientPlayerMoney;
@@ -243,7 +244,7 @@ public class ShopScreen extends Screen {
     @Override
     public void onClose() {
         super.onClose();
-        GenerationsCore.implementation.getNetworkManager().sendPacketToServer(new C2SCloseShopPacket());
+        Cobblemon.INSTANCE.getImplementation().getNetworkManager().sendToServer(new C2SCloseShopPacket());
     }
 
     private void shopItem() {
@@ -254,7 +255,7 @@ public class ShopScreen extends Screen {
         SimpleShopEntry entry = entries[selected];
         ItemStack itemStack = entry.getItem();
         int price = isBuyPage ? entry.getBuyPrice() : entry.getSellPrice();
-        GenerationsCore.implementation.getNetworkManager().sendPacketToServer(shopOfferProvider.createItemPacket(itemStack, price, amount, isBuyPage));
+        Cobblemon.INSTANCE.getImplementation().getNetworkManager().sendToServer(shopOfferProvider.createItemPacket(itemStack, price, amount, isBuyPage));
 
         updateBuyButtonActive();
     }

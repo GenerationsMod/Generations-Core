@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item;
 
+import com.cobblemon.mod.common.Cobblemon;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailEditScreenPacket;
 import net.minecraft.nbt.CompoundTag;
@@ -33,7 +34,7 @@ public class MailItem extends Item {
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, @NotNull InteractionHand usedHand) {
         var itemStack = player.getItemInHand(usedHand);
         if (!level.isClientSide() && player instanceof ServerPlayer serverPlayer)
-            GenerationsCore.getImplementation().getNetworkManager().sendPacketToPlayer(serverPlayer, new S2COpenMailEditScreenPacket(usedHand));
+            Cobblemon.INSTANCE.getImplementation().getNetworkManager().sendPacketToPlayer(serverPlayer, new S2COpenMailEditScreenPacket(usedHand));
         player.awardStat(Stats.ITEM_USED.get(this));
         return InteractionResultHolder.sidedSuccess(itemStack, level.isClientSide());
     }

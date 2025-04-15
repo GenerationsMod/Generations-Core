@@ -2,61 +2,39 @@ package generations.gg.generations.core.generationscore.forge;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.datafixers.util.Pair;
-import dev.architectury.platform.forge.EventBuses;
 import dev.architectury.registry.registries.DeferredRegister;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation;
-import generations.gg.generations.core.generationscore.common.NetworkManager;
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents;
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat;
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat;
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader;
-import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge;
 import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType;
-import net.minecraft.ChatFormatting;
-import net.minecraft.SharedConstants;
 import net.minecraft.client.Minecraft;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.PathPackResources;
-import net.minecraft.server.packs.repository.Pack;
-import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
 import net.minecraft.server.packs.resources.ReloadableResourceManager;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.AddPackFindersEvent;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.event.AnvilUpdateEvent;
-import net.minecraftforge.event.OnDatapackSyncEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLLoader;
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.minecraftforge.forgespi.language.IModFileInfo;
-import net.minecraftforge.forgespi.language.IModInfo;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent;
+import net.neoforged.fml.loading.FMLPaths;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.AnvilUpdateEvent;
+import net.neoforged.neoforge.event.OnDatapackSyncEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEvent;
 import org.jetbrains.annotations.NotNull;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
@@ -75,18 +53,16 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 
     /**
      * Sets up Forge side of the mod.
-     * @see FMLJavaModLoadingContext
      */
-    public GenerationsCoreForge() {
+    public GenerationsCoreForge(IEventBus MOD_BUS) {
         ConfigLoader.setConfigDirectory(FMLPaths.CONFIGDIR.get());
-        IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         GenerationsCreativeTabsForge.init(MOD_BUS);
-        EventBuses.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
+//        EvenBus.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener(this::onInitialize);
         MOD_BUS.addListener(this::postInit);
         GenerationsCore.init(this);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
-        var EVENT_BUS = MinecraftForge.EVENT_BUS;
+//        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
+        var EVENT_BUS = NeoForge.EVENT_BUS;
 
         EVENT_BUS.addListener(this::onDataPackSync);
         EVENT_BUS.addListener((Consumer<AnvilUpdateEvent>) event -> GenerationsCore.onAnvilChange(event.getLeft(), event.getRight(), event.getPlayer(), event::setOutput, event::setCost, event::setMaterialCost));
@@ -95,8 +71,8 @@ public class GenerationsCoreForge implements GenerationsImplementation {
 //            addListener(this::onLogout)
         EVENT_BUS.addListener(this::onReload);
 
-        GenerationsCore.initBuiltinPacks((packType, id, name) -> packs.computeIfAbsent(packType, a -> new ArrayList<>()).add(new Pair<>(id, name)));
-        MOD_BUS.addListener(this::addPackFinders);
+//        GenerationsCore.initBuiltinPacks((packType, id, name) -> packs.computeIfAbsent(packType, a -> new ArrayList<>()).add(new Pair<>(id, name)));
+//        MOD_BUS.addListener(this::addPackFinders);
         if (ModList.get().isLoaded("impactor"))
             ImpactorCompat.init();
     }
@@ -125,79 +101,67 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         return GenerationsCreativeTabsForge.create(name, o, deferredRegister);
     }
 
-    @Override
-    public boolean canEquip(ItemStack carried, EquipmentSlot equipmentslottype, Entity entity) {
-        return carried.canEquip(equipmentslottype, entity);
-    }
-
-    @Override
-    public CompoundTag serializeStack(ItemStack itemStack) {
-        return itemStack.serializeNBT();
-    }
-
-    public void addPackFinders(AddPackFindersEvent event) {
-        var packList = packs.get(event.getPackType());
-        if (packList != null) {
-            for (var pack1 : packList) {
-                var id = pack1.getFirst();
-                var displayName = pack1.getSecond();
-
-                IModFileInfo info = getPackInfo(id);
-                Path resourcePath = info.getFile().findResource("resourcepacks/" + id.getPath());
-
-                final Pack.Info packInfo = createInfoForLatest(displayName, false);
-                final Pack pack = Pack.create(
-                        GenerationsCore.MOD_ID + ":add_pack/" + id.getPath(), displayName,
-                        false,
-                        (path) -> new PathPackResources(path, resourcePath, true),
-                        packInfo, PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, false, PackSource.BUILT_IN);
-                event.addRepositorySource((packConsumer) ->
-                        packConsumer.accept(pack));
-            }
-        }
-    }
+//    public void addPackFinders(AddPackFindersEvent event) {
+//        var packList = packs.get(event.getPackType());
+//        if (packList != null) {
+//            for (var pack1 : packList) {
+//                var id = pack1.getFirst();
+//                var displayName = pack1.getSecond();
+//
+//                IModFileInfo info = getPackInfo(id);
+//                Path resourcePath = info.getFile().findResource("resourcepacks/" + id.getPath());
+//
+//                final Pack.Info packInfo = createInfoForLatest(displayName, false);
+//                final Pack pack = Pack.create(
+//                        GenerationsCore.MOD_ID + ":add_pack/" + id.getPath(), displayName,
+//                        false,
+//                        (path) -> new PathPackResources(path, resourcePath, true),
+//                        packInfo, PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, false, PackSource.BUILT_IN);
+//                event.addRepositorySource((packConsumer) ->
+//                        packConsumer.accept(pack));
+//            }
+//        }
+//    }
 
 
-    private static IModFileInfo getPackInfo(ResourceLocation pack) {
-        if (!FMLLoader.isProduction()) {
-            for (IModInfo mod : ModList.get().getMods()) {
-                if (mod.getModId().startsWith("generated_") && fileExists(mod, "resourcepacks/" + pack.getPath())) {
-                    return mod.getOwningFile();
-                }
-            }
-        }
-        return ModList.get().getModFileById(pack.getNamespace());
-    }
+//    private static IModFileInfo getPackInfo(ResourceLocation pack) {
+//        if (!FMLLoader.isProduction()) {
+//            for (IModInfo mod : ModList.get().getMods()) {
+//                if (mod.getModId().startsWith("generated_") && fileExists(mod, "resourcepacks/" + pack.getPath())) {
+//                    return mod.getOwningFile();
+//                }
+//            }
+//        }
+//        return ModList.get().getModFileById(pack.getNamespace());
+//    }
 
-    private static boolean fileExists(IModInfo info, String path) {
-        return Files.exists(info.getOwningFile().getFile().findResource(path.split("/")));
-    }
-
-    private static Pack.Info createInfoForLatest(Component description, boolean hidden) {
-        return new Pack.Info(
-                description,
-                SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA),
-                SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES),
-                FeatureFlagSet.of(),
-                hidden
-        );
-    }
-
-    private static PackSource createSource() {
-        final Component text = Component.translatable("pack.source.builtin");
-        return PackSource.create(
-                component -> Component.translatable("pack.nameAndSource", component, text).withStyle(ChatFormatting.GRAY),
-                true
-        );
-    }
+//    private static boolean fileExists(IModInfo info, String path) {
+//        return Files.exists(info.getOwningFile().getFile().findResource(path.split("/")));
+//    }
+//
+//    private static Pack.Info createInfoForLatest(Component description, boolean hidden) {
+//        return new Pack.Info(
+//                description,
+//                SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA),
+//                SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES),
+//                FeatureFlagSet.of(),
+//                hidden
+//        );
+//    }
+//
+//    private static PackSource createSource() {
+//        final Component text = Component.translatable("pack.source.builtin");
+//        return PackSource.create(
+//                component -> Component.translatable("pack.nameAndSource", component, text).withStyle(ChatFormatting.GRAY),
+//                true
+//        );
+//    }
 
 
     /**
      * Should initialize everything where a specific event does not cover it.
      */
     private void onInitialize(final FMLCommonSetupEvent event) {
-        getNetworkManager().registerClientBound();
-        getNetworkManager().registerServerBound();
         event.enqueueWork(VanillaCompat::setup);
         MutableBlockEntityType.blocksToAdd.forEach(genericModelBlock -> {
             if (genericModelBlock.getBlockEntityType() instanceof MutableBlockEntityType<?> mutableBlockEntityType) {
@@ -232,9 +196,4 @@ public class GenerationsCoreForge implements GenerationsImplementation {
         else if(Minecraft.getInstance() != null /*Jt do not touch. Had issues with this being null during datagen for some reason.*/ && Minecraft.getInstance().getResourceManager() instanceof ReloadableResourceManager manager) manager.registerReloadListener(reloader);
     }
 
-    @NotNull
-    @Override
-    public NetworkManager getNetworkManager() {
-        return GenerationsForgeNetworkManager.INSTANCE;
-    }
 }

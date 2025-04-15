@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.client.screen.sta
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties.Companion.parse
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.client.gui.summary.widgets.ModelWidget
+import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
 import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
@@ -278,7 +279,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         poseType: PoseType,
         matrixStack: PoseStack,
         rotation: Quaternionf,
-        state: PoseableEntityState<PokemonEntity>?,
+        state: PosableState<PokemonEntity>?,
         partialTicks: Float,
         scale: Float = 20F
     ) {

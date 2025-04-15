@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.screen.container;
 
+import com.cobblemon.mod.common.Cobblemon;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.common.network.packets.C2STogglePacket;
@@ -18,7 +19,7 @@ public class RksMachineScreen extends AbstractContainerScreen<RksMachineContaine
 
 	public RksMachineScreen(RksMachineContainer handler, Inventory inventory, Component title) {
 		super(handler, inventory, title);
-		button = Button.builder(Component.literal("Start"), button -> GenerationsCore.getImplementation().getNetworkManager().sendPacketToServer(new C2STogglePacket())).bounds(0, 0, 41, 13).build();
+		button = Button.builder(Component.literal("Start"), button -> Cobblemon.INSTANCE.getImplementation().getNetworkManager().sendToServer(new C2STogglePacket())).bounds(0, 0, 41, 13).build();
 	}
 
 	public void init() {
@@ -30,7 +31,7 @@ public class RksMachineScreen extends AbstractContainerScreen<RksMachineContaine
 
 
 	public void render(@NotNull GuiGraphics matrices, int mouseX, int mouseY, float delta) {
-		this.renderBackground(matrices);
+		this.renderBackground(matrices, mouseX, mouseY, delta);
 		this.renderBg(matrices, delta, mouseX, mouseY);
 		super.render(matrices, mouseX, mouseY, delta);
 		this.renderTooltip(matrices, mouseX, mouseY);}

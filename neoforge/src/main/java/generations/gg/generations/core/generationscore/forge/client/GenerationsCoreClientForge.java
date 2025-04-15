@@ -8,13 +8,15 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.client.event.RenderLevelStageEvent;
-import net.minecraftforge.client.gui.overlay.VanillaGuiOverlay;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
+import net.neoforged.neoforge.common.NeoForge;
 
 import java.util.function.Consumer;
 
@@ -24,13 +26,15 @@ import java.util.function.Consumer;
  * @see GenerationsCoreClient
  * @author Joseph T. McQuigg, WaterPicker
  */
+
+@Mod(value = GenerationsCore.MOD_ID, dist = Dist.CLIENT)
 public class GenerationsCoreClientForge {
 
     /**
      * Initializes the client side of the Forge mod.
      * @param eventBus The event bus to register the client side of the mod to.
      */
-    public static void init(IEventBus eventBus) {
+    public GenerationsCoreClientForge(IEventBus eventBus) {
         eventBus.addListener((Consumer<EntityRenderersEvent.RegisterRenderers>) event -> {
             GenerationsCoreClient.registerBlockEntityRenderers(event::registerBlockEntityRenderer);
             GenerationsCoreClient.registerEntityRenderers(event::registerEntityRenderer);
@@ -38,7 +42,7 @@ public class GenerationsCoreClientForge {
         eventBus.addListener((Consumer<EntityRenderersEvent.RegisterLayerDefinitions>) event -> GenerationsCoreClient.registerLayerDefinitions(event::registerLayerDefinition));
         eventBus.addListener(GenerationsCoreClientForge::forgeClientSetup);
         eventBus.addListener(GenerationsCoreClientForge::registerGUILayers);
-        MinecraftForge.EVENT_BUS.addListener(GenerationsCoreClientForge::renderHighlightedPath);
+        NeoForge.EVENT_BUS.addListener(GenerationsCoreClientForge::renderHighlightedPath);
     }
 
     private static void renderHighlightedPath(RenderLevelStageEvent event) {
@@ -56,7 +60,7 @@ public class GenerationsCoreClientForge {
 //        ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline
     }
 
-    private static void registerGUILayers(final RegisterGuiOverlaysEvent event) {
-        event.registerAbove(VanillaGuiOverlay.HELMET.id(), GenerationsCore.id("overlays").toLanguageKey(), (gui, guiGraphics, partialTick, screenWidth, screenHeight) -> Overlays.render(gui.getMinecraft(), guiGraphics, partialTick, screenWidth, screenHeight));
+    private static void registerGUILayers(final RegisterGuiLayersEvent event) {
+        event.registerAbove(VanillaGuiLayers.CAMERA_OVERLAYS, GenerationsCore.id("overlays"), Overlays::render);
     }
 }
