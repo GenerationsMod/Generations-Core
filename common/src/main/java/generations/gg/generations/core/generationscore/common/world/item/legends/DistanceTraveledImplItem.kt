@@ -58,11 +58,11 @@ abstract class DistanceTraveledImplItem(properties: Properties, override val max
     }
 
     override fun getDistance(stack: ItemStack): Double {
-        return stack.get(GenerationsItemComponents.DISTANCE) ?: 0.0
+        return stack.get(GenerationsItemComponents.DISTANCE.componentType()) ?: 0.0
     }
 
     override fun setDistance(stack: ItemStack, distance: Double) {
-        stack.set(GenerationsItemComponents.DISTANCE, distance.coerceIn(0.0, maxDistance))
+        stack.set(GenerationsItemComponents.DISTANCE.componentType(), distance.coerceIn(0.0, maxDistance))
     }
 
     override fun remainingNeededDistance(itemInHand: ItemStack): Double {

@@ -24,24 +24,47 @@ object GenerationsItemComponents {
 
     var REGISTER = DataManagerRegistry(GenerationsCore.MOD_ID)
 
-    var DISTANCE = register<Double>(DataKeys.DISTANCE, { 0 }, Codec.DOUBLE, StreamCodec.of(ByteBufCodecs.DOUBLE::encode, ByteBufCodecs.DOUBLE::decode))
-    var USES = register<Int>("uses", { 0 }, Codec.INT, StreamCodec.of(ByteBufCodecs.INT::encode, ByteBufCodecs.INT::decode))
-    var USED = register<Boolean>("used", { false }, Codec.BOOL, StreamCodec.of(ByteBufCodecs.BOOL::encode, ByteBufCodecs.BOOL::decode))
-    var ENCHANTED = register<Boolean>("enchanted", { false }, Codec.BOOL, StreamCodec.of(ByteBufCodecs.BOOL::encode, ByteBufCodecs.BOOL::decode))
-    var CARROT_HOLDER = register("carrot_holder", ItemStorageData.DEFAULT, ItemStorageData.CODEC.xmap(CalyrexSteedItem.CarrotHolder))
+    var DISTANCE = register<Double>(
+        DataKeys.DISTANCE,
+        { 0.0 },
+        Codec.DOUBLE,
+        StreamCodec.of(ByteBufCodecs.DOUBLE::encode, ByteBufCodecs.DOUBLE::decode)
+    )
+    var USES =
+        register<Int>("uses", { 0 }, Codec.INT, StreamCodec.of(ByteBufCodecs.INT::encode, ByteBufCodecs.INT::decode))
+    var USED = register<Boolean>(
+        "used",
+        { false },
+        Codec.BOOL,
+        StreamCodec.of(ByteBufCodecs.BOOL::encode, ByteBufCodecs.BOOL::decode)
+    )
+    var ENCHANTED = register<Boolean>(
+        "enchanted",
+        { false },
+        Codec.BOOL,
+        StreamCodec.of(ByteBufCodecs.BOOL::encode, ByteBufCodecs.BOOL::decode)
+    )
+    var CARROT_HOLDER =
+        register("carrot_holder", ItemStorageData.DEFAULT, ItemStorageData.CODEC.xmap(CalyrexSteedItem.CarrotHolder))
     var DISC_HOLDER = register(DataKeys.DISC_HOLDER, WalkmonItem.DiscHolder.CODEC)
     val CURRY_DATA = register("curry_data", CurryData.CODEC, CurryData.STREAM_CODEC)
+    val TM_DETAILS = register("tm_details", { TmDetails("", -1) }, TmDetails.CODEC, TmDetails.STREAM_CODEC)
 
     @JvmStatic
     fun init() = REGISTER.init()
 
-    private fun <T> register(name: String, factory: Supplier<T>, codec: Codec<T>, streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>? = null, itemBased: Boolean = true): DataManager<T> {
+    private fun <T> register(
+        name: String,
+        factory: Supplier<T>,
+        codec: Codec<T>,
+        streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>? = null,
+        itemBased: Boolean = true
+    ): DataManager<T> {
         return REGISTER.builder(factory).serialize(codec)
             .also { if (streamCodec != null) it.networkSerializer(streamCodec) }
             .also {
-                if(itemBased) it.withDataComponent()
+                if (itemBased) it.withDataComponent()
                 else it.copyOnDeath()
             }.buildAndRegister(name)
-        }
     }
 }

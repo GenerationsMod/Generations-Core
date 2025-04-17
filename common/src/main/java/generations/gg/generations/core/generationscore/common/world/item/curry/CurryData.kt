@@ -13,19 +13,13 @@ import java.util.stream.Stream
 
 class CurryData {
     var flavor: Flavor? = null
-        private set
     var curryType: CurryType = CurryType.None
-        private set
     var experience: Int = 0
-        private set
     var healthPercentage: Double = 0.0
-        private set
-    private var canHealStatus = false
-    private var canRestorePP = false
+    var canHealStatus = false
+    var canRestorePP = false
     var friendship: Int = 0
-        private set
     var rating: CurryTasteRating
-        private set
 
     @JvmOverloads
     constructor(rating: CurryTasteRating = CurryTasteRating.Unknown) {

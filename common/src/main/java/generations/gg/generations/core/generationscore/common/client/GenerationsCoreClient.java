@@ -19,6 +19,7 @@ import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.GenerationsDataProvider;
+import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions;
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.common.client.model.RunnableKeybind;
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer;
@@ -123,6 +124,9 @@ public class GenerationsCoreClient {
 
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
+
+        GenerationsClientMolangFunctions.addAnimationFunctions();
+
         RareCandy.DEBUG_THREADS = true;
 
         PokeBallModelRepository.INSTANCE.inbuilt("strange_ball", PokeBallModel::new);

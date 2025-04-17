@@ -20,7 +20,7 @@ import java.util.function.Function;
 
 public class GenerationsContainers {
     public static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.MENU);
-    public static final RegistrySupplier<MenuType<CookingPotContainer>> COOKING_POT = register("cooking_pot", CookingPotContainer::new, CookingPotBlockEntity.class);
+    public static final RegistrySupplier<MenuType<CookingPotContainer>> COOKING_POT = CONTAINERS.register("cooking_pot", () -> new MenuType<>(CookingPotContainer::new, FeatureFlagSet.of()));
     public static final RegistrySupplier<MenuType<GenericChestContainer>> GENERIC = CONTAINERS.register("generic", () -> MenuRegistry.ofExtended(GenericChestContainer::new));
     public static final RegistrySupplier<MenuType<MachineBlockContainer>> MACHINE_BLOCK = register("machine_block", MachineBlockContainer::new, MachineBlockEntity.class);
     public static final RegistrySupplier<MenuType<MelodyFluteContainer>> MELODY_FLUTE = CONTAINERS.register("melody_flute", () -> MenuRegistry.ofExtended(MelodyFluteContainer::new));

@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks;
 
 import dev.architectury.registry.menu.MenuRegistry;
+import earth.terrarium.common_storage_lib.resources.item.ItemResource;
+import earth.terrarium.common_storage_lib.storage.base.CommonStorage;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
@@ -72,8 +74,16 @@ public class CookingPotBlock extends GenericRotatableModelBlock<CookingPotBlockE
         if (!oldState.is(newState.getBlock())) {
             BlockEntity tileEntity = worldIn.getBlockEntity(pos);
             if (tileEntity instanceof CookingPotBlockEntity machine) {
-                final NonNullList<ItemStack> inventory = machine.getContainer().getItems();
-                Containers.dropContents(worldIn, pos, inventory);
+                CommonStorage<ItemResource> inventory = machine.getItems(null);
+
+                var x = pos.getX() + 0.5;
+                var y = pos.getY() + 0.5;
+                var z = pos.getZ() + 0.5;
+
+                for (int i = 0; i < inventory.size(); i++) {
+                    var stack = inventory.getResource(i).getCachedStack();
+                    Containers.dropItemStack(worldIn, x, y, z, stack);
+                }
 
                 worldIn.updateNeighbourForOutputSignal(pos, this);
             }

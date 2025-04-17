@@ -1,16 +1,17 @@
 package generations.gg.generations.core.generationscore.common.world.container.slots;
 
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class CurryResultSlot extends Slot {
+public class CurryResultSlot extends ItemStorageSlot {
     private final Player player;
     private int removeCount;
 
-    public CurryResultSlot(Player player, Container handler, int slotIndex, int xPosition, int yPosition) {
+    public CurryResultSlot(Player player, SimpleItemStorage handler, int slotIndex, int xPosition, int yPosition) {
         super(handler, slotIndex, xPosition, yPosition);
         this.player = player;
     }

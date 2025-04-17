@@ -34,6 +34,8 @@ import org.joml.Vector3f
 import java.util.*
 import java.util.function.Supplier
 
+//TODO: Simplify and figure out how to do this in a simpler fashion
+
 private val RenderContext.form: FormData?
     get() = this.species?.getForm(this.request(RenderContext.ASPECTS) ?: Collections.emptySet())
 

@@ -41,21 +41,6 @@ public class GenerationsModelLoader extends ModelLoader {
                     return glCalls;
                 },
                 object -> {
-                    var manager = Minecraft.getInstance().getTextureManager();
-
-//                    if(requiresVariantTexture) {
-//                        if(!object.objects.isEmpty() && !object.objects.get(0).availableVariants().isEmpty()) {
-
-//                            object.availableVariants().forEach(s -> manager.register(ResourceLocation.("pk:" + s), new AbstractTexture() {
-//                                @Override
-//                                public void load(@NotNull ResourceManager resourceManager) {
-//
-//                                }
-//                            }));
-//                        } else {
-//                            System.out.println("Warning %s lacks variants: " + name);
-//                        }
-//                    }
                     model.guiInstance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);
                     model.guiInstance.link(object);
                     if(object.scale == 0f) object.scale = 1.0f;

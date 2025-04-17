@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Inventory
 import java.util.*
 
-class C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
+object C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
     override fun handle(packet: C2SEditMailPacket, server: MinecraftServer, player: ServerPlayer) {
         server.execute {
             handleEditMail(
@@ -21,18 +21,17 @@ class C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
         }
     }
 
-    companion object {
-        fun handleEditMail(sender: ServerPlayer, slot: Int, contents: String, title: Optional<String>) {
-            if (Inventory.isHotbarSlot(slot) || slot == 40) {
-                title.ifPresentOrElse(
-                    { s: String -> sealMail(sender, slot, contents, s) },
-                    {
-                        updateMailContents(
-                            sender,
-                            slot,
-                            contents
-                        )
-                    })
+    fun handleEditMail(sender: ServerPlayer, slot: Int, contents: String, title: Optional<String>) {
+        if (Inventory.isHotbarSlot(slot) || slot == 40) {
+            title.ifPresentOrElse(
+                { s: String -> sealMail(sender, slot, contents, s) },
+                {
+                    updateMailContents(
+                        sender,
+                        slot,
+                        contents
+                    )
+                })
             }
         }
 

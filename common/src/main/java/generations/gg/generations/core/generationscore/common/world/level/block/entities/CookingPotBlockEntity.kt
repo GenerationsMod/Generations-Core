@@ -10,6 +10,18 @@ import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.util.ItemProvider
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
+import generations.gg.generations.core.generationscore.common.GenerationsStorage
+import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
+import generations.gg.generations.core.generationscore.common.api.events.CurryEvents.Cook
+import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.util.shrink
+import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.HolderLookup
@@ -19,9 +31,11 @@ import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket
+import net.minecraft.world.MenuProvider
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
+import net.minecraft.world.inventory.ContainerData
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.BlockEntity
@@ -29,36 +43,61 @@ import net.minecraft.world.level.block.state.BlockState
 import java.util.*
 import java.util.concurrent.atomic.AtomicLong
 import java.util.function.Function
-import java.util.stream.Collectors
-import java.util.stream.IntStream
 import java.util.stream.Stream
 
 class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
     ModelProvidingBlockEntity(GenerationsBlockEntities.COOKING_POT.get(), arg2, arg3),
-    MenuRegistry.ExtendedMenuTypeFactory<CookingPotContainer?>, ExtendedMenuProvider,
+    MenuProvider,
     ItemProvider.BlockEntity, VariantProvider, Toggleable {
     //0-9: berries
     //10: main ingredient
     //11: bowl
     //12: log
     //13: out
-    private val handler = SimpleItemStorage(this, GenerationsStorage.item_contents, 14)
+    private val handler = SimpleItemStorage(this, GenerationsStorage.ITEM_CONTENTS, 14).let {
+        it.filter(0, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(1, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(2, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(3, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(4, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(5, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(6, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(7, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(8, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(9, CookingPotContainer::isBerryOrMaxMushrooms)
+        it.filter(10, CookingPotContainer::isBowl)
+        it.filter(11, CookingPotContainer::isCurryIngredientOrMaxHoney)
+        it.filter(12, CookingPotContainer::isLog)
+
+    }
+
+    private val data: ContainerData = object : ContainerData {
+        override fun get(index: Int): Int {
+            TODO("Not yet implemented")
+        }
+
+        override fun set(index: Int, value: Int) {
+            TODO("Not yet implemented")
+        }
+
+        override fun getCount(): Int {
+            TODO("Not yet implemented")
+        }
+    }
 
     private var customName: String? = null
     private var isCooking = false
     var cookTime: Int = 0
         private set
 
-    fun hasCustomName(): Boolean {
-        return this.customName != null && !customName!!.isEmpty()
-    }
+    fun hasCustomName(): Boolean = this.customName?.isNotEmpty() ?: false
 
     fun setCustomName(customName: String?) {
         this.customName = customName
     }
 
     override fun getDisplayName(): MutableComponent {
-        return if (this.hasCustomName()) Component.literal(this.customName) else Component.translatable("container.cooking_pot")
+        return if (this.hasCustomName()) Component.nullToEmpty(this.customName).copy() else Component.translatable("container.cooking_pot")
     }
 
     override fun saveAdditional(nbt: CompoundTag, provider: HolderLookup.Provider) {
@@ -67,7 +106,7 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
         nbt.putBoolean("isCooking", isCooking)
         nbt.putInt("cookTime", this.cookTime)
 
-        if (this.hasCustomName()) nbt.putString("customName", this.customName)
+        if (this.hasCustomName()) nbt.putString("customName", this.customName!!)
     }
 
     override fun loadAdditional(nbt: CompoundTag, provider: HolderLookup.Provider) {
@@ -80,14 +119,13 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
     }
 
     fun serverTick() {
-        val berries = IntStream.rangeClosed(0, 9).mapToObj<SimpleItemSlot> { index: Int -> handler[index] }
-            .toArray<SimpleItemSlot> { _Dummy_.__Array__() }
+        val berries = (0..9).map { handler[it] }.toTypedArray()
         val bowl = handler[10]
         val mainIngredient = handler[11]
         val log = handler[12]
 
-        val hasEverything = isCooking && Stream.of(*berries)
-            .anyMatch { a: SimpleItemSlot -> !a.isEmpty } && !bowl.isEmpty && !log.isEmpty && handler.getResource(13).isBlank
+        val hasEverything = isCooking && berries.any { !it.isEmpty } && !bowl.isEmpty && !log.isEmpty && handler.getResource(13).isBlank
+
         if (hasEverything) {
             var hasInserted = false
             cookTime++
@@ -99,20 +137,16 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
                 }
 
                 if (hasBerry && !hasMaxMushrooms) {
-                    val type: CurryType = if (!mainIngredient.isEmpty && mainIngredient.resource().asHolder()
-                            .value() is CurryIngredient
-                    ) ingredient.getType() else CurryType.None
-                    val berriesTypes = Arrays.stream(berries)
-                        .filter { berry: SimpleItemSlot -> !berry.isEmpty && berry.resource.item is BerryItem }
-                        .map { a: SimpleItemSlot -> (a.resource.asItem() as BerryItem).berry() }.collect(
-                            Collectors.toList()
-                        ) //TDOO Simplify post kotlin conversion
+                    val type: CurryType = mainIngredient.takeUnless { it.isEmpty }?.resource?.asHolder()?.value().instanceOrNull<CurryIngredient>()?.type
+                        ?: CurryType.None
+                    val berriesTypes = berries.filter { berry: SimpleItemSlot -> !berry.isEmpty && berry.resource.item is BerryItem }
+                        .mapNotNull { a -> (a.resource.asItem() as BerryItem).berry() }.toList()
 
                     val event: Cook = Cook(type, berriesTypes, CurryData(type, berriesTypes))
 
                     if (!CurryEvents.COOK.invoker().act(event).isTrue()) {
                         val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY.get())
-                            .set<CurryData>(GenerationsItemComponents.CURRY_DATA, event.getOutput())
+                            .set(GenerationsItemComponents.CURRY_DATA, event.output)
 
                         hasInserted = handler.insert(13, curry, 1, false) > 0
                     }
@@ -120,7 +154,7 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
                     val count = AtomicLong()
                     Stream.of<SimpleItemSlot>(*berries)
                         .filter { a: SimpleItemSlot -> a.resource.isOf(GenerationsItems.MAX_MUSHROOMS.get()) }
-                        .forEach { b: SimpleItemSlot -> count.addAndGet(b.amount()) }
+                        .forEach { b: SimpleItemSlot -> count.addAndGet(b.amount) }
                     if (count.get() > 2) {
                         var amountTaken = 0
 
@@ -188,7 +222,7 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
         get() = handler.getResource(13)
 
     fun getBerry(index: Int): ItemResource {
-        return if (index >= 0 && index < 10) handler.getResource(index) else ItemResource.BLANK
+        return if (index in 0..9) handler.getResource(index) else ItemResource.BLANK
     }
 
     override fun getUpdatePacket(): ClientboundBlockEntityDataPacket? {
@@ -202,25 +236,8 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
         }
     }
 
-    //    @Override
-    //    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-    //        this.isCooking = pkt.getTag().getBoolean("isCooking");
-    //        this.cookTime = pkt.getTag().getInt("cookTime");
-    //    }
-    override fun create(i: Int, arg: Inventory, arg2: FriendlyByteBuf): CookingPotContainer? {
-        return if (arg.player.level().getBlockEntity(arg2.readBlockPos()) is CookingPotBlockEntity) {
-            CookingPotContainer(CreationContext<CookingPotBlockEntity>(i, arg, cookingPot))
-        } else {
-            null
-        }
-    }
-
-    override fun saveExtraData(buf: FriendlyByteBuf) {
-        buf.writeBlockPos(blockPos)
-    }
-
-    override fun createMenu(i: Int, arg: Inventory, arg2: Player): AbstractContainerMenu? {
-        return CookingPotContainer(CreationContext<CookingPotBlockEntity>(i, arg, this))
+    override fun createMenu(id: Int, playerInventory: Inventory, player: Player): AbstractContainerMenu? {
+        return CookingPotContainer(id, playerInventory, handler, data)
     }
 
     override fun getVariant(): String {
@@ -248,25 +265,20 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
     }
 
     companion object {
+        @JvmStatic
         fun serverTick(level: Level?, pos: BlockPos?, state: BlockState?, blockEntity: CookingPotBlockEntity) {
             blockEntity.serverTick()
         }
 
         fun getDominantFlavor(vararg berries: Berry): Flavor? {
-            val output: MutableMap<Flavor, Int> = HashMap()
-
-            //        int[] output = new int[5];
-            for (berryType in berries) for (flavor in Flavor.entries) output.compute(flavor) { flavor1: Flavor?, integer: Int? ->
-                val i = berryType.flavor(
-                    flavor1!!
-                )
-                if (integer == null) i else integer + i
+            val output = Flavor.entries.associateWith { flavor ->
+                berries.sumOf { it.flavor(flavor) }
             }
 
-            if (output.values.stream().distinct().count() <= 1) return null
-
-            return output.entries.stream().max(java.util.Map.Entry.comparingByValue<Flavor, Int>()).map<Flavor?>(
-                Function<Map.Entry<Flavor, Int>, Flavor?> { java.util.Map.Entry.key }).orElse(null)
+            return output.takeIf { it.values.toSet().size > 1 }
+                ?.maxByOrNull { it.value }
+                ?.key
         }
     }
 }
+

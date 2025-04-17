@@ -3,8 +3,10 @@ package generations.gg.generations.core.generationscore.common.client.entity
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
+import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.PokemonPosableModel
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.entity.PosableEntity
 import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
@@ -53,11 +55,24 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
         super.initialize(entity)
         this.currentEntity = entity
         this.age = entity.tickCount
-        this.currentModel = PokemonModelRepository.getPoser(modelEntity.pokemon.species.resourceIdentifier, this)
+
+        var properties = entity.properties
+
+        var species = properties.species?.asIdentifierDefaultingNamespace() ?: return
+
+        this.currentModel = PokemonModelRepository.getPoser(species, this)
+
+        if (currentModel == null) {
+            this.currentAspects = emptySet()
+            return
+        }
+
+        this.currentAspects = properties.aspects
 
         val model = currentModel!!
+
         model.context.put(RenderContext.ENTITY, entity)
-        currentModel!!.updateLocators(entity, this)
+        model.updateLocators(entity, this)
         updateLocatorPosition(entity.position())
 
         val currentPoseType = entity.getCurrentPoseType()
@@ -68,17 +83,21 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
     }
 
     override fun tick(entity: StatueEntity) {
-        super.tick(entity)
-        updateLocatorPosition(entity.position())
-        incrementAge(modelEntity)
+        incrementAge(entity)
     }
 
     override fun incrementAge(entity: Entity) {
         val previousAge = this.activeAge
         updateAge(trueAge + 1)
-        runEffects(entity, previousAge.toFloat(), this.activeAge.toFloat()) //TODO: Check if this goes bad. I get a funny feeling
 
         age = this.activeAge
+
+        currentModel?.let {
+            updateLocatorPosition(entity.position())
+            it.validatePose(entity as? PosableEntity, this)
+        }
+
+        tickEffects(entity, previousAge, age)
 
         val primaryAnimation = primaryAnimation ?: return
         if (primaryAnimation.started + primaryAnimation.duration <= animationSeconds) {
@@ -94,8 +113,6 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
     override fun updatePartialTicks(partialTicks: Float) {
         this.currentPartialTicks = if(currentEntity.staticToggle) currentEntity.staticPartial else partialTicks
     }
-
-    override fun getInstance(): CobblemonInstance = instance
 
     fun getAge(): Float = age + currentPartialTicks
 }

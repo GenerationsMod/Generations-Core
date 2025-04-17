@@ -1,45 +1,48 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
-import com.cobblemon.mod.common.item.BerryItem;
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage;
+import earth.terrarium.common_storage_lib.resources.item.ItemResource;
+import generations.gg.generations.core.generationscore.common.world.container.slots.ItemStorageSlot;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.container.slots.CurryResultSlot;
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.NotNull;
 
 public class CookingPotContainer extends AbstractContainerMenu {
-    public final CookingPotBlockEntity cookingPot;
+    public CookingPotContainer(int id, Inventory playerInventory) {
+        this(id, playerInventory, new SimpleItemStorage(14), new SimpleContainerData(4));
+    }
 
-    public CookingPotContainer(GenerationsContainers.CreationContext<CookingPotBlockEntity> ctx) {
-        super(GenerationsContainers.COOKING_POT.get(), ctx.id());
-        this.cookingPot = ctx.blockEntity();
+    public CookingPotContainer(int id, Inventory playerInventory, SimpleItemStorage storage, ContainerData data) {
+        super(GenerationsContainers.COOKING_POT.get(), id);
 
-        var handler = ctx.blockEntity().getContainer();
-        addSlot(new PredicateSlotItemHandler(handler, 0, 26, 8 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 1, 44, 8 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 2, 62, 8 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 3, 80, 26 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 4, 80, 44 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 5, 62, 62 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 6, 44, 62 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 7, 26, 62 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 8, 8, 44 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 9, 8, 26 + 11, CookingPotContainer::isBerryOrMaxMushrooms));
-        addSlot(new PredicateSlotItemHandler(handler, 10, 35, 35 + 11, CookingPotContainer::isBowl));
-        addSlot(new PredicateSlotItemHandler(handler, 11, 53, 35 + 11, CookingPotContainer::isCurryIngredientOrMaxHoney));
-        addSlot(new PredicateSlotItemHandler(handler, 12, 108, 57 + 11, CookingPotContainer::isLog));
-        addSlot(new CurryResultSlot(ctx.playerInv().player, handler, 13, 142, 35 + 11));
+        addSlot(new ItemStorageSlot(storage, 0, 26, 8 + 11));
+        addSlot(new ItemStorageSlot(storage, 1, 44, 8 + 11));
+        addSlot(new ItemStorageSlot(storage, 2, 62, 8 + 11));
+        addSlot(new ItemStorageSlot(storage, 3, 80, 26 + 11));
+        addSlot(new ItemStorageSlot(storage, 4, 80, 44 + 11));
+        addSlot(new ItemStorageSlot(storage, 5, 62, 62 + 11));
+        addSlot(new ItemStorageSlot(storage, 6, 44, 62 + 11));
+        addSlot(new ItemStorageSlot(storage, 7, 26, 62 + 11));
+        addSlot(new ItemStorageSlot(storage, 8, 8, 44 + 11));
+        addSlot(new ItemStorageSlot(storage, 9, 8, 26 + 11));
+        addSlot(new ItemStorageSlot(storage, 10, 35, 35 + 11));
+        addSlot(new ItemStorageSlot(storage, 11, 53, 35 + 11));
+        addSlot(new ItemStorageSlot(storage, 12, 108, 57 + 11));
+        addSlot(new CurryResultSlot(playerInventory.player, storage, 13, 142, 35 + 11));
 
-        bindPlayerInventory(ctx.playerInv());
+        bindPlayerInventory(playerInventory);
+        addDataSlots(data);
         sendAllDataToRemote();
     }
 
@@ -56,8 +59,8 @@ public class CookingPotContainer extends AbstractContainerMenu {
 
     }
 
-    private static boolean isBowl(ItemStack itemStack) {
-        return itemStack.getItem() == Items.BOWL;
+    public static boolean isBowl(Object obj) {
+        return getItem(obj) == Items.BOWL;
     }
 
     @Override
@@ -75,7 +78,7 @@ public class CookingPotContainer extends AbstractContainerMenu {
         ItemStack originalStack = slotStack.copy(); // Copy to retain original data
 
         // Store NBT for debugging before we move it
-        CompoundTag originalNBT = slotStack.hasTag() ? slotStack.getTag().copy() : null;
+        var originalData = slotStack.getComponents();
 
 
         boolean moved = false;
@@ -101,7 +104,7 @@ public class CookingPotContainer extends AbstractContainerMenu {
         }
 
         if (!ItemStack.matches(slotStack, originalStack)) {
-            slotStack.setTag(originalNBT);
+            slotStack.applyComponents(originalData);
         }
 
         if (slotStack.getCount() == 0) {
@@ -121,16 +124,32 @@ public class CookingPotContainer extends AbstractContainerMenu {
         return originalStack;
     }
 
-    public static boolean isLog(ItemStack stack) {
-        return stack.is(ItemTags.LOGS_THAT_BURN);
+    public static boolean isLog(Object stack) {
+        var item = getItem(stack);
+        return item.arch$holder().is(ItemTags.LOGS_THAT_BURN);
     }
 
-    public static boolean isBerryOrMaxMushrooms(ItemStack stack) {
-        return stack.getItem() instanceof BerryItem || stack.getItem() == GenerationsItems.MAX_MUSHROOMS.get();
+    private static Item getItem(Object obj) {
+        if(obj instanceof ItemResource resource) return resource.getItem();
+        else if(obj instanceof ItemStack itemStack) return itemStack.getItem();
+        else return null;
     }
 
-    public static boolean isCurryIngredientOrMaxHoney(ItemStack stack) {
-        return stack.getItem() instanceof CurryIngredient || stack.getItem() == GenerationsItems.MAX_HONEY.get();
+    public static boolean isBerryOrMaxMushrooms(Object stack) {
+        var item = getItem(stack);
+        return item instanceof com.cobblemon.mod.common.item.berry.BerryItem || item == GenerationsItems.MAX_MUSHROOMS.get();
     }
 
+    public static boolean isCurryIngredientOrMaxHoney(Object stack) {
+        var item = getItem(stack);
+        return item instanceof CurryIngredient || item == GenerationsItems.MAX_HONEY.get();
+    }
+
+    public boolean isCooking() {
+        return false;
+    }
+
+    public int getCookTime() {
+        return 0;
+    }
 }

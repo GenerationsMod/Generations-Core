@@ -18,7 +18,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
 
-class RedChainItem(properties: Properties) : EnchantableItem(properties.component(GenerationsItemComponents.USES, 0)), LangTooltip {
+class RedChainItem(properties: Properties) : EnchantableItem(properties.component(GenerationsItemComponents.USES.componentType(), 0)), LangTooltip {
     override fun neededEnchantmentLevel(player: ServerPlayer): Int {
         val caught = GenerationsCore.CONFIG.caught
         return if (caught.capped(player, LegendKeys.DIALGA) || caught.capped(player, LegendKeys.GIRATINA) || caught.capped(player, LegendKeys.PALKIA)) super.neededEnchantmentLevel(player)
@@ -39,12 +39,12 @@ class RedChainItem(properties: Properties) : EnchantableItem(properties.componen
         @JvmStatic
         fun incrementUsage(stack: ItemStack) {
             setEnchanted(stack, false)
-            stack.update(GenerationsItemComponents.USES, 0) { it + 1 }
+            stack.update(GenerationsItemComponents.USES.componentType(), 0) { it + 1 }
         }
 
         @JvmStatic
         fun getUses(stack: ItemStack): Int {
-            return stack.getOrDefault(GenerationsItemComponents.USES, 0)
+            return stack.getOrDefault(GenerationsItemComponents.USES.componentType(), 0)
         }
     }
 }

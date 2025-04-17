@@ -32,7 +32,7 @@ public class CookingPotRenderer extends GeneralUseBlockEntityRenderer<CookingPot
         stack.pushPose();
         stack.translate(0.5f,0.5f, 0.5f);
 
-        if(pot.getOuput().isEmpty()) {
+        if(pot.getOuput().isBlank()) {
 
             renderStack(stack, pot.getIngredient(), 0.25f, bufferSource, packedLight, packedOverlay);
 

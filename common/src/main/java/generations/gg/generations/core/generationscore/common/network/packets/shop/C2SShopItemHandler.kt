@@ -7,7 +7,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.ShopO
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 
-class C2SShopItemHandler : ServerNetworkPacketHandler<C2SShopItemPacket> {
+object C2SShopItemHandler : ServerNetworkPacketHandler<C2SShopItemPacket> {
     override fun handle(packet: C2SShopItemPacket, server: MinecraftServer, player: ServerPlayer) {
         var offerProvider: ShopOfferProvider? = null
 

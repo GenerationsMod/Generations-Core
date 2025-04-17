@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.phys.AABB
 import java.util.*
 
-class HeadPatPacketHandler : ServerNetworkPacketHandler<HeadPatPacket> {
+object HeadPatPacketHandler : ServerNetworkPacketHandler<HeadPatPacket> {
     override fun handle(packet: HeadPatPacket, server: MinecraftServer, player: ServerPlayer) {
         val pokemonEntity = player.serverLevel().getEntity(packet.pokemonId)
         if (pokemonEntity is PokemonEntity) {

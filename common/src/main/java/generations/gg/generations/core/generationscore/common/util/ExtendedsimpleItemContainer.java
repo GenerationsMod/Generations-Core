@@ -11,7 +11,7 @@ public class ExtendedsimpleItemContainer extends SimpleItemStorage {
     private final boolean hasEntity;
 
     public ExtendedsimpleItemContainer(BlockEntity entity, int size) {
-        super(entity, GenerationsStorage.INSTANCE.getItem_contents(), size);
+        super(entity, GenerationsStorage.INSTANCE.getITEM_CONTENTS(), size);
         hasEntity = entity != null;
     }
 
@@ -42,7 +42,6 @@ public class ExtendedsimpleItemContainer extends SimpleItemStorage {
         boolean reachedLimit = stack.getCount() > limit;
 
         if (!simulate) {
-            ItemResource
             if (existing.isEmpty()) {
                 this.setItem(slot, reachedLimit ? copyStackWithSize(stack, limit) : stack);
             } else {
