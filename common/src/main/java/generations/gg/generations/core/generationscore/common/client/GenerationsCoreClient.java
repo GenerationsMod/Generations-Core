@@ -14,6 +14,7 @@ import com.cobblemon.mod.common.platform.events.PlatformEvents;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.blaze3d.vertex.BufferUploader;
 import dev.architectury.registry.item.ItemPropertiesRegistry;
 import dev.architectury.registry.menu.MenuRegistry;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
@@ -452,7 +453,7 @@ public class GenerationsCoreClient {
         assert level != null;
         level.getProfiler().popPush("render_models");
         RenderSystem.enableDepthTest();
-//        BufferUploader.reset();
+        BufferUploader.reset();
 
 
 
