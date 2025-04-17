@@ -48,19 +48,14 @@ abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
         return super.createDefaultState().setValue(ON, false)
     }
 
-    override fun isPathfindable(
-        blockState: BlockState,
-        blockGetter: BlockGetter,
-        blockPos: BlockPos,
-        pathComputationType: PathComputationType
-    ): Boolean = false
+    override fun isPathfindable(state: BlockState, pathComputationType: PathComputationType): Boolean = false
 
-    override fun use(
+
+    override fun useWithoutItem(
         blockState: BlockState,
         world: Level,
         blockPos: BlockPos,
         player: Player,
-        hand: InteractionHand,
         hit: BlockHitResult
     ): InteractionResult {
         if (player !is ServerPlayer) return SUCCESS
@@ -78,7 +73,7 @@ abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
             return SUCCESS
         }
 
-        val pc = Cobblemon.storage.getPC(player.uuid)
+        val pc = Cobblemon.storage.getPC(player)
         // TODO add event to check if they can open this PC?
         PCLinkManager.addLink(ProximityPCLink(blockEntityClass, pc, player.uuid, blockEntityClass.cast(baseEntity)))
         OpenPCPacket(pc.uuid).sendToPlayer(player)

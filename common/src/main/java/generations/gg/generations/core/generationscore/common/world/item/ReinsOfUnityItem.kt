@@ -11,7 +11,9 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.party
 import generations.gg.generations.core.generationscore.common.util.*
+import generations.gg.generations.core.generationscore.common.util.extensions.set
 import net.minecraft.ChatFormatting
+import net.minecraft.core.component.DataComponents
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvent
@@ -43,7 +45,7 @@ class ReinsOfUnityItem(properties: Properties): PokemonStoringItem(properties) {
                     val list = mutableListOf<Component>()
                     list.add(pokemon)
                     stack.setLore(list)
-                    stack.setHoverName(super.getName(stack).copy() + getPokemonText(stack))
+                    stack.set(DataComponents.ITEM_NAME, super.getName(stack).copy().append(getPokemonText(stack)))
 
                     player.level().playSound(null, entity, SoundEvents.ENDERMAN_TELEPORT, SoundSource.MASTER, 1.0f, 1.0f)
 

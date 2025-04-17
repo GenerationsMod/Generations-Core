@@ -8,6 +8,7 @@ import dev.architectury.registry.item.ItemPropertiesRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.*
 import net.minecraft.client.multiplayer.ClientLevel
+import net.minecraft.core.component.DataComponents
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.server.level.ServerPlayer
@@ -29,7 +30,7 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
             var list = mutableListOf<Component>()
             list.add(pokemon)
             stack.setLore(list)
-            stack.setHoverName(super.getName(stack).copy() + getPokemonText(stack))
+            stack.set(DataComponents.ITEM_NAME, super.getName(stack).copy().append(getPokemonText(stack)))
 
             player.level().playSound(
                 null,

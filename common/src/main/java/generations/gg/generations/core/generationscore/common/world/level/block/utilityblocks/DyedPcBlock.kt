@@ -56,12 +56,7 @@ open class DyedPcBlock(color: DyeColor, map: Map<DyeColor, RegistrySupplier<Dyed
         return super.createDefaultState().setValue(PcBlock.ON, false)
     }
 
-    override fun isPathfindable(
-        blockState: BlockState,
-        blockGetter: BlockGetter,
-        blockPos: BlockPos,
-        pathComputationType: PathComputationType,
-    ): Boolean = false
+    override fun isPathfindable(state: BlockState, pathComputationType: PathComputationType): Boolean = false
 
     override fun serverUse(
         state: BlockState,
@@ -84,7 +79,7 @@ open class DyedPcBlock(color: DyeColor, map: Map<DyeColor, RegistrySupplier<Dyed
             return SUCCESS
         }
 
-        val pc = Cobblemon.storage.getPC(player.uuid)
+        val pc = Cobblemon.storage.getPC(player)
         // TODO add event to check if they can open this PC?
         PCLinkManager.addLink(ProximityPCLink(pc, player.uuid, baseEntity))
         OpenPCPacket(pc.uuid).sendToPlayer(player)

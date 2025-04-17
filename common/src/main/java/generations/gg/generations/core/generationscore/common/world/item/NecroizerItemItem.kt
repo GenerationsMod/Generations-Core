@@ -25,7 +25,7 @@ class NecroizerItemItem(private val properties: Properties, private val species:
 
                     val pokemon = player.party().firstOrNull { it.isSpecies(species) } ?: return false
                     if(!entity.pokemon.embedPokemon(pokemon)) {
-                        player.sendSystemMessage("${entity.displayName.string} failed to absorb ${pokemon.getDisplayName().string}.".text(), true)
+                        player.sendSystemMessage("${entity.name.string} failed to absorb ${pokemon.getDisplayName().string}.".text(), true)
                         return false
                     }
 

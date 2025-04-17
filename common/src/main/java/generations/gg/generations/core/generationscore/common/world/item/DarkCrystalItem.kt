@@ -18,20 +18,20 @@ class DarkCrystalItem(block: Block?, properties: Properties?) : BlockItemWithLan
 
             if (entity.pokemon.aspects.contains("shadow")) {
                 player.displayClientMessage(
-                    "generations_core.special.shadow.already".asTranslated(entity.displayName?.string),
+                    "generations_core.special.shadow.already".asTranslated(entity.name.string),
                     false
                 )
             } else {
                 var properties = PokemonProperties.parse("shadow")
                 if (entity.apply { properties.apply(this) }.pokemon.aspects.contains("shadow")) {
                     player.displayClientMessage(
-                        "generations_core.special.shadow.success".asTranslated(entity.displayName.string),
+                        "generations_core.special.shadow.success".asTranslated(entity.name.string),
                         false
                     )
                     consumeItem(player, stack)
                 } else {
                     player.displayClientMessage(
-                        "generations_core.special.shadow.failure".asTranslated(entity.displayName.string),
+                        "generations_core.special.shadow.failure".asTranslated(entity.name.string),
                         false
                     )
                 }
