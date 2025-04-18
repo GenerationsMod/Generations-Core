@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.battle
 
+import com.cobblemon.mod.common.api.abilities.Ability
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor
@@ -17,6 +18,8 @@ import com.mojang.datafixers.util.Unit
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 
 object GenerationsInstructionProcessor {
+    private var originalAbility: Ability? = null
+
     @JvmStatic
     fun processDetailsChange(battle: PokemonBattle, message: BattleMessage) {
         val s1 = message.argumentAt(1) ?: return
@@ -30,6 +33,8 @@ object GenerationsInstructionProcessor {
 
         val name = s3[1]
 
+        originalAbility = battlePokemon.originalPokemon.ability
+
         var pair: Pair<String, Any> = when(name) {
             "mega" -> "mega" to true
             "mega-x" -> "mega_x" to true
@@ -38,7 +43,7 @@ object GenerationsInstructionProcessor {
             "school" -> "schooling" to true
             "primal" -> "primal" to true
             "ash" -> "ash" to true
-            "wellspring", "hearthflame", "cornerstone", "teal" -> s3.getOrNull(2)?.takeIf { it == "Tera" }.let { "terastal" to true } ?: null
+            "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody-aspect" to true
 
             else -> name to true
         } ?: let {
@@ -71,14 +76,19 @@ object GenerationsInstructionProcessor {
 //            }
 //        }
     }
-
+    
     @JvmStatic
     fun processBattleEnd(battle: PokemonBattle) {
         battle.actors.forEach { actor ->
             if (!actor.getPlayerUUIDs().iterator().hasNext()) return@forEach
             actor.pokemonList.forEach { battlePokemon ->
+                val tempAbility = battlePokemon.originalPokemon.ability
+                val data = battlePokemon.effectedPokemon.persistentData
+                val name = if(data.contains("form_name")) data.getString("form_name") else ""
                 battlePokemon.originalPokemon.removeBattleFeature()
                 battlePokemon.effectedPokemon.removeBattleFeature()
+
+                battlePokemon.originalPokemon.restoreAbility(tempAbility, originalAbility, name)
 
 //                sequenceOf("mega", "mega_x", "mega_y", "primal", "stellar", "terastal", "hero", "hangry", "meteor", "blade", "pirouette", "sunny", "schooling", "ash", "busted").forEach { name ->
 //                    battlePokemon.effectedPokemon.features.removeIf { it.name == name }
@@ -118,5 +128,17 @@ private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
         feature.apply(this)
     } else {
         (feature as FlagSpeciesFeature).apply(this)
+    }
+}
+
+private fun Pokemon.restoreAbility(tempAbility: Ability, originalAbility: Ability?, name: String) {
+    if (name == "mega" || name == "mega_x" || name == "mega_y") {
+        if (tempAbility != originalAbility) {
+            originalAbility?.let { ability ->
+                this.updateAbility(ability)
+            } ?: run {
+                println("Original Ability is null")
+            }
+        }
     }
 }
