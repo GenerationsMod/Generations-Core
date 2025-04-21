@@ -39,12 +39,12 @@ class RedChainItem(properties: Properties) : EnchantableItem(properties.componen
         @JvmStatic
         fun incrementUsage(stack: ItemStack) {
             setEnchanted(stack, false)
-            stack.update(GenerationsItemComponents.USES.componentType(), 0) { it + 1 }
+            stack.update(GenerationsItemComponents.USES, 0) { it + 1 }
         }
 
         @JvmStatic
         fun getUses(stack: ItemStack): Int {
-            return stack.getOrDefault(GenerationsItemComponents.USES.componentType(), 0)
+            return stack.getOrDefault(GenerationsItemComponents.USES, 0)
         }
     }
 }

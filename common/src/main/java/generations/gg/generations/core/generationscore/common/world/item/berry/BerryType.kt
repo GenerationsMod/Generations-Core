@@ -1,13 +1,13 @@
-package generations.gg.generations.core.generationscore.common.world.item.berry;
+package generations.gg.generations.core.generationscore.common.world.item.berry
 
-import com.cobblemon.mod.common.api.berry.Berry;
-import generations.gg.generations.core.generationscore.common.world.item.curry.ICurryRarity;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.material.MapColor;
+import com.cobblemon.mod.common.api.berry.Berry
+import generations.gg.generations.core.generationscore.common.world.item.curry.ICurryRarity
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.material.MapColor
+import java.util.*
+import java.util.stream.Stream
 
-import java.util.stream.Stream;
-
-public enum BerryType implements ICurryRarity {
+enum class BerryType(private val rarity: Int, val color: EnumBerryColor) : ICurryRarity {
     CHERI(1, EnumBerryColor.RED),
     CHESTO(1, EnumBerryColor.PURPLE),
     PECHA(1, EnumBerryColor.PINK),
@@ -87,44 +87,24 @@ public enum BerryType implements ICurryRarity {
     KEE(10, EnumBerryColor.PINK),
     MARANGA(10, EnumBerryColor.BLUE);
 
-    private final int rarity;
-    private final EnumBerryColor color;
-    private final ResourceLocation id;
+    private val id = ResourceLocation.fromNamespaceAndPath("cobbelmon", name.lowercase(Locale.getDefault()) + "_berry")
 
-    BerryType(int rarity, EnumBerryColor color) {
-        this.id = new ResourceLocation("cobbelmon", name().toLowerCase() + "_berry");
-        this.rarity = rarity;
-        this.color = color;
+    override fun getRarity(): Int {
+        return rarity
     }
 
-    public EnumBerryColor getColor() {
-        return color;
-    }
-
-    public int getRarity() {
-        return rarity;
-    }
-
-    public static BerryType fromCobblemonBerry(Berry berry) {
-        return Stream.of(values()).filter(b -> b.id.equals(berry.getIdentifier())).findAny().orElse(null);
-    }
-
-    public enum EnumBerryColor {
+    enum class EnumBerryColor(val mapColor: MapColor) {
         RED(MapColor.COLOR_RED),
         BLUE(MapColor.COLOR_BLUE),
         PURPLE(MapColor.COLOR_PURPLE),
         GREEN(MapColor.COLOR_GREEN),
         YELLOW(MapColor.COLOR_YELLOW),
-        PINK(MapColor.COLOR_PINK);
+        PINK(MapColor.COLOR_PINK)
+    }
 
-        private final MapColor color;
-
-        EnumBerryColor(MapColor color) {
-            this.color = color;
-        }
-
-        public MapColor getMapColor() {
-            return color;
+    companion object {
+        fun fromCobblemonBerry(berry: Berry): BerryType? {
+            return entries.filter { b -> b.id == berry.identifier }.firstOrNull()
         }
     }
 }

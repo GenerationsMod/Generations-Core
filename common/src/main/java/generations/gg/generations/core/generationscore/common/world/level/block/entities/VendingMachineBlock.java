@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities;
 
+import com.mojang.serialization.MapCodec;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.api.player.PlayerMoneyHandler;
 import generations.gg.generations.core.generationscore.common.network.packets.shop.S2COpenShopPacket;
@@ -12,8 +13,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -40,7 +44,7 @@ public class VendingMachineBlock extends DyeableBlock<VendingMachineBlockEntity,
     }
 
     @Override
-    protected InteractionResult serverUse(BlockState state, ServerLevel world, BlockPos pos, ServerPlayer player, InteractionHand handIn, BlockHitResult hit) {
+    protected ItemInteractionResult serverUse(ItemStack stack, BlockState state, ServerLevel world, BlockPos pos, ServerPlayer player, InteractionHand handIn, BlockHitResult hit) {
         var blockPos = CompletableFuture.supplyAsync(() -> pos);
         var amount = PlayerMoneyHandler.of(player).balance();
         var playerFuture = CompletableFuture.completedFuture(player);
@@ -52,10 +56,17 @@ public class VendingMachineBlock extends DyeableBlock<VendingMachineBlockEntity,
             new S2COpenShopPacket(pos1).sendToPlayer(player1);
         });
 
-        return InteractionResult.SUCCESS;
+        return ItemInteractionResult.SUCCESS;
     }
 
-//    public static DyedBlockItem<VendingMachineBlock> getBlock(DyeColor dyeColor) {
+    public static final MapCodec<VendingMachineBlockEntity> CODEC = simpleCodec(VendingMachineBlock::new)
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return CODEC;
+    }
+
+    //    public static DyedBlockItem<VendingMachineBlock> getBlock(DyeColor dyeColor) {
 //        return (switch (dyeColor) {
 //            case BLACK -> GenerationsDecorationBlocks.BLACK_VENDING_MACHINE;
 //            case BLUE -> GenerationsDecorationBlocks.BLUE_VENDING_MACHINE;

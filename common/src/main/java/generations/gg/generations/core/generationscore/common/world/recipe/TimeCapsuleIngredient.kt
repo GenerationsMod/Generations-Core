@@ -2,11 +2,13 @@ package generations.gg.generations.core.generationscore.common.world.recipe
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.item.PokemonItem
+import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import com.cobblemon.mod.common.util.toJsonArray
 import com.google.gson.JsonObject
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.util.getPokemon
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import net.minecraft.core.component.DataComponents
 
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
@@ -19,11 +21,11 @@ class TimeCapsuleIngredient(val key : SpeciesKey, val strictAspects: Boolean = f
 
     constructor(name: String, strictAspects: Boolean = false): this(
         SpeciesKey(
-            ResourceLocation("cobblemon", name)
+            "cobblemon".asIdentifierDefaultingNamespace()
         ), strictAspects)
 
     override fun matches(stack: ItemStack): Boolean = if(stack.`is`(GenerationsItems.TIME_CAPSULE.get())) stack.getPokemon()?.takeIf { it.species.resourceIdentifier == key.species && if(strictAspects) it.aspects == key.aspects else it.aspects.containsAll(key.aspects) } != null else false
-    override fun matchingStacks(): List<ItemStack> = listOf(PokemonSpecies.getByIdentifier(key.species)?.let { PokemonItem.from(it, key.aspects, 1) }?: Items.APPLE.defaultInstance.setHoverName(Component.literal("Missing species: " + key.species)))
+    override fun matchingStacks(): List<ItemStack> = listOf(PokemonSpecies.getByIdentifier(key.species)?.let { PokemonItem.from(it, key.aspects, 1) }?: Items.APPLE.defaultInstance.also { it.set(DataComponents.ITEM_NAME, Component.literal("Missing species: " + key.species )) } )
     override fun write(json: JsonObject) {
         json.addProperty("species", key.species.toString())
         json.add("aspects", key.aspects.toJsonArray())

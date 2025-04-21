@@ -12,6 +12,7 @@ import com.cobblemon.mod.common.util.lang
 import com.cobblemon.mod.common.util.playSoundServer
 import com.cobblemon.mod.common.util.toVec3d
 import dev.architectury.registry.registries.RegistrySupplier
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.PcBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
@@ -43,7 +44,7 @@ abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
     width: Int = 0,
     height: Int = 0,
     length: Int = 0
-) : GenericRotatableModelBlock<T>(arg, type, model, width, height, length) {
+) : GenericRotatableModelBlock<T>(arg, type, model = model, width = width, height = height, length = length) {
     override fun createDefaultState(): BlockState {
         return super.createDefaultState().setValue(ON, false)
     }
@@ -99,7 +100,7 @@ abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
 
         fun lumiance(state: BlockState): Int {
             return try {
-                if (state.getValue(ON) && state.getValue((state.block as GenericRotatableModelBlock<*>).heightProperty) == 1) 10 else 0
+                if (state.getValue(ON) && (state.block.instanceOrNull<GenericRotatableModelBlock<*>>()?.lengthProperty?.let { state.getValue(it) } ?: 0) == 1) 10 else 0
             } catch (e: IllegalArgumentException) {
                 0
             }

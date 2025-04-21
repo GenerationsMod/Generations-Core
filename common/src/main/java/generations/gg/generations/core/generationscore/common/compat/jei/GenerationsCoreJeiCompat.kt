@@ -15,13 +15,14 @@ import mezz.jei.api.runtime.IIngredientManager
 import mezz.jei.library.plugins.vanilla.crafting.CategoryRecipeValidator
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.crafting.RecipeHolder
 
 @JeiPlugin
 class GenerationsCoreJeiCompat : IModPlugin {
     companion object {
         private val id: ResourceLocation = GenerationsCore.id("rks")
     }
-    lateinit var rksCategory: IRecipeCategory<RksRecipe>
+    lateinit var rksCategory: IRecipeCategory<RecipeHolder<RksRecipe>>
 
 
     override fun getPluginUid(): ResourceLocation {
@@ -36,38 +37,35 @@ class GenerationsCoreJeiCompat : IModPlugin {
     override fun registerRecipes(registration: IRecipeRegistration) {
         val ingredientManager = registration.ingredientManager
 
-        val craftingRecipes: Pair<List<RksRecipe>, List<RksRecipe>> = ingredientManager.rksRecipes()
-        registration.addRecipes(RksRecipeCategory.RKS_MACHINE, craftingRecipes.first)
-        registration.addRecipes(RksRecipeCategory.RKS_MACHINE, craftingRecipes.second)
+        val craftingRecipes: Pair<List<RecipeHolder<RksRecipe>>, List<RecipeHolder<RksRecipe>>> = ingredientManager.rksRecipes()
+        registration.addRecipes(RksRecipeCategory.RKS_MACHINE.get(), craftingRecipes.first)
+        registration.addRecipes(RksRecipeCategory.RKS_MACHINE.get(), craftingRecipes.second)
     }
 
     override fun registerRecipeCatalysts(registration: IRecipeCatalystRegistration) {
-        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE.get(), RksRecipeCategory.RKS_MACHINE)
+        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE.get(), RksRecipeCategory.RKS_MACHINE.get())
     }
 
     override fun registerGuiHandlers(registration: IGuiHandlerRegistration) {
-        registration.addRecipeClickArea(RksMachineScreen::class.java, 90, 35, 22, 15, RksRecipeCategory.RKS_MACHINE)
+        registration.addRecipeClickArea(RksMachineScreen::class.java, 90, 35, 22, 15, RksRecipeCategory.RKS_MACHINE.get())
     }
 
     override fun registerRecipeTransferHandlers(registration: IRecipeTransferRegistration) {
         registration.addRecipeTransferHandler(
-            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE.get(), RksRecipeCategory.RKS_MACHINE, 1, 9, 10, 36
+            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE.get(), RksRecipeCategory.RKS_MACHINE.get(), 1, 9, 10, 36
         )
     }
 
 
-    private fun IIngredientManager.rksRecipes(): Pair<List<RksRecipe>, List<RksRecipe>> {
+    private fun IIngredientManager.rksRecipes(): Pair<List<RecipeHolder<RksRecipe>>, List<RecipeHolder<RksRecipe>>> {
         val validator: CategoryRecipeValidator<RksRecipe> = CategoryRecipeValidator(rksCategory, this, 9)
 
-        val handled: MutableList<RksRecipe> = ArrayList()
-        val unhandled: MutableList<RksRecipe> = ArrayList()
+        val handled: MutableList<RecipeHolder<RksRecipe>> = ArrayList()
+        val unhandled: MutableList<RecipeHolder<RksRecipe>> = ArrayList()
 
         val recipeManager = Minecraft.getInstance().level?.recipeManager ?: return Pair(emptyList(), emptyList())
 
-        val allRecipes: MutableList<RksRecipe> = recipeManager.getAllRecipesFor(GenerationsCoreRecipeTypes.RKS.get())
-
-        for (recipe in allRecipes) {
-
+        recipeManager.getAllRecipesFor(GenerationsCoreRecipeTypes.RKS.get()).forEach { recipe ->
                 if (validator.isRecipeHandled(recipe)) {
                     handled.add(recipe)
                 } else {

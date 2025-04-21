@@ -38,6 +38,7 @@ import net.minecraft.world.inventory.RecipeHolder;
 import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
@@ -49,7 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuProvider, Container, RecipeHolder, StackedContentsCompatible, Toggleable {
+public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuProvider, Container, RecipeInput, StackedContentsCompatible, Toggleable {
 
     private static final int[] OUTPUT_SLOTS = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     private static final int[] INPUT_SLOTS = {1, 2, 3, 4, 5, 6, 7, 8, 9};

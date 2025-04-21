@@ -27,7 +27,7 @@ public class CalyrexSteedContainer extends GenericChestContainer {
 
     @Override
     public void save(Player player) {
-        var stack = getPlayerInventory().getItem(this.getLocked());
+        var stack = playerInventory.getItem(this.getLocked());
         if(stack.getItem() instanceof CalyrexSteedItem walkmon) {
             walkmon.save((CalyrexSteedItem.CarrotHolder) getContainer(), stack);
         }

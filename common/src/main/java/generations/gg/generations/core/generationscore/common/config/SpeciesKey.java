@@ -3,6 +3,8 @@ package generations.gg.generations.core.generationscore.common.config;
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.cobblemon.mod.common.pokemon.Species;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -15,8 +17,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
+    public static final Codec<SpeciesKey> CODEC = Codec.STRING.xmap(SpeciesKey::fromString, SpeciesKey::toString);
     public SpeciesKey(String species, Set<String> aspects) {
-        this(new ResourceLocation(species), aspects);
+        this(ResourceLocation.parse(species), aspects);
     }
 
     public SpeciesKey(String species) {
@@ -42,7 +45,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
         var properties = createProperties();
         properties.setLevel(level);
          var pokemon = properties.create();
-        pokemon.setAspects(aspects());
+//        pokemon.setAspects(aspects());
         return pokemon;
     }
 
@@ -73,7 +76,7 @@ public record SpeciesKey(ResourceLocation species, Set<String> aspects) {
     public static SpeciesKey fromString(String input) {
         String[] parts = input.split("\\[|\\]");
 
-        ResourceLocation species = new ResourceLocation(parts[0]);
+        ResourceLocation species = ResourceLocation.parse(parts[0]);
 
         Set<String> aspects = new HashSet<>();
         if (parts.length == 2) {

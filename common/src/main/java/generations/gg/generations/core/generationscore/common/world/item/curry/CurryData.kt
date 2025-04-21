@@ -2,15 +2,19 @@ package generations.gg.generations.core.generationscore.common.world.item.curry
 
 import com.cobblemon.mod.common.api.berry.Berry
 import com.cobblemon.mod.common.api.berry.Flavor
+import com.mojang.serialization.Codec
+import com.mojang.serialization.codecs.RecordCodecBuilder
+import generations.gg.generations.core.generationscore.common.api.data.Codecs
 import generations.gg.generations.core.generationscore.common.world.item.berry.BerryType
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity.Companion.getDominantFlavor
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity.getDominantFlavor
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.Tag
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.util.StringRepresentable
 import java.util.*
 import java.util.stream.Stream
+import kotlin.jvm.optionals.getOrNull
 
 class CurryData {
     var flavor: Flavor? = null
@@ -21,6 +25,46 @@ class CurryData {
     var canRestorePP = false
     var friendship: Int = 0
     var rating: CurryTasteRating
+
+    constructor(
+        flavor: Flavor?,
+        curryType: CurryType,
+        experience: Int,
+        healthPercentage: Double,
+        canHealStatus: Boolean,
+        canRestorePP: Boolean,
+        friendship: Int,
+        rating: CurryTasteRating
+    ) {
+        this.flavor = flavor
+        this.curryType = curryType
+        this.rating = rating
+        this.experience = experience
+        this.healthPercentage = healthPercentage
+        this.canHealStatus = canHealStatus
+        this.canRestorePP = canRestorePP
+        this.friendship = friendship
+    }
+
+    constructor(
+        flavor: Optional<Flavor>,
+        curryType: CurryType,
+        experience: Int,
+        healthPercentage: Double,
+        canHealStatus: Boolean,
+        canRestorePP: Boolean,
+        friendship: Int,
+        rating: CurryTasteRating
+    ) {
+        this.flavor = flavor.getOrNull()
+        this.curryType = curryType
+        this.rating = rating
+        this.experience = experience
+        this.healthPercentage = healthPercentage
+        this.canHealStatus = canHealStatus
+        this.canRestorePP = canRestorePP
+        this.friendship = friendship
+    }
 
     @JvmOverloads
     constructor(rating: CurryTasteRating = CurryTasteRating.Unknown) {
@@ -35,36 +79,14 @@ class CurryData {
         rating: CurryTasteRating = CurryTasteRating.Unknown
     ) : this(rating) {
         var flavor = getDominantFlavor(berries)
-        val friendship = Stream.concat(berries.stream().map { berry: Berry? -> BerryType.fromCobblemonBerry(berry) }
-            .filter { obj: BerryType? -> Objects.nonNull(obj) }, Stream.of(mainIngredient))
-            .filter { obj: Enum<out Enum<*>?>? -> Objects.nonNull(obj) }
-            .map { obj: Enum<out Enum<*>?>? -> ICurryRarity::class.java.cast(obj) }
-            .mapToInt { obj: ICurryRarity -> obj.rarity }.sum()
+        val friendship = berries.map(BerryType::fromCobblemonBerry)
+            .filterNotNull()
+            .map { it.rarity }.sum() + curryType.rarity
         if (mainIngredient == CurryType.Gigantamax) flavor = null
 
         this.curryType = mainIngredient
         this.flavor = flavor
         this.friendship = friendship
-    }
-
-    constructor(
-        flavor: Flavor?,
-        curryType: CurryType,
-        experience: Int,
-        healthPercentage: Double,
-        canHealStatus: Boolean,
-        canRestorePP: Boolean,
-        friendship: Int,
-        rating: CurryTasteRating
-    ) {
-        this.flavor = flavor
-        this.curryType = curryType
-        this.experience = experience
-        this.healthPercentage = healthPercentage
-        this.canHealStatus = canHealStatus
-        this.canRestorePP = canRestorePP
-        this.friendship = friendship
-        this.rating = rating
     }
 
     fun canRestorePP(): Boolean {
@@ -120,7 +142,7 @@ class CurryData {
 
     fun toNbt(): Tag {
         val nbt = CompoundTag()
-        nbt.putInt("flavor", if (flavor == null) -1 else flavor!!.ordinal)
+        nbt.putInt("flavor", flavor?.ordinal ?: -1)
         nbt.putInt("type", curryType.ordinal)
         nbt.putInt("rating", rating.ordinal)
         nbt.putInt("experience", experience)
@@ -133,6 +155,20 @@ class CurryData {
     }
 
     companion object {
+        val CODEC: Codec<CurryData> = RecordCodecBuilder.create {
+            it.group(
+                Codecs.enumCodec(Flavor::class.java).optionalFieldOf("flavor").forGetter { Optional.ofNullable(it.flavor) },
+                StringRepresentable.fromEnum({ CurryType.entries.toTypedArray() }).fieldOf("type").forGetter { it.curryType },
+                Codec.INT.fieldOf("experience").forGetter { it.experience },
+                Codec.DOUBLE.fieldOf("healthPercentage").forGetter { it.healthPercentage },
+                Codec.BOOL.fieldOf("canHealStatus").forGetter { it.canHealStatus },
+                Codec.BOOL.fieldOf("canRestorePP").forGetter { it.canRestorePP },
+                Codec.INT.fieldOf("friendship").forGetter { it.friendship },
+                StringRepresentable.fromEnum { CurryTasteRating.entries.toTypedArray() }.fieldOf("rating").forGetter { it.rating },
+
+                ).apply(it, ::CurryData)
+        }
+
         fun fromNbt(nbt: CompoundTag): CurryData {
             val curry = CurryData()
             if (nbt.isEmpty) {

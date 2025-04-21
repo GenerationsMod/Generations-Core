@@ -28,7 +28,7 @@ public class WalkmonContainer extends GenericChestContainer {
 
     @Override
     public void save(Player player) {
-        var stack = getPlayerInventory().getItem(this.getLocked());
+        var stack = playerInventory.getItem(this.getLocked());
         if(stack.getItem() instanceof WalkmonItem walkmon) {
             var holder = walkmon.load(stack);
 

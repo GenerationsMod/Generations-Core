@@ -21,9 +21,10 @@ import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResult
-import net.minecraft.world.InteractionResult.SUCCESS
+import net.minecraft.world.ItemInteractionResult
+import net.minecraft.world.ItemInteractionResult.*
 import net.minecraft.world.item.DyeColor
+import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
@@ -39,7 +40,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
-open class DyedPcBlock(color: DyeColor, map: Map<DyeColor, RegistrySupplier<DyedPcBlock>>, arg: Properties) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(color, map, GenerationsBlockEntities.DYED_PC, arg, GenerationsBlockEntityModels.PC, 0, 1, 0) {
+abstract class DyedPcBlock(color: DyeColor, map: Map<DyeColor, RegistrySupplier<DyedPcBlock>>, arg: Properties) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(color, map, GenerationsBlockEntities.DYED_PC, arg, GenerationsBlockEntityModels.PC, 0, 1, 0) {
     private val SHAPE = generateRotationalVoxelShape(
         Shapes.or(
             Shapes.box(0.07500000000000001, 0.0, 0.025000000000000022, 0.925, 1.5, 0.725),
@@ -59,20 +60,21 @@ open class DyedPcBlock(color: DyeColor, map: Map<DyeColor, RegistrySupplier<Dyed
     override fun isPathfindable(state: BlockState, pathComputationType: PathComputationType): Boolean = false
 
     override fun serverUse(
+        stack: ItemStack,
         state: BlockState,
         world: ServerLevel,
         pos: BlockPos,
         player: ServerPlayer,
         handIn: InteractionHand,
         hit: BlockHitResult?,
-    ): InteractionResult {
+    ): ItemInteractionResult {
         val basePos = getBaseBlockPos(pos, state)
 
         // Remove any duplicate block entities that may exist
         world.getBlockEntity(basePos.above())?.setRemoved()
 
         val baseEntity = world.getBlockEntity(basePos)
-        if (baseEntity !is DyedPcBlockEntity) return SUCCESS
+        if (baseEntity !is DyedPcBlockEntity) return ItemInteractionResult.SUCCESS
 
         if (player.isInBattle()) {
             player.sendSystemMessage(lang("pc.inbattle").red())

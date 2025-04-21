@@ -10,7 +10,6 @@ import generations.gg.generations.core.generationscore.common.util.GenerationsUt
 import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedPcBlockEntity;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericBlastFurnaceBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericFurnaceBlock;
@@ -41,7 +40,7 @@ public class GenerationsUtilityBlocks {
 	public static final RegistrySupplier<Block> COOKING_POT = registerBlockItem("cooking_pot", () -> new CookingPotBlock(BlockBehaviour.Properties.of().strength(2.5f).randomTicks().noOcclusion()));
 
 	//PC Blocks
-	public static final RegistrySupplier<TablePc> TABLE_PC = registerBlockItem("table_pc", () -> new TablePc(BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance), GenerationsBlockEntityModels.TABLE_PC, 0, 0, 0));
+	public static final RegistrySupplier<TablePc> TABLE_PC = registerBlockItem("table_pc", () -> new TablePc(BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 	public static final RegistrySupplier<RotomPc> ROTOM_PC = registerBlockItem("rotom_pc", () -> new RotomPc(BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 
 	public static final RegistrySupplier<Block> TRASH_CAN = registerBlockItem("trash_can", () -> new TrashCanBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.METAL)));

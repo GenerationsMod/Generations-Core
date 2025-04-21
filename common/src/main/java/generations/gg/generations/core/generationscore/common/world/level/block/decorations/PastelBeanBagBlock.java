@@ -11,7 +11,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -34,7 +36,7 @@ public class PastelBeanBagBlock extends DyeableBlock<GenericDyedVariantBlockEnti
     }
 
     @Override
-    protected InteractionResult serverUse(BlockState state, ServerLevel world, BlockPos pos, ServerPlayer player, InteractionHand handIn, BlockHitResult hit) {
+    protected ItemInteractionResult serverUse(ItemStack stack, BlockState state, ServerLevel world, BlockPos pos, ServerPlayer player, InteractionHand handIn, BlockHitResult hit) {
         if (!world.isClientSide && !player.isShiftKeyDown())
             return SittableEntity.mount(world, pos, 0.5f, player, state.getValue(FACING).toYRot());
 

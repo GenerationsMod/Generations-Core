@@ -23,7 +23,7 @@ public class DyedPcBlockEntity extends PcBlockEntity<DyedPcBlockEntity> implemen
     };
 
     public DyeColor getColor() {
-        return ((DyeableBlock<?, ?>) getBlockState().getBlock()).getColor();
+        return ((DyeableBlock<?, ?>) getBlockState().getBlock()).color;
     }
 
     @Override

@@ -45,6 +45,7 @@ import java.util.concurrent.atomic.AtomicLong
 import java.util.function.Function
 import java.util.stream.Stream
 
+
 class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
     ModelProvidingBlockEntity(GenerationsBlockEntities.COOKING_POT.get(), arg2, arg3),
     MenuProvider,
@@ -146,7 +147,7 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
 
                     if (!CurryEvents.COOK.invoker().act(event).isTrue()) {
                         val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY.get())
-                            .set(GenerationsItemComponents.CURRY_DATA, event.output)
+                            .set(GenerationsItemComponents.CURRY_DATA.get(), event.output)
 
                         hasInserted = handler.insert(13, curry, 1, false) > 0
                     }
@@ -270,7 +271,7 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
             blockEntity.serverTick()
         }
 
-        fun getDominantFlavor(vararg berries: Berry): Flavor? {
+        fun getDominantFlavor(berries: List<Berry>): Flavor? {
             val output = Flavor.entries.associateWith { flavor ->
                 berries.sumOf { it.flavor(flavor) }
             }
@@ -281,4 +282,3 @@ class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
         }
     }
 }
-

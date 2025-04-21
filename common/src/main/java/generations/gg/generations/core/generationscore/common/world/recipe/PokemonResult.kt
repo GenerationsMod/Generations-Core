@@ -16,8 +16,10 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.level.block.RksMachineBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity
+import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock.Companion.FACING
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.phys.Vec3
@@ -43,12 +45,12 @@ private val Learnset.allMoves: MutableList<MoveTemplate>
 data class PokemonResult(
     val species: ResourceLocation, val aspects: Set<String>, val level: Int, val spawnInWorld: Boolean,
     val usePokemonInCapsule: Boolean
-) : RksResult<PokemonResult?> {
+) : RksResult<PokemonResult> {
     override fun getStack(): ItemStack {
         return PokemonItem.from(getByIdentifier(species)!!, aspects, 1, Vector4f(1f, 1f, 1f, 1f))
     }
 
-    override fun type(): RksResultType<PokemonResult?>? {
+    override fun type(): RksResultType<PokemonResult> {
         return RksResultType.POKEMON.get()
     }
 
@@ -78,7 +80,7 @@ data class PokemonResult(
             var slot: Int? = null
 
             pokemon.moveSet.doWithoutEmitting {
-                var moveset = pokemon!!.moveSet;
+                val moveset = pokemon!!.moveSet;
 
                 moveset[0]?.takeIf { !list.contains(it.template) }?.let {
                     if (slot != null) {
@@ -131,7 +133,7 @@ data class PokemonResult(
 
         if (spawnInWorld) {
             val pos = rksMachineBlockEntity.blockPos
-            val dir = rksMachineBlockEntity.blockState.getValue(RksMachineBlock.FACING)
+            val dir = rksMachineBlockEntity.blockState.getValue(FACING)
             PokemonUtil.spawn(
                 PokemonEntity(rksMachineBlockEntity.level!!, pokemon),
                 rksMachineBlockEntity.level,
@@ -140,8 +142,8 @@ data class PokemonResult(
             )
         } else {
             try {
-                storage.getParty(player.uuid).add(pokemon)
-            } catch (e: NoPokemonStoreException) {
+                storage.getParty(player as ServerPlayer).add(pokemon)
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
         }

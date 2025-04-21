@@ -43,13 +43,13 @@ public class WTHIT implements IWailaClientPlugin {
 
         @Override
         public @Nullable ITooltipComponent getIcon(IBlockAccessor accessor, IPluginConfig config) {
-            return accessor.getBlock() instanceof DyeableBlock<?, ?> dyeableBlock ? new ItemComponent(dyeableBlock.getItemFromDyeColor(dyeableBlock.getColor())) : null;
+            return accessor.getBlock() instanceof DyeableBlock<?, ?> dyeableBlock ? new ItemComponent(dyeableBlock.getItemFromDyeColor(dyeableBlock.color)) : null;
         }
 
         @Override
         public void appendHead(ITooltip tooltip, IBlockAccessor accessor, IPluginConfig config) {
             if(accessor.getBlock() instanceof DyeableBlock<?,?> dyeableBlock) {
-                var stack = dyeableBlock.getItemFromDyeColor(dyeableBlock.getColor()).getDefaultInstance();
+                var stack = dyeableBlock.getItemFromDyeColor(dyeableBlock.color).getDefaultInstance();
                 IWailaConfig.Formatter formatter = IWailaConfig.get().getFormatter();
                 tooltip.setLine(WailaConstants.OBJECT_NAME_TAG, formatter.entityName(stack.getHoverName().getString()));
                 if (config.getBoolean(WailaConstants.CONFIG_SHOW_REGISTRY))

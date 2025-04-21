@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -24,7 +25,7 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
     private NonNullList<ItemStack> customDrops = null;
 
     @Override
-    protected void readNbt(CompoundTag nbt) {
+    protected void readNbt(CompoundTag nbt, HolderLookup.Provider provider) {
         owner = nbt.contains("owner") ? nbt.getUUID("owner") : null;
 
         claims.clear();
@@ -49,7 +50,7 @@ public class BallLootBlockEntity extends ModelProvidingBlockEntity {
     }
 
     @Override
-    protected void writeNbt(CompoundTag nbt) {
+    protected void writeNbt(CompoundTag nbt, HolderLookup.Provider provider) {
         if(owner != null)nbt.putUUID("owner", owner);
         nbt.put("claims", claims.stream().map(a -> {
             var tag = new CompoundTag();

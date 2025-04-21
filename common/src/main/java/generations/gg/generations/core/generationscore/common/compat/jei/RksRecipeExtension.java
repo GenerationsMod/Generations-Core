@@ -6,51 +6,58 @@ import generations.gg.generations.core.generationscore.common.world.recipe.Shape
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.ingredient.ICraftingGridHelper;
 import mezz.jei.api.recipe.IFocusGroup;
+import mezz.jei.library.plugins.vanilla.crafting.JeiShapedRecipe;
 import mezz.jei.library.util.RecipeUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class RksRecipeExtension<T extends RksRecipe> implements IRksCategoryExtension {
-    private final T recipe;
-
-    public RksRecipeExtension(T recipe) {
-        this.recipe = recipe;
-    }
-
+public class RksRecipeExtension<T extends RksRecipe> implements IRksCategoryExtension<T> {
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, ICraftingGridHelper craftingGridHelper, IFocusGroup focuses) {
-        List<List<ItemStack>> inputs = new ArrayList<>();
-        for (GenerationsIngredient ingredient : recipe.recipeItems) {
-            List<ItemStack> items = ingredient.matchingStacks();
-            inputs.add(items);
-        }
+    public void setRecipe(RecipeHolder<T> recipeHolder, IRecipeLayoutBuilder builder, ICraftingGridHelper craftingGridHelper, IFocusGroup focuses) {
+        RksRecipe recipe = recipeHolder.value();
         ItemStack resultItem = RecipeUtil.getResultItem(recipe);
 
-        int width = getWidth();
-        int height = getHeight();
+        int width = getWidth(recipeHolder);
+        int height = getHeight(recipeHolder);
         craftingGridHelper.createAndSetOutputs(builder, List.of(resultItem));
-        craftingGridHelper.createAndSetInputs(builder, inputs, width, height);
+        craftingGridHelper.createAndSetIngredients(builder, recipe.getIngredients(), width, height);
     }
 
-    @Nullable
+    @SuppressWarnings("removal")
     @Override
-    public ResourceLocation getRegistryName() {
-        return recipe.getId();
+    public Optional<ResourceLocation> getRegistryName(RecipeHolder<T> recipeHolder) {
+        return Optional.of(recipeHolder.id());
     }
 
     @Override
-    public int getWidth() {
-        if(recipe instanceof ShapedRksRecipe rksRecipe) return rksRecipe.getWidth();
+    public int getWidth(RecipeHolder<T> recipeHolder) {
+        T recipe = recipeHolder.value();
+        if (recipe instanceof ShapedRksRecipe shapedRecipe) {
+            return shapedRecipe.getWidth();
+        }
+
         return 0;
     }
 
     @Override
-    public int getHeight() {
-        if(recipe instanceof ShapedRksRecipe rksRecipe) return rksRecipe.getHeight();
+    public int getHeight(RecipeHolder<T> recipeHolder) {
+        T recipe = recipeHolder.value();
+        if (recipe instanceof ShapedRksRecipe shapedRecipe) {
+            return shapedRecipe.getHeight();
+        }
         return 0;
+    }
+
+    @Override
+    public boolean isHandled(RecipeHolder<T> recipe) {
+        return !recipe.value().isSpecial();
     }
 }

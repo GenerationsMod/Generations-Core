@@ -9,7 +9,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 
-abstract class EnchantableItem(arg: Properties) : ItemWithLangTooltipImpl(arg.component(GenerationsItemComponents.ENCHANTED.componentType(), false)) {
+abstract class EnchantableItem(arg: Properties) : ItemWithLangTooltipImpl(arg.component(GenerationsItemComponents.ENCHANTED, false)) {
     open fun neededEnchantmentLevel(player: ServerPlayer): Int {
         return 100
     }
@@ -21,29 +21,29 @@ abstract class EnchantableItem(arg: Properties) : ItemWithLangTooltipImpl(arg.co
     companion object {
         fun getEnchanted(item: Item): ItemStack {
             val stack = ItemStack(item)
-            stack.set(GenerationsItemComponents.ENCHANTED.componentType(), true)
+            stack.set(GenerationsItemComponents.ENCHANTED, true)
             return stack
         }
 
         @JvmStatic
         fun setEnchanted(stack: ItemStack, enchanted: Boolean): ItemStack {
-            stack.set(GenerationsItemComponents.ENCHANTED.componentType(), enchanted)
+            stack.set(GenerationsItemComponents.ENCHANTED, enchanted)
             return stack
         }
 
         fun setUsed(stack: ItemStack, used: Boolean): ItemStack {
-            stack.set(GenerationsItemComponents.USED.componentType(), used)
+            stack.set(GenerationsItemComponents.USED, used)
             return stack
         }
 
         @JvmStatic
         fun isUsed(stack: ItemStack?): Boolean {
-            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsItemComponents.USED.componentType(), false)
+            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsItemComponents.USED, false)
         }
 
         @JvmStatic
         fun isEnchanted(stack: ItemStack?): Boolean {
-            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsItemComponents.ENCHANTED.componentType(), false)
+            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsItemComponents.ENCHANTED, false)
         }
     }
 }

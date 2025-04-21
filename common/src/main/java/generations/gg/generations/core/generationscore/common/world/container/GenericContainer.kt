@@ -8,6 +8,8 @@ import com.mojang.serialization.Dynamic
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.menu.MenuRegistry
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
+import earth.terrarium.common_storage_lib.resources.item.ItemResource
+import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import generations.gg.generations.core.generationscore.common.api.data.Codecs
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
@@ -35,19 +37,23 @@ import java.util.*
 import java.util.function.Function
 import kotlin.collections.ArrayList
 
-interface GenericContainer : SimpleItemStorage, MenuProvider {
+interface GenericContainer {
     val width: Int
     val height: Int
 
-    fun openScreen(player: Player, lockedSlot: Int = -1) {
+    fun openScreen(storage: CommonStorage<ItemResource>, width: Int, height: Int, title: Component, player: Player, lockedSlot: Int = -1) {
         if (!player.isLocalPlayer) MenuRegistry.openExtendedMenu(
             player as ServerPlayer,
-            this
-        ) { byteBuf: FriendlyByteBuf ->
-            byteBuf.writeVarInt(
-                width
-            ).writeVarInt(height).writeVarInt(lockedSlot)
-        }
+            object : MenuProvider {
+                override fun createMenu(id: Int, inventory: Inventory, player: Player): AbstractContainerMenu {
+                    return GenericChestContainer(id, inventory, storage, width, height, lockedSlot)
+                }
+
+                override fun getDisplayName(): Component {
+                    return title
+                }
+            }
+        ) { byteBuf -> byteBuf.writeVarInt(width).writeVarInt(height).writeVarInt(lockedSlot) }
     }
 
     override fun createMenu(i: Int, arg: Inventory, arg2: Player): AbstractContainerMenu? {

@@ -22,7 +22,7 @@ public abstract class DyedVariantBlockEntity<T extends DyedVariantBlockEntity<?>
     }
 
     public DyeColor getColor() {
-        return ((DyeableBlock<?, ?>) getBlockState().getBlock()).getColor();
+        return ((DyeableBlock<?, ?>) getBlockState().getBlock()).color;
     }
 
     @Override

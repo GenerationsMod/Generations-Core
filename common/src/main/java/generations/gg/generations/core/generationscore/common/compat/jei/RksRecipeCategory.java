@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks;
+import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe;
 import generations.gg.generations.core.generationscore.common.world.recipe.ShapedRksRecipe;
 import generations.gg.generations.core.generationscore.common.world.recipe.ShapelessRksRecipe;
@@ -22,26 +24,26 @@ import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.AbstractRecipeCategory;
-import mezz.jei.api.recipe.category.extensions.IExtendableRecipeCategory;
-import mezz.jei.library.recipes.ExtendableRecipeCategoryHelper;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import org.jetbrains.annotations.Nullable;
 
-public class RksRecipeCategory extends AbstractRecipeCategory<RksRecipe> implements IExtendableRecipeCategory<RksRecipe, IRksCategoryExtension> {
+public class RksRecipeCategory extends AbstractRecipeCategory<RecipeHolder<RksRecipe>> implements IExtendableRksRecipeCategory {
     public static final int width = 116;
     public static final int height = 54;
 
-    public static final RecipeType<RksRecipe> RKS_MACHINE = new RecipeType<>(GenerationsCore.id("rks"), RksRecipe.class);
+    public static final Supplier<RecipeType<RecipeHolder<RksRecipe>>> RKS_MACHINE = RecipeType.createFromDeferredVanilla(GenerationsCoreRecipeTypes.RKS::get);
     private final IGuiHelper helper;
     private final ICraftingGridHelper craftingGridHelper;
-    private final ExtendableRecipeCategoryHelper<RksRecipe, IRksCategoryExtension> extendableHelper = new ExtendableRecipeCategoryHelper<>(RksRecipe.class);
+    private final RksExtensionHelper extendableHelper = new RksExtensionHelper();
 
     public RksRecipeCategory(IGuiHelper helper) {
         super(
-                RKS_MACHINE,
+                RKS_MACHINE.get(),
                 Component.translatable("gui.recipe_viewer.category.rks_machine"),
-                helper.createDrawableItemLike(GenerationsUtilityBlocks.RKS_MACHINE.getOrNull()),
+                helper.createDrawableItemLike(GenerationsUtilityBlocks.RKS_MACHINE.get()),
                 width,
                 height
         );
@@ -49,79 +51,78 @@ public class RksRecipeCategory extends AbstractRecipeCategory<RksRecipe> impleme
         this.helper = helper;
         this.craftingGridHelper = helper.createCraftingGridHelper();
 
-        extendableHelper.addRecipeExtensionFactory(ShapedRksRecipe.class, null, RksRecipeExtension::new);
-        extendableHelper.addRecipeExtensionFactory(ShapelessRksRecipe.class, null, RksRecipeExtension::new);
+        extendableHelper.addRecipeExtension(ShapedRksRecipe.class, new RksRecipeExtension<>());
+        extendableHelper.addRecipeExtension(ShapelessRksRecipe.class, new RksRecipeExtension<>());
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, RksRecipe recipe, IFocusGroup focuses) {
-        var recipeExtension = this.extendableHelper.getRecipeExtension(recipe);
-        recipeExtension.setRecipe(builder, craftingGridHelper, focuses);
+    public void setRecipe(IRecipeLayoutBuilder builder, RecipeHolder<RksRecipe> holder, IFocusGroup group) {
+        var recipeExtension = this.extendableHelper.getRecipeExtension(holder);
+        recipeExtension.setRecipe(holder, builder, craftingGridHelper, group);
     }
 
     @Override
-    public void onDisplayedIngredientsUpdate(RksRecipe recipe, List<IRecipeSlotDrawable> recipeSlots, IFocusGroup focuses) {
-        var recipeExtension = this.extendableHelper.getRecipeExtension(recipe);
-        recipeExtension.onDisplayedIngredientsUpdate(recipeSlots, focuses);
+    public void onDisplayedIngredientsUpdate(RecipeHolder<RksRecipe> holder, List<IRecipeSlotDrawable> slots, IFocusGroup group) {
+        var recipeExtension = this.extendableHelper.getRecipeExtension(holder);
+        recipeExtension.onDisplayedIngredientsUpdate(holder, slots, group);
     }
 
     @Override
-    public void createRecipeExtras(IRecipeExtrasBuilder builder, RksRecipe recipe, IFocusGroup focuses) {
-        var recipeExtension = this.extendableHelper.getRecipeExtension(recipe);
-        recipeExtension.createRecipeExtras(builder, craftingGridHelper, focuses);
+    public void createRecipeExtras(IRecipeExtrasBuilder builder, RecipeHolder<RksRecipe> holder, IFocusGroup group) {
+        var recipeExtension = this.extendableHelper.getRecipeExtension(holder);
+        recipeExtension.createRecipeExtras(holder, builder, craftingGridHelper, group);
     }
 
+
+    @SuppressWarnings("removal")
     @Override
-    public void draw(RksRecipe recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
-        IRksCategoryExtension extension = this.extendableHelper.getRecipeExtension(recipe);
+    public void draw(RecipeHolder<RksRecipe> holder, IRecipeSlotsView view, GuiGraphics graphics, double mouseX, double mouseY) {
+        var recipeExtension = this.extendableHelper.getRecipeExtension(holder);
         int recipeWidth = this.getWidth();
         int recipeHeight = this.getHeight();
-        extension.drawInfo(recipeWidth, recipeHeight, guiGraphics, mouseX, mouseY);
+        recipeExtension.drawInfo(recipeWidth, recipeHeight, graphics, mouseX, mouseY);
 
         IDrawableStatic recipeArrow = helper.getRecipeArrow();
-        recipeArrow.draw(guiGraphics, 61, (height - recipeArrow.getHeight()) / 2);
+        recipeArrow.draw(graphics, 61, (height - recipeArrow.getHeight()) / 2);
     }
 
     @Override
-    public void getTooltip(ITooltipBuilder tooltip, RksRecipe recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
-        IRksCategoryExtension extension = this.extendableHelper.getRecipeExtension(recipe);
-        extension.getTooltip(tooltip, mouseX, mouseY);
+    public void getTooltip(ITooltipBuilder tooltip, RecipeHolder<RksRecipe> holder, IRecipeSlotsView view, double mouseX, double mouseY) {
+        var recipeExtension = this.extendableHelper.getRecipeExtension(holder);
+        recipeExtension.getTooltip(tooltip, holder, mouseX, mouseY);
     }
 
-    @SuppressWarnings({"removal"})
+    @SuppressWarnings("removal")
     @Override
-    public List<Component> getTooltipStrings(RksRecipe recipe, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {
-        IRksCategoryExtension extension = this.extendableHelper.getRecipeExtension(recipe);
-        return extension.getTooltipStrings(mouseX, mouseY);
+    public List<Component> getTooltipStrings(RecipeHolder<RksRecipe> holder, IRecipeSlotsView view, double mouseX, double mouseY) {
+        var recipeExtension = this.extendableHelper.getRecipeExtension(holder);
+
+        return recipeExtension.getTooltipStrings(holder, mouseX, mouseY);
     }
 
-    @SuppressWarnings({"removal"})
+    @SuppressWarnings("removal")
     @Override
-    public boolean handleInput(RksRecipe recipe, double mouseX, double mouseY, InputConstants.Key input) {
-        IRksCategoryExtension extension = this.extendableHelper.getRecipeExtension(recipe);
-        return extension.handleInput(mouseX, mouseY, input);
+    public boolean handleInput(RecipeHolder<RksRecipe> holder, double mouseX, double mouseY, InputConstants.Key input) {
+        var recipeExtension = this.extendableHelper.getRecipeExtension(holder);
+        return recipeExtension.handleInput(mouseX, mouseY, input);
     }
 
     @Override
-    public boolean isHandled(RksRecipe recipe) {
-        return this.extendableHelper.getOptionalRecipeExtension(recipe)
+    public boolean isHandled(RecipeHolder<RksRecipe> holder) {
+        return this.extendableHelper.getOptionalRecipeExtension(holder)
                 .isPresent();
     }
 
     @Override
-    public <R extends RksRecipe> void addCategoryExtension(Class<? extends R> recipeClass, Function<R, ? extends IRksCategoryExtension> extensionFactory) {
-        extendableHelper.addRecipeExtensionFactory(recipeClass, null, extensionFactory);
+    public <R extends RksRecipe> void addExtension(Class<? extends R> clazz, IRksCategoryExtension<R> extension) {
+        extendableHelper.addRecipeExtension(clazz, extension);
     }
 
+    @SuppressWarnings("removal")
     @Override
-    public <R extends RksRecipe> void addCategoryExtension(Class<? extends R> recipeClass, Predicate<R> extensionFilter, Function<R, ? extends IRksCategoryExtension> extensionFactory) {
-        extendableHelper.addRecipeExtensionFactory(recipeClass, extensionFilter, extensionFactory);
-    }
-
-    @Override
-    public ResourceLocation getRegistryName(RksRecipe recipe) {
-        return this.extendableHelper.getOptionalRecipeExtension(recipe)
-                .flatMap(extension -> Optional.ofNullable(extension.getRegistryName()))
-                .orElseGet(recipe::getId);
+    public @Nullable ResourceLocation getRegistryName(RecipeHolder<RksRecipe> holder) {
+        return this.extendableHelper.getOptionalRecipeExtension(holder)
+                .flatMap(extension -> extension.getRegistryName(holder))
+                .orElseGet(holder::id);
     }
 }

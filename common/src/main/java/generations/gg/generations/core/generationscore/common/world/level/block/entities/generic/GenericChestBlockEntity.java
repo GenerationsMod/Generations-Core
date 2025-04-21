@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.container.GenericChestContainer;
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
@@ -87,20 +88,20 @@ public class GenericChestBlockEntity extends RandomizableContainerBlockEntity im
     }
 
     @Override
-    public void load(@NotNull CompoundTag tag) {
-        super.load(tag);
+    public void loadAdditional(@NotNull CompoundTag tag, HolderLookup.Provider provider) {
+        super.loadAdditional(tag, provider);
         this.width = tag.getInt("width");
         this.height = tag.getInt("height");
         this.defaultTranslation = tag.getString("defaultTranslation");
         this.items = NonNullList.withSize(this.getContainerSize(), ItemStack.EMPTY);
         if (!this.tryLoadLootTable(tag))
-            ContainerHelper.loadAllItems(tag, this.items);
+            ContainerHelper.loadAllItems(tag, this.items, provider);
     }
 
     @Override
-    protected void saveAdditional(@NotNull CompoundTag tag) {
-        super.saveAdditional(tag);
-        if (!this.trySaveLootTable(tag)) ContainerHelper.saveAllItems(tag, this.items);
+    protected void saveAdditional(@NotNull CompoundTag tag, HolderLookup.Provider provider) {
+        super.saveAdditional(tag, provider);
+        if (!this.trySaveLootTable(tag)) ContainerHelper.saveAllItems(tag, this.items, provider);
         tag.putInt("width", width);
         tag.putInt("height", height);
         tag.putString("defaultTranslation", defaultTranslation);
