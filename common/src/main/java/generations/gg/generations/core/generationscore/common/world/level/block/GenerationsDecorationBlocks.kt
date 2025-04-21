@@ -14,6 +14,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock.DisplayState
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericDyedVariantBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
+import net.minecraft.core.Holder
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.DyeColor
@@ -118,9 +119,9 @@ object GenerationsDecorationBlocks {
 
     fun <T : DyedVariantBlockEntity<*>, V : DyeableBlock<T, V>> registerDyed(
         name: String,
-        blockSupplier: (DyeColor, Map<DyeColor, Supplier<V>>) -> Supplier<V>
+        blockSupplier: (DyeColor, Map<DyeColor, Holder<Block>>) -> Supplier<V>
     ): DyedGroup<V, T> {
-        val dyeMap = HashMap<DyeColor, RegistrySupplier<V>>()
+        val dyeMap = mutableMapOf<DyeColor, Holder<Block>>()
 
         DyeColor.entries.forEach { dyeColor: DyeColor ->
             val properName = "${dyeColor.serializedName}_$name"

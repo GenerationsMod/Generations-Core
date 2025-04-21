@@ -1,37 +1,44 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks
 
 import dev.architectury.registry.registries.RegistrySupplier
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.AdventureModePredicate
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.DyeItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.LevelReader
+import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.storage.loot.LootParams
 import net.minecraft.world.phys.BlockHitResult
-import java.util.function.BiFunction
+
+fun <T: Any> T.applyIfTrue(predicate: (T) -> Boolean, action: (T) -> T): T {
+    if(predicate.invoke(this)) return action.invoke(this)
+    return this
+}
 
 abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V>> : GenericRotatableModelBlock<T> {
     @JvmField
     val color: DyeColor
-    private val function: Map<DyeColor, RegistrySupplier<V>>
+    protected val function: Map<DyeColor, Holder<Block>>
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, RegistrySupplier<V>>,
+        function: Map<DyeColor, Holder<Block>>,
         biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
@@ -46,7 +53,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, RegistrySupplier<V>>,
+        function: Map<DyeColor, Holder<Block>>,
         biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
@@ -58,7 +65,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, RegistrySupplier<V>>,
+        function: Map<DyeColor, Holder<Block>>,
         biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
         arg: Properties,
         model: ResourceLocation,
@@ -72,7 +79,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, RegistrySupplier<V>>,
+        function: Map<DyeColor, Holder<Block>>,
         biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
         arg: Properties,
         model: ResourceLocation
@@ -113,11 +120,11 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     }
 
     fun getItemFromDyeColor(color: DyeColor): Item {
-        return getBlockFromDyeColor(color)!!.asItem()
+        return getBlockFromDyeColor(color).asItem()
     }
 
-    fun getBlockFromDyeColor(color: DyeColor): V {
-        return function[color]!!.get()
+    fun getBlockFromDyeColor(color: DyeColor): Block {
+        return function[color]!!.value()
     }
 
     fun tryDyeColor(
@@ -147,9 +154,9 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
                     if (!player.isCreative) heldItem.shrink(1)
 
-                    val newBlock = getBlockFromDyeColor(dyeColor)
+                    val newBlock = getBlockFromDyeColor(dyeColor).instanceOrNull<DyeableBlock<*, *>>() ?: return false //TODO: This is a stop gap due to codec(). Yea its that expansive.
 
-                    val defaultState = newBlock!!.defaultBlockState().setValue(FACING, baseState.getValue(FACING))
+                    val defaultState = newBlock.defaultBlockState().applyIfTrue({ it.hasProperty(FACING) }, { it.setValue(FACING, baseState.getValue(FACING)) } )
 
                     val dir = state.getValue(FACING)
 

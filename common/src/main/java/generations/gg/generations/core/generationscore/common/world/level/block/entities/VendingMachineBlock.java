@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.api.player.PlayerMoneyHandler;
 import generations.gg.generations.core.generationscore.common.network.packets.shop.S2COpenShopPacket;
@@ -9,6 +11,8 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
@@ -18,6 +22,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -34,7 +39,7 @@ public class VendingMachineBlock extends DyeableBlock<VendingMachineBlockEntity,
     public static GenerationsVoxelShapes.DirectionalShapes LOWER = GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.join(Shapes.join(Shapes.box(0.0625, 0, 0.15625, 0.9375, 0.0625, 0.875), Shapes.box(0, 0.026875, 0.04999999999999999, 1, 1, 0.9375), BooleanOp.OR), Shapes.box(0.14687499999999998, 0.21875, 0, 0.865625, 0.546875, 0.0625), BooleanOp.OR), Shapes.box(0.15000000000000002, 0.671875, 0.01874999999999999, 0.86875, 1, 0.08124999999999999), BooleanOp.OR), Direction.SOUTH);
     public static GenerationsVoxelShapes.DirectionalShapes UPPER = GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.join(Shapes.join(Shapes.box(0.0625, 0, 0.15625, 0.9375, 0.0625, 0.875), Shapes.box(0, 0, 0.04999999999999999, 1, 1, 0.9375), BooleanOp.OR), Shapes.box(0.15000000000000002, 0, 0.01874999999999999, 0.86875, 0.84375, 0.08124999999999999), BooleanOp.OR), Direction.SOUTH);
 
-    public VendingMachineBlock(DyeColor color, Map<DyeColor, RegistrySupplier<VendingMachineBlock>> function, Properties properties) {
+    public VendingMachineBlock(DyeColor color, Map<DyeColor, Holder<Block>> function, Properties properties) {
         super(color, function, GenerationsBlockEntities.VENDING_MACHINE, properties, GenerationsBlockEntityModels.VENDING_MACHINE, 0, 1, 0);
     }
 
@@ -59,7 +64,11 @@ public class VendingMachineBlock extends DyeableBlock<VendingMachineBlockEntity,
         return ItemInteractionResult.SUCCESS;
     }
 
-    public static final MapCodec<VendingMachineBlockEntity> CODEC = simpleCodec(VendingMachineBlock::new)
+    public static final MapCodec<VendingMachineBlock> CODEC = RecordCodecBuilder.<VendingMachineBlock>mapCodec(instance -> instance.group(
+            DyeColor.CODEC.fieldOf("color").forGetter(a -> a.color),
+            Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("function").forGetter(a -> a.getFunction()),
+            propertiesCodec()
+    ).apply(instance, VendingMachineBlock::new));
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
