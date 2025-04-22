@@ -21,9 +21,6 @@ import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockState
-import net.minecraftforge.client.model.generators.*
-import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile
-import net.minecraftforge.registries.ForgeRegistries
 import java.util.*
 import java.util.function.Consumer
 
@@ -512,7 +509,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
     }
 
     private fun <V : DyeableBlock<T, V>, T : ModelProvidingBlockEntity?> registerDyeGroup(
-        group: DyedGroup<V, T>,
+        group: DyedGroup,
         dir: String
     ) {
         group.block.values.stream().map { obj: RegistrySupplier<V> -> obj.get() }.forEach { block: V ->

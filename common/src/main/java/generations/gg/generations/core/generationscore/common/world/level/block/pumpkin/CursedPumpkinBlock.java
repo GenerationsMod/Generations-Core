@@ -1,19 +1,16 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.pumpkin;
 
+import com.mojang.serialization.MapCodec;
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -25,6 +22,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.function.Function;
 
 /**
  * @author JT122406
@@ -63,5 +62,4 @@ public class CursedPumpkinBlock extends PumpkinBlock {
     public @NotNull AttachedStemBlock getAttachedStem() {
         return (AttachedStemBlock)Blocks.ATTACHED_PUMPKIN_STEM;
     }
-
 }

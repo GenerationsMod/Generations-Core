@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
@@ -9,21 +8,24 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.core.Holder
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class StreetLampBlock(color: DyeColor, function: Map<DyeColor, RegistrySupplier<StreetLampBlock>>, properties: Properties) : DyeableBlock<StreetLampBlockEntity, StreetLampBlock>(color, function, GenerationsBlockEntities.STREET_LAMP, properties, GenerationsBlockEntityModels.STREET_LAMP, 0, 1, 0) {
+class StreetLampBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock<StreetLampBlockEntity, StreetLampBlock>(properties, color, function, GenerationsBlockEntities.STREET_LAMP, GenerationsBlockEntityModels.STREET_LAMP, 0, 1, 0) {
 
     public override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape = SHAPE.getShape(state)
 
     override fun getVariant(): String? = null
 
     companion object {
+        val CODEC = simpleDyedCodec(::StreetLampBlock)
+
         private val SHAPE: GenericRotatableShapes = GenerationsVoxelShapes.generateRotationalVoxelShape(
             Shapes.or(
                 Shapes.box(0.34375, 0.0, 0.34375, 0.65625, 0.25, 0.65625),
@@ -38,7 +40,7 @@ class StreetLampBlock(color: DyeColor, function: Map<DyeColor, RegistrySupplier<
         )
     }
 
-    override fun codec(): MapCodec<out BaseEntityBlock> {
+    override fun codec(): MapCodec<StreetLampBlock> {
         return CODEC
     }
 }

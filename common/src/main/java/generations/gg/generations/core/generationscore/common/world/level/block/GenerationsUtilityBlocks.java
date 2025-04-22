@@ -9,12 +9,12 @@ import generations.gg.generations.core.generationscore.common.util.GenerationsIt
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils;
 import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedPcBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericBlastFurnaceBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericFurnaceBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericSmokerBlock;
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.*;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
@@ -51,7 +51,7 @@ public class GenerationsUtilityBlocks {
 
 	public static final RegistrySupplier<Block> SCARECROW = registerBlockItem("scarecrow", () -> new ScarecrowBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD).dynamicShape().noOcclusion()));
 
-	public static final DyedGroup<DyedPcBlock, DyedPcBlockEntity> PC = registerDyed("pc", (color, dyeColorRegistrySupplierMap) -> () -> new DyedPcBlock(color, dyeColorRegistrySupplierMap, BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
+	public static final DyedGroup PC = registerDyed("pc", (color, dyeColorRegistrySupplierMap) -> () -> new DyedPcBlock(color, dyeColorRegistrySupplierMap, BlockBehaviour.Properties.of().noOcclusion().requiresCorrectToolForDrops().strength(2f).lightLevel(PcBlock.Companion::lumiance)));
 
 	public static final RegistrySupplier<Block> WHITE_ELEVATOR = registerBlockItem("white_elevator", ElevatorBlock::new);
 	public static final RegistrySupplier<Block> LIGHT_GRAY_ELEVATOR = registerBlockItem("light_gray_elevator", ElevatorBlock::new);
@@ -132,19 +132,19 @@ public class GenerationsUtilityBlocks {
 		return GenerationsUtils.registerBlock(UTILITY_BLOCKS, name, blockSupplier);
 	}
 
-	public static <T extends ModelProvidingBlockEntity, V extends DyeableBlock<T, V>> DyedGroup<V,T> registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<V>>, Supplier<V>> blockSupplier) {
+	public static <T extends ModelProvidingBlockEntity> DyedGroup registerDyed(String name, BiFunction<DyeColor, Map<DyeColor, RegistrySupplier<Block>>, Supplier<Block>> blockSupplier) {
 
-		var dyeMap = new HashMap<DyeColor, RegistrySupplier<V>>();
+		var dyeMap = new HashMap<DyeColor, Holder<Block>>();
 
 		Arrays.stream(DyeColor.values()).forEach(dyeColor -> {
 			var properName = dyeColor.getSerializedName() + "_" + name;
-			RegistrySupplier<V> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
+			RegistrySupplier<Block> block = registerBlock(properName, blockSupplier.apply(dyeColor, dyeMap));
 
 			register(properName, properties -> new BlockItem(block.get(), properties));
 			dyeMap.put(dyeColor, block);
 		});
 
-		return new DyedGroup<>(dyeMap);
+		return new DyedGroup(dyeMap);
 	}
 
 

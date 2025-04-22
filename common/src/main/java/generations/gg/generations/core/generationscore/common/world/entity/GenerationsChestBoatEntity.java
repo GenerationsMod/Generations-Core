@@ -1,8 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.entity;
 
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
@@ -22,6 +24,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.storage.loot.LootTable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,7 +32,7 @@ public class GenerationsChestBoatEntity extends GenerationsBoatEntity implements
     private static final int CONTAINER_SIZE = 27;
     private NonNullList<ItemStack> itemStacks;
     @Nullable
-    private ResourceLocation lootTable;
+    private ResourceKey<LootTable> lootTable;
     private long lootTableSeed;
 
     public GenerationsChestBoatEntity(EntityType<? extends GenerationsChestBoatEntity> entityType, Level level) {
@@ -55,12 +58,12 @@ public class GenerationsChestBoatEntity extends GenerationsBoatEntity implements
 
     protected void addAdditionalSaveData(CompoundTag compoundTag) {
         super.addAdditionalSaveData(compoundTag);
-        this.addChestVehicleSaveData(compoundTag);
+        this.addChestVehicleSaveData(compoundTag, this.registryAccess());
     }
 
     protected void readAdditionalSaveData(CompoundTag compoundTag) {
         super.readAdditionalSaveData(compoundTag);
-        this.readChestVehicleSaveData(compoundTag);
+        this.readChestVehicleSaveData(compoundTag, this.registryAccess());
     }
 
     public void destroy(DamageSource damageSource) {
@@ -147,13 +150,13 @@ public class GenerationsChestBoatEntity extends GenerationsBoatEntity implements
         this.unpackChestVehicleLootTable(player);
     }
 
-    @Nullable
-    public ResourceLocation getLootTable() {
+    public ResourceKey<LootTable> getLootTable() {
         return this.lootTable;
     }
 
-    public void setLootTable(@Nullable ResourceLocation resourceLocation) {
-        this.lootTable = resourceLocation;
+    @Override
+    public void setLootTable(@Nullable ResourceKey<LootTable> lootTable) {
+        this.lootTable = lootTable;
     }
 
     public long getLootTableSeed() {

@@ -7,9 +7,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -27,6 +30,11 @@ public class SittableEntity extends Entity {
     public SittableEntity(EntityType<? extends Entity> type, Level level) {
         super(type, level);
         this.noPhysics = true;
+    }
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+
     }
 
     private SittableEntity(Level level, BlockPos pos, double offset, float yaw) {
@@ -70,15 +78,16 @@ public class SittableEntity extends Entity {
 //    }
 
     @Override
-    protected void defineSynchedData() {}
-
-    @Override
     protected void readAdditionalSaveData(@NotNull CompoundTag compound) {}
 
     @Override
     protected void addAdditionalSaveData(@NotNull CompoundTag compound) {}
 
     @Override
+    public Vec3 getPassengerRidingPosition(Entity entity) {
+        return super.getPassengerRidingPosition(entity).add(0.0, getPassengersRidingOffset(), 0.0);
+    }
+
     public double getPassengersRidingOffset()
     {
         return 0.0;
@@ -91,27 +100,27 @@ public class SittableEntity extends Entity {
     }
 
     // Call to mount the player to a newly created SittableEntity
-    public static InteractionResult mount(Level level, BlockPos pos, double yOffset, Player player, float direction) {
+    public static ItemInteractionResult mount(Level level, BlockPos pos, double yOffset, Player player, float direction) {
         if(level instanceof ServerLevel serverLevel) {
             List<SittableEntity> seats = level.getEntitiesOfClass(SittableEntity.class, new AABB(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1.0, pos.getY() + 1.0, pos.getZ() + 1.0));
             if(seats.isEmpty()) {
                 SittableEntity seat = new SittableEntity(level, pos, yOffset, direction);
                 if(level.addFreshEntity(seat)) {
                     player.startRiding(seat);
-                    return InteractionResult.SUCCESS;
+                    return ItemInteractionResult.SUCCESS;
                 } else {
-                    return InteractionResult.FAIL;
+                    return ItemInteractionResult.FAIL;
                 }
             }
         }
 
-        return InteractionResult.PASS;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 
 
     @Override
-    public @NotNull Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return NetworkManager.createAddEntityPacket(this);
+    public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity entity) {
+        return NetworkManager.createAddEntityPacket(this, entity);
     }
 
     // Tick the key and check if the block is removed or if there are no more passengers

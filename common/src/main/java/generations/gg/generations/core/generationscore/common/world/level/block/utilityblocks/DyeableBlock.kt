@@ -1,13 +1,19 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks
 
+import com.mojang.datafixers.Products
+import com.mojang.serialization.Codec
+import com.mojang.serialization.MapCodec
+import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedVariantBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.Holder
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
@@ -64,10 +70,10 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     }
 
     constructor(
+        arg: Properties,
         color: DyeColor,
         function: Map<DyeColor, Holder<Block>>,
         biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
-        arg: Properties,
         model: ResourceLocation,
         width: Int,
         height: Int,
@@ -220,5 +226,17 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     override fun getVariant(): String? {
         return color.serializedName
+    }
+
+    companion object {
+        fun <T: DyeableBlock<*, *>> simpleDyedCodec(supplier: (Properties, DyeColor, Map<DyeColor, Holder<Block>>) -> T): MapCodec<T> = RecordCodecBuilder.mapCodec<T> { dyedCodecBuilder(it).apply(it, supplier::invoke) }
+
+        fun <T: DyeableBlock<*, *>> dyedCodecBuilder(instance: RecordCodecBuilder.Instance<T>): Products.P3<RecordCodecBuilder.Mu<T>, Properties, DyeColor, MutableMap<DyeColor, Holder<Block>>> {
+            return instance.group(
+                propertiesCodec(),
+                DyeColor.CODEC.fieldOf("color").forGetter { it.color },
+                Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("function").forGetter { it.function }
+            )
+        }
     }
 }

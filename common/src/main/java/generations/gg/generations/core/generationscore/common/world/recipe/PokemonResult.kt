@@ -4,17 +4,14 @@ import com.cobblemon.mod.common.Cobblemon.storage
 import com.cobblemon.mod.common.api.moves.BenchedMove
 import com.cobblemon.mod.common.api.moves.MoveTemplate
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies.getByIdentifier
 import com.cobblemon.mod.common.api.pokemon.moves.Learnset
-import com.cobblemon.mod.common.api.storage.NoPokemonStoreException
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
-import generations.gg.generations.core.generationscore.common.world.level.block.RksMachineBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock.Companion.FACING
 import net.minecraft.network.FriendlyByteBuf
@@ -29,8 +26,8 @@ import java.util.function.Function
 
 private val Learnset.allMoves: MutableList<MoveTemplate>
     get() {
-        var moveList = mutableListOf<MoveTemplate>()
-        moveList += this.levelUpMoves.values.flatMap { it }.toMutableList()
+        val moveList = mutableListOf<MoveTemplate>()
+        moveList += this.levelUpMoves.values.flatten().toMutableList()
         moveList += this.tmMoves
         moveList += this.tutorMoves
         moveList += this.evolutionMoves
@@ -55,7 +52,7 @@ data class PokemonResult(
     }
 
     override fun process(player: Player, rksMachineBlockEntity: RksMachineBlockEntity, stack: ItemStack) {
-        var pokemon: Pokemon? = null
+        val pokemon: Pokemon?
 
         if (usePokemonInCapsule && rksMachineBlockEntity.pokemon.isPresent) {
             val properties = PokemonProperties()
@@ -64,23 +61,23 @@ data class PokemonResult(
 
             pokemon = rksMachineBlockEntity.pokemon.get()
             properties.apply(pokemon)
-            var list = pokemon.form.moves.allMoves
+            val list = pokemon.form.moves.allMoves
 
             pokemon.benchedMoves.doThenEmit {
                 val movesToRemove = mutableListOf<BenchedMove>()
 
-                pokemon!!.benchedMoves.forEach {
+                pokemon.benchedMoves.forEach {
                     if(!list.contains(it.moveTemplate)) movesToRemove.add(it)
                 }
 
-                movesToRemove.forEach { pokemon!!.benchedMoves.remove(it) }
+                movesToRemove.forEach { pokemon.benchedMoves.remove(it) }
 
             }
 
             var slot: Int? = null
 
             pokemon.moveSet.doWithoutEmitting {
-                val moveset = pokemon!!.moveSet;
+                val moveset = pokemon.moveSet
 
                 moveset[0]?.takeIf { !list.contains(it.template) }?.let {
                     if (slot != null) {
@@ -112,12 +109,12 @@ data class PokemonResult(
                 }
             }
 
-            var moveset = pokemon.moveSet
+            val moveset = pokemon.moveSet
 
             if(slot != null && moveset.filterIndexed { i,_ -> i != slot }.isEmpty()) {
-                var first = pokemon.allAccessibleMoves.first()
+                val first = pokemon.allAccessibleMoves.first()
 
-                pokemon.exchangeMove(moveset.get(slot!!)!!.template, first)
+                pokemon.exchangeMove(moveset[slot!!]!!.template, first)
             } else {
                 pokemon.initializeMoveset()
             }
