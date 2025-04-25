@@ -1,15 +1,17 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
+import generations.gg.generations.core.generationscore.common.util.extensions.get
+import generations.gg.generations.core.generationscore.common.util.extensions.set
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.TmDetails
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.ItemStack
 
 class CustomTechnicalMachineItem(properties: Properties) : MoveTeachingItem(properties) {
-    override fun getMoveString(itemStack: ItemStack?): String? {
-        val tag = itemStack!!.tag
+    override fun getMoveString(itemStack: ItemStack): String? {
+        val tag = itemStack.get(GenerationsItemComponents.TM_DETAILS)
         if (tag != null) {
-            if (tag.contains("move")) {
-                return tag.getString("move")
-            }
+            return tag.move
         }
         return null
     }
@@ -23,8 +25,8 @@ class CustomTechnicalMachineItem(properties: Properties) : MoveTeachingItem(prop
     }
 
     private fun getNumber(itemStack: ItemStack): String {
-        val tag = itemStack.tag
-        return formatWithZeros(if (tag != null && tag.contains("number")) tag.getInt("number") else 0)
+        val tag = itemStack.get(GenerationsItemComponents.TM_DETAILS)
+        return (tag?.number ?: 0).let(::formatWithZeros)
     }
 
     private fun formatWithZeros(number: Int): String {
@@ -33,11 +35,7 @@ class CustomTechnicalMachineItem(properties: Properties) : MoveTeachingItem(prop
         return if (zerosNeeded > 0) "0".repeat(zerosNeeded) + formattedNumber else formattedNumber.substring(0, 3)
     }
 
-    fun createTm(number: Int, move: String): ItemStack {
-        val stack = GenerationsItems.CUSTOM_TM.get().defaultInstance
-        val tag = stack.getOrCreateTag()
-        tag.putInt("number", number)
-        tag.putString("move", move)
-        return stack
+    fun createTm(move: String, number: Int): ItemStack {
+        return GenerationsItems.CUSTOM_TM.get().defaultInstance.also { it.set(GenerationsItemComponents.TM_DETAILS, TmDetails(move, number)) }
     }
 }

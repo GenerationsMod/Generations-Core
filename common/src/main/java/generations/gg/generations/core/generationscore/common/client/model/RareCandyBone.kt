@@ -43,7 +43,7 @@ private val RenderContext.species: Species?
     get() = this.request(RenderContext.SPECIES)?.let { PokemonSpecies.getByIdentifier(it) }
 
 class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assumes Bone will always be a ModelPart */(
-    location: ResourceLocation) : Supplier<Bone>, Bone {
+    location: ResourceLocation): ModelPart(CUBE_LIST, BLANK_MAP), Supplier<Bone>, Bone {
     private val objectSupplier: () -> CompiledModel?
     private val spriteProvider: (RenderState, String) -> ResourceLocation
 
@@ -180,9 +180,9 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     fun getSprite(context: RenderContext): ResourceLocation = getVariant(context)?.let { spriteProvider.invoke(context.requires(RenderContext.RENDER_STATE), it) } ?: MissingTextureAtlasSprite.getLocation()
 
     companion object {
-        //        val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
-//        private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
-//        private val temp = Vector3f()
+                val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
+        private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
+        private val temp = Vector3f()
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)
         private val DUMMY = emptyMap<String, Bone>()
     }

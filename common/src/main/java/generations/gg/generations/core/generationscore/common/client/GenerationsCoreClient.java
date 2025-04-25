@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client;
 
-import com.cobblemon.mod.common.CobblemonItems;
 import com.cobblemon.mod.common.api.Priority;
 import com.cobblemon.mod.common.api.spawning.TimeRange;
 import com.cobblemon.mod.common.api.types.ElementalTypes;
@@ -23,7 +22,6 @@ import generations.gg.generations.core.generationscore.common.client.model.Gener
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone;
 import generations.gg.generations.core.generationscore.common.client.model.RunnableKeybind;
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer;
-import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRenderer;
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.*;
 import generations.gg.generations.core.generationscore.common.client.render.entity.*;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.MinecraftClientGameProvider;
@@ -34,9 +32,7 @@ import generations.gg.generations.core.generationscore.common.world.container.Ge
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity;
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities;
 import generations.gg.generations.core.generationscore.common.world.item.*;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData;
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
-import generations.gg.generations.core.generationscore.common.world.item.curry.ItemCurry;
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWoodTypes;
@@ -46,6 +42,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader;
 import gg.generations.rarecandy.renderer.rendering.RareCandy;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
+import kotlin.Pair;
 import kotlin.Unit;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -68,15 +65,12 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Position;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.util.Tuple;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -114,13 +108,14 @@ public class GenerationsCoreClient {
 
         ITextureLoader.setInstance(GenerationsTextureLoader.INSTANCE);
 
-        var renderer = TimeCapsuleItemRenderer.INSTANCE;
-
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
-        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(CobblemonItems.POKEMON_MODEL, renderer);
+//        TODO: Readd
+//        var renderer = TimeCapsuleItemRenderer.INSTANCE;
+//
+//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
+//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
+//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
+//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
+//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(CobblemonItems.POKEMON_MODEL, renderer);
 
 //      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
         GenerationsCoreClient.setupClient(minecraft);
@@ -131,7 +126,7 @@ public class GenerationsCoreClient {
 
         PokeBallModelRepository.INSTANCE.inbuilt("strange_ball", PokeBallModel::new);
 
-        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Tuple<>(new ResourceLocation(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation)))));
+        VaryingModelRepository.Companion.registerFactory(".pk", (resourceLocation, resource) -> new Pair<>(ResourceLocation.fromNamespaceAndPath(resourceLocation.getNamespace(), new File(resourceLocation.getPath()).getName()), b -> (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation)))));
 
 //        GenerationsCore.implementation.registerResourceReloader(
 //                id("texture_loader"),
@@ -182,7 +177,7 @@ public class GenerationsCoreClient {
         });
 
         register(GenerationsItems.CURRY.get(), GenerationsCore.id("curry_type"), (arg, arg2, arg3, i) -> {
-            return ItemCurry.getData(arg).getCurryType().ordinal() / 100f;
+            return arg.get(GenerationsItemComponents.INSTANCE.getCURRY_DATA().get()).getCurryType().ordinal() / 100f;
         });
         register(GenerationsItems.MELODY_FLUTE.get(), GenerationsCore.id("flute_type"), (arg, arg2, arg3, i) -> {
             ItemStack stack = MelodyFluteItem.getImbuedItem(arg);
@@ -344,12 +339,12 @@ public class GenerationsCoreClient {
     }
 
     public static Unit onLogin(ClientPlayerEvent.Login login) {
-        GenerationsDataProvider.INSTANCE.canReload = false;
+//        GenerationsDataProvider.INSTANCE.canReload = false;
         return Unit.INSTANCE;
     }
 
     public static Unit onLogout(ClientPlayerEvent.Logout logout) {
-        GenerationsDataProvider.INSTANCE.canReload = true;
+//        GenerationsDataProvider.INSTANCE.canReload = true;
         return Unit.INSTANCE;
     }
 
@@ -425,10 +420,10 @@ public class GenerationsCoreClient {
             f /= f3;
             f1 /= f3;
             f2 /= f3;
-            vertexConsumer.vertex(pose.pose(), (float) (x1 + x), (float) (y1 + y), (float) (z1 + z))
-                    .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
-            vertexConsumer.vertex(pose.pose(), (float) (x2 + x), (float) (y2 + y), (float) (z2 + z))
-                    .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
+            vertexConsumer.addVertex(pose.pose(), (float) (x1 + x), (float) (y1 + y), (float) (z1 + z))
+                    .setColor(color.x(), color.y(), color.z(), color.w()).setNormal(pose, f, f1, f2);
+            vertexConsumer.addVertex(pose.pose(), (float) (x2 + x), (float) (y2 + y), (float) (z2 + z))
+                    .setColor(color.x(), color.y(), color.z(), color.w()).setNormal(pose, f, f1, f2);
         });
     }
 
@@ -441,10 +436,10 @@ public class GenerationsCoreClient {
         f /= f3;
         f1 /= f3;
         f2 /= f3;
-        vertexConsumer.vertex(pose.pose(), (float) (pos1.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos1.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos1.z + (blockPos.getZ() - camPos.z + 0.5)))
-                .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
-        vertexConsumer.vertex(pose.pose(), (float) (pos2.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos2.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos2.z + (blockPos.getZ() - camPos.z + 0.5)))
-                .color(color.x(), color.y(), color.z(), color.w()).normal(pose.normal(), f, f1, f2).endVertex();
+        vertexConsumer.addVertex(pose.pose(), (float) (pos1.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos1.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos1.z + (blockPos.getZ() - camPos.z + 0.5)))
+                .setColor(color.x(), color.y(), color.z(), color.w()).setNormal(pose, f, f1, f2);
+        vertexConsumer.addVertex(pose.pose(), (float) (pos2.x + (blockPos.getX() - camPos.x + 0.5)), (float) (pos2.y + (blockPos.getY() + 0.5 - camPos.y)), (float) (pos2.z + (blockPos.getZ() - camPos.z + 0.5)))
+                .setColor(color.x(), color.y(), color.z(), color.w()).setNormal(pose, f, f1, f2);
     }
 
 
@@ -461,7 +456,7 @@ public class GenerationsCoreClient {
         assert level != null;
         level.getProfiler().popPush("render_models");
         RenderSystem.enableDepthTest();
-//        BufferUploader.reset();
+        BufferUploader.reset();
 
 
 
@@ -471,7 +466,7 @@ public class GenerationsCoreClient {
     }
 
     private static boolean shouldRenderFpsPie() {
-        return Minecraft.getInstance().options.renderDebug && Minecraft.getInstance().options.renderDebugCharts && !Minecraft.getInstance().options.hideGui;
+        return Minecraft.getInstance().options.reducedDebugInfo().get() /*&& Minecraft.getInstance().options.renderDebugCharts*/ && !Minecraft.getInstance().options.hideGui;
     }
 
 }

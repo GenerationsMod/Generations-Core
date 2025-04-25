@@ -47,5 +47,5 @@ abstract class MoveTeachingItem(properties: Properties) : Item(properties), Poke
 
     fun getMove(itemStack: ItemStack?): MoveTemplate? = getMoveString(itemStack)?.let(::getByName)
 
-    protected abstract fun getMoveString(itemStack: ItemStack?): String?
+    protected abstract fun getMoveString(itemStack: ItemStack): String?
 }

@@ -7,6 +7,8 @@ import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor.ArmorSet
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import generations.gg.generations.core.generationscore.common.world.level.block.*
+import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.core.registries.Registries
 import net.minecraft.data.PackOutput
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
@@ -14,17 +16,16 @@ import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
-import net.minecraftforge.client.model.generators.ItemModelBuilder
-import net.minecraftforge.client.model.generators.ItemModelProvider
-import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile
-import net.minecraftforge.common.data.ExistingFileHelper
-import net.minecraftforge.registries.ForgeRegistries
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder
+import net.neoforged.neoforge.client.model.generators.ItemModelProvider
+import net.neoforged.neoforge.client.model.generators.ModelFile
+import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile
+import net.neoforged.neoforge.common.data.ExistingFileHelper
 import java.util.*
 import java.util.function.BiConsumer
 import java.util.function.Consumer
 
-class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper) :
-    ItemModelProvider(packOutput, GenerationsCore.MOD_ID, existingFileHelper) {
+class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper) : ItemModelProvider(packOutput, GenerationsCore.MOD_ID, existingFileHelper) {
 
     override fun registerModels() {
 //        createItem(GenerationsItems.HP_UP.get(), "restoration/");
@@ -94,23 +95,13 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createHeldItem(GenerationsItems.LUCKY_PUNCH.get())
         createHeldItem(GenerationsItems.LUMINOUS_MOSS.get())
         createHeldItem(GenerationsItems.MACHO_BRACE.get())
-        createHeldItem(GenerationsItems.METRONOME.get())
         createHeldItem(GenerationsItems.POKE_DOLL.get())
         createHeldItem(GenerationsItems.POKE_TOY.get())
-        createHeldItem(GenerationsItems.PROTECTIVE_PADS.get())
-        createHeldItem(GenerationsItems.ROOM_SERVICE.get())
-        createHeldItem(GenerationsItems.SCOPE_LENS.get())
-        createHeldItem(GenerationsItems.SHED_SHELL.get())
         createHeldItem(GenerationsItems.SNOWBALL.get())
         createHeldItem(GenerationsItems.SOUL_DEW.get())
-        createHeldItem(GenerationsItems.TERRAIN_EXTENDER.get())
         createHeldItem(GenerationsItems.THICK_CLUB.get())
-        createHeldItem(GenerationsItems.THROAT_SPRAY.get())
         createHeldItem(GenerationsItems.UP_GRADE.get())
-        createHeldItem(GenerationsItems.UTILITY_UMBRELLA.get())
         createHeldItem(GenerationsItems.WHITE_FLUTE.get())
-        createHeldItem(GenerationsItems.WIDE_LENS.get())
-        createHeldItem(GenerationsItems.ZOOM_LENS.get())
 
         createHeldItem(GenerationsItems.BURN_DRIVE.get(), "drives/")
         createHeldItem(GenerationsItems.CHILL_DRIVE.get(), "drives/")
@@ -247,10 +238,6 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createHeldItem(GenerationsItems.TAPUNIUM_Z.get(), "zcrystals/")
         createHeldItem(GenerationsItems.ULTRANECROZIUM_Z.get(), "zcrystals/")
 
-        createHeldItem(GenerationsItems.ELECTRIC_SEED.get())
-        createHeldItem(GenerationsItems.MISTY_SEED.get())
-        createHeldItem(GenerationsItems.GRASSY_SEED.get())
-        createHeldItem(GenerationsItems.PSYCHIC_SEED.get())
         createHeldItem(GenerationsItems.RED_SCARF.get())
 
         createHeldItem(GenerationsItems.PUNCHING_GLOVE.get())
@@ -347,7 +334,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.ULTRITE_REMNANT.get(), "natural/")
 
         GenerationsArmor.ARMOR.forEach(Consumer { armor: RegistrySupplier<Item> -> createItem(armor.get(), "armor/") })
-        GenerationsTools.TOOLS.forEach(Consumer { tool: RegistrySupplier<Item?> -> handheldItem(tool.get()) })
+        GenerationsTools.TOOLS.forEach(Consumer { tool: RegistrySupplier<Item> -> handheldItem(tool.get()) })
 
         createItem(GenerationsItems.MARK_CHARM.get(), "player_items/")
         createItem(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), "player_items/")
@@ -1042,24 +1029,6 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createEntityModelItem(GenerationsItems.ENTEI_STATUE.get())
     }
 
-    private fun createArmor(set: ArmorSet) {
-        set.stream().forEach { itemSupplier ->
-            createItem(itemSupplier.get(), "armor/") {
-                var type = (itemSupplier.get() as ArmorItem).type.name
-                var model = itemSupplier.get().getModelKey()
-                itemTrim(0.1f, model, type, "iron")
-            }
-        }
-    }
-
-    private fun ItemModelBuilder.itemTrim(value: Float, model: ResourceLocation, type: String, material: String): ItemModelBuilder {
-        return override("trim_type".asResource(), value, generated("${model}_${material}_trim", model.withPrefix("item/armor/")) {
-            var resource = "trims/items/${type}_trim_$material".asResource().also { existingFileHelper.trackGenerated(it, TEXTURE) }
-            texture("layer1", resource) //TODO: Add custom trim texture overlays?
-
-        })
-    }
-
     private fun createFishingRodItem(rod: TieredFishingRodItem) {
         val rodKey = rod.getModelKey()
         model(rodKey.path) {
@@ -1103,7 +1072,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
     private fun registerDisc(id: ResourceLocation) {
         this.singleTexture(
             id.path,
-            ResourceLocation("item/generated"),
+            ResourceLocation.parse("item/generated"),
             "layer0",
             GenerationsCore.id("item/discs/" + id.path)
         )
@@ -1124,13 +1093,9 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         val model = generated(tm.getModelKey().path, GenerationsCore.id("item/tms/tm_normal"))
 
         val consumer = { name: String, i: Float ->
-                val typeModel = generated(
-                    "item/tms/tm_$name", GenerationsCore.id(
-                        "item/tms/tm_$name"
-                    )
-                )
-                model.override().model(typeModel).predicate(GenerationsCore.id("type"), i!!).end()
-            }
+            val typeModel = generated("item/tms/tm_$name", GenerationsCore.id("item/tms/tm_$name"))
+            model.override().model(typeModel).predicate(GenerationsCore.id("type"), i).end()
+        }
 
         consumer.invoke("normal", 0.00f)
         consumer.invoke("fire", 0.01f)
@@ -1209,12 +1174,12 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         consumer.accept("cresselia_shrine", 0.1f)
     }
 
-    private fun getKey(item: Item?): ResourceLocation? {
-        return ForgeRegistries.ITEMS.getKey(item)
+    private fun getKey(item: Item): ResourceLocation {
+        return BuiltInRegistries.ITEM.getKey(item)
     }
 
     private fun createTmMaterial(material: Item) {
-        generated(getKey(material)!!.path, GenerationsCore.id("item/tms/tm_material"))
+        generated(getKey(material).path, GenerationsCore.id("item/tms/tm_material"))
     }
 
     private fun createHeldItem(held: Item, directory: String = "") {
@@ -1279,32 +1244,32 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
 
     fun generated(name: String, model: ResourceLocation, block: ItemModelBuilder.() -> Unit = {}): ItemModelBuilder {
         try {
-            return this.singleTexture(name, ResourceLocation("item/generated"), "layer0", model).also(block)
+            return this.singleTexture(name, ResourceLocation.parse("item/generated"), "layer0", model).also(block)
         } catch (e: Exception) {
             LOGGER.error("Item: $name -> $model")
             return this.singleTexture(
                 name,
-                ResourceLocation("item/generated"),
+                ResourceLocation.parse("item/generated"),
                 "layer0",
                 GenerationsCore.id("item/placeholder")
             )
         }
     }
 
-    private fun handheldItem(item: Item?) {
+    override fun handheldItem(item: Item): ItemModelBuilder {
         try {
-            withExistingParent(
-                getKey(item)!!.path,
-                ResourceLocation("item/handheld")
+            return withExistingParent(
+                getKey(item).path,
+                ResourceLocation.parse("item/handheld")
             ).texture(
                 "layer0",
-                ResourceLocation(GenerationsCore.MOD_ID, "item/tools/" + getKey(item)!!.path)
+                ResourceLocation.fromNamespaceAndPath(GenerationsCore.MOD_ID, "item/tools/" + getKey(item).path)
             )
         } catch (e: Exception) {
             LOGGER.error("Item: " + getKey(item))
-            this.singleTexture(
-                getKey(item)!!.path,
-                ResourceLocation("item/generated"),
+            return this.singleTexture(
+                getKey(item).path,
+                ResourceLocation.parse("item/generated"),
                 "layer0",
                 GenerationsCore.id("item/placeholder")
             )

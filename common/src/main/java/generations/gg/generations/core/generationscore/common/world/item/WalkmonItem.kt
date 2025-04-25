@@ -4,7 +4,6 @@ import com.cobblemon.mod.common.CobblemonNetwork.sendPacketToPlayer
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.menu.MenuRegistry
-import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork.sendPacketToPlayer
 import generations.gg.generations.core.generationscore.common.network.packets.S2CPlaySoundPacket
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC

@@ -19,6 +19,6 @@ public class GuiMixin {
 
     @Inject(method = "render", at = @At("HEAD"))
     public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
-        Overlays.render(minecraft, guiGraphics, deltaTracker.getGameTimeDeltaTicks(), guiGraphics.guiWidth(), guiGraphics.guiHeight());
+        Overlays.render(guiGraphics, deltaTracker);
     }
 }

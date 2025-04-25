@@ -8,8 +8,8 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -19,7 +19,7 @@ public class WorldGenProvider extends DatapackBuiltinEntriesProvider {
     private static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, GenerationsConfiguredFeatures::bootStrap)
             .add(Registries.PLACED_FEATURE, GenerationsPlacedFeatures::bootStrap)
-            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, GenerationsForgeBiomemodifiers::bootstrap);
+            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, GenerationsForgeBiomemodifiers::bootstrap);
 
     public WorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(GenerationsCore.MOD_ID));

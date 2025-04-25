@@ -21,7 +21,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
 
-class MeteoriteItem(arg: Properties) : EnchantableItem(arg.component(GenerationsItemComponents.USED.componentType(), false)), LangTooltip, GenerationsCobblemonInteractions.PokemonInteraction {
+class MeteoriteItem(arg: Properties) : EnchantableItem(arg.component(GenerationsItemComponents.USED, false)), LangTooltip, GenerationsCobblemonInteractions.PokemonInteraction {
     override fun neededEnchantmentLevel(player: ServerPlayer): Int {
         val caught = GenerationsCore.CONFIG.caught
         return if (caught.capped(player, LegendKeys.DEOXYS)) super.neededEnchantmentLevel(player) else 0

@@ -12,14 +12,11 @@ import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.network.syncher.EntityDataSerializers
 
 object GenerationsCoreEntityDataSerializers {
-
-    @JvmField
     val NULLABLE_STRING = simple(FriendlyByteBuf::writeNullableString, FriendlyByteBuf::readNullableString)
     val PROPERTIES = simple(FriendlyByteBuf::writePokemonProperties, FriendlyByteBuf::readPokemonProperties)
 
     private fun <T> simple(encoder: (RegistryFriendlyByteBuf, T) -> Unit, decoder: (RegistryFriendlyByteBuf) -> T): EntityDataSerializer<T> = EntityDataSerializer.forValueType(StreamCodec.of(encoder, decoder))
 
-    @JvmStatic
     fun init() {
         EntityDataSerializers.registerSerializer(PROPERTIES)
         EntityDataSerializers.registerSerializer(NULLABLE_STRING)

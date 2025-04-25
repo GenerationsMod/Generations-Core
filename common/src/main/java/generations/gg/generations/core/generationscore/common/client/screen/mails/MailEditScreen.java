@@ -26,6 +26,7 @@ import net.minecraft.client.gui.font.TextFieldHelper;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.client.renderer.Rect2i;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.network.chat.CommonComponents;
@@ -86,7 +87,7 @@ public class MailEditScreen extends Screen {
             contents = MailViewScreen.loadPages(compoundTag);
         }
 
-        location = ((MailItem) arg2.getItem()).getType().location;
+        location = ((MailItem) arg2.getItem()).type.location;
     }
 
 
@@ -132,6 +133,8 @@ public class MailEditScreen extends Screen {
     }
 
     private void updateLocalCopy(boolean sign) {
+        this.book.set(Item)
+
         if (!this.contents.isEmpty()) {
             this.book.addTagElement("contents", StringTag.valueOf(this.contents));
         }
@@ -280,7 +283,7 @@ public class MailEditScreen extends Screen {
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        this.renderBackground(graphics);
+        this.renderBackground(graphics, mouseX, mouseY, partialTick );
         this.setFocused(null);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         int x = (this.width - IMAGE_WIDTH) / 2;
@@ -291,7 +294,8 @@ public class MailEditScreen extends Screen {
         for (LineInfo lineInfo : displayCache.lines) {
             graphics.drawString(this.font, lineInfo.asComponent, lineInfo.x, lineInfo.y, 0xff000000, false);
         }
-        this.renderHighlight(displayCache.selection);
+        this.renderHighlight(graphics, displayCache.selection);
+
         this.renderCursor(graphics, displayCache.cursor, displayCache.cursorAtEnd);
 
         super.render(graphics, mouseX, mouseY, partialTick);
@@ -308,27 +312,33 @@ public class MailEditScreen extends Screen {
         }
     }
 
-    private void renderHighlight(Rect2i[] selected) {
-        Tesselator tesselator = Tesselator.getInstance();
-        BufferBuilder bufferBuilder = tesselator.getBuilder();
-        RenderSystem.setShader(GameRenderer::getPositionShader);
-        RenderSystem.setShaderColor(0.0f, 0.0f, 255.0f, 255.0f);
+    private void renderHighlight(GuiGraphics graphics, Rect2i[] selected) {
+
+
+//        Tesselator tesselator = Tesselator.getInstance();
+//        RenderSystem.setShader(GameRenderer::getPositionShader);
+//        RenderSystem.setShaderColor(0.0f, 0.0f, 255.0f, 255.0f);
 //        RenderSystem.disableTexture();
-        RenderSystem.enableColorLogicOp();
-        RenderSystem.logicOp(GlStateManager.LogicOp.OR_REVERSE);
-        bufferBuilder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
+//        RenderSystem.enableColorLogicOp();
+//        RenderSystem.logicOp(GlStateManager.LogicOp.OR_REVERSE);
+//        BufferBuilder bufferBuilder = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
+
+
+
         for (Rect2i rect2i : selected) {
             int i = rect2i.getX();
             int j = rect2i.getY();
             int k = i + rect2i.getWidth();
             int l = j + rect2i.getHeight();
-            bufferBuilder.vertex(i, l, 0.0).endVertex();
-            bufferBuilder.vertex(k, l, 0.0).endVertex();
-            bufferBuilder.vertex(k, j, 0.0).endVertex();
-            bufferBuilder.vertex(i, j, 0.0).endVertex();
+            graphics.fill(RenderType.gui(), i, j, k, l, 0x0000ff00);
+
+//            bufferBuilder.addVertex(i, l, 0.0f);
+//            bufferBuilder.addVertex(k, l, 0.0f);
+//            bufferBuilder.addVertex(k, j, 0.0f);
+//            bufferBuilder.addVertex(i, j, 0.0f);
         }
-        tesselator.end();
-        RenderSystem.disableColorLogicOp();
+//        bufferBuilder.build()
+//        RenderSystem.disableColorLogicOp();
 //        RenderSystem.enableTexture();
     }
 
@@ -521,9 +531,9 @@ public class MailEditScreen extends Screen {
         }
 
         public int changeLine(int xChange, int yChange) {
-            int m;
             int i = MailEditScreen.findLineFromPos(this.lineStarts, xChange);
             int j = i + yChange;
+            int m;
             if (0 <= j && j < this.lineStarts.length) {
                 int k = xChange - this.lineStarts[i];
                 int l = this.lines[j].contents.length();

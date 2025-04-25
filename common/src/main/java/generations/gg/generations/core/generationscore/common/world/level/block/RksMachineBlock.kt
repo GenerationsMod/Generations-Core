@@ -19,6 +19,7 @@ import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.RenderShape
+import net.minecraft.world.level.block.entity.BeaconBlockEntity
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
@@ -28,8 +29,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class RksMachineBlock(copy: Properties) :
-    GenericRotatableModelBlock<RksMachineBlockEntity>(
+class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock<RksMachineBlockEntity>(
         copy,
         GenerationsBlockEntities.RKS_MACHINE,
         model = GenerationsBlockEntityModels.RKS_MACHINE,
@@ -44,7 +44,7 @@ class RksMachineBlock(copy: Properties) :
         state: BlockState,
         level: BlockGetter,
         pos: BlockPos,
-        context: CollisionContext
+        context: CollisionContext,
     ): VoxelShape {
         return SHAPE.getShape(state)
     }
@@ -54,7 +54,7 @@ class RksMachineBlock(copy: Properties) :
         worldIn: Level,
         pos: BlockPos,
         newState: BlockState,
-        isMoving: Boolean
+        isMoving: Boolean,
     ) {
         if (!oldState.`is`(newState.block)) {
             val tileEntity = worldIn.getBlockEntity(pos)
@@ -68,13 +68,11 @@ class RksMachineBlock(copy: Properties) :
         super.onRemove(oldState, worldIn, pos, newState, isMoving)
     }
 
-    override fun getTicker(
+    override fun <T : BlockEntity> getTicker(
         level: Level,
         state: BlockState,
-        blockEntityType: BlockEntityType<RksMachineBlockEntity>
-    ): BlockEntityTicker<RksMachineBlockEntity>? {
-        return createRksMachineTicker(level, blockEntityType, GenerationsBlockEntities.RKS_MACHINE.get())
-    }
+        blockEntityType: BlockEntityType<T>,
+    ): BlockEntityTicker<T>? = createTickerHelper(blockEntityType, GenerationsBlockEntities.RKS_MACHINE.get(), RksMachineBlockEntity::serverTick)
 
     protected fun openContainer(level: Level, bpos: BlockPos, player: Player) {
         val rksMachine = getAssoicatedBlockEntity(level, bpos).orElseThrow {
@@ -93,7 +91,7 @@ class RksMachineBlock(copy: Properties) :
         level: Level,
         pos: BlockPos,
         player: Player,
-        hitResult: BlockHitResult
+        hitResult: BlockHitResult,
     ): InteractionResult {
         if (!level.isClientSide()) {
             this.openContainer(level, pos, player)
@@ -140,22 +138,5 @@ class RksMachineBlock(copy: Properties) :
         )
 
         val CODEC = simpleCodec(::RksMachineBlock)
-
-        protected fun createRksMachineTicker(
-            level: Level,
-            entityType: BlockEntityType<*>,
-            entityTypeE: BlockEntityType<RksMachineBlockEntity?>
-        ): BlockEntityTicker<RksMachineBlockEntity>? {
-            return if (level.isClientSide()) null else createTickerHelper(
-                entityType, entityTypeE
-            ) { world: Level?, blockpos: BlockPos?, blockstate: BlockState?, tile: RksMachineBlockEntity? ->
-                RksMachineBlockEntity.serverTick(
-                    world,
-                    blockpos,
-                    blockstate,
-                    tile
-                )
-            } as BlockEntityTicker<RksMachineBlockEntity>?
-        }
     }
 }

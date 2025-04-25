@@ -18,6 +18,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.core.Holder
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
@@ -40,7 +41,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
-abstract class DyedPcBlock(color: DyeColor, map: Map<DyeColor, RegistrySupplier<DyedPcBlock>>, arg: Properties) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(color, map, GenerationsBlockEntities.DYED_PC, arg, GenerationsBlockEntityModels.PC, 0, 1, 0) {
+abstract class DyedPcBlock(color: DyeColor, map: Map<DyeColor, Holder<Block>>, arg: Properties) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(arg, color, map, GenerationsBlockEntities.DYED_PC, GenerationsBlockEntityModels.PC, 0, 1, 0) {
     private val SHAPE = generateRotationalVoxelShape(
         Shapes.or(
             Shapes.box(0.07500000000000001, 0.0, 0.025000000000000022, 0.925, 1.5, 0.725),
@@ -66,7 +67,7 @@ abstract class DyedPcBlock(color: DyeColor, map: Map<DyeColor, RegistrySupplier<
         pos: BlockPos,
         player: ServerPlayer,
         handIn: InteractionHand,
-        hit: BlockHitResult?,
+        hit: BlockHitResult
     ): ItemInteractionResult {
         val basePos = getBaseBlockPos(pos, state)
 

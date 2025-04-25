@@ -13,6 +13,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.*;
@@ -27,7 +28,6 @@ import java.util.List;
 
 @Environment(value= EnvType.CLIENT)
 public class MailViewScreen extends Screen {
-    public static final int PAGE_INDICATOR_TEXT_Y_OFFSET = 16;
     public static final int PAGE_TEXT_X_OFFSET = 27;
     public static final int PAGE_TEXT_Y_OFFSET = 13;
     public static final MailAccess EMPTY_ACCESS = new MailAccess() {
@@ -155,7 +155,7 @@ public class MailViewScreen extends Screen {
         int k = Math.min(TEXT_HEIGHT / this.font.lineHeight, this.cachedPageComponents.size());
         if (i <= TEXT_WIDTH && j < this.minecraft.font.lineHeight * k + k) {
             int l = j / this.minecraft.font.lineHeight;
-            if (l >= 0 && l < this.cachedPageComponents.size()) {
+            if (l < this.cachedPageComponents.size()) {
                 FormattedCharSequence formattedCharSequence = this.cachedPageComponents.get(l);
                 return this.minecraft.font.getSplitter().componentStyleAtWidth(formattedCharSequence, i);
             }

@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.common.mixin.client;
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRenderer;
 import com.cobblemon.mod.common.client.render.item.PokemonItemRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
-import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRenderer;
+//import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;

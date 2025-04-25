@@ -26,7 +26,7 @@ class PokeLootRendrer(ctx: BlockEntityRendererProvider.Context) : BlockEntityRen
 
         val block = blockEntity.blockState.block
 
-        if(!(block is BallLootBlock && block.canRender(blockEntity.level, blockEntity.blockPos, blockEntity.blockState))) return;
+        if(!(block is BallLootBlock && block.canRender(blockEntity.level!!, blockEntity.blockPos, blockEntity.blockState))) return;
 
         if (!blockEntity.isVisible) {
             //TODO: Invisible effect

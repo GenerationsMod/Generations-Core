@@ -7,8 +7,6 @@ import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
-import earth.terrarium.common_storage_lib.data.DataManager
-import earth.terrarium.common_storage_lib.data.DataManagerRegistry
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.DataKeys
@@ -16,13 +14,10 @@ import generations.gg.generations.core.generationscore.common.world.item.Calyrex
 import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
 import net.minecraft.core.component.DataComponentType
-import net.minecraft.core.component.DataComponents
-import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import java.util.function.Supplier
 
 object GenerationsItemComponents {
 
@@ -67,6 +62,7 @@ object GenerationsItemComponents {
         }
 
     })
+    val MAIL_DATA = register("mail_data", SealedMailContent.CODEC, SealedMailContent.STREAM_CODEC)
 
     @JvmStatic
     fun init() = REGISTER.register()

@@ -506,7 +506,7 @@ object GenerationsBlocks {
         return block
     }
 
-    fun <T : Block?> registerUltraBlock(name: String, blockSupplier: Supplier<T>?): RegistrySupplier<T> {
+    fun <T : Block> registerUltraBlock(name: String, blockSupplier: Supplier<T>): RegistrySupplier<T> {
         val block = ULTRA_BLOCKS.register(name, blockSupplier)
         register(name) { properties -> BlockItem(block.get() as Block, properties) }
         return block
@@ -524,24 +524,14 @@ object GenerationsBlocks {
         return block
     }
 
-    private fun register(name: String, itemSupplier: Function<Item.Properties, Item>) {
-        register(
-            name,
-            { properties: Item.Properties? -> itemSupplier.apply(Item.Properties()) }, BLOCK_ITEMS
-        )
-    }
-
+    private fun register(name: String, itemSupplier: Function<Item.Properties, Item>) = register(name, { properties -> itemSupplier.apply(properties) }, BLOCK_ITEMS)
 
     private fun register(
         name: String,
         itemSupplier: Function<Item.Properties, Item>,
         register: DeferredRegister<Item>
-    ) {
-        register.register(
-            name
-        ) { itemSupplier.apply(Item.Properties()) }
-    }
-    
+    ) = register.register(name) { itemSupplier.apply(Item.Properties()) }
+
     private fun registerUnownBlock(name: String, glyph: String? = null): RegistrySupplier<UnownBlock> = registerBlockItem("unown_block_$name") { UnownBlock(glyph ?: name.uppercase(), STONE_PROPERTY) }
 
     @JvmStatic

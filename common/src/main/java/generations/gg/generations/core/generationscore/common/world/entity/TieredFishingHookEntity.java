@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.common.world.item.legends
 import generations.gg.generations.core.generationscore.common.world.loot.GenerationCoreLootTables;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -118,9 +119,9 @@ public class TieredFishingHookEntity extends FishingHook {
         SUPER(GenerationCoreLootTables.FISHING_SUPER),
         RUBY(GenerationCoreLootTables.FISHING_RUBY);
 
-        private final ResourceLocation resourceLocation;
+        private final ResourceKey<LootTable> resourceLocation;
 
-        Teir(ResourceLocation resourceLocation) {
+        Teir(ResourceKey<LootTable> resourceLocation) {
             this.resourceLocation = resourceLocation;
         }
 

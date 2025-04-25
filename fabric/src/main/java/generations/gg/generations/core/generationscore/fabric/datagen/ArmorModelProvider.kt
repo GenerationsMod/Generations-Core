@@ -20,7 +20,7 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
     }
 
     override fun generateItemModels(itemModelGenerators: ItemModelGenerators) {
-        Stream.of(GenerationsArmor.ULTRITE,
+        sequenceOf(GenerationsArmor.ULTRITE,
                 GenerationsArmor.DAWN_STONE,
                 GenerationsArmor.DUSK_STONE,
                 GenerationsArmor.FIRE_STONE,
@@ -29,12 +29,12 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
                 GenerationsArmor.SUN_STONE,
                 GenerationsArmor.MOON_STONE,
                 GenerationsArmor.THUNDER_STONE,
-                GenerationsArmor.WATER_STONE).flatMap(GenerationsArmor.ArmorSet::stream).map(RegistrySupplier<Item>::get)
+                GenerationsArmor.WATER_STONE).flatMap { it }.map(RegistrySupplier<Item>::get)
             .map { obj -> ArmorItem::class.java.cast(obj) }
             .forEach({ itemModelGenerators.generateGenerationsArmorTrims(it) })
     }
 
-    fun ItemModelGenerators.generateGenerationsArmorTrims(armorItem: ArmorItem) {
+    private fun ItemModelGenerators.generateGenerationsArmorTrims(armorItem: ArmorItem) {
         val resourceLocation = ModelLocationUtils.getModelLocation(armorItem)
 
         // Modified texture references to include "armor/"
