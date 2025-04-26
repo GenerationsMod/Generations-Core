@@ -41,7 +41,7 @@ public class GenerationsArmorMaterials {
     public static final RegistrySupplier<ArmorMaterial> MOON_STONE = register("moon_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.MOON_STONE, 2.0f, 0.0f);
     public static final RegistrySupplier<ArmorMaterial> SUN_STONE = register("sun_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.SUN_STONE, 2.0f, 0.0f);
     public static final RegistrySupplier<ArmorMaterial> THUNDER_STONE = register("thunder_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.THUNDER_STONE, 2.0f, 0.0f);
-    public static final RegistrySupplier<ArmorMaterial> WATER_STONE = register("water_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.WATER_STONE, 2.0f, 0.0f);RegistrySupplier<>>
+    public static final RegistrySupplier<ArmorMaterial> WATER_STONE = register("water_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.WATER_STONE, 2.0f, 0.0f);
 
     public static final RegistrySupplier<ArmorMaterial> ULTRITE = register("ultrite", 42, new int[]{3, 6, 8, 3}, 20, GenerationsItems.ULTRITE_INGOT, 4.0f, 0.2f);
 
@@ -53,7 +53,7 @@ public class GenerationsArmorMaterials {
             map.put(ArmorItem.Type.LEGGINGS, slotProtections[1]);
             map.put(ArmorItem.Type.CHESTPLATE, slotProtections[2]);
             map.put(ArmorItem.Type.HELMET, slotProtections[3]);
-        }), enchantmentValue, SoundEvents.ARMOR_EQUIP_IRON, Suppliers.memoize(() -> Ingredient.of(repairIngredient.get())), List.of(), toughness, knockbackResistance);
+        }), enchantmentValue, SoundEvents.ARMOR_EQUIP_IRON, Suppliers.memoize(() -> Ingredient.of(repairIngredient.get())), List.of(), toughness, knockbackResistance));
     }
 
     public static RegistrySupplier<ArmorMaterial> register(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Supplier<Item> repairIngredient) {

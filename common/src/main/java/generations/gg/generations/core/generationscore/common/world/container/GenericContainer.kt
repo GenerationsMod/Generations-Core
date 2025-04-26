@@ -8,8 +8,10 @@ import com.mojang.serialization.Dynamic
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.menu.MenuRegistry
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
+import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
+import earth.terrarium.common_storage_lib.storage.base.UpdateManager
 import generations.gg.generations.core.generationscore.common.api.data.Codecs
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
@@ -39,7 +41,7 @@ import kotlin.collections.ArrayList
 
 object GenericContainer {
 
-    fun openScreen(storage: SimpleItemStorage, width: Int, height: Int, title: Component, player: Player, lockedSlot: Int = -1) {
+    fun <T> openScreen(storage: T, width: Int, height: Int, title: Component, player: Player, lockedSlot: Int = -1) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
         if (!player.isLocalPlayer) MenuRegistry.openExtendedMenu(
             player as ServerPlayer,
             object : MenuProvider {

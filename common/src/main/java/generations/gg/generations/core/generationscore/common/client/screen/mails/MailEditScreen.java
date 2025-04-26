@@ -82,10 +82,10 @@ public class MailEditScreen extends Screen {
         this.owner = arg;
         this.book = arg2;
         this.hand = arg3;
-        CompoundTag compoundTag = arg2.getTag();
-        if (compoundTag != null) {
-            contents = MailViewScreen.loadPages(compoundTag);
-        }
+//        CompoundTag compoundTag = arg2.getTag();
+//        if (compoundTag != null) {
+//            contents = MailViewScreen.loadPages(compoundTag);
+//        }
 
         location = ((MailItem) arg2.getItem()).type.location;
     }
@@ -133,14 +133,14 @@ public class MailEditScreen extends Screen {
     }
 
     private void updateLocalCopy(boolean sign) {
-        this.book.set(Item)
-
-        if (!this.contents.isEmpty()) {
-            this.book.addTagElement("contents", StringTag.valueOf(this.contents));
-        }
-        if (sign) {
-            this.book.addTagElement("author", StringTag.valueOf(this.owner.getGameProfile().getName()));
-        }
+//        this.book.set(Item)
+//
+//        if (!this.contents.isEmpty()) {
+//            this.book.addTagElement("contents", StringTag.valueOf(this.contents));
+//        }
+//        if (sign) {
+//            this.book.addTagElement("author", StringTag.valueOf(this.owner.getGameProfile().getName()));
+//        }
     }
 
     @Override
@@ -163,11 +163,11 @@ public class MailEditScreen extends Screen {
             return true;
         }
 
-        if (SharedConstants.isAllowedChatCharacter(codePoint)) {
-            this.pageEdit.insertText(Character.toString(codePoint));
-            this.clearDisplayCache();
-            return true;
-        }
+//        if (SharedConstants.isAllowedChatCharacter(codePoint)) {
+//            this.pageEdit.insertText(Character.toString(codePoint));
+//            this.clearDisplayCache();
+//            return true;
+//        }
         return false;
     }
 

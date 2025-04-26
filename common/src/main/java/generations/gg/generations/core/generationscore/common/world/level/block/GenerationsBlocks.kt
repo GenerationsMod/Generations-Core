@@ -488,10 +488,10 @@ object GenerationsBlocks {
     /**
      * PokeBall Chests
      */
-    @JvmField val POKEBALL_CHEST = registerChestBlockItem("pokeball_chest") { GenericChestBlock(9, 4, "pokeball_chest") }
-    @JvmField val GREATBALL_CHEST = registerChestBlockItem("greatball_chest") { GenericChestBlock(9, 5, "greatball_chest") }
-    @JvmField val ULTRABALL_CHEST = registerChestBlockItem("ultraball_chest") { GenericChestBlock(9, 6, "ultraball_chest") }
-    @JvmField val MASTERBALL_CHEST = registerChestBlockItem("masterball_chest") { GenericChestBlock(12, 8, "masterball_chest") }
+    @JvmField val POKEBALL_CHEST = registerChestBlockItem("pokeball_chest") { GenericChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST), 9, 4, "pokeball_chest") }
+    @JvmField val GREATBALL_CHEST = registerChestBlockItem("greatball_chest") { GenericChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST), 9, 5, "greatball_chest") }
+    @JvmField val ULTRABALL_CHEST = registerChestBlockItem("ultraball_chest") { GenericChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST), 9, 6, "ultraball_chest") }
+    @JvmField val MASTERBALL_CHEST = registerChestBlockItem("masterball_chest") { GenericChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST), 12, 8, "masterball_chest") }
 
     fun <T : Block> registerBlockItem(name: String, blockSupplier: Supplier<T>): RegistrySupplier<T> = registerBlockItem(name, blockSupplier, { block, properties -> BlockItem(block, properties) }, BLOCK_ITEMS)
 

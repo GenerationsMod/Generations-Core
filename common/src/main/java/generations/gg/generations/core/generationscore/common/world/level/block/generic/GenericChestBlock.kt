@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
+import com.mojang.serialization.Codec
+import com.mojang.serialization.MapCodec
+import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericChestBlockEntity
 import net.minecraft.core.BlockPos
@@ -9,13 +12,10 @@ import net.minecraft.stats.Stats
 import net.minecraft.util.RandomSource
 import net.minecraft.world.Container
 import net.minecraft.world.Containers
-import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
-import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.monster.piglin.PiglinAi
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
-import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
@@ -35,12 +35,11 @@ import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
+import org.checkerframework.checker.units.qual.C
 import java.util.function.Supplier
 
 @Suppress("deprecation")
-class GenericChestBlock(private val width: Int, private val height: Int, val materialType: String) : AbstractChestBlock<GenericChestBlockEntity>(
-        Properties.ofFullCopy(Blocks.CHEST),
-        Supplier<BlockEntityType<out GenericChestBlockEntity>> { GenerationsBlockEntities.GENERIC_CHEST.get() }),
+class GenericChestBlock(properties: Properties, private val width: Int, private val height: Int, val materialType: String) : AbstractChestBlock<GenericChestBlockEntity>(properties, Supplier<BlockEntityType<out GenericChestBlockEntity>> { GenerationsBlockEntities.GENERIC_CHEST.get() }),
     SimpleWaterloggedBlock {
     private val defaultTranslation = "container.$materialType"
 
@@ -87,15 +86,14 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
         )
     }
 
-    override fun use(
+    override fun useWithoutItem(
         state: BlockState,
         level: Level,
         pos: BlockPos,
         player: Player,
-        hand: InteractionHand,
-        hit: BlockHitResult,
+        hitResult: BlockHitResult,
     ): InteractionResult {
-        if (level.isClientSide) {
+         if (level.isClientSide) {
             return InteractionResult.SUCCESS
         }
         val blockEntity = level.getBlockEntity(pos)
@@ -129,15 +127,6 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
         super.onRemove(state, level, pos, newState, isMoving)
     }
 
-    override fun setPlacedBy(level: Level, pos: BlockPos, state: BlockState, placer: LivingEntity?, stack: ItemStack) {
-        val blockEntity: BlockEntity?
-        if (stack.hasCustomHoverName() && (level.getBlockEntity(pos)
-                .also { blockEntity = it }) is GenericChestBlockEntity
-        ) {
-            (blockEntity as GenericChestBlockEntity).setCustomName(stack.hoverName)
-        }
-    }
-
     public override fun hasAnalogOutputSignal(state: BlockState): Boolean {
         return true
     }
@@ -158,6 +147,8 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
         builder.add(FACING, WATERLOGGED)
     }
 
+    override fun codec(): MapCodec<GenericChestBlock> = CODEC
+
     override fun isPathfindable(state: BlockState, pathComputationType: PathComputationType): Boolean {
         return false
     }
@@ -176,7 +167,7 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
     ): BlockEntityTicker<T>? {
         return if (level.isClientSide) createTickerHelper(
             blockEntityType, GenerationsBlockEntities.GENERIC_CHEST.get()
-        ) { level: Level?, pos: BlockPos?, state: BlockState?, blockEntity: GenericChestBlockEntity? ->
+        ) { level: Level, pos: BlockPos, state: BlockState, blockEntity: GenericChestBlockEntity ->
             GenericChestBlockEntity.lidAnimateTick(
                 level,
                 pos,
@@ -187,6 +178,13 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
     }
 
     companion object {
+        val CODEC: MapCodec<GenericChestBlock> = RecordCodecBuilder.mapCodec { it.group(
+            propertiesCodec(),
+            Codec.INT.fieldOf("width").forGetter { it.width },
+            Codec.INT.fieldOf("height").forGetter { it.height },
+            Codec.STRING.fieldOf("material").forGetter { it.materialType }
+        ).apply(it, ::GenericChestBlock) }
+
         val FACING: DirectionProperty = BlockStateProperties.HORIZONTAL_FACING
         val WATERLOGGED: BooleanProperty = BlockStateProperties.WATERLOGGED
         protected val SHAPE: VoxelShape = box(1.0, 0.0, 1.0, 15.0, 14.0, 15.0)

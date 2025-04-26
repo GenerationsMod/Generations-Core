@@ -3,29 +3,31 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.CobblemonNetwork.sendPacketToPlayer
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import dev.architectury.registry.menu.MenuRegistry
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
+import earth.terrarium.common_storage_lib.item.util.ItemStorageData
+import generations.gg.generations.core.generationscore.common.GenerationsStorage
 import generations.gg.generations.core.generationscore.common.network.packets.S2CPlaySoundPacket
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
+import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
 import generations.gg.generations.core.generationscore.common.util.extensions.get
-import generations.gg.generations.core.generationscore.common.util.extensions.set
-import generations.gg.generations.core.generationscore.common.world.container.GenericContainer.SimpleGenericContainer
-import generations.gg.generations.core.generationscore.common.world.container.WalkmonContainer
+import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
 import net.minecraft.core.component.DataComponents
-import net.minecraft.nbt.CompoundTag
+import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
+import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
-import net.minecraft.world.MenuProvider
 import net.minecraft.world.entity.Entity
-import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.inventory.AbstractContainerMenu
-import net.minecraft.world.item.*
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.JukeboxPlayable
 import net.minecraft.world.level.Level
 
 class WalkmonItem(properties: Properties, private val row: Int, type: String) : Item(properties) {
@@ -33,12 +35,16 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         if (!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND) {
-            var holder = load(player.getItemInHand(usedHand))
+            val stack = player.getItemInHand(usedHand);
 
-            if(player.isShiftKeyDown) holder.openScreen(player as ServerPlayer, row)
-            else {
-                holder.toggle()
-                holder.save(player.getItemInHand(usedHand))
+            val walkmon = stack.walkmonData
+
+            if(walkmon != null) {
+
+                if (player.isShiftKeyDown) GenericContainer.openScreen(SimpleItemStorage(stack, GenerationsStorage.ITEM_CONTENTS, 9 * row), 9, row, walkmon.title.takeUnless { it == Component.EMPTY } ?: Component.translatable(defaultTranslation), player, player.inventory.selected)
+                else {
+                    walkmon.toggle()
+                }
             }
         }
         return super.use(level, player, usedHand)
@@ -46,81 +52,51 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
     override fun inventoryTick(stack: ItemStack, level: Level, entity: Entity, slotId: Int, isSelected: Boolean) {
         if (!level.isClientSide && entity is ServerPlayer) {
-            load(stack).tick(this, entity)
+            stack.get(GenerationsItemComponents.WALKMON_DATA)?.tick(stack, entity)
         }
     }
 
-    private fun startPlayingSong(record: JukeboxPlayable, player: ServerPlayer) {
-        sendPacketToPlayer(player, S2CPlaySoundPacket(record.song.unwrap(player.serverLevel().registryAccess()).get().value()));
-    }
-
-    private fun stopPlayingSong(sound: SoundEvent, player: ServerPlayer) {
-        sendPacketToPlayer(player, S2CPlaySoundPacket(sound))
-    }
-
-    fun load(stack: ItemStack): DiscHolder {
-        return stack.get(GenerationsItemComponents.DISC_HOLDER) ?: DiscHolder(row, Component.translatable(defaultTranslation))
-    }
-
-    class DiscHolder(
+    class WalkmonData(
         private var currentSlot: Int = 0,
         private var timeUntilNextSong: Int = 0,
         private var playing: Boolean = false,
-        private var discs: SimpleGenericContainer,
-        private var title: MutableComponent
-    ) : MenuProvider {
+        var title: MutableComponent
+    ) {
         companion object {
-            val CODEC: Codec<DiscHolder> = RecordCodecBuilder.create {
+            val CODEC: Codec<WalkmonData> = RecordCodecBuilder.create {
                 it.group(
                     Codec.INT.fieldOf(DataKeys.CURRENT_SLOT).forGetter { it.currentSlot },
                     Codec.INT.fieldOf(DataKeys.TIME_UNTIL_NEXT_SONG).forGetter { it.timeUntilNextSong},
                     Codec.BOOL.fieldOf(DataKeys.PLAYING).forGetter { it.playing },
-                    SimpleGenericContainer.CODEC.fieldOf(DataKeys.DISCS).forGetter { it.discs },
                     TEXT_CODEC.optionalFieldOf("title", Component.empty()).forGetter { it.title }
-                ).apply(it, ::DiscHolder)
+                ).apply(it, ::WalkmonData)
             }
+            val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, WalkmonData> = StreamCodec.composite(
+                ByteBufCodecs.VAR_INT, WalkmonData::currentSlot,
+                ByteBufCodecs.VAR_INT, WalkmonData::timeUntilNextSong,
+                ByteBufCodecs.BOOL, WalkmonData::playing,
+                TEXT_STREAM_CODEC, WalkmonData::title,
+                ::WalkmonData
+            )
         }
 
-        constructor(rows: Int, title: MutableComponent) : this(discs = SimpleGenericContainer(9, rows), title = title)
 
+        val ItemStack.disc: JukeboxPlayable?
+            get() = GenerationsStorage.ITEM_CONTENTS.get(this).stacks.get(currentSlot).resource.get(DataComponents.JUKEBOX_PLAYABLE)
 
-        override fun getDisplayName(): Component = title
-
-        override fun createMenu(i: Int, arg: Inventory, arg2: Player): AbstractContainerMenu =
-            WalkmonContainer(i, arg, discs, arg2.inventory.selected)
-
-        fun openScreen(player: ServerPlayer, row: Int) {
-            MenuRegistry.openExtendedMenu(player, this) {
-                it.writeVarInt(9).writeVarInt(row).writeVarInt(player.inventory.selected)
-            }
-        }
-
-        val disc: JukeboxPlayable?
-            get() = discs.getItem(currentSlot).get(DataComponents.JUKEBOX_PLAYABLE)
-
-        private fun createTag(): CompoundTag {
-            val holderTag = CompoundTag()
-
-            holderTag.putInt(DataKeys.CURRENT_SLOT, currentSlot)
-            holderTag.putInt(DataKeys.TIME_UNTIL_NEXT_SONG, timeUntilNextSong)
-            holderTag.putBoolean(DataKeys.PLAYING, playing)
-            holderTag.put(DataKeys.DISCS, discs.createTag())
-            return holderTag
-        }
-
-        fun tick(walkmon: WalkmonItem, player: ServerPlayer) {
+        fun tick(stack: ItemStack, player: ServerPlayer) {
             if (playing) {
                 if (timeUntilNextSong > 0) {
                     timeUntilNextSong -= 1
                 } else {
-                    next()?.run {
+                    GenerationsStorage.ITEM_CONTENTS.get(stack).next()?.run {
                         val song = this.song.unwrap(player.serverLevel().registryAccess()).orElseThrow().value()
 
                         timeUntilNextSong = song.lengthInTicks()
                         val sound = song.soundEvent.value();
 
-                        disc?.run { walkmon.stopPlayingSong(sound, player) }
-                        walkmon.startPlayingSong(this, player)
+                        stack.disc?.run { stopPlayingSong(sound, player) }
+                        startPlayingSong(this, player)
                     } ?: {
                         playing = false
                         currentSlot = 0
@@ -132,18 +108,26 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
             }
         }
 
-        private fun next(): JukeboxPlayable? {
-            val size = discs.containerSize
+        private fun startPlayingSong(record: JukeboxPlayable, player: ServerPlayer) {
+            sendPacketToPlayer(player, S2CPlaySoundPacket(record.song.unwrap(player.serverLevel().registryAccess()).get().value()));
+        }
+
+        private fun stopPlayingSong(sound: SoundEvent, player: ServerPlayer) {
+            sendPacketToPlayer(player, S2CPlaySoundPacket(sound))
+        }
+
+        private fun ItemStorageData.next(): JukeboxPlayable? {
+            val size = stacks.size
 
             var index = currentSlot
 
             while (index < size) {
                 index++
 
-                val stack = discs.getItem(index)
+                val stack = stacks[index]
                 if(stack.isEmpty) continue
 
-                val playable = stack.get(DataComponents.JUKEBOX_PLAYABLE)
+                val playable = stack.resource.get(DataComponents.JUKEBOX_PLAYABLE)
                 if(playable != null) {
                     currentSlot = index
                     return playable
@@ -156,14 +140,8 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
         fun toggle() {
             playing = !playing
         }
-
-
-        fun save(stack: ItemStack, container: SimpleGenericContainer? = null) {
-            val discs = this.discs;
-
-            if(container != null) this.discs = container
-            stack.set(GenerationsItemComponents.DISC_HOLDER, this)
-            this.discs = discs
-        }
     }
 }
+
+private val ItemStack.walkmonData: WalkmonItem.WalkmonData?
+    get() = this.get(GenerationsItemComponents.WALKMON_DATA)

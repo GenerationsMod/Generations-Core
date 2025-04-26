@@ -60,6 +60,7 @@ object GenerationsItemComponents {
 
     })
     val MAIL_DATA = register("mail_data", SealedMailContent.CODEC, SealedMailContent.STREAM_CODEC)
+    val WALKMON_DATA = register("walkmon_data", WalkmonItem.WalkmonData.CODEC, WalkmonItem.WalkmonData.STREAM_CODEC)
 
     @JvmStatic
     fun init() = REGISTER.register()

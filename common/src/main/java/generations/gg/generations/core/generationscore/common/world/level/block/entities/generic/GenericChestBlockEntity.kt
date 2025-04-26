@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import earth.terrarium.common_storage_lib.data.DataManager
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
+import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import generations.gg.generations.core.generationscore.common.GenerationsStorage
@@ -41,7 +42,6 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     private var defaultTranslation: String = "container.chest"
 ) :
     RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST.get(), arg, arg2), LidBlockEntity {
-    private var items: SimpleItemStorage = SimpleItemStorage(this, GenerationsStorage.ITEM_CONTENTS, width * height)
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {
             this@GenericChestBlockEntity.playSound(state, SoundEvents.CHEST_OPEN)
@@ -56,8 +56,8 @@ class GenericChestBlockEntity @JvmOverloads constructor(
         }
 
         override fun isOwnContainer(player: Player): Boolean {
-            if (player.containerMenu is GenericChestContainer) {
-                val container = (player.containerMenu as GenericChestContainer).getContainer()
+            if (player.containerMenu is GenericChestContainer<*>) {
+                val container = (player.containerMenu as GenericChestContainer<*>).getContainer()
                 return container === this@GenericChestBlockEntity.items
             }
             return false
@@ -137,7 +137,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     }
 
     override fun createMenu(containerId: Int, inventory: Inventory): AbstractContainerMenu {
-        return GenericChestContainer(containerId, inventory, items, width, height)
+        return GenericChestContainer(containerId, inventory, WrappedVanillaContainer(this), width, height)
     }
 
     override fun setBlockState(blockState: BlockState) {
@@ -166,7 +166,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     //        return width;
     //    }
     fun openScreen(player: Player) {
-        GenericContainer.openScreen(items, width, height, components().get(DataComponents.CUSTOM_NAME) ?: Component.literal("Chest"), player)
+        GenericContainer.openScreen(WrappedVanillaContainer(this), width, height, components().get(DataComponents.CUSTOM_NAME) ?: Component.literal("Chest"), player)
     }
 
     companion object {

@@ -2,8 +2,10 @@ package generations.gg.generations.core.generationscore.common.world.container
 
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
+import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
+import earth.terrarium.common_storage_lib.storage.base.UpdateManager
 import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot
 import net.minecraft.network.FriendlyByteBuf
@@ -12,17 +14,17 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.item.ItemStack
 
-open class GenericChestContainer(
+open class GenericChestContainer<T>(
     containerId: Int,
     @JvmField val playerInventory: Inventory,
-    private val container: SimpleItemStorage,
+    private val container: T,
     val inventoryWidth: Int,
     val inventoryHeight: Int,
     protected val locked: Int = -1
 ) : AbstractContainerMenu(
         GenerationsContainers.GENERIC.get(),
         containerId
-    ) {
+    ) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
     @JvmField
     val guiWidth: Int =  14 + this.inventoryWidth * 18
     @JvmField
@@ -32,13 +34,15 @@ open class GenericChestContainer(
 
     constructor(containerId: Int, playerInventory: Inventory, buf: FriendlyByteBuf) : this(
         containerId, playerInventory,
-        SimpleItemStorage(buf.readVarInt()),
+        SimpleItemStorage(buf.readVarInt()) as T,
         buf.readVarInt(),
         buf.readVarInt()
     )
 
     init {
 //        container.startOpen(playerInventory.player)
+
+
 
         populate(container, 8, 16, 0, inventoryHeight, inventoryWidth)
 
@@ -106,7 +110,7 @@ open class GenericChestContainer(
 //        container.stopOpen(player)
     }
 
-    fun getContainer(): SimpleItemStorage = container
+    fun getContainer(): T = container
 
     open fun save(player: Player?) {}
 }

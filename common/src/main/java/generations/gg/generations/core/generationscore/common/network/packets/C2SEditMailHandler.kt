@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Inventory
 import java.util.*
 
+//TODO: Fix data nonsense
 object C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
     override fun handle(packet: C2SEditMailPacket, server: MinecraftServer, player: ServerPlayer) {
         server.execute {
@@ -38,22 +39,22 @@ object C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
         private fun updateMailContents(sender: ServerPlayer, slot: Int, contents: String) {
             val itemStack = sender.inventory.getItem(slot)
             if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
-                itemStack.addTagElement("contents", StringTag.valueOf(contents))
+//                itemStack.addTagElement("contents", StringTag.valueOf(contents))
             }
         }
 
         private fun sealMail(sender: ServerPlayer, slot: Int, contents: String, title: String) {
             val itemStack = sender.inventory.getItem(slot)
             if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
-                val itemStack1 = MailItem.getSealed(itemStack.item)
-                val compoundTag = itemStack.getTag()
-                if (compoundTag != null) {
-                    itemStack1.setTag(compoundTag)
-                }
-                itemStack1.addTagElement("author", StringTag.valueOf(sender.name.string))
-                itemStack1.addTagElement("contents", StringTag.valueOf(contents))
-                sender.inventory.setItem(slot, itemStack1)
-            }
+//                val itemStack1 = MailItem.getSealed(itemStack.item)
+//                val compoundTag = itemStack.getTag()
+//                if (compoundTag != null) {
+//                    itemStack1.setTag(compoundTag)
+//                }
+//                itemStack1.addTagElement("author", StringTag.valueOf(sender.name.string))
+//                itemStack1.addTagElement("contents", StringTag.valueOf(contents))
+//                sender.inventory.setItem(slot, itemStack1)
+//            }
         }
     }
 }
