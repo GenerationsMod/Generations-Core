@@ -15,12 +15,11 @@ import net.minecraft.world.item.ItemStack
 open class GenericChestContainer(
     containerId: Int,
     @JvmField val playerInventory: Inventory,
-    private val container: CommonStorage<ItemResource>,
+    private val container: SimpleItemStorage,
     val inventoryWidth: Int,
     val inventoryHeight: Int,
     protected val locked: Int = -1
-) :
-    AbstractContainerMenu(
+) : AbstractContainerMenu(
         GenerationsContainers.GENERIC.get(),
         containerId
     ) {
@@ -107,9 +106,7 @@ open class GenericChestContainer(
 //        container.stopOpen(player)
     }
 
-    fun getContainer(): CommonStorage<ItemResource> {
-        return container
-    }
+    fun getContainer(): SimpleItemStorage = container
 
     open fun save(player: Player?) {}
 }

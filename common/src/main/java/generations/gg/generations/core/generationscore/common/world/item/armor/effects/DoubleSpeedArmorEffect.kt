@@ -15,17 +15,17 @@ class DoubleSpeedArmorEffect : ArmorTickEffect {
         player: Player,
         generationsArmorItem: GenerationsArmorItem
     ) {
-        if (world.isClientSide) return
-        if (ArmorTickEffect.isWearingFullSet(player, generationsArmorItem.material)) {
-            val armorEffectTagElement: CompoundTag = itemStack.getTagElement("ArmorEffect") ?: return
-            armorEffectTagElement.remove("DoubleSpeed")
-            if (!armorEffectTagElement.isEmpty) return
-            itemStack.removeTagKey("ArmorEffect")
-            return
-        }
-        val armorEffectTagElement: CompoundTag = itemStack.getOrCreateTagElement("ArmorEffect")
-        if (armorEffectTagElement.getBoolean("DoubleSpeed")) return
-        armorEffectTagElement.putBoolean("DoubleSpeed", true)
+//        if (world.isClientSide) return
+//        if (ArmorTickEffect.isWearingFullSet(player, generationsArmorItem.material)) {
+//            val armorEffectTagElement: CompoundTag = itemStack.getTagElement("ArmorEffect") ?: return
+//            armorEffectTagElement.remove("DoubleSpeed")
+//            if (!armorEffectTagElement.isEmpty) return
+//            itemStack.removeTagKey("ArmorEffect")
+//            return
+//        }
+//        val armorEffectTagElement: CompoundTag = itemStack.getOrCreateTagElement("ArmorEffect")
+//        if (armorEffectTagElement.getBoolean("DoubleSpeed")) return
+//        armorEffectTagElement.putBoolean("DoubleSpeed", true)
     }
 
     override fun inventoryTick(
@@ -36,11 +36,11 @@ class DoubleSpeedArmorEffect : ArmorTickEffect {
         isSelected: Boolean,
         generationsArmorItem: GenerationsArmorItem
     ) {
-        if (world.isClientSide) return
-        for (armorSlot in entity.getArmorSlots()) if (itemStack == armorSlot) return
-        val armorEffectTagElement: CompoundTag = itemStack.getTagElement("ArmorEffect") ?: return
-        armorEffectTagElement.remove("DoubleSpeed")
-        if (!armorEffectTagElement.isEmpty) return
-        itemStack.removeTagKey("ArmorEffect")
+//        if (world.isClientSide) return
+//        for (armorSlot in entity.getArmorSlots()) if (itemStack == armorSlot) return
+//        val armorEffectTagElement: CompoundTag = itemStack.getTagElement("ArmorEffect") ?: return
+//        armorEffectTagElement.remove("DoubleSpeed")
+//        if (!armorEffectTagElement.isEmpty) return
+//        itemStack.removeTagKey("ArmorEffect")
     }
 }

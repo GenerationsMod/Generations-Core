@@ -20,6 +20,7 @@ import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.DoubleBlockCombiner.NeighborCombineResult
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
@@ -37,8 +38,7 @@ import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.function.Supplier
 
 @Suppress("deprecation")
-class GenericChestBlock(private val width: Int, private val height: Int, val materialType: String) :
-    AbstractChestBlock<GenericChestBlockEntity>(
+class GenericChestBlock(private val width: Int, private val height: Int, val materialType: String) : AbstractChestBlock<GenericChestBlockEntity>(
         Properties.ofFullCopy(Blocks.CHEST),
         Supplier<BlockEntityType<out GenericChestBlockEntity>> { GenerationsBlockEntities.GENERIC_CHEST.get() }),
     SimpleWaterloggedBlock {
@@ -56,16 +56,21 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
         state: BlockState,
         level: Level,
         pos: BlockPos,
-        override: Boolean
+        override: Boolean,
     ): DoubleBlockCombiner.NeighborCombineResult<out ChestBlockEntity> {
-        return DoubleBlockCombiner.NeighborCombineResult<ChestBlockEntity> { DoubleBlockCombiner.Combiner.acceptNone() }
+        return object : NeighborCombineResult<ChestBlockEntity> {
+            override fun <T : Any?> apply(combiner: DoubleBlockCombiner.Combiner<in ChestBlockEntity, T>): T {
+                return combiner.acceptNone()
+            }
+
+        }
     }
 
     public override fun getShape(
         state: BlockState,
         level: BlockGetter,
         pos: BlockPos,
-        context: CollisionContext
+        context: CollisionContext,
     ): VoxelShape {
         return SHAPE
     }
@@ -88,7 +93,7 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
         pos: BlockPos,
         player: Player,
         hand: InteractionHand,
-        hit: BlockHitResult
+        hit: BlockHitResult,
     ): InteractionResult {
         if (level.isClientSide) {
             return InteractionResult.SUCCESS
@@ -111,7 +116,7 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
         level: Level,
         pos: BlockPos,
         newState: BlockState,
-        isMoving: Boolean
+        isMoving: Boolean,
     ) {
         if (state.`is`(newState.block)) {
             return
@@ -153,12 +158,7 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
         builder.add(FACING, WATERLOGGED)
     }
 
-    override fun isPathfindable(
-        state: BlockState,
-        level: BlockGetter,
-        pos: BlockPos,
-        type: PathComputationType
-    ): Boolean {
+    override fun isPathfindable(state: BlockState, pathComputationType: PathComputationType): Boolean {
         return false
     }
 
@@ -172,7 +172,7 @@ class GenericChestBlock(private val width: Int, private val height: Int, val mat
     override fun <T : BlockEntity?> getTicker(
         level: Level,
         state: BlockState,
-        blockEntityType: BlockEntityType<T>
+        blockEntityType: BlockEntityType<T>,
     ): BlockEntityTicker<T>? {
         return if (level.isClientSide) createTickerHelper(
             blockEntityType, GenerationsBlockEntities.GENERIC_CHEST.get()

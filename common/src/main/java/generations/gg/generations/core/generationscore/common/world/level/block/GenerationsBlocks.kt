@@ -259,7 +259,7 @@ object GenerationsBlocks {
     @JvmField val VOLCANIC_STONE_SLAB = registerStone("volcanic_stone_slab") { SlabBlock(BlockBehaviour.Properties.ofFullCopy(VOLCANIC_STONE.get())) }
     @JvmField val VOLCANIC_STONE_WALL = registerStone("volcanic_stone_wall") { WallBlock(BlockBehaviour.Properties.ofFullCopy(VOLCANIC_STONE.get())) }
     @JvmField val VOLCANIC_STONE_BUTTON = registerStone<ButtonBlock>("volcanic_stone_button") { ButtonBlock( GenerationsBlockSetTypes.VOLCANIC_STONE, 20, BlockBehaviour.Properties.ofFullCopy(VOLCANIC_STONE.get())) }
-    @JvmField val VOLCANIC_STONE_PRESSURE_PLATE = registerStone<PressurePlateBlock>("volcanic_stone_pressure_plate") { PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, BlockBehaviour.Properties.ofFullCopy(VOLCANIC_STONE.get())) }
+    @JvmField val VOLCANIC_STONE_PRESSURE_PLATE = registerStone<PressurePlateBlock>("volcanic_stone_pressure_plate") { PressurePlateBlock(GenerationsBlockSetTypes.VOLCANIC_STONE, BlockBehaviour.Properties.ofFullCopy(VOLCANIC_STONE.get())) }
 
     //Volcanic CobbleStone
     @JvmField val VOLCANIC_COBBLESTONE_SET = GenerationsBlockSet("volcanic_cobblestone", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE))

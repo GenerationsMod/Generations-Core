@@ -6,5 +6,5 @@ import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 object GenerationsStorage {
     val registry = DataManagerRegistry(GenerationsCore.MOD_ID)
 
-    val ITEM_CONTENTS = registry.builder(ItemStorageData.DEFAULT).serialize(ItemStorageData.CODEC).buildAndRegister("")
+    val ITEM_CONTENTS = registry.builder(ItemStorageData.DEFAULT).serialize(ItemStorageData.CODEC).withDataComponent().buildAndRegister("inventory")
 }

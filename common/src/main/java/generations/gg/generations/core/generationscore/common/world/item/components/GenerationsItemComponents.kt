@@ -40,9 +40,6 @@ object GenerationsItemComponents {
         Codec.BOOL,
         StreamCodec.of(ByteBufCodecs.BOOL::encode, ByteBufCodecs.BOOL::decode)
     )
-    var CARROT_HOLDER =
-        register("carrot_holder", ItemStorageData.CODEC.xmap(CalyrexSteedItem.CarrotHolder))
-    var DISC_HOLDER = register(DataKeys.DISC_HOLDER, WalkmonItem.DiscHolder.CODEC)
     val CURRY_DATA = register("curry_data", CurryData.CODEC)
     val TM_DETAILS = register("tm_details", TmDetails.CODEC, TmDetails.STREAM_CODEC)
     val EMBEDDED_POKEMON = register("pokemon", Pokemon.CODEC)

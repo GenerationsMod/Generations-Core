@@ -425,24 +425,24 @@ object ScreenUtils {
     fun createTextField(
         x: Int, y: Int, width: Int, height: Int, maxTextLength: Int,
         initialText: String,
-        responder: Consumer<String?>,
+        responder: Consumer<String>,
         tooltip: Tooltip?
     ): EditBox {
-        return createTextField(x, y, width, height, maxTextLength, true, initialText, null, responder, tooltip)
+        return createTextField(x, y, width, height, maxTextLength, true, initialText, {true }, responder, tooltip)
     }
 
     fun createTextField(
         x: Int, y: Int, width: Int, height: Int, maxTextLength: Int,
         initialText: String,
-        responder: Consumer<String?>
+        responder: Consumer<String>
     ): EditBox {
-        return createTextField(x, y, width, height, maxTextLength, true, initialText, null, responder, null)
+        return createTextField(x, y, width, height, maxTextLength, true, initialText, { true }, responder, null)
     }
 
     fun createTextField(
         x: Int, y: Int, width: Int, height: Int, maxTextLength: Int,
         initialText: String,
-        filter: Predicate<String?>?, responder: Consumer<String?>
+        filter: Predicate<String>, responder: Consumer<String>
     ): EditBox {
         return createTextField(x, y, width, height, maxTextLength, true, initialText, filter, responder, null)
     }
@@ -450,7 +450,7 @@ object ScreenUtils {
     fun createTextField(
         x: Int, y: Int, width: Int, height: Int, maxTextLength: Int,
         initialText: String,
-        filter: Predicate<String?>?, responder: Consumer<String?>,
+        filter: Predicate<String>, responder: Consumer<String>,
         tooltip: Tooltip?
     ): EditBox {
         return createTextField(x, y, width, height, maxTextLength, true, initialText, filter, responder, tooltip)
@@ -459,7 +459,7 @@ object ScreenUtils {
     fun createTextField(
         x: Int, y: Int, width: Int, height: Int, maxTextLength: Int, bordered: Boolean,
         initialText: String,
-        filter: Predicate<String?>?, responder: Consumer<String?>,
+        filter: Predicate<String> = Predicate { true }, responder: Consumer<String>,
         tooltip: Tooltip?
     ): EditBox {
         val textField = EditBox(Minecraft.getInstance().font, x, y, width, height, Component.empty())
