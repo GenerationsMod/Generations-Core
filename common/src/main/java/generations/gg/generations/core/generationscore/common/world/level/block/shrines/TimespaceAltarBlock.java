@@ -13,23 +13,38 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+
+import java.util.function.Function;
 
 import static net.minecraft.world.phys.shapes.BooleanOp.OR;
 
 public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlockEntity> {
     private static final GenerationsVoxelShapes.DirectionalShapes SHAPE = GenerationsVoxelShapes.generateDirectionVoxelShape(
-            Shapes.join(Shapes.box(0, 0, 0.1875, 1, 0.125, 0.75),
-                    Shapes.join(Shapes.box(0, 0.125, 0.3125, 1, 0.1875, 0.6875),
-                            Shapes.box(0.03749999999999998, 0.1875, 0.3125, 0.975, 0.89375, 0.625), OR), OR));
+            Shapes.or(
+                    Shapes.box(0, 0, 0.1875, 1, 0.125, 0.75),
+                    Shapes.box(0, 0.125, 0.3125, 1, 0.1875, 0.6875),
+                    Shapes.box(0.03749999999999998, 0.1875, 0.3125, 0.975, 0.89375, 0.625)
+            )
+    );
+
+    public static final MapCodec<TimespaceAltarBlock> CODEC = simpleCodec(TimespaceAltarBlock::new);
 
     public TimespaceAltarBlock(BlockBehaviour.Properties properties) {
         super(properties, GenerationsBlockEntities.TIMESPACE_ALTAR, GenerationsBlockEntityModels.TIME_SPACE_ALTAR);
+    }
+
+    @Override
+    protected MapCodec<TimespaceAltarBlock> codec() {
+        return CODEC;
     }
 
     @Override
@@ -55,7 +70,7 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
         if (stack.getItem() instanceof RedChainItem && !handler.hasRedChain()) {
             ItemStack chain = handler.insertItem(1, stack, false);
 
-            if (ItemStack.isSameItem(stack, chain)) return false;
+//            if (ItemStack.isSameItem(stack, chain)) return false;
             player.setItemInHand(hand, chain);
 
             var succeeded = trySpawn(state, level, pos, handler, player);
@@ -64,7 +79,7 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
         } else if (stack.getItem() instanceof CreationTrioItem && !handler.hasOrb(player)) {
             ItemStack chain = handler.insertItem(0, stack, false);
 
-            if (ItemStack.isSameItem(stack, chain)) return false;
+//            if (ItemStack.isSameItem(stack, chain)) return false;
             player.setItemInHand(hand, chain);
 
             var succeeded = trySpawn(state, level, pos, handler, player);

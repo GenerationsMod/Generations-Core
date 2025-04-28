@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
 import generations.gg.generations.core.generationscore.common.config.LegendKeys;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
@@ -13,6 +15,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -29,6 +32,13 @@ public class RegigigasShrineBlock extends InteractShrineBlock<RegigigasShrineBlo
     private static final GenerationsVoxelShapes.DirectionalShapes SHAPE = GenerationsVoxelShapes.generateDirectionVoxelShape(
             Shapes.join(Shapes.box(0, 0, 0, 1, 0.3125, 1),
                     Shapes.box(0.125, 0, 0.25, 0.875, 0.875, 0.75), OR), SOUTH);
+
+    private static final MapCodec<RegigigasShrineBlock> CODEC = simpleCodec(RegigigasShrineBlock::new);
+
+    @Override
+    protected MapCodec<RegigigasShrineBlock> codec() {
+        return CODEC;
+    }
 
     @Override
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @NotNull CollisionContext context) {

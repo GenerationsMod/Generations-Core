@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.HumanoidArm;
@@ -20,7 +21,7 @@ import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 
 public class TieredFishingHookRenderer extends EntityRenderer<TieredFishingHookEntity> {
-    private static final ResourceLocation TEXTURE_LOCATION = new ResourceLocation("textures/entity/fishing_hook.png");
+    private static final ResourceLocation TEXTURE_LOCATION = ResourceLocation.parse("textures/entity/fishing_hook.png");
     private static final RenderType RENDER_TYPE = RenderType.entityCutout(TEXTURE_LOCATION);
     private static final double VIEW_BOBBING_SCALE = 960.0;
 
@@ -42,13 +43,11 @@ public class TieredFishingHookRenderer extends EntityRenderer<TieredFishingHookE
             matrixStack.mulPose(this.entityRenderDispatcher.cameraOrientation());
             matrixStack.mulPose(Axis.YP.rotationDegrees(180.0f));
             PoseStack.Pose posestack$pose = matrixStack.last();
-            Matrix4f matrix4f = posestack$pose.pose();
-            Matrix3f matrix3f = posestack$pose.normal();
             VertexConsumer vertexconsumer = buffer.getBuffer(RENDER_TYPE);
-            net.minecraft.client.renderer.entity.FishingHookRenderer.vertex(vertexconsumer, matrix4f, matrix3f, packedLight, 0.0f, 0, 0, 1);
-            net.minecraft.client.renderer.entity.FishingHookRenderer.vertex(vertexconsumer, matrix4f, matrix3f, packedLight, 1.0f, 0, 1, 1);
-            net.minecraft.client.renderer.entity.FishingHookRenderer.vertex(vertexconsumer, matrix4f, matrix3f, packedLight, 1.0f, 1, 1, 0);
-            net.minecraft.client.renderer.entity.FishingHookRenderer.vertex(vertexconsumer, matrix4f, matrix3f, packedLight, 0.0f, 1, 0, 0);
+            vertex(vertexconsumer, posestack$pose, packedLight, 0.0f, 0, 0, 1);
+            vertex(vertexconsumer, posestack$pose, packedLight, 1.0f, 0, 1, 1);
+            vertex(vertexconsumer, posestack$pose, packedLight, 1.0f, 1, 1, 0);
+            vertex(vertexconsumer, posestack$pose, packedLight, 0.0f, 1, 0, 0);
             matrixStack.popPose();
             int i = player.getMainArm() == HumanoidArm.RIGHT ? 1 : -1;
             ItemStack itemstack = player.getMainHandItem();
@@ -62,7 +61,7 @@ public class TieredFishingHookRenderer extends EntityRenderer<TieredFishingHookE
             double d1 = Mth.cos(f2);
             double d2 = (double)i * 0.35;
             double d3 = 0.8;
-            if ((this.entityRenderDispatcher.options == null || this.entityRenderDispatcher.options.getCameraType().isFirstPerson()) && player == Minecraft.getInstance().player) {
+            if (this.entityRenderDispatcher.options.getCameraType().isFirstPerson() && player == Minecraft.getInstance().player) {
                 double d7 = 960.0 / (double) this.entityRenderDispatcher.options.fov().get();
                 Vec3 vec3 = this.entityRenderDispatcher.camera.getNearPlane().getPointOnPlane((float)i * 0.525f, -0.1f);
                 vec3 = vec3.scale(d7);
@@ -92,6 +91,10 @@ public class TieredFishingHookRenderer extends EntityRenderer<TieredFishingHookE
             matrixStack.popPose();
             super.render(entity, entityYaw, partialTicks, matrixStack, buffer, packedLight);
         }
+    }
+
+    private static void vertex(VertexConsumer consumer, PoseStack.Pose pose, int packedLight, float x, int y, int u, int v) {
+        consumer.addVertex(pose, x - 0.5F, (float)y - 0.5F, 0.0F).setColor(-1).setUv((float)u, (float)v).setOverlay(OverlayTexture.NO_OVERLAY).setLight(packedLight).setNormal(pose, 0.0F, 1.0F, 0.0F);
     }
 
     @Override
