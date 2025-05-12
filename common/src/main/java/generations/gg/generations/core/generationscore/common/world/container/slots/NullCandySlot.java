@@ -1,9 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.container.slots;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.inventory.Slot;
+import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot;
+import generations.gg.generations.core.generationscore.common.world.data.SimpleItemStorage;
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
@@ -12,13 +12,13 @@ import java.util.function.DoubleSupplier;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
-public class NullCandySlot extends Slot {
-    private static final Container emptyInventory = new SimpleContainer(0);
-    private final Container candies;
+public class NullCandySlot extends MenuStorageSlot {
+    private static final SimpleItemStorage emptyInventory = new SimpleItemStorage(0);
+    private final SimpleItemStorage candies;
     private final Supplier<ItemStack> item;
     private final DoubleSupplier supplier;
 
-    public NullCandySlot(Container candies, int x, int y, RegistrySupplier<Item> item, DoubleSupplier supplier) {
+    public NullCandySlot(SimpleItemStorage candies, int x, int y, RegistrySupplier<Item> item, DoubleSupplier supplier) {
         super(emptyInventory, 0, x, y);
         this.candies = candies;
         this.item = () -> new ItemStack(item.get());
@@ -52,7 +52,7 @@ public class NullCandySlot extends Slot {
     @Override
     public @NotNull ItemStack remove(int amount) {
         if(hasItem()) {
-            IntStream.range(0, candies.getContainerSize()).forEach(i -> candies.setItem(i, ItemStack.EMPTY));
+            IntStream.range(0, candies.size()).forEach(i -> candies.get(i).set(ItemStack.EMPTY));
             return item.get();
         }
 

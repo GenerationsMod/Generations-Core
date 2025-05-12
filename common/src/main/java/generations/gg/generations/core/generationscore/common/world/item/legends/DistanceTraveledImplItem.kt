@@ -35,7 +35,7 @@ abstract class DistanceTraveledImplItem(properties: Properties, override val max
         return super.use(level, player, usedHand)
     }
 
-    protected abstract fun onCompletion(level: ServerLevel?, player: Player?, usedHand: InteractionHand?)
+    protected abstract fun onCompletion(level: ServerLevel, player: Player, usedHand: InteractionHand?)
 
     override fun incrementDistance(player: ServerPlayer, stack: ItemStack, distance: Double) {
         if (checkPlayerState(player)) {

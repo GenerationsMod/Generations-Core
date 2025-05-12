@@ -1,17 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.shop
 
-import com.cobblemon.mod.common.util.readIdentifier
-import com.cobblemon.mod.common.util.readList
-import com.cobblemon.mod.common.util.readString
-import com.mojang.serialization.Codec
-import com.mojang.serialization.codecs.RecordCodecBuilder
-import generations.gg.generations.core.generationscore.common.api.data.Codecs
 import generations.gg.generations.core.generationscore.common.util.Time
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.util.StringRepresentable
-import java.util.*
 
 class Shop(
     val id: ResourceLocation,

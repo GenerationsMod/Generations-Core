@@ -1,43 +1,16 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
-import com.cobblemon.mod.common.util.codec.CodecUtils
-import com.mojang.datafixers.util.Pair
-import com.mojang.serialization.Codec
-import com.mojang.serialization.DataResult
-import com.mojang.serialization.Dynamic
-import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.menu.MenuRegistry
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import earth.terrarium.common_storage_lib.storage.base.UpdateManager
-import generations.gg.generations.core.generationscore.common.api.data.Codecs
-import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
-import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
-import net.kyori.adventure.title.Title
-import net.minecraft.nbt.CompoundTag
-import net.minecraft.nbt.ListTag
-import net.minecraft.nbt.NbtOps
-import net.minecraft.nbt.Tag
-import net.minecraft.network.FriendlyByteBuf
-import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.Component
-import net.minecraft.network.chat.MutableComponent
-import net.minecraft.network.codec.ByteBufCodecs
-import net.minecraft.network.codec.StreamCodec
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.world.Container
 import net.minecraft.world.MenuProvider
-import net.minecraft.world.SimpleContainer
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
-import net.minecraft.world.item.ItemStack
-import org.apache.http.util.TextUtils
-import java.util.*
-import java.util.function.Function
-import kotlin.collections.ArrayList
 
 object GenericContainer {
 

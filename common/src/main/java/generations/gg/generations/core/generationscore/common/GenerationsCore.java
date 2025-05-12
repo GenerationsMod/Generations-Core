@@ -11,7 +11,6 @@ package generations.gg.generations.core.generationscore.common;
 import com.cobblemon.mod.common.api.data.DataProvider;
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail;
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry;
-import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
 import dev.architectury.event.events.common.LootEvent;
 import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions;
@@ -39,7 +38,6 @@ import generations.gg.generations.core.generationscore.common.world.recipe.*;
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds;
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -50,7 +48,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.storage.loot.*;
 import net.minecraft.world.level.storage.loot.entries.NestedLootTable;
 import org.apache.logging.log4j.util.TriConsumer;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import java.util.function.Consumer;
@@ -122,7 +119,7 @@ public class GenerationsCore {
 		GenerationsPaintings.init();
 		GenerationsContainers.init();
 		RksResultType.init();
-		initRecipes();
+		GenerationsIngredidents.init();
 		GenerationsCoreRecipeTypes.init();
 		GenerationsCoreRecipeSerializers.init();
 		GenerationsCoreStats.init();
@@ -144,27 +141,6 @@ public class GenerationsCore {
 
 
 //		BuiltInRegistries.BLOCK.stream().map(a -> a.arch$registryName() + ": " + a.getLootTable()).forEach(a -> System.out.println(a));
-	}
-
-	private static void initRecipes() {
-		GenerationsIngredidents.register(ItemIngredient.Companion.getID(), ItemIngredientSerializer.INSTANCE);
-		GenerationsIngredidents.register(TimeCapsuleIngredient.Companion.getID(), TimeCapsuleIngredientSerializer.INSTANCE);
-		GenerationsIngredidents.register(PokemonItemIngredient.Companion.getID(), PokemonItemIngredient.PokemonItemIngredientSerializer.INSTANCE);
-		GenerationsIngredidents.register(DamageIngredient.Companion.getID(), DamageIngredientSerializer.INSTANCE);
-		GenerationsIngredidents.register(ItemTagIngredient.Companion.getID(), ItemTagIngredientSerializer.INSTANCE);
-		GenerationsIngredidents.register(GenerationsIngredient.EmptyIngredient.INSTANCE.getId(), new GenerationsIngredientSerializer<>() {
-			@NotNull
-			@Override
-			public GenerationsIngredient read(@NotNull FriendlyByteBuf buf) {
-				return GenerationsIngredient.EmptyIngredient.INSTANCE;
-			}
-
-			@NotNull
-			@Override
-			public GenerationsIngredient read(@NotNull JsonObject jsonObject) {
-				return GenerationsIngredient.EmptyIngredient.INSTANCE;
-			}
-		});
 	}
 
 	public static void initBuiltinPacks(TriConsumer<PackType, ResourceLocation, MutableComponent> consumer) {

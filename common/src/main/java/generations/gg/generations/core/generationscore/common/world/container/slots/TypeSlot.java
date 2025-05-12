@@ -2,6 +2,9 @@ package generations.gg.generations.core.generationscore.common.world.container.s
 
 import com.mojang.datafixers.util.Pair;
 import dev.architectury.registry.registries.RegistrySupplier;
+import earth.terrarium.common_storage_lib.resources.item.ItemResource;
+import earth.terrarium.common_storage_lib.storage.base.CommonStorage;
+import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
@@ -15,14 +18,14 @@ import java.util.function.DoubleSupplier;
 
 import static net.minecraft.world.inventory.InventoryMenu.BLOCK_ATLAS;
 
-public class TypeSlot extends Slot {
+public class TypeSlot extends MenuStorageSlot {
     private final RegistrySupplier<Item> candy;
     private final DoubleSupplier supplier;
     private final Pair<ResourceLocation, ResourceLocation> pair;
     public int originalX;
     public int originalY;
 
-    public TypeSlot(Container itemHandler, int index, int xPosition, int yPosition, RegistrySupplier<Item> candy, String elementName, DoubleSupplier supplier) {
+    public TypeSlot(CommonStorage<ItemResource> itemHandler, int index, int xPosition, int yPosition, RegistrySupplier<Item> candy, String elementName, DoubleSupplier supplier) {
         super(itemHandler, index, xPosition, yPosition);
         this.candy = candy;
         this.supplier = supplier;

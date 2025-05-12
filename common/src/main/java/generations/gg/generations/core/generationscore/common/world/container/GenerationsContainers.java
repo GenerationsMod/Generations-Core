@@ -26,7 +26,7 @@ public class GenerationsContainers {
     public static final RegistrySupplier<MenuType<MelodyFluteContainer>> MELODY_FLUTE = CONTAINERS.register("melody_flute", () -> MenuRegistry.ofExtended(MelodyFluteContainer::new));
 
     public static final RegistrySupplier<MenuType<TrashCanContainer>> TRASHCAN = CONTAINERS.register("trashcan", () -> new MenuType<>(TrashCanContainer::new, FeatureFlagSet.of()));
-    public static final RegistrySupplier<MenuType<WalkmonContainer>> WALKMON = CONTAINERS.register("walkmon", () -> MenuRegistry.ofExtended(WalkmonContainer::new));
+//    public static final RegistrySupplier<MenuType<WalkmonContainer>> WALKMON = CONTAINERS.register("walkmon", () -> MenuRegistry.ofExtended(WalkmonContainer::new));
 //    public static final RegistrySupplier<MenuType<CalyrexSteedContainer>> CALYREX_STEED = CONTAINERS.register("calyrex_steed", () -> MenuRegistry.ofExtended(CalyrexSteedContainer::new));
 
     public static final RegistrySupplier<MenuType<RksMachineContainer>> RKS_MACHINE = CONTAINERS.register("rks_machine", () -> new MenuType<>(RksMachineContainer::new, FeatureFlagSet.of()));
@@ -38,12 +38,12 @@ public class GenerationsContainers {
     }
 
     private static void onContainerClose(Player player, AbstractContainerMenu container) {
-        if(container instanceof GenericChestContainer genericChestContainer) {
-            genericChestContainer.getContainer().update();
-        }
+//        if(container instanceof GenericChestContainer genericChestContainer) {
+//            genericChestContainer.getContainer().update();
+//        }
 
         if (container instanceof MelodyFluteContainer melodyFluteContainer) melodyFluteContainer.save();
-        if (container instanceof WalkmonContainer genericChestContainer) genericChestContainer.save(player);
+//        if (container instanceof WalkmonContainer genericChestContainer) genericChestContainer.save(player);
 //        if (container instanceof CalyrexSteedContainer genericChestContainer) genericChestContainer.save(player);
         if (container instanceof RksMachineContainer rksMachineContainer) rksMachineContainer.close();
     }

@@ -120,7 +120,7 @@ object GenerationsArmor {
         return Item.Properties()
     }
 
-    fun init() {
+    @JvmStatic fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Armor")
         ARMOR.register()
     }

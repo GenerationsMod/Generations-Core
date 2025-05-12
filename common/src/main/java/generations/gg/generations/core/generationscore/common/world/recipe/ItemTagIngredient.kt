@@ -1,16 +1,24 @@
 package generations.gg.generations.core.generationscore.common.world.recipe
 
-import com.cobblemon.mod.common.util.asResource
-import com.google.gson.JsonObject
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredientType
+import generations.gg.generations.core.generationscore.common.util.Codecs.mapCodec
+import generations.gg.generations.core.generationscore.common.util.Codecs.tagCodec
+import generations.gg.generations.core.generationscore.common.util.Codecs.tagStreamCodec
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
-import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.network.codec.StreamCodec
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 
 class ItemTagIngredient(val itemKey: TagKey<Item>) : GenerationsIngredient {
     override val id = ID
+
+    override val type: GenerationsIngredientType<*>
+        get() = GenerationsIngredidents.ITEM_TAG.get()
+
     override fun matches(stack: ItemStack): Boolean {
         return stack.`is` { it.`is`(itemKey) }
     }
@@ -19,25 +27,9 @@ class ItemTagIngredient(val itemKey: TagKey<Item>) : GenerationsIngredient {
         return BuiltInRegistries.ITEM.getTagOrEmpty(itemKey).map { it.value() }.map { it.defaultInstance }.toList()
     }
 
-    override fun write(json: JsonObject) {
-        json.addProperty("key", itemKey.location().toString())
-    }
-
-    override fun write(buf: FriendlyByteBuf) {
-        buf.writeResourceLocation(itemKey.location)
-    }
-
     companion object {
         val ID = "item_tag"
-    }
-}
-
-object ItemTagIngredientSerializer : GenerationsIngredientSerializer<ItemTagIngredient> {
-    override fun read(buf: FriendlyByteBuf): ItemTagIngredient {
-        return ItemTagIngredient(TagKey.create(Registries.ITEM, buf.readResourceLocation()))
-    }
-
-    override fun read(jsonObject: JsonObject): ItemTagIngredient {
-        return ItemTagIngredient(TagKey.create(Registries.ITEM, jsonObject.getAsJsonPrimitive("key").asString.asResource()))
+        val CODEC = mapCodec("item_tag", Registries.ITEM.tagCodec(), ItemTagIngredient::itemKey, ::ItemTagIngredient)
+        val STREAM_CODEC = StreamCodec.composite<RegistryFriendlyByteBuf, ItemTagIngredient, TagKey<Item>>(Registries.ITEM.tagStreamCodec(), ItemTagIngredient::itemKey, ::ItemTagIngredient)
     }
 }

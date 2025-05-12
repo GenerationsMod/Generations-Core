@@ -2,7 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.container;
 
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage;
 import earth.terrarium.common_storage_lib.resources.item.ItemResource;
-import generations.gg.generations.core.generationscore.common.world.container.slots.ItemStorageSlot;
+import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient;
 import generations.gg.generations.core.generationscore.common.world.container.slots.CurryResultSlot;
@@ -26,19 +26,19 @@ public class CookingPotContainer extends AbstractContainerMenu {
     public CookingPotContainer(int id, Inventory playerInventory, SimpleItemStorage storage, ContainerData data) {
         super(GenerationsContainers.COOKING_POT.get(), id);
 
-        addSlot(new ItemStorageSlot(storage, 0, 26, 8 + 11));
-        addSlot(new ItemStorageSlot(storage, 1, 44, 8 + 11));
-        addSlot(new ItemStorageSlot(storage, 2, 62, 8 + 11));
-        addSlot(new ItemStorageSlot(storage, 3, 80, 26 + 11));
-        addSlot(new ItemStorageSlot(storage, 4, 80, 44 + 11));
-        addSlot(new ItemStorageSlot(storage, 5, 62, 62 + 11));
-        addSlot(new ItemStorageSlot(storage, 6, 44, 62 + 11));
-        addSlot(new ItemStorageSlot(storage, 7, 26, 62 + 11));
-        addSlot(new ItemStorageSlot(storage, 8, 8, 44 + 11));
-        addSlot(new ItemStorageSlot(storage, 9, 8, 26 + 11));
-        addSlot(new ItemStorageSlot(storage, 10, 35, 35 + 11));
-        addSlot(new ItemStorageSlot(storage, 11, 53, 35 + 11));
-        addSlot(new ItemStorageSlot(storage, 12, 108, 57 + 11));
+        addSlot(new MenuStorageSlot(storage, 0, 26, 8 + 11));
+        addSlot(new MenuStorageSlot(storage, 1, 44, 8 + 11));
+        addSlot(new MenuStorageSlot(storage, 2, 62, 8 + 11));
+        addSlot(new MenuStorageSlot(storage, 3, 80, 26 + 11));
+        addSlot(new MenuStorageSlot(storage, 4, 80, 44 + 11));
+        addSlot(new MenuStorageSlot(storage, 5, 62, 62 + 11));
+        addSlot(new MenuStorageSlot(storage, 6, 44, 62 + 11));
+        addSlot(new MenuStorageSlot(storage, 7, 26, 62 + 11));
+        addSlot(new MenuStorageSlot(storage, 8, 8, 44 + 11));
+        addSlot(new MenuStorageSlot(storage, 9, 8, 26 + 11));
+        addSlot(new MenuStorageSlot(storage, 10, 35, 35 + 11));
+        addSlot(new MenuStorageSlot(storage, 11, 53, 35 + 11));
+        addSlot(new MenuStorageSlot(storage, 12, 108, 57 + 11));
         addSlot(new CurryResultSlot(playerInventory.player, storage, 13, 142, 35 + 11));
 
         bindPlayerInventory(playerInventory);

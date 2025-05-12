@@ -3,11 +3,9 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import generations.gg.generations.core.generationscore.common.api.data.Codecs
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CouchBlockEntity
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedVariantBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
@@ -22,7 +20,6 @@ import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
@@ -30,7 +27,6 @@ import net.minecraft.world.phys.shapes.BooleanOp
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
-import java.util.function.Function
 
 class VariantCouchBlock(
     properties: Properties,

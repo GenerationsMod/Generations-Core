@@ -5,7 +5,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.resources.ResourceKey;
@@ -39,7 +39,7 @@ public class GenerationsFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DOUBLE_BALLONLEA_PINK_MUSHROOM = register("double_ballonlea_pink_mushroom");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DOUBLE_BALLONLEA_YELLOW_MUSHROOM = register("double_ballonlea_yellow_mushroom");
 
-    public static void onInitialize(BootstapContext<ConfiguredFeature<?, ?>> context) {
+    public static void onInitialize(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         registerMushroom(context, BALLONLEA_BLUE_MUSHROOM, GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM);
         registerMushroom(context, BALLONLEA_GREEN_MUSHROOM, GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM);
         registerMushroom(context, BALLONLEA_PINK_MUSHROOM, GenerationsBlocks.BALLONLEA_PINK_MUSHROOM);
@@ -62,11 +62,11 @@ public class GenerationsFeatures {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, GenerationsCore.id(name));
     }
 
-    private static void registerMushroom(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, RegistrySupplier<GenerationsMushroomBlock> mushroom) {
+    private static void registerMushroom(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, RegistrySupplier<GenerationsMushroomBlock> mushroom) {
         FeatureUtils.register(context, key, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(mushroom.get()))));
     }
 
-    private static void registerTree(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, String name, RegistrySupplier<Block> leaves) {
+    private static void registerTree(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, String name, RegistrySupplier<Block> leaves) {
         TreeConfiguration configuration = TreeFeatures.createStraightBlobTree(Blocks.OAK_LOG, leaves.get(), 4, 2, 0, 2).ignoreVines().build();
         FeatureUtils.register(context, key, Feature.TREE, configuration);
     }

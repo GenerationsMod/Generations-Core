@@ -17,7 +17,7 @@ object GenerationsCoreEntityDataSerializers {
 
     private fun <T> simple(encoder: (RegistryFriendlyByteBuf, T) -> Unit, decoder: (RegistryFriendlyByteBuf) -> T): EntityDataSerializer<T> = EntityDataSerializer.forValueType(StreamCodec.of(encoder, decoder))
 
-    fun init() {
+    @JvmStatic fun init() {
         EntityDataSerializers.registerSerializer(PROPERTIES)
         EntityDataSerializers.registerSerializer(NULLABLE_STRING)
     }

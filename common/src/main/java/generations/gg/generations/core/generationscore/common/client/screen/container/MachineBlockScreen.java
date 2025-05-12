@@ -30,7 +30,7 @@ public class MachineBlockScreen extends AbstractContainerScreen<MachineBlockCont
     public void render(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
         this.menu.slots.stream().filter(a -> a instanceof TypeSlot).forEach(a -> TypeSlot.interpolateVectors((TypeSlot) a, 0, 0, 80, 80, bakeTimeProvider.getAsDouble()));
 
-        this.renderBackground(poseStack);
+        this.renderBackground(poseStack, mouseX, mouseY, partialTick);
         super.render(poseStack, mouseX, mouseY, partialTick);
         this.renderTooltip(poseStack, mouseX, mouseY);
     }

@@ -22,7 +22,7 @@ abstract class SimpleBlockEntity(pType: BlockEntityType<*>, pPos: BlockPos, pBlo
         level?.sendBlockUpdated(blockPos, blockState, blockState, 2)
     }
 
-    public override fun loadAdditional(nbt: CompoundTag, provider: HolderLookup.Provider) {
+    override fun loadAdditional(nbt: CompoundTag, provider: HolderLookup.Provider) {
         super.loadAdditional(nbt, provider)
         readNbt(nbt, provider)
     }

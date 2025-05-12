@@ -4,9 +4,8 @@ import com.cobblemon.mod.common.api.berry.Berry
 import com.cobblemon.mod.common.api.berry.Flavor
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import generations.gg.generations.core.generationscore.common.api.data.Codecs
+import generations.gg.generations.core.generationscore.common.util.Codecs
 import generations.gg.generations.core.generationscore.common.world.item.berry.BerryType
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity.Companion.getDominantFlavor
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.nbt.Tag

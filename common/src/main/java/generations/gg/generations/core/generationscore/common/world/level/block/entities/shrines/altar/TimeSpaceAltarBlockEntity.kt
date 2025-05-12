@@ -24,8 +24,9 @@ import net.minecraft.world.level.block.state.BlockState
 class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShrineBlockEntity(GenerationsBlockEntities.TIMESPACE_ALTAR.get(), pos, state), ItemProvider.BlockEntity, ModelContextProviders.VariantProvider {
     private var handler: TimeSpaceAltarItemStackHandler = TimeSpaceAltarItemStackHandler()
 
-    val variant: String
-        get() = if (container.hasRedChain()) "red chain" else "none"
+    override fun getVariant(): String {
+        return if (container.hasRedChain()) "red chain" else "none"
+    }
 
     val container: TimeSpaceAltarItemStackHandler
         get() = handler
@@ -61,13 +62,16 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
             )
         }
 
+        fun extract(index: Int, simulate: Boolean): ItemStack { //TODO: This probably really jank and I need to change this completley.
+            var src = get(index);
+            var stack = src.toItemStack()
+            src.set(ItemStack.EMPTY)
 
-        override fun extract(resource: ItemResource?, amount: Long, simulate: Boolean): Long {
-            return super.extract(resource, amount, simulate)
+            return stack
         }
 
         fun extractItem(): ItemStack {
-            for (i in 0..1) if (!this[i].isEmpty) return this[i].extract(1, false)
+            for (i in 0..1) if (!this[i].isEmpty) return extract(1, false)
 
             return ItemStack.EMPTY
         }
@@ -77,9 +81,13 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
         }
 
         fun dumpAllIntoPlayerInventory(player: ServerPlayer) {
-            for (stack in getItems()) player.inventory.placeItemBackInInventory(stack)
+            val size = size();
 
-            clearContent()
+            (0..size).map(::get).forEach { slot ->
+                val stack = slot.toItemStack()
+                slot.set(ItemStack.EMPTY)
+                player.inventory.placeItemBackInInventory(stack)
+            }
         }
 
         fun insertItem(index: Int, stack: ItemStack, simulate: Boolean): ItemStack {

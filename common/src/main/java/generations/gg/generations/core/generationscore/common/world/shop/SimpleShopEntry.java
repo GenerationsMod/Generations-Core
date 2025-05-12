@@ -1,7 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.shop;
 
+import com.mojang.serialization.JsonOps;
 import generations.gg.generations.core.generationscore.common.util.ShopUtils;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Random;
@@ -17,16 +19,16 @@ public class SimpleShopEntry {
     private final int order;
 
     public SimpleShopEntry(ShopEntry shopEntry) {
-        this.item = shopEntry.item;
-        this.item.setCount(shopEntry.amount);
-        this.description = shopEntry.description;
-        this.buyPrice = applyVariation(shopEntry.buyPrice, shopEntry.priceVariation);
-        this.sellPrice = applyVariation(shopEntry.sellPrice, shopEntry.priceVariation);
-        this.order = shopEntry.order;
+        this.item = shopEntry.getItem();
+        this.item.setCount(shopEntry.getAmount());
+        this.description = shopEntry.getDescription();
+        this.buyPrice = applyVariation(shopEntry.getBuyPrice(), shopEntry.getPriceVariation());
+        this.sellPrice = applyVariation(shopEntry.getSellPrice(), shopEntry.getPriceVariation());
+        this.order = shopEntry.getOrder();
     }
 
     public SimpleShopEntry(CompoundTag tag) {
-        this.item = ItemStack.of(tag.getCompound("item"));
+        this.item = ItemStack.CODEC.parse(NbtOps.INSTANCE, tag.getCompound("item")).result().orElse(ItemStack.EMPTY);
         this.description = tag.getString("description");
         this.buyPrice = tag.getInt("buyPrice");
         this.sellPrice = tag.getInt("sellPrice");
@@ -36,9 +38,7 @@ public class SimpleShopEntry {
     public CompoundTag serializeToNbt() {
         CompoundTag tag = new CompoundTag();
 
-        CompoundTag itemTag = new CompoundTag();
-        item.save(itemTag);
-        tag.put("item", itemTag);
+        tag.put("item", ItemStack.CODEC.encodeStart(NbtOps.INSTANCE, item).result().get());
         tag.putString("description", description);
         tag.putInt("buyPrice", buyPrice);
         tag.putInt("sellPrice", sellPrice);

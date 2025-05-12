@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import org.jetbrains.annotations.NotNull;
 
@@ -19,8 +20,10 @@ public class GenerationsRecipeProvider extends RecipeProvider {
         this.providers = Stream.of(providers).map(provider -> provider.apply(output)).collect(Collectors.toList());
     }
 
+
+
     @Override
-    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+    protected void buildRecipes(@NotNull RecipeOutput consumer) {
         providers.forEach(provider -> provider.buildRecipes(consumer));
     }
 
@@ -31,6 +34,6 @@ public class GenerationsRecipeProvider extends RecipeProvider {
         }
 
         @Override
-        abstract protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer);
+        abstract protected void buildRecipes(@NotNull RecipeOutput consumer);
     }
 }

@@ -127,7 +127,7 @@ public class TieredFishingHookEntity extends FishingHook {
 
         public ObjectArrayList<ItemStack> process(LootParams lootParams, ItemStack stack) {
             var level = lootParams.getLevel();
-            var loottable = level.getServer().getLootData().getLootTable(resourceLocation);
+            var loottable = level.getServer().reloadableRegistries().getLootTable(resourceLocation);
 
             ObjectArrayList<ItemStack> list = loottable.getRandomItems(lootParams);
 

@@ -1,21 +1,25 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines;
 
 import dev.architectury.registry.registries.RegistrySupplier;
-import earth.terrarium.botarium.common.item.ItemContainerBlock;
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemSlot;
+import earth.terrarium.common_storage_lib.item.util.ItemProvider;
+import earth.terrarium.common_storage_lib.resources.item.ItemResource;
+import earth.terrarium.common_storage_lib.storage.base.CommonStorage;
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem;
 import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implements ItemContainerBlock {
+public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implements ItemProvider.Block {
     private RegigigasItemStackHandler handler;
 
     public RegigigasShrineBlockEntity(BlockPos arg2, BlockState arg3) {
@@ -28,8 +32,12 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
     }
 
     @Override
+    public CommonStorage<ItemResource> getItems(Level level, BlockPos blockPos, @Nullable BlockState blockState, @Nullable BlockEntity blockEntity, @Nullable Direction direction) {
+        return getContainer();
+    }
+
     public RegigigasItemStackHandler getContainer() {
-        return handler == null ? (handler = new RegigigasItemStackHandler()) : handler;
+        return handler;
     }
 
     public static int getRegiOrbIndex(RegiOrbItem item) {
@@ -41,11 +49,6 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
             case "regieleki" -> 4;
             default -> -1;
         };
-    }
-
-    @Override
-    protected void saveAdditional(@NotNull CompoundTag nbt) {
-        super.saveAdditional(nbt);
     }
 
     private Optional<RegiOrbItem> getRegiItem(int index) {
@@ -65,9 +68,9 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
         }
 
         @Override
-        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            if(stack.getItem() instanceof RegiOrbItem orb) {
-                Optional<RegiOrbItem> regiOrbItem = getRegiItem(slot).filter(regiOrb -> regiOrb.equals(orb));
+        public boolean isResourceValid(int index, ItemResource resource) {
+            if(resource.getItem() instanceof RegiOrbItem orb) {
+                Optional<RegiOrbItem> regiOrbItem = getRegiItem(index).filter(regiOrb -> regiOrb.equals(orb));
 
                 if (regiOrbItem.isPresent()) return regiOrbItem.get().equals(orb);
             }
@@ -76,27 +79,27 @@ public class RegigigasShrineBlockEntity extends InteractShrineBlockEntity implem
         }
 
         @Override
-        public int getSlotLimit(int slot) {
+        public long getLimit(int index, ItemResource resource) {
             return 1;
         }
 
         public boolean isFull() {
-            return getItems().stream().noneMatch(ItemStack::isEmpty);
+            return getContainer().slots.stream().map(SimpleItemSlot::getResource).noneMatch(ItemResource::isBlank);
         }
 
-        public void clear() {
-            getItems().clear();
-            setChanged();
+        public void clear() { //TODO: work on
+//            getItems().clear();
+//            setChanged();
         }
 
         public boolean contains(Item item) {
-            return getItems().stream().anyMatch(stack -> stack.is(item));
+            return getContainer().slots.stream().map(SimpleItemSlot::getResource).anyMatch(stack -> stack.isOf(item));
         }
     }
 
-    @Override
-    public @NotNull CompoundTag getUpdateTag() {
-        return getContainer().serialize(super.getUpdateTag());
-    }
+//    @Override
+//    public @NotNull CompoundTag getUpdateTag() {
+//        return getContainer().serialize(super.getUpdateTag());
+//    }
 
 }

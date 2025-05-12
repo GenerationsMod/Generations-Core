@@ -15,7 +15,7 @@ public class AbilityChangerMixin {
 
     @Inject(method = "performChange", at = @At("HEAD"), cancellable = true)
     public void onChange(Pokemon pokemon, CallbackInfoReturnable<Boolean> cir) {
-        if(pokemon.getSpecies().resourceIdentifier.equals(LegendKeys.ZYGARDE.species())) {
+        if(pokemon.getSpecies().resourceIdentifier.equals(LegendKeys.ZYGARDE.species)) {
             cir.setReturnValue(false);
         }
     }

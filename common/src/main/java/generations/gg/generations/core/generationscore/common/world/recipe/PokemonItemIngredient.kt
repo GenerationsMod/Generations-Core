@@ -3,58 +3,45 @@ package generations.gg.generations.core.generationscore.common.world.recipe
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.item.PokemonItem
-import com.cobblemon.mod.common.util.asResource
-import com.cobblemon.mod.common.util.toJsonArray
-import com.google.gson.JsonObject
-import net.minecraft.network.FriendlyByteBuf
+import com.mojang.serialization.Codec
+import com.mojang.serialization.codecs.RecordCodecBuilder
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredientType
+import generations.gg.generations.core.generationscore.common.util.Codecs.nullable
+import generations.gg.generations.core.generationscore.common.util.Codecs.set
+import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
+import generations.gg.generations.core.generationscore.common.util.StreamCodecs.nullable
+import generations.gg.generations.core.generationscore.common.util.StreamCodecs.set
+import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 
-class PokemonItemIngredient(var species: ResourceLocation, var aspects: Set<String>) : GenerationsIngredient {
+class PokemonItemIngredient(val species: ResourceLocation?, val aspects: Set<String>?, val strict: Boolean = true) : GenerationsIngredient {
     override val id = ID
+
+    override val type: GenerationsIngredientType<*>
+        get() = GenerationsIngredidents.POKEMON_ITEM.get()
 
     override fun matches(stack: ItemStack): Boolean =
         if (stack.`is`(CobblemonItems.POKEMON_MODEL)) {
-            (stack.item as PokemonItem).getSpeciesAndAspects(stack)?.let {
-                (it.first.resourceIdentifier == species) && (it.second.containsAll(aspects)) } ?: false
+            (stack.item as PokemonItem).getSpeciesAndAspects(stack)?.let { ((species == null || it.first.resourceIdentifier == species) && (aspects == null || it.second.containsAllOrSome(true, aspects))) } ?: false
         } else false
 
-
-    override fun matchingStacks(): List<ItemStack> = listOf(PokemonSpecies.getByIdentifier(species)?.let {
-        PokemonItem.from(species = it, aspects = aspects)
+    override fun matchingStacks(): List<ItemStack> = listOf(species?.let { PokemonSpecies.getByIdentifier(it) }?.let {
+        PokemonItem.from(species = it, aspects = aspects ?: emptySet())
     } ?: ItemStack.EMPTY)
-
-    override fun write(json: JsonObject) {
-        json.addProperty("species", species.toString())
-        json.add("aspects", aspects.stream().map { it.toString() }.toList().toJsonArray())
-    }
-
-    override fun write(buf: FriendlyByteBuf) {
-        buf.writeResourceLocation(species)
-        buf.writeCollection(aspects) { t, u -> t.writeUtf(u) }
-    }
 
     companion object {
         val ID = "pokemon_item"
-    }
-
-    object PokemonItemIngredientSerializer : GenerationsIngredientSerializer<PokemonItemIngredient> {
-        override fun read(buf: FriendlyByteBuf): PokemonItemIngredient {
-            val species = buf.readResourceLocation()
-            val aspects = buf.readCollection({ mutableSetOf() }, FriendlyByteBuf::readUtf)
-
-            return PokemonItemIngredient(species, aspects)
-        }
-
-        override fun read(jsonObject: JsonObject): PokemonItemIngredient {
-            val species = jsonObject.getResouceLocation("species")
-            val aspects = jsonObject.getAsJsonArray("aspects").map { it.asString }.toMutableSet()
-
-            return PokemonItemIngredient(species, aspects)
-        }
+        val CODEC = RecordCodecBuilder.mapCodec { it.group(
+            ResourceLocation.CODEC.nullable("species", PokemonItemIngredient::species),
+            Codec.STRING.set().nullable("aspects", PokemonItemIngredient::aspects),
+            Codec.BOOL.optionalFieldOf("strict", true).forGetter(PokemonItemIngredient::strict)
+        ).apply(it, ::PokemonItemIngredient) }
+        val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, PokemonItemIngredient> = StreamCodec.composite(ResourceLocation.STREAM_CODEC.nullable(), PokemonItemIngredient::species, ByteBufCodecs.STRING_UTF8.set().nullable(), PokemonItemIngredient::aspects, ByteBufCodecs.BOOL, PokemonItemIngredient::strict, ::PokemonItemIngredient).asRegistryFriendly();
     }
 }
 
-private fun JsonObject.getResouceLocation(name: String): ResourceLocation {
-    return this.get(name).asString.asResource()
-}
+private fun <E> Collection<E>.containsAllOrSome(all: Boolean, aspects: Collection<E>): Boolean = if(all) this.all(aspects::contains) else this.any(aspects::contains)

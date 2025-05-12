@@ -46,7 +46,7 @@ public class Offers {
     }
 
     public static Offers of(CompoundTag tag, @Nullable Level level) {
-        return new Offers(new ResourceLocation(tag.getString("key")), level, Time.fromInt(tag.getInt("lastRefreshed")),
+        return new Offers(ResourceLocation.parse(tag.getString("key")), level, Time.fromInt(tag.getInt("lastRefreshed")),
                 tag.getList("entries", 10).stream()
                         .map(t -> new SimpleShopEntry((CompoundTag) t))
                         .toArray(SimpleShopEntry[]::new));

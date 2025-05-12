@@ -18,7 +18,7 @@ public class SingleSlotScreen<T extends SingleSlotContainer> extends AbstractCon
     }
     @Override
     public void render(@NotNull GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
-        this.renderBackground(poseStack);
+        this.renderBackground(poseStack, mouseX, mouseY, partialTick);
         super.render(poseStack, mouseX, mouseY, partialTick);
         this.renderTooltip(poseStack, mouseX, mouseY);
     }

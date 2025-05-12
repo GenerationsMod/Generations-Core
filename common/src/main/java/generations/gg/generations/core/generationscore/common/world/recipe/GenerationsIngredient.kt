@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.recipe
 
-import com.google.gson.JsonObject
-import net.minecraft.network.FriendlyByteBuf
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredientType
 import net.minecraft.world.item.ItemStack
 
 //Copy of Cobblemon's CobblemonIngredient class due to it being sealed.
@@ -9,6 +8,8 @@ interface GenerationsIngredient {
     val isEmpty: Boolean
         get() = false
     val id: String
+
+    val type: GenerationsIngredientType<*>
 
     /**
      * Tests if a given [stack] is valid for this ingredient.
@@ -25,27 +26,5 @@ interface GenerationsIngredient {
      */
     fun matchingStacks(): List<ItemStack>
 
-    fun write(json: JsonObject)
-    fun write(buf: FriendlyByteBuf)
-
-    object EmptyIngredient : GenerationsIngredient {
-        override val id: String = "empty"
-
-        override val isEmpty: Boolean
-            get() = true
-
-        override fun matches(stack: ItemStack): Boolean = stack.isEmpty
-
-        override fun matchingStacks(): List<ItemStack> = listOf(ItemStack.EMPTY)
-
-        override fun write(json: JsonObject) {}
-        override fun write(buf: FriendlyByteBuf) {
-        }
-    }
-}
-
-interface GenerationsIngredientSerializer<T : GenerationsIngredient> {
-    fun read(buf: FriendlyByteBuf): T
-    fun read(jsonObject: JsonObject): T
 }
 

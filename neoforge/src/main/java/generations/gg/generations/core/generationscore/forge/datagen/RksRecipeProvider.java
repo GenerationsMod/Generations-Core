@@ -18,6 +18,7 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -36,7 +37,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
     }
 
     @Override
-    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> exporter) {
+    protected void buildRecipes(@NotNull RecipeOutput exporter) {
         ShapedRksRecipeJsonBuilder.create(LegendKeys.MEWTWO, 70)
                 .pattern("XAX")
                 .pattern("XBX")
@@ -282,10 +283,10 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
         unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK, "questionmark");
     }
 
-    private <E> void createZCyrstal(RegistrySupplier<Item> result, String pokemon, String aspects, Consumer<FinishedRecipe> exporter) {
+    private <E> void createZCyrstal(RegistrySupplier<Item> result, String pokemon, String aspects, RecipeOutput exporter) {
         ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
-                .input('B', new TimeCapsuleIngredient(new SpeciesKey(new ResourceLocation("cobblemon", pokemon), Set.of(aspects)), false))
+                .input('B', new TimeCapsuleIngredient(new SpeciesKey(ResourceLocation.fromNamespaceAndPath("cobblemon", pokemon), Set.of(aspects)), false))
                 .input('X', Z_INGOT.get())
                 .pattern("XXX")
                 .pattern("ABA")
@@ -294,23 +295,23 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .offerTo(exporter, result.getId().withSuffix("_" + aspects.replace("-", "_")));
     }
 
-    private void createParadoxPast(String paradoxPokemon, String toBeConverted, Consumer<FinishedRecipe> exporter) {
+    private void createParadoxPast(String paradoxPokemon, String toBeConverted, RecipeOutput exporter) {
         createParadox(paradoxPokemon, toBeConverted, exporter, Items.COAL);
     }
 
-    private void createParadoxFuture(String suffix, String paradoxPokemon, String toBeConverted, Consumer<FinishedRecipe> exporter) {
+    private void createParadoxFuture(String suffix, String paradoxPokemon, String toBeConverted, RecipeOutput exporter) {
         createParadox(suffix, paradoxPokemon, toBeConverted, exporter, Items.REDSTONE);
     }
 
-    private void createParadoxFuture(String paradoxPokemon, String toBeConverted, Consumer<FinishedRecipe> exporter) {
+    private void createParadoxFuture(String paradoxPokemon, String toBeConverted, RecipeOutput exporter) {
         createParadox(paradoxPokemon, toBeConverted, exporter, Items.REDSTONE);
     }
 
-    private void createZCyrstal(RegistrySupplier<Item> result, String pokemon, Consumer<FinishedRecipe> exporter) {
+    private void createZCyrstal(RegistrySupplier<Item> result, String pokemon, RecipeOutput exporter) {
         createZCyrstal(result, pokemon, false, exporter);
     }
 
-    private void createZCyrstal(RegistrySupplier<Item> result, String pokemon, boolean multi, Consumer<FinishedRecipe> exporter) {
+    private void createZCyrstal(RegistrySupplier<Item> result, String pokemon, boolean multi, RecipeOutput exporter) {
         ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
                 .input('B', new TimeCapsuleIngredient(pokemon, false))
@@ -323,15 +324,15 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .offerTo(exporter, result.getId().withSuffix(multi ? "_" + pokemon : ""));
     }
 
-    private void unownBlock(@NotNull Consumer<FinishedRecipe> consumer, RegistrySupplier<Block> createdBlock, String form){
+    private void unownBlock(@NotNull RecipeOutput consumer, RegistrySupplier<Block> createdBlock, String form){
         ShapelessRksRecipeJsonBuilder.create(createdBlock.get())
                 .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
-                .requires(new PokemonItemIngredient(new ResourceLocation("cobblemon", "unown"), Set.of(form)))
+                .requires(new PokemonItemIngredient(ResourceLocation.bySeparator("cobblemon", "unown"), Set.of(form)))
                 .criterion(getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()), has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()))
                 .offerTo(consumer, createdBlock.getId());
     }
 
-    private void createZCyrstal(RegistrySupplier<Item> result, Item item, Consumer<FinishedRecipe> exporter) {
+    private void createZCyrstal(RegistrySupplier<Item> result, Item item, RecipeOutput exporter) {
         ShapedRksRecipeJsonBuilder.create(result.get())
                 .input('A', Items.NETHERITE_SCRAP)
                 .input('B', item)
@@ -343,7 +344,7 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .offerTo(exporter, result.getId());
     }
 
-    private void createMegaStone(RegistrySupplier<Item> result, String pokemon, Consumer<FinishedRecipe> exporter) {
+    private void createMegaStone(RegistrySupplier<Item> result, String pokemon, RecipeOutput exporter) {
         var phrase = result.getId().getPath();
         var index = phrase.indexOf("_");
         Character special = index != -1 ? phrase.charAt(index + 1) : null;
@@ -373,11 +374,11 @@ public class RksRecipeProvider extends GenerationsRecipeProvider.Proxied {
                 .offerTo(exporter, result.getId());
     }
 
-    private void createParadox(String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
+    private void createParadox(String name, String toBeConverted, RecipeOutput exporter, Item item) {
         createParadox("", name, toBeConverted, exporter, item);
     }
 
-    private void createParadox(String suffix, String name, String toBeConverted, Consumer<FinishedRecipe> exporter, Item item) {
+    private void createParadox(String suffix, String name, String toBeConverted, RecipeOutput exporter, Item item) {
         ShapelessRksRecipeJsonBuilder.create(name, false, true)
                 .requires(new TimeCapsuleIngredient(toBeConverted, false))
                 .requires(item)

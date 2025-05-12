@@ -52,7 +52,7 @@ public class RegiShrineBlock extends ShrineBlock<GenericShrineBlockEntity> {
 
     public RegiShrineBlock(Properties materialIn, ResourceLocation model, SpeciesKey speciesKey) {
         super(materialIn, GenerationsBlockEntities.GENERIC_SHRINE, model);
-        var cipher = "-" + speciesKey.species().getPath().toUpperCase() + "-";
+        var cipher = "-" + speciesKey.species.getPath().toUpperCase() + "-";
         list = IntStream.range(0, cipher.length() - 2).boxed().map(a -> getSubSequence(cipher, a)).collect(Collectors.toList());
         this.species = speciesKey;
     }

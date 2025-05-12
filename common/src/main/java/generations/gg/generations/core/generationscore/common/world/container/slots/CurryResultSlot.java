@@ -1,13 +1,14 @@
 package generations.gg.generations.core.generationscore.common.world.container.slots;
 
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage;
+import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class CurryResultSlot extends ItemStorageSlot {
+public class CurryResultSlot extends MenuStorageSlot {
     private final Player player;
     private int removeCount;
 

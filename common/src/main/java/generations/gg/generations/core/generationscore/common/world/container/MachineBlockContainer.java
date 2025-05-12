@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
+import generations.gg.generations.core.generationscore.common.world.data.SimpleItemStorage;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity;
 import generations.gg.generations.core.generationscore.common.world.container.slots.NullCandySlot;
@@ -38,7 +39,7 @@ public class MachineBlockContainer extends AbstractContainerMenu {
         addSlot(new TypeSlot(be.getCandies(), 16, 46, 17, GenerationsItems.STEEL_CANDY, "steel", this::getBakeTime));
         addSlot(new TypeSlot(be.getCandies(), 17, 68, 9, GenerationsItems.WATER_CANDY, "water", this::getBakeTime));
 
-        addSlot(new NullCandySlot(be.getCandies(), 80, 80, GenerationsItems.NULL_CANDY, this::getBakeTime));
+//        addSlot(new NullCandySlot((SimpleItemStorage) be.getCandies(), 80, 80, GenerationsItems.NULL_CANDY, this::getBakeTime));
 
         populate(ctx.playerInv(), 173, 1, 3);
         populate(ctx.playerInv(), 231, 0, 1);

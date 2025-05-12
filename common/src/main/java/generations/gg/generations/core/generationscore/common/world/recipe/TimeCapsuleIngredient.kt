@@ -5,13 +5,19 @@ import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import com.cobblemon.mod.common.util.toJsonArray
 import com.google.gson.JsonObject
+import com.mojang.serialization.Codec
+import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents
+import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredientType
 import generations.gg.generations.core.generationscore.common.util.getPokemon
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.core.component.DataComponents
 
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
+import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
@@ -24,39 +30,21 @@ class TimeCapsuleIngredient(val key : SpeciesKey, val strictAspects: Boolean = f
             "cobblemon".asIdentifierDefaultingNamespace()
         ), strictAspects)
 
-    override fun matches(stack: ItemStack): Boolean = if(stack.`is`(GenerationsItems.TIME_CAPSULE.get())) stack.getPokemon()?.takeIf { it.species.resourceIdentifier == key.species && if(strictAspects) it.aspects == key.aspects else it.aspects.containsAll(key.aspects) } != null else false
-    override fun matchingStacks(): List<ItemStack> = listOf(PokemonSpecies.getByIdentifier(key.species)?.let { PokemonItem.from(it, key.aspects, 1) }?: Items.APPLE.defaultInstance.also { it.set(DataComponents.ITEM_NAME, Component.literal("Missing species: " + key.species )) } )
-    override fun write(json: JsonObject) {
-        json.addProperty("species", key.species.toString())
-        json.add("aspects", key.aspects.toJsonArray())
-        json.addProperty("strictAspects", strictAspects)
-    }
+    override val type: GenerationsIngredientType<*>
+        get() = GenerationsIngredidents.TIME_CAPSULE.get()
 
-    override fun write(buf: FriendlyByteBuf) {
-        buf.writeSpeciesKey(key).writeBoolean(strictAspects)
-    }
+    override fun matches(stack: ItemStack): Boolean = if(stack.`is`(GenerationsItems.TIME_CAPSULE.get())) stack.getPokemon()?.takeIf { it.species.resourceIdentifier == key.species && if(strictAspects) it.aspects == key.aspects else it.aspects.containsAny(key.aspects) } != null else false
+    override fun matchingStacks(): List<ItemStack> = listOf(PokemonSpecies.getByIdentifier(key.species)?.let { PokemonItem.from(it, key.aspects ?: emptySet(), 1) }?: Items.APPLE.defaultInstance.also { it.set(DataComponents.ITEM_NAME, Component.literal("Missing species: " + key.species )) } )
 
     companion object {
         val ID = "time_capsule"
+        val CODEC = RecordCodecBuilder.mapCodec { it.group(
+            SpeciesKey.CODEC.fieldOf("key",).forGetter(TimeCapsuleIngredient::key),
+            Codec.BOOL.fieldOf("strict").forGetter(TimeCapsuleIngredient::strictAspects)
+        ).apply(it, ::TimeCapsuleIngredient) }
+        val STREAM_CODEC = StreamCodec.composite(SpeciesKey.STREAM_CODEC, TimeCapsuleIngredient::key, ByteBufCodecs.BOOL, TimeCapsuleIngredient::strictAspects, ::TimeCapsuleIngredient)
     }
 }
 
-object TimeCapsuleIngredientSerializer : GenerationsIngredientSerializer<TimeCapsuleIngredient> {
-    override fun read(buf: FriendlyByteBuf): TimeCapsuleIngredient {
-        return TimeCapsuleIngredient(buf.readSpeciesKey(), buf.readBoolean())
-    }
+private fun <E> Collection<E>.containsAny(set: Collection<E>?): Boolean = if(set == null) false else this.any(set::contains)
 
-    override fun read(jsonObject: JsonObject): TimeCapsuleIngredient {
-        return TimeCapsuleIngredient(
-            SpeciesKey(
-                jsonObject.getAsJsonPrimitive("species").asString,
-                jsonObject.getAsJsonArray("aspects").map { it.asString }.let { HashSet(it) }), jsonObject.getAsJsonPrimitive("strictAspects").asBoolean)
-    }
-}
-
-fun FriendlyByteBuf.readSpeciesKey(): SpeciesKey =
-    SpeciesKey(
-        this.readResourceLocation(),
-        this.readCollection<String, HashSet<String>>(::HashSet, FriendlyByteBuf::readUtf)
-    )
-fun FriendlyByteBuf.writeSpeciesKey(key: SpeciesKey): FriendlyByteBuf = this.writeResourceLocation(key.species).writeCollection(key.aspects, FriendlyByteBuf::writeUtf).let { this }

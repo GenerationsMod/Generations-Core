@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.network.packets
 
 import com.cobblemon.mod.common.util.MovingSoundInstance
-import generations.gg.generations.core.generationscore.common.network.ClientNetworkPacketHandler
 import net.minecraft.client.Minecraft
 import net.minecraft.sounds.SoundSource
 

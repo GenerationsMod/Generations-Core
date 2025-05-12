@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
@@ -75,7 +75,7 @@ public class GenerationsPlacedFeatures {
     public static final ResourceKey<PlacedFeature> ULTRA_BALL_LOOT = registerKey("ultra_ball_loot");
     public static final ResourceKey<PlacedFeature> WING_BALL_LOOT = registerKey("wing_ball_loot");
 
-    public static void bootStrap(BootstapContext<PlacedFeature> context) {
+    public static void bootStrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureRegistryEntryLookup = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, ORE_SILICON_UPPER, configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_SILICON), GenerationsOrePlacements.commonOrePlacement(20, HeightRangePlacement.triangle(VerticalAnchor.absolute(80), VerticalAnchor.absolute(384))));
@@ -143,7 +143,7 @@ public class GenerationsPlacedFeatures {
         return ResourceKey.create(Registries.PLACED_FEATURE, GenerationsCore.id(name));
     }
 
-    private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
+    private static void register(BootstrapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, Holder<ConfiguredFeature<?, ?>> configuration, List<PlacementModifier> modifiers) {
         context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
     }
 

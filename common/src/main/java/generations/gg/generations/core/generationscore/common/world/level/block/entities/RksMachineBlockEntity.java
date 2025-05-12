@@ -2,9 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.google.common.collect.Lists;
-import dev.architectury.registry.menu.ExtendedMenuProvider;
-import dev.architectury.registry.menu.MenuRegistry;
-import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers;
+import generations.gg.generations.core.generationscore.common.recipe.RksInput;
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe;
@@ -12,9 +10,10 @@ import generations.gg.generations.core.generationscore.common.world.sound.Genera
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -31,15 +30,11 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.RecipeHolder;
-import net.minecraft.world.inventory.StackedContentsCompatible;
+import net.minecraft.world.inventory.RecipeCraftingHolder;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeInput;
-import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -50,7 +45,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuProvider, Container, RecipeInput, StackedContentsCompatible, Toggleable {
+public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements MenuProvider, Container, Toggleable {
 
     private static final int[] OUTPUT_SLOTS = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     private static final int[] INPUT_SLOTS = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -70,7 +65,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
 
     public NonNullList<ItemStack> inventory;
     public ItemStack output = ItemStack.EMPTY;
-    private Recipe<?> lastRecipe;
+    private RecipeHolder<RksRecipe> lastRecipe;
     private final List<RksMachineContainer> openContainers = new ArrayList<>();
 
     private final Object2IntOpenHashMap<ResourceLocation> recipesUsed = new Object2IntOpenHashMap<>();
@@ -108,22 +103,23 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    protected void saveAdditional(@NotNull CompoundTag nbt) {
-        super.saveAdditional(nbt);
+    protected void saveAdditional(@NotNull CompoundTag nbt, @NotNull HolderLookup.Provider provider) {
+        super.saveAdditional(nbt, provider);
         CompoundTag inventoryTag = new CompoundTag();
-        ContainerHelper.saveAllItems(inventoryTag, inventory);
-        inventoryTag.put("Output", output.save(new CompoundTag()));
+        ContainerHelper.saveAllItems(inventoryTag, inventory, provider);
+        if(!output.isEmpty()) inventoryTag.put("Output", output.save(provider));
         nbt.put(INVENTORY_TAG, inventoryTag);
         nbt.putInt(PROCESSING_TIME_TAG, this.processingTime);
         nbt.putInt(PROCESSING_TIME_TOTAL_TAG, this.processTimeTotal);
         nbt.putBoolean(IS_PROCESSING_TAG, this.isProcessing);
     }
 
-    public void load(@NotNull CompoundTag nbt) {
-        super.load(nbt);
+    @Override
+    protected void loadAdditional(@NotNull CompoundTag nbt, @NotNull HolderLookup.Provider provider) {
+        super.loadAdditional(nbt, provider);
         CompoundTag inventoryTag = nbt.getCompound(INVENTORY_TAG);
-        ContainerHelper.loadAllItems(inventoryTag, this.inventory);
-        this.output = ItemStack.of(inventoryTag.getCompound("Output"));
+        ContainerHelper.loadAllItems(inventoryTag, this.inventory, provider);
+        this.output = ItemStack.CODEC.parse(NbtOps.INSTANCE, inventoryTag.getCompound("Output")).result().orElse(ItemStack.EMPTY);
         this.processingTime = nbt.getInt(PROCESSING_TIME_TAG);
         this.processTimeTotal = nbt.getInt(PROCESSING_TIME_TOTAL_TAG);
         this.isProcessing = nbt.getBoolean(IS_PROCESSING_TAG);
@@ -221,18 +217,23 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         return player.getOnPos().distSqr(this.worldPosition) <= 64.0D;
     }
 
-    @Override
-    public void fillStackedContents(@NotNull StackedContents finder) {
-        for (ItemStack stack : this.inventory) finder.accountStack(stack);
+//    @Override
+//    public void fillStackedContents(@NotNull StackedContents finder) {
+//        for (ItemStack stack : this.inventory) finder.accountStack(stack);
+//    }
+
+
+
+    public boolean setLastRecipe(RecipeHolder<?> recipe) {
+        if(recipe.value() instanceof RksRecipe) {
+            this.lastRecipe = (RecipeHolder<RksRecipe>) recipe;
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    @Override
-    public void setRecipeUsed(Recipe<?> recipe) {
-        lastRecipe = recipe;
-    }
-
-    @Override
-    public Recipe<?> getRecipeUsed() {
+    public RecipeHolder<RksRecipe> getLastRecipe() {
         return lastRecipe;
     }
 
@@ -241,40 +242,38 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         this.inventory.clear();
     }
 
-    private Optional<? extends RksRecipe> getCurrentRecipe() {
+    private Optional<RecipeHolder<RksRecipe>> getCurrentRecipe() {
         // No need to find recipes if the inventory is empty. Cannot craft anything.
         if (this.level == null || this.isEmpty()) return Optional.empty();
 
-        RksRecipe lastRecipe = (RksRecipe) getRecipeUsed();
+        RecipeHolder<RksRecipe> lastRecipe = getLastRecipe();
         RecipeManager manager = this.level.getRecipeManager();
 
         if (lastRecipe != null) {
-            RksRecipe mapRecipe = getMappedRecipe(manager, lastRecipe.getId());
-            if (mapRecipe != null && mapRecipe.matches(this, level)) {
+            Optional<RecipeHolder<RksRecipe>> mapRecipe = getMappedRecipe(manager, lastRecipe.id());
+            if (mapRecipe.map(RecipeHolder::value).filter(a -> a.matches(getCraftingInput(), level)).isPresent()) {
                 return Optional.of(lastRecipe);
             }
         }
         return getMappedRecipe(manager);
     }
 
-    private Optional<? extends RksRecipe> getMappedRecipe(RecipeManager manager) {
-        return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS.get(), this, level);
+    private Optional<RecipeHolder<RksRecipe>> getMappedRecipe(RecipeManager manager) {
+        return manager.<RksInput, RksRecipe>getRecipeFor(GenerationsCoreRecipeTypes.RKS.get(), getCraftingInput(), level);
     }
 
-    private RksRecipe getMappedRecipe(RecipeManager manager, ResourceLocation id) {
-        var recipe = manager.byType(GenerationsCoreRecipeTypes.RKS.get()).get(id);
-
-        return recipe;
+    private Optional<RecipeHolder<RksRecipe>> getMappedRecipe(RecipeManager manager, ResourceLocation id) {
+        return manager.byKey(id).filter(a -> a.value() instanceof RksRecipe).map(a -> (RecipeHolder<RksRecipe>) a);
     }
 
     private Optional<ItemStack> getResult() {
-        Optional<ItemStack> maybe_result = getCurrentRecipe().map(recipe -> recipe.assemble(this, null));
+        Optional<ItemStack> maybe_result = getCurrentRecipe().map(recipe -> recipe.value().assemble(getCraftingInput(), null));
 
         return Optional.of(maybe_result.orElse(ItemStack.EMPTY));
     }
 
     protected boolean canSmelt(ItemStack result, RksRecipe recipe) {
-        if (recipe.matches(this, null)) {
+        if (recipe.matches(getCraftingInput(), null)) {
             ItemStack outstack = output;
             if (outstack.isEmpty()) {
                 return true;
@@ -289,11 +288,14 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     private int getProcessingTime() {
-        return getCurrentRecipe().map(RksRecipe::processingTime).orElse(DEFAULT_PROCESSING_TIME);
+        return getCurrentRecipe().map(RecipeHolder::value).map(RksRecipe::processingTime).orElse(DEFAULT_PROCESSING_TIME);
     }
 
-    protected void smelt(ItemStack result, RksRecipe recipe) {
+    protected void smelt(ItemStack result, RecipeHolder<RksRecipe> holder) {
 //        if(recipe.isIncomplete()) return;
+
+        var recipe = holder.value();
+
 
         if (!result.isEmpty() && this.canSmelt(result, recipe)) {
             ItemStack outstack = output.copy();
@@ -305,7 +307,7 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
             }
 
             if (!this.level.isClientSide()) {
-                this.setRecipeUsed(recipe);
+                this.setLastRecipe(holder);
             }
 
             NonNullList<ItemStack> remaining = recipe.getRemainingItems(this);
@@ -336,10 +338,10 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
         if (tile.isToggled()) {
             ItemStack result = tile.getResult().orElse(ItemStack.EMPTY);
 
-            Optional<? extends RksRecipe> recipe = tile.getCurrentRecipe();
+            Optional<RecipeHolder<RksRecipe>> recipe = tile.getCurrentRecipe();
 
             if (recipe.isPresent() && (!tile.isInputEmpty())) {
-                if (tile.canSmelt(result, recipe.get())) {
+                if (tile.canSmelt(result, recipe.get().value())) {
                     if (tile.processingTime <= 0) {
                         tile.processTimeTotal = tile.getProcessingTime();
                         tile.processingTime = 0;
@@ -377,22 +379,22 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     }
 
     @Override
-    public @NotNull CompoundTag getUpdateTag() {
-        return this.saveWithFullMetadata();
+    public @NotNull CompoundTag getUpdateTag(@NotNull HolderLookup.Provider registries) {
+        return this.saveWithFullMetadata(registries);
     }
 
     public void awardUsedRecipesAndPopExperience(ServerPlayer player) {
-        List<Recipe<?>> list = this.getRecipesToAwardAndPopExperience(player.serverLevel(), player.position());
+        List<RecipeHolder<?>> list = this.getRecipesToAwardAndPopExperience(player.serverLevel(), player.position());
         player.awardRecipes(list);
         this.recipesUsed.clear();
     }
 
-    public List<Recipe<?>> getRecipesToAwardAndPopExperience(ServerLevel level, Vec3 popVec) {
-        ArrayList<Recipe<?>> list = Lists.newArrayList();
+    public List<RecipeHolder<?>> getRecipesToAwardAndPopExperience(ServerLevel level, Vec3 popVec) {
+        ArrayList<RecipeHolder<?>> list = Lists.newArrayList();
         for (Object2IntMap.Entry<?> entry : this.recipesUsed.object2IntEntrySet()) {
             level.getRecipeManager().byKey((ResourceLocation)entry.getKey()).ifPresent(recipe -> {
                 list.add(recipe);
-                createExperience(level, popVec, entry.getIntValue(), ((RksRecipe)recipe).experience());
+                createExperience(level, popVec, entry.getIntValue(), ((RksRecipe)recipe.value()).experience());
             });
         }
         return list;
@@ -429,5 +431,9 @@ public class RksMachineBlockEntity extends ModelProvidingBlockEntity implements 
     public void setChanged() {
         super.setChanged();
         openContainers.forEach(AbstractContainerMenu::broadcastChanges);
+    }
+
+    public RksInput getCraftingInput() {
+        return RksInput.of(3, 3, this.inventory); //TODO: finish this.
     }
 }

@@ -11,10 +11,14 @@ import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import generations.gg.generations.core.generationscore.common.util.StreamCodecs
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock.Companion.FACING
 import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
@@ -38,14 +42,12 @@ private val Learnset.allMoves: MutableList<MoveTemplate>
         return moveList
     }
 
-@JvmRecord
 data class PokemonResult(
     val species: ResourceLocation, val aspects: Set<String>, val level: Int, val spawnInWorld: Boolean,
     val usePokemonInCapsule: Boolean
 ) : RksResult<PokemonResult> {
-    override fun getStack(): ItemStack {
-        return PokemonItem.from(getByIdentifier(species)!!, aspects, 1, Vector4f(1f, 1f, 1f, 1f))
-    }
+    override val stack: ItemStack
+        get() = PokemonItem.from(getByIdentifier(species)!!, aspects, 1, Vector4f(1f, 1f, 1f, 1f))
 
     override fun type(): RksResultType<PokemonResult> {
         return RksResultType.POKEMON.get()
@@ -148,14 +150,10 @@ data class PokemonResult(
         stack.count = 0
     }
 
-    override fun isPokemon(): Boolean {
-        return true
-    }
+    override val isPokemon: Boolean = true
 
     companion object {
-        @JvmField
-        val CODEC: Codec<PokemonResult> =
-            RecordCodecBuilder.create { instance ->
+        val CODEC = RecordCodecBuilder.mapCodec { instance ->
                 instance.group(
                     ResourceLocation.CODEC.fieldOf("species").forGetter(PokemonResult::species),
                     Codec.STRING.listOf().xmap({ it.toSet() }, { it.toList()})
@@ -165,28 +163,18 @@ data class PokemonResult(
                     Codec.BOOL.optionalFieldOf("usePokemonInCapsule", false).forGetter(PokemonResult::usePokemonInCapsule)
                 ).apply(instance, ::PokemonResult)
             }
-
-        @JvmField
-        val FROM_BUFFER: Function<FriendlyByteBuf, PokemonResult> =
-            Function { buffer: FriendlyByteBuf ->
-                val species = buffer.readResourceLocation()
-                val aspects = buffer.readCollection(
-                    { initialCapacity: Int -> HashSet(initialCapacity) },
-                    { obj: FriendlyByteBuf -> obj.readUtf() })
-                val level = buffer.readVarInt()
-                val spawnInWorld = buffer.readBoolean()
-                val usePokemonInCapsule = buffer.readBoolean()
-                PokemonResult(species, aspects, level, spawnInWorld, usePokemonInCapsule)
-            }
-
-        @JvmField
-        val TO_BUFFER: BiConsumer<FriendlyByteBuf, PokemonResult> =
-            BiConsumer { buffer: FriendlyByteBuf, result: PokemonResult ->
-                buffer.writeResourceLocation(result.species)
-                buffer.writeCollection(result.aspects) { obj: FriendlyByteBuf, value -> obj.writeUtf(value) }
-                buffer.writeVarInt(result.level)
-                buffer.writeBoolean(result.spawnInWorld)
-                buffer.writeBoolean(result.usePokemonInCapsule)
-            }
+        val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, PokemonResult> = StreamCodec.composite(
+            ResourceLocation.STREAM_CODEC,
+            PokemonResult::species,
+            ByteBufCodecs.STRING_UTF8.apply(StreamCodecs.set()),
+            PokemonResult::aspects,
+            ByteBufCodecs.VAR_INT,
+            PokemonResult::level,
+            ByteBufCodecs.BOOL,
+            PokemonResult::spawnInWorld,
+            ByteBufCodecs.BOOL,
+            PokemonResult::usePokemonInCapsule,
+            ::PokemonResult
+        )
     }
 }

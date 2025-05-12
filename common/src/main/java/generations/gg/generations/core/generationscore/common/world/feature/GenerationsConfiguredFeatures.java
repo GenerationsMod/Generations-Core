@@ -4,7 +4,9 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsOres;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet;
+import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -81,7 +83,7 @@ public class GenerationsConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_Z_CRYSTAL = registerKey("ore_z_crystal");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_METEORITE = registerKey("ore_meteorite");
 
-    public static void bootStrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+    public static void bootStrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceables = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
         List<OreConfiguration.TargetBlockState> siliconOres = targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.SILICON_ORE_SET);
@@ -157,7 +159,7 @@ public class GenerationsConfiguredFeatures {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, GenerationsCore.id(name));
     }
 
-    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
+    private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstrapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
         context.register(key, new ConfiguredFeature<>(feature, configuration));
     }
 

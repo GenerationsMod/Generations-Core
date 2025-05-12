@@ -196,8 +196,10 @@ public class MailViewScreen extends Screen {
         }
 
         private static String readContents(ItemStack writtenBookStack) {
-            CompoundTag compoundTag = writtenBookStack.getTag();
-            return compoundTag != null ? MailViewScreen.loadPages(compoundTag) : "";
+            return "";
+
+//            CompoundTag compoundTag = writtenBookStack.getTag();
+//            return compoundTag != null ? MailViewScreen.loadPages(compoundTag) : "";
         }
 
         @Override
@@ -229,19 +231,20 @@ public class MailViewScreen extends Screen {
         }
 
         private static String readAuthor(ItemStack arg) {
-            CompoundTag compoundTag = arg.getTag();
-            if (compoundTag != null && ClosedMailItem.makeSureTagIsValid(compoundTag)) {
-                return compoundTag.getString("author");
-            }
+//            CompoundTag compoundTag = arg.getTag();
+//            if (compoundTag != null && ClosedMailItem.makeSureTagIsValid(compoundTag)) {
+//                return compoundTag.getString("author");
+//            }
             return "";
         }
 
         private static String readPages(ItemStack writtenBookStack) {
-            CompoundTag compoundTag = writtenBookStack.getTag();
-            if (compoundTag != null && ClosedMailItem.makeSureTagIsValid(compoundTag)) {
-                return MailViewScreen.loadPages(compoundTag);
-            }
-            return Component.Serializer.toJson(Component.translatable("book.invalid.tag").withStyle(ChatFormatting.DARK_RED));
+//            CompoundTag compoundTag = writtenBookStack.getTag();
+//            if (compoundTag != null && ClosedMailItem.makeSureTagIsValid(compoundTag)) {
+//                return MailViewScreen.loadPages(compoundTag);
+//            }
+//            return Component.Serializer.toJson(Component.translatable("book.invalid.tag").withStyle(ChatFormatting.DARK_RED));
+            return "";
         }
 
         @Override

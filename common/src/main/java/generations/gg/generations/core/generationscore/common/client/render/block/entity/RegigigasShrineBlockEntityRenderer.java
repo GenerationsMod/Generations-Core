@@ -42,7 +42,7 @@ public class RegigigasShrineBlockEntityRenderer extends GeneralUseBlockEntityRen
         List<Vector3f> colors = new ArrayList<>();
 
         for (int i = 0; i < 5; i++) {
-            if(!shrineBlock.getRegiOrbs().getItem(i).isEmpty()) {
+            if(!shrineBlock.getRegiOrbs().get(i).isEmpty()) {
                 colors.add(map.get(i));
             }
         }

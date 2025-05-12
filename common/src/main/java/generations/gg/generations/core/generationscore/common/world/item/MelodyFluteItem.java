@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.common.world.container.MelodyFluteContainer;
 import generations.gg.generations.core.generationscore.common.world.item.legends.ElementalPostBattleUpdateItem;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -57,7 +58,7 @@ public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
 
     public static ItemStack getImbuedItem(ItemStack stack) {
         if(stack != null) {
-            CompoundTag tag = stack.getOrCreateTagElement("imbued");
+            CompoundTag tag = stack.get("imbued");
 
             if (!tag.isEmpty()) {
                 return ItemStack.of(tag);
@@ -87,7 +88,7 @@ public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
 
 
     public static String getSpeciesNameFromImbued(SpeciesKey key) {
-        return (key.aspects().contains("galarian") ? "Galarian " : "")  + PokemonSpecies.INSTANCE.getByIdentifier(key.species()).getName();
+        return (key.aspects.contains("galarian") ? "Galarian " : "")  + PokemonSpecies.INSTANCE.getByIdentifier(key.species).getName();
     }
 
     public static String shrineFromImbued(ItemStack stack) {
