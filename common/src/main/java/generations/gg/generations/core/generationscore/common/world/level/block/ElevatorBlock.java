@@ -29,7 +29,7 @@ public class ElevatorBlock extends Block {
     protected static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 
     public ElevatorBlock() {
-        super(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(0.8f));
+        super(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8f));
     }
 
     @Override

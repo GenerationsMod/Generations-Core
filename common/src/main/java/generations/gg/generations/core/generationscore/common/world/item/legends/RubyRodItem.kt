@@ -23,13 +23,13 @@ class RubyRodItem(properties: Properties?, tier: Teir?) :
         return false
     }
 
-    override fun addText(
+    override fun appendHoverText(
         stack: ItemStack,
         level: TooltipContext,
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        super<LangTooltip>.addText(stack, level, tooltipComponents, isAdvanced)
+        super.addText(stack, level, tooltipComponents, isAdvanced)
     }
 
     enum class LakeTrioShardType : StringRepresentable {
@@ -42,7 +42,7 @@ class RubyRodItem(properties: Properties?, tier: Teir?) :
         }
 
         companion object {
-            val CODEC: Codec<RubyRodItem.LakeTrioShardType> =  StringRepresentable.fromEnum { RubyRodItem.LakeTrioShardType.entries.toTypedArray() }
+            val CODEC: Codec<LakeTrioShardType> =  StringRepresentable.fromEnum { LakeTrioShardType.entries.toTypedArray() }
         }
     }
 
@@ -60,7 +60,7 @@ class RubyRodItem(properties: Properties?, tier: Teir?) :
         }
 
         companion object {
-            val EMPTY: RubyRodItem.FishedShards = FishedShards(0, 0, 0, true)
+            val EMPTY: FishedShards = FishedShards(0, 0, 0, true)
 
             val CODEC = Codecs.codec4(
                 "willpower", Codec.INT, FishedShards::willpower,

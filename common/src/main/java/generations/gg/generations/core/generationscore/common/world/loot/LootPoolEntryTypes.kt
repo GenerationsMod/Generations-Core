@@ -19,9 +19,8 @@ object LootPoolEntryTypes {
     }
 
     @JvmField
-    val RESOUCE_KEY: RegistrySupplier<LootPoolEntryType> = register("resource_key", ResouceKeyEntry.CODEC)
+    val RESOURCE_KEY: RegistrySupplier<LootPoolEntryType> = register("resource_key", ResouceKeyEntry.CODEC)
 
-    @JvmStatic
     fun init() {
         REGISTER.register()
     }

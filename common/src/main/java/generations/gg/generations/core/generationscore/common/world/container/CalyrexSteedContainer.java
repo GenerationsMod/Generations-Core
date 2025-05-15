@@ -1,15 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
-import generations.gg.generations.core.generationscore.common.world.item.CalyrexSteedItem;
-import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.Container;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.item.Items;
-
-public class CalyrexSteedContainer /*extends GenericChestContainer*/ {
+//public class CalyrexSteedContainer /*extends GenericChestContainer*/ {
 
 //    public CalyrexSteedContainer(int containerId, Inventory playerInventory, FriendlyByteBuf buf) {
 //        super(GenerationsContainers.CALYREX_STEED.get(), containerId, playerInventory, buf);
@@ -32,4 +23,4 @@ public class CalyrexSteedContainer /*extends GenericChestContainer*/ {
 //            walkmon.save((CalyrexSteedItem.CarrotHolder) getContainer(), stack);
 //        }
 //    }
-}
+//}

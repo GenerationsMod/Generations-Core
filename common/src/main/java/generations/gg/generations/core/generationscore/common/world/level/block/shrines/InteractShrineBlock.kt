@@ -120,7 +120,7 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
         ).ifPresent { obj: T -> obj.triggerCountDown() }
     }
 
-    fun deactivate(level: Level, pos: BlockPos, state: BlockState?) {
+    fun deactivate(level: Level, pos: BlockPos, state: BlockState) {
         if (revertsAfterActivation()) toggleActive(level, pos)
         postDeactivation(level, pos, state)
     }
@@ -135,7 +135,7 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
         return true
     }
 
-    open fun postDeactivation(level: Level?, pos: BlockPos?, state: BlockState?) {
+    open fun postDeactivation(level: Level, pos: BlockPos, state: BlockState) {
     }
 
     companion object {

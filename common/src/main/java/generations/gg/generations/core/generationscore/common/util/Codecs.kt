@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.util
 
 import com.google.gson.*
+import com.mojang.datafixers.kinds.App
+import com.mojang.datafixers.kinds.IdF.Instance
 import com.mojang.datafixers.util.Either
 import com.mojang.datafixers.util.Pair
 import com.mojang.serialization.Codec
@@ -78,6 +80,19 @@ object Codecs {
         ctor: (T1, T2, T3) -> V
     ): MapCodec<V> =
         RecordCodecBuilder.mapCodec {
+            it.group(
+                c1.fieldOf(name1).forGetter(g1),
+                c2.fieldOf(name2).forGetter(g2),
+                c3.fieldOf(name3).forGetter(g3)
+            ).apply(it, ctor)
+        }
+
+    fun <T1, T2, T3, V> mapCodec3(
+        name1: String, c1: Codec<T1>, g1: (V) -> T1,
+        name2: String, c2: Codec<T2>, g2: (V) -> T2,
+        name3: String, c3: Codec<T3>, g3: (V) -> T3,
+        ctor: (T1, T2, T3) -> V
+    ): MapCodec<V> = RecordCodecBuilder.mapCodec {
             it.group(
                 c1.fieldOf(name1).forGetter(g1),
                 c2.fieldOf(name2).forGetter(g2),
@@ -427,4 +442,6 @@ object Codecs {
             c16.fieldOf(name16).forGetter(g16)
         ).apply(it, ctor)
     }
+
+    fun <A> mapCodec(block: RecordCodecBuilder.Instance<A>.() -> App<RecordCodecBuilder.Mu<A>, A>): MapCodec<A> = RecordCodecBuilder.
 }

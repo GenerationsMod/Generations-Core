@@ -36,7 +36,7 @@ abstract class GenericModelBlock<T> protected constructor(
     properties: Properties,
     protected val blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>,
     private val baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_POS_FUNCTION,
-    private val model: ResourceLocation?
+    protected val model: ResourceLocation?
 ) : BaseEntityBlock(properties), SimpleWaterloggedBlock,
     VariantProvider where T : BlockEntity, T : ModelContextProviders.ModelProvider {
     init {
