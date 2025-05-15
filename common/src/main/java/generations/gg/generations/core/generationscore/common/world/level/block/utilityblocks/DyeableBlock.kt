@@ -104,9 +104,10 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         hitResult: BlockHitResult
     ): ItemInteractionResult {
         var state = state
-        var pos: BlockPos? = pos
+        var pos: BlockPos = pos
+
         if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND) {
-            pos = getBaseBlockPos(pos!!, state)
+            pos = getBaseBlockPos(pos, state)
             state = level.getBlockState(pos)
             val block = state.block
 
@@ -203,6 +204,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     override fun getCloneItemStack(level: LevelReader, pos: BlockPos, state: BlockState): ItemStack {
         return ItemStack(getItemFromDyeColor(color))
+
     }
 
     protected open fun serverUse(

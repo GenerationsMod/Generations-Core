@@ -3,6 +3,8 @@ package generations.gg.generations.core.generationscore.common.world.item;
 import generations.gg.generations.core.generationscore.common.world.entity.TieredFishingHookEntity;
 import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -30,12 +32,11 @@ public class TieredFishingRodItem extends FishingRodItem {
         if (player.fishing != null) {
             if (!level.isClientSide) {
                 int i = player.fishing.retrieve(itemstack);
-                itemstack.hurtAndBreak(i, player, arg2 -> arg2.broadcastBreakEvent(usedHand));
+                itemstack.hurtAndBreak(i, (ServerLevel) level, (ServerPlayer) player, arg2 -> {} /*arg2.broadcastBreakEvent(usedHand)*/);
 
                 //Because of guys cheesing this with mending and /repair from some plugins.
                 if(this.tier == TieredFishingHookEntity.Teir.RUBY) {
                     if(RubyRodItem.isFinished(itemstack)) {
-                        player.broadcastBreakEvent(usedHand);
                         itemstack.setDamageValue(0);
                         itemstack.shrink(1);
 
@@ -47,9 +48,9 @@ public class TieredFishingRodItem extends FishingRodItem {
             player.gameEvent(GameEvent.ITEM_INTERACT_FINISH);
         } else {
             level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.FISHING_BOBBER_THROW, SoundSource.NEUTRAL, 0.5f, 0.4f / (level.getRandom().nextFloat() * 0.4f + 0.8f));
-            if (!level.isClientSide) {
-                int k = EnchantmentHelper.getFishingSpeedBonus(itemstack);
-                int j = EnchantmentHelper.getFishingLuckBonus(itemstack);
+            if (level instanceof ServerLevel serverLevel) {
+                int k = (int) EnchantmentHelper.getFishingTimeReduction(serverLevel, itemstack, player);
+                int j = EnchantmentHelper.getFishingLuckBonus(serverLevel, itemstack, player);
                 level.addFreshEntity(new TieredFishingHookEntity(player, level, j, k, tier));
             }
             player.awardStat(Stats.ITEM_USED.get(this));

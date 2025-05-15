@@ -1,27 +1,26 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
-import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer;
+import earth.terrarium.common_storage_lib.context.impl.PlayerContext;
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage;
+import generations.gg.generations.core.generationscore.common.GenerationsStorage;
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
 import generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.Container;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
 public class MelodyFluteContainer extends SingleSlotContainer {
     private final int slot;
 
-    public MelodyFluteContainer(int id, Inventory playerInventory, Container handler) {
-        super(GenerationsContainers.MELODY_FLUTE.get(), id, handler);
+    public MelodyFluteContainer(int id, Inventory playerInventory, Player player) {
+        super(GenerationsContainers.MELODY_FLUTE.get(), id, new SimpleItemStorage(PlayerContext.ofSlot(player, player.getInventory().selected), GenerationsStorage.INSTANCE.getIMBUED(), 1));
         slot = playerInventory.selected;
         applyPlayerInventory(playerInventory);
     }
 
-    public MelodyFluteContainer(int id, Inventory playerInventory, FriendlyByteBuf buf) {
+    public MelodyFluteContainer(int id, Inventory playerInventory) {
         super(GenerationsContainers.MELODY_FLUTE.get(), id);
-        this.slot = buf.readShort();
+        this.slot = -1;
         applyPlayerInventory(playerInventory);
     }
 
@@ -44,28 +43,5 @@ public class MelodyFluteContainer extends SingleSlotContainer {
     @Override
     public boolean isValidSlotIndex(int slotIndex) {
         return super.isValidSlotIndex(slotIndex) || slotIndex == slot;
-    }
-
-    public void save() {
-        if(handler instanceof MelodyFluteItemStackHandler melodyFluteItemStackHandler) melodyFluteItemStackHandler.save();
-    }
-
-    public static class MelodyFluteItemStackHandler extends ExtendedsimpleItemContainer {
-        private final ServerPlayer player;
-        private final InteractionHand hand;
-
-        public MelodyFluteItemStackHandler(ServerPlayer player, InteractionHand hand) {
-            super(null, 1);
-            var itemStack = MelodyFluteItem.getImbuedItem(player.getItemInHand(hand));
-
-            setItem(0, itemStack);
-
-            this.player = player;
-            this.hand = hand;
-        }
-
-        public void save() {
-            MelodyFluteItem.setImbuedItem(player.getItemInHand(hand), getItem(0));
-        }
     }
 }

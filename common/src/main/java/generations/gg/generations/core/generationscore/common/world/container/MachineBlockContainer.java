@@ -20,24 +20,24 @@ public class MachineBlockContainer extends AbstractContainerMenu {
         super(GenerationsContainers.MACHINE_BLOCK.get(), ctx.id());
         this.be = ctx.blockEntity();
 
-        addSlot(new TypeSlot(be.getCandies(), 0, 92, 9, GenerationsItems.BUG_CANDY, "bug", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 1, 114, 17, GenerationsItems.DARK_CANDY, "dark", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 2, 136, 34, GenerationsItems.DRAGON_CANDY, "dragon", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 3, 148, 55, GenerationsItems.ELECTRIC_CANDY, "electric", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 4, 152, 80, GenerationsItems.FAIRY_CANDY, "fairy", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 5, 148, 105, GenerationsItems.FIGHTING_CANDY, "fighting", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 6, 136, 127, GenerationsItems.FIRE_CANDY, "fire", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 7, 114, 143, GenerationsItems.FLYING_CANDY, "flying", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 8, 92, 151, GenerationsItems.GHOST_CANDY, "ghost", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 9, 68, 151, GenerationsItems.GRASS_CANDY, "grass", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 10, 46, 143, GenerationsItems.GROUND_CANDY, "ground", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 11, 24, 127, GenerationsItems.ICE_CANDY, "ice", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 12, 12, 105, GenerationsItems.NORMAL_CANDY, "normal", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 13, 8, 80, GenerationsItems.POISON_CANDY, "poison", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 14, 12, 55, GenerationsItems.PSYCHIC_CANDY, "psychic", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 15, 24, 33, GenerationsItems.ROCK_CANDY, "rock", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 16, 46, 17, GenerationsItems.STEEL_CANDY, "steel", this::getBakeTime));
-        addSlot(new TypeSlot(be.getCandies(), 17, 68, 9, GenerationsItems.WATER_CANDY, "water", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 0, 92, 9, GenerationsItems.BUG_CANDY, "bug", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 1, 114, 17, GenerationsItems.DARK_CANDY, "dark", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 2, 136, 34, GenerationsItems.DRAGON_CANDY, "dragon", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 3, 148, 55, GenerationsItems.ELECTRIC_CANDY, "electric", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 4, 152, 80, GenerationsItems.FAIRY_CANDY, "fairy", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 5, 148, 105, GenerationsItems.FIGHTING_CANDY, "fighting", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 6, 136, 127, GenerationsItems.FIRE_CANDY, "fire", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 7, 114, 143, GenerationsItems.FLYING_CANDY, "flying", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 8, 92, 151, GenerationsItems.GHOST_CANDY, "ghost", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 9, 68, 151, GenerationsItems.GRASS_CANDY, "grass", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 10, 46, 143, GenerationsItems.GROUND_CANDY, "ground", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 11, 24, 127, GenerationsItems.ICE_CANDY, "ice", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 12, 12, 105, GenerationsItems.NORMAL_CANDY, "normal", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 13, 8, 80, GenerationsItems.POISON_CANDY, "poison", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 14, 12, 55, GenerationsItems.PSYCHIC_CANDY, "psychic", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 15, 24, 33, GenerationsItems.ROCK_CANDY, "rock", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 16, 46, 17, GenerationsItems.STEEL_CANDY, "steel", this::getBakeTime));
+        addSlot(new TypeSlot(be.candies, 17, 68, 9, GenerationsItems.WATER_CANDY, "water", this::getBakeTime));
 
 //        addSlot(new NullCandySlot((SimpleItemStorage) be.getCandies(), 80, 80, GenerationsItems.NULL_CANDY, this::getBakeTime));
 

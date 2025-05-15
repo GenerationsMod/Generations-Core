@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines;
 
+import earth.terrarium.common_storage_lib.resources.item.ItemResource;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem;
@@ -93,12 +94,12 @@ public class TimespaceAltarBlock extends InteractShrineBlock<TimeSpaceAltarBlock
 
     public static boolean trySpawn(BlockState state, Level level, BlockPos pos, TimeSpaceAltarBlockEntity.TimeSpaceAltarItemStackHandler handler, ServerPlayer player) {
         if (handler.shouldSpawn(player)) {
-            var id = ((CreationTrioItem) handler.getItem(0).getItem()).getSpeciesId();
+            var id = ((CreationTrioItem) handler.getResource(0).getItem()).speciesId;
             PokemonUtil.spawn(id.createPokemon(70), level, pos, state.getValue(FACING).toYRot());
-            RedChainItem.incrementUsage(handler.getItem(1));
-            if (RedChainItem.getUses(handler.getItem(1)) >= RedChainItem.MAX_USES)
-                handler.setItem(1, ItemStack.EMPTY);
-            handler.setItem(0, ItemStack.EMPTY);
+            handler.updateStack(1, RedChainItem::incrementUsage);
+            if (RedChainItem.getUses(handler.get(1).toItemStack()) >= RedChainItem.MAX_USES)
+                handler.get(1).setResource(ItemResource.BLANK);
+            handler.get(0).setResource(ItemResource.BLANK);
             handler.dumpAllIntoPlayerInventory(player);
             return true;
         }

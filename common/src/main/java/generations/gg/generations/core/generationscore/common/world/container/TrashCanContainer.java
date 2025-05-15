@@ -9,7 +9,6 @@ public class TrashCanContainer extends SingleSlotContainer {
 
     public TrashCanContainer(int id, Inventory arg) {
         super(GenerationsContainers.TRASHCAN.get(), id, new ExtendedsimpleItemContainer(null, 1) {
-
             @Override
             public void setItem(int slot, @NotNull ItemStack stack) {
             }

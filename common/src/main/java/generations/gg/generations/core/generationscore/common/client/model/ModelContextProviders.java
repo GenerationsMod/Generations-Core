@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.client.model;
 
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 public class ModelContextProviders {
@@ -9,11 +10,11 @@ public class ModelContextProviders {
     }
 
     public interface VariantProvider extends ModelProvider {
-        String getVariant();
+        @Nullable String getVariant();
     }
 
     public interface ModelProvider {
-        ResourceLocation getModel();
+        @Nullable ResourceLocation getModel();
 
         default boolean isAnimated() {
             return false;
@@ -29,6 +30,6 @@ public class ModelContextProviders {
     }
 
     public interface TintProvider {
-        Vector3f getTint();
+        @Nullable Vector3f getTint();
     }
 }

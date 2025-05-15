@@ -2,6 +2,8 @@ package generations.gg.generations.core.generationscore.common.world.item.tools.
 
 import generations.gg.generations.core.generationscore.common.world.item.tools.ToolEffect;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BoneMealItem;
@@ -31,7 +33,7 @@ public record BoneMealToolEffect(int durabilityCost) implements ToolEffect {
         if (!context.getLevel().isClientSide())
             context.getLevel().levelEvent(1505, blockPosRelative, 0);
 
-        context.getItemInHand().hurtAndBreak(durabilityCost, Objects.requireNonNull(context.getPlayer()), (owner) -> owner.broadcastBreakEvent(context.getHand()));
+        context.getItemInHand().hurtAndBreak(durabilityCost, (ServerLevel) context.getLevel(), (ServerPlayer) Objects.requireNonNull(context.getPlayer()), (owner) -> {} /*owner.broadcastBreakEvent(context.getHand())*/);
         return true;
     }
 }

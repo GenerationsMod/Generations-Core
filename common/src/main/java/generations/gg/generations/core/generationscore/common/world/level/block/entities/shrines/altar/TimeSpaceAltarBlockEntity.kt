@@ -58,13 +58,13 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
 
             return !orb.isEmpty && GenerationsCore.CONFIG.caught.capped(
                 player,
-                (orb.resource.item as CreationTrioItem).getSpeciesId()
+                (orb.resource.item as CreationTrioItem).speciesId
             )
         }
 
         fun extract(index: Int, simulate: Boolean): ItemStack { //TODO: This probably really jank and I need to change this completley.
-            var src = get(index);
-            var stack = src.toItemStack()
+            val src = get(index);
+            val stack = src.toItemStack()
             src.set(ItemStack.EMPTY)
 
             return stack

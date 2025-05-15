@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.util.extensions.toInteractionResult
+import generations.gg.generations.core.generationscore.common.util.extensions.toItemInteractionResult
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.SittableBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
@@ -17,7 +19,6 @@ import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
@@ -38,9 +39,7 @@ class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<Dy
         return SHAPE.getShape(state)
     }
 
-    override fun getOffset(): Double {
-        return 0.5
-    }
+    override val offset: Double = 0.5
 
     override fun getYaw(state: BlockState): Float {
         return state.getValue(FACING).toYRot()
@@ -55,7 +54,7 @@ class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<Dy
         handIn: InteractionHand,
         hit: BlockHitResult
     ): ItemInteractionResult {
-        return super<SittableBlock>.use(state, world, pos, player, handIn, hit)
+        return super.sit(state, world, pos, player, hit).toItemInteractionResult()
     }
 
     companion object {

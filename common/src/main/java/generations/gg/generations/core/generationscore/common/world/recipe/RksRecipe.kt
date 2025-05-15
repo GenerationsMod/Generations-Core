@@ -59,10 +59,6 @@ abstract class RksRecipe(
         return getResultItem(registries).copy()
     }
 
-    fun processingTime(): Int {
-        return processingTime
-    }
-
     fun experience(): Float {
         return experience
     }

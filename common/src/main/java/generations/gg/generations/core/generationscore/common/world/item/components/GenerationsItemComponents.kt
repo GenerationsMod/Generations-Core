@@ -10,9 +10,9 @@ import dev.architectury.registry.registries.RegistrySupplier
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.DataKeys
-import generations.gg.generations.core.generationscore.common.world.item.CalyrexSteedItem
 import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
+import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.RegistryFriendlyByteBuf
@@ -40,9 +40,11 @@ object GenerationsItemComponents {
         Codec.BOOL,
         StreamCodec.of(ByteBufCodecs.BOOL::encode, ByteBufCodecs.BOOL::decode)
     )
+
     val CURRY_DATA = register("curry_data", CurryData.CODEC)
     val TM_DETAILS = register("tm_details", TmDetails.CODEC, TmDetails.STREAM_CODEC)
     val EMBEDDED_POKEMON = register("pokemon", Pokemon.CODEC)
+
     val CLIENT_POKEMON_DATA: RegistrySupplier<DataComponentType<RenderablePokemon>> = register(DataKeys.CLIENT_POKEMON_DATA, RecordCodecBuilder.create {
 
         it.group(
@@ -61,6 +63,7 @@ object GenerationsItemComponents {
     })
     val MAIL_DATA = register("mail_data", SealedMailContent.CODEC, SealedMailContent.STREAM_CODEC)
     val WALKMON_DATA = register("walkmon_data", WalkmonItem.WalkmonData.CODEC, WalkmonItem.WalkmonData.STREAM_CODEC)
+    val FISHED_SHARDS = register("fished_shards", RubyRodItem.FishedShards.CODEC)
 
     @JvmStatic
     fun init() = REGISTER.register()

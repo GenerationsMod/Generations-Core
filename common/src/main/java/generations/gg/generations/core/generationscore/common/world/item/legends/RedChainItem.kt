@@ -25,11 +25,11 @@ class RedChainItem(properties: Properties) : EnchantableItem(properties.componen
         else 0
     }
 
-    override fun appendHoverText(stack: ItemStack, level: TooltipContext, tooltipComponents: MutableList<Component>, isAdvanced: TooltipFlag) {
+    override fun addText(stack: ItemStack, level: TooltipContext, tooltipComponents: MutableList<Component>, isAdvanced: TooltipFlag) {
         if (isAdvanced.isAdvanced) tooltipComponents.add("Remaining Uses: ${MAX_USES - getUses(stack)}")
     }
 
-    override fun tooltipId(stack: ItemStack): String {
+    override fun tooltipId(stack: ItemStack?): String {
         return this.descriptionId + (if (isEnchanted(stack)) ".enchanted" else "") + ".tooltip"
     }
 

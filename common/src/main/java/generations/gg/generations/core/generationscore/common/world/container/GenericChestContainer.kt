@@ -43,7 +43,6 @@ open class GenericChestContainer<T>(
 //        container.startOpen(playerInventory.player)
 
 
-
         populate(container, 8, 16, 0, inventoryHeight, inventoryWidth)
 
         this.playerInventoryX = guiWidth / 2 - 80

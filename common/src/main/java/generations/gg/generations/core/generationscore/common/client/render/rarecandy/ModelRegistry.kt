@@ -57,7 +57,7 @@ object ModelRegistry {
             })
     @JvmStatic
     operator fun get(modelProvider: ModelContextProviders.ModelProvider): CompiledModel? {
-        return get(modelProvider.model)
+        return modelProvider.model?.let(::get)
     }
 
     @JvmStatic

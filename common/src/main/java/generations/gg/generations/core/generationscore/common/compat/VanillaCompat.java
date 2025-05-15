@@ -14,7 +14,7 @@ public class VanillaCompat {
 	 * Registers blocks as flammable or strippable on setup
 	 */
 	public static void setup() {
-		var implementation = GenerationsCore.getImplementation();
+		var implementation = GenerationsCore.implementation;
 
 		GenerationsWood.WOOD_BLOCKS.forEach(wood -> implementation.registerFlammable(wood.get(), 5, 5));
 

@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.decorations
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.util.extensions.toItemInteractionResult
 import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
@@ -53,7 +54,7 @@ class PastelBeanBagBlock(properties: Properties, color: DyeColor, function: Map<
             world, pos, 0.5, player, state.getValue(
                 FACING
             ).toYRot()
-        )
+        ).toItemInteractionResult()
 
         return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
     }

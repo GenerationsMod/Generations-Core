@@ -1,9 +1,12 @@
 package generations.gg.generations.core.generationscore.common.world.container;
 
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage;
+import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer;
+import earth.terrarium.common_storage_lib.resources.item.ItemResource;
+import earth.terrarium.common_storage_lib.storage.base.CommonStorage;
+import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot;
 import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot;
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -13,13 +16,13 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class SingleSlotContainer extends AbstractContainerMenu {
-    protected final Container handler;
+    protected final SimpleItemStorage handler;
 
     protected SingleSlotContainer(MenuType<? extends SingleSlotContainer> type, int id) {
-        this(type, id, new SimpleContainer(1));
+        this(type, id, new SimpleItemStorage(1));
     }
 
-    protected SingleSlotContainer(MenuType<? extends SingleSlotContainer> type, int id, Container handler) {
+    protected SingleSlotContainer(MenuType<? extends SingleSlotContainer> type, int id, SimpleItemStorage handler) {
         super(type, id);
         this.handler = handler;
 
@@ -28,14 +31,16 @@ public abstract class SingleSlotContainer extends AbstractContainerMenu {
 
     //Needs to be applied after constructor
     public void applyPlayerInventory(Inventory playerInventory) {
+        var storage = new WrappedVanillaContainer(playerInventory);
+
         for(int y = 0; y < 3; y++) {
             for(int x = 0; x < 9; x++) {
-                this.addSlot(getSlot(playerInventory, x + y * 9 + 9, 8 + x * 18, 84 + y * 18));
+                this.addSlot(getSlot(storage, x + y * 9 + 9, 8 + x * 18, 84 + y * 18));
             }
         }
 
         for (int x = 0; x < 9; x++) {
-            this.addSlot(getSlot(playerInventory, x, 8 + x * 18, 142));
+            this.addSlot(getSlot(storage, x, 8 + x * 18, 142));
         }
     }
 
@@ -43,11 +48,11 @@ public abstract class SingleSlotContainer extends AbstractContainerMenu {
         return true;
     }
 
-    protected Slot getSlot(Inventory inventory, int i, int x, int y) {
+    protected Slot getSlot(CommonStorage<ItemResource> inventory, int i, int x, int y) {
         if(isPlayerSlotLocked(i)) {
             return new LockedSlot(inventory, i, x, y);
         } else {
-            return new Slot(inventory, i, x, y);
+            return new MenuStorageSlot(inventory, i, x, y);
         }
     }
 

@@ -17,7 +17,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
-class EnigmaStoneItem(properties: Properties?) : ItemWithLangTooltipImpl(properties), PostBattleUpdatingItem {
+class EnigmaStoneItem(properties: Properties) : ItemWithLangTooltipImpl(properties), PostBattleUpdatingItem {
     override fun use(level: Level, player: Player, hand: InteractionHand): InteractionResultHolder<ItemStack> {
         if (player is ServerPlayer) {
             if (hand == InteractionHand.MAIN_HAND) {

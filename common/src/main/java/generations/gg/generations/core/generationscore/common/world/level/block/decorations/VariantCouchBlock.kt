@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.decorations
 
-import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import generations.gg.generations.core.generationscore.common.util.extensions.toItemInteractionResult
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CouchBlockEntity
@@ -58,12 +58,10 @@ class VariantCouchBlock(
         handIn: InteractionHand,
         hit: BlockHitResult
     ): ItemInteractionResult {
-        return super<SittableBlock>.use(state, world, pos, player, handIn, hit)
+        return super.sit(state, world, pos, player, hit).toItemInteractionResult()
     }
 
-    override fun getOffset(): Double {
-        return 0.4375
-    }
+    override val offset: Double = 0.4375
 
 
     override fun getYaw(state: BlockState): Float {

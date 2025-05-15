@@ -26,7 +26,7 @@ public class NpcWandItem extends Item { //TODO: Get it working with 1.6 npcs
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         tooltipComponents.add(Component.translatable("item.unimplemented_until_1_dot_6_cobblemon"));
     }
 }

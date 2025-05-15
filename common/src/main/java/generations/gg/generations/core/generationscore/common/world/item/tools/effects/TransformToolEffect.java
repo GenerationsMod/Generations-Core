@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.item.tools.effects;
 
 import generations.gg.generations.core.generationscore.common.world.item.tools.ToolEffect;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -21,7 +23,7 @@ public record TransformToolEffect(Block blockFrom, Block blockTo, int durability
         if (!world.mayInteract(player, blockhitresult.getBlockPos())) return false;
         if (!world.getBlockState(blockhitresult.getBlockPos()).getBlock().equals(blockFrom)) return false;
         world.setBlockAndUpdate(blockhitresult.getBlockPos(), blockTo.defaultBlockState());
-        player.getItemInHand(usedHand).hurtAndBreak(durabilityCost, player, owner -> owner.broadcastBreakEvent(usedHand));
+        player.getItemInHand(usedHand).hurtAndBreak(durabilityCost, (ServerLevel) world, (ServerPlayer) player, owner -> {} /*owner.broadcastBreakEvent(usedHand)*/);
         return true;
     }
 
@@ -30,7 +32,7 @@ public record TransformToolEffect(Block blockFrom, Block blockTo, int durability
         if (!blockFrom.defaultBlockState().canOcclude()) return false;
         if (!context.getLevel().getBlockState(context.getClickedPos()).getBlock().equals(blockFrom)) return false;
         context.getLevel().setBlockAndUpdate(context.getClickedPos(), blockTo.defaultBlockState());
-        context.getItemInHand().hurtAndBreak(1, Objects.requireNonNull(context.getPlayer()), (owner) -> owner.broadcastBreakEvent(context.getHand()));
+        context.getItemInHand().hurtAndBreak(1, (ServerLevel) context.getLevel(), (ServerPlayer) Objects.requireNonNull(context.getPlayer()), (owner) -> {}/*owner.broadcastBreakEvent(context.getHand())*/);
         return true;
     }
 

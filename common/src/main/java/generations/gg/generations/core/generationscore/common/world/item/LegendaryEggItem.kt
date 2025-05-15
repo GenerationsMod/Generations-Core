@@ -31,9 +31,9 @@ class LegendaryEggItem(properties: Properties, private val speciesKey: SpeciesKe
         return GenerationsCore.CONFIG.caught.capped(player, speciesKey)
     }
 
-    override fun appendHoverText(
+    override fun addText(
         stack: ItemStack,
-        level: Level?,
+        level: TooltipContext,
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {

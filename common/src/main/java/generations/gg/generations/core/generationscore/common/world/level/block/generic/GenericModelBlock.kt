@@ -4,6 +4,7 @@ import com.mojang.serialization.MapCodec
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -35,7 +36,7 @@ abstract class GenericModelBlock<T> protected constructor(
     properties: Properties,
     protected val blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>,
     private val baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_POS_FUNCTION,
-    private val model: ResourceLocation
+    private val model: ResourceLocation?
 ) : BaseEntityBlock(properties), SimpleWaterloggedBlock,
     VariantProvider where T : BlockEntity, T : ModelContextProviders.ModelProvider {
     init {
@@ -72,7 +73,7 @@ abstract class GenericModelBlock<T> protected constructor(
 
     public override fun getSeed(state: BlockState, pos: BlockPos): Long = Mth.getSeed(getBaseBlockPos(pos, state))
 
-    override fun getModel(): ResourceLocation {
+    override fun getModel(): ResourceLocation? {
         return model
     }
 
@@ -97,6 +98,9 @@ abstract class GenericModelBlock<T> protected constructor(
         return AABB.encapsulatingFullBlocks(pos, pos.offset(1, 1, 1))
     }
 
+    fun canRender(blockEntity: BlockEntity): Boolean {
+        return canRender(blockEntity.level!!, blockEntity.blockPos, blockEntity.blockState)
+    }
 
     open fun canRender(level: Level, blockPos: BlockPos, blockState: BlockState): Boolean {
         return true

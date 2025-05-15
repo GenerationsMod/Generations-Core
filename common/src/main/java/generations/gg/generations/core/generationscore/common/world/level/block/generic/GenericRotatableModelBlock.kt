@@ -24,7 +24,7 @@ import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.level.storage.loot.LootParams
 import net.minecraft.world.phys.AABB
 
-abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>, posFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model: ResourceLocation, val width: Int = 0, val height: Int = 0, val length: Int = 0) : GenericModelBlock<T>(properties, blockEntityFunction, posFunction, model) where T : BlockEntity, T : ModelContextProviders.ModelProvider {
+abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>, posFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model: ResourceLocation? = null, val width: Int = 0, val height: Int = 0, val length: Int = 0) : GenericModelBlock<T>(properties, blockEntityFunction, posFunction, model) where T : BlockEntity, T : ModelContextProviders.ModelProvider {
 
     init {
         assignSize(width, height, length)

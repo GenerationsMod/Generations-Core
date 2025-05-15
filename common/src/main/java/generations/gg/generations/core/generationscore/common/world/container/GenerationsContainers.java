@@ -16,6 +16,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
+import java.util.Collections;
 import java.util.function.Function;
 
 public class GenerationsContainers {
@@ -23,7 +24,7 @@ public class GenerationsContainers {
     public static final RegistrySupplier<MenuType<CookingPotContainer>> COOKING_POT = CONTAINERS.register("cooking_pot", () -> new MenuType<>(CookingPotContainer::new, FeatureFlagSet.of()));
     public static final RegistrySupplier<MenuType<GenericChestContainer>> GENERIC = CONTAINERS.register("generic", () -> MenuRegistry.ofExtended(GenericChestContainer::new));
     public static final RegistrySupplier<MenuType<MachineBlockContainer>> MACHINE_BLOCK = register("machine_block", MachineBlockContainer::new, MachineBlockEntity.class);
-    public static final RegistrySupplier<MenuType<MelodyFluteContainer>> MELODY_FLUTE = CONTAINERS.register("melody_flute", () -> MenuRegistry.ofExtended(MelodyFluteContainer::new));
+    public static final RegistrySupplier<MenuType<MelodyFluteContainer>> MELODY_FLUTE = CONTAINERS.register("melody_flute", () -> new MenuType<>(MelodyFluteContainer::new, FeatureFlagSet.of()));
 
     public static final RegistrySupplier<MenuType<TrashCanContainer>> TRASHCAN = CONTAINERS.register("trashcan", () -> new MenuType<>(TrashCanContainer::new, FeatureFlagSet.of()));
 //    public static final RegistrySupplier<MenuType<WalkmonContainer>> WALKMON = CONTAINERS.register("walkmon", () -> MenuRegistry.ofExtended(WalkmonContainer::new));
@@ -42,7 +43,6 @@ public class GenerationsContainers {
 //            genericChestContainer.getContainer().update();
 //        }
 
-        if (container instanceof MelodyFluteContainer melodyFluteContainer) melodyFluteContainer.save();
 //        if (container instanceof WalkmonContainer genericChestContainer) genericChestContainer.save(player);
 //        if (container instanceof CalyrexSteedContainer genericChestContainer) genericChestContainer.save(player);
         if (container instanceof RksMachineContainer rksMachineContainer) rksMachineContainer.close();

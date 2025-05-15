@@ -46,8 +46,7 @@ import java.util.function.Function
 import java.util.stream.Stream
 
 
-class CookingPotBlockEntity(arg2: BlockPos?, arg3: BlockState?) :
-    ModelProvidingBlockEntity(GenerationsBlockEntities.COOKING_POT.get(), arg2, arg3),
+class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.COOKING_POT.get(), pos, state),
     MenuProvider,
     ItemProvider.BlockEntity, VariantProvider, Toggleable {
     //0-9: berries

@@ -3,17 +3,17 @@ package generations.gg.generations.core.generationscore.common.world.item;
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies;
 import com.cobblemon.mod.common.api.types.ElementalType;
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor;
-import dev.architectury.registry.menu.MenuRegistry;
 import dev.architectury.registry.registries.RegistrySupplier;
+import earth.terrarium.common_storage_lib.context.impl.PlayerContext;
+import earth.terrarium.common_storage_lib.resources.ResourceStack;
+import earth.terrarium.common_storage_lib.resources.item.ItemResource;
+import generations.gg.generations.core.generationscore.common.GenerationsStorage;
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines;
 import generations.gg.generations.core.generationscore.common.world.container.MelodyFluteContainer;
 import generations.gg.generations.core.generationscore.common.world.item.legends.ElementalPostBattleUpdateItem;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.locale.Language;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -44,8 +44,7 @@ public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
         if (!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND && player.getItemInHand(usedHand).getDamageValue() <= 0) {
-            MelodyFluteContainer.MelodyFluteItemStackHandler handler = new MelodyFluteContainer.MelodyFluteItemStackHandler((ServerPlayer) player, usedHand);
-            MenuRegistry.openExtendedMenu((ServerPlayer) player, new SimpleMenuProvider((i, arg, arg2) -> new MelodyFluteContainer(i, arg, handler), Component.translatable("container.melody_flute")), buf -> buf.writeShort(player.getInventory().selected));
+            player.openMenu(new SimpleMenuProvider(MelodyFluteContainer::new, Component.translatable("container.melody_flute")));
         }
 
         return super.use(level, player, usedHand);
@@ -58,10 +57,10 @@ public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
 
     public static ItemStack getImbuedItem(ItemStack stack) {
         if(stack != null) {
-            CompoundTag tag = stack.get("imbued");
+            var lists = stack.get(GenerationsStorage.INSTANCE.getIMBUED().componentType()).stacks();
 
-            if (!tag.isEmpty()) {
-                return ItemStack.of(tag);
+            if(lists != null && !lists.isEmpty()) {
+                return lists.get(0).resource().getCachedStack();
             }
         }
 
@@ -108,7 +107,9 @@ public class MelodyFluteItem extends ElementalPostBattleUpdateItem {
     }
 
     public static void setImbuedItem(ItemStack stack, ItemStack imbuedStack) {
-        stack.getOrCreateTag().put("imbued", imbuedStack.save(new CompoundTag()));
+        var storage = stack.get(GenerationsStorage.INSTANCE.getIMBUED().componentType());
+        storage.stacks().set(0, new ResourceStack<>(ItemResource.of(imbuedStack), 1));
+        stack.set(GenerationsStorage.INSTANCE.getIMBUED().componentType(), storage);
     }
 
     @Override
