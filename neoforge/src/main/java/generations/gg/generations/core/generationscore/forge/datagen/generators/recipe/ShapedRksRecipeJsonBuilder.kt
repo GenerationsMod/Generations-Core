@@ -44,7 +44,7 @@ class ShapedRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<Sh
         )
     }
 
-    override fun validate(recipeId: ResourceLocation?): ShapedRecipePattern {
+    override fun validate(recipeId: ResourceLocation): ShapedRecipePattern {
         check(!pattern.isEmpty()) { "No pattern is defined for shaped recipe $recipeId!" }
         val set: MutableSet<Char> = Sets.newHashSet(
             inputs.keys

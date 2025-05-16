@@ -24,7 +24,6 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-@SuppressWarnings("deprecation")
 public class ElevatorBlock extends Block {
     protected static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 1.0, 16.0);
 

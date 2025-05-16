@@ -6,18 +6,23 @@ import generations.gg.generations.core.generationscore.common.world.feature.Gene
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.world.BiomeModifier;
+import net.neoforged.neoforge.common.world.BiomeModifiers;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 /**
  * @author Joseph T. McQuigg
  */
 public class GenerationsForgeBiomemodifiers {
 
-    public static void bootstrap(BootstapContext<BiomeModifier> context) {
+    public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeaturesLookup = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomesLookup = context.lookup(Registries.BIOME);
 
@@ -204,35 +209,35 @@ public class GenerationsForgeBiomemodifiers {
                 HolderSet.direct(placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.WING_BALL_LOOT)));
     }
 
-    private static void registerUnderGroundOres(BootstapContext<BiomeModifier> context, String biomeModifier, HolderSet<Biome> biomes, HolderSet<PlacedFeature> features) {
-        context.register(registerKey(biomeModifier), new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+    private static void registerUnderGroundOres(BootstrapContext<BiomeModifier> context, String biomeModifier, HolderSet<Biome> biomes, HolderSet<PlacedFeature> features) {
+        context.register(registerKey(biomeModifier), new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes,
                 features,
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 
-    private static void registerUnderGroundOres(BootstapContext<BiomeModifier> context, String biomeModifier, HolderSet<PlacedFeature> features) {
-        context.register(registerKey(biomeModifier), new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+    private static void registerUnderGroundOres(BootstrapContext<BiomeModifier> context, String biomeModifier, HolderSet<PlacedFeature> features) {
+        context.register(registerKey(biomeModifier), new BiomeModifiers.AddFeaturesBiomeModifier(
                 context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD),
                 features,
                 GenerationStep.Decoration.UNDERGROUND_ORES));
     }
 
-    private static void registerSurfaceFeatures(BootstapContext<BiomeModifier> context, String biomeModifier, HolderSet<PlacedFeature> features) {
-        context.register(registerKey(biomeModifier), new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+    private static void registerSurfaceFeatures(BootstrapContext<BiomeModifier> context, String biomeModifier, HolderSet<PlacedFeature> features) {
+        context.register(registerKey(biomeModifier), new BiomeModifiers.AddFeaturesBiomeModifier(
                 context.lookup(Registries.BIOME).getOrThrow(BiomeTags.IS_OVERWORLD),
                 features,
                 GenerationStep.Decoration.RAW_GENERATION));
     }
 
-    private static void registerSurfaceFeatures(BootstapContext<BiomeModifier> context, String biomeModifier, HolderSet<Biome> biomes, HolderSet<PlacedFeature> features) {
-        context.register(registerKey(biomeModifier), new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+    private static void registerSurfaceFeatures(BootstrapContext<BiomeModifier> context, String biomeModifier, HolderSet<Biome> biomes, HolderSet<PlacedFeature> features) {
+        context.register(registerKey(biomeModifier), new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes,
                 features,
                 GenerationStep.Decoration.RAW_GENERATION));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {
-        return ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, GenerationsCore.id(name));
+        return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, GenerationsCore.id(name));
     }
 }

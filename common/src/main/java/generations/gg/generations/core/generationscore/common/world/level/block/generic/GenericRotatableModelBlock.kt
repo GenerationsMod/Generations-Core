@@ -298,18 +298,6 @@ abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntity
         return state
     }
 
-    fun width(): Int {
-        return width
-    }
-
-    fun height(): Int {
-        return height
-    }
-
-    fun length(): Int {
-        return length
-    }
-
     fun adjustX(x: Int): Int {
         return x - baseX
     }

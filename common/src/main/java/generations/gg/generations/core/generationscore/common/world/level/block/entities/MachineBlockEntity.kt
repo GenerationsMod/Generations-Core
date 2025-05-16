@@ -86,8 +86,7 @@ class MachineBlockEntity(pos: BlockPos, state: BlockState) :
     }
 
     companion object {
-        @JvmStatic
-        fun serverTick(level: Level?, pos: BlockPos?, state1: BlockState?, blockEntity: MachineBlockEntity) {
+        fun serverTick(level: Level, pos: BlockPos, state1: BlockState, blockEntity: MachineBlockEntity) {
             blockEntity.tick()
         }
     }

@@ -54,7 +54,6 @@ class GenerationsCobblemonEvents {
         )
 
 
-        @JvmStatic
         fun init() {
             FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
 

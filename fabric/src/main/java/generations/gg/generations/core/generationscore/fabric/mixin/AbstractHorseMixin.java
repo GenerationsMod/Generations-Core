@@ -13,6 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class AbstractHorseMixin {
     @Inject(method = "executeRidersJump", at = @At("TAIL"))
     public void onJump(float playerJumpPendingScale, Vec3 travelVector, CallbackInfo ci) {
-        EntityEvents.JUMP.invoker().jump((Entity) (Object) this);
+        EntityEvents.jump((Entity) (Object) this);
     }
 }

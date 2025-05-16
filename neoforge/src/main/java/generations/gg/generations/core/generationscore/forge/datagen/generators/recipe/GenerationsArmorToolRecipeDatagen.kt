@@ -1,7 +1,20 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe
 
+import com.cobblemon.mod.common.CobblemonItems.DAWN_STONE
+import com.cobblemon.mod.common.CobblemonItems.DUSK_STONE
+import com.cobblemon.mod.common.CobblemonItems.FIRE_STONE
+import com.cobblemon.mod.common.CobblemonItems.ICE_STONE
+import com.cobblemon.mod.common.CobblemonItems.LEAF_STONE
+import com.cobblemon.mod.common.CobblemonItems.MOON_STONE
+import com.cobblemon.mod.common.CobblemonItems.SUN_STONE
+import com.cobblemon.mod.common.CobblemonItems.THUNDER_STONE
+import com.cobblemon.mod.common.CobblemonItems.WATER_STONE
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools
+import generations.gg.generations.core.generationscore.common.world.item.tools.*
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
+import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.*
 import net.minecraft.tags.ItemTags
@@ -10,112 +23,112 @@ import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.ItemLike
 import net.neoforged.neoforge.common.conditions.IConditionBuilder
-import java.util.function.Consumer
+import java.util.concurrent.CompletableFuture
 
-class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeProvider.Proxied(output), IConditionBuilder {
+class GenerationsArmorToolRecipeDatagen(output: PackOutput, registries: CompletableFuture<HolderLookup.Provider>) : GenerationsRecipeProvider.Proxied(output, registries), IConditionBuilder {
     //AETHER, FLARE, NEO
 
 
 
-    override fun buildRecipes(consumer: Consumer<FinishedRecipe>) {
+    override fun buildRecipes(recipeOutput: RecipeOutput) {
         buildToolSetCrafting(
-            consumer,
-            GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock,
+            recipeOutput,
+            GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock(),
             GenerationsTools.CHARGE_STONE
         )
         buildToolSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock(),
             GenerationsTools.VOLCANIC_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             Items.AMETHYST_SHARD,
             GenerationsArmor.ROCKET,
             GenerationsTools.AMETHYST
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsItems.CRYSTAL.get(),
             GenerationsArmor.CRYSTALLIZED,
             GenerationsTools.CRYSTAL
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsItems.SAPPHIRE.get(),
             GenerationsArmor.AQUA,
             GenerationsTools.SAPPHIRE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsItems.RUBY.get(),
             GenerationsArmor.MAGMA,
             GenerationsTools.RUBY
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsItems.SILICON.get(),
             GenerationsArmor.GALACTIC,
             GenerationsTools.SILICON
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             DAWN_STONE.asItem(),
             GenerationsArmor.DAWN_STONE,
             GenerationsTools.DAWN_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             DUSK_STONE.asItem(),
             GenerationsArmor.DUSK_STONE,
             GenerationsTools.DUSK_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             FIRE_STONE.asItem(),
             GenerationsArmor.FIRE_STONE,
             GenerationsTools.FIRE_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             ICE_STONE.asItem(),
             GenerationsArmor.ICE_STONE,
             GenerationsTools.ICE_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             LEAF_STONE.asItem(),
             GenerationsArmor.LEAF_STONE,
             GenerationsTools.LEAF_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             SUN_STONE.asItem(),
             GenerationsArmor.SUN_STONE,
             GenerationsTools.SUN_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             MOON_STONE.asItem(),
             GenerationsArmor.MOON_STONE,
             GenerationsTools.MOON_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             THUNDER_STONE.asItem(),
             GenerationsArmor.THUNDER_STONE,
             GenerationsTools.THUNDER_STONE
         )
         buildArmorToolFullSetCrafting(
-            consumer,
+            recipeOutput,
             WATER_STONE.asItem(),
             GenerationsArmor.WATER_STONE,
             GenerationsTools.WATER_STONE
         )
-        buildArmorSetCrafting(consumer, GenerationsItems.Z_INGOT.get(), GenerationsArmor.ULTRA)
+        buildArmorSetCrafting(recipeOutput, GenerationsItems.Z_INGOT.get(), GenerationsArmor.ULTRA)
         //Modified Armor Recipes
         buildModifiedArmorSetCrafting(
-            consumer,
+            recipeOutput,
             Items.COPPER_INGOT,
             GenerationsItems.CRYSTAL.get(),
             GenerationsArmor.AETHER.helmet.get(),
@@ -124,7 +137,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             GenerationsArmor.AETHER.boots.get()
         )
         buildModifiedArmorSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsItems.RUBY.get(),
             FIRE_STONE.asItem(),
             GenerationsArmor.FLARE.helmet.get(),
@@ -133,7 +146,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             GenerationsArmor.FLARE.boots.get()
         )
         buildModifiedArmorSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsItems.CRYSTAL.get(),
             GenerationsItems.SILICON.get(),
             GenerationsArmor.NEO_PLASMA.helmet.get(),
@@ -142,7 +155,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             GenerationsArmor.NEO_PLASMA.boots.get()
         )
         buildModifiedArmorSetCrafting(
-            consumer,
+            recipeOutput,
             GenerationsItems.SILICON.get(),
             GenerationsItems.CRYSTAL.get(),
             GenerationsArmor.PLASMA.helmet.get(),
@@ -151,7 +164,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             GenerationsArmor.PLASMA.boots.get()
         ) //check above
         buildModifiedArmorSetCrafting(
-            consumer,
+            recipeOutput,
             Items.AMETHYST_SHARD,
             GenerationsItems.SILICON.get(),
             GenerationsArmor.SKULL.helmet.get(),
@@ -170,60 +183,60 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
                 getHasName(GenerationsTools.WOODEN_HAMMER.get()),
                 RecipeProvider.has(GenerationsTools.WOODEN_HAMMER.get())
             )
-            .save(consumer)
+            .save(recipeOutput)
 
-        buildHammerRecipes(consumer, GenerationsTools.STONE_HAMMER.get(), Items.COBBLESTONE)
-        buildHammerRecipes(consumer, GenerationsTools.IRON_HAMMER.get(), Items.IRON_INGOT)
-        buildHammerRecipes(consumer, GenerationsTools.GOLDEN_HAMMER.get(), Items.GOLD_INGOT)
-        buildHammerRecipes(consumer, GenerationsTools.DIAMOND_HAMMER.get(), Items.DIAMOND)
+        buildHammerRecipes(recipeOutput, GenerationsTools.STONE_HAMMER.get(), Items.COBBLESTONE)
+        buildHammerRecipes(recipeOutput, GenerationsTools.IRON_HAMMER.get(), Items.IRON_INGOT)
+        buildHammerRecipes(recipeOutput, GenerationsTools.GOLDEN_HAMMER.get(), Items.GOLD_INGOT)
+        buildHammerRecipes(recipeOutput, GenerationsTools.DIAMOND_HAMMER.get(), Items.DIAMOND)
         netheriteSmithing(
-            consumer,
+            recipeOutput,
             GenerationsTools.DIAMOND_HAMMER.get(),
             RecipeCategory.TOOLS,
             GenerationsTools.NETHERITE_HAMMER.get()
         )
 
         //		ultriteSmithing(consumer, GenerationsTools.NETHERITE_HAMMER.get(), RecipeCategory.TOOLS, GenerationsTools.ULTRITE_HAMMER.get());
-        ultriteSmithing(consumer, Items.NETHERITE_SWORD, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.sword.get())
-        ultriteSmithing(consumer, Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.shovel.get())
-        ultriteSmithing(consumer, Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.pickaxe.get())
-        ultriteSmithing(consumer, Items.NETHERITE_AXE, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.axe.get())
-        ultriteSmithing(consumer, Items.NETHERITE_HOE, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.hoe.get())
+        ultriteSmithing(recipeOutput, Items.NETHERITE_SWORD, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.sword.get())
+        ultriteSmithing(recipeOutput, Items.NETHERITE_SHOVEL, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.shovel.get())
+        ultriteSmithing(recipeOutput, Items.NETHERITE_PICKAXE, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.pickaxe.get())
+        ultriteSmithing(recipeOutput, Items.NETHERITE_AXE, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.axe.get())
+        ultriteSmithing(recipeOutput, Items.NETHERITE_HOE, RecipeCategory.TOOLS, GenerationsTools.ULTRITE.hoe.get())
 
-        ultriteSmithing(consumer, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, GenerationsArmor.ULTRITE.helmet.get())
+        ultriteSmithing(recipeOutput, Items.NETHERITE_HELMET, RecipeCategory.COMBAT, GenerationsArmor.ULTRITE.helmet.get())
         ultriteSmithing(
-            consumer,
+            recipeOutput,
             Items.NETHERITE_CHESTPLATE,
             RecipeCategory.COMBAT,
             GenerationsArmor.ULTRITE.chestplate.get()
         )
         ultriteSmithing(
-            consumer,
+            recipeOutput,
             Items.NETHERITE_LEGGINGS,
             RecipeCategory.COMBAT,
             GenerationsArmor.ULTRITE.leggings.get()
         )
-        ultriteSmithing(consumer, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, GenerationsArmor.ULTRITE.boots.get())
+        ultriteSmithing(recipeOutput, Items.NETHERITE_BOOTS, RecipeCategory.COMBAT, GenerationsArmor.ULTRITE.boots.get())
     }
 
     private fun buildArmorToolFullSetCrafting(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         baseItem: ItemLike,
-        armorSet: ArmorSet,
-        toolSet: ToolSet
+        armorSet: GenerationsArmor.ArmorSet,
+        toolSet: GenerationsTools.ToolSet
     ) {
         buildArmorSetCrafting(consumer, baseItem, armorSet)
         buildToolSetCrafting(consumer, baseItem, toolSet)
     }
 
-    private fun buildArmorSetCrafting(consumer: Consumer<FinishedRecipe>, baseItem: ItemLike, armorSet: ArmorSet) {
-        if (armorSet.helmet != null) buildHelmetRecipes(consumer, baseItem, armorSet.helmet.get())
-        if (armorSet.chestplate != null) buildChestplateRecipes(consumer, baseItem, armorSet.chestplate.get())
-        if (armorSet.leggings != null) buildLeggingsRecipes(consumer, baseItem, armorSet.leggings.get())
-        if (armorSet.boots != null) buildBootsRecipes(consumer, baseItem, armorSet.boots.get())
+    private fun buildArmorSetCrafting(consumer: RecipeOutput, baseItem: ItemLike, armorSet: GenerationsArmor.ArmorSet) {
+        buildHelmetRecipes(consumer, baseItem, armorSet.helmet.get())
+        buildChestplateRecipes(consumer, baseItem, armorSet.chestplate.get())
+        buildLeggingsRecipes(consumer, baseItem, armorSet.leggings.get())
+        buildBootsRecipes(consumer, baseItem, armorSet.boots.get())
     }
 
-    private fun buildToolSetCrafting(consumer: Consumer<FinishedRecipe>, baseItem: ItemLike, toolSet: ToolSet) {
+    private fun buildToolSetCrafting(consumer: RecipeOutput, baseItem: ItemLike, toolSet: GenerationsTools.ToolSet) {
         if (toolSet.pickaxe != null) buildPickaxeRecipes(consumer, toolSet.pickaxe.get(), baseItem)
         if (toolSet.axe != null) buildAxeRecipes(consumer, toolSet.axe.get(), baseItem)
         if (toolSet.sword != null) buildSwordRecipes(consumer, toolSet.sword.get(), baseItem)
@@ -232,7 +245,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
         if (toolSet.hammer != null) buildHammerRecipes(consumer, toolSet.hammer.get(), baseItem)
     }
 
-    private fun buildHammerRecipes(consumer: Consumer<FinishedRecipe>, hammer: Item, baseItem: ItemLike) {
+    private fun buildHammerRecipes(consumer: RecipeOutput, hammer: Item, baseItem: ItemLike) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hammer)
             .define('X', baseItem)
             .define('#', Items.STICK)
@@ -243,7 +256,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             .save(consumer)
     }
 
-    private fun buildHoeRecipes(consumer: Consumer<FinishedRecipe>, hoe: GenerationsHoeItem, baseItem: ItemLike) {
+    private fun buildHoeRecipes(consumer: RecipeOutput, hoe: GenerationsHoeItem, baseItem: ItemLike) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoe)
             .define('X', baseItem)
             .define('#', Items.STICK)
@@ -255,7 +268,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
     }
 
     private fun buildShovelRecipes(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         shovel: GenerationsShovelItem,
         baseItem: ItemLike
     ) {
@@ -269,7 +282,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             .save(consumer)
     }
 
-    private fun buildSwordRecipes(consumer: Consumer<FinishedRecipe>, sword: GenerationsSwordItem, baseItem: ItemLike) {
+    private fun buildSwordRecipes(consumer: RecipeOutput, sword: GenerationsSwordItem, baseItem: ItemLike) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, sword)
             .define('X', baseItem)
             .define('#', Items.STICK)
@@ -280,7 +293,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             .save(consumer)
     }
 
-    private fun buildAxeRecipes(consumer: Consumer<FinishedRecipe>, axe: GenerationsAxeItem, baseItem: ItemLike) {
+    private fun buildAxeRecipes(consumer: RecipeOutput, axe: GenerationsAxeItem, baseItem: ItemLike) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axe)
             .define('X', baseItem)
             .define('#', Items.STICK)
@@ -292,7 +305,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
     }
 
     private fun buildPickaxeRecipes(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         pickaxe: GenerationsPickaxeItem,
         baseItem: ItemLike
     ) {
@@ -306,7 +319,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             .save(consumer)
     }
 
-    private fun buildHelmetRecipes(consumer: Consumer<FinishedRecipe>, baseItem: ItemLike, helmet: Item) {
+    private fun buildHelmetRecipes(consumer: RecipeOutput, baseItem: ItemLike, helmet: Item) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmet)
             .define('X', baseItem)
             .pattern("XXX")
@@ -315,7 +328,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             .save(consumer)
     }
 
-    private fun buildChestplateRecipes(consumer: Consumer<FinishedRecipe>, baseItem: ItemLike, chestplate: Item) {
+    private fun buildChestplateRecipes(consumer: RecipeOutput, baseItem: ItemLike, chestplate: Item) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, chestplate)
             .define('X', baseItem)
             .pattern("X X")
@@ -325,7 +338,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             .save(consumer)
     }
 
-    private fun buildLeggingsRecipes(consumer: Consumer<FinishedRecipe>, baseItem: ItemLike, leggings: Item) {
+    private fun buildLeggingsRecipes(consumer: RecipeOutput, baseItem: ItemLike, leggings: Item) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, leggings)
             .define('X', baseItem)
             .pattern("XXX")
@@ -335,7 +348,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
             .save(consumer)
     }
 
-    private fun buildBootsRecipes(consumer: Consumer<FinishedRecipe>, baseItem: ItemLike, boots: Item) {
+    private fun buildBootsRecipes(consumer: RecipeOutput, baseItem: ItemLike, boots: Item) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, boots)
             .define('X', baseItem)
             .pattern("X X")
@@ -346,7 +359,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
 
     //Modified Armor Recipes
     private fun buildModifiedArmorSetCrafting(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         itemTop: ItemLike,
         itemBottom: ItemLike,
         helmet: Item?,
@@ -361,7 +374,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
     }
 
     private fun buildModifiedHelmetRecipes(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         item1: ItemLike,
         item2: ItemLike,
         helmet: Item
@@ -377,7 +390,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
     }
 
     private fun buildModifiedChestplateRecipes(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         item1: ItemLike,
         item2: ItemLike,
         chestplate: Item
@@ -394,7 +407,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
     }
 
     private fun buildModifiedLeggingsRecipes(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         item1: ItemLike,
         item2: ItemLike,
         leggings: Item
@@ -411,7 +424,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
     }
 
     private fun buildModifiedBootsRecipes(
-        consumer: Consumer<FinishedRecipe>,
+        consumer: RecipeOutput,
         item1: ItemLike,
         item2: ItemLike,
         boots: Item
@@ -428,7 +441,7 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput) : GenerationsRecipeP
 
     companion object {
         protected fun ultriteSmithing(
-            finishedRecipeConsumer: Consumer<FinishedRecipe>?,
+            finishedRecipeConsumer: RecipeOutput,
             ingredientItem: Item,
             category: RecipeCategory,
             resultItem: Item

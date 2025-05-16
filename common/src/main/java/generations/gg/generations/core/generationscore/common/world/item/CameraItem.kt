@@ -32,10 +32,9 @@ class CameraItem(properties: Properties) : Item(properties) {
             val pokemon = GenerationsUtils.raycast(player, 30.0, 1.0f) { it is PokemonEntity }.instanceOrNull<EntityHitResult>()?.entity.instanceOrNull<PokemonEntity>()?.pokemon
 
             if (pokemon != null) {
-                val photo: ItemStack = PokemonItem.from(pokemon)
+                var stack: ItemStack = PokemonItem.from(pokemon)
 
-                val changed =
-                    CameraEvents.MODIFY_PHOTO.invoker().modify(player as ServerPlayer, level as ServerLevel, photo)
+                CameraEvents.MODIFY_PHOTO.post(CameraEvents.ModifyPhoto(player as ServerPlayer, level as ServerLevel, stack), then = { stack = it.photo })
 
                 if (player.getInventory().freeSlot > -1) {
                     level.playSound(
@@ -48,11 +47,8 @@ class CameraItem(properties: Properties) : Item(properties) {
                         1.0f,
                         1.0f
                     )
-                    ContainerHelper.clearOrCountMatchingItems(
-                        player.getInventory(),
-                        { stack: ItemStack -> stack.`is`(GenerationsItems.FILM.get()) }, 1, false
-                    )
-                    player.addItem(changed ?: photo)
+                    ContainerHelper.clearOrCountMatchingItems(player.getInventory(), { itemStack: ItemStack -> itemStack.`is`(GenerationsItems.FILM) }, 1, false)
+                    player.addItem(stack)
                     player.getCooldowns().addCooldown(this, 5)
                 }
             }

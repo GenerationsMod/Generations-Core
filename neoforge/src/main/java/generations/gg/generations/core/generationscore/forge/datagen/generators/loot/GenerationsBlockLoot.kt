@@ -91,12 +91,12 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
                 createMushroomBlockDrop(block, block.asItem())
             )
         })
-        GenerationsFullBlockSet.getFullBlockSets()
+        GenerationsFullBlockSet.fullBlockSets
             .forEach(Consumer { generationsFullBlockSet: GenerationsFullBlockSet ->
                 generationsFullBlockSet.allBlocks.forEach(
                     Consumer { block: Block -> this.dropSelfUpdated(block) })
             })
-        GenerationsBlockSet.getBlockSets().forEach(Consumer { generationsBlockSet: GenerationsBlockSet ->
+        GenerationsBlockSet.blockSets.forEach(Consumer { generationsBlockSet: GenerationsBlockSet ->
             generationsBlockSet.allBlocks.forEach(
                 Consumer { block: Block -> this.dropSelfUpdated(block) })
         })

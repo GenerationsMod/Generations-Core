@@ -1,0 +1,213 @@
+package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe
+
+import com.google.common.collect.ImmutableList
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsOres
+import net.minecraft.core.HolderLookup
+import net.minecraft.data.PackOutput
+import net.minecraft.data.recipes.RecipeCategory
+import net.minecraft.data.recipes.RecipeOutput
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder
+import net.minecraft.world.item.crafting.Ingredient
+import net.minecraft.world.level.ItemLike
+import net.neoforged.neoforge.common.conditions.IConditionBuilder
+import java.util.concurrent.CompletableFuture
+
+//TODO: Proper RecipeCategory assignment
+class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<HolderLookup.Provider>) : GenerationsRecipeProvider.Proxied(output, registries), IConditionBuilder {
+    override fun buildRecipes(recipeOutput: RecipeOutput) {
+        oreSmelting(
+            recipeOutput,
+            MEGASTONE_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.MEGASTONE_SHARD.get(),
+            1.0f,
+            200,
+            "mega_stone_shard"
+        )
+        oreSmelting(
+            recipeOutput,
+            METEORITE_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.METEORITE_SHARD.get(),
+            1.0f,
+            200,
+            "meteorite_shard"
+        )
+        oreSmelting(
+            recipeOutput,
+            Z_CRYSTAL_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.Z_INGOT.get(),
+            1.0f,
+            200,
+            "z_ingot"
+        )
+        oreSmelting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.get(), 1.0f, 200, "ruby_gem")
+        oreSmelting(
+            recipeOutput,
+            SAPPHIRE_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.SAPPHIRE.get(),
+            1.0f,
+            200,
+            "sapphire_gem"
+        )
+        oreSmelting(
+            recipeOutput,
+            CRYSTAL_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.CRYSTAL.get(),
+            1.0f,
+            200,
+            "crystal_gem"
+        )
+        oreSmelting(
+            recipeOutput,
+            SILICON_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.SILICON.get(),
+            1.0f,
+            200,
+            "silicon"
+        )
+        oreBlasting(
+            recipeOutput,
+            Z_CRYSTAL_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.Z_INGOT.get(),
+            1.0f,
+            100,
+            "z_ingot"
+        )
+        oreBlasting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.get(), 1.0f, 100, "ruby_gem")
+        oreBlasting(
+            recipeOutput,
+            SAPPHIRE_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.SAPPHIRE.get(),
+            1.0f,
+            100,
+            "sapphire_gem"
+        )
+        oreBlasting(
+            recipeOutput,
+            CRYSTAL_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.CRYSTAL.get(),
+            1.0f,
+            100,
+            "crystal_gem"
+        )
+        oreBlasting(
+            recipeOutput,
+            SILICON_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.SILICON.get(),
+            1.0f,
+            100,
+            "silicon"
+        )
+        oreBlasting(
+            recipeOutput,
+            MEGASTONE_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.MEGASTONE_SHARD.get(),
+            1.0f,
+            100,
+            "mega_stone_shard"
+        )
+        oreBlasting(
+            recipeOutput,
+            METEORITE_SMELTABLES,
+            RecipeCategory.MISC,
+            GenerationsItems.METEORITE_SHARD.get(),
+            1.0f,
+            100,
+            "meteorite_shard"
+        )
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()),
+            RecipeCategory.MISC,
+            GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(),
+            0.1f,
+            200
+        ).unlockedBy("has_charge_stone_cobble", has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()))
+            .save(recipeOutput)
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()),
+            RecipeCategory.MISC,
+            GenerationsBlocks.SMOOTH_CHARGE_STONE.get(),
+            0.1f,
+            200
+        ).unlockedBy("has_charge_stone", has(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock())).save(recipeOutput)
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()),
+            RecipeCategory.MISC,
+            GenerationsBlocks.VOLCANIC_STONE.get(),
+            0.1f,
+            200
+        ).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()))
+            .save(recipeOutput)
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(GenerationsBlocks.VOLCANIC_STONE.get()),
+            RecipeCategory.MISC,
+            GenerationsBlocks.SMOOTH_VOLCANIC_STONE.get(),
+            0.1f,
+            200
+        ).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_STONE.get())).save(recipeOutput)
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(GenerationsBlocks.ULTRA_SANDSTONE.get()),
+            RecipeCategory.MISC,
+            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE.get(),
+            0.1f,
+            200
+        ).unlockedBy(
+            getHasName(GenerationsBlocks.ULTRA_SANDSTONE.get()), has(GenerationsBlocks.ULTRA_SANDSTONE.get())
+        ).save(recipeOutput)
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()),
+            RecipeCategory.MISC,
+            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE.get(),
+            0.1f,
+            200
+        ).unlockedBy(
+            getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get()),
+            has(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.get())
+        ).save(recipeOutput)
+
+        //ChargeStone Ores
+        /*
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_COAL_ORE.get()), RecipeCategory.MISC, Items.COAL, 0.1f, 200, "coal");
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_IRON_ORE.get()), RecipeCategory.MISC, Items.IRON_INGOT, 0.7f, 200, "iron_ingot");
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_COPPER_ORE.get()), RecipeCategory.MISC, Items.COPPER_INGOT, 0.7f, 200, "copper_ingot");
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_GOLD_ORE.get()), RecipeCategory.MISC, Items.GOLD_INGOT, 1.0f, 200, "gold_ingot");
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get()), RecipeCategory.MISC, Items.DIAMOND, 1.0f, 200, "diamond");
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get()), RecipeCategory.MISC, Items.LAPIS_LAZULI, 0.2f, 200, "lapis_lazuli");
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get()), RecipeCategory.REDSTONE, Items.REDSTONE, 0.7f, 200, "redstone");
+        oreSmelting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_EMERALD_ORE.get()), RecipeCategory.MISC, Items.EMERALD, 1.0f, 200, "emerald");
+
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_COAL_ORE.get()), RecipeCategory.MISC, Items.COAL, 0.1f, 100, "coal");
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_IRON_ORE.get()), RecipeCategory.MISC, Items.IRON_INGOT, 0.7f, 100, "iron_ingot");
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_COPPER_ORE.get()), RecipeCategory.MISC, Items.COPPER_INGOT, 0.7f, 100, "copper_ingot");
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_GOLD_ORE.get()), RecipeCategory.MISC, Items.GOLD_INGOT, 1.0f, 100, "gold_ingot");
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_DIAMOND_ORE.get()), RecipeCategory.MISC, Items.DIAMOND, 1.0f, 100, "diamond");
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_LAPIS_LAZULI_ORE.get()), RecipeCategory.MISC, Items.LAPIS_LAZULI, 0.2f, 100, "lapis_lazuli");
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_REDSTONE_ORE.get()), RecipeCategory.REDSTONE, Items.REDSTONE, 0.7f, 100, "redstone");
+        oreBlasting(consumer, ImmutableList.of(GenerationsOres.CHARGE_STONE_EMERALD_ORE.get()), RecipeCategory.MISC, Items.EMERALD, 1.0f, 100, "emerald");
+         */
+    }
+
+    companion object {
+        private val Z_CRYSTAL_SMELTABLES: ImmutableList<ItemLike> = GenerationsOres.Z_CRYSTAL_ORE_SET.immutableList
+        private val RUBY_SMELTABLES: ImmutableList<ItemLike> = GenerationsOres.RUBY_ORE_SET.immutableList
+        private val SAPPHIRE_SMELTABLES: ImmutableList<ItemLike> = GenerationsOres.SAPPHIRE_ORE_SET.immutableList
+        private val CRYSTAL_SMELTABLES: ImmutableList<ItemLike> = GenerationsOres.CRYSTAL_ORE_SET.immutableList
+        private val SILICON_SMELTABLES: ImmutableList<ItemLike> = GenerationsOres.SILICON_ORE_SET.immutableList
+        private val MEGASTONE_SMELTABLES: ImmutableList<ItemLike> = GenerationsOres.MEGASTONE_ORE_SET.immutableList
+        private val METEORITE_SMELTABLES: ImmutableList<ItemLike> = GenerationsOres.METEORITE_ORE_SET.immutableList
+    }
+}

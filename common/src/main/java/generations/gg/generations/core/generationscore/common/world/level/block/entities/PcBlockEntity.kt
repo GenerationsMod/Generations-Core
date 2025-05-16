@@ -26,7 +26,7 @@ open class PcBlockEntity<T : PcBlockEntity<T>>(
 
             if (stateBottom.getValue(PcBlock.ON) != on) {
                 world.setBlockAndUpdate(posBottom, stateBottom.setValue(PcBlock.ON, on))
-                if((stateBottom.block as GenericRotatableModelBlock<*>).height() == 1) world.setBlockAndUpdate(posTop, stateBottom.setValue(PcBlock.ON, on).setValue(pcBlock.heightProperty, 1))
+                if((stateBottom.block as GenericRotatableModelBlock<*>).height == 1) world.setBlockAndUpdate(posTop, stateBottom.setValue(PcBlock.ON, on).setValue(pcBlock.heightProperty, 1))
             }
         }
     }

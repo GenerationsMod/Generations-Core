@@ -237,10 +237,10 @@ object GenerationsBlocks {
     @JvmField val MOSSY_CHARGE_STONE_BRICKS_SET = GenerationsBlockSet("mossy_charge_stone_brick", registerBlockItem("mossy_charge_stone_bricks") { Block(BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICKS)) }, BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_STONE_BRICKS))
 
     //Infested blocks
-    val INFESTED_CHARGE_STONE = registerStone("infested_charge_stone") { InfestedBlock(CHARGE_STONE_SET.baseBlock, BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE)) }
-    val INFESTED_CHARGE_COBBLESTONE = registerStone("infested_charge_cobblestone") { InfestedBlock(CHARGE_COBBLESTONE_SET.baseBlock, BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_COBBLESTONE)) }
+    val INFESTED_CHARGE_STONE = registerStone("infested_charge_stone") { InfestedBlock(CHARGE_STONE_SET.getBaseBlock(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE)) }
+    val INFESTED_CHARGE_COBBLESTONE = registerStone("infested_charge_cobblestone") { InfestedBlock(CHARGE_COBBLESTONE_SET.getBaseBlock(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_COBBLESTONE)) }
     val INFESTED_CHARGE_STONE_BRICKS = registerStone("infested_charge_stone_bricks") { InfestedBlock(CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE_BRICKS)) }
-    val INFESTED_MOSSY_CHARGE_STONE_BRICKS = registerStone("infested_mossy_charge_stone_bricks") { InfestedBlock(MOSSY_CHARGE_STONE_BRICKS_SET.baseBlock, BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_MOSSY_STONE_BRICKS)) }
+    val INFESTED_MOSSY_CHARGE_STONE_BRICKS = registerStone("infested_mossy_charge_stone_bricks") { InfestedBlock(MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_MOSSY_STONE_BRICKS)) }
     val INFESTED_CRACKED_CHARGE_STONE_BRICKS = registerStone("infested_cracked_charge_stone_bricks") { InfestedBlock(CRACKED_CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_CRACKED_STONE_BRICKS)) }
     val INFESTED_CHISELED_CHARGE_STONE_BRICKS = registerStone("infested_chiseled_charge_stone_bricks") { InfestedBlock(CHISELED_CHARGE_STONE_BRICKS.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_CHISELED_STONE_BRICKS)) }
 
@@ -284,9 +284,9 @@ object GenerationsBlocks {
 
     //Infested Volcanic Stone Bricks
     val INFESTED_VOLCANIC_STONE = registerStone("infested_volcanic_stone") { InfestedBlock(VOLCANIC_STONE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE)) }
-    val INFESTED_VOLCANIC_COBBLESTONE = registerStone("infested_volcanic_cobblestone") { InfestedBlock(VOLCANIC_COBBLESTONE_SET.baseBlock, BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_COBBLESTONE)) }
+    val INFESTED_VOLCANIC_COBBLESTONE = registerStone("infested_volcanic_cobblestone") { InfestedBlock(VOLCANIC_COBBLESTONE_SET.getBaseBlock(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_COBBLESTONE)) }
     val INFESTED_VOLCANIC_STONE_BRICKS = registerStone("infested_volcanic_stone_bricks") { InfestedBlock(VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE_BRICKS)) }
-    val INFESTED_MOSSY_VOLCANIC_STONE_BRICKS = registerStone("infested_mossy_volcanic_stone_bricks") { InfestedBlock(MOSSY_VOLCANIC_STONE_BRICKS_SET.baseBlock, BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE_BRICKS)) }
+    val INFESTED_MOSSY_VOLCANIC_STONE_BRICKS = registerStone("infested_mossy_volcanic_stone_bricks") { InfestedBlock(MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE_BRICKS)) }
     val INFESTED_CRACKED_VOLCANIC_STONE_BRICKS = registerStone("infested_cracked_volcanic_stone_bricks") { InfestedBlock(CRACKED_VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE_BRICKS)) }
     val INFESTED_CHISELED_VOLCANIC_STONE_BRICKS = registerStone("infested_chiseled_volcanic_stone_bricks") { InfestedBlock(CHISELED_VOLCANIC_STONE_BRICKS.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.INFESTED_STONE_BRICKS)) }
 

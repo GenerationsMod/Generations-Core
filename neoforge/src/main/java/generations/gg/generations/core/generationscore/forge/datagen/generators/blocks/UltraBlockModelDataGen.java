@@ -14,7 +14,7 @@ public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxie
 
 	@Override
 	public void registerStatesAndModels() {
-		GenerationsUltraBlockSet.ultraBlockSets.forEach(arg -> registerBlockFamily(arg.getBlockFamily()));
+		GenerationsUltraBlockSet.ultraBlockSets.forEach(arg -> registerBlockFamily(arg.blockFamily));
 	}
 	private void registerBlockFamily(BlockFamily family) {
 		registerUltraBlock(family.getBaseBlock());

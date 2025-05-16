@@ -41,52 +41,22 @@ internal object DataGeneratorsRegister {
         val lookupProvider: CompletableFuture<HolderLookup.Provider> = event.getLookupProvider()
         TagsDatagen.init(generator, output, lookupProvider, existingFileHelper)
         generator.addProvider<GeneralLang>(true, GeneralLang(output, "en_us"))
-        generator.addProvider(
-            true, GenerationsBlockStateProvider(output, existingFileHelper,
-                Function<GenerationsBlockStateProvider, GenerationsBlockStateProvider.Proxied> { provider: GenerationsBlockStateProvider? ->
-                    BlockDatagen(
-                        provider
-                    )
-                },
-                Function<GenerationsBlockStateProvider, GenerationsBlockStateProvider.Proxied> { provider: GenerationsBlockStateProvider? ->
-                    UltraBlockModelDataGen(
-                        provider
-                    )
-                })
-        )
+//        generator.addProvider( TODO: Completley redo this. Neoforge completely changes this. That or move to forge with less cancerous data gen unknown.
+//            true, GenerationsBlockStateProvider(output, existingFileHelper,
+//                Function { provider: GenerationsBlockStateProvider ->
+//                    BlockDatagen(
+//                        provider
+//                    )
+//                },
+//                Function { provider: GenerationsBlockStateProvider ->
+//                    UltraBlockModelDataGen(
+//                        provider
+//                    )
+//                }))
         generator.addProvider(true, ItemDatagen(output, existingFileHelper))
 
-        generator.addProvider<GenerationsRecipeProvider>(
-            true, GenerationsRecipeProvider(output,
-                Function<PackOutput, GenerationsRecipeProvider.Proxied> { arg: PackOutput? -> ItemRecipeDatagen(arg) },
-                Function<PackOutput, GenerationsRecipeProvider.Proxied> { output: PackOutput? ->
-                    BuildingBlockRecipeDatagen(
-                        output
-                    )
-                },
-                Function<PackOutput, GenerationsRecipeProvider.Proxied> { output: PackOutput? ->
-                    GenerationsArmorToolRecipeDatagen(
-                        output
-                    )
-                },
-                Function<PackOutput, GenerationsRecipeProvider.Proxied> { output: PackOutput? ->
-                    MachineDecorationsRecipeDatagen(
-                        output
-                    )
-                },
-                Function<PackOutput, GenerationsRecipeProvider.Proxied> { output: PackOutput? -> WoodRecipes(output) },  //PokeBallRecipeDatagen::new,
-                Function<PackOutput, GenerationsRecipeProvider.Proxied> { output: PackOutput? ->
-                    FurnaceRecipeProvider(
-                        output
-                    )
-                },
-                Function<PackOutput, GenerationsRecipeProvider.Proxied> { arg: PackOutput? -> RksRecipeProvider(arg) })
-        )
-        generator.addProvider<LootTableDatagen>(true, LootTableDatagen(output))
 
-        //        generator.addProvider(true, new GenerationsPokemonModelsProvider(output));
-
-//        generator.addProvider(true, new DialogueDataGen(event.getGenerator().getPackOutput()));
         generator.addProvider(true, WorldGenProvider(output, lookupProvider))
+        generator.addProvider(true, GenerationsRecipeProvider(output, lookupProvider, ::ItemRecipeDatagen, ::BuildingBlockRecipeDatagen, ::GenerationsArmorToolRecipeDatagen, ::MachineDecorationsRecipeDatagen, ::WoodRecipes));  //PokeBallRecipeDatagen::new, ::FurnaceRecipeProvider, ::RksRecipeProvider))
     }
 }

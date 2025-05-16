@@ -92,8 +92,8 @@ object ModelRegistry {
                 val forward: Direction = supplier.blockState.getValue(GenericRotatableModelBlock.FACING)
                 val x: Int = block.getWidthValue(supplier.blockState)
                 val z: Int = block.getLengthValue(supplier.blockState)
-                val width: Float = block.width() * 0.5f - x
-                val length: Float = block.length() * 0.5f - z
+                val width: Float = block.width * 0.5f - x
+                val length: Float = block.length * 0.5f - z
                 when (forward) {
                     Direction.SOUTH -> stack.translate(width, 0f, -length)
                     Direction.EAST -> stack.translate(-length, 0f, -width)

@@ -1,0 +1,210 @@
+package generations.gg.generations.core.generationscore.forge
+
+import com.google.common.collect.ImmutableMap
+import com.mojang.datafixers.util.Pair
+import dev.architectury.registry.registries.DeferredRegister
+import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.GenerationsCore.init
+import generations.gg.generations.core.generationscore.common.GenerationsCore.onAnvilChange
+import generations.gg.generations.core.generationscore.common.GenerationsImplementation
+import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
+import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
+import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
+import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge
+import net.minecraft.client.Minecraft
+import net.minecraft.network.chat.Component
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.packs.PackType
+import net.minecraft.server.packs.resources.PreparableReloadListener
+import net.minecraft.server.packs.resources.ReloadableResourceManager
+import net.minecraft.world.item.AxeItem
+import net.minecraft.world.item.CreativeModeTab
+import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.ItemLike
+import net.minecraft.world.level.block.*
+import net.neoforged.bus.api.IEventBus
+import net.neoforged.fml.ModList
+import net.neoforged.fml.common.Mod
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
+import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent
+import net.neoforged.fml.loading.FMLPaths
+import net.neoforged.neoforge.common.NeoForge
+import net.neoforged.neoforge.event.AddReloadListenerEvent
+import net.neoforged.neoforge.event.AnvilUpdateEvent
+import net.neoforged.neoforge.event.OnDatapackSyncEvent
+import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
+import java.util.function.Consumer
+import java.util.function.Supplier
+
+/**
+ * Forge Main class for GenerationsCore.
+ * @see Mod
+ *
+ * @see GenerationsCore
+ *
+ * @author Joseph T. McQuigg, WaterPicker
+ */
+@Mod(GenerationsCore.MOD_ID)
+class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
+    private val reloadableResources: MutableList<PreparableReloadListener> = ArrayList()
+    private val packs: Map<PackType, List<Pair<ResourceLocation, Component>>> = HashMap()
+
+    /**
+     * Sets up Forge side of the mod.
+     */
+    init {
+        setConfigDirectory(FMLPaths.CONFIGDIR.get())
+        GenerationsCreativeTabsForge.init(MOD_BUS)
+        //        EvenBus.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
+        MOD_BUS.addListener { event: FMLCommonSetupEvent -> this.onInitialize(event) }
+        MOD_BUS.addListener { event: FMLLoadCompleteEvent -> this.postInit(event) }
+        init(this)
+        //        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
+        val EVENT_BUS = NeoForge.EVENT_BUS
+
+        EVENT_BUS.addListener { event: OnDatapackSyncEvent ->
+            this.onDataPackSync(
+                event
+            )
+        }
+        EVENT_BUS.addListener(Consumer { event: AnvilUpdateEvent ->
+            onAnvilChange(event.left, event.right, event.player,
+                { output: ItemStack ->
+                    event.output =
+                        output
+                },
+                { cost: Int -> event.cost = cost.toLong() },
+                { materialCost: Int -> event.materialCost = materialCost })
+        })
+        EVENT_BUS.addListener<LivingJumpEvent> { event -> EntityEvents.jump(event.entity) }
+        //            addListener(this::onLogin)
+//            addListener(this::onLogout)
+        EVENT_BUS.addListener { e: AddReloadListenerEvent -> this.onReload(e) }
+
+        //        GenerationsCore.initBuiltinPacks((packType, id, name) -> packs.computeIfAbsent(packType, a -> new ArrayList<>()).add(new Pair<>(id, name)));
+//        MOD_BUS.addListener(this::addPackFinders);
+        if (ModList.get().isLoaded("impactor")) ImpactorCompat.init()
+    }
+
+    override fun registerStrippable(log: Block, stripped: Block) {
+        require(
+            log.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
+        ) { "Input block is missing required 'AXIS' property!" }
+        require(
+            stripped.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
+        ) { "Result block is missing required 'AXIS' property!" }
+        if (AxeItem.STRIPPABLES is ImmutableMap<*, *>) AxeItem.STRIPPABLES = HashMap(AxeItem.STRIPPABLES)
+
+        AxeItem.STRIPPABLES[log] = stripped
+    }
+
+    override fun registerFlammable(blockIn: Block, encouragement: Int, flammability: Int) {
+        (Blocks.FIRE as FireBlock).setFlammable(blockIn, encouragement, flammability)
+    }
+
+    override fun registerCompostables(block: Block, chance: Float) {
+        ComposterBlock.COMPOSTABLES.put(block, chance)
+    }
+
+    @SafeVarargs
+    override fun create(
+        name: String,
+        o: Supplier<ItemStack>,
+        vararg deferredRegister: DeferredRegister<out ItemLike?>
+    ): Supplier<CreativeModeTab> {
+        return GenerationsCreativeTabsForge.create(name, o, *deferredRegister)
+    }
+
+
+    //    public void addPackFinders(AddPackFindersEvent event) {
+    //        var packList = packs.get(event.getPackType());
+    //        if (packList != null) {
+    //            for (var pack1 : packList) {
+    //                var id = pack1.getFirst();
+    //                var displayName = pack1.getSecond();
+    //
+    //                IModFileInfo info = getPackInfo(id);
+    //                Path resourcePath = info.getFile().findResource("resourcepacks/" + id.getPath());
+    //
+    //                final Pack.Info packInfo = createInfoForLatest(displayName, false);
+    //                final Pack pack = Pack.create(
+    //                        GenerationsCore.MOD_ID + ":add_pack/" + id.getPath(), displayName,
+    //                        false,
+    //                        (path) -> new PathPackResources(path, resourcePath, true),
+    //                        packInfo, PackType.CLIENT_RESOURCES, Pack.Position.BOTTOM, false, PackSource.BUILT_IN);
+    //                event.addRepositorySource((packConsumer) ->
+    //                        packConsumer.accept(pack));
+    //            }
+    //        }
+    //    }
+    //    private static IModFileInfo getPackInfo(ResourceLocation pack) {
+    //        if (!FMLLoader.isProduction()) {
+    //            for (IModInfo mod : ModList.get().getMods()) {
+    //                if (mod.getModId().startsWith("generated_") && fileExists(mod, "resourcepacks/" + pack.getPath())) {
+    //                    return mod.getOwningFile();
+    //                }
+    //            }
+    //        }
+    //        return ModList.get().getModFileById(pack.getNamespace());
+    //    }
+    //    private static boolean fileExists(IModInfo info, String path) {
+    //        return Files.exists(info.getOwningFile().getFile().findResource(path.split("/")));
+    //    }
+    //
+    //    private static Pack.Info createInfoForLatest(Component description, boolean hidden) {
+    //        return new Pack.Info(
+    //                description,
+    //                SharedConstants.getCurrentVersion().getPackVersion(PackType.SERVER_DATA),
+    //                SharedConstants.getCurrentVersion().getPackVersion(PackType.CLIENT_RESOURCES),
+    //                FeatureFlagSet.of(),
+    //                hidden
+    //        );
+    //    }
+    //
+    //    private static PackSource createSource() {
+    //        final Component text = Component.translatable("pack.source.builtin");
+    //        return PackSource.create(
+    //                component -> Component.translatable("pack.nameAndSource", component, text).withStyle(ChatFormatting.GRAY),
+    //                true
+    //        );
+    //    }
+    /**
+     * Should initialize everything where a specific event does not cover it.
+     */
+    private fun onInitialize(event: FMLCommonSetupEvent) {
+        event.enqueueWork { VanillaCompat.setup() }
+        MutableBlockEntityType.blocksToAdd.forEach { block -> block.instanceOrNull<MutableBlockEntityType<*>>()?.addBlock(block) }
+    }
+
+    private fun postInit(event: FMLLoadCompleteEvent) {
+        event.enqueueWork { VanillaCompat.dispenserBehavior() }
+    }
+
+    private fun onDataPackSync(event: OnDatapackSyncEvent) {
+        if (event.player != null) GenerationsCore.dataProvider.sync(event.player!!)
+    }
+
+    private fun onReload(e: AddReloadListenerEvent) {
+        reloadableResources.forEach(Consumer { listener: PreparableReloadListener? -> e.addListener(listener) })
+    }
+
+    //    fun onLogin(event: PlayerEvent.PlayerLoggedInEvent) {
+    //        this.hasBeenSynced.add(event.key.uuid)
+    //    }
+    //
+    //    fun onLogout(event: PlayerEvent.PlayerLoggedOutEvent) {
+    //        this.hasBeenSynced.remove(event.key.uuid)
+    //    }
+    override fun registerResourceReloader(
+        identifier: ResourceLocation,
+        reloader: PreparableReloadListener,
+        type: PackType,
+        dependencies: Collection<ResourceLocation>
+    ) {
+        if (type == PackType.SERVER_DATA) reloadableResources.add(reloader)
+        else Minecraft.getInstance().resourceManager.instanceOrNull<ReloadableResourceManager>()?.registerReloadListener(reloader)
+    }
+}

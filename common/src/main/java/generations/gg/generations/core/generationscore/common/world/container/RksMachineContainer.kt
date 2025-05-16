@@ -102,13 +102,9 @@ class RksMachineContainer @JvmOverloads constructor(
     val isWeaving: Boolean
         get() = data[0] > 0
 
-    override fun setToggled(toggle: Boolean) {
-        data[2] = if (toggle) 1 else 0
-    }
-
-    override fun isToggled(): Boolean {
-        return data[2] == 1
-    }
+    override var isToggled: Boolean
+        get() = data[2] == 1
+        set(value) { data[2] = if (value) 1 else 0 }
 
     val isPokemonPresent: Boolean
         get() = data[3] == 1

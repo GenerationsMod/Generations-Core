@@ -4,48 +4,42 @@ import com.cobblemon.mod.common.CobblemonEntities
 import com.cobblemon.mod.common.api.dialogue.Dialogue
 import com.cobblemon.mod.common.api.dialogue.Dialogues
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.openDialogue
 import dev.architectury.event.EventResult
 import dev.architectury.event.events.common.EntityEvent
 import dev.architectury.event.events.common.InteractionEvent
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
-import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
-import generations.gg.generations.core.generationscore.common.world.entity.ZygardeCellEntity
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.item.ZygardeCubeItem
 import generations.gg.generations.core.generationscore.common.world.level.block.ElevatorBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks.SCARECROW
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.VendingMachineBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.RegiShrineBlock
-import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.entity.Entity
 
 object GenerationsArchitecturyEvents {
 
     @JvmStatic
     fun init() {
-        EntityEvents.JUMP.register {
-            if (it is ServerPlayer) it.level().getBlockState(it.blockPosition()).block.takeIf { it is ElevatorBlock }
-                .let { it as? ElevatorBlock }?.takeElevator(it.level(), it.blockPosition().below(), it, Direction.UP)
+        EntityEvents.JUMP.subscribe {
+            val player = it.entity.instanceOrNull<ServerPlayer>() ?: return@subscribe
+            player.serverLevel().getBlockState(player.blockPosition()).block.instanceOrNull<ElevatorBlock>()?.takeElevator(player.serverLevel(), player.blockPosition().below(), player, Direction.UP)
         }
 
-        EntityEvent.ADD.register { entity, level ->
+        EntityEvent.ADD.register { entity, level -> //TODO: add exceptions and maybe a scarcrow tag
             if(entity.type == CobblemonEntities.POKEMON || entity.type == GenerationsEntities.ZYGARDE_CELL) {
 
                 val list = RegiShrineBlock.searchForBlock(
                     level,
                     entity.blockPosition(),
-                    GenerationsCore.CONFIG.blocks.scarecrowRadius.x,
-                    GenerationsCore.CONFIG.blocks.scarecrowRadius.y,
-                    GenerationsCore.CONFIG.blocks.scarecrowRadius.z,
+                    GenerationsCore.CONFIG!!.blocks.scarecrowRadius.x,
+                    GenerationsCore.CONFIG!!.blocks.scarecrowRadius.y,
+                    GenerationsCore.CONFIG!!.blocks.scarecrowRadius.z,
                     1
                 ) { world, pos -> world.getBlockState(pos).`is`(SCARECROW.get()) }
                 if (list.isNotEmpty()) {

@@ -11,6 +11,7 @@ import com.mojang.serialization.JsonOps
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.registries.Registrar
+import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Registry
 import net.minecraft.network.codec.StreamCodec
@@ -41,6 +42,8 @@ object Codecs {
     fun <T> ResourceKey<Registry<T>>.tagCodec(): Codec<TagKey<T>> {
         return TagKey.codec(this)
     }
+
+    fun <T> ResourceKey<Registry<T>>.codec(): Codec<ResourceKey<T>> = ResourceKey.codec(this)
 
     fun <T> ResourceKey<Registry<T>>.tagStreamCodec(): StreamCodec<ByteBuf, TagKey<T>> {
         return ResourceLocation.STREAM_CODEC.map({ TagKey.create(this, it) }, TagKey<*>::location)
@@ -443,5 +446,6 @@ object Codecs {
         ).apply(it, ctor)
     }
 
-    fun <A> mapCodec(block: RecordCodecBuilder.Instance<A>.() -> App<RecordCodecBuilder.Mu<A>, A>): MapCodec<A> = RecordCodecBuilder.
+    fun <A> mapCodec(block: RecordCodecBuilder.Instance<A>.() -> App<RecordCodecBuilder.Mu<A>, A>): MapCodec<A> = RecordCodecBuilder.mapCodec(block)
+    fun <T : GenericModelBlock<*>> modelCodec(): RecordCodecBuilder<T, ResourceLocation> = ResourceLocation.CODEC.fieldOf("model").forGetter { it.model!! }
 }

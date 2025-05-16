@@ -29,13 +29,13 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         registerOreBlocks()
         GenerationsBlockFamilies.getAllFamilies().filter { obj: BlockFamily -> obj.shouldGenerateModel() }
             .forEach { family: BlockFamily -> this.registerBlockFamily(family) }
-        GenerationsBlockSet.getBlockSets().forEach(
+        GenerationsBlockSet.blockSets.forEach(
             Consumer { blockSet: GenerationsBlockSet ->
                 val family = blockSet.blockFamily
                 if (family.shouldGenerateModel()) registerBlockFamily(family)
             }
         )
-        GenerationsFullBlockSet.getFullBlockSets().forEach(
+        GenerationsFullBlockSet.fullBlockSets.forEach(
             Consumer { blockSet: GenerationsFullBlockSet ->
                 val family = blockSet.blockFamily
                 if (family.shouldGenerateModel()) registerBlockFamily(family)

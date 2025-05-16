@@ -183,8 +183,8 @@ object GenerationsCore {
     fun onAnvilChange(
         left: ItemStack,
         right: ItemStack,
-        player: Player?,
-        output: Consumer<ItemStack?>,
+        player: Player,
+        output: Consumer<ItemStack>,
         cost: IntConsumer,
         materialCost: IntConsumer
     ) {

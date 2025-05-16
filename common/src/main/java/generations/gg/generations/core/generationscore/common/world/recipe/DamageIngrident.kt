@@ -13,6 +13,7 @@ import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.ItemLike
 
 class DamageIngredient(var item: Holder<Item>, var damage: Int) : GenerationsIngredient {
     override val id = ID

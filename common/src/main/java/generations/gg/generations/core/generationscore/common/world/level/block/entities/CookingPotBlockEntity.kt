@@ -252,13 +252,9 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         return !handler.getResource(12).isBlank
     }
 
-    override fun setToggled(toggle: Boolean) {
-        setCooking(toggle)
-    }
-
-    override fun isToggled(): Boolean {
-        return isCooking()
-    }
+    override var isToggled: Boolean
+        get() = isCooking()
+        set(value) { setCooking(value) }
 
     override fun getItems(direction: Direction?): CommonStorage<ItemResource> {
         return handler

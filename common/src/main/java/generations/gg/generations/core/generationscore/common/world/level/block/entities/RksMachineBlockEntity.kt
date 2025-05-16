@@ -338,13 +338,9 @@ class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
         return list
     }
 
-    override fun setToggled(toggle: Boolean) {
-        isProcessing = toggle
-    }
-
-    override fun isToggled(): Boolean {
-        return isProcessing
-    }
+    override var isToggled: Boolean
+        get() = isProcessing
+        set(value) { isProcessing = value }
 
     fun addMenu(rksMachineContainer: RksMachineContainer) {
         openContainers.add(rksMachineContainer)

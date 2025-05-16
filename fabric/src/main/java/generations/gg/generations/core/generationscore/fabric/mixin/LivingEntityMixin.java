@@ -12,6 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class LivingEntityMixin {
     @Inject(method = "jumpFromGround", at = @At("TAIL"))
     public void onJump(CallbackInfo ci) {
-        EntityEvents.JUMP.invoker().jump((Entity) (Object) this);
+        EntityEvents.jump((Entity) (Object) this);
     }
 }

@@ -6,13 +6,17 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.BUILDING_BLOCKS
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.INERT_RELIC_SONG
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.POKEMAIL_AIR
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools
 import generations.gg.generations.core.generationscore.common.world.item.tools.GenerationsHammerItem
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.PackOutput
 import net.minecraft.data.tags.ItemTagsProvider
@@ -36,8 +40,8 @@ object TagsDatagen {
     fun init(
         generator: DataGenerator,
         output: PackOutput,
-        lookupProvider: CompletableFuture<HolderLookup.Provider?>,
-        helper: ExistingFileHelper?
+        lookupProvider: CompletableFuture<HolderLookup.Provider>,
+        helper: ExistingFileHelper
     ) {
         val blockProvider = GenerationsBlockTagsProvider(output, lookupProvider, helper)
         generator.addProvider(true, blockProvider)
@@ -47,7 +51,7 @@ object TagsDatagen {
 
     private class GenerationsBlockTagsProvider(
         output: PackOutput,
-        lookupProvider: CompletableFuture<HolderLookup.Provider?>,
+        lookupProvider: CompletableFuture<HolderLookup.Provider>,
         existingFileHelper: ExistingFileHelper?
     ) :
         BlockTagsProvider(output, lookupProvider, GenerationsCore.MOD_ID, existingFileHelper) {
@@ -58,7 +62,7 @@ object TagsDatagen {
                 if (`object` is FenceBlock) tag(BlockTags.FENCES).add(block)
                 else if (`object` is FenceGateBlock) tag(BlockTags.FENCE_GATES).add(block)
                 else if (`object` is DoorBlock) tag(BlockTags.DOORS).add(block)
-                else if (`object` is SandBlock) {
+                else if (`object` is ColoredFallingBlock) { //TODO: FInd out if better progrmattical method for sand exists
                     tag(BlockTags.SAND).add(block)
                     tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block)
                 }
@@ -69,11 +73,11 @@ object TagsDatagen {
                 EasyBlockTags(block.get())
             })
 
-            GenerationsFullBlockSet.getFullBlockSets().forEach(Consumer { blockSet: GenerationsFullBlockSet ->
+            GenerationsFullBlockSet.fullBlockSets.forEach(Consumer { blockSet: GenerationsFullBlockSet ->
                 blockSet.allBlocks.forEach(
                     Consumer { block: Block? ->
-                        if (blockSet.name.contains("poke_brick")) tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.baseBlock)
-                        else if (blockSet.name.contains("marble")) tag(GenerationsBlockTags.MARBLE).add(blockSet.baseBlock)
+                        if (blockSet.name.contains("poke_brick")) tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.getBaseBlock())
+                        else if (blockSet.name.contains("marble")) tag(GenerationsBlockTags.MARBLE).add(blockSet.getBaseBlock())
                     })
             })
 
@@ -130,10 +134,7 @@ object TagsDatagen {
                 GenerationsDecorationBlocks.FRIDGE.get()
             ).add(*GenerationsDecorationBlocks.STREET_LAMP.toArray())
                 .add(*GenerationsUtilityBlocks.PC.toArray())
-                .add(
-                    *GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.stream()
-                        .map<BallDisplayBlock?> { obj: RegistrySupplier<BallDisplayBlock?> -> obj.get() }
-                        .toArray<BallDisplayBlock> { _Dummy_.__Array__() })
+                .add(*GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.map(RegistrySupplier<BallDisplayBlock>::get).toTypedArray())
 
 
 
@@ -154,7 +155,7 @@ object TagsDatagen {
             )
 
             GenerationsBlocks.ENCHANTED_OBSIDIAN_SET.allBlocks
-                .forEach(Consumer { block: Block? -> tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block) })
+                .forEach(Consumer { block: Block -> tag(BlockTags.NEEDS_DIAMOND_TOOL).add(block) })
 
 
             tag(GenerationsBlockTags.POKEBALL_CHESTS)
@@ -166,7 +167,7 @@ object TagsDatagen {
                 )
             tag(Tags.Blocks.CHESTS).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
 
-            GenerationsShrines.SHRINES.forEach(Consumer { block: RegistrySupplier<Block?> ->
+            GenerationsShrines.SHRINES.forEach(Consumer { block: RegistrySupplier<Block> ->
                 tag(GenerationsBlockTags.SHRINES).add(
                     block.get()
                 )
@@ -175,12 +176,12 @@ object TagsDatagen {
             tag(BlockTags.GUARDED_BY_PIGLINS).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
             tag(BlockTags.FEATURES_CANNOT_REPLACE).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
 
-            GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(Consumer { block: RegistrySupplier<BallDisplayBlock?> ->
+            GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(Consumer { block: RegistrySupplier<BallDisplayBlock> ->
                 tag(
                     GenerationsBlockTags.BALL_DISPLAY_BLOCKS
                 ).add(block.get())
             })
-            GenerationsUtilityBlocks.BALL_LOOTS.forEach(Consumer { block: RegistrySupplier<BallLootBlock?> ->
+            GenerationsUtilityBlocks.BALL_LOOTS.forEach(Consumer { block: RegistrySupplier<BallLootBlock> ->
                 tag(
                     GenerationsBlockTags.BALL_LOOTS
                 ).add(block.get())
@@ -197,32 +198,32 @@ object TagsDatagen {
 
             //Ore Specific tags
             tag(GenerationsBlockTags.SAPPHIRE_ORES).add(
-                GenerationsOres.SAPPHIRE_ORE_SET.ore,
-                GenerationsOres.SAPPHIRE_ORE_SET.deepslateOre
+                GenerationsOres.SAPPHIRE_ORE_SET.getOre(),
+                GenerationsOres.SAPPHIRE_ORE_SET.getDeepslateOre()
             )
             tag(GenerationsBlockTags.RUBY_ORES).add(
-                GenerationsOres.RUBY_ORE_SET.ore,
-                GenerationsOres.RUBY_ORE_SET.deepslateOre
+                GenerationsOres.RUBY_ORE_SET.getOre(),
+                GenerationsOres.RUBY_ORE_SET.getDeepslateOre()
             )
             tag(GenerationsBlockTags.CRYSTAL_ORES).add(
-                GenerationsOres.CRYSTAL_ORE_SET.ore,
-                GenerationsOres.CRYSTAL_ORE_SET.deepslateOre
+                GenerationsOres.CRYSTAL_ORE_SET.getOre(),
+                GenerationsOres.CRYSTAL_ORE_SET.getDeepslateOre()
             )
             tag(GenerationsBlockTags.SILICON_ORES).add(
-                GenerationsOres.SILICON_ORE_SET.ore,
-                GenerationsOres.SILICON_ORE_SET.deepslateOre
+                GenerationsOres.SILICON_ORE_SET.getOre(),
+                GenerationsOres.SILICON_ORE_SET.getDeepslateOre()
             )
             tag(GenerationsBlockTags.Z_CRYSTAL_ORES).add(
-                GenerationsOres.Z_CRYSTAL_ORE_SET.ore,
-                GenerationsOres.Z_CRYSTAL_ORE_SET.deepslateOre
+                GenerationsOres.Z_CRYSTAL_ORE_SET.getOre(),
+                GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre()
             )
             tag(GenerationsBlockTags.MEGASTONE_ORES).add(
-                GenerationsOres.MEGASTONE_ORE_SET.ore,
-                GenerationsOres.MEGASTONE_ORE_SET.deepslateOre
+                GenerationsOres.MEGASTONE_ORE_SET.getOre(),
+                GenerationsOres.MEGASTONE_ORE_SET.getDeepslateOre()
             )
             tag(GenerationsBlockTags.METEORITE_ORES).add(
-                GenerationsOres.METEORITE_ORE_SET.ore,
-                GenerationsOres.METEORITE_ORE_SET.deepslateOre
+                GenerationsOres.METEORITE_ORE_SET.getOre(),
+                GenerationsOres.METEORITE_ORE_SET.getDeepslateOre()
             )
 
             //Vanilla Ores
@@ -308,7 +309,7 @@ object TagsDatagen {
             tag(BlockTags.LOGS_THAT_BURN).addTag(GenerationsBlockTags.GHOST_LOGS)
                 .addTag(GenerationsBlockTags.ULTRA_DARK_LOGS).addTag(GenerationsBlockTags.ULTRA_JUNGLE_LOGS)
 
-            GenerationsWood.WOOD_SIGN.forEach(Consumer { sign: RegistrySupplier<Block?> ->
+            GenerationsWood.WOOD_SIGN.forEach(Consumer { sign: RegistrySupplier<Block> ->
                 if (sign.get() is WallSignBlock) tag(
                     BlockTags.WALL_SIGNS
                 ).add(sign.get())
@@ -319,7 +320,7 @@ object TagsDatagen {
             tag(GenerationsBlockTags.CHARGE_STONE_BRICKS)
                 .add(
                     GenerationsBlocks.CHARGE_STONE_BRICKS.get(),
-                    GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.baseBlock,
+                    GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock(),
                     GenerationsBlocks.CRACKED_CHARGE_STONE_BRICKS.get(),
                     GenerationsBlocks.CHISELED_CHARGE_STONE_BRICKS.get()
                 )
@@ -327,7 +328,7 @@ object TagsDatagen {
             tag(GenerationsBlockTags.VOLCANIC_STONE_BRICKS)
                 .add(
                     GenerationsBlocks.VOLCANIC_STONE_BRICKS.get(),
-                    GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.baseBlock,
+                    GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(),
                     GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS.get(),
                     GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS.get()
                 )
@@ -397,7 +398,7 @@ object TagsDatagen {
 
     private class GenerationsItemTagsProvider(
         arg: PackOutput,
-        completableFuture: CompletableFuture<HolderLookup.Provider?>,
+        completableFuture: CompletableFuture<HolderLookup.Provider>,
         blockTagsProvider: BlockTagsProvider,
         existingFileHelper: ExistingFileHelper?
     ) :
@@ -487,52 +488,52 @@ object TagsDatagen {
             tag(Tags.Items.CHESTS).addTag(GenerationsItemTags.POKEBALL_CHESTS)
 
             //Discs
-            tag(ItemTags.MUSIC_DISCS).add(
-                RELIC_SONG.get(),
-                INERT_RELIC_SONG.get(),
-                AZALEA_TOWN_DISC.get(),
-                CASCARRAFA_CITY_DISC.get(),
-                CERULEAN_CITY_DISC.get(),
-                ETERNA_CITY_DISC.get(),
-                GOLDENROD_CITY_DISC.get(),
-                ICIRRUS_CITY_DISC.get(),
-                JUBILIFE_VILLAGE_DISC.get(),
-                LAKE_OF_RAGE_DISC.get(),
-                LAVERRE_CITY_DISC.get(),
-                LILLIE_DISC.get(),
-                POKEMON_CENTER_DISC.get(),
-                ROUTE_228_DISC.get(),
-                SLUMBERING_WEALD_DISC.get(),
-                SURF_DISC.get(),
-                VERMILION_CITY_DISC.get(),
-                CYNTHIA_DISC.get(),
-                DEOXYS_DISC.get(),
-                IRIS_DISC.get(),
-                KANTO_DISC.get(),
-                LUSAMINE_DISC.get(),
-                NEMONA_DISC.get(),
-                NESSA_DISC.get(),
-                PENNY_DISC.get(),
-                RIVAL_DISC.get(),
-                SADA_AND_TURO_DISC.get(),
-                SOUTH_PROVINCE_DISC.get(),
-                TEAM_ROCKET_DISC.get(),
-                ULTRA_NECROZMA_DISC.get(),
-                XY_LEGENDARY_DISC.get(),
-                ZINNIA_DISC.get(),
-                LAVENDER_TOWN_DISC.get(),
-                LUGIA_DISC.get(),
-                MT_PYRE_DISC.get()
-            )
+//            tag(ItemTags.MUSIC_DISCS).add(
+//                RELIC_SONG.get(),
+//                INERT_RELIC_SONG.get(),
+//                GenerationsItems.AZALEA_TOWN_DISC.get(),
+//                GenerationsItems.CASCARRAFA_CITY_DISC.get(),
+//                GenerationsItems.CERULEAN_CITY_DISC.get(),
+//                GenerationsItems.ETERNA_CITY_DISC.get(),
+//                GenerationsItems.GOLDENROD_CITY_DISC.get(),
+//                GenerationsItems.ICIRRUS_CITY_DISC.get(),
+//                GenerationsItems.JUBILIFE_VILLAGE_DISC.get(),
+//                GenerationsItems.LAKE_OF_RAGE_DISC.get(),
+//                GenerationsItems.LAVERRE_CITY_DISC.get(),
+//                GenerationsItems.LILLIE_DISC.get(),
+//                GenerationsItems.POKEMON_CENTER_DISC.get(),
+//                GenerationsItems.ROUTE_228_DISC.get(),
+//                GenerationsItems.SLUMBERING_WEALD_DISC.get(),
+//                GenerationsItems.SURF_DISC.get(),
+//                GenerationsItems.VERMILION_CITY_DISC.get(),
+//                GenerationsItems.CYNTHIA_DISC.get(),
+//                GenerationsItems.DEOXYS_DISC.get(),
+//                GenerationsItems.IRIS_DISC.get(),
+//                GenerationsItems.KANTO_DISC.get(),
+//                GenerationsItems.LUSAMINE_DISC.get(),
+//                GenerationsItems.NEMONA_DISC.get(),
+//                GenerationsItems.NESSA_DISC.get(),
+//                GenerationsItems.PENNY_DISC.get(),
+//                GenerationsItems.RIVAL_DISC.get(),
+//                GenerationsItems.SADA_AND_TURO_DISC.get(),
+//                GenerationsItems.SOUTH_PROVINCE_DISC.get(),
+//                GenerationsItems.TEAM_ROCKET_DISC.get(),
+//                GenerationsItems.ULTRA_NECROZMA_DISC.get(),
+//                GenerationsItems.XY_LEGENDARY_DISC.get(),
+//                GenerationsItems.ZINNIA_DISC.get(),
+//                GenerationsItems.LAVENDER_TOWN_DISC.get(),
+//                GenerationsItems.LUGIA_DISC.get(),
+//                GenerationsItems.MT_PYRE_DISC.get()
+//            )
 
-            tag(ItemTags.BOATS).add(GHOST_BOAT_ITEM.get()).add(ULTRA_DARK_BOAT_ITEM.get())
-                .add(ULTRA_JUNGLE_BOAT_ITEM.get())
-            tag(ItemTags.CHEST_BOATS).add(GHOST_CHEST_BOAT_ITEM.get()).add(ULTRA_DARK_CHEST_BOAT_ITEM.get())
-                .add(ULTRA_JUNGLE_CHEST_BOAT_ITEM.get())
+            tag(ItemTags.BOATS).add(GenerationsItems.GHOST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_DARK_BOAT_ITEM.get())
+                .add(GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get())
+            tag(ItemTags.CHEST_BOATS).add(GenerationsItems.GHOST_CHEST_BOAT_ITEM.get()).add(GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get())
+                .add(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get())
 
-            tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock.asItem())
-                .add(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock.asItem())
-            GenerationsTools.TOOLS.forEach(Consumer { tool: RegistrySupplier<Item?> ->
+            tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock().asItem())
+                .add(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock().asItem())
+            GenerationsTools.TOOLS.forEach(Consumer { tool: RegistrySupplier<Item> ->
                 val item = tool.get()
                 if (item is PickaxeItem) tag(ItemTags.PICKAXES).add(item)
                 else if (item is AxeItem) tag(ItemTags.AXES).add(item)
@@ -542,49 +543,23 @@ object TagsDatagen {
                 else if (item is GenerationsHammerItem) tag(GenerationsItemTags.HAMMERS).add(item)
             })
 
-            tag(ItemTags.TOOLS).addTag(GenerationsItemTags.HAMMERS)
+//            tag(ItemTags.TOOLS).addTag(GenerationsItemTags.HAMMERS) //TODO: Find what is new tag
             tag(Tags.Items.TOOLS).addTag(GenerationsItemTags.HAMMERS)
 
-            tag(GenerationsItemTags.RIBBONS).add(
-                *Streams.stream<RegistrySupplier<Item>>(RIBBONS.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.BADGES).add(
-                *Streams.stream<RegistrySupplier<Item>>(BADGES.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
+            tag(GenerationsItemTags.RIBBONS).add(*GenerationsItems.RIBBONS.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.BADGES).add(*GenerationsItems.BADGES.map(RegistrySupplier<Item>::get).toTypedArray())
 
-            tag(GenerationsItemTags.UNIMPLEMENTED).add(
-                *Streams.stream<RegistrySupplier<Item>>(UNIMPLEMENTED.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.CUISINE).add(
-                *Streams.stream<RegistrySupplier<Item>>(CUISINE.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.NATURAL).add(
-                *Streams.stream<RegistrySupplier<Item>>(NATURAL.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.RESTORATION).add(
-                *Streams.stream<RegistrySupplier<Item>>(RESTORATION.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.PLAYER_ITEMS).add(
-                *Streams.stream<RegistrySupplier<Item>>(PLAYER_ITEMS.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.HELD_ITEMS).add(
-                *Streams.stream<RegistrySupplier<Item>>(HELD_ITEMS.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.LEGENDARY_ITEMS).add(
-                *Streams.stream<RegistrySupplier<Item>>(LEGENDARY_ITEMS.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.UTILITY).add(
-                *Streams.stream<RegistrySupplier<Item>>(UTILITY.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.VALUABLES).add(
-                *Streams.stream<RegistrySupplier<Item>>(VALUABLES.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.FORM_ITEMS).add(
-                *Streams.stream<RegistrySupplier<Item>>(FORM_ITEMS.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
-            tag(GenerationsItemTags.BUILDING_BLOCKS).add(
-                *Streams.stream<RegistrySupplier<Item>>(BUILDING_BLOCKS.iterator())
-                    .map<Item> { a: RegistrySupplier<Item?> -> a.get() }.toArray<Item> { _Dummy_.__Array__() })
+            tag(GenerationsItemTags.UNIMPLEMENTED).add(*GenerationsItems.UNIMPLEMENTED.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.CUISINE).add(*GenerationsItems.CUISINE.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.NATURAL).add(*GenerationsItems.NATURAL.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.RESTORATION).add(*GenerationsItems.RESTORATION.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.PLAYER_ITEMS).add(*GenerationsItems.PLAYER_ITEMS.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.HELD_ITEMS).add(*GenerationsItems.HELD_ITEMS.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.LEGENDARY_ITEMS).add(*GenerationsItems.LEGENDARY_ITEMS.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.UTILITY).add(*GenerationsItems.UTILITY.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.VALUABLES).add(*GenerationsItems.VALUABLES.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.FORM_ITEMS).add(*GenerationsItems.FORM_ITEMS.map(RegistrySupplier<Item>::get).toTypedArray())
+            tag(GenerationsItemTags.BUILDING_BLOCKS).add(*GenerationsItems.BUILDING_BLOCKS.map(RegistrySupplier<Item>::get).toTypedArray())
 
             val generationsItemsTag = tag(GenerationsItemTags.GENERATIONSITEMS)
                 .addTag(GenerationsItemTags.RIBBONS)
@@ -603,89 +578,89 @@ object TagsDatagen {
                 .addTag(GenerationsItemTags.POKEMAIL)
                 .addTag(GenerationsItemTags.CLOSED_POKEMAIL)
 
-            ITEMS.forEach(Consumer<RegistrySupplier<Item?>> { item: RegistrySupplier<Item?> ->
+            GenerationsItems.ITEMS.forEach(Consumer<RegistrySupplier<Item>> { item: RegistrySupplier<Item> ->
                 generationsItemsTag.add(
                     item.key
                 )
             })
 
             tag(GenerationsItemTags.POKEMAIL).add(
-                POKEMAIL_AIR.get(),
-                POKEMAIL_BLOOM.get(),
-                POKEMAIL_BRICK.get(),
-                POKEMAIL_BRIDGE_D.get(),
-                POKEMAIL_BRIDGE_M.get(),
-                POKEMAIL_BRIDGE_S.get(),
-                POKEMAIL_BRIDGE_T.get(),
-                POKEMAIL_BRIDGE_V.get(),
-                POKEMAIL_BUBBLE.get(),
-                POKEMAIL_DREAM.get(),
-                POKEMAIL_FAB.get(),
-                POKEMAIL_FAVORED.get(),
-                POKEMAIL_FLAME.get(),
-                POKEMAIL_GLITTER.get(),
-                POKEMAIL_GRASS.get(),
-                POKEMAIL_GREET.get(),
-                POKEMAIL_HARBOR.get(),
-                POKEMAIL_HEART.get(),
-                POKEMAIL_INQUIRY.get(),
-                POKEMAIL_LIKE.get(),
-                POKEMAIL_MECH.get(),
-                POKEMAIL_MOSAIC.get(),
-                POKEMAIL_ORANGE.get(),
-                POKEMAIL_REPLY.get(),
-                POKEMAIL_RETRO.get(),
-                POKEMAIL_RSVP.get(),
-                POKEMAIL_SHADOW.get(),
-                POKEMAIL_SNOW.get(),
-                POKEMAIL_SPACE.get(),
-                POKEMAIL_STEEL.get(),
-                POKEMAIL_THANKS.get(),
-                POKEMAIL_TROPIC.get(),
-                POKEMAIL_TUNNEL.get(),
-                POKEMAIL_WAVE.get(),
-                POKEMAIL_WOOD.get()
+                GenerationsItems.POKEMAIL_AIR.get(),
+                GenerationsItems.POKEMAIL_BLOOM.get(),
+                GenerationsItems.POKEMAIL_BRICK.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_D.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_M.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_S.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_T.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_V.get(),
+                GenerationsItems.POKEMAIL_BUBBLE.get(),
+                GenerationsItems.POKEMAIL_DREAM.get(),
+                GenerationsItems.POKEMAIL_FAB.get(),
+                GenerationsItems.POKEMAIL_FAVORED.get(),
+                GenerationsItems.POKEMAIL_FLAME.get(),
+                GenerationsItems.POKEMAIL_GLITTER.get(),
+                GenerationsItems.POKEMAIL_GRASS.get(),
+                GenerationsItems.POKEMAIL_GREET.get(),
+                GenerationsItems.POKEMAIL_HARBOR.get(),
+                GenerationsItems.POKEMAIL_HEART.get(),
+                GenerationsItems.POKEMAIL_INQUIRY.get(),
+                GenerationsItems.POKEMAIL_LIKE.get(),
+                GenerationsItems.POKEMAIL_MECH.get(),
+                GenerationsItems.POKEMAIL_MOSAIC.get(),
+                GenerationsItems.POKEMAIL_ORANGE.get(),
+                GenerationsItems.POKEMAIL_REPLY.get(),
+                GenerationsItems.POKEMAIL_RETRO.get(),
+                GenerationsItems.POKEMAIL_RSVP.get(),
+                GenerationsItems.POKEMAIL_SHADOW.get(),
+                GenerationsItems.POKEMAIL_SNOW.get(),
+                GenerationsItems.POKEMAIL_SPACE.get(),
+                GenerationsItems.POKEMAIL_STEEL.get(),
+                GenerationsItems.POKEMAIL_THANKS.get(),
+                GenerationsItems.POKEMAIL_TROPIC.get(),
+                GenerationsItems.POKEMAIL_TUNNEL.get(),
+                GenerationsItems.POKEMAIL_WAVE.get(),
+                GenerationsItems.POKEMAIL_WOOD.get()
             )
 
             tag(GenerationsItemTags.CLOSED_POKEMAIL).add(
-                POKEMAIL_AIR_CLOSED.get(),
-                POKEMAIL_BLOOM_CLOSED.get(),
-                POKEMAIL_BRICK_CLOSED.get(),
-                POKEMAIL_BRIDGE_D_CLOSED.get(),
-                POKEMAIL_BRIDGE_M_CLOSED.get(),
-                POKEMAIL_BRIDGE_T_CLOSED.get(),
-                POKEMAIL_BRIDGE_S_CLOSED.get(),
-                POKEMAIL_BRIDGE_V_CLOSED.get(),
-                POKEMAIL_BUBBLE_CLOSED.get(),
-                POKEMAIL_DREAM_CLOSED.get(),
-                POKEMAIL_FAB_CLOSED.get(),
-                POKEMAIL_FAVORED_CLOSED.get(),
-                POKEMAIL_FLAME_CLOSED.get(),
-                POKEMAIL_GLITTER_CLOSED.get(),
-                POKEMAIL_GRASS_CLOSED.get(),
-                POKEMAIL_GREET_CLOSED.get(),
-                POKEMAIL_HARBOR_CLOSED.get(),
-                POKEMAIL_HEART_CLOSED.get(),
-                POKEMAIL_INQUIRY_CLOSED.get(),
-                POKEMAIL_LIKE_CLOSED.get(),
-                POKEMAIL_MECH_CLOSED.get(),
-                POKEMAIL_MOSAIC_CLOSED.get(),
-                POKEMAIL_ORANGE_CLOSED.get(),
-                POKEMAIL_REPLY_CLOSED.get(),
-                POKEMAIL_RETRO_CLOSED.get(),
-                POKEMAIL_RSVP_CLOSED.get(),
-                POKEMAIL_SHADOW_CLOSED.get(),
-                POKEMAIL_SNOW_CLOSED.get(),
-                POKEMAIL_SPACE_CLOSED.get(),
-                POKEMAIL_STEEL_CLOSED.get(),
-                POKEMAIL_THANKS_CLOSED.get(),
-                POKEMAIL_TROPIC_CLOSED.get(),
-                POKEMAIL_TUNNEL_CLOSED.get(),
-                POKEMAIL_WAVE_CLOSED.get(),
-                POKEMAIL_WOOD_CLOSED.get()
+                GenerationsItems.POKEMAIL_AIR_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BLOOM_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BRICK_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_D_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_M_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_T_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_S_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BRIDGE_V_CLOSED.get(),
+                GenerationsItems.POKEMAIL_BUBBLE_CLOSED.get(),
+                GenerationsItems.POKEMAIL_DREAM_CLOSED.get(),
+                GenerationsItems.POKEMAIL_FAB_CLOSED.get(),
+                GenerationsItems.POKEMAIL_FAVORED_CLOSED.get(),
+                GenerationsItems.POKEMAIL_FLAME_CLOSED.get(),
+                GenerationsItems.POKEMAIL_GLITTER_CLOSED.get(),
+                GenerationsItems.POKEMAIL_GRASS_CLOSED.get(),
+                GenerationsItems.POKEMAIL_GREET_CLOSED.get(),
+                GenerationsItems.POKEMAIL_HARBOR_CLOSED.get(),
+                GenerationsItems.POKEMAIL_HEART_CLOSED.get(),
+                GenerationsItems.POKEMAIL_INQUIRY_CLOSED.get(),
+                GenerationsItems.POKEMAIL_LIKE_CLOSED.get(),
+                GenerationsItems.POKEMAIL_MECH_CLOSED.get(),
+                GenerationsItems.POKEMAIL_MOSAIC_CLOSED.get(),
+                GenerationsItems.POKEMAIL_ORANGE_CLOSED.get(),
+                GenerationsItems.POKEMAIL_REPLY_CLOSED.get(),
+                GenerationsItems.POKEMAIL_RETRO_CLOSED.get(),
+                GenerationsItems.POKEMAIL_RSVP_CLOSED.get(),
+                GenerationsItems.POKEMAIL_SHADOW_CLOSED.get(),
+                GenerationsItems.POKEMAIL_SNOW_CLOSED.get(),
+                GenerationsItems.POKEMAIL_SPACE_CLOSED.get(),
+                GenerationsItems.POKEMAIL_STEEL_CLOSED.get(),
+                GenerationsItems.POKEMAIL_THANKS_CLOSED.get(),
+                GenerationsItems.POKEMAIL_TROPIC_CLOSED.get(),
+                GenerationsItems.POKEMAIL_TUNNEL_CLOSED.get(),
+                GenerationsItems.POKEMAIL_WAVE_CLOSED.get(),
+                GenerationsItems.POKEMAIL_WOOD_CLOSED.get()
             )
 
-            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS).addOptionalTag(Tags.Items.SHEARS).addOptionalTag(
+            tag(GenerationsItemTags.SHEARS).add(Items.SHEARS)/*.addOptionalTag(Tags.Items.SHEARS) TODO: Find if still exists*/.addOptionalTag(
                 Objects.requireNonNull<ResourceLocation?>(
                     ResourceLocation.tryParse("c:shears")
                 )
@@ -695,58 +670,57 @@ object TagsDatagen {
             GenerationsArmor.ARMOR.forEach(Consumer<RegistrySupplier<Item>> { armor: RegistrySupplier<Item> ->
                 when ((armor.get() as ArmorItem).type) {
                     ArmorItem.Type.HELMET -> tag(ItemTags.HEAD_ARMOR).add(armor.get())
-                    ArmorItem.Type.CHESTPLATE -> tag(Tags.Items.ARMORS_CHESTPLATES).add(armor.get())
-                    ArmorItem.Type.LEGGINGS -> tag(Tags.Items.ARMORS_LEGGINGS).add(armor.get())
-                    ArmorItem.Type.BOOTS -> tag(Tags.Items.ARMORS_BOOTS).add(armor.get())
+                    ArmorItem.Type.CHESTPLATE -> tag(ItemTags.CHEST_ARMOR).add(armor.get())
+                    ArmorItem.Type.LEGGINGS -> tag(ItemTags.LEG_ARMOR).add(armor.get())
+                    ArmorItem.Type.BOOTS -> tag(ItemTags.FOOT_ARMOR).add(armor.get())
+                    ArmorItem.Type.BODY -> TODO()
                 }
             })
 
             tag(GenerationsItemTags.KEY_STONES)
-                .add(KEY_STONE.getKey())
-                .add(KEY_STONE_2.getKey())
-                .add(MEGA_RING.getKey())
-                .add(MEGA_BRACELET.getKey())
-                .add(MEGA_CHARM.getKey())
-                .add(MEGA_CUFF.getKey())
-            tag(GenerationsItemTags.DYNAMAX_BANDS).add(DYNAMAX_BAND.getKey())
-            tag(GenerationsItemTags.Z_RINGS).add(Z_RING.getKey()).add(Z_POWER_RING.getKey())
+                .add(GenerationsItems.KEY_STONE.getKey())
+                .add(GenerationsItems.KEY_STONE_2.getKey())
+                .add(GenerationsItems.MEGA_RING.getKey())
+                .add(GenerationsItems.MEGA_BRACELET.getKey())
+                .add(GenerationsItems.MEGA_CHARM.getKey())
+                .add(GenerationsItems.MEGA_CUFF.getKey())
+            tag(GenerationsItemTags.DYNAMAX_BANDS).add(GenerationsItems.DYNAMAX_BAND.getKey())
+            tag(GenerationsItemTags.Z_RINGS).add(GenerationsItems.Z_RING.getKey()).add(GenerationsItems.Z_POWER_RING.getKey())
             tag(GenerationsItemTags.MEMORY_DRIVES).add(
-                BUG_MEMORY_DRIVE.get(),
-                DARK_MEMORY_DRIVE.get(),
-                DRAGON_MEMORY_DRIVE.get(),
-                ELECTRIC_MEMORY_DRIVE.get(),
-                FAIRY_MEMORY_DRIVE.get(),
-                FIGHTING_MEMORY_DRIVE.get(),
-                FIRE_MEMORY_DRIVE.get(),
-                FLYING_MEMORY_DRIVE.get(),
-                GHOST_MEMORY_DRIVE.get(),
-                GRASS_MEMORY_DRIVE.get(),
-                GROUND_MEMORY_DRIVE.get(),
-                ICE_MEMORY_DRIVE.get(),
-                POISON_MEMORY_DRIVE.get(),
-                PSYCHIC_MEMORY_DRIVE.get(),
-                ROCK_MEMORY_DRIVE.get(),
-                STEEL_MEMORY_DRIVE.get(),
-                WATER_MEMORY_DRIVE.get()
+                GenerationsItems.BUG_MEMORY_DRIVE.get(),
+                GenerationsItems.DARK_MEMORY_DRIVE.get(),
+                GenerationsItems.DRAGON_MEMORY_DRIVE.get(),
+                GenerationsItems.ELECTRIC_MEMORY_DRIVE.get(),
+                GenerationsItems.FAIRY_MEMORY_DRIVE.get(),
+                GenerationsItems.FIGHTING_MEMORY_DRIVE.get(),
+                GenerationsItems.FIRE_MEMORY_DRIVE.get(),
+                GenerationsItems.FLYING_MEMORY_DRIVE.get(),
+                GenerationsItems.GHOST_MEMORY_DRIVE.get(),
+                GenerationsItems.GRASS_MEMORY_DRIVE.get(),
+                GenerationsItems.GROUND_MEMORY_DRIVE.get(),
+                GenerationsItems.ICE_MEMORY_DRIVE.get(),
+                GenerationsItems.POISON_MEMORY_DRIVE.get(),
+                GenerationsItems.PSYCHIC_MEMORY_DRIVE.get(),
+                GenerationsItems.ROCK_MEMORY_DRIVE.get(),
+                GenerationsItems.STEEL_MEMORY_DRIVE.get(),
+                GenerationsItems.WATER_MEMORY_DRIVE.get()
             )
 
-            tag(ItemTags.TRIMMABLE_ARMOR).add(
-                *Streams.stream<RegistrySupplier<Item?>>(GenerationsArmor.ARMOR.iterator())
-                    .map<Item?> { obj: RegistrySupplier<Item?> -> obj.get() }.toArray<Item> { _Dummy_.__Array__() })
+            tag(ItemTags.TRIMMABLE_ARMOR).add(*GenerationsArmor.ARMOR.map(RegistrySupplier<Item>::get).toTypedArray())
         }
     }
 
     private class GenerationsPaintingTagProvider(
         arg: PackOutput,
-        completableFuture: CompletableFuture<HolderLookup.Provider?>,
+        completableFuture: CompletableFuture<HolderLookup.Provider>,
         existingFileHelper: ExistingFileHelper?
     ) :
         PaintingVariantTagsProvider(arg, completableFuture, GenerationsCore.MOD_ID, existingFileHelper) {
         override fun addTags(arg: HolderLookup.Provider) {
-            GenerationsPaintings.PAINTINGS.forEach(Consumer<RegistrySupplier<PaintingVariant?>> { painting: RegistrySupplier<PaintingVariant?> ->
+            GenerationsPaintings.PAINTINGS.forEach(Consumer<RegistrySupplier<PaintingVariant>> { painting: RegistrySupplier<PaintingVariant> ->
                 tag(
                     PaintingVariantTags.PLACEABLE
-                ).add(TagEntry.element(Objects.requireNonNull<T>(ForgeRegistries.PAINTING_VARIANTS.getKey(painting.get()))))
+                ).add(TagEntry.element(painting.id))
             })
         }
     }

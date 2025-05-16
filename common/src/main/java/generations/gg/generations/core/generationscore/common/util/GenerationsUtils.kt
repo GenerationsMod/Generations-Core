@@ -128,9 +128,9 @@ object GenerationsUtils {
         }
     }
 
-    fun <T : Block?> registerBlock(
+    fun <T : Block> registerBlock(
         deferredRegister: DeferredRegister<Block>,
-        name: String?,
+        name: String,
         blockSupplier: Supplier<T>
     ): RegistrySupplier<T> {
         return deferredRegister.register(name, applyMutable(blockSupplier))
