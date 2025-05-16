@@ -25,10 +25,7 @@ class CurryResultSlot(
 
     override fun remove(amount: Int): ItemStack {
         if (this.hasItem()) {
-            (removeCount += min(
-                amount.toDouble(),
-                this.item.count.toDouble()
-            )).toInt()
+            removeCount += min(amount, this.item.count)
         }
         return super.remove(amount)
     }

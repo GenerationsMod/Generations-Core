@@ -15,7 +15,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class DoubleStreetLampBlock protected constructor(materialIn: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
+class DoubleStreetLampBlock(materialIn: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         materialIn,
         GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.DOUBLE_STREET_LAMP,

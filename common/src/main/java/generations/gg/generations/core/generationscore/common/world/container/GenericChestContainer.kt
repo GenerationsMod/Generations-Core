@@ -32,13 +32,6 @@ open class GenericChestContainer<T>(
     @JvmField
     val playerInventoryX: Int
 
-    constructor(containerId: Int, playerInventory: Inventory, buf: FriendlyByteBuf) : this(
-        containerId, playerInventory,
-        SimpleItemStorage(buf.readVarInt()) as T,
-        buf.readVarInt(),
-        buf.readVarInt()
-    )
-
     init {
 //        container.startOpen(playerInventory.player)
 

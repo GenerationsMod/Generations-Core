@@ -5,7 +5,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import net.minecraft.world.entity.player.Player
 import java.math.BigDecimal
 
-class AccountInfo(var balance: BigDecimal = BigDecimal.ZERO) : PlayerDataExtension {
+class AccountInfo(var balance: BigDecimal = BigDecimal.ZERO) : PlayerDataExtension() {
 
     override fun name(): String {
         return KEY

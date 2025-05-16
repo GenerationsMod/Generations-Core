@@ -22,7 +22,7 @@ data class SpeciesKeyCondition(val key: SpeciesKey) : LootItemCondition {
         val entity = lootContext.getParamOrNull(LootContextParams.THIS_ENTITY)
 
         if (entity is ServerPlayer) {
-            return GenerationsCore.CONFIG.caught.capped(entity, key)
+            return GenerationsCore.CONFIG!!.caught.capped(entity, key)
         } else {
             return false
         }

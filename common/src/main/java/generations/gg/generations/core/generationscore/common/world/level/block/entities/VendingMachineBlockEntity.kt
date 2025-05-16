@@ -8,14 +8,12 @@ import net.minecraft.core.BlockPos
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.state.BlockState
 
-class VendingMachineBlockEntity(pos: BlockPos, state: BlockState) :
-    DyedVariantBlockEntity<VendingMachineBlockEntity>(GenerationsBlockEntities.VENDING_MACHINE.get(), pos, state),
-    ShopOfferProvider {
-    override fun getOffers(): Offers? {
-        return null
-    }
+class VendingMachineBlockEntity(pos: BlockPos, state: BlockState) : DyedVariantBlockEntity<VendingMachineBlockEntity>(GenerationsBlockEntities.VENDING_MACHINE.get(), pos, state)/*, ShopOfferProvider*/ {
+//    override fun getOffers(): Offers? {
+//        return null
+//    }
 
-    override fun createItemPacket(itemStack: ItemStack, price: Int, amount: Int, isBuyPage: Boolean): NetworkPacket<*> {
+/*    override fun createItemPacket(itemStack: ItemStack, price: Int, amount: Int, isBuyPage: Boolean): NetworkPacket<*> {
         return C2SShopItemPacket()
-    }
+    }*/
 }

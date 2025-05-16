@@ -6,7 +6,7 @@ import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 
-class LockedSlot(storage: CommonStorage<ItemResource?>, slot: Int, x: Int, y: Int) :
+class LockedSlot(storage: CommonStorage<ItemResource>, slot: Int, x: Int, y: Int) :
     MenuStorageSlot(storage, slot, x, y) {
     override fun mayPickup(player: Player): Boolean {
         return false

@@ -10,7 +10,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
 
-class MachineBlockContainer(ctx: CreationContext<MachineBlockEntity?>) :
+class MachineBlockContainer(ctx: CreationContext<MachineBlockEntity>) :
     AbstractContainerMenu(GenerationsContainers.MACHINE_BLOCK.get(), ctx.id) {
     private val be = ctx.blockEntity!!
 

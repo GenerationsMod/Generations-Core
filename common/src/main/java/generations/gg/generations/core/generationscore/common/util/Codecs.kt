@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.util
 
 import com.google.gson.*
 import com.mojang.datafixers.kinds.App
-import com.mojang.datafixers.kinds.IdF.Instance
 import com.mojang.datafixers.util.Either
 import com.mojang.datafixers.util.Pair
 import com.mojang.serialization.Codec
@@ -18,7 +17,6 @@ import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
-import org.joml.Vector3d
 import java.lang.reflect.Type
 import java.util.*
 import kotlin.jvm.optionals.getOrNull
@@ -447,5 +445,5 @@ object Codecs {
     }
 
     fun <A> mapCodec(block: RecordCodecBuilder.Instance<A>.() -> App<RecordCodecBuilder.Mu<A>, A>): MapCodec<A> = RecordCodecBuilder.mapCodec(block)
-    fun <T : GenericModelBlock<*>> modelCodec(): RecordCodecBuilder<T, ResourceLocation> = ResourceLocation.CODEC.fieldOf("model").forGetter { it.model!! }
+    fun <T : GenericModelBlock<*>> modelCodec(): RecordCodecBuilder<T, ResourceLocation> = ResourceLocation.CODEC.fieldOf("model").forGetter { it.getModel()!! }
 }

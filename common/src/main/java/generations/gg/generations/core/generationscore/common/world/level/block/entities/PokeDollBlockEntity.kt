@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockState
 class PokeDollBlockEntity(pos: BlockPos, state: BlockState) :
     ModelProvidingBlockEntity(GenerationsBlockEntities.POKE_DOLL.get(), pos, state), VariantProvider, AngleProvider {
     override fun getModel(): ResourceLocation {
-        return pokeModDollBlock?.model ?: DEFAULT_MODEL
+        return pokeModDollBlock?.getModel() ?: DEFAULT_MODEL
     }
 
     override fun getVariant(): String? {

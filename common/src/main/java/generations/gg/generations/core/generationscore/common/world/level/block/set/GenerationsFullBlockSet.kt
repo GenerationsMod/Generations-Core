@@ -81,18 +81,17 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
      * Returns a list of the full family
      * @return The full family
      */
-    override fun getAllBlocks(): List<Block> {
-        return java.util.List.of(
-            baseBlock,
-            slab, stairs, wall, getButton(), getPressurePlate()
+    override val allBlocks: List<Block>
+        get() = listOf(
+            getBaseBlock(),
+            getSlab(), getStairs(), getWall(), getButton(), getPressurePlate()
         )
-    }
 
 
     fun updateBlockFamily() {
         this.blockFamily =
-            BlockFamily.Builder(baseBlock).slab(slab).stairs(stairs).wall(
-                wall
+            BlockFamily.Builder(getBaseBlock()).slab(getSlab()).stairs(getStairs()).wall(
+                getWall()
             ).button(getButton()).pressurePlate(getPressurePlate()).recipeGroupPrefix(name)
                 .recipeUnlockedBy("has_$name").family
     }

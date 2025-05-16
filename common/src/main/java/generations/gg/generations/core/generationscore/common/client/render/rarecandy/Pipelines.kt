@@ -299,11 +299,11 @@ object Pipelines {
         return PIPELINE_MAP[if (useLegacy) LEGACY else MAIN]!!.apply(name)!!
     }
 
-    fun read(manager: ResourceManager, name: String?): String {
+    fun read(manager: ResourceManager, name: String): String {
         return read(manager, GenerationsCore.id(name))
     }
 
-    fun read(manager: ResourceManager, name: String, lib: String?): String {
+    fun read(manager: ResourceManager, name: String, lib: String): String {
         return read(manager, GenerationsCore.id(name), GenerationsCore.id(lib))
     }
 

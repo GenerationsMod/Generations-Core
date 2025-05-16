@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
-import generations.gg.generations.core.generationscore.common.util.MathUtils
 import generations.gg.generations.core.generationscore.common.util.extensions.between
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import net.minecraft.core.BlockPos
@@ -30,6 +29,8 @@ abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntity
         assignSize(width, height, length)
         reassignStateDefinition()
         this.registerDefaultState(createDefaultState())
+
+        super.modelResource
     }
 
     private fun assignSize(width: Int, height: Int, length: Int) {

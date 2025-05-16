@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
 import dev.architectury.registry.menu.MenuRegistry
-import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
@@ -15,11 +14,11 @@ import net.minecraft.stats.Stats
 import net.minecraft.world.Containers
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
+import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.RenderShape
-import net.minecraft.world.level.block.entity.BeaconBlockEntity
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
@@ -105,7 +104,7 @@ class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock<RksMachineB
     }
 
     public override fun getAnalogOutputSignal(blockState: BlockState, level: Level, blockPos: BlockPos): Int {
-        return RksMachineContainer.getRedstoneSignalFromBlockEntity(level.getBlockEntity(blockPos))
+        return AbstractContainerMenu.getRedstoneSignalFromBlockEntity(level.getBlockEntity(blockPos));
     }
 
     public override fun getRenderShape(blockState: BlockState): RenderShape {

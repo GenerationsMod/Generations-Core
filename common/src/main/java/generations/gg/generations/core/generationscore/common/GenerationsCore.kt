@@ -72,10 +72,9 @@ object GenerationsCore {
 	val LOGGER: Logger = LogUtils.getLogger()
 
     /** The config for the Generations-Core mod.  */
-	@JvmField
-	var CONFIG: Config? = null
-    @JvmField
-	var implementation: GenerationsImplementation? = null
+
+	lateinit var CONFIG: Config
+	lateinit var implementation: GenerationsImplementation
 
     @JvmField
 	var dataProvider: DataProvider = GenerationsDataProvider.INSTANCE
@@ -84,7 +83,7 @@ object GenerationsCore {
      * Initializes the Generations-Core mod.
      */
 	@JvmStatic
-	fun init(implementation: GenerationsImplementation?) {
+	fun init(implementation: GenerationsImplementation) {
         CONFIG = loadConfig(
             Config::class.java, "core", "main"
         )

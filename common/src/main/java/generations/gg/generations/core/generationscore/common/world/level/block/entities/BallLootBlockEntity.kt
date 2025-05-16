@@ -136,7 +136,7 @@ class BallLootBlockEntity(pPos: BlockPos, pBlockState: BlockState) :
     }
 
     fun addClaimer(playerUUID: UUID) {
-        claims.add(LootClaim(playerUUID, Instant.now().plus(GenerationsCore.CONFIG.lootTime)))
+        claims.add(LootClaim(playerUUID, Instant.now().plus(GenerationsCore.CONFIG!!.lootTime)))
     }
 
 

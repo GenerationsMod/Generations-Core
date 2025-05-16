@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.common.client.render.rar
 import com.cobblemon.mod.common.util.asResource
 import com.mojang.blaze3d.platform.NativeImage
 import com.mojang.blaze3d.systems.RenderSystem
-import generations.gg.generations.core.generationscore.common.GenerationsCore.*
+import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.DynamicTexture
 import net.minecraft.resources.ResourceLocation

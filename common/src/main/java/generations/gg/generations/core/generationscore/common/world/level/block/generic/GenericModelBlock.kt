@@ -1,10 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
-import com.mojang.serialization.MapCodec
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -36,7 +34,7 @@ abstract class GenericModelBlock<T> protected constructor(
     properties: Properties,
     protected val blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>,
     private val baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_POS_FUNCTION,
-    protected val model: ResourceLocation?
+    protected val modelResource: ResourceLocation?
 ) : BaseEntityBlock(properties), SimpleWaterloggedBlock,
     VariantProvider where T : BlockEntity, T : ModelContextProviders.ModelProvider {
     init {
@@ -74,7 +72,7 @@ abstract class GenericModelBlock<T> protected constructor(
     public override fun getSeed(state: BlockState, pos: BlockPos): Long = Mth.getSeed(getBaseBlockPos(pos, state))
 
     override fun getModel(): ResourceLocation? {
-        return model
+        return modelResource
     }
 
     fun getBaseBlockPos(pos: BlockPos, state: BlockState): BlockPos {

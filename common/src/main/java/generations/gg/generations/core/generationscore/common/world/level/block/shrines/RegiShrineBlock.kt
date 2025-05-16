@@ -23,7 +23,6 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.BooleanOp
@@ -151,7 +150,7 @@ class RegiShrineBlock(properties: Properties, model: ResourceLocation, speciesKe
 
         val CODEC: MapCodec<RegiShrineBlock> = Codecs.mapCodec { group(
             propertiesCodec(),
-            ResourceLocation.CODEC.fieldOf("model").forGetter { it.model!! },
+            ResourceLocation.CODEC.fieldOf("model").forGetter { it.modelResource!! },
             SpeciesKey.CODEC.fieldOf("species").forGetter { it.species }
         ).apply(this, ::RegiShrineBlock) }
 
@@ -160,7 +159,7 @@ class RegiShrineBlock(properties: Properties, model: ResourceLocation, speciesKe
             pos: BlockPos,
             radius: Int,
             amount: Int,
-            block: BiPredicate<Level, BlockPos?>,
+            block: BiPredicate<Level, BlockPos>,
         ): List<BlockPos> {
             return searchForBlock(world, pos, radius, radius, radius, amount, block)
         }
@@ -172,7 +171,7 @@ class RegiShrineBlock(properties: Properties, model: ResourceLocation, speciesKe
             yRadius: Int,
             zRadius: Int,
             amount: Int,
-            block: BiPredicate<Level, BlockPos?>,
+            block: BiPredicate<Level, BlockPos>,
         ): List<BlockPos> {
             val states: MutableList<BlockPos> = ArrayList()
 

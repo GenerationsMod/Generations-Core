@@ -65,12 +65,8 @@ object GenerationsDecorationBlocks {
         "street_lamp",
         of().destroyTime(1.0f).sound(SoundType.METAL).lightLevel { value ->
             if (value.block.instanceOrNull<StreetLampBlock>()?.getHeightValue(value) == 1) 15 else 0
-        }.requiresCorrectToolForDrops(),
-        ::StreetLampBlock
-    )
-    @JvmField
-    val DOUBLE_STREET_LAMP: RegistrySupplier<DoubleStreetLampBlock> =
-        registerDecorationItem("double_street_lamp") { DoubleStreetLampBlock(of()) }
+        }.requiresCorrectToolForDrops(), ::StreetLampBlock)
+    @JvmField val DOUBLE_STREET_LAMP: RegistrySupplier<DoubleStreetLampBlock> = registerDecorationItem("double_street_lamp") { DoubleStreetLampBlock(of()) }
 
     private fun registerCouch(variant: VariantCouchBlock.Variant): DyedGroup {
         return registerDyed(

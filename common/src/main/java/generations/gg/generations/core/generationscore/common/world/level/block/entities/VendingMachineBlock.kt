@@ -129,7 +129,7 @@ class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map
                 instance.group<Properties, DyeColor, Map<DyeColor, Holder<Block>>>(
                     propertiesCodec(),
                     DyeColor.CODEC.fieldOf("color").forGetter(VendingMachineBlock::color),
-                    Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("function").forGetter(VendingMachineBlock::function)
+                    Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("function").forGetter(VendingMachineBlock::map)
                 ).apply(instance, ::VendingMachineBlock)
             }
     }

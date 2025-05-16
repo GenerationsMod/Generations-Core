@@ -145,11 +145,11 @@ object ShopUtils {
     //    public static boolean canAfford(Player player, int pokedollars) {
     //        return PlayerPokeDollars.of(player).getBalance() >= pokedollars;
     //    }
-    fun givePokeDollars(player: Player?, pokedollars: Int): CompletableFuture<Boolean> {
+    fun givePokeDollars(player: Player, pokedollars: Int): CompletableFuture<Boolean> {
         return PlayerMoneyHandler.of(player).deposit(BigDecimal.valueOf(pokedollars.toLong()))
     }
 
-    fun takePokeDollars(player: Player?, pokedollars: Int): CompletableFuture<Boolean> {
+    fun takePokeDollars(player: Player, pokedollars: Int): CompletableFuture<Boolean> {
         return PlayerMoneyHandler.of(player).withdraw(BigDecimal.valueOf(pokedollars.toLong()))
     }
 

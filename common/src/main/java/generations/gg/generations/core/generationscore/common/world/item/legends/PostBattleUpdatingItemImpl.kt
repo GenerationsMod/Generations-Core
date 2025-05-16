@@ -25,7 +25,7 @@ open class PostBattleUpdatingItemImpl(
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         val stack = player.getItemInHand(usedHand)
 
-        if (!level.isClientSide() && GenerationsCore.CONFIG.caught.capped(
+        if (!level.isClientSide() && GenerationsCore.CONFIG!!.caught.capped(
                 player as ServerPlayer,
                 speciesId
             )

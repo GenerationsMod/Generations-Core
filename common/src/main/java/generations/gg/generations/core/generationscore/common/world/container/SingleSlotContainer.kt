@@ -15,15 +15,15 @@ import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
 
 abstract class SingleSlotContainer protected constructor(
-    type: MenuType<out SingleSlotContainer?>?,
+    type: MenuType<out SingleSlotContainer>,
     id: Int,
-    protected val handler: SimpleItemStorage = SimpleItemStorage(1)
+    handler: CommonStorage<ItemResource> = SimpleItemStorage(1),
 ) :
     AbstractContainerMenu(type, id) {
     init {
         this.addSlot(PredicateSlotItemHandler(
             handler, 0, 80, 35
-        ) { stack: ItemStack? -> this.isStackValidForSingleSlot(stack) })
+        ) { stack: ItemStack -> this.isStackValidForSingleSlot(stack) })
     }
 
     //Needs to be applied after constructor
@@ -41,11 +41,11 @@ abstract class SingleSlotContainer protected constructor(
         }
     }
 
-    protected open fun isStackValidForSingleSlot(stack: ItemStack?): Boolean {
+    protected open fun isStackValidForSingleSlot(stack: ItemStack): Boolean {
         return true
     }
 
-    protected fun getSlot(inventory: CommonStorage<ItemResource?>, i: Int, x: Int, y: Int): Slot {
+    protected fun getSlot(inventory: CommonStorage<ItemResource>, i: Int, x: Int, y: Int): Slot {
         return if (isPlayerSlotLocked(i)) {
             LockedSlot(inventory, i, x, y)
         } else {

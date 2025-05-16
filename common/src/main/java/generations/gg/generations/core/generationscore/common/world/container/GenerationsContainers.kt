@@ -4,6 +4,7 @@ import dev.architectury.event.events.common.PlayerEvent
 import dev.architectury.registry.menu.MenuRegistry
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity
 import net.minecraft.core.registries.Registries
@@ -23,7 +24,7 @@ object GenerationsContainers {
         "cooking_pot"
     ) {
         MenuType(
-            { id: Int, playerInventory: Inventory? ->
+            { id: Int, playerInventory: Inventory ->
                 CookingPotContainer(
                     id,
                     playerInventory
@@ -35,20 +36,21 @@ object GenerationsContainers {
     val GENERIC: RegistrySupplier<MenuType<GenericChestContainer<*>>> = CONTAINERS.register(
         "generic"
     ) {
-        MenuRegistry.ofExtended(
-            MenuRegistry.ExtendedMenuTypeFactory { containerId: Int, playerInventory: Inventory?, buf: FriendlyByteBuf? ->
-                GenericChestContainer(
-                    containerId,
-                    playerInventory!!, buf!!
-                )
-            })
+        MenuRegistry.ofExtended { containerId: Int, playerInventory: Inventory, buf: FriendlyByteBuf ->
+            GenericChestContainer(
+                containerId,
+                playerInventory, SimpleItemStorage(buf.readVarInt()),
+                buf.readVarInt(),
+                buf.readVarInt()
+            )
+        }
     }
     @JvmField
     val MACHINE_BLOCK: RegistrySupplier<MenuType<MachineBlockContainer>> = register(
         "machine_block",
-        Function<CreationContext<MachineBlockEntity?>?, MachineBlockContainer> { ctx: CreationContext<MachineBlockEntity?>? ->
+        Function<CreationContext<MachineBlockEntity>, MachineBlockContainer> { ctx: CreationContext<MachineBlockEntity> ->
             MachineBlockContainer(
-                ctx!!
+                ctx
             )
         },
         MachineBlockEntity::class.java
@@ -57,14 +59,7 @@ object GenerationsContainers {
     val MELODY_FLUTE: RegistrySupplier<MenuType<MelodyFluteContainer>> = CONTAINERS.register(
         "melody_flute"
     ) {
-        MenuType(
-            { id: Int, playerInventory: Inventory? ->
-                MelodyFluteContainer(
-                    id,
-                    playerInventory!!
-                )
-            }, FeatureFlagSet.of()
-        )
+        MenuType(::MelodyFluteContainer, FeatureFlagSet.of())
     }
 
     @JvmField
@@ -72,7 +67,7 @@ object GenerationsContainers {
         "trashcan"
     ) {
         MenuType(
-            { id: Int, arg: Inventory? -> TrashCanContainer(id, arg) },
+            { id: Int, arg: Inventory -> TrashCanContainer(id, arg) },
             FeatureFlagSet.of()
         )
     }
@@ -96,9 +91,9 @@ object GenerationsContainers {
 
     fun init() {
         CONTAINERS.register()
-        PlayerEvent.CLOSE_MENU.register(PlayerEvent.CloseMenu { obj: Player?, player: AbstractContainerMenu? ->
+        PlayerEvent.CLOSE_MENU.register(PlayerEvent.CloseMenu { player: Player, container: AbstractContainerMenu ->
             onContainerClose(
-                player
+                player, container
             )
         })
     }
@@ -114,9 +109,9 @@ object GenerationsContainers {
         if (container is RksMachineContainer) container.close()
     }
 
-    fun <T : AbstractContainerMenu?, V : BlockEntity?> register(
-        name: String?,
-        function: Function<CreationContext<V>?, T>,
+    fun <T : AbstractContainerMenu, V : BlockEntity> register(
+        name: String,
+        function: Function<CreationContext<V>, T>,
         clazz: Class<V>
     ): RegistrySupplier<MenuType<T>> {
         return CONTAINERS.register(

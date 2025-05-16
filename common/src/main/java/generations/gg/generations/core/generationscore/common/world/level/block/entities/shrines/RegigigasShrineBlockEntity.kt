@@ -68,10 +68,7 @@ class RegigigasShrineBlockEntity(pos: BlockPos, state: BlockState) : InteractShr
 //            setChanged();
         }
 
-        fun contains(item: Item?): Boolean {
-            return this.slots.stream().map<ItemResource> { obj: SimpleItemSlot -> obj.resource }
-                .anyMatch { stack: ItemResource -> stack.isOf(item) }
-        }
+        fun contains(item: Item): Boolean = this.slots.map { obj -> obj.resource }.any { stack: ItemResource -> stack.isOf(item) }
     } //    @Override
     //    public @NotNull CompoundTag getUpdateTag() {
     //        return getContainer().serialize(super.getUpdateTag());

@@ -55,7 +55,7 @@ import java.util.function.Function
 import java.util.function.Supplier
 import java.util.stream.Collectors
 
-class BallLootBlock(properties: Properties = Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion().noLootTable(), val type: String, private val ball: PokeBall) : GenericRotatableModelBlock<BallLootBlockEntity>(
+class BallLootBlock(properties: Properties, val type: String, private val ball: PokeBall) : GenericRotatableModelBlock<BallLootBlockEntity>(
         properties = properties,
         blockEntityFunction = GenerationsBlockEntities.BALL_LOOT,
         model = GenerationsBlockEntityModels.DESK

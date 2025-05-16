@@ -24,7 +24,7 @@ import org.joml.Quaternionf;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class GenerationsBoatRenderer extends EntityRenderer<GenerationsBoatEntity> {
+public class GenerationsBoatRenderer<T extends GenerationsBoatEntity> extends EntityRenderer<T> {
     private final Map<GenerationsBoatEntity.Type, Pair<ResourceLocation, ListModel<Boat>>> boatResources;
 
     public GenerationsBoatRenderer(EntityRendererProvider.Context context, boolean bl) {
@@ -55,7 +55,7 @@ public class GenerationsBoatRenderer extends EntityRenderer<GenerationsBoatEntit
         return bl ? "textures/entity/chest_boat/" + type.getName() + ".png" : "textures/entity/boat/" + type.getName() + ".png";
     }
 
-    public void render(GenerationsBoatEntity boat, float f, float g, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
+    public void render(T boat, float f, float g, PoseStack poseStack, MultiBufferSource multiBufferSource, int i) {
         poseStack.pushPose();
         poseStack.translate(0.0F, 0.375F, 0.0F);
         poseStack.mulPose(Axis.YP.rotationDegrees(180.0F - f));

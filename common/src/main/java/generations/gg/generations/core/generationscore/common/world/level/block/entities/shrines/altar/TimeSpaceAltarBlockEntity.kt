@@ -56,7 +56,7 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
         fun hasOrb(player: ServerPlayer?): Boolean {
             val orb = this[0]
 
-            return !orb.isEmpty && GenerationsCore.CONFIG.caught.capped(
+            return !orb.isEmpty && GenerationsCore.CONFIG!!.caught.capped(
                 player,
                 (orb.resource.item as CreationTrioItem).speciesId
             )

@@ -9,6 +9,6 @@ data class LootClaim(val uuid: UUID, var time: Instant) {
         get() = Instant.now().isAfter(time)
 
     fun refresh() {
-        time = Instant.now().plus(GenerationsCore.CONFIG.lootTime)
+        time = Instant.now().plus(GenerationsCore.CONFIG!!.lootTime)
     }
 }

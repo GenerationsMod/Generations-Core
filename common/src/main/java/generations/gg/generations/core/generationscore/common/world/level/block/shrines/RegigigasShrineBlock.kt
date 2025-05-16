@@ -25,7 +25,7 @@ import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
 class RegigigasShrineBlock(materialIn: Properties) :
-    InteractShrineBlock<RegigigasShrineBlockEntity?>(
+    InteractShrineBlock<RegigigasShrineBlockEntity>(
         materialIn,
         GenerationsBlockEntities.REGIGIGAS_SHRINE,
         GenerationsBlockEntityModels.REGIGIGAS_SHRINE
@@ -58,27 +58,25 @@ class RegigigasShrineBlock(materialIn: Properties) :
         val handler = entity.container
 
         var succeeded = false
-
-        var
-
-        if (stack.item is RegiOrbItem && !handler.contains(item)) {
-            player.setItemInHand(hand, handler.get(getRegiOrbIndex(item)).insertItem(OptionalInt.of(getRegiOrbIndex(item)).asInt, stack, false))
-
-            if (handler.isFull) {
-                PokemonUtil.spawn(LegendKeys.REGIGIGAS.createProperties(70), level, pos.above())
-                handler.clear()
-            }
-
-            succeeded = true
-        } else {
-            for (i in 0..4) {
-                if (!handler.get(i).isEmpty) {
-                    player.inventory.placeItemBackInInventory(handler.extractItem(i, 1, false))
-                    succeeded = true
-                    break
-                }
-            }
-        }
+//TODO: Fix this
+//        if (stack.item is RegiOrbItem && !handler.contains(item)) {
+//            player.setItemInHand(hand, handler.get(getRegiOrbIndex(item)).insertItem(OptionalInt.of(getRegiOrbIndex(item)).asInt, stack, false))
+//
+//            if (handler.isFull) {
+//                PokemonUtil.spawn(LegendKeys.REGIGIGAS.createProperties(70), level, pos.above())
+//                handler.clear()
+//            }
+//
+//            succeeded = true
+//        } else {
+//            for (i in 0..4) {
+//                if (!handler.get(i).isEmpty) {
+//                    player.inventory.placeItemBackInInventory(handler.extractItem(i, 1, false))
+//                    succeeded = true
+//                    break
+//                }
+//            }
+//        }
 
         if (succeeded) entity.sync()
 

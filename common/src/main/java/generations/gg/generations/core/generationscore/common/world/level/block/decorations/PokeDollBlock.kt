@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock.Cardinal
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.PokeDollBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
@@ -11,7 +10,6 @@ import net.minecraft.core.Direction
 import net.minecraft.core.Vec3i
 import net.minecraft.util.Mth
 import net.minecraft.util.StringRepresentable
-import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.context.BlockPlaceContext
@@ -26,7 +24,7 @@ import org.joml.Math
 
 @Suppress("deprecation")
 class PokeDollBlock(val name: String, private val isShiny: Boolean, val scale: Float) :
-    GenericModelBlock<PokeDollBlockEntity>(Properties.of().sound(SoundType.WOOL).strength(1.0f), GenerationsBlockEntities.POKE_DOLL, model = GenerationsCore.id("models/block/pokedolls/$name.pk")
+    GenericModelBlock<PokeDollBlockEntity>(Properties.of().sound(SoundType.WOOL).strength(1.0f), GenerationsBlockEntities.POKE_DOLL, modelResource = GenerationsCore.id("models/block/pokedolls/$name.pk")
     ) {
     private val variant = if (isShiny) "shiny" else "regular"
 

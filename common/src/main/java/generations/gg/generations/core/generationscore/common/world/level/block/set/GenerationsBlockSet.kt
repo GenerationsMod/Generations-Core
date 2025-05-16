@@ -123,7 +123,7 @@ open class GenerationsBlockSet(
          * Returns a list of the full family
          * @return The full family
          */
-        get() = java.util.List.of(
+        get() = listOf(
             getBaseBlock(),
             getSlab(),
             getStairs(),

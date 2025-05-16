@@ -6,7 +6,6 @@ import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedVariantBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
@@ -20,7 +19,6 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.AdventureModePredicate
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.DyeItem
 import net.minecraft.world.item.Item
@@ -40,7 +38,7 @@ fun <T: Any> T.applyIfTrue(predicate: (T) -> Boolean, action: (T) -> T): T {
 abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V>> : GenericRotatableModelBlock<T> {
     @JvmField
     val color: DyeColor
-    protected val function: Map<DyeColor, Holder<Block>>
+    val map: Map<DyeColor, Holder<Block>>
 
     constructor(
         color: DyeColor,
@@ -54,7 +52,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         length: Int
     ) : super(arg, biFunction, baseBlockPosFunction, model, width, height, length) {
         this.color = color
-        this.function = function
+        this.map = function
     }
 
     constructor(
@@ -66,7 +64,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         model: ResourceLocation
     ) : super(arg, biFunction, baseBlockPosFunction, model) {
         this.color = color
-        this.function = function
+        this.map = function
     }
 
     constructor(
@@ -80,7 +78,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         length: Int
     ) : super(arg, biFunction, model = model, width = width, height = height, length = length) {
         this.color = color
-        this.function = function
+        this.map = function
     }
 
     constructor(
@@ -91,7 +89,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         model: ResourceLocation
     ) : super(arg, biFunction, model = model) {
         this.color = color
-        this.function = function
+        this.map = function
     }
 
     override fun useItemOn(
@@ -131,7 +129,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     }
 
     fun getBlockFromDyeColor(color: DyeColor): Block {
-        return function[color]!!.value()
+        return map[color]!!.value()
     }
 
     fun tryDyeColor(
@@ -237,7 +235,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
             return instance.group(
                 propertiesCodec(),
                 DyeColor.CODEC.fieldOf("color").forGetter { it.color },
-                Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("function").forGetter { it.function }
+                Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("map").forGetter { it.map }
             )
         }
     }

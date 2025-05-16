@@ -20,7 +20,7 @@ import net.minecraft.world.level.Level
 
 class RedChainItem(properties: Properties) : EnchantableItem(properties.component(GenerationsItemComponents.USES, 0)), LangTooltip {
     override fun neededEnchantmentLevel(player: ServerPlayer): Int {
-        val caught = GenerationsCore.CONFIG.caught
+        val caught = GenerationsCore.CONFIG!!.caught
         return if (caught.capped(player, LegendKeys.DIALGA) || caught.capped(player, LegendKeys.GIRATINA) || caught.capped(player, LegendKeys.PALKIA)) super.neededEnchantmentLevel(player)
         else 0
     }

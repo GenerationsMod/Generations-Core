@@ -23,7 +23,7 @@ abstract class ModelProvidingBlockEntity(
     var objectInstance: Array<ObjectInstance?>? = null
     private var boundingBox: AABB? = null
 
-    override fun getModel(): ResourceLocation = blockState.block.instanceOrNull<GenericModelBlock<*>>()?.model ?: GenerationsBlockEntityModels.DEFAULT
+    override fun getModel(): ResourceLocation = blockState.block.instanceOrNull<GenericModelBlock<*>>()?.getModel() ?: GenerationsBlockEntityModels.DEFAULT
 
     val renderBoundingBox: AABB
         get() {
