@@ -7,7 +7,6 @@ import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
-import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem
@@ -15,11 +14,12 @@ import generations.gg.generations.core.generationscore.common.world.item.curry.C
 import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.Registries
+import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 
-object GenerationsItemComponents {
+object GenerationsDataComponents {
 
     var REGISTER = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.DATA_COMPONENT_TYPE)
 
@@ -61,7 +61,7 @@ object GenerationsItemComponents {
         }
 
     })
-    val MAIL_DATA = register("mail_data", SealedMailContent.CODEC, SealedMailContent.STREAM_CODEC)
+    val SEALED_MAIL_DATA = register("mail_data", SealedMailContent.CODEC, SealedMailContent.STREAM_CODEC)
     val WALKMON_DATA = register("walkmon_data", WalkmonItem.WalkmonData.CODEC, WalkmonItem.WalkmonData.STREAM_CODEC)
     val FISHED_SHARDS = register("fished_shards", RubyRodItem.FishedShards.CODEC)
 

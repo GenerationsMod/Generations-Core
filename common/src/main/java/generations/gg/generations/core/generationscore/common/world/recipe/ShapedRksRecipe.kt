@@ -31,7 +31,7 @@ class ShapedRksRecipe(
 
     override fun getRksIngredients(): NonNullList<GenerationsIngredient> = pattern.ingredients();
 
-    override fun canCraftInDimensions(width: Int, height: Int): Boolean = width >= pattern.width() && height >= pattern.height()
+    override fun canCraftInDimensions(width: Int, height: Int): Boolean = width >= pattern.width && height >= pattern.height
 
     /**
      * Used to check if a recipe matches current crafting inventory

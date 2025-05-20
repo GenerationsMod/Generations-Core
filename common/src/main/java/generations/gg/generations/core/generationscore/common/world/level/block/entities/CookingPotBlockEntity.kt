@@ -3,8 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.cobblemon.mod.common.api.berry.Berry
 import com.cobblemon.mod.common.api.berry.Flavor
 import com.cobblemon.mod.common.item.berry.BerryItem
-import dev.architectury.registry.menu.ExtendedMenuProvider
-import dev.architectury.registry.menu.MenuRegistry
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemSlot
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.util.ItemProvider
@@ -18,7 +16,7 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.util.shrink
 import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
@@ -27,7 +25,6 @@ import net.minecraft.core.Direction
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.RegistryAccess
 import net.minecraft.nbt.CompoundTag
-import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket
@@ -37,12 +34,10 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.ContainerData
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import java.util.*
 import java.util.concurrent.atomic.AtomicLong
-import java.util.function.Function
 import java.util.stream.Stream
 
 
@@ -146,7 +141,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
 
                     if (!CurryEvents.COOK.invoker().act(event).isTrue()) {
                         val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY.get())
-                            .set(GenerationsItemComponents.CURRY_DATA.get(), event.output)
+                            .set(GenerationsDataComponents.CURRY_DATA.get(), event.output)
 
                         hasInserted = handler.insert(13, curry, 1, false) > 0
                     }
@@ -236,7 +231,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         }
     }
 
-    override fun createMenu(id: Int, playerInventory: Inventory, player: Player): AbstractContainerMenu? {
+    override fun createMenu(id: Int, playerInventory: Inventory, player: Player): AbstractContainerMenu {
         return CookingPotContainer(id, playerInventory, handler, data)
     }
 
@@ -261,11 +256,6 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
     }
 
     companion object {
-        @JvmStatic
-        fun serverTick(level: Level?, pos: BlockPos?, state: BlockState?, blockEntity: CookingPotBlockEntity) {
-            blockEntity.serverTick()
-        }
-
         fun getDominantFlavor(berries: List<Berry>): Flavor? {
             val output = Flavor.entries.associateWith { flavor ->
                 berries.sumOf { it.flavor(flavor) }

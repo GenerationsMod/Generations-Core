@@ -23,7 +23,7 @@ public class Offers {
 
     private Offers(ResourceLocation key, @Nullable Level level, @Nullable Time lastRefreshed, @Nullable SimpleShopEntry[] entries) {
         this.key = key;
-        var shop = Shops.instance().get(key);
+        var shop = Shops.INSTANCE.get(key);
         this.refreshType = shop.getRefreshType();
         this.shopRefreshTime = shop.getRefreshTime();
         if (refreshType == ShopRefreshType.CUSTOM_INGAME || refreshType == ShopRefreshType.PER_MC_DAY) {

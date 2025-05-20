@@ -9,14 +9,12 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer
 import generations.gg.generations.core.generationscore.common.util.asResource
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem
-import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
-import net.minecraft.core.component.DataComponents
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.state.BlockState
@@ -41,7 +39,7 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
             return if (index == 0) {
                 resource.item is CreationTrioItem
             } else {
-                resource.isOf(GenerationsItems.RED_CHAIN.get()) && resource.get(GenerationsItemComponents.ENCHANTED.get()) == false
+                resource.isOf(GenerationsItems.RED_CHAIN.get()) && resource.get(GenerationsDataComponents.ENCHANTED.get()) == false
             }
         }
 

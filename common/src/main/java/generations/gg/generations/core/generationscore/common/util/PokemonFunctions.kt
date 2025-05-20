@@ -1,41 +1,22 @@
 package generations.gg.generations.core.generationscore.common.util
 
 import com.cobblemon.mod.common.api.moves.Moves
-import com.cobblemon.mod.common.api.net.Encodable
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.api.pokemon.feature.*
 import com.cobblemon.mod.common.api.pokemon.stats.Stat
 import com.cobblemon.mod.common.api.pokemon.stats.Stats
-import com.cobblemon.mod.common.api.properties.CustomPokemonProperty
 import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
-import com.cobblemon.mod.common.api.storage.InvalidSpeciesException
-import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.pokemon.*
-import com.cobblemon.mod.common.pokemon.Pokemon.Companion.loadFromNBT
-import com.cobblemon.mod.common.util.asResource
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.server
-import com.cobblemon.mod.common.util.toNbtList
-import com.mojang.serialization.JsonOps
 import generations.gg.generations.core.generationscore.common.util.extensions.get
-import generations.gg.generations.core.generationscore.common.util.extensions.has
 import generations.gg.generations.core.generationscore.common.util.extensions.remove
 import generations.gg.generations.core.generationscore.common.util.extensions.set
 import generations.gg.generations.core.generationscore.common.world.item.StatueSpawnerItem
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents
-import net.minecraft.nbt.CompoundTag
-import net.minecraft.nbt.ListTag
-import net.minecraft.nbt.NbtOps
-import net.minecraft.nbt.StringTag
-import net.minecraft.nbt.Tag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.network.chat.TextColor
-import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.component.ItemLore
@@ -133,13 +114,13 @@ fun MutableList<Component>.add(pokemon: Pokemon) {
 }
 
 fun ItemStack.savePokemon(poke: Pokemon) {
-    set(GenerationsItemComponents.EMBEDDED_POKEMON, poke)
-    set(GenerationsItemComponents.CLIENT_POKEMON_DATA, poke.asRenderablePokemon())
+    set(GenerationsDataComponents.EMBEDDED_POKEMON, poke)
+    set(GenerationsDataComponents.CLIENT_POKEMON_DATA, poke.asRenderablePokemon())
 }
 
 fun ItemStack.removePokemon() {
-    remove(GenerationsItemComponents.EMBEDDED_POKEMON)
-    remove(GenerationsItemComponents.CLIENT_POKEMON_DATA)
+    remove(GenerationsDataComponents.EMBEDDED_POKEMON)
+    remove(GenerationsDataComponents.CLIENT_POKEMON_DATA)
 }
 
 fun ItemStack.getRenderablePokemon(): RenderablePokemon? {
@@ -147,7 +128,7 @@ fun ItemStack.getRenderablePokemon(): RenderablePokemon? {
         return (item as StatueSpawnerItem).pokemon?.asRenderablePokemon() //TODO: See if this explodes.
     }
 
-    return get(GenerationsItemComponents.CLIENT_POKEMON_DATA)
+    return get(GenerationsDataComponents.CLIENT_POKEMON_DATA)
 }
 
 fun ItemStack.getPokemon(): Pokemon? {
@@ -155,7 +136,7 @@ fun ItemStack.getPokemon(): Pokemon? {
         return (item as StatueSpawnerItem).pokemon
     }
 
-    return get(GenerationsItemComponents.EMBEDDED_POKEMON)
+    return get(GenerationsDataComponents.EMBEDDED_POKEMON)
 }
 
 

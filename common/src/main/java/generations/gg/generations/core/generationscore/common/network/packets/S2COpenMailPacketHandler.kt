@@ -19,7 +19,7 @@ object S2COpenMailPacketHandler : ClientNetworkPacketHandler<S2COpenMailPacket> 
                     )
                 ) else if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) Minecraft.getInstance().setScreen(
                     MailEditScreen(
-                        Minecraft.getInstance().player,
+                        Minecraft.getInstance().player!!,
                         itemStack,
                         packet.hand
                     )

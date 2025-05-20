@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
-import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.util.Codecs
@@ -21,7 +19,6 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.BooleanOp
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -105,7 +102,7 @@ class WeatherTrioShrineBlock(
         val CODEC: MapCodec<WeatherTrioShrineBlock> = Codecs.mapCodec { group(
             propertiesCodec(),
             Codecs.modelCodec(),
-            SpeciesKey.CODEC.fieldOf("species").forGetter({ it.species }),
+            SpeciesKey.CODEC.fieldOf("species").forGetter { it.species },
             BuiltInRegistries.ITEM.holderByNameCodec().fieldOf("requiredItem").forGetter { it.requiredItem }
         ).apply(this, ::WeatherTrioShrineBlock) }
     }

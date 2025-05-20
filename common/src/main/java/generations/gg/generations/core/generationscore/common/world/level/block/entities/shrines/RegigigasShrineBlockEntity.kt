@@ -43,7 +43,7 @@ class RegigigasShrineBlockEntity(pos: BlockPos, state: BlockState) : InteractShr
                     3 -> GenerationsItems.REGIDRAGO_ORB
                     4 -> GenerationsItems.REGIELEKI_ORB
                     else -> null
-                }?.get()
+                }?.get().instanceOrNull<RegiOrbItem>()
     }
 
     inner class RegigigasItemStackHandler :

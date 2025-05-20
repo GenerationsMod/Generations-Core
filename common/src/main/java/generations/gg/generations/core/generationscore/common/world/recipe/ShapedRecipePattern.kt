@@ -22,8 +22,8 @@ import kotlin.math.max
 import kotlin.math.min
 
 class ShapedRecipePattern(
-    private val width: Int,
-    private val height: Int,
+    val width: Int,
+    val height: Int,
     private val ingredients: NonNullList<GenerationsIngredient>,
     private val data: Optional<Data>
 ) {
@@ -79,14 +79,6 @@ class ShapedRecipePattern(
                 ingredient
             )
         })
-    }
-
-    fun width(): Int {
-        return this.width
-    }
-
-    fun height(): Int {
-        return this.height
     }
 
     fun ingredients(): NonNullList<GenerationsIngredient> {

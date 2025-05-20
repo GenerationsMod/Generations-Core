@@ -27,7 +27,7 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.registerDefaultCustomInteractions
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
 import generations.gg.generations.core.generationscore.common.world.item.legends.EnchantableItem
 import generations.gg.generations.core.generationscore.common.world.item.legends.EnchantableItem.Companion.isEnchanted
@@ -120,7 +120,7 @@ object GenerationsCore {
             ZygardeCellDetail::class.java
         )
 
-        GenerationsItemComponents.init()
+        GenerationsDataComponents.init()
 
         GenerationsCoreEntityDataSerializers.init()
         GenerationsSounds.init()

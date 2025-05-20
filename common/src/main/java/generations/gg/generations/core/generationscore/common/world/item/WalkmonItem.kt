@@ -13,7 +13,7 @@ import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
 import generations.gg.generations.core.generationscore.common.util.extensions.get
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.Component
@@ -53,7 +53,7 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
     override fun inventoryTick(stack: ItemStack, level: Level, entity: Entity, slotId: Int, isSelected: Boolean) {
         if (!level.isClientSide && entity is ServerPlayer) {
-            stack.get(GenerationsItemComponents.WALKMON_DATA)?.tick(stack, entity)
+            stack.get(GenerationsDataComponents.WALKMON_DATA)?.tick(stack, entity)
         }
     }
 
@@ -145,4 +145,4 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 }
 
 private val ItemStack.walkmonData: WalkmonItem.WalkmonData?
-    get() = this.get(GenerationsItemComponents.WALKMON_DATA)
+    get() = this.get(GenerationsDataComponents.WALKMON_DATA)

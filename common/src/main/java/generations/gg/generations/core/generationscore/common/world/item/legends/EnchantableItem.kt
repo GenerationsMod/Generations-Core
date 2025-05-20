@@ -4,12 +4,12 @@ import generations.gg.generations.core.generationscore.common.util.extensions.co
 import generations.gg.generations.core.generationscore.common.util.extensions.getOrDefault
 import generations.gg.generations.core.generationscore.common.util.extensions.set
 import generations.gg.generations.core.generationscore.common.world.item.ItemWithLangTooltipImpl
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 
-abstract class EnchantableItem(arg: Properties) : ItemWithLangTooltipImpl(arg.component(GenerationsItemComponents.ENCHANTED, false)) {
+abstract class EnchantableItem(arg: Properties) : ItemWithLangTooltipImpl(arg.component(GenerationsDataComponents.ENCHANTED, false)) {
     open fun neededEnchantmentLevel(player: ServerPlayer): Int {
         return 100
     }
@@ -21,29 +21,29 @@ abstract class EnchantableItem(arg: Properties) : ItemWithLangTooltipImpl(arg.co
     companion object {
         fun getEnchanted(item: Item): ItemStack {
             val stack = ItemStack(item)
-            stack.set(GenerationsItemComponents.ENCHANTED, true)
+            stack.set(GenerationsDataComponents.ENCHANTED, true)
             return stack
         }
 
         @JvmStatic
         fun setEnchanted(stack: ItemStack, enchanted: Boolean): ItemStack {
-            stack.set(GenerationsItemComponents.ENCHANTED, enchanted)
+            stack.set(GenerationsDataComponents.ENCHANTED, enchanted)
             return stack
         }
 
         fun setUsed(stack: ItemStack, used: Boolean): ItemStack {
-            stack.set(GenerationsItemComponents.USED, used)
+            stack.set(GenerationsDataComponents.USED, used)
             return stack
         }
 
         @JvmStatic
         fun isUsed(stack: ItemStack?): Boolean {
-            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsItemComponents.USED, false)
+            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsDataComponents.USED, false)
         }
 
         @JvmStatic
         fun isEnchanted(stack: ItemStack?): Boolean {
-            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsItemComponents.ENCHANTED, false)
+            return stack != null && !stack.isEmpty && stack.getOrDefault(GenerationsDataComponents.ENCHANTED, false)
         }
     }
 }

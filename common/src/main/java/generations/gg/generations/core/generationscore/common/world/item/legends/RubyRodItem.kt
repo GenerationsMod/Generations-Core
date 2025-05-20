@@ -7,7 +7,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.Tiere
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip
 import generations.gg.generations.core.generationscore.common.world.item.TieredFishingRodItem
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
 import net.minecraft.network.chat.Component
 import net.minecraft.util.StringRepresentable
@@ -115,7 +115,7 @@ class RubyRodItem(properties: Properties?, tier: Teir?) :
         }
 
         @JvmStatic
-        fun getFishedShard(stack: ItemStack): FishedShards? = stack.get(GenerationsItemComponents.FISHED_SHARDS)
+        fun getFishedShard(stack: ItemStack): FishedShards? = stack.get(GenerationsDataComponents.FISHED_SHARDS)
 
         private fun isShard(itemStack: ItemStack): Boolean {
             val item = itemStack.item

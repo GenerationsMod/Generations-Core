@@ -11,7 +11,7 @@ import generations.gg.generations.core.generationscore.common.util.getOrCreate
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 import generations.gg.generations.core.generationscore.common.util.isSpecies
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.legends.EnchantableItem
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
@@ -21,7 +21,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
 
-class MeteoriteItem(arg: Properties) : EnchantableItem(arg.component(GenerationsItemComponents.USED, false)), LangTooltip, GenerationsCobblemonInteractions.PokemonInteraction {
+class MeteoriteItem(arg: Properties) : EnchantableItem(arg.component(GenerationsDataComponents.USED, false)), LangTooltip, GenerationsCobblemonInteractions.PokemonInteraction {
     override fun neededEnchantmentLevel(player: ServerPlayer): Int {
         val caught = GenerationsCore.CONFIG.caught
         return if (caught.capped(player, LegendKeys.DEOXYS)) super.neededEnchantmentLevel(player) else 0

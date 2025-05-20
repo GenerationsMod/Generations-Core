@@ -23,7 +23,7 @@ public record EnchantmentToolEffect(Holder<Enchantment> enchantment, int level, 
         if (enchantments.getLevel(enchantment) >= level) return false;
         enchantments.set(enchantment, level);
         EnchantmentHelper.setEnchantments(itemStack, enchantments.toImmutable());
-        player.getItemInHand(usedHand).hurtAndBreak(durabilityCost, (ServerLevel) world, (ServerPlayer) player, owner -> owner.broadcastBreakEvent(usedHand));
+        player.getItemInHand(usedHand).hurtAndBreak(durabilityCost, (ServerLevel) world, (ServerPlayer) player, owner -> {}/*owner.broadcastBreakEvent(usedHand)*/);
         return true;
     }
 

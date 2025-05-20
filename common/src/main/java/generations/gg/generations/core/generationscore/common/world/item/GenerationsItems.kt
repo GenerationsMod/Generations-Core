@@ -1568,7 +1568,7 @@ object GenerationsItems {
         BUILDING_BLOCKS
     )
 
-    private fun createRelicSong(inert: Boolean): RegistrySupplier<RelicSongItem> = register(
+    private fun createRelicSong(inert: Boolean): RegistrySupplier<Item> = register(
         (if (inert) "inert_" else "") + "relic_song",
         { RelicSongItem(it.stacksTo(1), inert) },
         LEGENDARY_ITEMS
@@ -1591,7 +1591,7 @@ object GenerationsItems {
         name: String,
         itemSupplier: Function<Item.Properties, T>,
         register: DeferredRegister<Item> = ITEMS
-    ): RegistrySupplier<T> = register.register(name) { itemSupplier.apply(of()) }
+    ): RegistrySupplier<Item> = register.register(name) { itemSupplier.apply(of()) }
 
     fun <T : MoveTeachingItem> registerTm(
         name: String,
@@ -1616,13 +1616,13 @@ object GenerationsItems {
             PLAYER_ITEMS
         )
 
-    private fun registerClosedMail(name: String, type: MailType): RegistrySupplier<ClosedMailItem> =
+    private fun registerClosedMail(name: String, type: MailType): RegistrySupplier<Item> =
         register(name, type::createClosedMailItem, POKEMAIL)
 
-    private fun registerMail(name: String, type: MailType): RegistrySupplier<MailItem> =
+    private fun registerMail(name: String, type: MailType): RegistrySupplier<Item> =
         register(name, type::createMailItem, POKEMAIL)
 
-    private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(
+    private fun registerPlate(name: String, type: ElementalType): RegistrySupplier<Item> = register(
         name,
         {
             createFormChangingItem(
@@ -1635,7 +1635,7 @@ object GenerationsItems {
         FORM_ITEMS
     )
 
-    private fun registerDrive(name: String, type: String): RegistrySupplier<FormChangingItem> = register(
+    private fun registerDrive(name: String, type: String): RegistrySupplier<Item> = register(
         name,
         {
             createFormChangingItem(
@@ -1648,7 +1648,7 @@ object GenerationsItems {
         FORM_ITEMS
     )
 
-    private fun registerMemory(name: String, type: ElementalType): RegistrySupplier<FormChangingItem> = register(
+    private fun registerMemory(name: String, type: ElementalType): RegistrySupplier<Item> = register(
         name,
         {
             createFormChangingItem(
@@ -1661,7 +1661,7 @@ object GenerationsItems {
         FORM_ITEMS
     )
 
-    private fun registerCap(name: String): RegistrySupplier<FormChangingItem> =
+    private fun registerCap(name: String): RegistrySupplier<Item> =
         register("${name}_cap", { createFormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
 
     @JvmStatic

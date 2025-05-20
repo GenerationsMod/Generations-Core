@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge
 
+import com.cobblemon.mod.common.ResourcePackActivationBehaviour
 import com.google.common.collect.ImmutableMap
 import com.mojang.datafixers.util.Pair
 import dev.architectury.registry.registries.DeferredRegister
@@ -36,6 +37,7 @@ import net.neoforged.neoforge.event.AddReloadListenerEvent
 import net.neoforged.neoforge.event.AnvilUpdateEvent
 import net.neoforged.neoforge.event.OnDatapackSyncEvent
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
+import net.neoforged.neoforge.resource.ResourcePackLoader
 import java.util.function.Consumer
 import java.util.function.Supplier
 

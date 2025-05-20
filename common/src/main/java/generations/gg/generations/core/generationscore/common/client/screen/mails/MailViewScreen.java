@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.common.tags.GenerationsIt
 import generations.gg.generations.core.generationscore.common.world.item.ClosedMailItem;
 import generations.gg.generations.core.generationscore.common.world.item.MailType;
 import generations.gg.generations.core.generationscore.common.world.item.MailTypes;
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
@@ -13,7 +14,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.locale.Language;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.*;
@@ -28,6 +28,7 @@ import java.util.List;
 
 @Environment(value= EnvType.CLIENT)
 public class MailViewScreen extends Screen {
+    public static final int PAGE_INDICATOR_TEXT_Y_OFFSET = 16;
     public static final int PAGE_TEXT_X_OFFSET = 27;
     public static final int PAGE_TEXT_Y_OFFSET = 13;
     public static final MailAccess EMPTY_ACCESS = new MailAccess() {
@@ -95,7 +96,6 @@ public class MailViewScreen extends Screen {
     @Override
     public void render(GuiGraphics poseStack, int mouseX, int mouseY, float partialTick) {
         this.renderBackground(poseStack, mouseX, mouseY, partialTick);
-
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         int x = (this.width - IMAGE_WIDTH) / 2;
         int y = (this.height - IMAGE_HEIGHT) / 2;
@@ -155,7 +155,7 @@ public class MailViewScreen extends Screen {
         int k = Math.min(TEXT_HEIGHT / this.font.lineHeight, this.cachedPageComponents.size());
         if (i <= TEXT_WIDTH && j < this.minecraft.font.lineHeight * k + k) {
             int l = j / this.minecraft.font.lineHeight;
-            if (l < this.cachedPageComponents.size()) {
+            if (l >= 0 && l < this.cachedPageComponents.size()) {
                 FormattedCharSequence formattedCharSequence = this.cachedPageComponents.get(l);
                 return this.minecraft.font.getSplitter().componentStyleAtWidth(formattedCharSequence, i);
             }
@@ -191,15 +191,10 @@ public class MailViewScreen extends Screen {
         private final MailType type;
 
         public WritableMailAccess(ItemStack arg) {
-            this.contents = WritableMailAccess.readContents(arg);
-            this.type = ((ClosedMailItem) arg.getItem()).getType();
-        }
+            var mail = arg.get(GenerationsDataComponents.INSTANCE.getSEALED_MAIL_DATA().value());
 
-        private static String readContents(ItemStack writtenBookStack) {
-            return "";
-
-//            CompoundTag compoundTag = writtenBookStack.getTag();
-//            return compoundTag != null ? MailViewScreen.loadPages(compoundTag) : "";
+            this.contents = mail != null ? mail.getContent() : "";
+            this.type = ((ClosedMailItem) arg.getItem()).type;
         }
 
         @Override
@@ -225,26 +220,11 @@ public class MailViewScreen extends Screen {
         private final MailType type;
 
         public WrittenMailAccess(ItemStack arg) {
-            this.pages = WrittenMailAccess.readPages(arg);
-            this.author = WrittenMailAccess.readAuthor(arg);
-            this.type = ((ClosedMailItem) arg.getItem()).getType();
-        }
+            var mail = arg.get(GenerationsDataComponents.INSTANCE.getSEALED_MAIL_DATA().value());
 
-        private static String readAuthor(ItemStack arg) {
-//            CompoundTag compoundTag = arg.getTag();
-//            if (compoundTag != null && ClosedMailItem.makeSureTagIsValid(compoundTag)) {
-//                return compoundTag.getString("author");
-//            }
-            return "";
-        }
-
-        private static String readPages(ItemStack writtenBookStack) {
-//            CompoundTag compoundTag = writtenBookStack.getTag();
-//            if (compoundTag != null && ClosedMailItem.makeSureTagIsValid(compoundTag)) {
-//                return MailViewScreen.loadPages(compoundTag);
-//            }
-//            return Component.Serializer.toJson(Component.translatable("book.invalid.tag").withStyle(ChatFormatting.DARK_RED));
-            return "";
+            this.pages = mail != null ? mail.getContent() : Component.translatable("book.invalid.tag").withStyle(ChatFormatting.DARK_RED).getString();
+            this.author = mail != null ? mail.getAuthor() : "";
+            this.type = ((ClosedMailItem) arg.getItem()).type;
         }
 
         @Override

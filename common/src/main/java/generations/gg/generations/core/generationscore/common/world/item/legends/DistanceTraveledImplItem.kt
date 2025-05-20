@@ -1,18 +1,13 @@
 package generations.gg.generations.core.generationscore.common.world.item.legends
 
-import dev.architectury.registry.registries.RegistrySupplier
-import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.add
 import generations.gg.generations.core.generationscore.common.util.extensions.distance
 import generations.gg.generations.core.generationscore.common.util.extensions.get
 import generations.gg.generations.core.generationscore.common.util.extensions.set
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
-import net.minecraft.core.component.DataComponentType
-import net.minecraft.nbt.CompoundTag
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.util.Mth
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.player.Player
@@ -58,11 +53,11 @@ abstract class DistanceTraveledImplItem(properties: Properties, override val max
     }
 
     override fun getDistance(stack: ItemStack): Double {
-        return stack.get(GenerationsItemComponents.DISTANCE) ?: 0.0
+        return stack.get(GenerationsDataComponents.DISTANCE) ?: 0.0
     }
 
     override fun setDistance(stack: ItemStack, distance: Double) {
-        stack.set(GenerationsItemComponents.DISTANCE, distance.coerceIn(0.0, maxDistance))
+        stack.set(GenerationsDataComponents.DISTANCE, distance.coerceIn(0.0, maxDistance))
     }
 
     override fun remainingNeededDistance(itemInHand: ItemStack): Double {

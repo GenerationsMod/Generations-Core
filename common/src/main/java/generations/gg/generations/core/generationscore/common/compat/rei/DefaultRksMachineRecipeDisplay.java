@@ -74,13 +74,7 @@ public abstract class DefaultRksMachineRecipeDisplay<C extends Recipe<?>> extend
 
     @Override
     public Optional<ResourceLocation> getDisplayLocation() {
-        return getOptionalRecipe().map(Recipe::getId);
-    }
-
-    public <T extends AbstractContainerMenu> List<List<ItemStack>> getOrganisedInputEntries(SimpleGridMenuInfo<T, DefaultRksMachineRecipeDisplay<?>> menuInfo, T container) {
-        return CollectionUtils.map(getOrganisedInputEntries(menuInfo.getCraftingWidth(container), menuInfo.getCraftingHeight(container)), ingredient ->
-                CollectionUtils.<EntryStack<?>, ItemStack>filterAndMap(ingredient, stack -> stack.getType() == VanillaEntryTypes.ITEM,
-                        EntryStack::castValue));
+        return getOptionalRecipe()
     }
 
     public <T extends AbstractContainerMenu> List<EntryIngredient> getOrganisedInputEntries(int menuWidth, int menuHeight) {
@@ -106,17 +100,6 @@ public abstract class DefaultRksMachineRecipeDisplay<C extends Recipe<?>> extend
         int x = index % recipeWidth;
         int y = (index - x) / recipeWidth;
         return craftingGridWidth * y + x;
-    }
-
-    public List<InputIngredient<EntryStack<?>>> getInputIngredients(MenuSerializationContext<?, ?, ?> context, MenuInfo<?, ?> info, boolean fill) {
-        int craftingWidth = 3, craftingHeight = 3;
-
-        if (info instanceof SimpleGridMenuInfo && fill) {
-            craftingWidth = ((SimpleGridMenuInfo<AbstractContainerMenu, ?>) info).getCraftingWidth(context.getMenu());
-            craftingHeight = ((SimpleGridMenuInfo<AbstractContainerMenu, ?>) info).getCraftingHeight(context.getMenu());
-        }
-
-        return getInputIngredients(craftingWidth, craftingHeight);
     }
 
     @Override

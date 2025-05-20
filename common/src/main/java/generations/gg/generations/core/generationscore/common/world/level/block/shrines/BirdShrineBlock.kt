@@ -34,7 +34,7 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
     width: Int = 0,
     height: Int = 0,
     length: Int = 0,
-    vararg imbuedItems: RegistrySupplier<WingItem>
+    vararg imbuedItems: RegistrySupplier<Item>
 ) : ShrineBlock<GenericShrineBlockEntity>(
         properties,
         GenerationsBlockEntities.GENERIC_SHRINE,
@@ -46,7 +46,7 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
     private val allowedImbuedItems: Set<ResourceLocation> =
         imbuedItems.asSequence()
             .filter(Objects::nonNull)
-            .map(RegistrySupplier<WingItem>::getKey).map(ResourceKey<WingItem>::location)
+            .map(RegistrySupplier<Item>::getKey).map(ResourceKey<Item>::location)
             .toSet()
 
     public override fun useItemOn(

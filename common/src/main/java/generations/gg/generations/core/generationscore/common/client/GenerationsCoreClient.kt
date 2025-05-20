@@ -37,7 +37,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.Gener
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem.Companion.isItem
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWoodTypes
@@ -71,10 +71,8 @@ import net.minecraft.util.Mth
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
-import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
-import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
@@ -201,7 +199,7 @@ object GenerationsCoreClient {
             GenerationsItems.CURRY.get(),
             GenerationsCore.id("curry_type)"),
             { itemStack, clientLevel, livingEntity, i ->
-                return@register itemStack.get(GenerationsItemComponents.CURRY_DATA)?.curryType?.ordinal?.let { it / 100f }
+                return@register itemStack.get(GenerationsDataComponents.CURRY_DATA)?.curryType?.ordinal?.let { it / 100f }
                     ?: 0f
             })
 

@@ -2,22 +2,15 @@ package generations.gg.generations.core.generationscore.common.world.item.curry
 
 import com.cobblemon.mod.common.api.interaction.PokemonEntityInteraction
 import com.cobblemon.mod.common.api.pokemon.experience.SidemodExperienceSource
-import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
-import generations.gg.generations.core.generationscore.common.api.player.CurryDex
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.getFlavorLocalizedName
-import generations.gg.generations.core.generationscore.common.util.add
 import generations.gg.generations.core.generationscore.common.util.extensions.*
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsItemComponents
-import net.minecraft.client.gui.screens.Screen
-import net.minecraft.core.component.DataComponents
-import net.minecraft.core.registries.BuiltInRegistries
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.network.chat.Component
-import net.minecraft.network.chat.MutableComponent
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
@@ -27,7 +20,7 @@ import net.minecraft.world.level.Level
 
 class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), PokemonEntityInteraction {
     override fun getName(stack: ItemStack): Component {
-        val data = stack.getOrDefault(GenerationsItemComponents.CURRY_DATA, CurryData())
+        val data = stack.getOrDefault(GenerationsDataComponents.CURRY_DATA, CurryData())
         var name = this.description;
         if (data.curryType != CurryType.None) name = (data.curryType.localizedName + " ").text().append(name)
         if (data.flavor != null) name = (getFlavorLocalizedName(data.flavor) + " ").text().append(name)
@@ -41,7 +34,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         isAdvanced: TooltipFlag
     ) {
         tooltipComponents.dsl {
-            val data = stack.getOrDefault(GenerationsItemComponents.CURRY_DATA, CurryData())
+            val data = stack.getOrDefault(GenerationsDataComponents.CURRY_DATA, CurryData())
 
             +"Rating: ${data.rating.name}"
             +"Restores PP: ${data.canRestorePP().text()}"
@@ -55,12 +48,12 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
     override fun onCraftedBy(stack: ItemStack, level: Level, player: Player) {
         if (player is ServerPlayer) {
 
-            val data = stack.getOrDefault(GenerationsItemComponents.CURRY_DATA, CurryData())
+            val data = stack.getOrDefault(GenerationsDataComponents.CURRY_DATA, CurryData())
             val rating = CurryEvents.MODIFY_RATING.invoker().modifyRating(CurryTasteRating.Milcery, player, data)!! //CurryDex.of(player).currentTaste
 
             data.setRating(rating)
             rating.configureData(data)
-            stack.set(GenerationsItemComponents.CURRY_DATA, data)
+            stack.set(GenerationsDataComponents.CURRY_DATA, data)
 //            CurryDex.add(player, data)
         }
     }
@@ -69,7 +62,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         get() = setOf(PokemonEntityInteraction.Ownership.OWNER)
 
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
-        val curry = stack.getOrDefault(GenerationsItemComponents.CURRY_DATA, CurryData())
+        val curry = stack.getOrDefault(GenerationsDataComponents.CURRY_DATA, CurryData())
 
         val pokemon = entity.pokemon
         pokemon.incrementFriendship(curry.friendship, true)
@@ -91,7 +84,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
 
     class CurryExperienceSource(val player: ServerPlayer, val stack: ItemStack) : SidemodExperienceSource(
         GenerationsCore.MOD_ID) {
-        val curry = stack.get(GenerationsItemComponents.CURRY_DATA)
+        val curry = stack.get(GenerationsDataComponents.CURRY_DATA)
 
         override fun isInteraction(): Boolean {
             return true
@@ -102,7 +95,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         @JvmStatic
         fun createStack(data: CurryData): ItemStack {
             val stack = ItemStack(GenerationsItems.CURRY.get())
-            stack.set(GenerationsItemComponents.CURRY_DATA, data)
+            stack.set(GenerationsDataComponents.CURRY_DATA, data)
             return stack
         }
 
