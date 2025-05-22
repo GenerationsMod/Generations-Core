@@ -716,11 +716,11 @@ object TagsDatagen {
     ) :
         PaintingVariantTagsProvider(arg, completableFuture, GenerationsCore.MOD_ID, existingFileHelper) {
         override fun addTags(arg: HolderLookup.Provider) {
-            GenerationsPaintings.PAINTINGS.forEach(Consumer<RegistrySupplier<PaintingVariant>> { painting: RegistrySupplier<PaintingVariant> ->
-                tag(
-                    PaintingVariantTags.PLACEABLE
-                ).add(TagEntry.element(painting.id))
-            })
+//            GenerationsPaintings.PAINTINGS.forEach(Consumer<RegistrySupplier<PaintingVariant>> { painting: RegistrySupplier<PaintingVariant> -> //TODO: Convert over to the new stuf.
+//                tag(
+//                    PaintingVariantTags.PLACEABLE
+//                ).add(TagEntry.element(painting.id))
+//            })
         }
     }
 }

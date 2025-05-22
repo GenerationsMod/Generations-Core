@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.fabric.datagen
 
 import generations.gg.generations.core.generationscore.common.world.item.RecordSongs
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsPaintings
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
@@ -19,5 +20,6 @@ class DataGen : DataGeneratorEntrypoint {
 
     override fun buildRegistry(registryBuilder: RegistrySetBuilder) {
         registryBuilder.add(Registries.JUKEBOX_SONG, RecordSongs::bootstrap)
+        registryBuilder.add(Registries.PAINTING_VARIANT, GenerationsPaintings::init)
     }
 }

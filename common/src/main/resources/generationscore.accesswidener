@@ -45,3 +45,6 @@ accessible field com/mojang/blaze3d/platform/GlStateManager$BooleanState enabled
 
 extendable class net/minecraft/client/model/geom/ModelPart
 accessible field net/minecraft/server/network/ServerCommonPacketListenerImpl connection Lnet/minecraft/network/Connection;
+
+extendable method net/minecraft/world/entity/LivingEntity getDimensions (Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/entity/EntityDimensions;
+extendable method net/minecraft/world/entity/LivingEntity canBreatheUnderwater ()Z

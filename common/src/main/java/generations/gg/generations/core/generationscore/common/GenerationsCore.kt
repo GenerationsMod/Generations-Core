@@ -139,7 +139,6 @@ object GenerationsCore {
         GenerationsCreativeTabs.init()
         GenerationsArmor.init()
         GenerationsTools.init()
-        GenerationsPaintings.init()
         GenerationsContainers.init()
         RksResultType.init()
         GenerationsIngredidents.init()
