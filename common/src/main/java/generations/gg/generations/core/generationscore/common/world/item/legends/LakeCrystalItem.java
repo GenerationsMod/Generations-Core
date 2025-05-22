@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey;
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil;
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip;
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem;
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -40,7 +41,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= stack.getMaxDamage()) {
                 PokemonUtil.spawn(pokemonProperties.createPokemon(70), level, player.getOnPos(), player.getYRot());
-                stack.getOrCreateTag().putBoolean("enchanted", true);
+                stack.set(GenerationsDataComponents.INSTANCE.getENCHANTED().get(), true);
                 return InteractionResultHolder.success(stack);
             }
         }

@@ -149,7 +149,7 @@ public class GenerationsTools {
 			0,
 			2,
 			4,
-			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
+			new EnchantmentToolEffect(Enchantments.EFFICIENCY, 3, 1));
 
 	public static final ToolSet WATER_STONE = ToolSet.create("water_stone", () -> GenerationsTiers.WATER_STONE,
 			1,
@@ -158,7 +158,7 @@ public class GenerationsTools {
 			-3,
 			2,
 			4,
-			new EnchantmentToolEffect(Enchantments.BLOCK_EFFICIENCY, 3, 1));
+			new EnchantmentToolEffect(Enchantments.EFFICIENCY, 3, 1));
 
 	public static final ToolSet ULTRITE = ToolSet.create("ultrite", () -> GenerationsTiers.ULTRITE,
 			1.5f,

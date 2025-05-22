@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item.creativetab
 
-import dev.architectury.injectables.annotations.ExpectPlatform
-import dev.architectury.registry.registries.DeferredRegister
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.*
@@ -103,15 +101,5 @@ object GenerationsCreativeTabs {
             { GenerationsShrines.FROZEN_SHRINE.get().asItem().defaultInstance }, GenerationsShrines.SHRINES
         )
         GenerationsCore.LOGGER.info("Registered Generations Creative Tabs!")
-    }
-
-    @ExpectPlatform
-    @SafeVarargs
-    private fun create(
-        name: String,
-        icon: Supplier<ItemStack>,
-        vararg items: DeferredRegister<out ItemLike?>
-    ): Supplier<CreativeModeTab> {
-        throw RuntimeException("Something")
     }
 }

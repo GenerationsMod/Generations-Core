@@ -19,7 +19,7 @@ public class GenerationsAxeItem extends AxeItem implements ToolEffectHolder<Gene
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsAxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, attackDamage, attackSpeed, properties);
+        super(tier, /*attackDamage, attackSpeed,*/ properties); //TODO: Readd values if needed
     }
 
     public GenerationsAxeItem addToolEffects(ToolEffect... toolEffect) {

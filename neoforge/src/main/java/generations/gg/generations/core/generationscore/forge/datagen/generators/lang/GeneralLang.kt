@@ -7,11 +7,9 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.item.*
-import generations.gg.generations.core.generationscore.common.world.item.LangTooltip.tooltipId
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import generations.gg.generations.core.generationscore.common.world.item.legends.*
 import generations.gg.generations.core.generationscore.common.world.level.block.*
-import generations.gg.generations.core.generationscore.common.world.level.block.shrines.PrisonBottleStemBlock
 import net.minecraft.data.PackOutput
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
@@ -362,8 +360,8 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         addTooltip(GenerationsItems.MAGMA_CRYSTAL, "§7HINT: Against your better judgment, you feel a sudden urge to throw this crystal into lava (right-click)")
 
         //Deoxys
-        addTooltip<MeteoriteItem>(GenerationsItems.METEORITE, "§7HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.")
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.METEORITE_SHARD, "§7HINT: Maybe if you collect enough you could craft something from out of this world.")
+        addTooltip(GenerationsItems.METEORITE, "§7HINT: Strange, otherworldly energy is coming from this item. Try enchanting it and charging it by defeating Pokemon of a relevant type.")
+        addTooltip(GenerationsItems.METEORITE_SHARD, "§7HINT: Maybe if you collect enough you could craft something from out of this world.")
 
         //
         //Celebi
@@ -374,33 +372,33 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
 
         //Legendary Titans
         var string = "§7HINT: Try collecting all 4 parts to repair this key."
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.CRUMBLED_ROCK_KEY_1, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.CRUMBLED_ROCK_KEY_2, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.CRUMBLED_ROCK_KEY_3, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.CRUMBLED_ROCK_KEY_4, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.SHATTERED_ICE_KEY_1, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.CRUMBLED_ROCK_KEY_2, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.CRUMBLED_ROCK_KEY_3, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.CRUMBLED_ROCK_KEY_4, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.RUSTY_IRON_KEY_1, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.RUSTY_IRON_KEY_2, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.RUSTY_IRON_KEY_3, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.RUSTY_IRON_KEY_4, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.DISCHARGED_ELEKI_KEY_1, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.DISCHARGED_ELEKI_KEY_2, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.DISCHARGED_ELEKI_KEY_3, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.DISCHARGED_ELEKI_KEY_4, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.FRAGMENTED_DRAGO_KEY_1, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.FRAGMENTED_DRAGO_KEY_2, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.FRAGMENTED_DRAGO_KEY_3, string)
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.FRAGMENTED_DRAGO_KEY_4, string)
+        addTooltip(GenerationsItems.CRUMBLED_ROCK_KEY_1, string)
+        addTooltip(GenerationsItems.CRUMBLED_ROCK_KEY_2, string)
+        addTooltip(GenerationsItems.CRUMBLED_ROCK_KEY_3, string)
+        addTooltip(GenerationsItems.CRUMBLED_ROCK_KEY_4, string)
+        addTooltip(GenerationsItems.SHATTERED_ICE_KEY_1, string)
+        addTooltip(GenerationsItems.CRUMBLED_ROCK_KEY_2, string)
+        addTooltip(GenerationsItems.CRUMBLED_ROCK_KEY_3, string)
+        addTooltip(GenerationsItems.CRUMBLED_ROCK_KEY_4, string)
+        addTooltip(GenerationsItems.RUSTY_IRON_KEY_1, string)
+        addTooltip(GenerationsItems.RUSTY_IRON_KEY_2, string)
+        addTooltip(GenerationsItems.RUSTY_IRON_KEY_3, string)
+        addTooltip(GenerationsItems.RUSTY_IRON_KEY_4, string)
+        addTooltip(GenerationsItems.DISCHARGED_ELEKI_KEY_1, string)
+        addTooltip(GenerationsItems.DISCHARGED_ELEKI_KEY_2, string)
+        addTooltip(GenerationsItems.DISCHARGED_ELEKI_KEY_3, string)
+        addTooltip(GenerationsItems.DISCHARGED_ELEKI_KEY_4, string)
+        addTooltip(GenerationsItems.FRAGMENTED_DRAGO_KEY_1, string)
+        addTooltip(GenerationsItems.FRAGMENTED_DRAGO_KEY_2, string)
+        addTooltip(GenerationsItems.FRAGMENTED_DRAGO_KEY_3, string)
+        addTooltip(GenerationsItems.FRAGMENTED_DRAGO_KEY_4, string)
         string =
             "§7HINT: This item appears to be related to one of the Regi’s. Find their shrine at a Snowpoint Temple."
-        addTooltip<RegiKeyItem>(GenerationsItems.ROCK_PEAK_KEY, string)
-        addTooltip<RegiKeyItem>(GenerationsItems.ICEBERG_KEY, string)
-        addTooltip<RegiKeyItem>(GenerationsItems.IRON_KEY, string)
-        addTooltip<RegiKeyItem>(GenerationsItems.ELEKI_KEY, string)
-        addTooltip<RegiKeyItem>(GenerationsItems.DRAGO_KEY, string)
+        addTooltip(GenerationsItems.ROCK_PEAK_KEY, string)
+        addTooltip(GenerationsItems.ICEBERG_KEY, string)
+        addTooltip(GenerationsItems.IRON_KEY, string)
+        addTooltip(GenerationsItems.ELEKI_KEY, string)
+        addTooltip(GenerationsItems.DRAGO_KEY, string)
         string = "§7HINT: Quiet vibrations of what sound like a faint screech are flowing into your ears. All you can make out are “Key” and “Spell”."
         addTooltip(GenerationsShrines.REGICE_SHRINE, string)
         addTooltip(GenerationsShrines.REGIROCK_SHRINE, string)
@@ -409,131 +407,116 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         addTooltip(GenerationsShrines.REGIELEKI_SHRINE, string)
 
         //Eon Duo
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.ENIGMA_FRAGMENT, "§7HINT: You appear to gain one for each new biome discovered. If you collect enough, maybe you can craft something.")
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.ENIGMA_SHARD, "§7HINT: You should explore more… Maybe with enough of these you could craft something related to the Eon Duo.")
-        addTooltip<EnigmaStoneItem>(GenerationsItems.ENIGMA_STONE, "§7HINT: You should try capturing or defeating Psychic or Dragon Type Pokemon")
+        addTooltip(GenerationsItems.ENIGMA_FRAGMENT, "§7HINT: You appear to gain one for each new biome discovered. If you collect enough, maybe you can craft something.")
+        addTooltip(GenerationsItems.ENIGMA_SHARD, "§7HINT: You should explore more… Maybe with enough of these you could craft something related to the Eon Duo.")
+        addTooltip(GenerationsItems.ENIGMA_STONE, "§7HINT: You should try capturing or defeating Psychic or Dragon Type Pokemon")
 
         //Weather Trio
         string =
             "§7HINT: This item appears to be related to the Weather Trio. Try Charging it by defeating Pokemon of a relevant type. Then, find a relevant shrine."
-        addTooltip<ElementalPostBattleUpdateItemImpl>(GenerationsItems.FADED_BLUE_ORB, string)
-        addTooltip<ElementalPostBattleUpdateItemImpl>(GenerationsItems.FADED_RED_ORB, string)
-        addTooltip<ElementalPostBattleUpdateItemImplImpl>(GenerationsItems.FADED_JADE_ORB, "§7HINT: This item appears to be related to the Weather Trio. Try charging it by defeating Pokemon of a relevant type. Then, go VERY high in altitude.")
-        addTooltip<JadeOrb>(GenerationsItems.JADE_ORB, "§7HINT: This item can teach Dragon Ascent to a certain Pokemon.")
+        addTooltip(GenerationsItems.FADED_BLUE_ORB, string)
+        addTooltip(GenerationsItems.FADED_RED_ORB, string)
+        addTooltip(GenerationsItems.FADED_JADE_ORB, "§7HINT: This item appears to be related to the Weather Trio. Try charging it by defeating Pokemon of a relevant type. Then, go VERY high in altitude.")
+        addTooltip(GenerationsItems.JADE_ORB, "§7HINT: This item can teach Dragon Ascent to a certain Pokemon.")
 
         //Lake Guardians
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.SHARD_OF_EMOTION, "§7HINT: Keep fishing. With enough, you could craft something." )
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.SHARD_OF_KNOWLEDGE, "§7HINT: Keep fishing. With enough, you could craft something.")
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.SHARD_OF_WILLPOWER, "§7HINT: Keep fishing. With enough, you could craft something.")
-        addTooltip<LakeCrystalItem>(GenerationsItems.CRYSTAL_OF_EMOTION, "§7HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.")
-        addTooltip<LakeCrystalItem>(GenerationsItems.CRYSTAL_OF_KNOWLEDGE, "§7HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.")
-        addTooltip<LakeCrystalItem>(GenerationsItems.CRYSTAL_OF_WILLPOWER, "§7HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.")
-        addTooltip<LakeCrystalItem>(GenerationsItems.CRYSTAL_OF_EMOTION, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.")
-        addTooltip<LakeCrystalItem>(GenerationsItems.CRYSTAL_OF_KNOWLEDGE, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.")
-        addTooltip<LakeCrystalItem>(GenerationsItems.CRYSTAL_OF_WILLPOWER, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.")
-        addTooltip<RubyRodItem>(GenerationsItems.RUBY_ROD, "§7HINT: Fish… Lake… Guardian…")
+        addTooltip(GenerationsItems.SHARD_OF_EMOTION, "§7HINT: Keep fishing. With enough, you could craft something." )
+        addTooltip(GenerationsItems.SHARD_OF_KNOWLEDGE, "§7HINT: Keep fishing. With enough, you could craft something.")
+        addTooltip(GenerationsItems.SHARD_OF_WILLPOWER, "§7HINT: Keep fishing. With enough, you could craft something.")
+        addTooltip(GenerationsItems.CRYSTAL_OF_EMOTION, "§7HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.")
+        addTooltip(GenerationsItems.CRYSTAL_OF_KNOWLEDGE, "§7HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.")
+        addTooltip(GenerationsItems.CRYSTAL_OF_WILLPOWER, "§7HINT: There’s even more to this strange item. Collect the other crystals and perhaps you could craft a special chain.")
+        addTooltip(GenerationsItems.CRYSTAL_OF_EMOTION, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.")
+        addTooltip(GenerationsItems.CRYSTAL_OF_KNOWLEDGE, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.")
+        addTooltip(GenerationsItems.CRYSTAL_OF_WILLPOWER, "enchanted", "§7HINT: Try charging it by defeating Pokemon of a relevant type.")
+        addTooltip(GenerationsItems.RUBY_ROD, "§7HINT: Fish… Lake… Guardian…")
         add("item.generations_core.ruby_rod.fate_defied", "The Ruby Rod shatters as it resists its altered fate")
         //Creation Trio
-        addTooltip<RedChainItem>(GenerationsItems.RED_CHAIN, "§7HINT: It doesn’t seem to be reacting to anything. The Crystals used may have used up all their energy. Try enchanting it to give it some power.")
-        addTooltip<RedChainItem>(GenerationsItems.RED_CHAIN, "enchanted", "“HINT: This item appears to be related to the Creation Trio, perhaps if you had their respected Orbs you could activate an altar.")
-        addTooltip<CreationTrioItem>(GenerationsItems.ADAMANT_ORB, "§7HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.")
-        addTooltip<CreationTrioItem>(GenerationsItems.LUSTROUS_ORB, "§7HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.")
-        addTooltip<CreationTrioItem>(GenerationsItems.GRISEOUS_ORB, "§7HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.")
+        addTooltip(GenerationsItems.RED_CHAIN, "§7HINT: It doesn’t seem to be reacting to anything. The Crystals used may have used up all their energy. Try enchanting it to give it some power.")
+        addTooltip(GenerationsItems.RED_CHAIN, "enchanted", "“HINT: This item appears to be related to the Creation Trio, perhaps if you had their respected Orbs you could activate an altar.")
+        addTooltip(GenerationsItems.ADAMANT_ORB, "§7HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.")
+        addTooltip(GenerationsItems.LUSTROUS_ORB, "§7HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.")
+        addTooltip(GenerationsItems.GRISEOUS_ORB, "§7HINT: This item appears to be related to the Creation Trio. If you crafted a Red Chain, you may be activate an Altar.")
 
         //Regigigas
-        addTooltip<RegiOrbItem>(GenerationsItems.REGICE_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
-        addTooltip<RegiOrbItem>(GenerationsItems.REGIROCK_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
-        addTooltip<RegiOrbItem>(GenerationsItems.REGISTEEL_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
-        addTooltip<RegiOrbItem>(GenerationsItems.REGIELEKI_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
-        addTooltip<RegiOrbItem>(GenerationsItems.REGIDRAGO_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
-        addTooltip<Block>(GenerationsItems.REGIGIGAS_SHRINE, "§7HINT: Images of all 5 Regi’s in the distant past begin to swarm into you. They’re playing. You feel an overwhelming sense of… nurturing? Regigigas clearly has no desire to be awakened unless you’ve awakened its friends.")
+        addTooltip(GenerationsItems.REGICE_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
+        addTooltip(GenerationsItems.REGIROCK_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
+        addTooltip(GenerationsItems.REGISTEEL_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
+        addTooltip(GenerationsItems.REGIELEKI_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
+        addTooltip(GenerationsItems.REGIDRAGO_ORB, "§7HINT: If you collect the other Orbs, Regigigas may be awoken")
+        addTooltip(GenerationsShrines.REGIGIGAS_SHRINE, "§7HINT: Images of all 5 Regi’s in the distant past begin to swarm into you. They’re playing. You feel an overwhelming sense of… nurturing? Regigigas clearly has no desire to be awakened unless you’ve awakened its friends.")
 
         //Lunar Duo
-        addTooltip<Block>(
-            GenerationsItems.LUNAR_SHRINE,
-            "§7HINT: It seems empty, strangely like the feeling of a heartache. A summoning ritual is to occur here. A deep malevolent cry is suddenly heard in your left ear- “Souls”. Almost immediately afterwards, a higher-pitched angelic-like cry is heard in your right- “Souls”. Creepy."
-        )
-        addTooltip<Block>(
-            GenerationsItems.LIGHT_CRYSTAL,
-            "§7HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the dark."
-        )
-        addTooltip<Block>(
-            GenerationsItems.DARK_CRYSTAL,
-            "§7HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the light."
-        )
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.LIGHT_SOUL, "§7HINT: Cresselia appears faintly, you need more.")
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.DARK_SOUL, "§7HINT:  Darkrai appears faintly, you need more.")
+        addTooltip(GenerationsShrines.LUNAR_SHRINE, "§7HINT: It seems empty, strangely like the feeling of a heartache. A summoning ritual is to occur here. A deep malevolent cry is suddenly heard in your left ear- “Souls”. Almost immediately afterwards, a higher-pitched angelic-like cry is heard in your right- “Souls”. Creepy.")
+        addTooltip(GenerationsShrines.LIGHT_CRYSTAL, "§7HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the dark.")
+        addTooltip(GenerationsShrines.DARK_CRYSTAL, "§7HINT: It’s guiding you to a pentagram. You’ll need 5 in total and prevail against the light.")
+        addTooltip(GenerationsItems.LIGHT_SOUL, "§7HINT: Cresselia appears faintly, you need more.")
+        addTooltip(GenerationsItems.DARK_SOUL, "§7HINT:  Darkrai appears faintly, you need more.")
 
         //Sea Guardians
-        addTooltip<LegendaryEggItem>(GenerationsItems.WONDER_EGG, "§7HINT: Oh?")
-        addTooltip<LegendaryEggItem>(GenerationsItems.PHIONE_EGG, "§7HINT: Oh?")
+        addTooltip(GenerationsItems.WONDER_EGG, "§7HINT: Oh?")
+        addTooltip(GenerationsItems.PHIONE_EGG, "§7HINT: Oh?")
 
         //Forces of Nature
-        addTooltip<ItemWithLangTooltipImpl>(
-            GenerationsItems.MIRROR,
-            "§7HINT: Instead of seeing your reflection, you see Gems. They’re pink, blue, and white and laid out in a frame."
-        )
-        addTooltip<FormChangingItem>(
-            GenerationsItems.REVEAL_GLASS,
-            "§7HINT: Rather than your reflection, it displays a small Abundant Shrine in the sky."
-        )
-        addTooltip<Block>(GenerationsItems.ABUNDANT_SHRINE, "§7HINT: You need something to reveal the secrets within.")
+        addTooltip(GenerationsItems.MIRROR, "§7HINT: Instead of seeing your reflection, you see Gems. They’re pink, blue, and white and laid out in a frame.")
+        addTooltip(GenerationsItems.REVEAL_GLASS, "§7HINT: Rather than your reflection, it displays a small Abundant Shrine in the sky.")
+        addTooltip(GenerationsShrines.ABUNDANT_SHRINE, "§7HINT: You need something to reveal the secrets within.")
 
         //Tao Trio
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.DRAGON_SOUL,
             "§7HINT: It screams. They seek their masters- the Tao Trio. An Orb is required to seal these souls. With a certain Gem, you could manipulate it towards a specific Tao."
         )
-        addTooltip<TaoTrioStoneItem>(GenerationsItems.LIGHT_STONE, "§7HINT: It isn’t reacting. More Dragons could do the trick.")
-        addTooltip<TaoTrioStoneItem>(GenerationsItems.DARK_STONE, "§7HINT: It isn’t reacting. More Dragons could do the trick.")
-        addTooltip<TaoTrioStoneItem>(GenerationsItems.DRAGON_STONE, "§7HINT: It isn’t reacting. More Dragons could do the trick.")
-        addTooltip<Block>(
-            GenerationsItems.TAO_TRIO_SHRINE,
+        addTooltip(GenerationsItems.LIGHT_STONE, "§7HINT: It isn’t reacting. More Dragons could do the trick.")
+        addTooltip(GenerationsItems.DARK_STONE, "§7HINT: It isn’t reacting. More Dragons could do the trick.")
+        addTooltip(GenerationsItems.DRAGON_STONE, "§7HINT: It isn’t reacting. More Dragons could do the trick.")
+        addTooltip(
+            GenerationsShrines.TAO_TRIO_SHRINE,
             "§7HINT: It’s radiating a lifeless aura. It’s dead silent but you begin to see battle cries?  Even stranger, you begin to taste powerful blasts of soundwaves– attacks from the distant past. A fierce battle took place long ago. Suddenly, you know what needs to be done– collect Dragon Souls."
         )
 
         //Meloetta
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.SHATTERED_RELIC_SONG_1,
             "§7HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces."
         )
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.SHATTERED_RELIC_SONG_2,
             "§7HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces."
         )
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.SHATTERED_RELIC_SONG_3,
             "§7HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces."
         )
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.SHATTERED_RELIC_SONG_4,
             "§7HINT: This appears to be a piece of a music disc. It might be repairable if you obtain all the pieces."
         )
-        addTooltip<RelicSongItem>(GenerationsItems.RELIC_SONG, "§7HINT: A special music box may play this melody differently.")
-        addTooltip<RelicSongItem>(GenerationsItems.INERT_RELIC_SONG, "Relic Song - Shota Kageyama.")
+        addTooltip(GenerationsItems.RELIC_SONG, "§7HINT: A special music box may play this melody differently.")
+        addTooltip(GenerationsItems.INERT_RELIC_SONG, "Relic Song - Shota Kageyama.")
         add("item.generations_core.inert_relic_song.desc", "Relic Song - Shota Kageyama")
 
         this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot")
-        addTooltip<Block>(
-            MELOETTA_MUSIC_BOX,
+        addTooltip(
+            GenerationsShrines.MELOETTA_MUSIC_BOX,
             "§7HINT: You hear a wonderful melody from within. You need to hear more.”"
         )
         //Zygarde
-        addTooltip<ZygardeCubeItem>(GenerationsItems.ZYGARDE_CUBE, "cell_add", "Zygarde Cell collected!")
-        addTooltip<ZygardeCubeItem>(
+        addTooltip(GenerationsItems.ZYGARDE_CUBE, "cell_add", "Zygarde Cell collected!")
+        addTooltip(
             GenerationsItems.ZYGARDE_CUBE,
             "cell_overflow",
             "Due to Zygarde Cube being full, the zygarde cell atomizes."
         )
-        addTooltip<ZygardeCubeItem>(GenerationsItems.ZYGARDE_CUBE, "cell_full", "The Zygarde Cube is full!")
-        addTooltip<ZygardeCubeItem>(GenerationsItems.ZYGARDE_CUBE, "lore1", "A strange cube capable of storing up to 100 Zygarde Cells,")
-        addTooltip<ZygardeCubeItem>(
+        addTooltip(GenerationsItems.ZYGARDE_CUBE, "cell_full", "The Zygarde Cube is full!")
+        addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore1", "A strange cube capable of storing up to 100 Zygarde Cells,")
+        addTooltip(
             GenerationsItems.ZYGARDE_CUBE,
             "lore2",
             "as well as fusing them together to reconstruct the legendary Zygarde."
         )
-        addTooltip<ZygardeCubeItem>(GenerationsItems.ZYGARDE_CUBE, "lore3", "Collect Zygarde Cells to summon the balance.")
-        addTooltip<ZygardeCubeItem>(GenerationsItems.ZYGARDE_CUBE, "lore4", "Cells collected: %s/%s")
+        addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore3", "Collect Zygarde Cells to summon the balance.")
+        addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore4", "Cells collected: %s/%s")
 
         addEntityType(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells")
         add("gui.zygarde_cube", "Zygarde Cube")
@@ -574,78 +557,78 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         )
 
         //Hoopa
-        addTooltip<PrisonBottleStemBlock>(
-            GenerationsItems.PRISON_BOTTLE_STEM,
+        addTooltip(
+            GenerationsShrines.PRISON_BOTTLE_STEM,
             "§7HINT: You hear a voice within, guiding you. \"Free me! Make my rings with Gold Blocks\"."
         )
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.HOOPA_RING,
             "§7HINT: If you collect 6 and insert them on a Bottle Stem, you could create a Prison Bottle. A Bottle Stem may be created with Rubies, White Glazed Terracotta, and an Orb."
         )
         //Guardian Deities
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.SPARKLING_SHARD,
             "§7HINT: A protective presence looms over this shard. Perhaps if you collect more you’ll get a stronger feeling of what to do."
         )
-        addTooltip<ElementalPostBattleUpdateItemImpl>(
+        addTooltip(
             GenerationsItems.SPARKLING_STONE,
             "§7HINT: Capturing Pokemon of a specific type to care for seems to cause a reaction."
         )
 
         //Magearna
-        addTooltip<SingleElmentPostUpdatingItem>(
+        addTooltip(
             GenerationsItems.SOUL_HEART,
             "§7HINT: This item appears to hold the soul of a mysterious Pokemon. You could try creating a body for it in an RKS Machine."
         )
 
         //Melmetal
-        addTooltip<MeltanBox>(
+        addTooltip(
             GenerationsItems.MELTAN_BOX,
             "§7HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course."
         )
-        addTooltip<MeltanBox>(
+        addTooltip(
             GenerationsItems.MELTAN_BOX_CHARGED,
             "§7HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course."
         )
 
         //Hero Duo
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.RUSTY_FRAGMENT,
             "§7HINT: Collect more Rusty Fragments from Aegislash to assist in crafting a Sword or Shield"
         )
-        addTooltip<ElementalPostBattleUpdateItemImplImpl>(GenerationsItems.RUSTY_SHIELD, "§7HINT: Steel Type Pokemon")
-        addTooltip<ElementalPostBattleUpdateItemImplImpl>(GenerationsItems.RUSTY_SWORD, "§7HINT: Steel Type Pokemon")
+        addTooltip(GenerationsItems.RUSTY_SHIELD, "§7HINT: Steel Type Pokemon")
+        addTooltip(GenerationsItems.RUSTY_SWORD, "§7HINT: Steel Type Pokemon")
 
         //Kubfu
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.SCROLL_PAGE,
             "§7HINT: This item is given to masters of the Martial Arts. Gather more pages to complete the scroll and prove your worth."
         )
-        addTooltip<SecretArmorScroll>(
+        addTooltip(
             GenerationsItems.SECRET_ARMOR_SCROLL,
             "§7HINT: A Legendary Pokemon has taken notice to you- continue to prove your worth by defeating more Fighting type Pokemon"
         )
 
         //Steed Duo
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.WHITE_MANE_HAIR,
             "§7HINT: This majestic steed requires a generous offering of carrots if you wish to lay your eyes upon them."
         )
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(
             GenerationsItems.BLACK_MANE_HAIR,
             "§7HINT: This majestic steed requires a generous offering of carrots if you wish to lay your eyes upon them."
         )
 
         //Mew two
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.MEW_DNA_FIBER, "§7HINT: DNA may be manipulated in an RKS Machine.")
-        addTooltip<ItemWithLangTooltipImpl>(
+        addTooltip(GenerationsItems.MEW_DNA_FIBER, "§7HINT: DNA may be manipulated in an RKS Machine.")
+        addTooltip(
             GenerationsItems.MEW_FOSSIL,
             "§7HINT: This may contain valuable DNA traces to recreate something in an RKS Machine."
         )
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.SACRED_ASH, "§7HINT: A sacred item capable of bringing back the dead.")
+        addTooltip(GenerationsItems.SACRED_ASH, "§7HINT: A sacred item capable of bringing back the dead.")
 
         //Legendary Beasts
-        addTooltip<ItemWithLangTooltipImpl>(GenerationsItems.SACRED_ASH, "§HINT: A sacred item capable of bringing back the dead.")
+        addTooltip(GenerationsItems.SACRED_ASH, "§HINT: A sacred item capable of bringing back the dead.")
 
         add("generations_core.special.shadow.already", "%s heart is already closed.")
         add("generations_core.special.shadow.success", "%s heart has been closed.")
@@ -768,11 +751,11 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick")
     }
 
-    fun <T : ItemLike?> addTooltip(registrySupplier: RegistrySupplier<T>, entry: String) {
+    fun addTooltip(registrySupplier: RegistrySupplier<out ItemLike>, entry: String) {
         addTooltip(registrySupplier, null, entry)
     }
 
-    fun <T : ItemLike?> addTooltip(registrySupplier: RegistrySupplier<T>, sub: String?, entry: String) {
+    fun addTooltip(registrySupplier: RegistrySupplier<out ItemLike>, sub: String?, entry: String) {
         registrySupplier.get()?.asItem()?.instanceOrNull<LangTooltip>()?.run {
             add(this.tooltipId() + (if (sub != null) ".$sub" else ""), entry)
 

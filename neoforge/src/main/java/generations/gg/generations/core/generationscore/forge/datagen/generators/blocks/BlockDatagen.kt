@@ -1,10 +1,9 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.blocks
 
 import dev.architectury.registry.registries.RegistrySupplier
-import generations.gg.generations.core.generationscore.common.GenerationsCore.*
+import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet
@@ -12,35 +11,37 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.LunarShrineBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.PrisonBottleStemBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.BoxBlock
-import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies
 import net.minecraft.core.Direction
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.BlockFamily
 import net.minecraft.data.DataProvider
 import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockState
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel
+import net.neoforged.neoforge.client.model.generators.ModelFile
+import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile
+import net.neoforged.neoforge.client.model.generators.ModelProvider
+import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder
 import java.util.*
 import java.util.function.Consumer
 
 class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockStateProvider.Proxied(provider) {
+    
     override fun registerStatesAndModels() {
         registerOreBlocks()
-        GenerationsBlockFamilies.getAllFamilies().filter { obj: BlockFamily -> obj.shouldGenerateModel() }
-            .forEach { family: BlockFamily -> this.registerBlockFamily(family) }
-        GenerationsBlockSet.blockSets.forEach(
-            Consumer { blockSet: GenerationsBlockSet ->
-                val family = blockSet.blockFamily
-                if (family.shouldGenerateModel()) registerBlockFamily(family)
-            }
-        )
-        GenerationsFullBlockSet.fullBlockSets.forEach(
-            Consumer { blockSet: GenerationsFullBlockSet ->
-                val family = blockSet.blockFamily
-                if (family.shouldGenerateModel()) registerBlockFamily(family)
-            }
-        )
+        GenerationsBlockFamilies.allGenerationsFamilies
+            .filter(BlockFamily::shouldGenerateModel)
+            .forEach(this::registerBlockFamily)
+        (GenerationsBlockSet.blockSets + GenerationsFullBlockSet.fullBlockSets)
+            .asSequence()
+            .mapNotNull(GenerationsBlockSet::blockFamily)
+            .filter(BlockFamily::shouldGenerateModel)
+            .forEach(::registerBlockFamily)
+
         registerWoodPallet(
             GenerationsWood.ULTRA_DARK_LOG,
             GenerationsWood.STRIPPED_ULTRA_DARK_LOG,
@@ -501,24 +502,24 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.WEST)
             .modelForState().modelFile(closed).rotationY(270).addModel()
 
-        itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(box.get().asItem())).toString())
+        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(box.get().asItem())).toString())
             .parent(UncheckedModelFile("item/generated"))
             .texture("layer0", key(box.get()).withPrefix("item/blocks/utility_blocks/"))
 
         dropSelfList.add(box.get())
     }
 
-    private fun <V : DyeableBlock<T, V>, T : ModelProvidingBlockEntity?> registerDyeGroup(
+    private fun registerDyeGroup(
         group: DyedGroup,
         dir: String
     ) {
-        group.block.values.stream().map { obj: RegistrySupplier<V> -> obj.get() }.forEach { block: V ->
+        group.block.values.asSequence().map { it.value() }.forEach { block ->
             registerBlockItemParticle(block, dir, true)
-            dropSelfList.add(block as Block)
+            dropSelfList.add(block)
         }
     }
 
-    private fun <T : Block?> registerNoModel(block: RegistrySupplier<T>) {
+    private fun <T : Block> registerNoModel(block: RegistrySupplier<T>) {
         this.simpleBlock(block.get(), *ConfiguredModel.builder().modelFile(models().getBuilder(block.id.path)).build())
     }
 
@@ -641,7 +642,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         }
     }
 
-    private fun cubeColumn(cutSandstone: RegistrySupplier<Block>?, top: ResourceLocation) {
+    private fun cubeColumn(cutSandstone: RegistrySupplier<Block>, top: ResourceLocation) {
         if (cutSandstone != null) {
             val cutBlock =
                 models().cubeColumn(cutSandstone.id.path, id("block/" + cutSandstone.id.path), top)
@@ -650,25 +651,25 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         }
     }
 
-    private fun registerStairs(stairs: StairBlock?, texturedBlock: Block) {
+    private fun registerStairs(stairs: StairBlock, texturedBlock: Block) {
         val texture = ModelLocationUtils.getModelLocation(texturedBlock)
         stairsBlock(stairs, texture)
         simpleBlockItem(stairs, itemModels().stairs("block/" + key(stairs).path, texture, texture, texture))
     }
 
-    private fun registerSlab(slab: SlabBlock?, texturedBlock: Block) {
+    private fun registerSlab(slab: SlabBlock, texturedBlock: Block) {
         val texture = ModelLocationUtils.getModelLocation(texturedBlock)
         slabBlock(slab, texture, texture)
         simpleBlockItem(slab, itemModels().slab("block/" + key(slab).path, texture, texture, texture))
     }
 
-    private fun registerWall(wall: WallBlock?, texturedBlock: Block) {
+    private fun registerWall(wall: WallBlock, texturedBlock: Block) {
         val texture = ModelLocationUtils.getModelLocation(texturedBlock)
         wallBlock(wall, texture)
         simpleBlockItem(wall, itemModels().wallInventory("block/" + key(wall).path, texture))
     }
 
-    private fun registerFence(fence: FenceBlock, block: Block?) {
+    private fun registerFence(fence: FenceBlock, block: Block) {
         val texture = if (block == null) ModelLocationUtils.getModelLocation(fence)
         else ModelLocationUtils.getModelLocation(block)
 
@@ -676,7 +677,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         simpleBlockItem(fence, itemModels().fenceInventory("block/" + key(fence).path, texture))
     }
 
-    private fun registerGate(gate: FenceGateBlock?, fence: FenceBlock?, block: Block?) {
+    private fun registerGate(gate: FenceGateBlock, fence: FenceBlock?, block: Block?) {
         val texture: ResourceLocation
         if (block == null) {
             val fenceId = key(fence)
@@ -691,28 +692,28 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         fenceGateBlock(gate, texture)
     }
 
-    private fun registerDoor(door: DoorBlock?) {
+    private fun registerDoor(door: DoorBlock) {
         val blockId = key(door)
         doorBlockWithRenderType(
             door,
-            ResourceLocation(blockId.namespace, "block/door/" + blockId.path + "_bottom"),
-            ResourceLocation(blockId.namespace, "block/door/" + blockId.path + "_top"),
+            ResourceLocation.fromNamespaceAndPath(blockId.namespace, "block/door/" + blockId.path + "_bottom"),
+            ResourceLocation.fromNamespaceAndPath(blockId.namespace, "block/door/" + blockId.path + "_top"),
             "cutout"
         )
     }
 
-    private fun registerPressurePlate(pressurePlate: PressurePlateBlock?, texturedBlock: Block) {
+    private fun registerPressurePlate(pressurePlate: PressurePlateBlock, texturedBlock: Block) {
         val texture = ModelLocationUtils.getModelLocation(texturedBlock)
         pressurePlateBlock(pressurePlate, texture)
         itemModels().pressurePlate(key(pressurePlate).path, texture)
     }
 
-    private fun registerButton(button: Block?, texturedBlock: Block) {
+    private fun registerButton(button: Block, texturedBlock: Block) {
         val buttonId = key(button)
         val textureBlockId = key(texturedBlock)
 
-        val texture = ResourceLocation(textureBlockId.namespace, "block/" + textureBlockId.path)
-        buttonBlock(button as ButtonBlock?, texture)
+        val texture = ResourceLocation.fromNamespaceAndPath(textureBlockId.namespace, "block/" + textureBlockId.path)
+        buttonBlock(button as ButtonBlock, texture)
         itemModels().buttonInventory(buttonId.path, texture)
     }
 
@@ -749,7 +750,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
     private fun registerFlabebeFlower(crossBlock: RegistrySupplier<FlabebeFlowerBlock>) {
         val name = key(crossBlock.get())
-        val location = ResourceLocation(name.namespace, ModelProvider.BLOCK_FOLDER + "/flowers/" + name.path)
+        val location = ResourceLocation.fromNamespaceAndPath(name.namespace, ModelProvider.BLOCK_FOLDER + "/flowers/" + name.path)
 
         getVariantBuilder(crossBlock.get()).forAllStates { state: BlockState? ->
             ConfiguredModel.builder()
@@ -769,7 +770,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         simpleBlockItem(log.get(), logBlock)
     }
 
-    private fun registerBlockItem(block: RegistrySupplier<Block>) {
+    private fun registerBlockItem(block: RegistrySupplier<out Block>) {
         registerBlockItem(block.get())
         dropSelfList.add(block.get())
     }
@@ -781,7 +782,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
     private fun registerPillar(block: RegistrySupplier<out Block>) {
         val texture = id("block/${block.id.path}")
-        val item = id("item/blocks/pillars/" + ForgeRegistries.BLOCKS.getKey(block.get())!!.path)
+        val item = id("item/blocks/pillars/" + BuiltInRegistries.BLOCK.getKey(block.get())!!.path)
 
         val model = models().withExistingParent(block.id.path, id("block/pillar"))
             .texture("texture", texture)
@@ -831,7 +832,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             }
         }
 
-        itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.get().asItem())).toString())
+        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.get().asItem())).toString())
             .parent(UncheckedModelFile("item/generated"))
             .texture("layer0", item)
 
@@ -882,30 +883,30 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         try {
             simpleBlock(block, models().sign(blockId.path, textureId))
             if (shouldGenerateItems) itemModels().getBuilder(
-                Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()
+                Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.asItem())).toString()
             ).parent(UncheckedModelFile("item/generated"))
                 .texture("layer0", textureId)
         } catch (ignored: Exception) {
             DataProvider.LOGGER.error("Block: $name -> $textureId")
             simpleBlock(block, models().sign(blockId.path, id("item/placeholder")))
             if (shouldGenerateItems) itemModels().getBuilder(
-                Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.asItem())).toString()
+                Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.asItem())).toString()
             ).parent(UncheckedModelFile("item/generated"))
                 .texture("layer0", id("item/placeholder"))
         }
     }
 
     private fun registerPokeDoll(block: RegistrySupplier<Block>) {
-        val blockId = checkNotNull(ForgeRegistries.BLOCKS.getKey(block.get()))
-        val textureId = ResourceLocation(blockId.namespace, "item/dolls/" + blockId.path.replace("shiny_", "shiny/"))
+        val blockId = checkNotNull(BuiltInRegistries.BLOCK.getKey(block.get()))
+        val textureId = ResourceLocation.fromNamespaceAndPath(blockId.namespace, "item/dolls/" + blockId.path.replace("shiny_", "shiny/"))
 
         simpleBlock(
             block.get(),
-            models().sign(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get()))!!.path, textureId)
+            models().sign(Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block.get()))!!.path, textureId)
         )
 
         val key = Objects.requireNonNull(
-            ForgeRegistries.BLOCKS.getKey(block.get()),
+            BuiltInRegistries.BLOCK.getKey(block.get()),
             "Tried to create json model for unregistered Item."
         )!!
         var texPath = id("item/dolls/" + key.path)
@@ -913,7 +914,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             id("item/dolls/shiny/" + key.path.replace("shiny_", ""))
 
 
-        itemModels().getBuilder(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.get().asItem())).toString())
+        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.get().asItem())).toString())
             .parent(UncheckedModelFile("item/generated"))
             .texture("layer0", texPath)
     }
@@ -968,7 +969,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         )
     }
 
-    private fun registerGlassBlock(block: RegistrySupplier<GlassBlock>) {
+    private fun registerGlassBlock(block: RegistrySupplier<out TransparentBlock>) {
         getVariantBuilder(block.get()).forAllStates { state: BlockState? ->
             ConfiguredModel.builder()
                 .modelFile(
@@ -1005,7 +1006,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
     }
 
 
-    private fun registerPumpkin(pumpkin: RegistrySupplier<PumpkinBlock>) {
+    private fun registerPumpkin(pumpkin: RegistrySupplier<out Block>) {
         val pumpkinModel = models().withExistingParent(pumpkin.id.toString(), mcLoc("block/pumpkin"))
             .texture("side", id("block/" + pumpkin.id.path + "_side"))
             .texture("end", id("block/" + pumpkin.id.path + "_end"))
@@ -1034,7 +1035,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
     private fun registerCarvedPumpkin(
         carvedPumpkin: RegistrySupplier<out Block>,
-        pumpkin: RegistrySupplier<PumpkinBlock>
+        pumpkin: RegistrySupplier<out CarvedPumpkinBlock>
     ) {
         val pumpkinModel = models().withExistingParent(carvedPumpkin.id.toString(), mcLoc("block/carved_pumpkin"))
             .texture("side", id("block/" + pumpkin.id.path + "_side"))
@@ -1116,7 +1117,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
     private fun proccessVariant(variant: BlockFamily.Variant, family: BlockFamily) {
         val original = family.baseBlock
-        val variantTarget = family.variants[variant]
+        val variantTarget = family.variants[variant] ?: return
         when (variant) {
             BlockFamily.Variant.BUTTON -> registerButton(variantTarget, original)
             BlockFamily.Variant.CHISELED, BlockFamily.Variant.CRACKED, BlockFamily.Variant.CUT -> simpleBlockWithItem(
@@ -1124,10 +1125,10 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
                 cubeAll(variantTarget)
             )
 
-            BlockFamily.Variant.DOOR -> registerDoor(variantTarget as DoorBlock?)
-            BlockFamily.Variant.FENCE -> registerFence((variantTarget as FenceBlock?)!!, original)
+            BlockFamily.Variant.DOOR -> registerDoor(variantTarget as DoorBlock)
+            BlockFamily.Variant.FENCE -> registerFence(variantTarget as FenceBlock, original)
             BlockFamily.Variant.FENCE_GATE -> registerGate(
-                variantTarget as FenceGateBlock?,
+                variantTarget as FenceGateBlock,
                 family[BlockFamily.Variant.FENCE] as FenceBlock,
                 original
             )
@@ -1138,11 +1139,11 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
                 original
             )
 
-            BlockFamily.Variant.SLAB -> registerSlab(variantTarget as SlabBlock?, original)
-            BlockFamily.Variant.STAIRS -> registerStairs(variantTarget as StairBlock?, original)
-            BlockFamily.Variant.PRESSURE_PLATE -> registerPressurePlate(variantTarget as PressurePlateBlock?, original)
-            BlockFamily.Variant.TRAPDOOR -> registerTrapDoor(variantTarget as TrapDoorBlock?, original)
-            BlockFamily.Variant.WALL -> registerWall(variantTarget as WallBlock?, original)
+            BlockFamily.Variant.SLAB -> registerSlab(variantTarget as SlabBlock, original)
+            BlockFamily.Variant.STAIRS -> registerStairs(variantTarget as StairBlock, original)
+            BlockFamily.Variant.PRESSURE_PLATE -> registerPressurePlate(variantTarget as PressurePlateBlock, original)
+            BlockFamily.Variant.TRAPDOOR -> registerTrapDoor(variantTarget as TrapDoorBlock, original)
+            BlockFamily.Variant.WALL -> registerWall(variantTarget as WallBlock, original)
             else -> {}
         }
     }
@@ -1157,8 +1158,8 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         pressurePlate: RegistrySupplier<PressurePlateBlock>,
         door: RegistrySupplier<DoorBlock>,
         trapDoor: RegistrySupplier<TrapDoorBlock>,
-        wood: RegistrySupplier<Block>,
-        StrippedWood: RegistrySupplier<Block>,
+        wood: RegistrySupplier<out Block>,
+        StrippedWood: RegistrySupplier<out Block>,
         fence: RegistrySupplier<FenceBlock>,
         gate: RegistrySupplier<FenceGateBlock>,
         sign: RegistrySupplier<StandingSignBlock>,

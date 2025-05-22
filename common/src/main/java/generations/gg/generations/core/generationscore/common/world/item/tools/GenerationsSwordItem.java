@@ -19,7 +19,7 @@ public class GenerationsSwordItem extends SwordItem implements ToolEffectHolder<
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsSwordItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, (int) attackDamage, attackSpeed, properties);
+        super(tier, /*(int) attackDamage, attackSpeed,*/ properties); //TODO: Readd these custom values if needed
     }
 
     public GenerationsSwordItem addToolEffects(ToolEffect... toolEffect) {

@@ -14,6 +14,7 @@ import net.minecraft.world.item.ArmorMaterial
 import net.minecraft.world.item.ArmorMaterials
 import net.minecraft.world.item.Item
 import java.util.stream.Stream
+import kotlin.streams.asSequence
 
 internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricModelProvider(fabricDataOutput) {
     override fun generateBlockStateModels(blockModelGenerators: BlockModelGenerators) {
@@ -29,7 +30,7 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
                 GenerationsArmor.SUN_STONE,
                 GenerationsArmor.MOON_STONE,
                 GenerationsArmor.THUNDER_STONE,
-                GenerationsArmor.WATER_STONE).flatMap { it }.map(RegistrySupplier<Item>::get)
+                GenerationsArmor.WATER_STONE).flatMap { it.stream().asSequence() }.map({ it.get() })
             .map { obj -> ArmorItem::class.java.cast(obj) }
             .forEach({ itemModelGenerators.generateGenerationsArmorTrims(it) })
     }
@@ -60,11 +61,11 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
         }
 
         for (trimModelData in GENERATED_TRIM_MODELS) {
-            val trimName = trimModelData.name(armorItem.material)
+            val trimName = trimModelData.name(armorItem.material.value())
             val trimmedModel = getItemModelForTrimMaterial(resourceLocation, trimName)
 
             // Modify the texture reference for trims too
-            val trimmedResourceLocation = ResourceLocation("trims/items/${armorItem.type.getName()}_trim_$trimName")
+            val trimmedResourceLocation = ResourceLocation.withDefaultNamespace("trims/items/${armorItem.type.getName()}_trim_$trimName")
 
             if (armorItem.material === ArmorMaterials.LEATHER) {
                 generateLayeredItem(trimmedModel, baseTexture, overlayTexture, trimmedResourceLocation)
@@ -76,13 +77,13 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
 
     val GENERATED_TRIM_MODELS = listOf(
         TrimModelData("quartz", 0.1F, mapOf()),
-        TrimModelData("iron", 0.2F, mapOf(ArmorMaterials.IRON to "iron_darker")),
-        TrimModelData("netherite", 0.3F, mapOf(ArmorMaterials.NETHERITE to "netherite_darker")),
+        TrimModelData("iron", 0.2F, mapOf(ArmorMaterials.IRON.value() to "iron_darker")),
+        TrimModelData("netherite", 0.3F, mapOf(ArmorMaterials.NETHERITE.value() to "netherite_darker")),
         TrimModelData("redstone", 0.4F, mapOf()),
         TrimModelData("copper", 0.5F, mapOf()),
-        TrimModelData("gold", 0.6F, mapOf(ArmorMaterials.GOLD to "gold_darker")),
+        TrimModelData("gold", 0.6F, mapOf(ArmorMaterials.GOLD.value() to "gold_darker")),
         TrimModelData("emerald", 0.7F, mapOf()),
-        TrimModelData("diamond", 0.8F, mapOf(ArmorMaterials.DIAMOND to "diamond_darker")),
+        TrimModelData("diamond", 0.8F, mapOf(ArmorMaterials.DIAMOND.value() to "diamond_darker")),
         TrimModelData("lapis", 0.9F, mapOf()),
         TrimModelData("amethyst", 1.0F, mapOf())
     )

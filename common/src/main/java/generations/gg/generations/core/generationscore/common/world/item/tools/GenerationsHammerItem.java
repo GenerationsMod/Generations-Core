@@ -20,7 +20,7 @@ public class GenerationsHammerItem extends DiggerItem implements ToolEffectHolde
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsHammerItem(Tier tier, float attackDamageBonus, float attackSpeed, Properties properties) {
-        super((int) attackDamageBonus, attackSpeed, tier, BlockTags.ANVIL, properties);
+        super(/*(int) attackDamageBonus, attackSpeed,*/ tier, BlockTags.ANVIL, properties); //TODO: Readd values if needed
     }
 
     public GenerationsHammerItem addToolEffects(ToolEffect... toolEffect) {

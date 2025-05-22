@@ -14,24 +14,24 @@ public class AnvilEvents {
     });
 
     public interface AnvilChange {
-        boolean change(Result result, @NotNull ItemStack left, @NotNull ItemStack right, String name, int baseCost, Player player);
+        boolean change(Result result, @NotNull ItemStack left, @NotNull ItemStack right, String name, long baseCost, Player player);
 
         class Result {
             private ItemStack output;
-            private int cost;
+            private long cost;
             private int materialCost;
 
-            public Result(int cost) {
+            public Result(long cost) {
                 this.output = ItemStack.EMPTY;
                 this.cost = cost;
                 this.materialCost = 0;
             }
 
-            public int getCost() {
+            public long getCost() {
                 return cost;
             }
 
-            public void setCost(int cost) {
+            public void setCost(long cost) {
                 this.cost = cost;
             }
 

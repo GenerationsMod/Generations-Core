@@ -31,8 +31,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.function.Consumer
 
-class LunarShrineBlock(properties: Properties) :
-    ShrineBlock<LunarShrineBlockEntity>(properties = properties, blockEntityFunction = GenerationsBlockEntities.LUNAR_SHRINE) {
+class LunarShrineBlock(properties: Properties) : ShrineBlock<LunarShrineBlockEntity>(properties = properties, blockEntityFunction = GenerationsBlockEntities.LUNAR_SHRINE) {
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder)

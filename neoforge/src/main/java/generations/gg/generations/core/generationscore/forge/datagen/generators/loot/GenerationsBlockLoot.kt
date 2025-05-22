@@ -106,8 +106,8 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         })
 
         add(
-            GenerationsBlocks.CHARGE_STONE_SET.baseBlock,
-            createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock)
+            GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(),
+            createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())
         )
 
         dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get())
@@ -120,8 +120,8 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         addOreSet(GenerationsOres.SAPPHIRE_ORE_SET)
         addOreSet(GenerationsOres.SILICON_ORE_SET)
 
-        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.ore)
-        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.deepslateOre)
+        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getOre())
+        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre())
 
         //dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
         addAll(
@@ -338,35 +338,35 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
 
     private fun addOreSetWithRandomAmountDrops(oreSet: GenerationsOreSet, drop: Item) {
         add(
-            oreSet.ore,
+            oreSet.getOre(),
             createSilkTouchDispatchTable(
-                oreSet.ore,
+                oreSet.getOre(),
                 applyExplosionDecay(
-                    oreSet.ore,
+                    oreSet.getOre(),
                     LootItem.lootTableItem(drop)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f)))
-                        .apply(ApplyBonusCount.addOreBonusCount(fortune))
+                        .apply(ApplyBonusCount.addOreBonusCount(fortune!!))
                 )
             )
         )
         add(
-            oreSet.deepslateOre,
+            oreSet.getDeepslateOre(),
             createSilkTouchDispatchTable(
-                oreSet.deepslateOre,
+                oreSet.getDeepslateOre(),
                 applyExplosionDecay(
-                    oreSet.deepslateOre,
+                    oreSet.getDeepslateOre(),
                     LootItem.lootTableItem(drop)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f)))
-                        .apply(ApplyBonusCount.addOreBonusCount(fortune))
+                        .apply(ApplyBonusCount.addOreBonusCount(fortune!!))
                 )
             )
         )
     }
 
     private fun addOreSet(oreSet: GenerationsOreSet) {
-        if (oreSet.drop == null) return
-        add(oreSet.ore, createOreDrop(oreSet.ore, oreSet.drop))
-        add(oreSet.deepslateOre, createOreDrop(oreSet.deepslateOre, oreSet.drop))
+        if (oreSet.getDrop() == null) return
+        add(oreSet.getOre(), createOreDrop(oreSet.getOre(), oreSet.getDrop()!!))
+        add(oreSet.getDeepslateOre(), createOreDrop(oreSet.getDeepslateOre(), oreSet.getDrop()!!))
     }
 
     private fun addOreSet(ore: Block, drop: Item) {
@@ -394,7 +394,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
     private fun dropSelfStoneCobble(block: Block) {
         if (block === GenerationsBlocks.VOLCANIC_STONE.get()) add(
             block,
-            createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock)
+            createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock())
         )
         else dropSelfUpdated(block)
     }

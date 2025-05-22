@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class NpcPathTool extends Item {
+public class NpcPathTool extends Item { //TODO: Check if this is even nedded
     public NpcPathTool(Properties arg) {
         super(arg);
     }
@@ -80,68 +80,68 @@ public class NpcPathTool extends Item {
     }
 
     public static List<BlockPos> getPath(ItemStack stack) {
-        var tag = stack.getOrCreateTag();
-        if (tag.contains("path")) {
-            return Arrays.stream(tag.getLongArray("path")).mapToObj(BlockPos::of).toList();
-        }
+//        var tag = stack.getOrCreateTag();
+//        if (tag.contains("path")) {
+//            return Arrays.stream(tag.getLongArray("path")).mapToObj(BlockPos::of).toList();
+//        }
         return Collections.emptyList();
     }
 
     public static void setPath(ItemStack stack, @Nullable List<BlockPos> path) {
-        var tag = stack.getOrCreateTag();
-        if (path == null || path.isEmpty()) {
-            tag.remove("path");
-        } else {
-            tag.putLongArray("path", path.stream().mapToLong(BlockPos::asLong).toArray());
-        }
+//        var tag = stack.getOrCreateTag();
+//        if (path == null || path.isEmpty()) {
+//            tag.remove("path");
+//        } else {
+//            tag.putLongArray("path", path.stream().mapToLong(BlockPos::asLong).toArray());
+//        }
     }
 
     public static void addToPath(ItemStack stack, BlockPos pos) {
-        var tag = stack.getOrCreateTag();
-        if (!tag.contains("path") || tag.getLongArray("path").length == 0) {
-            tag.putLongArray("path", new long[] { pos.asLong() });
-            return;
-        }
-
-        var currentPath = tag.getLongArray("path");
-        var newPath = new long[currentPath.length + 1];
-        System.arraycopy(currentPath, 0, newPath, 0, currentPath.length);
-        newPath[currentPath.length] = pos.asLong();
-        tag.putLongArray("path", newPath);
+//        var tag = stack.getOrCreateTag();
+//        if (!tag.contains("path") || tag.getLongArray("path").length == 0) {
+//            tag.putLongArray("path", new long[] { pos.asLong() });
+//            return;
+//        }
+//
+//        var currentPath = tag.getLongArray("path");
+//        var newPath = new long[currentPath.length + 1];
+//        System.arraycopy(currentPath, 0, newPath, 0, currentPath.length);
+//        newPath[currentPath.length] = pos.asLong();
+//        tag.putLongArray("path", newPath);
     }
 
     public static void removeFromPath(ItemStack stack, BlockPos pos) {
-        var tag = stack.getOrCreateTag();
-        if (!tag.contains("path"))
-            return;
-
-        var currentPath = tag.getLongArray("path");
-        var blockpos = pos.asLong();
-        int i = -1;
-        for (int j = currentPath.length - 1; j >= 0; j--) {
-            if (currentPath[j] == blockpos) {
-                i = j;
-                break;
-            }
-        }
-
-        if (i != -1) {
-            if (currentPath.length == 1) {
-                tag.remove("path");
-                return;
-            }
-
-            var newPath = new long[currentPath.length - 1];
-            System.arraycopy(currentPath, 0, newPath, 0, i);
-            System.arraycopy(currentPath, i + 1, newPath, i, currentPath.length - i - 1);
-            tag.putLongArray("path", newPath);
-        }
+//        var tag = stack.getOrCreateTag();
+//        if (!tag.contains("path"))
+//            return;
+//
+//        var currentPath = tag.getLongArray("path");
+//        var blockpos = pos.asLong();
+//        int i = -1;
+//        for (int j = currentPath.length - 1; j >= 0; j--) {
+//            if (currentPath[j] == blockpos) {
+//                i = j;
+//                break;
+//            }
+//        }
+//
+//        if (i != -1) {
+//            if (currentPath.length == 1) {
+//                tag.remove("path");
+//                return;
+//            }
+//
+//            var newPath = new long[currentPath.length - 1];
+//            System.arraycopy(currentPath, 0, newPath, 0, i);
+//            System.arraycopy(currentPath, i + 1, newPath, i, currentPath.length - i - 1);
+//            tag.putLongArray("path", newPath);
+//        }
     }
 
     public static void clearPath(ItemStack stack) {
-        var tag = stack.getOrCreateTag();
-        if (tag.contains("path")) {
-            tag.remove("path");
-        }
+//        var tag = stack.getOrCreateTag();
+//        if (tag.contains("path")) {
+//            tag.remove("path");
+//        }
     }
 }

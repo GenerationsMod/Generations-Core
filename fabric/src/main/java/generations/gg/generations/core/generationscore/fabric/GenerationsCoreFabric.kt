@@ -34,7 +34,6 @@ import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.profiling.ProfilerFiller
-import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.ItemLike
@@ -67,15 +66,12 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
 
 
 
-        AnvilEvents.ANVIL_CHANGE.register(AnvilChange { result: AnvilChange.Result, left: ItemStack?, right: ItemStack?, name: String?, baseCost: Int, player: Player? ->
+        AnvilEvents.ANVIL_CHANGE.register(AnvilChange { result, left, right, name, baseCost, player ->
             onAnvilChange(
-                left!!, right!!, player!!,
-                { output: ItemStack? ->
-                    result.output =
-                        output
-                },
-                { cost: Int -> result.cost = cost },
-                { materialCost: Int -> result.materialCost = materialCost })
+                left, right, player,
+                { output -> result.output = output },
+                { cost -> result.cost = cost.toLong() },
+                { materialCost -> result.materialCost = materialCost })
             false
         })
 

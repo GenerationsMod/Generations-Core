@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet;
 import net.minecraft.data.BlockFamily;
 import net.minecraft.world.level.block.*;
-import net.minecraftforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
 
 public class UltraBlockModelDataGen extends GenerationsBlockStateProvider.Proxied {
 

@@ -31,7 +31,7 @@ class LootTableDatagen(output: PackOutput, registries: CompletableFuture<HolderL
                 provider
             )
         }, LootContextParamSets.BLOCK),
-        SubProviderEntry({ GenerationsChestLoot() }, LootContextParamSets.CHEST),
+//        SubProviderEntry({ GenerationsChestLoot() }, LootContextParamSets.CHEST),
         SubProviderEntry({ GenerationsCoreFishingLoot() }, LootContextParamSets.FISHING),
         SubProviderEntry({
             LootTableSubProvider { op ->

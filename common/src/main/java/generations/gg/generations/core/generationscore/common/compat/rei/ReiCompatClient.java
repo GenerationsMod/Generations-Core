@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.compat.rei;
 import generations.gg.generations.core.generationscore.common.client.screen.container.RksMachineScreen;
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer;
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks;
+import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes;
 import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
@@ -25,7 +26,7 @@ public class ReiCompatClient implements REIClientPlugin {
 
     @Override
     public void registerDisplays(DisplayRegistry registry) {
-        registry.registerFiller(RksRecipe.class, DefaultRksMachineRecipeDisplay::of);
+        registry.registerRecipeFiller(RksRecipe.class, GenerationsCoreRecipeTypes.RKS.get(), DefaultRksMachineRecipeDisplay::of);
     }
 
 

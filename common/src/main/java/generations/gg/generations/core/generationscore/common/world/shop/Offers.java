@@ -68,7 +68,7 @@ public class Offers {
 
     private void refreshEntries() {
         this.refreshed = true;
-        this.entries = ShopGenerator.refresh(Shops.instance().get(key));
+        this.entries = ShopGenerator.refresh(Shops.INSTANCE.get(key));
     }
 
     public ResourceLocation getKey() {

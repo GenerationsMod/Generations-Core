@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.common.util.Codecs.nullab
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.nullable
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.set
+import it.unimi.dsi.fastutil.ints.IntSets
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
@@ -17,9 +18,9 @@ import java.util.*
 import java.util.stream.Collectors
 
 @JvmRecord
-data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val aspects: Set<String>?) {
+data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val aspects: Set<String> = emptySet()) {
     @JvmOverloads
-    constructor(species: String, aspects: Set<String> = setOf<String>()) : this(
+    constructor(species: String, aspects: Set<String> = emptySet()) : this(
         ResourceLocation.parse(species),
         aspects
     )
@@ -28,7 +29,7 @@ data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val asp
     fun createProperties(): PokemonProperties {
         val properties = PokemonProperties()
         properties.species = species.path
-        if (aspects != null) properties.aspects = aspects
+        if (aspects.isNotEmpty()) properties.aspects = aspects
         return properties
     }
 
@@ -49,7 +50,7 @@ data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val asp
 
 
     override fun toString(): String {
-        val setString = if (!aspects.isNullOrEmpty()) aspects.stream().collect(Collectors.joining(",", "[", "]")) else ""
+        val setString = if (aspects.isNotEmpty()) aspects.stream().collect(Collectors.joining(",", "[", "]")) else ""
         return species.toString() + setString
     }
 
@@ -61,7 +62,7 @@ data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val asp
         val STREAM_CODEC = StreamCodec.composite(
             ResourceLocation.STREAM_CODEC,
             SpeciesKey::species,
-            ByteBufCodecs.STRING_UTF8.set().asRegistryFriendly().nullable(),
+            ByteBufCodecs.STRING_UTF8.set().asRegistryFriendly(),
             SpeciesKey::aspects, ::SpeciesKey
         )
 
@@ -76,7 +77,7 @@ data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val asp
                     .collect(Collectors.toSet())
             }
 
-            return SpeciesKey(pokemon.species.resourceIdentifier, aspects)
+            return SpeciesKey(pokemon.species.resourceIdentifier, aspects ?: emptySet())
         }
 
         @JvmStatic
@@ -93,7 +94,7 @@ data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val asp
                     aspects = values.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toSet()
                 }
             }
-            return SpeciesKey(species, aspects)
+            return SpeciesKey(species, aspects ?: emptySet())
         }
 
         fun fromSpecies(species: Species): SpeciesKey {

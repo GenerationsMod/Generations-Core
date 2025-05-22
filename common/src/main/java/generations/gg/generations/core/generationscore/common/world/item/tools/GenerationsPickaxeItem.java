@@ -19,7 +19,7 @@ public class GenerationsPickaxeItem extends PickaxeItem implements ToolEffectHol
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsPickaxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, (int) attackDamage, attackSpeed, properties);
+        super(tier, /*(int) attackDamage, attackSpeed,*/ properties); //TODO: Readd values if needed
     }
 
     public GenerationsPickaxeItem addToolEffects(ToolEffect... toolEffect) {

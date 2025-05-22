@@ -19,7 +19,7 @@ public class GenerationsHoeItem extends HoeItem implements ToolEffectHolder<Gene
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
     public GenerationsHoeItem(Tier tier, float attackDamageBonus, float attackSpeed, Properties properties) {
-        super(tier, (int) attackDamageBonus, attackSpeed, properties);
+        super(tier, /*(int) attackDamageBonus, attackSpeed,*/ properties); //TODO: Readd values if needed
     }
 
     public GenerationsHoeItem addToolEffects(ToolEffect... toolEffect) {

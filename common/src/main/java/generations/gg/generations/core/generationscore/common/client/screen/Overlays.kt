@@ -21,7 +21,7 @@ object Overlays {
     private val PUMPKIN_BLUR_LOCATION: ResourceLocation = ResourceLocation.parse("textures/misc/pumpkinblur.png")
 
 
-    fun renderCamera(graphics: GuiGraphics, delta: Float): Boolean {
+    fun renderCamera(graphics: GuiGraphics, delta: DeltaTracker): Boolean {
         val player = Minecraft.getInstance().player
         if (Minecraft.getInstance().screen == null && player != null && player.mainHandItem.item is CameraItem) {
             var scale = 1.0f
@@ -74,7 +74,7 @@ object Overlays {
                     )
                 }) {
                 if (player.inventory.freeSlot > -1) {
-                    val value = player.cooldowns.getCooldownPercent(player.mainHandItem.item, delta)
+                    val value = player.cooldowns.getCooldownPercent(player.mainHandItem.item, delta.getGameTimeDeltaPartialTick(true))
                     renderTextureOverlay(graphics, CAMERA_OVERLAY_FOCUS, 1f, 1f, Mth.lerp(value, 1f, 0f))
                 } else {
                     renderTextureOverlay(graphics, CAMERA_OVERLAY_FOCUS, 0.3f, 0.3f, 0.3f)
@@ -148,7 +148,7 @@ object Overlays {
         if (Minecraft.getInstance().options.cameraType.isFirstPerson) {
             checkNotNull(Minecraft.getInstance().player)
             if (!Minecraft.getInstance().player!!.isScoping) {
-                if (!renderCamera(guiGraphics, deltaTracker.gameTimeDeltaTicks)) renderPumpkin(
+                if (!renderCamera(guiGraphics, deltaTracker)) renderPumpkin(
                     guiGraphics,
                     deltaTracker
                 )

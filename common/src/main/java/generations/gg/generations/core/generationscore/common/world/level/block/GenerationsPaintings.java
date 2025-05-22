@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 
 @SuppressWarnings("unused")
@@ -40,7 +41,7 @@ public class GenerationsPaintings {
     public static RegistrySupplier<PaintingVariant> TOWN_MAP_SPRITE = register("town_map_sprite", 16, 16);
 
     private static RegistrySupplier<PaintingVariant> register(String name, int width, int height) {
-        return PAINTINGS.register(name, () -> new PaintingVariant(width, height));
+        return PAINTINGS.register(name, () -> new PaintingVariant(width, height, ResourceLocation.parse(""))); //TODO: REminder needed proper path for paintings here. Blank location is tempt
     }
 
     public static void init() {

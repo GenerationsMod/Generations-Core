@@ -40,8 +40,7 @@ class ShapedRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<Sh
     }
 
     override fun create(id: ResourceLocation, pattern: ShapedRecipePattern): ShapedRksRecipe {
-        return ShapedRksRecipe(this.group ?: "", this.result, this.consumesTimeCapsules, speciesKey, experience, processingTime, false, pattern
-        )
+        return ShapedRksRecipe(this.group ?: "", this.result, this.consumesTimeCapsules, speciesKey, experience, processingTime, false, pattern)
     }
 
     override fun validate(recipeId: ResourceLocation): ShapedRecipePattern {

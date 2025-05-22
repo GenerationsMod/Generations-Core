@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.compat.rei;
 
 import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe;
 import generations.gg.generations.core.generationscore.common.world.recipe.ShapedRksRecipe;
+import generations.gg.generations.core.generationscore.common.world.recipe.ShapelessRksRecipe;
 import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
 import it.unimi.dsi.fastutil.ints.IntIntPair;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
@@ -10,26 +11,20 @@ import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.entry.EntryIngredient;
 import me.shedaniel.rei.api.common.entry.EntryStack;
 import me.shedaniel.rei.api.common.entry.InputIngredient;
-import me.shedaniel.rei.api.common.entry.type.VanillaEntryTypes;
-import me.shedaniel.rei.api.common.transfer.info.MenuInfo;
-import me.shedaniel.rei.api.common.transfer.info.MenuSerializationContext;
-import me.shedaniel.rei.api.common.transfer.info.simple.SimpleGridMenuInfo;
-import me.shedaniel.rei.api.common.util.CollectionUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public abstract class DefaultRksMachineRecipeDisplay<C extends Recipe<?>> extends BasicDisplay implements SimpleGridMenuDisplay {
+public abstract class DefaultRksMachineRecipeDisplay<C extends RecipeHolder<? extends RksRecipe>> extends BasicDisplay implements SimpleGridMenuDisplay {
     protected Optional<C> recipe;
     private final int weavingTime;
 
     public DefaultRksMachineRecipeDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs, Optional<C> recipe, int weavingTime) {
-        this(inputs, outputs, recipe.map(Recipe::getId), recipe, weavingTime);
+        this(inputs, outputs, recipe.map(a -> a.id()), recipe, weavingTime);
     }
 
     public DefaultRksMachineRecipeDisplay(List<EntryIngredient> inputs, List<EntryIngredient> outputs, Optional<ResourceLocation> location, Optional<C> recipe, int weavingTime) {
@@ -39,11 +34,11 @@ public abstract class DefaultRksMachineRecipeDisplay<C extends Recipe<?>> extend
     }
 
     @Nullable
-    public static DefaultRksMachineRecipeDisplay<?> of(Recipe<?> recipe) {
-//        if (recipe instanceof TesselatingShapelessRecipe) {
-//            return new DefaultTesselatingShapelessDisplay((TesselatingShapelessRecipe) recipe);
-        /*} else */if (recipe instanceof ShapedRksRecipe rksRecipe) {
-            return new DefaultRksMachineeShapedDisplay(rksRecipe);
+    public static DefaultRksMachineRecipeDisplay<?> of(RecipeHolder<?> recipe) {
+        if (recipe.value() instanceof ShapelessRksRecipe) {
+            return new DefaultRksShapelessDisplay((RecipeHolder<ShapelessRksRecipe>) recipe);
+        } else if (recipe.value() instanceof ShapedRksRecipe) {
+            return new DefaultRksMachineeShapedDisplay((RecipeHolder<ShapedRksRecipe>) recipe);
         } /*else if (!recipe.isSpecial()) {
             NonNullList<Ingredient> ingredients = recipe.getIngredients();
             for (CraftingRecipeSizeProvider<?> pair : SIZE_PROVIDER) {
@@ -63,18 +58,10 @@ public abstract class DefaultRksMachineRecipeDisplay<C extends Recipe<?>> extend
         return null;
     }
 
+
     @Override
     public CategoryIdentifier<?> getCategoryIdentifier() {
         return ReiCompatClient.RKS_MACHINE;
-    }
-
-    public Optional<C> getOptionalRecipe() {
-        return recipe;
-    }
-
-    @Override
-    public Optional<ResourceLocation> getDisplayLocation() {
-        return getOptionalRecipe()
     }
 
     public <T extends AbstractContainerMenu> List<EntryIngredient> getOrganisedInputEntries(int menuWidth, int menuHeight) {

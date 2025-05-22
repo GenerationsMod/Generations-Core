@@ -52,11 +52,11 @@ object TagsDatagen {
     private class GenerationsBlockTagsProvider(
         output: PackOutput,
         lookupProvider: CompletableFuture<HolderLookup.Provider>,
-        existingFileHelper: ExistingFileHelper?
+        existingFileHelper: ExistingFileHelper
     ) :
         BlockTagsProvider(output, lookupProvider, GenerationsCore.MOD_ID, existingFileHelper) {
         override fun addTags(arg: HolderLookup.Provider) {
-            GenerationsBlocks.BLOCKS.forEach(Consumer<RegistrySupplier<Block>> { `object`: RegistrySupplier<Block> ->
+            GenerationsBlocks.BLOCKS.forEach { `object` ->
                 val block = `object`.get()
                 EasyBlockTags(block)
                 if (`object` is FenceBlock) tag(BlockTags.FENCES).add(block)
@@ -66,26 +66,25 @@ object TagsDatagen {
                     tag(BlockTags.SAND).add(block)
                     tag(BlockTags.MINEABLE_WITH_SHOVEL).add(block)
                 }
-            })
+            }
 
-            GenerationsBlocks.ULTRA_BLOCKS.forEach(Consumer { block: RegistrySupplier<Block> ->
+            GenerationsBlocks.ULTRA_BLOCKS.forEach { block ->
                 tag(GenerationsBlockTags.ULTRA).add(block.get())
                 EasyBlockTags(block.get())
-            })
+            }
 
-            GenerationsFullBlockSet.fullBlockSets.forEach(Consumer { blockSet: GenerationsFullBlockSet ->
-                blockSet.allBlocks.forEach(
-                    Consumer { block: Block? ->
+            GenerationsFullBlockSet.fullBlockSets.forEach { blockSet ->
+                blockSet.allBlocks.forEach { block ->
                         if (blockSet.name.contains("poke_brick")) tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.getBaseBlock())
                         else if (blockSet.name.contains("marble")) tag(GenerationsBlockTags.MARBLE).add(blockSet.getBaseBlock())
-                    })
-            })
+                    }
+            }
 
-            GenerationsPokeDolls.POKEDOLLS.forEach(Consumer { pokedoll: RegistrySupplier<Block?> ->
+            GenerationsPokeDolls.POKEDOLLS.forEach { pokedoll ->
                 tag(
                     GenerationsBlockTags.POKEDOLLS
                 ).add(pokedoll.get())
-            })
+            }
 
             val mine_with_pickaxe = tag(BlockTags.MINEABLE_WITH_PICKAXE).addTag(GenerationsBlockTags.ULTRA)
                 .addTag(GenerationsBlockTags.MARBLE)
@@ -94,11 +93,11 @@ object TagsDatagen {
                 .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS).add(GenerationsBlocks.Z_BLOCK.get())
                 .add(GenerationsBlocks.LIGHTNING_LANTERN.get())
 
-            GenerationsBlocks.STONE.forEach(Consumer<RegistrySupplier<Block>> { block: RegistrySupplier<Block> ->
+            GenerationsBlocks.STONE.forEach { block ->
                 mine_with_pickaxe.add(block.get())
                 EasyBlockTags(block.get())
                 if (block.get() is PressurePlateBlock) tag(BlockTags.STONE_PRESSURE_PLATES).add(block.get())
-            })
+            }
 
             mine_with_pickaxe.add(
                 GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
@@ -578,11 +577,11 @@ object TagsDatagen {
                 .addTag(GenerationsItemTags.POKEMAIL)
                 .addTag(GenerationsItemTags.CLOSED_POKEMAIL)
 
-            GenerationsItems.ITEMS.forEach(Consumer<RegistrySupplier<Item>> { item: RegistrySupplier<Item> ->
+            GenerationsItems.ITEMS.forEach { item ->
                 generationsItemsTag.add(
-                    item.key
+                    item.get().builtInRegistryHolder().key()
                 )
-            })
+            }
 
             tag(GenerationsItemTags.POKEMAIL).add(
                 GenerationsItems.POKEMAIL_AIR.get(),
@@ -678,14 +677,14 @@ object TagsDatagen {
             })
 
             tag(GenerationsItemTags.KEY_STONES)
-                .add(GenerationsItems.KEY_STONE.getKey())
-                .add(GenerationsItems.KEY_STONE_2.getKey())
-                .add(GenerationsItems.MEGA_RING.getKey())
-                .add(GenerationsItems.MEGA_BRACELET.getKey())
-                .add(GenerationsItems.MEGA_CHARM.getKey())
-                .add(GenerationsItems.MEGA_CUFF.getKey())
-            tag(GenerationsItemTags.DYNAMAX_BANDS).add(GenerationsItems.DYNAMAX_BAND.getKey())
-            tag(GenerationsItemTags.Z_RINGS).add(GenerationsItems.Z_RING.getKey()).add(GenerationsItems.Z_POWER_RING.getKey())
+                .add(GenerationsItems.KEY_STONE.get())
+                .add(GenerationsItems.KEY_STONE_2.get())
+                .add(GenerationsItems.MEGA_RING.get())
+                .add(GenerationsItems.MEGA_BRACELET.get())
+                .add(GenerationsItems.MEGA_CHARM.get())
+                .add(GenerationsItems.MEGA_CUFF.get())
+            tag(GenerationsItemTags.DYNAMAX_BANDS).add(GenerationsItems.DYNAMAX_BAND.get())
+            tag(GenerationsItemTags.Z_RINGS).add(GenerationsItems.Z_RING.get()).add(GenerationsItems.Z_POWER_RING.get())
             tag(GenerationsItemTags.MEMORY_DRIVES).add(
                 GenerationsItems.BUG_MEMORY_DRIVE.get(),
                 GenerationsItems.DARK_MEMORY_DRIVE.get(),

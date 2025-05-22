@@ -1029,7 +1029,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createEntityModelItem(GenerationsItems.ENTEI_STATUE.get())
     }
 
-    private fun createFishingRodItem(rod: TieredFishingRodItem) {
+    private fun createFishingRodItem(rod: Item) {
         val rodKey = rod.getModelKey()
         model(rodKey.path) {
             parent("item/handheld_rod")

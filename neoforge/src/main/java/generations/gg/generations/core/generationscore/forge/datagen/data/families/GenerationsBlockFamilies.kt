@@ -171,7 +171,7 @@ object GenerationsBlockFamilies : BlockFamilies() {
         return blockFamily
     }
 
-    val allFamilies: Stream<BlockFamily>
+    val allGenerationsFamilies: Stream<BlockFamily>
         get() = MAP.values.stream()
 
     fun Builder.button(button: Holder<out Block>): Builder = this.button(button.value())

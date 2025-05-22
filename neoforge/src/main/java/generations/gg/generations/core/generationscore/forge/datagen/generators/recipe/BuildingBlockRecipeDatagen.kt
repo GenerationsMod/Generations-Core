@@ -1383,7 +1383,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
 
 
     protected fun generateForEnabledBlockFamilies(consumer: RecipeOutput) {
-        GenerationsBlockFamilies.allFamilies.forEach { arg: BlockFamily ->
+        GenerationsBlockFamilies.allGenerationsFamilies.forEach { arg ->
             generateRecipes(consumer, arg, FeatureFlagSet.of())
             generateStoneCutterRecipesForFamily(consumer, arg)
         }

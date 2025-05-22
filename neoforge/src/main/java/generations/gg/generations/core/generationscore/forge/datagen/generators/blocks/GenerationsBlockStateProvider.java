@@ -1,10 +1,11 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.blocks;
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.neoforged.neoforge.client.model.generators.*;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
@@ -67,7 +68,7 @@ public class GenerationsBlockStateProvider extends BlockStateProvider {
         }
 
         public ResourceLocation key(Block block) {
-            return ForgeRegistries.BLOCKS.getKey(block);
+            return BuiltInRegistries.BLOCK.getKey(block);
         }
 
         public boolean registered(@Nullable Block block) {

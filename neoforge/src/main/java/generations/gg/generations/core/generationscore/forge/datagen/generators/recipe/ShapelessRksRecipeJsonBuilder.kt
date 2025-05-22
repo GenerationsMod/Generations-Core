@@ -1,31 +1,28 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe
 
-import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsIngredient
-import generations.gg.generations.core.generationscore.common.world.recipe.ItemTagIngredient
-import generations.gg.generations.core.generationscore.common.world.recipe.RksResult
-import generations.gg.generations.core.generationscore.common.world.recipe.ShapelessRksRecipe
-import net.minecraft.data.recipes.FinishedRecipe
+import generations.gg.generations.core.generationscore.common.config.SpeciesKey
+import generations.gg.generations.core.generationscore.common.world.recipe.*
+import net.minecraft.core.NonNullList
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
 
 class ShapelessRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<ShapelessRksRecipe, Unit>(result) {
-    private val ingredients: MutableList<GenerationsIngredient> =
-        com.google.common.collect.Lists.newArrayList<GenerationsIngredient>()
+    private val ingredients: NonNullList<GenerationsIngredient> = NonNullList.create()
 
     fun requires(tag: TagKey<Item>): ShapelessRksRecipeJsonBuilder {
         return this.requires(ItemTagIngredient(tag))
     }
 
-    fun requires(item: net.minecraft.world.level.ItemLike): ShapelessRksRecipeJsonBuilder {
+    fun requires(item: ItemLike): ShapelessRksRecipeJsonBuilder {
         return this.requires(item, 1)
     }
 
     fun requires(item: ItemLike, quantity: Int): ShapelessRksRecipeJsonBuilder {
         for (i in 0 until quantity) {
             this.requires(
-                generations.gg.generations.core.generationscore.common.world.recipe.ItemIngredient(
+                ItemIngredient(
                     item.asItem().builtInRegistryHolder().key()
                 )
             )
@@ -42,29 +39,24 @@ class ShapelessRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder
         return this
     }
 
-    override fun create(id: ResourceLocation?, addition: Unit): ShapelessRksRecipe {
-        TODO("Not yet implemented")
-    }
-
-    override fun createProvider(id: net.minecraft.resources.ResourceLocation, addition: Any): ShapelessRksRecipe {
-        return ShapelessRksRecipeJsonProvider(
-            id,
+    override fun create(id: ResourceLocation, addition: Unit): ShapelessRksRecipe {
+        return ShapelessRksRecipe(
+            this.group ?: "",
             this.result,
-            this.consumesTimeCapsules, if (this.group == null) "" else this.group,
-            this.ingredients,
-            this.advancementBuilder, id.withPrefix("recipes/rks/"), experience, processingTime, speciesKey
+            this.consumesTimeCapsules,
+            speciesKey,
+            experience, processingTime,
+            false,
+            this.ingredients
         )
     }
 
-    override fun validate(recipeId: net.minecraft.resources.ResourceLocation?): Any? {
-        return null
-    }
+    override fun validate(recipeId: ResourceLocation) = Unit
 
     companion object {
-        @JvmStatic
-        fun create(output: net.minecraft.world.level.ItemLike): ShapelessRksRecipeJsonBuilder {
+        fun create(output: ItemLike): ShapelessRksRecipeJsonBuilder {
             return ShapelessRksRecipeJsonBuilder(
-                generations.gg.generations.core.generationscore.common.world.recipe.ItemResult(
+                ItemResult(
                     output.asItem().defaultInstance
                 )
             )
@@ -72,8 +64,8 @@ class ShapelessRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder
 
         @JvmOverloads
         fun create(
-            species: net.minecraft.resources.ResourceLocation,
-            aspects: Set<String?>,
+            species: ResourceLocation,
+            aspects: Set<String>,
             level: Int,
             spawnInWorld: Boolean = true,
             usePokemonInCapsule: Boolean = false
@@ -106,7 +98,7 @@ class ShapelessRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder
             usePokemonInCapsule: Boolean = false
         ): ShapelessRksRecipeJsonBuilder {
             return create(
-                net.minecraft.resources.ResourceLocation("cobblemon", name),
+                ResourceLocation.fromNamespaceAndPath("cobblemon", name),
                 java.util.HashSet(),
                 1,
                 spawnInWorld,

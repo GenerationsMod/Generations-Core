@@ -6,6 +6,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AnvilMenu;
 import net.minecraft.world.inventory.DataSlot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
@@ -15,6 +16,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(AnvilMenu.class)
 public abstract class AnvilMenuMixin extends ItemCombinerMenuMixin {
@@ -23,23 +25,24 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenuMixin {
 
     @Shadow private @Nullable String itemName;
 
-    public void setMaximumCost(int cost) {
-        this.cost.set(cost);
+    @Shadow private int repairItemCountCost;
+
+    public void setMaximumCost(long cost) {
+        this.cost.set((int) cost);
     }
 
     @Accessor("repairItemCountCost")
     public abstract void setMaterialCost(int cost);
 
-    @Inject(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 2, shift = At.Shift.BEFORE), cancellable = true)
-    public void createResult(CallbackInfo ci) {
+    @Inject(method = "createResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 1, shift = At.Shift.BEFORE), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
+    public void createResult(CallbackInfo ci, ItemStack itemStack, int i, long l, int j, ItemStack itemStack2, ItemStack itemStack3, ItemEnchantments.Mutable mutable) {
         var left = this.inputSlots.getItem(0).copy();
         var right = this.inputSlots.getItem(1);
-        var baseCost = left.getBaseRepairCost() + (right.isEmpty() ? 0 : right.getBaseRepairCost());
 
-        if(!onAnvilChange(left, right, getResultSlot(), this.itemName, baseCost, this.player)) ci.cancel();
+        if(!onAnvilChange(left, right, getResultSlot(), this.itemName, l, this.player)) ci.cancel();
     }
 
-    private boolean onAnvilChange(@NotNull ItemStack left, @NotNull ItemStack right, Container outputSlot, String name, int baseCost, Player player) {
+    private boolean onAnvilChange(@NotNull ItemStack left, @NotNull ItemStack right, Container outputSlot, String name, long baseCost, Player player) {
         var e = new AnvilEvents.AnvilChange.Result(baseCost);
         if (AnvilEvents.ANVIL_CHANGE.invoker().change(e, left, right, name, baseCost, player)) return false;
         if (e.getOutput().isEmpty()) return true;
@@ -49,5 +52,4 @@ public abstract class AnvilMenuMixin extends ItemCombinerMenuMixin {
         setMaterialCost(e.getMaterialCost());
         return false;
     }
-
 }

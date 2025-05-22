@@ -13,7 +13,7 @@ class DataGen : DataGeneratorEntrypoint {
     override fun onInitializeDataGenerator(fabricDataGenerator: FabricDataGenerator) {
         val pack = fabricDataGenerator.createPack()
         FabricTagsDataGen.init(pack)
-        pack.addProvider { fabricDataOutput -> ArmorModelProvider(fabricDataOutput) }
+        pack.addProvider { fabricDataOutput, completableFuture -> ArmorModelProvider(fabricDataOutput) }
         //        System.out.println("Outputting: " + Path.of("../../common/src/generated/resources").toAbsolutePath());
     }
 

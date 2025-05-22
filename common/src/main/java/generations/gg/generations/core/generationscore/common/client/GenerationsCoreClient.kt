@@ -360,14 +360,14 @@ object GenerationsCoreClient {
         consumer.register(GenerationsBlockEntities.STREET_LAMP.get(), ::GeneralUseBlockEntityRenderer)
     }
 
-    fun registerLayerDefinitions(consumer: BiConsumer<ModelLayerLocation, Supplier<LayerDefinition>>) {
+    fun registerLayerDefinitions(consumer: (ModelLayerLocation, () -> LayerDefinition) -> Unit) {
         val boat = BoatModel::createBodyModel
         val chestBoat: () -> LayerDefinition = ChestBoatModel::createBodyModel
 
 
         for (type in GenerationsBoatEntity.Type.entries) {
-            consumer.accept(GenerationsBoatRenderer.createBoatModelName(type), boat)
-            consumer.accept(GenerationsBoatRenderer.createChestBoatModelName(type), chestBoat)
+            consumer.invoke(GenerationsBoatRenderer.createBoatModelName(type), boat)
+            consumer.invoke(GenerationsBoatRenderer.createChestBoatModelName(type), chestBoat)
         }
     }
 

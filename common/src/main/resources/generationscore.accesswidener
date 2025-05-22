@@ -29,20 +29,15 @@ accessible field net/minecraft/world/entity/projectile/FishingHook luck I
 accessible field net/minecraft/world/entity/projectile/FishingHook lureSpeed I
 accessible field net/minecraft/world/entity/projectile/FishingHook nibble I
 accessible method net/minecraft/world/entity/projectile/FishingHook shouldStopFishing (Lnet/minecraft/world/entity/player/Player;)Z
-accessible method net/minecraft/client/renderer/entity/FishingHookRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lorg/joml/Matrix4f;Lorg/joml/Matrix3f;IFIII)V
-accessible method net/minecraft/world/entity/Entity getEyeHeight (Lnet/minecraft/world/entity/Pose;Lnet/minecraft/world/entity/EntityDimensions;)F
+accessible method net/minecraft/client/renderer/entity/FishingHookRenderer vertex (Lcom/mojang/blaze3d/vertex/VertexConsumer;Lcom/mojang/blaze3d/vertex/PoseStack$Pose;IFIII)V
+accessible method net/minecraft/world/entity/Entity getEyeHeight (Lnet/minecraft/world/entity/Pose;)F
 accessible field net/minecraft/client/renderer/LevelRenderer ticks I
 
 accessible field net/minecraft/client/renderer/entity/EntityRenderer shadowRadius F
 accessible field net/minecraft/client/renderer/entity/EntityRenderer shadowStrength F
 
-accessible method net/minecraft/world/item/crafting/ShapedRecipe dissolvePattern ([Ljava/lang/String;Ljava/util/Map;II)Lnet/minecraft/core/NonNullList;
-accessible method net/minecraft/world/item/crafting/RecipeManager byType (Lnet/minecraft/world/item/crafting/RecipeType;)Ljava/util/Map;
-
 accessible field net/minecraft/world/level/block/entity/BlockEntityType validBlocks Ljava/util/Set;
 mutable field net/minecraft/world/level/block/entity/BlockEntityType validBlocks Ljava/util/Set;
-
-accessible field net/minecraft/world/item/ArmorMaterials HEALTH_FUNCTION_FOR_TYPE Ljava/util/EnumMap;
 
 accessible field com/mojang/blaze3d/platform/GlStateManager BLEND Lcom/mojang/blaze3d/platform/GlStateManager$BlendState;
 accessible class com/mojang/blaze3d/platform/GlStateManager$BlendState
