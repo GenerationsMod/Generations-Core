@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.function.Supplier;
 
 public class GenerationsArmorMaterials {
+    public static final DeferredRegister<ArmorMaterial> REGISTER = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ARMOR_MATERIAL);
+
     public static final RegistrySupplier<ArmorMaterial> AETHER = register("aether", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SILICON);
     public static final RegistrySupplier<ArmorMaterial> AQUA = register("saphire", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SAPPHIRE);
     public static final RegistrySupplier<ArmorMaterial> FLARE = register("flare", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.RUBY);
@@ -44,8 +46,6 @@ public class GenerationsArmorMaterials {
     public static final RegistrySupplier<ArmorMaterial> WATER_STONE = register("water_stone", 33, new int[] { 3, 6, 8, 3 }, 10, () -> CobblemonItems.WATER_STONE, 2.0f, 0.0f);
 
     public static final RegistrySupplier<ArmorMaterial> ULTRITE = register("ultrite", 42, new int[]{3, 6, 8, 3}, 20, GenerationsItems.ULTRITE_INGOT, 4.0f, 0.2f);
-
-    public static final DeferredRegister<ArmorMaterial> REGISTER = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ARMOR_MATERIAL);
 
     public static RegistrySupplier<ArmorMaterial> register(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Supplier<Item> repairIngredient, float toughness, float knockbackResistance) {
         return REGISTER.register(name, () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {

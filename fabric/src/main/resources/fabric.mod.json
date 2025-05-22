@@ -27,10 +27,10 @@
   ],
   "depends": {
     "fabricloader": ">=0.15.3",
-    "minecraft": ">=1.20.1",
-    "architectury": ">=9.1.13",
-    "cobblemon": "=1.5.2+1.20.1",
-    "botarium": ">=2.3.2"
+    "minecraft": ">=1.21.1",
+    "architectury": ">=13.0.8",
+    "cobblemon": "=1.6.1+1.21.1",
+    "common_storage_lib": ">=0.0.7"
   },
   "suggests": {
     "wthit": ">=8.15.0"

@@ -4,9 +4,9 @@ object DataKeys {
 
     const val GAVE_EGG = "GaveEgg"
     const val EMBEDDED_POKEMON = "EmbeddedPokemon"
-    const val DISTANCE = "Distance"
+    const val DISTANCE = "distance"
 
-    const val CLIENT_POKEMON_DATA = "ClientPokemonData"
+    const val CLIENT_POKEMON_DATA = "client_pokemon_data"
 
     //Statues
     const val PROPERTIES = "Properties"

@@ -10,14 +10,11 @@
     "BestSpawnConfigMixin",
     "FishingHookMixin",
     "PokemonBattleMixin",
-    "RecordItemMixin",
     "ServerPlayerMixin",
     "ShowdownSpeciesMixin",
     "client.GuiUtilsMixin",
     "client.ModelAssetVariationMixin",
     "client.PokemonGuiUtilsMixin",
-    "client.PokemonItemRendererMixin",
-    "showdown.DetailsChangeInstructionMixin",
     "showdown.ShowdownActionRequestMixin"
   ],
   "client": [
@@ -28,8 +25,7 @@
     "client.LightTextureMixin",
     "client.PokemonEntityMixin",
     "client.PokemonOnShoulderRendererCompanionAccessorMixin",
-    "client.PokemonOnShoulderRenderMixin",
-    "client.PoseableEntityModelMixin"
+    "client.PokemonOnShoulderRenderMixin"
   ],
   "injectors": {
     "defaultRequire": 1
