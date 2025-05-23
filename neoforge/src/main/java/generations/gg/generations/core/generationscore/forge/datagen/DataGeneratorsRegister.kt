@@ -41,22 +41,23 @@ internal object DataGeneratorsRegister {
         val lookupProvider: CompletableFuture<HolderLookup.Provider> = event.getLookupProvider()
         TagsDatagen.init(generator, output, lookupProvider, existingFileHelper)
         generator.addProvider<GeneralLang>(true, GeneralLang(output, "en_us"))
-//        generator.addProvider( TODO: Completley redo this. Neoforge completely changes this. That or move to forge with less cancerous data gen unknown.
-//            true, GenerationsBlockStateProvider(output, existingFileHelper,
-//                Function { provider: GenerationsBlockStateProvider ->
-//                    BlockDatagen(
-//                        provider
-//                    )
-//                },
-//                Function { provider: GenerationsBlockStateProvider ->
-//                    UltraBlockModelDataGen(
-//                        provider
-//                    )
-//                }))
+        generator.addProvider(
+            true, GenerationsBlockStateProvider(output, existingFileHelper,
+                Function { provider: GenerationsBlockStateProvider ->
+                    BlockDatagen(
+                        provider
+                    )
+                },
+                Function { provider: GenerationsBlockStateProvider ->
+                    UltraBlockModelDataGen(
+                        provider
+                    )
+                }))
         generator.addProvider(true, ItemDatagen(output, existingFileHelper))
+        generator.addProvider(true, LootTableDatagen(output, lookupProvider))
 
 
         generator.addProvider(true, WorldGenProvider(output, lookupProvider))
-        generator.addProvider(true, GenerationsRecipeProvider(output, lookupProvider, ::ItemRecipeDatagen, ::BuildingBlockRecipeDatagen, ::GenerationsArmorToolRecipeDatagen, ::MachineDecorationsRecipeDatagen, ::WoodRecipes));  //PokeBallRecipeDatagen::new, ::FurnaceRecipeProvider, ::RksRecipeProvider))
+        generator.addProvider(true, GenerationsRecipeProvider(output, lookupProvider, ::ItemRecipeDatagen, ::BuildingBlockRecipeDatagen, ::GenerationsArmorToolRecipeDatagen, ::MachineDecorationsRecipeDatagen, ::WoodRecipes, /*PokeBallRecipeDatagen::new,*/ ::FurnaceRecipeProvider, ::RksRecipeProvider))
     }
 }

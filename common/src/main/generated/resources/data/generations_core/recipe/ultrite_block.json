@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "generations_core:ultrite_ingot"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EEE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ultrite_block"
+  }
+}

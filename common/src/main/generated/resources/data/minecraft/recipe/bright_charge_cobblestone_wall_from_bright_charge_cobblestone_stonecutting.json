@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:bright_charge_cobblestone"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:bright_charge_cobblestone_wall"
+  }
+}

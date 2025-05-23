@@ -1,9 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#forge:is_cold/overworld",
-  "features": [
-    "generations_core:ore_crystal",
-    "generations_core:ore_crystal_buried"
-  ],
-  "step": "underground_ores"
-}

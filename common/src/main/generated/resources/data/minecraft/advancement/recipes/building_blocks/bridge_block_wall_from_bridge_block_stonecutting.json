@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bridge_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:bridge_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:bridge_block_wall_from_bridge_block_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bridge_block"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:bridge_block_wall_from_bridge_block_stonecutting"
+    ]
+  }
+}

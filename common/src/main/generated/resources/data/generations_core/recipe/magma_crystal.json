@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    },
+    {
+      "item": "generations_core:lava_crystal"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:magma_crystal"
+  }
+}

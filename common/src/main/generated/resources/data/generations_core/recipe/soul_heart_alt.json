@@ -1,0 +1,33 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "key": "cobblemon:magearna",
+  "pattern": {
+    "key": {
+      "A": {
+        "type": "generations_core:item",
+        "key": "generations_core:heart_scale"
+      },
+      "B": {
+        "type": "generations_core:item",
+        "key": "generations_core:orb"
+      }
+    },
+    "pattern": [
+      "A A",
+      " B ",
+      "A A"
+    ]
+  },
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "stack": {
+      "count": 1,
+      "id": "generations_core:soul_heart"
+    }
+  },
+  "showNotification": false
+}

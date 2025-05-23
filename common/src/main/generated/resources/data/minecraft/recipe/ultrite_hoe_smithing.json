@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "generations_core:ultrite_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_hoe"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:ultrite_hoe"
+  },
+  "template": {
+    "item": "generations_core:ultrite_upgrade_smithing_template"
+  }
+}

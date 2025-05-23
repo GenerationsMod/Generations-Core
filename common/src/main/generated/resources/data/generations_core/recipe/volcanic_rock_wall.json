@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "volcanic_rock_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:volcanic_rock"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:volcanic_rock_wall"
+  }
+}

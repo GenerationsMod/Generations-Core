@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "pattern": [
+    "EEE"
+  ],
+  "result": {
+    "count": 3,
+    "id": "generations_core:bridge_block"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blue_wool"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "Y": {
+      "item": "minecraft:yellow_wool"
+    }
+  },
+  "pattern": [
+    "BYB",
+    "BWB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:snorlax_bean_bag"
+  }
+}

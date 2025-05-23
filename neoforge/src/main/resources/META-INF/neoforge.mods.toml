@@ -1,0 +1,58 @@
+modLoader="kotlinforforge"
+loaderVersion="[5.3,)"
+license="GNU GPL 3.0"
+issueTrackerURL="https://github.com/GenerationsMod/Generations-Core/issues"
+
+[[mods]]
+modId="generations_core"
+version="${version}"
+displayName="Generations-Core"
+authors="Joseph T. McQuigg (JT122406), Waterpicker, Stampede"
+credits="Generations Development Team"
+logoFile="generations.png"
+catalogueImageIcon="generations.png"
+description='''
+Core mod for Generations. Required for all other Generations mods.
+Contains Blocks, Items, Entities, and other things that are used by all other Generations mods.
+'''
+
+[[dependencies.generations_core]]
+   modId="neoforge"
+   mandatory=true
+   versionRange="[21.1.84,)"
+   ordering="NONE"
+   side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="minecraft"
+   mandatory=true
+   versionRange="[1.20.1,)"
+   ordering="NONE"
+   side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="architectury"
+   mandatory=true
+   versionRange="[9.1.13,)"
+   ordering="AFTER"
+   side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="cobblemon"
+   mandatory=true
+   versionRange="[1.6.1+1.21.1]"
+   ordering="AFTER"
+   side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="common_storage_lib"
+   mandatory=true
+   versionRange="[0.0.7,)"
+   ordering="AFTER"
+   side="BOTH"
+
+[[dependencies.generations_core]]
+   modId="wthit"
+   mandatory=false
+   versionRange="[8.15.0,)"
+   ordering="NONE"

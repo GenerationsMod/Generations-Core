@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:ice_cave_rock_floor"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:ice_cave_rock_floor_stairs"
+  }
+}

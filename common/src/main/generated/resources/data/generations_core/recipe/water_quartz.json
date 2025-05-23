@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "generations_core:ocean_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:water_quartz"
+  }
+}

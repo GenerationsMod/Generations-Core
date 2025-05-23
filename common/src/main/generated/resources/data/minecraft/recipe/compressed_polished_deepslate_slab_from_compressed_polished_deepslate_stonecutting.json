@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:compressed_polished_deepslate"
+  },
+  "result": {
+    "count": 2,
+    "id": "generations_core:compressed_polished_deepslate_slab"
+  }
+}

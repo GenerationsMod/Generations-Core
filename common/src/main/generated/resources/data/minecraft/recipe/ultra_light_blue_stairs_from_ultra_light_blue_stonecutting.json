@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:ultra_light_blue"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:ultra_light_blue_stairs"
+  }
+}

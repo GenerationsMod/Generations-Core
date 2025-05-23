@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ice_pillar_side_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:ice_pillar_side"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:ice_pillar_side_stairs"
+  }
+}

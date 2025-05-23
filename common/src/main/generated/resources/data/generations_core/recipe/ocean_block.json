@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:prismarine"
+    },
+    {
+      "item": "cobblemon:water_stone"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:ocean_block"
+  }
+}

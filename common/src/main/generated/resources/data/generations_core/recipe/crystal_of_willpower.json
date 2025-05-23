@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    },
+    {
+      "item": "generations_core:shard_of_willpower"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:crystal_of_willpower"
+  }
+}

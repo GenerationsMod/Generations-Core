@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "volcanic_cobblestone_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:volcanic_cobblestone"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:volcanic_cobblestone_slab"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_shard_of_knowledge": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:shard_of_knowledge"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:crystal_of_knowledge"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shard_of_knowledge"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:crystal_of_knowledge"
+    ]
+  }
+}

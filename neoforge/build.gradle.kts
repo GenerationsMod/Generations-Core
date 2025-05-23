@@ -90,7 +90,7 @@ configurations {
         }
 
         //Cobblemon
-        implementation("thedarkcolour:kotlinforforge:5.4.0")
+        implementation("thedarkcolour:kotlinforforge-neoforge:5.8.0")
         modImplementation("com.cobblemon:neoforge:${project.properties["cobblemon_version"]}")
 
         implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.3.5")

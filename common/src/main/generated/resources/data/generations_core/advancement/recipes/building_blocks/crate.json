@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_apricorn_planks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cobblemon:apricorn_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:crate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_apricorn_planks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:crate"
+    ]
+  }
+}

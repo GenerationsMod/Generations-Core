@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "bleach_stone_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:bleach_stone"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:bleach_stone_wall"
+  }
+}

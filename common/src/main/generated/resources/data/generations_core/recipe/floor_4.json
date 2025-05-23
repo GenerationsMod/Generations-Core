@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:sandstone"
+    },
+    "Y": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "pattern": [
+    "XY",
+    "YX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:floor_4"
+  }
+}

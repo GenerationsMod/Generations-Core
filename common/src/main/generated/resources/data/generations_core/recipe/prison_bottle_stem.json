@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "O": {
+      "item": "generations_core:orb"
+    },
+    "R": {
+      "item": "generations_core:ruby"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "GOG",
+    "GGG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:prison_bottle_stem"
+  }
+}

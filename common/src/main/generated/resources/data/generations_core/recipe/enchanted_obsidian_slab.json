@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "enchanted_obsidian_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:enchanted_obsidian"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:enchanted_obsidian_slab"
+  }
+}

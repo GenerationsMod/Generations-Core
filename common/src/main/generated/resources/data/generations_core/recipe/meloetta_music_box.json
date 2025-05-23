@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "O": {
+      "item": "generations_core:orb"
+    }
+  },
+  "pattern": [
+    "JJJ",
+    "JOJ",
+    "JJJ"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:meloetta_music_box"
+  }
+}

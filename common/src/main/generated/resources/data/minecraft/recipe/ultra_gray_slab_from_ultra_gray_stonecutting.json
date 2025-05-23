@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:ultra_gray"
+  },
+  "result": {
+    "count": 2,
+    "id": "generations_core:ultra_gray_slab"
+  }
+}

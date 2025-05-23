@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "chest_boat",
+  "ingredients": [
+    {
+      "item": "minecraft:chest"
+    },
+    {
+      "item": "generations_core:ghost_boat"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ghost_boat_with_chest"
+  }
+}

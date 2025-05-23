@@ -60,7 +60,7 @@ class ShapedRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<Sh
         }
 
         check(set.isEmpty()) { "Ingredients are defined but not used in pattern for recipe $recipeId" }
-        check(!criteria.isEmpty()) { "No way of obtaining recipe $recipeId" }
+        check(criteria.isEmpty()) { "No way of obtaining recipe $recipeId" }
 
         return ShapedRecipePattern.of(inputs, pattern)
     }

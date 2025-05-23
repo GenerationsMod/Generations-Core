@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "T": {
+      "item": "minecraft:magenta_glazed_terracotta"
+    }
+  },
+  "pattern": [
+    "RIR",
+    "TTT",
+    "RIR"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:magenta_elevator"
+  }
+}

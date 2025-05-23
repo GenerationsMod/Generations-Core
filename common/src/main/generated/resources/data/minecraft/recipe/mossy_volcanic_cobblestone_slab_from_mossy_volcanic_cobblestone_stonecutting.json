@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:mossy_volcanic_cobblestone"
+  },
+  "result": {
+    "count": 2,
+    "id": "generations_core:mossy_volcanic_cobblestone_slab"
+  }
+}

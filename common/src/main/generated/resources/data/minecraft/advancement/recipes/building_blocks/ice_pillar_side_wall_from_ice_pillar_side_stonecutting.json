@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ice_pillar_side": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:ice_pillar_side"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ice_pillar_side_wall_from_ice_pillar_side_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ice_pillar_side"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ice_pillar_side_wall_from_ice_pillar_side_stonecutting"
+    ]
+  }
+}

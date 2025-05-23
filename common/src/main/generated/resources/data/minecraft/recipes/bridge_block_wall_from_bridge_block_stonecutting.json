@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:bridge_block"
-  },
-  "result": "generations_core:bridge_block_wall"
-}

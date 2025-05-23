@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:ultra_smooth_sandstone"
-  },
-  "result": "generations_core:ultra_smooth_sandstone_slab"
-}

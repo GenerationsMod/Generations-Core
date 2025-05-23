@@ -61,7 +61,7 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
         }
 
         for (trimModelData in GENERATED_TRIM_MODELS) {
-            val trimName = trimModelData.name(armorItem.material.value())
+                val trimName = trimModelData.name(armorItem.material.value())
             val trimmedModel = getItemModelForTrimMaterial(resourceLocation, trimName)
 
             // Modify the texture reference for trims too

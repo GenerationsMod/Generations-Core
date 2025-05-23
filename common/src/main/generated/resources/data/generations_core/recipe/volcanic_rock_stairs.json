@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "volcanic_rock_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:volcanic_rock"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:volcanic_rock_stairs"
+  }
+}

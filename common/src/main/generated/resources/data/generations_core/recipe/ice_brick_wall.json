@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ice_brick_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ice_brick"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:ice_brick_wall"
+  }
+}

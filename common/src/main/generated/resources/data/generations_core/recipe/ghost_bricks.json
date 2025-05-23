@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:bricks"
+    },
+    {
+      "item": "cobblemon:ghost_gem"
+    }
+  ],
+  "result": {
+    "count": 16,
+    "id": "generations_core:ghost_bricks"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ghost_obelisk_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ghost_obelisk"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:ghost_obelisk_wall"
+  }
+}

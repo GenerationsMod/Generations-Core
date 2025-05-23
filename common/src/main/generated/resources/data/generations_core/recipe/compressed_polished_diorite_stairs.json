@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "compressed_polished_diorite_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:compressed_polished_diorite"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:compressed_polished_diorite_stairs"
+  }
+}

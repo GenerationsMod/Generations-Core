@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:ice_brick"
-  },
-  "result": "generations_core:ice_brick_slab"
-}

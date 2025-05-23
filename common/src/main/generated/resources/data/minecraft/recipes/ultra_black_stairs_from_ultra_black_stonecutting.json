@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:ultra_black"
-  },
-  "result": "generations_core:ultra_black_stairs"
-}

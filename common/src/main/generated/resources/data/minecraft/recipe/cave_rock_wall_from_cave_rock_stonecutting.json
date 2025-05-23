@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:cave_rock"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:cave_rock_wall"
+  }
+}

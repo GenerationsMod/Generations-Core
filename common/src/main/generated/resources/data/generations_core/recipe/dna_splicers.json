@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "S": {
+      "item": "generations_core:silicon"
+    }
+  },
+  "pattern": [
+    " SG",
+    "IIS",
+    "NI "
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:dna_splicers"
+  }
+}

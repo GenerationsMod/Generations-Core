@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "brown_marble_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:brown_marble"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:brown_marble_slab"
+  }
+}

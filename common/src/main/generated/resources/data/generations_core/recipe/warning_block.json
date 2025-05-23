@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:yellow_concrete"
+    },
+    {
+      "item": "minecraft:black_concrete"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:warning_block"
+  }
+}

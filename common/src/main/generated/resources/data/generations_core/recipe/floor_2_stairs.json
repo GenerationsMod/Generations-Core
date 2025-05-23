@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "floor_2_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:floor_2"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:floor_2_stairs"
+  }
+}

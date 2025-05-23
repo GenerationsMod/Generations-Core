@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "smooth_volcanic_stone_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:smooth_volcanic_stone"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:smooth_volcanic_stone_slab"
+  }
+}

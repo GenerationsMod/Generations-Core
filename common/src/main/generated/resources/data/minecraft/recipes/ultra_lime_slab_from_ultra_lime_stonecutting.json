@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:ultra_lime"
-  },
-  "result": "generations_core:ultra_lime_slab"
-}

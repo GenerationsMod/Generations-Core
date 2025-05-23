@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common;
 
 import dev.architectury.registry.registries.DeferredRegister;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.syncher.EntityDataSerializer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
@@ -11,6 +13,8 @@ import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
+import java.util.function.BiConsumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public interface GenerationsImplementation {
@@ -40,6 +44,8 @@ public interface GenerationsImplementation {
     void registerCompostables(@NotNull Block block, float chance);
 
     Supplier<CreativeModeTab> create(String name, Supplier<ItemStack> o, DeferredRegister<? extends ItemLike>... deferredRegister);
+
+    <T> void registerEntityDataSerializer(String name, EntityDataSerializer<T> dataSerializer);
 
     enum ModAPI {
         FABRIC,

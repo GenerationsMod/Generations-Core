@@ -1,0 +1,28 @@
+{
+  "type": "generations_core:shapeless_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "pattern": [
+    {
+      "type": "generations_core:item",
+      "key": "generations_core:temple_block"
+    },
+    {
+      "type": "generations_core:pokemon_item",
+      "aspects": [
+        "o"
+      ],
+      "species": "cobblemon:unown"
+    }
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "stack": {
+      "count": 1,
+      "id": "generations_core:unown_block_o"
+    }
+  },
+  "showNotification": false
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:lime_wool"
+    },
+    "R": {
+      "item": "cobblemon:rare_candy"
+    },
+    "W": {
+      "item": "generations_core:white_marble"
+    }
+  },
+  "pattern": [
+    "RLR",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:shop_display_small_2"
+  }
+}

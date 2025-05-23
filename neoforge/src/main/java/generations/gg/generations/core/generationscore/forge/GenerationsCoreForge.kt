@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge
 
-import com.cobblemon.mod.common.ResourcePackActivationBehaviour
 import com.google.common.collect.ImmutableMap
 import com.mojang.datafixers.util.Pair
 import dev.architectury.registry.registries.DeferredRegister
@@ -13,10 +12,14 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
+import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge
 import net.minecraft.client.Minecraft
+import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.Component
+import net.minecraft.network.codec.StreamCodec
+import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
@@ -37,9 +40,14 @@ import net.neoforged.neoforge.event.AddReloadListenerEvent
 import net.neoforged.neoforge.event.AnvilUpdateEvent
 import net.neoforged.neoforge.event.OnDatapackSyncEvent
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
-import net.neoforged.neoforge.resource.ResourcePackLoader
+import net.neoforged.neoforge.registries.NeoForgeRegistries
+import java.util.*
+import java.util.function.BiConsumer
 import java.util.function.Consumer
+import java.util.function.Function
 import java.util.function.Supplier
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 /**
  * Forge Main class for GenerationsCore.
@@ -52,7 +60,9 @@ import java.util.function.Supplier
 @Mod(GenerationsCore.MOD_ID)
 class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     private val reloadableResources: MutableList<PreparableReloadListener> = ArrayList()
-    private val packs: Map<PackType, List<Pair<ResourceLocation, Component>>> = HashMap()
+    private val packs: Map<PackType, List<Pair<ResourceLocation, Component>>> = EnumMap(net.minecraft.server.packs.PackType::class.java)
+
+    private val ENTITY_DATA_SERIALIZER_REGISTER = net.neoforged.neoforge.registries.DeferredRegister.create(NeoForgeRegistries.ENTITY_DATA_SERIALIZERS, GenerationsCore.MOD_ID)
 
     /**
      * Sets up Forge side of the mod.
@@ -60,12 +70,15 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     init {
         setConfigDirectory(FMLPaths.CONFIGDIR.get())
         GenerationsCreativeTabsForge.init(MOD_BUS)
+        ENTITY_DATA_SERIALIZER_REGISTER.register(MOD_BUS)
         //        EvenBus.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
         MOD_BUS.addListener { event: FMLCommonSetupEvent -> this.onInitialize(event) }
         MOD_BUS.addListener { event: FMLLoadCompleteEvent -> this.postInit(event) }
         init(this)
         //        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
         val EVENT_BUS = NeoForge.EVENT_BUS
+
+
 
         EVENT_BUS.addListener { event: OnDatapackSyncEvent ->
             this.onDataPackSync(
@@ -119,6 +132,10 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     ): Supplier<CreativeModeTab> {
         return GenerationsCreativeTabsForge.create(name, o, *deferredRegister)
     }
+
+    override fun <T : Any> registerEntityDataSerializer(
+        name: String,
+        dataSerializer: EntityDataSerializer<T>) { ENTITY_DATA_SERIALIZER_REGISTER.register(name, dataSerializer.supplier()) }
 
 
     //    public void addPackFinders(AddPackFindersEvent event) {

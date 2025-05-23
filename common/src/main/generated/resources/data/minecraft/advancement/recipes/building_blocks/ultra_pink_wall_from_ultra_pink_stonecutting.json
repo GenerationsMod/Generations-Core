@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ultra_pink_wall_from_ultra_pink_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_pink": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:ultra_pink"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ultra_pink"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ultra_pink_wall_from_ultra_pink_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "generations_core:dragon_soul"
+    },
+    "G": {
+      "item": "cobblemon:fire_gem"
+    },
+    "O": {
+      "item": "generations_core:orb"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "GOG",
+    "DDD"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:light_stone"
+  }
+}

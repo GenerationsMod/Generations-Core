@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:gray_cave_rock_floor"
+  }
+}

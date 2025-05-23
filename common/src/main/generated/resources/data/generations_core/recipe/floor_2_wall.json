@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "floor_2_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:floor_2"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:floor_2_wall"
+  }
+}

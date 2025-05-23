@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#cobblemon:is_mountain",
+  "features": "generations_core:sport_ball_loot",
+  "step": "raw_generation"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ultra_orange_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_orange"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:ultra_orange_stairs"
+  }
+}

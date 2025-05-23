@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "cobblemon:ice_stone"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EEE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ice_stone_block"
+  }
+}

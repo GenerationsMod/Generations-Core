@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "P": {
+      "item": "cobblemon:potion"
+    },
+    "R": {
+      "item": "cobblemon:rare_candy"
+    },
+    "W": {
+      "item": "generations_core:white_marble"
+    }
+  },
+  "pattern": [
+    "PRP",
+    "GGG",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:shop_display_large_shelf_1"
+  }
+}

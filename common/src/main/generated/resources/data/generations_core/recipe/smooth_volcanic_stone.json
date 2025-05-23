@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "generations_core:volcanic_stone"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:smooth_volcanic_stone"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:pink_dye"
+    },
+    "X": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "XEX",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:pink_pastel_bean_bag"
+  }
+}

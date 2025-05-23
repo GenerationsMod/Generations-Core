@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:ultra_orange_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:ultra_orange"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ultra_orange"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:ultra_orange_stairs"
+    ]
+  }
+}

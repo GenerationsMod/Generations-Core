@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:red_dye"
+    },
+    "P": {
+      "item": "minecraft:dark_oak_planks"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "WEE",
+    "WWW",
+    "P P"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:red_couch_arm_left"
+  }
+}

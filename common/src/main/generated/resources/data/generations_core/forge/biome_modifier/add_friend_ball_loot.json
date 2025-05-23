@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#cobblemon:is_taiga",
-  "features": "generations_core:friend_ball_loot",
-  "step": "raw_generation"
-}

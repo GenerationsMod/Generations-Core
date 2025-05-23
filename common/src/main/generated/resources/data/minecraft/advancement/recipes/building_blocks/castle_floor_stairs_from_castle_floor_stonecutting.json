@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_castle_floor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:castle_floor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:castle_floor_stairs_from_castle_floor_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_castle_floor"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:castle_floor_stairs_from_castle_floor_stonecutting"
+    ]
+  }
+}

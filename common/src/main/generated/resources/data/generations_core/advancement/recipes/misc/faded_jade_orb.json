@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_shiny_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "cobblemon:shiny_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:faded_jade_orb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shiny_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:faded_jade_orb"
+    ]
+  }
+}

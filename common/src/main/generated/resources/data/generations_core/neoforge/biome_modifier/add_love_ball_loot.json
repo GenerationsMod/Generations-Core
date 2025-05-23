@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_beach",
+  "features": "generations_core:love_ball_loot",
+  "step": "raw_generation"
+}

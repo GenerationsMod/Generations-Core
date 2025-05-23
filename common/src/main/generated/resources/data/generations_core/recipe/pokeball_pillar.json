@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:copper_ingot"
+    },
+    "P": {
+      "item": "cobblemon:poke_ball"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "SPS",
+    "SIS",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:pokeball_pillar"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blue_stained_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:blue_stained_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:mirrored_floor_1"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blue_stained_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:mirrored_floor_1"
+    ]
+  }
+}

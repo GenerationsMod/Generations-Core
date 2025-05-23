@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:magenta_dye"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "L": {
+      "item": "minecraft:redstone_lamp"
+    }
+  },
+  "pattern": [
+    "ELE",
+    " I ",
+    " I "
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:magenta_street_lamp"
+  }
+}

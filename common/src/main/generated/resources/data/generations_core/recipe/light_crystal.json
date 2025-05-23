@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    },
+    {
+      "item": "generations_core:light_soul"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:light_crystal"
+  }
+}

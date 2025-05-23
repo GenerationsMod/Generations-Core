@@ -27,6 +27,7 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.registerDefaultCustomInteractions
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools
+import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorMaterials
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
 import generations.gg.generations.core.generationscore.common.world.item.legends.EnchantableItem
@@ -137,6 +138,7 @@ object GenerationsCore {
         GenerationsBlockEntities.init()
         GenerationsEntities.init()
         GenerationsCreativeTabs.init()
+        GenerationsArmorMaterials.init()
         GenerationsArmor.init()
         GenerationsTools.init()
         GenerationsContainers.init()

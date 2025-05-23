@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "lime_marble_button",
+  "ingredients": [
+    {
+      "item": "generations_core:lime_marble"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:lime_marble_button"
+  }
+}

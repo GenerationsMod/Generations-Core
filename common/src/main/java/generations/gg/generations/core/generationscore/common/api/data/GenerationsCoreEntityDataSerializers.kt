@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.api.data
 
 //import generations.gg.generations.core.generationscore.common.world.entity.StatueEntity.StatueInfo
+import dev.architectury.injectables.annotations.ExpectPlatform
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.readNullableString
 import generations.gg.generations.core.generationscore.common.util.readPokemonProperties
 import generations.gg.generations.core.generationscore.common.util.writeNullableString
@@ -15,10 +17,11 @@ object GenerationsCoreEntityDataSerializers {
     val NULLABLE_STRING = simple(FriendlyByteBuf::writeNullableString, FriendlyByteBuf::readNullableString)
     val PROPERTIES = simple(FriendlyByteBuf::writePokemonProperties, FriendlyByteBuf::readPokemonProperties)
 
+    @ExpectPlatform
     private fun <T> simple(encoder: (RegistryFriendlyByteBuf, T) -> Unit, decoder: (RegistryFriendlyByteBuf) -> T): EntityDataSerializer<T> = EntityDataSerializer.forValueType(StreamCodec.of(encoder, decoder))
 
     @JvmStatic fun init() {
-        EntityDataSerializers.registerSerializer(PROPERTIES)
-        EntityDataSerializers.registerSerializer(NULLABLE_STRING)
+        GenerationsCore.implementation.registerEntityDataSerializer("properties", PROPERTIES)
+        GenerationsCore.implementation.registerEntityDataSerializer("nullable_string", NULLABLE_STRING)
     }
 }

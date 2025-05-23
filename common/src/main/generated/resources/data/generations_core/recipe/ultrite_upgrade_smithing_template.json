@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "generations_core:ultrite_upgrade_smithing_template"
+    },
+    "T": {
+      "item": "minecraft:end_stone"
+    },
+    "X": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "XEX",
+    "XTX",
+    "XXX"
+  ],
+  "result": {
+    "count": 2,
+    "id": "generations_core:ultrite_upgrade_smithing_template"
+  }
+}

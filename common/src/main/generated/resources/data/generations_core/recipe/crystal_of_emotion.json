@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    },
+    {
+      "item": "generations_core:shard_of_emotion"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:crystal_of_emotion"
+  }
+}

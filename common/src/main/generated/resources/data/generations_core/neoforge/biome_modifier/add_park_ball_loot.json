@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#cobblemon:is_swamp",
+  "features": "generations_core:park_ball_loot",
+  "step": "raw_generation"
+}

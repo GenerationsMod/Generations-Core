@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:bone_meal"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "O": {
+      "item": "minecraft:oak_sapling"
+    }
+  },
+  "pattern": [
+    "BBB",
+    "IOI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:bush"
+  }
+}

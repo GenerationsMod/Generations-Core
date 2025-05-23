@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cobble_ruins_4": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:cobble_ruins_4"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:cobble_ruins_4_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cobble_ruins_4"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:cobble_ruins_4_wall"
+    ]
+  }
+}

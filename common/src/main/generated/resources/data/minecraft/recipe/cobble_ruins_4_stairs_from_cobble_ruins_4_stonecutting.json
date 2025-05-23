@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:cobble_ruins_4"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:cobble_ruins_4_stairs"
+  }
+}

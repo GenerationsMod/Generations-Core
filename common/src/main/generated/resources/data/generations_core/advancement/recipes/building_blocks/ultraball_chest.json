@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_greatball_chest": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:greatball_chest"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:ultraball_chest"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_greatball_chest"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:ultraball_chest"
+    ]
+  }
+}

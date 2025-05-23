@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:polished_granite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:compressed_polished_granite"
+  }
+}

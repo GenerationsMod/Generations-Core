@@ -1,0 +1,34 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "pattern": {
+    "key": {
+      "A": {
+        "type": "generations_core:item",
+        "key": "minecraft:totem_of_undying"
+      },
+      "B": {
+        "type": "generations_core:item",
+        "key": "minecraft:coal"
+      },
+      "C": {
+        "type": "generations_core:item",
+        "key": "generations_core:rainbow_wing"
+      }
+    },
+    "pattern": [
+      "ABC"
+    ]
+  },
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "stack": {
+      "count": 1,
+      "id": "generations_core:sacred_ash"
+    }
+  },
+  "showNotification": false
+}

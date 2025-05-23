@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ghost_obelisk_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:ghost_obelisk"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:ghost_obelisk_stairs"
+  }
+}

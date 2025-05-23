@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "generations_core:box"
+    },
+    "O": {
+      "item": "generations_core:orb"
+    },
+    "S": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "pattern": [
+    "SBS",
+    "BOB",
+    "SBS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:zygarde_cube"
+  }
+}

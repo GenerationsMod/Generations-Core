@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:castle_wall_4"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:castle_wall_4_wall"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:white_poke_brick_wall_from_white_poke_brick_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_poke_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:white_poke_brick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_poke_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:white_poke_brick_wall_from_white_poke_brick_stonecutting"
+    ]
+  }
+}

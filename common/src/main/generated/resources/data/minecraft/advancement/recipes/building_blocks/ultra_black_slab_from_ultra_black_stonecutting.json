@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ultra_black_slab_from_ultra_black_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_black": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:ultra_black"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ultra_black"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ultra_black_slab_from_ultra_black_stonecutting"
+    ]
+  }
+}

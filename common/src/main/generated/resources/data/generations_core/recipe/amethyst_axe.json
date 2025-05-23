@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "XX",
+    "#X",
+    "# "
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:amethyst_axe"
+  }
+}

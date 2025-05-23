@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "powder_blue_marble_button",
+  "ingredients": [
+    {
+      "item": "generations_core:powder_blue_marble"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:powder_blue_marble_button"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:green_marble"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:green_marble_wall"
+  }
+}

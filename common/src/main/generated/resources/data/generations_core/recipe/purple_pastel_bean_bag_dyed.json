@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:purple_dye"
+    },
+    {
+      "tag": "generations_core:pastel_bean_bag"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:purple_pastel_bean_bag"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:purple_marble"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:purple_marble_stairs"
+  }
+}

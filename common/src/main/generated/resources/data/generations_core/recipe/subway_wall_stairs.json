@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "subway_wall_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:subway_wall"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:subway_wall_stairs"
+  }
+}

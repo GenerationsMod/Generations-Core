@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "generations_core:sun_stone_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "cobblemon:sun_stone"
+  }
+}

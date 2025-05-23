@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ghost_obelisk": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:ghost_obelisk"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:ghost_obelisk_stairs_from_ghost_obelisk_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ghost_obelisk"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:ghost_obelisk_stairs_from_ghost_obelisk_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "generations_core:master_ball_loot",
+  "step": "raw_generation"
+}

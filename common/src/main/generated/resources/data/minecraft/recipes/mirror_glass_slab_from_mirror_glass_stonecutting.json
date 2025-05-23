@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "generations_core:mirror_glass"
-  },
-  "result": "generations_core:mirror_glass_slab"
-}

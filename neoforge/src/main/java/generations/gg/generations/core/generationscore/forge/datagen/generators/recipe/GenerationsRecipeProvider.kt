@@ -27,7 +27,7 @@ class GenerationsRecipeProvider @SafeVarargs constructor(
     var providers: List<Proxied> = providers.map { it.invoke(output, registries) }.toList()
 
     override fun buildRecipes(consumer: RecipeOutput) {
-        providers.forEach(Consumer { provider: Proxied -> provider.buildRecipes(consumer) })
+         providers.forEach(Consumer { provider: Proxied -> provider.buildRecipes(consumer) })
     }
 
     abstract class Proxied(arg: PackOutput, registries: CompletableFuture<HolderLookup.Provider>) : RecipeProvider(arg, registries) {

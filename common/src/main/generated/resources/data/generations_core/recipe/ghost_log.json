@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "cobblemon:ghost_gem"
+    },
+    {
+      "tag": "minecraft:logs"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "id": "generations_core:ghost_log"
+  }
+}

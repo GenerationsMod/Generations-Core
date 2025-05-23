@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mirror_glass": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:mirror_glass"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:mirror_glass_stairs_from_mirror_glass_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mirror_glass"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:mirror_glass_stairs_from_mirror_glass_stonecutting"
+    ]
+  }
+}

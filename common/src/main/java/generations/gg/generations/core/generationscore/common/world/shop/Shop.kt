@@ -20,7 +20,7 @@ class Shop(
         refreshTime.encode(buffer)
         buffer.writeCollection(
             presetKeys
-        ) { obj: FriendlyByteBuf, resourceLocation: ResourceLocation? ->
+        ) { obj: FriendlyByteBuf, resourceLocation: ResourceLocation ->
             obj.writeResourceLocation(
                 resourceLocation
             )

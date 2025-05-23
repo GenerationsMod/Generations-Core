@@ -166,9 +166,11 @@ object GenerationsBlockFamilies : BlockFamilies() {
     private fun familyBuilder(baseBlock: Holder<out Block>, dsl: Builder.() -> Unit): BlockFamily {
         val builder = Builder(baseBlock.value())
         dsl.invoke(builder)
-        val blockFamily = MAP.put(baseBlock.value(), builder.family)
-        checkNotNull(blockFamily) { "Duplicate family definition for " + baseBlock.key }
-        return blockFamily
+
+        if(MAP.containsKey(baseBlock.value())) throw IllegalStateException("Duplicate family definition for" + baseBlock.key)
+
+        MAP[baseBlock.value()] = builder.family
+        return builder.family
     }
 
     val allGenerationsFamilies: Stream<BlockFamily>

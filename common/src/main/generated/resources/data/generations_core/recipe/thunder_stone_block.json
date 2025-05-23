@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "cobblemon:thunder_stone"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EEE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:thunder_stone_block"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "generations_core:temple_block"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:ruins_sand"
+  }
+}

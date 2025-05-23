@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "golden_temple_sandstone_chiseled",
+  "key": {
+    "#": {
+      "item": "generations_core:golden_temple_sandstone_slab"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:golden_temple_chiseled_sandstone"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "red_marble_button",
+  "ingredients": [
+    {
+      "item": "generations_core:red_marble"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:red_marble_button"
+  }
+}

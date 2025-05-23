@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:subway_floor_full_cross"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:subway_floor_full_cross_wall"
+  }
+}

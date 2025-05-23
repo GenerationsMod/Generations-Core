@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#cobblemon:is_badlands",
-  "features": "generations_core:timer_ball_loot",
-  "step": "raw_generation"
-}

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    },
+    {
+      "item": "cobblemon:apricorn_planks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:crate"
+  }
+}

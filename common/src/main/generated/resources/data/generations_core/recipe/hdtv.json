@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "I": {
+      "item": "minecraft:redstone"
+    },
+    "R": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "IRI",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:hdtv"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sparkling_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:sparkling_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:sparkling_stone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sparkling_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:sparkling_stone"
+    ]
+  }
+}

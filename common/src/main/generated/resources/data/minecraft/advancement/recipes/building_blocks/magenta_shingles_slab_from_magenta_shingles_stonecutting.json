@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_magenta_shingles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:magenta_shingles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:magenta_shingles_slab_from_magenta_shingles_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_magenta_shingles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:magenta_shingles_slab_from_magenta_shingles_stonecutting"
+    ]
+  }
+}

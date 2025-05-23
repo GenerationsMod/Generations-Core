@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "cobblemon:water_stone"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EEE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:water_stone_block"
+  }
+}

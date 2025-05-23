@@ -17,6 +17,7 @@ import com.cobblemon.mod.common.CobblemonItems.SUN_STONE
 import com.cobblemon.mod.common.CobblemonItems.THUNDER_STONE
 import com.cobblemon.mod.common.CobblemonItems.ULTRA_BALL
 import com.cobblemon.mod.common.CobblemonItems.WATER_STONE
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
@@ -30,7 +31,9 @@ import net.minecraft.data.BlockFamily
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.*
 import net.minecraft.tags.ItemTags
+import net.minecraft.world.flag.FeatureFlag
 import net.minecraft.world.flag.FeatureFlagSet
+import net.minecraft.world.flag.FeatureFlags
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
@@ -1383,23 +1386,28 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
 
 
     protected fun generateForEnabledBlockFamilies(consumer: RecipeOutput) {
+//        GenerationsBlocks.PINK_MARBLE_SET.blockFamily?.run {
+//            generateRecipes(consumer, this, FeatureFlagSet.of())
+//            generateStoneCutterRecipesForFamily(consumer, this)
+//        }
+
         GenerationsBlockFamilies.allGenerationsFamilies.forEach { arg ->
-            generateRecipes(consumer, arg, FeatureFlagSet.of())
+            generateRecipes(consumer, arg, FeatureFlags.VANILLA_SET)
             generateStoneCutterRecipesForFamily(consumer, arg)
         }
         GenerationsUltraBlockSet.ultraBlockSets.forEach { arg ->
             val family: BlockFamily = arg.blockFamily ?: return
-            generateRecipes(consumer, family, FeatureFlagSet.of())
+            generateRecipes(consumer, family, FeatureFlags.VANILLA_SET)
             generateStoneCutterRecipesForFamily(consumer, family)
         }
         GenerationsBlockSet.blockSets.forEach { arg ->
             val family: BlockFamily = arg.blockFamily ?: return
-            generateRecipes(consumer, family, FeatureFlagSet.of())
+            generateRecipes(consumer, family, FeatureFlags.VANILLA_SET)
             generateStoneCutterRecipesForFamily(consumer, family)
         }
         GenerationsFullBlockSet.fullBlockSets.forEach { arg ->
             val family: BlockFamily = arg.blockFamily ?: return
-            generateRecipes(consumer, family, FeatureFlagSet.of())
+            generateRecipes(consumer, family, FeatureFlags.VANILLA_SET)
             generateStoneCutterRecipesForFamily(consumer, family)
         }
     }

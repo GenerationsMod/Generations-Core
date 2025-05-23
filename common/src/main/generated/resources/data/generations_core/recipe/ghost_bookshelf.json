@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "generations_core:ghost_planks"
+    },
+    "X": {
+      "tag": "minecraft:bookshelf_books"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ghost_bookshelf"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#cobblemon:is_desert",
+  "features": "generations_core:gigaton_ball_loot",
+  "step": "raw_generation"
+}

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    },
+    {
+      "item": "generations_core:tiny_mushroom"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:max_powder"
+  }
+}

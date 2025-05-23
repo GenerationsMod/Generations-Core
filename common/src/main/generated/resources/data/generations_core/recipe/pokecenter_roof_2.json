@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "generations_core:red_shingles"
+    },
+    {
+      "item": "generations_core:red_poke_brick"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:pokecenter_roof_2"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "generations_core:shattered_ice_key_1"
+    },
+    {
+      "item": "generations_core:shattered_ice_key_2"
+    },
+    {
+      "item": "generations_core:shattered_ice_key_3"
+    },
+    {
+      "item": "generations_core:shattered_ice_key_4"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:iceberg_key"
+  }
+}

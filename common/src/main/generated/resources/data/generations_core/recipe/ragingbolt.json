@@ -1,0 +1,25 @@
+{
+  "type": "generations_core:shapeless_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "pattern": [
+    {
+      "type": "generations_core:time_capsule",
+      "key": "cobblemon:cobblemon",
+      "strict": false
+    },
+    {
+      "type": "generations_core:item",
+      "key": "minecraft:coal"
+    }
+  ],
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:pokemon",
+    "spawnInWorld": false,
+    "species": "cobblemon:ragingbolt",
+    "usePokemonInCapsule": true
+  },
+  "showNotification": false
+}

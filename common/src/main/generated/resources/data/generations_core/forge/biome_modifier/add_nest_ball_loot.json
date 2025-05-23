@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#cobblemon:is_forest",
-  "features": "generations_core:nest_ball_loot",
-  "step": "raw_generation"
-}

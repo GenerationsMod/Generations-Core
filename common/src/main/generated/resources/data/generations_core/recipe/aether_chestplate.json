@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "minecraft:copper_ingot"
+    },
+    "Y": {
+      "item": "generations_core:crystal"
+    }
+  },
+  "pattern": [
+    "X X",
+    "XXX",
+    "YYY"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:aether_chestplate"
+  }
+}

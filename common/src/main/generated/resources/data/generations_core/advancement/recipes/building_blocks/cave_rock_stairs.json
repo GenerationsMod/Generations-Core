@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cave_rock": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:cave_rock"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:cave_rock_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cave_rock"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:cave_rock_stairs"
+    ]
+  }
+}

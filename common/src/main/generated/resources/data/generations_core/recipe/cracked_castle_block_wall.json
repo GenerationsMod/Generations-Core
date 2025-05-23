@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "cracked_castle_block_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:cracked_castle_block"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:cracked_castle_block_wall"
+  }
+}

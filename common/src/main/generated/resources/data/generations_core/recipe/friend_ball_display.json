@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "cobblemon:friend_ball"
+    },
+    {
+      "item": "generations_core:empty_ball_display"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:friend_ball_display"
+  }
+}

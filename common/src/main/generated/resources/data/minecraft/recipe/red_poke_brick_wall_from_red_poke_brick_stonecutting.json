@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:red_poke_brick"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:red_poke_brick_wall"
+  }
+}

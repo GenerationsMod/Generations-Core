@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:ultra_light_blue_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_ultra_light_blue": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:ultra_light_blue"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ultra_light_blue"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:ultra_light_blue_stairs"
+    ]
+  }
+}

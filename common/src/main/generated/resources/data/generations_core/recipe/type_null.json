@@ -1,0 +1,54 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "key": "cobblemon:typenull",
+  "pattern": {
+    "key": {
+      "A": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_chestplate"
+      },
+      "B": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_leggings"
+      },
+      "C": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_boots"
+      },
+      "D": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_axe"
+      },
+      "E": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_helmet"
+      },
+      "F": {
+        "type": "generations_core:item",
+        "key": "minecraft:totem_of_undying"
+      },
+      "G": {
+        "type": "generations_core:item_tag",
+        "item_tag": "generations_core:memory_drives"
+      },
+      "Z": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_block"
+      }
+    },
+    "pattern": [
+      "DAE",
+      "FBG",
+      "ZCZ"
+    ]
+  },
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:pokemon",
+    "species": "cobblemon:typenull"
+  },
+  "showNotification": false
+}

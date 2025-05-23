@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "E": {
+      "item": "cobblemon:ultra_ball"
+    },
+    "X": {
+      "item": "generations_core:greatball_chest"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "EXE",
+    "EEE"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ultraball_chest"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "mega_stone_shard",
+  "ingredient": {
+    "item": "generations_core:deepslate_megastone_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:mega_stone_shard"
+  }
+}

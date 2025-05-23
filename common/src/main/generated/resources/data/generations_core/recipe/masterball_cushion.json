@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:black_wool"
+    },
+    "R": {
+      "item": "minecraft:purple_wool"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "BWB",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:masterball_cushion"
+  }
+}

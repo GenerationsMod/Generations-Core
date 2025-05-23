@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_meteorite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:meteorite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:meteorite_shard_from_smelting_meteorite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_meteorite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:meteorite_shard_from_smelting_meteorite_ore"
+    ]
+  }
+}

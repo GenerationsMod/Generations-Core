@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:mirrored_floor_3"
-  },
-  "result": "generations_core:mirrored_floor_3_wall"
-}

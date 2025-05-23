@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "group": "crystal_gem",
+  "ingredient": {
+    "item": "generations_core:crystal_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:crystal"
+  }
+}

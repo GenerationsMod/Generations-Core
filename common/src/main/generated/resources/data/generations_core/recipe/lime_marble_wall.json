@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "lime_marble_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:lime_marble"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:lime_marble_wall"
+  }
+}

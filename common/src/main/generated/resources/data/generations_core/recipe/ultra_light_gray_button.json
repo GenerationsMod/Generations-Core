@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "ultra_light_gray_button",
+  "ingredients": [
+    {
+      "item": "generations_core:ultra_light_gray"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ultra_light_gray_button"
+  }
+}

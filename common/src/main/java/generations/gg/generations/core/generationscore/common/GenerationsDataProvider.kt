@@ -38,10 +38,10 @@ class GenerationsDataProvider : DataProvider {
             S2CUnlockReloadPacket().sendToPlayer(it.player)
         }
 
-        ifClient {
-            GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("client_resources"), SimpleResourceReloader(PackType.CLIENT_RESOURCES), PackType.CLIENT_RESOURCES, emptyList())
-            GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
-        }
+//        ifClient { TODO: MOve to Generat
+//            GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("client_resources"), SimpleResourceReloader(PackType.CLIENT_RESOURCES), PackType.CLIENT_RESOURCES, emptyList())
+//            GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
+//        }
 
         GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("data_resources"), SimpleResourceReloader(PackType.SERVER_DATA), PackType.SERVER_DATA, emptyList())
     }

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "generations_core:ultra_pink"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:ultra_pink_wall"
+  }
+}

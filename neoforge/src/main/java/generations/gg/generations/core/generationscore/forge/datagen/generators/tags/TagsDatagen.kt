@@ -428,7 +428,7 @@ object TagsDatagen {
             copy(BlockTags.WOODEN_TRAPDOORS, ItemTags.WOODEN_TRAPDOORS)
             //copy(BlockTags.FENCES, ItemTags.FENCES);
             copy(BlockTags.DIRT, ItemTags.DIRT)
-            copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS)
+//            copy(BlockTags.STANDING_SIGNS, ItemTags.SIGNS) TODO: Figure out
             tag(ItemTags.LOGS).addTag(GenerationsItemTags.ULTRA_DARK_LOGS).addTag(GenerationsItemTags.ULTRA_JUNGLE_LOGS)
                 .addTag(GenerationsItemTags.GHOST_LOGS)
             tag(ItemTags.LOGS_THAT_BURN).addTag(GenerationsItemTags.ULTRA_DARK_LOGS)

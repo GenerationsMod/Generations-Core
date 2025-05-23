@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric
 
+import com.cobblemon.mod.common.api.serialization.DataSerializer
 import dev.architectury.registry.registries.DeferredRegister
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.init
@@ -10,6 +11,7 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
+import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
@@ -27,7 +29,11 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint
+import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.MutableComponent
+import net.minecraft.network.codec.StreamCodec
+import net.minecraft.network.syncher.EntityDataSerializer
+import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
@@ -40,6 +46,8 @@ import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
+import java.util.function.BiConsumer
+import java.util.function.Function
 import java.util.function.Supplier
 
 /**
@@ -108,16 +116,23 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
     override fun create(
         name: String,
         supplier: Supplier<ItemStack>,
-        vararg deferredRegister: DeferredRegister<out ItemLike?>
+        vararg deferredRegister: DeferredRegister<out ItemLike?>,
     ): Supplier<CreativeModeTab> {
         return GenerationsCreativeTabsFabric.create(name, supplier, *deferredRegister)
+    }
+
+    override fun <T : Any> registerEntityDataSerializer(
+        name: String,
+        dataSerializer: EntityDataSerializer<T>
+    ) {
+        return EntityDataSerializers.registerSerializer(dataSerializer)
     }
 
     override fun registerResourceReloader(
         identifier: ResourceLocation,
         reloader: PreparableReloadListener,
         type: PackType,
-        dependencies: Collection<ResourceLocation>
+        dependencies: Collection<ResourceLocation>,
     ) {
         ResourceManagerHelper.get(type).registerReloadListener(
             GenerationsReloadListener(
@@ -136,7 +151,7 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
     private data class GenerationsReloadListener(
         val identifier: ResourceLocation,
         val reloader: PreparableReloadListener,
-        val dependencies: Collection<ResourceLocation>
+        val dependencies: Collection<ResourceLocation>,
     ) :
         IdentifiableResourceReloadListener {
         override fun reload(
@@ -145,7 +160,7 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
             preparationsProfiler: ProfilerFiller,
             reloadProfiler: ProfilerFiller,
             backgroundExecutor: Executor,
-            gameExecutor: Executor
+            gameExecutor: Executor,
         ): CompletableFuture<Void> {
             return reloader.reload(
                 preparationBarrier,

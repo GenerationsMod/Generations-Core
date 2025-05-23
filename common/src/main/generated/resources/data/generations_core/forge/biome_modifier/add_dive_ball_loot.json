@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_ocean",
-  "features": "generations_core:dive_ball_loot",
-  "step": "raw_generation"
-}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "item": "generations_core:orb"
+    },
+    "R": {
+      "item": "generations_core:ruby"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "  R",
+    " RS",
+    "R O"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ruby_rod"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": false,
+  "experience": 1.0,
+  "group": "",
+  "pattern": {
+    "key": {
+      "A": {
+        "type": "generations_core:item",
+        "key": "generations_core:key_stone"
+      },
+      "B": {
+        "type": "generations_core:time_capsule",
+        "key": "cobblemon:cobblemon",
+        "strict": false
+      },
+      "C": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_scrap"
+      }
+    },
+    "pattern": [
+      "ABC"
+    ]
+  },
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "stack": {
+      "count": 1,
+      "id": "generations_core:sharpedonite"
+    }
+  },
+  "showNotification": false
+}

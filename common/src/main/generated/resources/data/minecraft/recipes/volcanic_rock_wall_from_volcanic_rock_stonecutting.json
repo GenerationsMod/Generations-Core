@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "generations_core:volcanic_rock"
-  },
-  "result": "generations_core:volcanic_rock_wall"
-}

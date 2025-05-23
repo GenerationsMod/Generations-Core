@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "cobblemon:ice_stone"
+    }
+  },
+  "pattern": [
+    "XX",
+    "#X",
+    "# "
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:ice_stone_axe"
+  }
+}

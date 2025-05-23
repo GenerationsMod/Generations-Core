@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ice_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:ice_brick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:ice_pillar_broken"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ice_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:ice_pillar_broken"
+    ]
+  }
+}

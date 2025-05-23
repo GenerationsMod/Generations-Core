@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_light_gray_shingles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:light_gray_shingles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:light_gray_shingles_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_light_gray_shingles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:light_gray_shingles_wall"
+    ]
+  }
+}

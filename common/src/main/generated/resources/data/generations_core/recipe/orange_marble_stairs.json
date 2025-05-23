@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "orange_marble_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:orange_marble"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:orange_marble_stairs"
+  }
+}

@@ -101,7 +101,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .pattern("ABA")
             .pattern("CAC")
             .input('A', Items.NETHERITE_INGOT)
-            .input('B', DamageIngredient(GenerationsItems.SOUL_HEART.asHolder(), 100))
+            .input('B', DamageIngredient(GenerationsItems.SOUL_HEART.get(), 100))
             .input('C', Items.IRON_INGOT)
             .key(LegendKeys.MAGEARNA)
             .criterion("soul_heart", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.SOUL_HEART.get()))
@@ -347,7 +347,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .save(exporter, result.id.withSuffix(if (multi) "_$pokemon" else ""))
     }
 
-    private fun unownBlock(consumer: RecipeOutput, createdBlock: RegistrySupplier<out Block?>, form: String) {
+    private fun unownBlock(consumer: RecipeOutput, createdBlock: RegistrySupplier<out Block>, form: String) {
         create(createdBlock.get())
             .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
             .requires(PokemonItemIngredient(ResourceLocation.fromNamespaceAndPath("cobblemon", "unown"), Set.of(form)))
@@ -437,5 +437,3 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .save(exporter, id(name))
     }
 }
-
-private fun <T : Any> RegistrySupplier<T>.asHolder(): Holder<Item> = this as Holder<Item>

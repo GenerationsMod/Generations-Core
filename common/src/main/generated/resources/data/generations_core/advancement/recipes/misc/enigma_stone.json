@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_enigma_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:enigma_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:enigma_stone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_enigma_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:enigma_stone"
+    ]
+  }
+}

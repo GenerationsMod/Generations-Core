@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crystal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:crystal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_silicon": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:silicon"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:neo_plasma_chestplate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crystal",
+      "has_silicon"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:neo_plasma_chestplate"
+    ]
+  }
+}

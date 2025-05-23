@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "golden_temple_smooth_sandstone_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:golden_temple_smooth_sandstone"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:golden_temple_smooth_sandstone_slab"
+  }
+}

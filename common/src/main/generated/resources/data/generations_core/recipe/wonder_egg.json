@@ -1,0 +1,45 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "key": "cobblemon:manaphy",
+  "pattern": {
+    "key": {
+      "A": {
+        "type": "generations_core:item",
+        "key": "minecraft:egg"
+      },
+      "B": {
+        "type": "generations_core:item",
+        "key": "generations_core:orb"
+      },
+      "C": {
+        "type": "generations_core:item",
+        "key": "minecraft:heart_of_the_sea"
+      },
+      "X": {
+        "type": "generations_core:item",
+        "key": "cobblemon:water_gem"
+      },
+      "Z": {
+        "type": "generations_core:item",
+        "key": "cobblemon:mystic_water"
+      }
+    },
+    "pattern": [
+      "XXX",
+      "ABC",
+      "ZZZ"
+    ]
+  },
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "stack": {
+      "count": 1,
+      "id": "generations_core:wonder_egg"
+    }
+  },
+  "showNotification": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bright_charge_cobblestone_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:bright_charge_cobblestone"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:bright_charge_cobblestone_slab"
+  }
+}

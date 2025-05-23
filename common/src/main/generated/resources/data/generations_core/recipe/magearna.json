@@ -1,0 +1,36 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "key": "cobblemon:magearna",
+  "pattern": {
+    "key": {
+      "A": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_ingot"
+      },
+      "B": {
+        "type": "generations_core:damage",
+        "damage": 100,
+        "item": "generations_core:soul_heart"
+      },
+      "C": {
+        "type": "generations_core:item",
+        "key": "minecraft:iron_ingot"
+      }
+    },
+    "pattern": [
+      "CAC",
+      "ABA",
+      "CAC"
+    ]
+  },
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:pokemon",
+    "level": 70,
+    "species": "cobblemon:magearna"
+  },
+  "showNotification": false
+}

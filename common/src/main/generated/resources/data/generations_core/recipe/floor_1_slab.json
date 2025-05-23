@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "floor_1_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:floor_1"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:floor_1_slab"
+  }
+}

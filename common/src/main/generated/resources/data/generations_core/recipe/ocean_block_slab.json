@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "ocean_block_slab",
+  "key": {
+    "#": {
+      "item": "generations_core:ocean_block"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:ocean_block_slab"
+  }
+}

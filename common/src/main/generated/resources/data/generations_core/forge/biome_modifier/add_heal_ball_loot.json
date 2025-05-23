@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#cobblemon:is_river",
-  "features": "generations_core:heal_ball_loot",
-  "step": "raw_generation"
-}

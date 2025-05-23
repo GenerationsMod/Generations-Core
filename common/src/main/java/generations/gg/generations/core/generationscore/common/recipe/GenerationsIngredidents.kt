@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.recipe
 import com.mojang.serialization.MapCodec
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.Registrar
+import dev.architectury.registry.registries.RegistrarManager
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.recipe.*
@@ -13,7 +14,7 @@ import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 
 object GenerationsIngredidents {
-    val REGISTER: Registrar<GenerationsIngredientType<*>> = DeferredRegister.create(GenerationsCore.MOD_ID, ResourceKey.createRegistryKey<GenerationsIngredientType<*>>(GenerationsCore.id("ingredients"))).registrar
+    val REGISTER: Registrar<GenerationsIngredientType<*>> = RegistrarManager.get(GenerationsCore.MOD_ID).builder<GenerationsIngredientType<*>>(GenerationsCore.id("rks_ingredients")).build()
 
     @JvmField val CODEC = ResourceLocation.CODEC.xmap(REGISTER::get, REGISTER::getId).xmap({ it!! }, { it }).dispatch(GenerationsIngredient::type, GenerationsIngredientType<*>::codec)
     @JvmField val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, GenerationsIngredient> = ByteBufCodecs.registry(REGISTER.key()).dispatch(GenerationsIngredient::type, GenerationsIngredientType<*>::streamCodec)
@@ -27,5 +28,6 @@ object GenerationsIngredidents {
 
     public fun <T> register(name: String, codec: MapCodec<T>, streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>): RegistrySupplier<GenerationsIngredientType<T>> where T: GenerationsIngredient = REGISTER.register(GenerationsCore.id(name)) { GenerationsIngredientType<T>(codec, streamCodec) }
 
-    @JvmStatic fun init() {}
+    @JvmStatic fun init() {
+    }
 }

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "cyan_marble_button",
+  "ingredients": [
+    {
+      "item": "generations_core:cyan_marble"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:cyan_marble_button"
+  }
+}

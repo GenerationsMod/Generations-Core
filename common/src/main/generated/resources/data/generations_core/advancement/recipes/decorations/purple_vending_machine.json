@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_fresh_water": {
+      "conditions": {
+        "items": [
+          {
+            "items": "generations_core:fresh_water"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "generations_core:purple_vending_machine"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_fresh_water"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "generations_core:purple_vending_machine"
+    ]
+  }
+}

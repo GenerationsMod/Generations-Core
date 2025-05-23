@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "powder_blue_marble_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:powder_blue_marble"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:powder_blue_marble_stairs"
+  }
+}

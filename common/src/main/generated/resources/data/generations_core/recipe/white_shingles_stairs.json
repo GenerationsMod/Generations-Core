@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "white_shingles_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:white_shingles"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:white_shingles_stairs"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "type": "generations_core:shaped_rks",
+  "consumesTimeCapsules": true,
+  "experience": 1.0,
+  "group": "",
+  "pattern": {
+    "key": {
+      "A": {
+        "type": "generations_core:item",
+        "key": "minecraft:netherite_scrap"
+      },
+      "B": {
+        "type": "generations_core:item",
+        "key": "cobblemon:flying_gem"
+      },
+      "X": {
+        "type": "generations_core:item",
+        "key": "generations_core:z_ingot"
+      }
+    },
+    "pattern": [
+      "XXX",
+      "ABA",
+      "XXX"
+    ]
+  },
+  "processingTime": 240,
+  "result": {
+    "type": "generations_core:item",
+    "stack": {
+      "count": 1,
+      "id": "generations_core:flyinium_z"
+    }
+  },
+  "showNotification": false
+}

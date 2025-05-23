@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:lime_dye"
+    },
+    {
+      "tag": "generations_core:vending_machine"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:lime_vending_machine"
+  }
+}

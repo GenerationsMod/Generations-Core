@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mossy_charge_cobblestone_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:mossy_charge_cobblestone"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:mossy_charge_cobblestone_wall"
+  }
+}

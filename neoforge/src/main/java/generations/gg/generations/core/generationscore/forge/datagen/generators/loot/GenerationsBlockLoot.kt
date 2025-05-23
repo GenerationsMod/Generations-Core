@@ -247,7 +247,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         createGenericRotationModelBlockTable(GenerationsUtilityBlocks.RKS_MACHINE.get())
         createGenericRotationModelBlockTable(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get())
         createGenericRotationModelBlockTable(GenerationsShrines.PRISON_BOTTLE.get())
-        prisonBottleStem<GenericRotatableModelBlock<*>>()
+        prisonBottleStem()
 
         dropSelf(GenerationsBlocks.CASTLE_PILLAR)
         dropSelf(GenerationsBlocks.BROKEN_CASTLE_PILLAR)
@@ -493,18 +493,16 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         )
     }
 
-    protected fun <T : GenericRotatableModelBlock<*>?> prisonBottleStem() {
+    protected fun prisonBottleStem() {
         val block = GenerationsShrines.PRISON_BOTTLE_STEM.get()
-        val statePropertiesPredicate = StatePropertiesPredicate.Builder.properties()
+        val statePropertiesPredicate: () -> StatePropertiesPredicate.Builder = {
+            val builder = StatePropertiesPredicate.Builder.properties()
 
-        if (block.widthProperty != null) {
-            statePropertiesPredicate.hasProperty(block.widthProperty, block.baseX)
-        }
-        if (block.heightProperty != null) {
-            statePropertiesPredicate.hasProperty(block.heightProperty, 0)
-        }
-        if (block.lengthProperty != null) {
-            statePropertiesPredicate.hasProperty(block.lengthProperty, block.baseZ)
+            block.widthProperty?.run { builder.hasProperty(this, block.baseX) }
+            block.heightProperty?.run { builder.hasProperty(this, 0) }
+            block.lengthProperty?.run { builder.hasProperty(this, block.baseZ) }
+
+            builder
         }
 
         val lootTable = this.applyExplosionCondition(
@@ -514,7 +512,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
                     LootItem.lootTableItem(block)
                         .`when`(
                             LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(statePropertiesPredicate)
+                                .setProperties(statePropertiesPredicate.invoke())
                         )
                 )
         )
@@ -522,11 +520,11 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         add(
             block, LootTable.lootTable()
                 .withPool(lootTable)
-                .withPool(ringLoot(PrisonBottleState.RING_1, 1, statePropertiesPredicate))
-                .withPool(ringLoot(PrisonBottleState.RING_2, 2, statePropertiesPredicate))
-                .withPool(ringLoot(PrisonBottleState.RING_3, 3, statePropertiesPredicate))
-                .withPool(ringLoot(PrisonBottleState.RING_4, 4, statePropertiesPredicate))
-                .withPool(ringLoot(PrisonBottleState.RING_5, 5, statePropertiesPredicate))
+                .withPool(ringLoot(PrisonBottleState.RING_1, 1, statePropertiesPredicate.invoke()))
+                .withPool(ringLoot(PrisonBottleState.RING_2, 2, statePropertiesPredicate.invoke()))
+                .withPool(ringLoot(PrisonBottleState.RING_3, 3, statePropertiesPredicate.invoke()))
+                .withPool(ringLoot(PrisonBottleState.RING_4, 4, statePropertiesPredicate.invoke()))
+                .withPool(ringLoot(PrisonBottleState.RING_5, 5, statePropertiesPredicate.invoke()))
         )
     }
 

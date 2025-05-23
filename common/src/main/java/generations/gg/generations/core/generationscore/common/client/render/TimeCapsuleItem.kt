@@ -1,3 +1,5 @@
+package generations.gg.generations.core.generationscore.common.client.render
+
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRenderer
 import com.cobblemon.mod.common.client.render.models.blockbench.FloatingState
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
@@ -18,7 +20,7 @@ import net.minecraft.world.item.ItemStack
 import org.joml.Quaternionf
 import org.joml.Vector3f
 
-class PokemonItemRenderer : CobblemonBuiltinItemRenderer {
+class TimeCapsuleItem : CobblemonBuiltinItemRenderer {
     val context = RenderContext().also {
         it.put(RenderContext.RENDER_STATE, RenderContext.RenderState.PROFILE)
         it.put(RenderContext.DO_QUIRKS, false)
@@ -89,50 +91,50 @@ class PokemonItemRenderer : CobblemonBuiltinItemRenderer {
         val positions: MutableMap<ItemDisplayContext, Transformations> = mutableMapOf()
 
         init {
-            positions[ItemDisplayContext.GUI] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(1.0, -1.9, -0.5),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, 35F, 0F)
+            positions[ItemDisplayContext.GUI] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(1.0, -1.9, -0.5),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, 35F, 0F)
             )
-            positions[ItemDisplayContext.FIXED] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(1.0, -2.0, 3.0),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, 35F - 180F, 0F)
+            positions[ItemDisplayContext.FIXED] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(1.0, -2.0, 3.0),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, 35F - 180F, 0F)
             )
-            positions[ItemDisplayContext.FIRST_PERSON_RIGHT_HAND] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(2.75, -1.2, 5.0),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, 35F, 0F)
+            positions[ItemDisplayContext.FIRST_PERSON_RIGHT_HAND] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(2.75, -1.2, 5.0),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, 35F, 0F)
             )
-            positions[ItemDisplayContext.FIRST_PERSON_LEFT_HAND] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(-0.75, -1.2, 5.0),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, -35F, 0F)
+            positions[ItemDisplayContext.FIRST_PERSON_LEFT_HAND] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(-0.75, -1.2, 5.0),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, -35F, 0F)
             )
-            positions[ItemDisplayContext.THIRD_PERSON_RIGHT_HAND] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(1.0, -2.6, 2.75),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, 35F, 0F)
+            positions[ItemDisplayContext.THIRD_PERSON_RIGHT_HAND] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(1.0, -2.6, 2.75),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, 35F, 0F)
             )
-            positions[ItemDisplayContext.THIRD_PERSON_LEFT_HAND] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(1.0, -2.6, 2.75),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, -35F, 0F)
+            positions[ItemDisplayContext.THIRD_PERSON_LEFT_HAND] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(1.0, -2.6, 2.75),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, -35F, 0F)
             )
-            positions[ItemDisplayContext.GROUND] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(1.0, -2.6, 3.0),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, 35F, 0F)
+            positions[ItemDisplayContext.GROUND] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(1.0, -2.6, 3.0),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, 35F, 0F)
             )
-            positions[ItemDisplayContext.HEAD] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(1.0, -3.5, 3.0),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, 215F, 0F)
+            positions[ItemDisplayContext.HEAD] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(1.0, -3.5, 3.0),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, 215F, 0F)
             )
-            positions[ItemDisplayContext.NONE] = PokemonItemRenderer().Transformations(
-                PokemonItemRenderer().Transformation(0.0, 0.0, 0.0),
-                PokemonItemRenderer().Transformation(0.5F, -0.5F, -0.5F),
-                PokemonItemRenderer().Transformation(0F, 0F, 0F)
+            positions[ItemDisplayContext.NONE] = TimeCapsuleItem().Transformations(
+                TimeCapsuleItem().Transformation(0.0, 0.0, 0.0),
+                TimeCapsuleItem().Transformation(0.5F, -0.5F, -0.5F),
+                TimeCapsuleItem().Transformation(0F, 0F, 0F)
             )
         }
     }

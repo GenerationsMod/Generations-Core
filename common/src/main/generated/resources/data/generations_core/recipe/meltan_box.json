@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "generations_core:box"
+    },
+    "Y": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "XYX",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:meltan_box"
+  }
+}

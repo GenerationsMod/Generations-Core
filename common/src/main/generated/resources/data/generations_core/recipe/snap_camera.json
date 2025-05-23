@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "cobblemon:cell_battery"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "I": {
+      "item": "generations_core:z_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "III",
+    "BRG",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:snap_camera"
+  }
+}

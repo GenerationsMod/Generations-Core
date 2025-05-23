@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "X": {
+      "item": "minecraft:gravel"
+    },
+    "Y": {
+      "item": "minecraft:ink_sac"
+    },
+    "Z": {
+      "item": "minecraft:cyan_dye"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "ZXZ",
+    "XYX"
+  ],
+  "result": {
+    "count": 5,
+    "id": "generations_core:cyan_shingles"
+  }
+}

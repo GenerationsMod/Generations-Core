@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "z_ingot",
+  "ingredient": {
+    "item": "generations_core:deepslate_z_crystal_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "generations_core:z_ingot"
+  }
+}

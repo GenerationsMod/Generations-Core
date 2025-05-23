@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "L": {
+      "item": "minecraft:redstone_lamp"
+    }
+  },
+  "pattern": [
+    "LCL",
+    "GCG",
+    " C "
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:double_street_lamp"
+  }
+}
