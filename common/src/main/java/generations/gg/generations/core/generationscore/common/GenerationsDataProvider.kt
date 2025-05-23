@@ -31,8 +31,8 @@ class GenerationsDataProvider : DataProvider {
     private val scheduledActions = mutableMapOf<UUID, MutableList<() -> Unit>>()
 
     fun registerDefaults() {
-        this.register(Shops)
-        this.register(ShopPresets)
+//        this.register(Shops)
+//        this.register(ShopPresets)
         PlatformEvents.SERVER_PLAYER_LOGOUT.subscribe(Priority.HIGH) {
             synchronizedPlayerIds.remove(it.player.uuid)
             S2CUnlockReloadPacket().sendToPlayer(it.player)

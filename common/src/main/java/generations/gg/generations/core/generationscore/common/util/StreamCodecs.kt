@@ -9,6 +9,7 @@ import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceLocation
 import java.util.*
+import javax.swing.text.html.Option
 import kotlin.jvm.functions.Function8
 import kotlin.jvm.optionals.getOrNull
 
@@ -22,6 +23,8 @@ object StreamCodecs {
     }
 
     fun <V> StreamCodec<ByteBuf, V>.asRegistryFriendly(): StreamCodec<RegistryFriendlyByteBuf, V> = mapStream({ it as RegistryFriendlyByteBuf })
+
+    fun <B, V : Any> StreamCodec<B, V>.optional(): StreamCodec<B, Optional<V>> where B : ByteBuf = ByteBufCodecs.optional(this)
 
     fun <B, V : Any> StreamCodec<B, V>.nullable(): StreamCodec<B, V?> where B : ByteBuf = ByteBufCodecs.optional(this).map({ it.getOrNull() }, { Optional.ofNullable(it) })
 

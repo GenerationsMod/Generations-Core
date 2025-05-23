@@ -19,7 +19,6 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import java.lang.reflect.Type
 import java.util.*
-import kotlin.jvm.optionals.getOrNull
 
 object Codecs {
     @JvmStatic
@@ -46,8 +45,6 @@ object Codecs {
     fun <T> ResourceKey<Registry<T>>.tagStreamCodec(): StreamCodec<ByteBuf, TagKey<T>> {
         return ResourceLocation.STREAM_CODEC.map({ TagKey.create(this, it) }, TagKey<*>::location)
     }
-
-    fun <A, T> Codec<T>.nullable(name: String, getter: (A) -> T?): RecordCodecBuilder<A, T?> where T: Any = this.lenientOptionalFieldOf(name).xmap({ it.getOrNull() }, { Optional.ofNullable(it) }).forGetter({ getter.invoke(it) })
 
     fun <A> Codec<A>.set(): Codec<Set<A>> = listOf().xmap({ it.toSet() }, { it.toList() })
 

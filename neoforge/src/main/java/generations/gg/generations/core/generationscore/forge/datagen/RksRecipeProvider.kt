@@ -350,7 +350,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
     private fun unownBlock(consumer: RecipeOutput, createdBlock: RegistrySupplier<out Block>, form: String) {
         create(createdBlock.get())
             .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.getBaseBlock())
-            .requires(PokemonItemIngredient(ResourceLocation.fromNamespaceAndPath("cobblemon", "unown"), Set.of(form)))
+            .requires(PokemonItemIngredient(ResourceLocation.fromNamespaceAndPath("cobblemon", "unown").optional(), Set.of(form).optional()))
             .criterion(
                 getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.get()),
                 has(GenerationsBlocks.UNOWN_BLOCK_BLANK.get())
@@ -437,3 +437,6 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .save(exporter, id(name))
     }
 }
+
+fun <T: Any> T.optional(): Optional<T> = Optional.of(this)
+fun <T: Any> T?.nullableOptional(): Optional<T> = Optional.ofNullable(this)

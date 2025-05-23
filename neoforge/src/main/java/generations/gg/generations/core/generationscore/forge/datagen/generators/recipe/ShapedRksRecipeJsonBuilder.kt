@@ -6,6 +6,8 @@ import com.google.common.collect.Maps
 import com.google.common.collect.Sets
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.world.recipe.*
+import generations.gg.generations.core.generationscore.forge.datagen.nullableOptional
+import generations.gg.generations.core.generationscore.forge.datagen.optional
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
@@ -40,7 +42,7 @@ class ShapedRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<Sh
     }
 
     override fun create(id: ResourceLocation, pattern: ShapedRecipePattern): ShapedRksRecipe {
-        return ShapedRksRecipe(this.group ?: "", this.result, this.consumesTimeCapsules, speciesKey, experience, processingTime, false, pattern)
+        return ShapedRksRecipe(this.group ?: "", this.result, this.consumesTimeCapsules, speciesKey.nullableOptional(), experience, processingTime, false, pattern)
     }
 
     override fun validate(recipeId: ResourceLocation): ShapedRecipePattern {

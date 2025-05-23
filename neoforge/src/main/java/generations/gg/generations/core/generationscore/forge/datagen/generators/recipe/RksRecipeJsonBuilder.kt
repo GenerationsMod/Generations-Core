@@ -90,7 +90,7 @@ abstract class RksRecipeJsonBuilder<V : RksRecipe, T>(@JvmField protected val re
             )
         }
         val shapedrecipe = create(id, t)
-        recipeOutput.accept(id, shapedrecipe, advancementBuilder.build(id.withPrefix("recipes/rks/")))
+        recipeOutput.accept(id.withPrefix("recipes/rks/"), shapedrecipe, advancementBuilder.build(id.withPrefix("recipes/rks/")))
     }
 
     protected abstract fun create(id: ResourceLocation, addition: T): V

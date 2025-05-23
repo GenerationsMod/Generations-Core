@@ -16,6 +16,7 @@ import generations.gg.generations.core.generationscore.common.world.feature.Gene
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.fabric.AnvilEvents.AnvilChange
+import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
 import generations.gg.generations.core.generationscore.fabric.world.item.creativetab.GenerationsCreativeTabsFabric
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers
 import net.fabricmc.api.ModInitializer
@@ -66,13 +67,13 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
 
         if (FabricLoader.getInstance().isModLoaded("impactor")) ImpactorCompat.init()
 
-        ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register(SyncDataPackContents { player: ServerPlayer?, isLogin: Boolean ->
+        ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register(SyncDataPackContents { player: ServerPlayer, isLogin: Boolean ->
             if (isLogin) GenerationsCore.dataProvider.sync(
-                player!!
+                player
             )
         })
-
-
+        GenerationsFabricNetwork.registerMessages()
+        GenerationsFabricNetwork.registerServerHandlers()
 
         AnvilEvents.ANVIL_CHANGE.register(AnvilChange { result, left, right, name, baseCost, player ->
             onAnvilChange(

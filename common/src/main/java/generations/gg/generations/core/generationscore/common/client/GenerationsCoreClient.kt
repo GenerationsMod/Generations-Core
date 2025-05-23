@@ -197,11 +197,8 @@ object GenerationsCoreClient {
 
         ItemPropertiesRegistry.register(
             GenerationsItems.CURRY.get(),
-            GenerationsCore.id("curry_type"),
-            { itemStack, clientLevel, livingEntity, i ->
-                return@register itemStack.get(GenerationsDataComponents.CURRY_DATA)?.curryType?.ordinal?.let { it / 100f }
-                    ?: 0f
-            })
+            GenerationsCore.id("curry_type")
+        ) { itemStack, _, _, _ -> return@register itemStack.get(GenerationsDataComponents.CURRY_DATA)?.curryType?.ordinal?.let { it / 100f } ?: 0f }
 
         ItemPropertiesRegistry.register(
             GenerationsItems.MELODY_FLUTE.get(),

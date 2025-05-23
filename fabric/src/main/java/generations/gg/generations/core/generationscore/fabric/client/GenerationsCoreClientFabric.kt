@@ -13,6 +13,7 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
+import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -64,6 +65,8 @@ class GenerationsCoreClientFabric : ClientModInitializer {
         })
 
         WorldRenderEvents.AFTER_ENTITIES.register(AfterEntities { context: WorldRenderContext -> renderRareCandy(context.world()) })
+
+        GenerationsFabricNetwork.registerClientHandlers()
 
         onInitialize(Minecraft.getInstance())
         registerRenderTypes()

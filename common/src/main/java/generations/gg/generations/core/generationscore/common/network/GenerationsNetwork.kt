@@ -24,8 +24,8 @@ object GenerationsNetwork {
         list.add(PacketRegisterInfo(S2COpenMailPacket.ID, S2COpenMailPacket::decode, S2COpenMailPacketHandler))
         list.add(PacketRegisterInfo(S2CUnlockReloadPacket.ID, S2CUnlockReloadPacket::decode, UnlockReloadPacketHandler))
         list.add(PacketRegisterInfo(S2COpenStatueEditorScreenPacket.ID, S2COpenStatueEditorScreenPacket::decode, S2COpenStatueEditorScreenHandler))
-        list.add(PacketRegisterInfo(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket::decode, DataRegistrySyncPacketHandler()))
-        list.add(PacketRegisterInfo(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket::decode, DataRegistrySyncPacketHandler()))
+//        list.add(PacketRegisterInfo(ShopRegistrySyncPacket.ID, ShopRegistrySyncPacket::decode, DataRegistrySyncPacketHandler()))
+//        list.add(PacketRegisterInfo(ShopPresetRegistrySyncPacket.ID, ShopPresetRegistrySyncPacket::decode, DataRegistrySyncPacketHandler()))
         list.add(PacketRegisterInfo(S2COpenShopPacket.ID, S2COpenShopPacket::decode, S2COpenShopHandler))
         list.add(PacketRegisterInfo(S2CSyncPlayerMoneyPacket.ID, ::S2CSyncPlayerMoneyPacket, S2CSyncPlayerMoneyHandler))
         list.add(PacketRegisterInfo(SpawnStatuePacket.ID, SpawnStatuePacket::decode, SpawnExtraDataEntityHandler()))
@@ -34,7 +34,7 @@ object GenerationsNetwork {
         return list;
     }
 
-    private fun generateC2SPacketInfoList() {
+    private fun generateC2SPacketInfoList(): MutableList<PacketRegisterInfo<*>> {
         val list = mutableListOf<PacketRegisterInfo<*>>()
 
 
@@ -53,5 +53,6 @@ object GenerationsNetwork {
         list.add(PacketRegisterInfo(UpdateStatuePacket.INTERACTABLE_ID, UpdateStatuePacket.Companion::interactableDecode, UpdateStatueHandler.Interactable))
         list.add(PacketRegisterInfo(UpdateStatuePacket.MATERIAL_ID, UpdateStatuePacket.Companion::materialDecode, UpdateStatueHandler.Material))
         list.add(PacketRegisterInfo(UpdateStatuePacket.ORIENTATION_ID, UpdateStatuePacket.Companion::orientationDecode, UpdateStatueHandler.Orientation))
+        return list
     }
 }

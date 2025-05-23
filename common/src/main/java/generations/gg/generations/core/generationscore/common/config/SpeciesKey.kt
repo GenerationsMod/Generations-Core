@@ -5,9 +5,9 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Species
 import com.mojang.serialization.Codec
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.util.Codecs.nullable
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.nullable
+import generations.gg.generations.core.generationscore.common.util.StreamCodecs.optional
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.set
 import it.unimi.dsi.fastutil.ints.IntSets
 import net.minecraft.network.RegistryFriendlyByteBuf
@@ -58,6 +58,7 @@ data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val asp
 
     companion object {
 
+
         val CODEC = Codec.STRING.xmap(::fromString, SpeciesKey::toString)
         val STREAM_CODEC = StreamCodec.composite(
             ResourceLocation.STREAM_CODEC,
@@ -65,6 +66,7 @@ data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val asp
             ByteBufCodecs.STRING_UTF8.set().asRegistryFriendly(),
             SpeciesKey::aspects, ::SpeciesKey
         )
+        val OPTIONAL_STREAM_CODEC = STREAM_CODEC.optional()
 
         val NULLABLE_STREAM_CODEC = STREAM_CODEC.nullable()
 

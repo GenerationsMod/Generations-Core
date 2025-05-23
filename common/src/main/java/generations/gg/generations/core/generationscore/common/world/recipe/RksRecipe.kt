@@ -11,16 +11,18 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.crafting.*
 import java.util.*
+import kotlin.jvm.optionals.getOrNull
 
 abstract class RksRecipe(
     @JvmField val group: String,
-    @JvmField val result: RksResult<*>,
-    @JvmField val consumesTimeCapsules: Boolean,
-    @JvmField val key: SpeciesKey?,
+    val result: RksResult<*>,
+    val consumesTimeCapsules: Boolean,
+    val key: Optional<SpeciesKey>,
     val experience: Float,
     val processingTime: Int,
-    @JvmField val showNotification: Boolean
+    val showNotification: Boolean
 ) : Recipe<RksInput> {
+
     abstract override fun getSerializer(): RecipeSerializer<*>
 
     override fun getGroup(): String {
