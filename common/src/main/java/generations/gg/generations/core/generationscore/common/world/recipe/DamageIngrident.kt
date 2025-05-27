@@ -24,7 +24,7 @@ class DamageIngredient(var item: Item, var damage: Int) : GenerationsIngredient 
     override fun matchingStacks(): List<ItemStack> = listOf(item.defaultInstance)
 
     override val type: GenerationsIngredientType<*>
-        get() = GenerationsIngredidents.DAMAGE.get()
+        get() = GenerationsIngredidents.DAMAGE
 
     companion object {
         val ID = "damage"

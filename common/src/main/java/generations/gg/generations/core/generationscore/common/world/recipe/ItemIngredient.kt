@@ -22,7 +22,7 @@ class ItemIngredient(val itemKey: ResourceKey<Item>) : GenerationsIngredient {
     }
 
     override val type: GenerationsIngredientType<*>
-        get() = GenerationsIngredidents.ITEM.get()
+        get() = GenerationsIngredidents.ITEM
 
     override fun matchingStacks(): List<ItemStack> {
        return listOf(BuiltInRegistries.ITEM.get(itemKey)!!.defaultInstance)

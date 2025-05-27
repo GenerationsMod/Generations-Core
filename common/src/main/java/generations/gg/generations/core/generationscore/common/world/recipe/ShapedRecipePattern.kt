@@ -73,7 +73,7 @@ class ShapedRecipePattern(
 
         buffer.writeVarInt(ingredients.size)
 
-        ingredients.forEach(Consumer { ingredient: GenerationsIngredient ->
+        ingredients.forEach({ ingredient ->
             GenerationsIngredidents.STREAM_CODEC.encode(
                 buffer,
                 ingredient
@@ -275,7 +275,7 @@ class ShapedRecipePattern(
         private fun fromNetwork(buffer: RegistryFriendlyByteBuf): ShapedRecipePattern {
             val i = buffer.readVarInt()
             val j = buffer.readVarInt()
-            val nonNullList = NonNullList.withSize<GenerationsIngredient>(i * j, EmptyIngredient)
+            val nonNullList = NonNullList.withSize<GenerationsIngredient>(buffer.readVarInt(), EmptyIngredient)
             nonNullList.replaceAll { ingredient: GenerationsIngredient? ->
                 GenerationsIngredidents.STREAM_CODEC.decode(
                     buffer
@@ -294,9 +294,8 @@ class ShapedRecipePattern(
                         )
                     }.orElseGet { DataResult.error { "Cannot encode unpacked recipe" } }
                 })
-            STREAM_CODEC = StreamCodec.ofMember(
-                { obj: ShapedRecipePattern, buffer: RegistryFriendlyByteBuf -> obj.toNetwork(buffer) },
-                { buffer: RegistryFriendlyByteBuf -> fromNetwork(buffer) })
+            STREAM_CODEC = StreamCodec.ofMember(ShapedRecipePattern::toNetwork, ::fromNetwork
+            )
         }
     }
 }

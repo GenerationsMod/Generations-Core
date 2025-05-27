@@ -24,7 +24,7 @@ class PokemonItemIngredient(val species: Optional<ResourceLocation>, val aspects
     override val id = ID
 
     override val type: GenerationsIngredientType<*>
-        get() = GenerationsIngredidents.POKEMON_ITEM.get()
+        get() = GenerationsIngredidents.POKEMON_ITEM
 
     override fun matches(stack: ItemStack): Boolean =
         if (stack.`is`(CobblemonItems.POKEMON_MODEL)) {

@@ -17,7 +17,7 @@ class ItemTagIngredient(val itemKey: TagKey<Item>) : GenerationsIngredient {
     override val id = ID
 
     override val type: GenerationsIngredientType<*>
-        get() = GenerationsIngredidents.ITEM_TAG.get()
+        get() = GenerationsIngredidents.ITEM_TAG
 
     override fun matches(stack: ItemStack): Boolean {
         return stack.`is` { it.`is`(itemKey) }

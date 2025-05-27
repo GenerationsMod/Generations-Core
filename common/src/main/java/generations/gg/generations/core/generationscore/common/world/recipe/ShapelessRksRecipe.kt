@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.recipe
 
-import com.cobblemon.mod.common.util.codec.kotlinOptionalFieldOf
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
@@ -44,8 +43,6 @@ class ShapelessRksRecipe(
     companion object {
         val STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, ShapelessRksRecipe> = StreamCodec.of(ShapelessRksRecipe::toNetwork, ShapelessRksRecipe::fromNetwork)
 
-        val INGREDIENT_LIST: StreamCodec<RegistryFriendlyByteBuf, NonNullList<GenerationsIngredient>> = GenerationsIngredidents.STREAM_CODEC.apply(ByteBufCodecs.collection { NonNullList.withSize(it, EmptyIngredient) })
-
         private fun toNetwork(buffer: RegistryFriendlyByteBuf, value: ShapelessRksRecipe) {
             ByteBufCodecs.STRING_UTF8.encode(buffer, value.group)
             RksResultType.STREAM_CODEC.encode(buffer, value.result)
@@ -54,8 +51,14 @@ class ShapelessRksRecipe(
             ByteBufCodecs.FLOAT.encode(buffer, value.experience)
             ByteBufCodecs.INT.encode(buffer, value.processingTime)
             ByteBufCodecs.BOOL.encode(buffer, value.showNotification)
-            INGREDIENT_LIST.encode(buffer, value.recipeItems)
-        }
+            buffer.writeVarInt(value.recipeItems.size)
+
+                value.recipeItems.forEach({ ingredient ->
+                GenerationsIngredidents.STREAM_CODEC.encode(
+                    buffer,
+                    ingredient
+                )
+            })        }
 
         private fun fromNetwork(buffer: RegistryFriendlyByteBuf): ShapelessRksRecipe {
             val group = ByteBufCodecs.STRING_UTF8.decode(buffer)
@@ -65,7 +68,12 @@ class ShapelessRksRecipe(
             val experience = ByteBufCodecs.FLOAT.decode(buffer)
             val processingTime = ByteBufCodecs.INT.decode(buffer)
             val showNotification = ByteBufCodecs.BOOL.decode(buffer)
-            val items = INGREDIENT_LIST.decode(buffer)
+            val items = NonNullList.withSize<GenerationsIngredient>(buffer.readVarInt(), EmptyIngredient)
+            items.replaceAll { ingredient: GenerationsIngredient? ->
+                GenerationsIngredidents.STREAM_CODEC.decode(
+                    buffer
+                )
+            }
 
             return ShapelessRksRecipe(group, result, consumesTimeCapsules, key, experience, processingTime, showNotification, items)
         }

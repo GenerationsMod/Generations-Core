@@ -23,6 +23,7 @@ object StreamCodecs {
     }
 
     fun <V> StreamCodec<ByteBuf, V>.asRegistryFriendly(): StreamCodec<RegistryFriendlyByteBuf, V> = mapStream({ it as RegistryFriendlyByteBuf })
+    fun <V> StreamCodec<ByteBuf, V>.asFriendly(): StreamCodec<FriendlyByteBuf, V> = mapStream({ it as FriendlyByteBuf })
 
     fun <B, V : Any> StreamCodec<B, V>.optional(): StreamCodec<B, Optional<V>> where B : ByteBuf = ByteBufCodecs.optional(this)
 

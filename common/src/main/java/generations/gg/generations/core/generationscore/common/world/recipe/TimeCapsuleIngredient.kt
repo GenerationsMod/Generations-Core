@@ -31,7 +31,7 @@ class TimeCapsuleIngredient(val key : SpeciesKey, val strictAspects: Boolean = f
         ), strictAspects)
 
     override val type: GenerationsIngredientType<*>
-        get() = GenerationsIngredidents.TIME_CAPSULE.get()
+        get() = GenerationsIngredidents.TIME_CAPSULE
 
     override fun matches(stack: ItemStack): Boolean = if(stack.`is`(GenerationsItems.TIME_CAPSULE.get())) stack.getPokemon()?.takeIf { it.species.resourceIdentifier == key.species && if(strictAspects) it.aspects == key.aspects else it.aspects.containsAny(key.aspects) } != null else false
     override fun matchingStacks(): List<ItemStack> = listOf(PokemonSpecies.getByIdentifier(key.species)?.let { PokemonItem.from(it, key.aspects ?: emptySet(), 1) }?: Items.APPLE.defaultInstance.also { it.set(DataComponents.ITEM_NAME, Component.literal("Missing species: " + key.species )) } )

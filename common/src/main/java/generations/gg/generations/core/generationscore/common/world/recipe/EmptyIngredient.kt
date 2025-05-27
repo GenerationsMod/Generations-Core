@@ -7,7 +7,7 @@ import net.minecraft.world.item.ItemStack
 object EmptyIngredient : GenerationsIngredient {
     override val id: String = "empty"
     override val type: GenerationsIngredientType<*>
-        get() = GenerationsIngredidents.EMPTY.get()
+        get() = GenerationsIngredidents.EMPTY
 
     override val isEmpty: Boolean
         get() = true
