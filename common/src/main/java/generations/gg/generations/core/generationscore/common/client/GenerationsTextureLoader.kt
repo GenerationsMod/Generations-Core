@@ -63,6 +63,8 @@ object GenerationsTextureLoader : ITextureLoader() {
                 }
             }
 
+            System.out.println()
+
 //            RARE_CANDY.listMatchingResources(manager).values.forEach { resouce ->
 //                resouce.openAsReader().use { GsonHelper.fromJson(gson, it, RARE_CANDY_TYPE) }.forEach { (key, value) ->
 //                    register(key, SimpleTextureEnhanced(value.asResource().let { "${it.namespace}:textures/${it.path}.png" }.asResource()))

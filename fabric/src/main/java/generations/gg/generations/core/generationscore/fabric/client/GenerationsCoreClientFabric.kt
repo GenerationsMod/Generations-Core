@@ -64,7 +64,9 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             )
         })
 
-        WorldRenderEvents.AFTER_ENTITIES.register(AfterEntities { context: WorldRenderContext -> renderRareCandy(context.world()) })
+//        WorldRenderEvents.AFTER_SETUP.register { GenerationsCoreClient.updateViewMatrix() }
+
+        WorldRenderEvents.AFTER_ENTITIES.register { context: WorldRenderContext -> renderRareCandy(context.world()) }
 
         GenerationsFabricNetwork.registerClientHandlers()
 

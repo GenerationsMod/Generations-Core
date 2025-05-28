@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading;
 
-import gg.generations.rarecandy.assimp.*;
 import gg.generations.rarecandy.pokeutils.*;
 import gg.generations.rarecandy.renderer.animation.Animation;
 import gg.generations.rarecandy.renderer.animation.Skeleton;
@@ -14,7 +13,11 @@ import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.assimp.*;
+import org.lwjgl.system.MemoryUtil;
 
+import java.nio.ByteBuffer;
 import java.util.*;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;

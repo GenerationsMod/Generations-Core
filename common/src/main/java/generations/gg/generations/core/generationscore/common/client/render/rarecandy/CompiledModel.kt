@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.client.render.rar
 
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
+import dev.architectury.event.events.client.ClientTooltipEvent.Render
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.GenerationsModelLoader
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.VanilaRenderModel
