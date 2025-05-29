@@ -22,15 +22,13 @@ import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
 
 class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) {
-    override fun getName(stack: ItemStack): Component {
-        val sealedMailData = stack.get(GenerationsDataComponents.SEALED_MAIL_DATA)
-        if (sealedMailData != null && !StringUtil.isNullOrEmpty(sealedMailData.title)) {
-            return sealedMailData.title.text()
-        }
-        return super.getName(stack)
-    }
-
-
+//    override fun getName(stack: ItemStack): Component {
+//        val sealedMailData = stack.get(GenerationsDataComponents.SEALED_MAIL_DATA)
+//        if (sealedMailData != null && !StringUtil.isNullOrEmpty(sealedMailData.title)) {
+//            return sealedMailData.title.text()
+//        }
+//        return super.getName(stack)
+//    }
 
     override fun appendHoverText(
         stack: ItemStack,

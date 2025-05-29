@@ -14,7 +14,6 @@ import generations.gg.generations.core.generationscore.common.world.item.curry.C
 import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.Registries
-import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
@@ -61,7 +60,7 @@ object GenerationsDataComponents {
         }
 
     })
-    val SEALED_MAIL_DATA = register("mail_data", SealedMailContent.CODEC, SealedMailContent.STREAM_CODEC)
+    val SEALED_MAIL_DATA = register("mail_data", MailContent.CODEC, MailContent.STREAM_CODEC)
     val WALKMON_DATA = register("walkmon_data", WalkmonItem.WalkmonData.CODEC, WalkmonItem.WalkmonData.STREAM_CODEC)
     val FISHED_SHARDS = register("fished_shards", RubyRodItem.FishedShards.CODEC)
 
