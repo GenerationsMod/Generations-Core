@@ -804,6 +804,7 @@ object GenerationsItems {
     @JvmField val MEGA_RING = register("mega_ring", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
     @JvmField val Z_POWER_RING = register("z_power_ring", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
     @JvmField val Z_RING = register("z_ring", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
+    @JvmField val TERA_ORB = register("tera_orb", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
 
         /*
     public static final RegistrySupplier<Item> RED_BIKE = register("red_bike", Item::new, PLAYER_ITEMS);

@@ -361,6 +361,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.KEY_STONE.get(), "player_items/")
         createItem(GenerationsItems.Z_POWER_RING.get(), "player_items/")
         createItem(GenerationsItems.Z_RING.get(), "player_items/")
+        createItem(GenerationsItems.TERA_ORB.get(), "player_items/")
 
         /*
         createItem(GenerationsItems.RED_BIKE.get(), "player_items/");

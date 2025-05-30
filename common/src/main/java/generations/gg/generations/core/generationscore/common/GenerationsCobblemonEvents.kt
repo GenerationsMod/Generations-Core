@@ -11,6 +11,7 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_POST
 import com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
+import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.storage.player.PlayerInstancedDataStoreType
 import com.cobblemon.mod.common.api.storage.player.PlayerInstancedDataStoreTypes
 import com.cobblemon.mod.common.api.text.text
@@ -26,6 +27,8 @@ import generations.gg.generations.core.generationscore.common.battle.Generations
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
+import generations.gg.generations.core.generationscore.common.event.BattleStartEvent
+import generations.gg.generations.core.generationscore.common.event.HeldItemFormeChange
 import generations.gg.generations.core.generationscore.common.network.packets.HeadPatPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags.*
 import generations.gg.generations.core.generationscore.common.util.DataKeys
@@ -55,10 +58,10 @@ class GenerationsCobblemonEvents {
 
 
         fun init() {
-            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
-
+//            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
+            CobblemonEvents.TERASTALLIZATION.subscribe(Priority.NORMAL, GenerationsInstructionProcessor::processTerastillization)
 //            CobblemonEvents.POKEMON_ENTITY_SPAWN.subscribe(Priority.HIGHEST) { it ->
-//
+            CobblemonEvents.BATTLE_STARTED_PRE.subscribe(Priority.NORMAL, BattleStartEvent::resetAspects)
 //
 //            }
 
@@ -151,6 +154,7 @@ class GenerationsCobblemonEvents {
             }
 
             HELD_ITEM_POST.subscribe {
+
                 it.returned.item.instanceOrNull<FormChanging>()?.let { formChanging ->
                     if(formChanging.process(it.pokemon, true)) {
                         it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
@@ -162,6 +166,8 @@ class GenerationsCobblemonEvents {
                         it.pokemon.getOwnerPlayer()?.sendSystemMessage("generations_core.ability.formchange".asTranslated(it.pokemon.getDisplayName().string))
                     }
                 }
+
+                HeldItemFormeChange.ogerMaskChange(it)
             }
 
 

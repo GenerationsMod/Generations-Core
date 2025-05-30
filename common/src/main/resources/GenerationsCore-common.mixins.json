@@ -15,7 +15,10 @@
     "client.GuiUtilsMixin",
     "client.ModelAssetVariationMixin",
     "client.PokemonGuiUtilsMixin",
-    "showdown.ShowdownActionRequestMixin"
+    "showdown.ShowdownActionRequestMixin",
+    "showdown.ShowdownThreadMixin",
+    "showdown.TerastallizeInstructionMixin",
+    "TeraPacketExceptionMixin"
   ],
   "client": [
     "client.BattleMoveSelectionGUIMixin",
