@@ -1,7 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.item.curry
 
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType.Companion
 import net.minecraft.ChatFormatting
+import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.util.StringRepresentable
 import java.util.function.Consumer
 import java.util.stream.Stream
@@ -34,10 +37,14 @@ enum class CurryTasteRating(
     }
 
     companion object {
+        val STREAM_CODEC = ByteBufCodecs.STRING_UTF8.map(CurryTasteRating::get, CurryTasteRating::getSerializedName).asRegistryFriendly()
+        val CODEC = StringRepresentable.fromEnum { CurryTasteRating.entries.toTypedArray() }
+
         fun fromId(id: Int): CurryTasteRating = id.tryCatchWithAlt({ entries[it] }, Koffing)
+
+        fun get(name: String): CurryTasteRating = entries.firstOrNull { rating -> rating.serializedName == name } ?: Unknown
     }
 
-    fun get(name: String): CurryTasteRating = entries.firstOrNull { rating -> rating.serializedName == name } ?: Unknown
 }
 
 fun <T, V> T.tryCatchWithAlt(block: (T) -> V, defaultValue: V): V = try {

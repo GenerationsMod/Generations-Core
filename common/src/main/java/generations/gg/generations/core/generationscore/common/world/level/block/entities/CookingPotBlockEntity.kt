@@ -137,7 +137,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                     val berriesTypes = berries.filter { berry: SimpleItemSlot -> !berry.isEmpty && berry.resource.item is BerryItem }
                         .mapNotNull { a -> (a.resource.asItem() as BerryItem).berry() }.toList()
 
-                    val event: Cook = Cook(type, berriesTypes, CurryData(type, berriesTypes))
+                    val event: Cook = Cook(type, berriesTypes, CurryData.create(type, berriesTypes))
 
                     if (!CurryEvents.COOK.invoker().act(event).isTrue()) {
                         val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY.get())

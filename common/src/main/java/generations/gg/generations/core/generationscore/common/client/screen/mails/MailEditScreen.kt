@@ -3,10 +3,9 @@ package generations.gg.generations.core.generationscore.common.client.screen.mai
 import com.cobblemon.mod.common.Cobblemon
 import com.google.common.collect.Lists
 import com.mojang.blaze3d.systems.RenderSystem
-import com.mojang.blaze3d.vertex.*
 import generations.gg.generations.core.generationscore.common.network.packets.C2SEditMailPacket
 import generations.gg.generations.core.generationscore.common.world.item.MailItem
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents.SEALED_MAIL_DATA
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents.MAIL_DATA
 import generations.gg.generations.core.generationscore.common.world.item.components.MailContent
 import it.unimi.dsi.fastutil.ints.IntArrayList
 import net.fabricmc.api.EnvType
@@ -70,7 +69,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
     private var displayCache: DisplayCache? = DisplayCache.EMPTY
 
     init {
-        val mailContent: MailContent? = book.get(SEALED_MAIL_DATA.value())
+        val mailContent: MailContent? = book.get(MAIL_DATA.value())
         if (mailContent != null) {
             contents = mailContent.content
         }
@@ -140,7 +139,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
     }
 
     private fun updateLocalCopy(sign: Boolean) {
-        val mailContent: MailContent = book.getOrDefault(SEALED_MAIL_DATA.value(), MailContent())
+        val mailContent: MailContent = book.getOrDefault(MAIL_DATA.value(), MailContent())
 
         if (contents.isNotEmpty()) {
             mailContent.content = this.contents

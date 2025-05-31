@@ -5,7 +5,7 @@ import generations.gg.generations.core.generationscore.common.tags.GenerationsIt
 import generations.gg.generations.core.generationscore.common.world.item.ClosedMailItem
 import generations.gg.generations.core.generationscore.common.world.item.MailType
 import generations.gg.generations.core.generationscore.common.world.item.MailTypes
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents.SEALED_MAIL_DATA
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents.MAIL_DATA
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.minecraft.ChatFormatting
@@ -15,7 +15,6 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.screens.Screen
 import net.minecraft.locale.Language
-import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.*
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.FormattedCharSequence
@@ -175,7 +174,7 @@ class MailViewScreen private constructor(arg: MailAccess, bl: Boolean) : Screen(
         private val type: MailType
 
         init {
-            val mail = arg.get(SEALED_MAIL_DATA.value())
+            val mail = arg.get(MAIL_DATA.value())
 
             this.contents = mail?.content ?: ""
             this.type = (arg.item as ClosedMailItem).type
@@ -199,7 +198,7 @@ class MailViewScreen private constructor(arg: MailAccess, bl: Boolean) : Screen(
         private val type: MailType
 
         init {
-            val mail = arg.get(SEALED_MAIL_DATA.value())
+            val mail = arg.get(MAIL_DATA.value())
 
             this.contents = mail?.content ?: Component.translatable("book.invalid.tag").withStyle(ChatFormatting.DARK_RED).string
             this.author = mail?.author ?: ""

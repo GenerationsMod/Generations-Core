@@ -2,12 +2,9 @@ package generations.gg.generations.core.generationscore.common.network.packets
 
 import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
-import generations.gg.generations.core.generationscore.common.util.extensions.get
 import generations.gg.generations.core.generationscore.common.world.item.MailItem
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.components.MailContent
-import net.minecraft.core.component.DataComponents
-import net.minecraft.nbt.StringTag
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Inventory
@@ -43,7 +40,7 @@ object C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
     private fun updateMailContents(sender: ServerPlayer, slot: Int, contents: String) {
         val itemStack = sender.inventory.getItem(slot)
         if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
-            itemStack.update(GenerationsDataComponents.SEALED_MAIL_DATA.get(), MailContent()) {
+            itemStack.update(GenerationsDataComponents.MAIL_DATA.get(), MailContent()) {
                 it.content = contents
                 return@update it
             }
@@ -55,7 +52,7 @@ object C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
         if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
             val stack = MailItem.getSealed(itemStack.item)
 
-            stack.update(GenerationsDataComponents.SEALED_MAIL_DATA.get(), MailContent()) {
+            stack.update(GenerationsDataComponents.MAIL_DATA.get(), MailContent()) {
                 it.content = contents
                 it.author = sender.name.string
                 it.title = title

@@ -48,3 +48,4 @@ accessible field net/minecraft/server/network/ServerCommonPacketListenerImpl con
 
 extendable method net/minecraft/world/entity/LivingEntity getDimensions (Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/entity/EntityDimensions;
 extendable method net/minecraft/world/entity/LivingEntity canBreatheUnderwater ()Z
+accessible field net/minecraft/util/datafix/fixes/ItemStackComponentizationFix$ItemStackData item Ljava/lang/String;
