@@ -45,8 +45,10 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         val renderable = entity.renderablePokemon() ?: return
         val state = entity.delegate as StatueClientDelegate
         val model = PokemonModelRepository.getPoser(renderable.species.resourceIdentifier, state)
+        this.model.posableModel = model
         model.context = this.model.context
         this.model.setupEntityTypeContext(entity)
+
         stack.pushPose()
         stack.scale(-1f, -1f, 1f)
         val scale: Float = entity.scale
@@ -66,9 +68,8 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
                 )
         )
 
-        model.getPose(entity.poseType)?.let { state.setPose(it.poseName) }
-
         state.updatePartialTicks(partialTicks)
+
         model.setLayerContext(
             buffer,
             state,
@@ -86,6 +87,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
             0f,
             0f
         ) //TODO: Come back to make sure animations aren't scuffed
+
 
         this.model.renderToBuffer(stack, vertexConsumer, light, OverlayTexture.NO_OVERLAY, 0xffffffff.toInt())
 
@@ -170,6 +172,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
     override fun shouldShowName(entity: StatueEntity): Boolean {
         return entity.label?.let { it.isNotEmpty() && it.isNotBlank() } ?: false
     }
+
 }
 
 class PoseableStatueEntityModel : PosableEntityModel<StatueEntity>() {
@@ -178,7 +181,7 @@ class PoseableStatueEntityModel : PosableEntityModel<StatueEntity>() {
 
         (entity as? StatueEntity)?.let {
             val renderable = entity.renderablePokemon()!!
-            var delegate = entity as StatueClientDelegate
+            var delegate = entity.delegate as StatueClientDelegate
 
             context.put(RenderContext.SCALE, renderable.form.baseScale)
             context.put(RenderContext.SPECIES, renderable.species.resourceIdentifier)

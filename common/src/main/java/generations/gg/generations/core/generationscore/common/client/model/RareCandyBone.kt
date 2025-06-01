@@ -125,18 +125,18 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         if (instance == null) {
             return
         } else {
-            if (isStatue) {
-                if (model.guiInstance == null) return
-                instance.matrixTransforms = model.guiInstance!!.matrixTransforms
-                instance.offsets = model.guiInstance!!.offsets
-            } else {
+//            if (isStatue) {
+//                if (model.guiInstance == null) return
+//                instance.matrixTransforms = model.guiInstance!!.matrixTransforms
+//                instance.offsets = model.guiInstance!!.offsets
+//            } else {
                 val entity = context.request(RenderContext.ENTITY) as? PokemonEntity
 
                 scale *= if(entity != null) {
-                    1f / entity.pokemon.form.baseScale
+                    1f / entity.form.baseScale
                 } else {
                     1f / (context.form?.baseScale ?: 1f)
-                }
+//                }
             }
         }
         if (model.renderObject!!.isReady) {
