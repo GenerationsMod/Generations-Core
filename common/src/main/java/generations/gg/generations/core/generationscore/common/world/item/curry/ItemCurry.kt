@@ -98,18 +98,6 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
             stack.set(GenerationsDataComponents.CURRY_DATA, data)
             return stack
         }
-
-        //TODO: data -> generations_core:curry_data via world converter
-
-//        @JvmStatic
-//        fun setData(stack: ItemStack, data: CurryData) {
-//            stack.addTagElement("data", data.toNbt())
-//        }
-//
-//        @JvmStatic
-//        fun getData(stack: ItemStack): CurryData {
-//            return CurryData.fromNbt(stack.getOrCreateTagElement("data"))
-//        }
     }
 }
 

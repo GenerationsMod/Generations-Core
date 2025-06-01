@@ -102,33 +102,18 @@ data class CurryData(
     val resourceLocation: ResourceLocation
         get() = curryType.resourceLocation
 
-    fun toNbt(): Tag {
-        val nbt = CompoundTag()
-        nbt.putInt("flavor", flavor?.ordinal ?: -1)
-        nbt.putInt("type", curryType.ordinal)
-        nbt.putInt("rating", rating.ordinal)
-        nbt.putInt("experience", experience)
-        nbt.putDouble("healthPercentage", healthPercentage)
-        nbt.putBoolean("canHealStatus", canHealStatus)
-        nbt.putBoolean("canRestorePP", canRestorePP)
-        nbt.putInt("friendship", friendship)
-
-        return nbt
-    }
-
     companion object {
         val CODEC: Codec<CurryData> = RecordCodecBuilder.create {
             it.group(
                 Codecs.enumCodec(Flavor::class.java).optionalFieldOf("flavor").forGetter { Optional.ofNullable(it.flavor) },
                 CurryType.CODEC.fieldOf("type").forGetter { it.curryType },
                 Codec.INT.fieldOf("experience").forGetter { it.experience },
-                Codec.DOUBLE.fieldOf("healthPercentage").forGetter { it.healthPercentage },
-                Codec.BOOL.fieldOf("canHealStatus").forGetter { it.canHealStatus },
-                Codec.BOOL.fieldOf("canRestorePP").forGetter { it.canRestorePP },
+                Codec.DOUBLE.fieldOf("health_percentage").forGetter { it.healthPercentage },
+                Codec.BOOL.fieldOf("heal_status").forGetter { it.canHealStatus },
+                Codec.BOOL.fieldOf("restore_pp").forGetter { it.canRestorePP },
                 Codec.INT.fieldOf("friendship").forGetter { it.friendship },
                 CurryTasteRating.CODEC.fieldOf("rating").forGetter { it.rating },
-
-                ).apply(it, ::CurryData)
+            ).apply(it, ::CurryData)
         }
 
         val STREAM_CODEC = ByteBufCodecs.fromCodecTrusted(CODEC).asRegistryFriendly()
@@ -154,35 +139,6 @@ data class CurryData(
             rating.configureData(data)
 
             return data
-        }
-
-
-        fun fromNbt(nbt: CompoundTag): CurryData {
-            val curry = CurryData()
-            if (nbt.isEmpty) {
-                return curry
-            }
-
-            val flavorId = nbt.getInt("flavor")
-            val flavor = if (flavorId == -1) null else Flavor.entries[flavorId]
-            val type = CurryType.getCurryTypeFromIndex(nbt.getInt("type"))
-            val experience = nbt.getInt("experience")
-            val healthPercentage = nbt.getDouble("healthPercentage")
-            val canHealStatus = nbt.getBoolean("canHealStatus")
-            val canRestorePP = nbt.getBoolean("canRestorePP")
-            val friendship = nbt.getInt("friendship")
-            val rating = CurryTasteRating.fromId(nbt.getInt("rating"))
-
-            return CurryData(
-                flavor,
-                type,
-                experience,
-                healthPercentage,
-                canHealStatus,
-                canRestorePP,
-                friendship,
-                rating
-            )
         }
     }
 }

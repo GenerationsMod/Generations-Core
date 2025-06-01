@@ -122,8 +122,7 @@ abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntity
     }
 
     override fun playerWillDestroy(level: Level, pos: BlockPos, state: BlockState, player: Player): BlockState {
-        var pos: BlockPos = pos
-        pos = getBaseBlockPos(pos, state)
+        var position: BlockPos = getBaseBlockPos(pos, state)
         val facing: Direction = state.getValue(FACING)
 
         for (x in 0..width) {
@@ -132,14 +131,16 @@ abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntity
                     if (!validPosition(x, y, z)) continue
 
 
-                    val blockPos: BlockPos = adjustBlockPos(pos, facing, x, y, z, true)
+                    val blockPos: BlockPos = adjustBlockPos(position, facing, x, y, z, true)
+
+
 
                     level.destroyBlock(blockPos, !player.isCreative && x == baseX && y == 0 && z == baseZ)
                 }
             }
         }
 
-        return super.playerWillDestroy(level, pos, state, player)
+        return super.playerWillDestroy(level, position, state, player)
     }
 
 
@@ -222,7 +223,7 @@ abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntity
     }
 
     override fun canRender(level: Level, blockPos: BlockPos, blockState: BlockState): Boolean {
-        return getWidthValue(blockState) == baseX || getHeightValue(blockState) == 0 || getLengthValue(blockState) == baseZ
+        return getWidthValue(blockState) == baseX && getHeightValue(blockState) == 0 && getLengthValue(blockState) == baseZ
     }
 
     fun getAngle(state: BlockState): Float {
@@ -337,8 +338,7 @@ abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntity
                     val z: Int = block.getLengthValue(state)
 
                     block.adjustBlockPos(pos, facing, x, y, z, false)
-                }
-                pos
+                } else pos
             }
     }
 }

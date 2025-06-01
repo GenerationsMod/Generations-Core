@@ -1,8 +1,11 @@
 package generations.gg.generations.core.generationscore.common.mixin.datafix;
 
+import com.cobblemon.mod.common.api.berry.Flavor;
 import com.cobblemon.mod.common.pokemon.Pokemon;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryTasteRating;
+import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType;
 import net.minecraft.util.datafix.fixes.ItemStackComponentizationFix;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -55,7 +58,17 @@ public class ItemStackComponentizationFixMixin {
     }
 
     private static void fixCurry(ItemStackComponentizationFix.ItemStackData itemStackData, Dynamic<?> dynamic) {
-//        TODO: FINISH this
+        var curryData = dynamic.emptyMap();
+        var flavorInt = itemStackData.removeTag("flavor").asInt(-1);
+        if(flavorInt > -1) curryData = curryData.set("flavor", dynamic.createString(Flavor.values()[flavorInt].name().toLowerCase()));
+        curryData = curryData.set("type", dynamic.createString(CurryType.getEntries().get(itemStackData.removeTag("type").asInt(0)).getSerializedName()));
+        curryData = curryData.set("experience", dynamic.createInt(itemStackData.removeTag("experience").asInt(0)));
+        curryData = curryData.set("health_percentage", dynamic.createDouble(itemStackData.removeTag("healthPercentage").asDouble(0.0)));
+        curryData = curryData.set("heal_status", dynamic.createBoolean(itemStackData.removeTag("canHealStatus").asBoolean(false)));
+        curryData = curryData.set("restore_pp", dynamic.createBoolean(itemStackData.removeTag("canRestorePP").asBoolean(false)));
+        curryData = curryData.set("friendship", dynamic.createInt(itemStackData.removeTag("friendship").asInt(0)));
+        curryData = curryData.set("rating", dynamic.createString(CurryTasteRating.getEntries().get(itemStackData.removeTag("rating").asInt(0)).getSerializedName()));
+        itemStackData.setComponent("generations_core:curry_data", curryData);
     }
 
     private static void fixTM(ItemStackComponentizationFix.ItemStackData itemStackData, Dynamic<?> dynamic) {

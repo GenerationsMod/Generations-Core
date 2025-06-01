@@ -122,7 +122,7 @@ object GenerationsCore {
         )
 
         GenerationsDataComponents.init()
-
+        GenerationsStorage.init()
         GenerationsCoreEntityDataSerializers.init()
         GenerationsSounds.init()
         GenerationsBlocks.init()
