@@ -1,11 +1,15 @@
 package generations.gg.generations.core.generationscore.common.battle
 
 import com.cobblemon.mod.common.api.abilities.Ability
+import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
+import com.cobblemon.mod.common.api.events.battles.instruction.FormeChangeEvent
+import com.cobblemon.mod.common.api.events.battles.instruction.MegaEvolutionEvent
 import com.cobblemon.mod.common.api.events.battles.instruction.TerastallizationEvent
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.net.messages.client.battle.BattleTransformPokemonPacket
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.mojang.datafixers.util.Unit
@@ -13,82 +17,85 @@ import com.mojang.datafixers.util.Unit
 object GenerationsInstructionProcessor {
     private var originalAbility: Ability? = null
 
-//    @JvmStatic
-//    fun megaEvolutionProcessor(megaEvolutionEvent: MegaEvolutionEvent) {
-//        val battlePokemon = megaEvolutionEvent.pokemon
-//        val name =
-//
-//        originalAbility = battlePokemon.originalPokemon.ability
-//
-//        var pair: Pair<String, Any> = when(name) {
-//            "mega" -> "mega" to true
-//            "mega-x" -> "mega_x" to true
-//            "mega-y" -> "mega_y" to true
-////            "sunshine" -> "sunny" to true
-////            "school" -> "schooling" to true
-////            "primal" -> "primal" to true
-////            "ash" -> "ash" to true
-////            "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody-aspect" to true
-//
-//            else -> name to true
-//        } ?: let {
-//            battlePokemon.originalPokemon.removeBattleFeature()
-//            battlePokemon.effectedPokemon.removeBattleFeature()
-//            return
-//        }
-//
-//        pair.let {
-//            when (it.second) {
-//                is String -> it.let { StringSpeciesFeature(it.first, it.second as String) }
-//                is Boolean -> it.let { FlagSpeciesFeature(it.first, it.second as Boolean) }
-//                else -> null
-//            }
-//        }?.let {
-//            battle.dispatchGo {
-//                battlePokemon.entity
-//                battlePokemon.originalPokemon.applyBattleFeature(it)
-//                battlePokemon.effectedPokemon.applyBattleFeature(it)
-//            }
-//        }
-//
-//
-////            ?.let {
-////            battle.dispatchGo {
-////                FlagSpeciesFeature(it, true).also {
-////                    it.apply(battlePokemon.originalPokemon)
-////                    it.apply(battlePokemon.effectedPokemon)
-////                }
-////            }
-////        }
-//    }
+    @JvmStatic
+    fun processFormeChangeInstruction(battle: PokemonBattle, message: BattleMessage) {
+        val s1 = message.argumentAt(1) ?: return
+        val s2 = s1.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        if (s2.isEmpty()) return
+        val s3 = s2[0].lowercase().split("-".toRegex(), 2).dropLastWhile { it.isEmpty() }.toTypedArray()
+
+        if (s3.size < 2) return
+
+        val battlePokemon = message.battlePokemon(0, battle) ?: return
+
+        val name = s3[1]
+
+        originalAbility = battlePokemon.originalPokemon.ability
+
+        println("Form: ${name}")
+
+        var pair: Pair<String, Any> = when(name) {
+            "mega" -> "mega" to true
+            "mega-x" -> "mega-x" to true
+            "mega-y" -> "mega-y" to true
+//            "sunshine" -> "sunny" to true
+//            "school" -> "schooling" to true
+            "primal" -> "primal" to true
+            "ash" -> "ash" to true
+//            "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody-aspect" to true
+            else -> name to true
+        } ?: let {
+            battlePokemon.originalPokemon.removeBattleFeature()
+            battlePokemon.effectedPokemon.removeBattleFeature()
+            return
+        }
+        pair.let {
+            when (it.second) {
+                is String -> it.let { StringSpeciesFeature(it.first, it.second as String) }
+                is Boolean -> it.let { FlagSpeciesFeature(it.first, it.second as Boolean) }
+                else -> null
+            }
+        }?.let {
+            battle.dispatchGo {
+                battlePokemon.entity
+                battlePokemon.originalPokemon.applyBattleFeature(it)
+                battlePokemon.effectedPokemon.applyBattleFeature(it)
+            }
+        }
+    }
 
     @JvmStatic
     fun processTerastillization (terastallizationEvent: TerastallizationEvent) {
-        val battlePokemon = terastallizationEvent.pokemon
+        val pokemon = terastallizationEvent.pokemon.effectedPokemon
         val battle = terastallizationEvent.battle
-        if (battlePokemon.effectedPokemon.species.name.equals("Ogerpon")) {
-            println("Before applying FlagSpeciesFeature: embody_aspect = ${battlePokemon.effectedPokemon.aspects.contains("embody-aspect")}")
-            FlagSpeciesFeature("embody-aspect", true).apply(battlePokemon.effectedPokemon)
-            println("After applying FlagSpeciesFeature: embody_aspect = ${battlePokemon.effectedPokemon.aspects.contains("embody-aspect")}")
-            println("After applying FlagSpeciesFeature: Ability = ${battlePokemon.effectedPokemon.ability.name}")
-            println("Form name: ${battlePokemon.effectedPokemon.form.name}")
-            println("Base species name: ${battlePokemon.effectedPokemon.species.name}")
+        if (pokemon.species.name.equals("Ogerpon")) {
+            FlagSpeciesFeature("embody-aspect", true).apply(terastallizationEvent.pokemon.effectedPokemon)
             for (activeBattlePokemon in battle.activePokemon) {
                 val battleMon = activeBattlePokemon.battlePokemon
                 println(activeBattlePokemon.getPNX())
-                if (battleMon != null && battleMon.effectedPokemon.getOwnerPlayer() == battlePokemon.effectedPokemon.getOwnerPlayer() && battleMon == battlePokemon) {
-                    println("Name: " + battlePokemon.getName())
+                if (battleMon != null && battleMon.effectedPokemon.getOwnerPlayer() == pokemon.getOwnerPlayer() && battleMon == terastallizationEvent.pokemon) {
+                    println("Name: " + terastallizationEvent.pokemon.effectedPokemon.ability.name)
                     battle.sendSidedUpdate(
                         activeBattlePokemon.actor,
-                        BattleTransformPokemonPacket(activeBattlePokemon.getPNX(), battlePokemon, true),
-                        BattleTransformPokemonPacket(activeBattlePokemon.getPNX(), battlePokemon, false),
+                        BattleTransformPokemonPacket(activeBattlePokemon.getPNX(), terastallizationEvent.pokemon, true),
+                        BattleTransformPokemonPacket(activeBattlePokemon.getPNX(), terastallizationEvent.pokemon, false),
                         false
                     )
                 }
             }
-            battle.dispatchWaitingToFront(3f) {
+        }
+    }
 
-            }
+    @JvmStatic
+    fun processMegaEvolution (megaEvolutionEvent: MegaEvolutionEvent) {
+        val battle = megaEvolutionEvent.battle
+        val pokemon = megaEvolutionEvent.pokemon.originalPokemon
+        val data = megaEvolutionEvent.pokemon.effectedPokemon.persistentData
+        println("PersistentData keys for ${megaEvolutionEvent.pokemon.originalPokemon.species.name}: ${data.allKeys}")
+        val form = if(data.contains("form_name")) data.getString("form_name") else return
+        println("form: " + form)
+        battle.dispatchGo {
+            StringSpeciesFeature("mega_evolution", form).apply(pokemon)
         }
     }
     @JvmStatic
@@ -96,13 +103,13 @@ object GenerationsInstructionProcessor {
         battle.actors.forEach { actor ->
             if (!actor.getPlayerUUIDs().iterator().hasNext()) return@forEach
             actor.pokemonList.forEach { battlePokemon ->
-//                val tempAbility = battlePokemon.originalPokemon.ability
-//                val data = battlePokemon.effectedPokemon.persistentData
-//                println("PersistentData keys for ${battlePokemon.originalPokemon.species.name}: ${data.allKeys}")
-//                val name = if(data.contains("form_name")) data.getString("form_name") else ""
-//                battlePokemon.originalPokemon.removeBattleFeature()
-//                battlePokemon.effectedPokemon.removeBattleFeature()
-//                battlePokemon.originalPokemon.restoreAbility(tempAbility, originalAbility, name)
+                val tempAbility = battlePokemon.originalPokemon.ability
+                val data = battlePokemon.effectedPokemon.persistentData
+
+                val name = if(data.contains("form_name")) data.getString("form_name") else ""
+                battlePokemon.originalPokemon.removeBattleFeature()
+                battlePokemon.effectedPokemon.removeBattleFeature()
+                battlePokemon.originalPokemon.restoreAbility(tempAbility, originalAbility, name)
                 if (battlePokemon.effectedPokemon.species.name.equals("Ogerpon")) {
                     System.out.println("pass name check")
                     FlagSpeciesFeature("embody-aspect", false).apply(battlePokemon.effectedPokemon)

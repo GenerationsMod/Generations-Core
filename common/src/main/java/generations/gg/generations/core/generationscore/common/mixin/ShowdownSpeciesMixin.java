@@ -26,10 +26,9 @@ public abstract class ShowdownSpeciesMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"), remap = false)
     private void injectConstructor(Species species, FormData form, CallbackInfo ci) {
-        if (form == null || Stream.of("mega", "mega_x", "mega_y").noneMatch(aspect -> form.getAspects().contains(aspect))) return;
+        if (form == null) return;
 
         Iterator<PotentialAbility> abilityIterator = form.getAbilities().iterator();
         abilities = Map.of("0", abilityIterator.hasNext() ? abilityIterator.next().getTemplate().getName() : NO_ABILITY);
     }
-
 }

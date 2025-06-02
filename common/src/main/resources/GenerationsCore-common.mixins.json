@@ -15,6 +15,7 @@
     "client.GuiUtilsMixin",
     "client.ModelAssetVariationMixin",
     "client.PokemonGuiUtilsMixin",
+    "showdown.FormeChangeInstructionMixin",
     "showdown.ShowdownActionRequestMixin",
     "showdown.ShowdownThreadMixin",
     "showdown.TerastallizeInstructionMixin",
