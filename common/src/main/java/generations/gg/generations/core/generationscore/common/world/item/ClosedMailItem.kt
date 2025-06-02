@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
 import com.cobblemon.mod.common.Cobblemon.implementation
-import com.cobblemon.mod.common.api.text.text
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.util.extensions.get
@@ -22,15 +21,13 @@ import net.minecraft.world.item.TooltipFlag
 import net.minecraft.world.level.Level
 
 class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) {
-    override fun getName(stack: ItemStack): Component {
-        val sealedMailData = stack.get(GenerationsDataComponents.SEALED_MAIL_DATA)
-        if (sealedMailData != null && !StringUtil.isNullOrEmpty(sealedMailData.title)) {
-            return sealedMailData.title.text()
-        }
-        return super.getName(stack)
-    }
-
-
+//    override fun getName(stack: ItemStack): Component {
+//        val sealedMailData = stack.get(GenerationsDataComponents.SEALED_MAIL_DATA)
+//        if (sealedMailData != null && !StringUtil.isNullOrEmpty(sealedMailData.title)) {
+//            return sealedMailData.title.text()
+//        }
+//        return super.getName(stack)
+//    }
 
     override fun appendHoverText(
         stack: ItemStack,
@@ -38,7 +35,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        val sealedMailData = stack.get(GenerationsDataComponents.SEALED_MAIL_DATA)
+        val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA)
 
         if (sealedMailData != null) {
             val string = sealedMailData.author
@@ -81,7 +78,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
             resolvingSource: CommandSourceStack?,
             resolvingPlayer: Player?
         ): Boolean {
-            val sealedMailData = stack.get(GenerationsDataComponents.SEALED_MAIL_DATA)
+            val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA)
             if (sealedMailData == null || sealedMailData.resolved) {
                 return false
             }
@@ -93,7 +90,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
 
             sealedMailData.content = string
 
-            stack.set(GenerationsDataComponents.SEALED_MAIL_DATA, sealedMailData)
+            stack.set(GenerationsDataComponents.MAIL_DATA, sealedMailData)
 
             return true
         }

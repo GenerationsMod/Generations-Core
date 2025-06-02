@@ -41,7 +41,7 @@ import net.minecraft.world.phys.Vec3
 import java.util.*
 import java.util.function.Consumer
 
-class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
+open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
     ModelProvidingBlockEntity(GenerationsBlockEntities.RKS_MACHINE.get(), pos, state), MenuProvider,
     Container, Toggleable {
     private val dataAccess: ContainerData
@@ -251,7 +251,7 @@ class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
         }
 
     protected fun canSmelt(result: ItemStack, recipe: RksRecipe): Boolean {
-        if (recipe.matches(craftingInput, null)) {
+        if (recipe.matches(craftingInput, level!!)) {
             val outstack = output
             return if (outstack.isEmpty) {
                 true

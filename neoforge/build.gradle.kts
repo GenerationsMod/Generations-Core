@@ -60,7 +60,7 @@ configurations {
         modApi("dev.architectury:architectury-neoforge:${project.properties["architectury_version"]}")
 
         "common"(project(":common", "namedElements")) { isTransitive = false }
-        "shadowBundle"(project(":common", "transformProductionForge"))
+        "shadowBundle"(project(":common", "transformProductionNeoForge"))
 
         modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-neoforge-1.21.1", version = "0.0.7")
 

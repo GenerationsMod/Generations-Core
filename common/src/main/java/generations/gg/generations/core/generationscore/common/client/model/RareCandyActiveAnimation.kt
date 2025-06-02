@@ -8,7 +8,7 @@ import net.minecraft.world.entity.Entity
 
 data class RareCandyActiveAnimation(private val animation: RareCandyAnimation): ActiveAnimation {
     private var startedSeconds = -1F
-    override var enduresPrimaryAnimations: Boolean = false
+    override var enduresPrimaryAnimations: Boolean = true
 
     override val duration: Float
         get() = animation.animation?.animationDuration?.toFloat() ?: 0F

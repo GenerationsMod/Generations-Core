@@ -15,10 +15,13 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
+import dev.architectury.registry.ReloadListenerRegistry
 import dev.architectury.registry.item.ItemPropertiesRegistry
 import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER
+import generations.gg.generations.core.generationscore.common.GenerationsDataProvider
+import generations.gg.generations.core.generationscore.common.GenerationsDataProvider.SimpleResourceReloader
 import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.model.RunnableKeybind
@@ -67,6 +70,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.entity.ThrownItemRenderer
 import net.minecraft.core.BlockPos
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.packs.PackType
 import net.minecraft.util.Mth
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.Entity
@@ -82,10 +86,11 @@ import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraft.world.phys.Vec3
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
+import org.joml.Matrix4f
+import org.joml.Quaternionf
 import org.joml.Vector4f
 import org.lwjgl.glfw.GLFW
 import java.io.File
-import java.util.function.BiConsumer
 import java.util.function.Function
 import java.util.function.Supplier
 
@@ -124,7 +129,9 @@ object GenerationsCoreClient {
 //        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
 //        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(CobblemonItems.POKEMON_MODEL, renderer);
 
-//      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
+
+        GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
+
         setupClient(minecraft)
 
         GenerationsClientMolangFunctions.addAnimationFunctions()
@@ -444,7 +451,7 @@ object GenerationsCoreClient {
         x: Double,
         y: Double,
         z: Double,
-        color: Vector4f
+        color: Vector4f,
     ) {
         val pose = poseStack.last()
         // Create the vertex consumer shape by creating every edge.
@@ -472,7 +479,7 @@ object GenerationsCoreClient {
         vertexConsumer: VertexConsumer,
         blockPos: BlockPos,
         camPos: Vec3,
-        color: Vector4f
+        color: Vector4f,
     ) {
         val pose = poseStack.last()
         val pos = pos2 - pos1
@@ -505,7 +512,7 @@ object GenerationsCoreClient {
         camera: Camera,
         blockPos: BlockPos,
         blockState: BlockState,
-        color: Vector4f
+        color: Vector4f,
     ) {
         val pos = camera.position
         renderShape(

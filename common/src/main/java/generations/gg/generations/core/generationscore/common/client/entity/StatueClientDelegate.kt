@@ -13,14 +13,13 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
 import generations.gg.generations.core.generationscore.common.world.entity.StatueSideDelegate
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
-import net.minecraft.network.syncher.EntityDataAccessor
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import org.joml.Matrix4f
 
-class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstanceProvider {
+class StatueClientDelegate(entity: StatueEntity) : StatueSideDelegate, PosableState(), CobblemonInstanceProvider {
     override var instance = StatueInstance(Matrix4f(), Matrix4f(), null)
-    lateinit var currentEntity: StatueEntity
+    var currentEntity: StatueEntity = entity
+
 
     var trueAge: Int = 0
 
@@ -28,11 +27,29 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
         get() = if(currentEntity.staticToggle) currentEntity.staticAge else trueAge
 
     override val schedulingTracker
-        get() = currentEntity.schedulingTracker
+        get() = getEntity().schedulingTracker
 
 
 
     override fun getEntity() = currentEntity
+
+    override fun initialize(entity: StatueEntity) {
+        super.initialize(entity)
+        this.currentEntity = entity
+        this.age = entity.tickCount
+
+        var properties = entity.properties
+
+        var species = properties.species?.asIdentifierDefaultingNamespace() ?: return
+
+        this.currentModel = PokemonModelRepository.getPoser(species, this)
+        currentModel!!.updateLocators(entity, this)
+
+        val currentPoseType = entity.getCurrentPoseType()
+        val pose = this.currentModel!!.getFirstSuitablePose(this, currentPoseType)
+        doLater { setPose(pose.poseName) }
+    }
+
     override fun updatePoke(properties: PokemonProperties) {
         currentEntity.properties = properties
 
@@ -45,41 +62,17 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
         } else {
             this.currentAspects = emptySet()
         }
+
+        updateLocatorPosition(currentEntity.position())
+
+        val currentPoseType = currentEntity.getCurrentPoseType()
+        // Doing this awful thing because otherwise evolution particle won't start until the client looks at it. Which sucks slightly more than this.
+        val pose = this.currentModel!!.getFirstSuitablePose(this, currentPoseType)
+        doLater { setPose(pose.poseName) }
     }
 
     override fun updateMaterial(value: String?) {
         instance.material = value
-    }
-
-    override fun initialize(entity: StatueEntity) {
-        super.initialize(entity)
-        this.currentEntity = entity
-        this.age = entity.tickCount
-
-        var properties = entity.properties
-
-        var species = properties.species?.asIdentifierDefaultingNamespace() ?: return
-
-        this.currentModel = PokemonModelRepository.getPoser(species, this)
-
-        if (currentModel == null) {
-            this.currentAspects = emptySet()
-            return
-        }
-
-        this.currentAspects = properties.aspects
-
-        val model = currentModel!!
-
-        model.context.put(RenderContext.ENTITY, entity)
-        model.updateLocators(entity, this)
-        updateLocatorPosition(entity.position())
-
-        val currentPoseType = entity.getCurrentPoseType()
-        val pose = this.currentModel!!.poses.values.firstOrNull { currentPoseType in it.poseTypes && (it.condition == null || it.condition?.invoke(this) == true) }
-        if (pose != null) {
-            doLater { setPose(pose.poseName) }
-        }
     }
 
     override fun tick(entity: StatueEntity) {
@@ -87,7 +80,7 @@ class StatueClientDelegate : StatueSideDelegate, PosableState(), CobblemonInstan
     }
 
     override fun incrementAge(entity: Entity) {
-        val previousAge = this.activeAge
+        val previousAge = this.trueAge
         updateAge(trueAge + 1)
 
         age = this.activeAge

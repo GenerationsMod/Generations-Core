@@ -55,7 +55,7 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
     var savesToWorld = true
     override val schedulingTracker = SchedulingTracker()
     override val delegate = if (level.isClientSide) {
-        generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate()
+        generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate(this)
     } else {
         StatueServerDelegate()
     }

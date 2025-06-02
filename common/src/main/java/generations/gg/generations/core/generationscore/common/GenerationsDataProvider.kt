@@ -4,15 +4,8 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.data.DataProvider
 import com.cobblemon.mod.common.api.data.DataRegistry
 import com.cobblemon.mod.common.platform.events.PlatformEvents
-import com.cobblemon.mod.common.util.ifClient
 import com.cobblemon.mod.common.util.server
-import dev.architectury.platform.Platform
-import dev.architectury.utils.Env
-import dev.architectury.utils.EnvExecutor
-import generations.gg.generations.core.generationscore.common.client.CompiledModelLoader
 import generations.gg.generations.core.generationscore.common.network.packets.S2CUnlockReloadPacket
-import generations.gg.generations.core.generationscore.common.world.shop.ShopPresets
-import generations.gg.generations.core.generationscore.common.world.shop.Shops
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
@@ -38,7 +31,7 @@ class GenerationsDataProvider : DataProvider {
             S2CUnlockReloadPacket().sendToPlayer(it.player)
         }
 
-//        ifClient { TODO: MOve to Generat
+//        ifClient {
 //            GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("client_resources"), SimpleResourceReloader(PackType.CLIENT_RESOURCES), PackType.CLIENT_RESOURCES, emptyList())
 //            GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
 //        }

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.render.block.entity
 
+import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.FrameProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.TintProvider
@@ -26,7 +27,7 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
         packedLight: Int,
         packedOverlay: Int
     ) {
-        blockEntity.blockState.block.instanceOrNull<GenericModelBlock<*>>()?.takeIf { !it.canRender(blockEntity) } ?: return
+        blockEntity.blockState.block.instanceOrNull<GenericModelBlock<*>>()?.takeIf { it.canRender(blockEntity) } ?: return
 
         if (blockEntity.objectInstance == null) {
             val amount = instanceAmount()
@@ -71,6 +72,8 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
             }
 
             instance.transformationMatrix().set(stack.last().pose())
+//            instance.viewMatrix().set(RenderSystem.getModelViewMatrix())
+
             (instance as BlockObjectInstance).light = packedLight
             if (blockEntity is TintProvider) instance.tint = blockEntity.tint
             model.render(instance, buffersource)

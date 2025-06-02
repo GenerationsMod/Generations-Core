@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import generations.gg.generations.core.generationscore.common.client.GenerationsTextureLoader;
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockLightValueProvider;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ITextureWithResourceLocation;
@@ -125,7 +126,7 @@ public class VanilaRenderModel implements RenderModel {
             if (!object.shouldRender(instance)) {
 
                 Material material = object.getMaterial(instance.variant());
-                var texture = material.getDiffuseTexture();
+                var texture = GenerationsTextureLoader.INSTANCE.getTexture(material.images().getDiffuse());
 
                 if(texture instanceof ITextureWithResourceLocation textureWithResourceLocation) {
                     Transform transform = object.getTransform(instance.variant());

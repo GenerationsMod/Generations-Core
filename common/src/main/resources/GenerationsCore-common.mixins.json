@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "generations.gg.generations.core.generationscore.common.mixin",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
     "AbilityChangerMixin",
     "AbstractCauldronBlockMixin",
@@ -19,7 +19,8 @@
     "showdown.ShowdownActionRequestMixin",
     "showdown.ShowdownThreadMixin",
     "showdown.TerastallizeInstructionMixin",
-    "TeraPacketExceptionMixin"
+    "TeraPacketExceptionMixin",
+    "datafix.ItemStackComponentizationFixMixin",
   ],
   "client": [
     "client.BattleMoveSelectionGUIMixin",
@@ -29,7 +30,10 @@
     "client.LightTextureMixin",
     "client.PokemonEntityMixin",
     "client.PokemonOnShoulderRendererCompanionAccessorMixin",
-    "client.PokemonOnShoulderRenderMixin"
+    "client.PokemonOnShoulderRenderMixin",
+    "client.GuiUtilsMixin",
+    "client.ModelAssetVariationMixin",
+    "client.PokemonGuiUtilsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
