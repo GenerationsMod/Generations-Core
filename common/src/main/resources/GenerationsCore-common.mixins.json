@@ -12,6 +12,7 @@
     "PokemonBattleMixin",
     "ServerPlayerMixin",
     "ShowdownSpeciesMixin",
+    "client.PosableStateMixin",
     "datafix.ItemStackComponentizationFixMixin",
     "showdown.ShowdownActionRequestMixin"
   ],
@@ -21,12 +22,10 @@
     "client.GuiMixin",
     "client.LevelRendererMixin",
     "client.LightTextureMixin",
+    "client.ModelAssetVariationMixin",
     "client.PokemonEntityMixin",
     "client.PokemonOnShoulderRendererCompanionAccessorMixin",
-    "client.PokemonOnShoulderRenderMixin",
-    "client.GuiUtilsMixin",
-    "client.ModelAssetVariationMixin",
-    "client.PokemonGuiUtilsMixin"
+    "client.PokemonOnShoulderRenderMixin"
   ],
   "injectors": {
     "defaultRequire": 1

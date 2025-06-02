@@ -96,67 +96,11 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         stack.popPose()
 
         if (this.shouldShowName(entity)) {
-            var yOffset = renderable.form.hitbox.height * scale
+            val yOffset = renderable.form.hitbox.height * scale
 
             super.renderNameTag(entity, entity.displayName!!, stack, buffer, light, yOffset)
         }
     }
-
-//      TODO: check if jank still needed
-//        override fun renderNameTag(
-//            entity: StatueEntity,
-//            displayName: Component,
-//            poseStack: PoseStack,
-//            buffer: MultiBufferSource?,
-//            packedLight: Int,
-//            yOffsetY: Float,
-//        ) {
-//            val d = entityRenderDispatcher.distanceToSqr(entity)
-//            if (!(d > 4096.0)) {
-//                val bl: Boolean = !entity.isDiscrete()
-//                val f: Float = yOffsetY
-//                val i = if ("deadmau5" == displayName.string) -10 else 0
-//                poseStack.pushPose()
-//                poseStack.translate(0.0f, f, 0.0f)
-//                poseStack.mulPose(entityRenderDispatcher.cameraOrientation())
-//                poseStack.scale(-0.025f, -0.025f, 0.025f)
-//                val matrix4f = poseStack.last().pose()
-//                val g = Minecraft.getInstance().options.getBackgroundOpacity(0.25f)
-//                val j = (g * 255.0f).toInt() shl 24
-//                val font = this.font
-//                val h = (-font.width(displayName) / 2).toFloat()
-//                font.drawInBatch(
-//                    displayName,
-//                    h,
-//                    i.toFloat(),
-//                    553648127,
-//                    false,
-//                    matrix4f,
-//                    buffer,
-//                    if (bl) Font.DisplayMode.SEE_THROUGH else Font.DisplayMode.NORMAL,
-//                    j,
-//                    packedLight
-//                )
-//                if (bl) {
-//                    font.drawInBatch(
-//                        displayName,
-//                        h,
-//                        i.toFloat(),
-//                        -1,
-//                        false,
-//                        matrix4f,
-//                        buffer,
-//                        Font.DisplayMode.NORMAL,
-//                        0,
-//                        packedLight
-//                    )
-//                }
-//
-//                poseStack.popPose()
-//            }
-//        }
-//    }
-
     override fun getTextureLocation(entity: StatueEntity): ResourceLocation {
         val material = entity.material
         if (material != null && GenerationsTextureLoader.has(material)) {
@@ -188,7 +132,6 @@ class PoseableStatueEntityModel : PosableEntityModel<StatueEntity>() {
             context.put(RenderContext.ASPECTS, renderable.aspects)
             context.put(RenderContext.ENTITY, entity)
             context.put(RenderContext.POSABLE_STATE, delegate)
-            context.put(Pipelines.INSTANCE, delegate.instance)
         }
     }
 }

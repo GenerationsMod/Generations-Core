@@ -100,7 +100,7 @@ object Pipelines {
             .supplyVec2("uvOffset") { it.transform.offset() ?: Transform.DEFAULT_OFFSET }
             .supplyVec2("uvScale") { it.transform.scale() ?: Transform.DEFAULT_SCALE }
             .supplyTexture("diffuse", 0) {
-                it.getTextureOrOther({ it.material.images().diffuse }) { ITextureLoader.instance().nuetralFallback }
+                it.instance.instanceOrNull<StatueInstance>()?.material?.let { GenerationsTextureLoader.getTextureOrNull(it) } ?: it.getTextureOrOther({ it.material.images().diffuse }) { ITextureLoader.instance().nuetralFallback }
             }
             .configure(::addLight)
             .supplyVec3("Light0_Direction") {
@@ -248,7 +248,7 @@ object Pipelines {
     private fun UniformUploadContext.getTextureOrOther(
         function: (UniformUploadContext) -> String?,
         supplier: () -> ITexture
-    ): ITexture = GenerationsTextureLoader.getTexture(function.invoke(this))?.takeUnless { texture -> this.isStatueMaterial || texture === GenerationsTextureLoader.MissingTextureProxy } ?: supplier.invoke()
+    ): ITexture = GenerationsTextureLoader.getTexture(function.invoke(this))?.takeUnless { texture -> texture === GenerationsTextureLoader.MissingTextureProxy } ?: supplier.invoke()
 
     private fun addLight(builder: Pipeline.Builder) {
         builder
