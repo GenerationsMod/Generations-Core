@@ -21,7 +21,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
-class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
+class TimeCapsule(properties: Properties) : PokemonStoringItem(properties), PokemonProvidingItem {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
         val pokemon = entity.pokemon
         return if (pokemon.tradeable && stack.getPokemon() == null && pokemon.removeIfBelongs(player)) {
@@ -59,5 +59,11 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties) {
                 if (itemStack.getRenderablePokemon() == null) 0f else 1f
             }
         }
+    }
+
+    override fun getSpeciesAndAspectsPair(stack: ItemStack): Pair<Species, Set<String>>? {
+        var pokemon = stack.getPokemon() ?: return null
+
+        return pokemon.species to pokemon.aspects
     }
 }

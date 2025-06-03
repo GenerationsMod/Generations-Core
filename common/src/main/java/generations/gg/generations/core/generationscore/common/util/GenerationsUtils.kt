@@ -147,13 +147,21 @@ object GenerationsUtils {
     }
 
     fun raycast(entity: Entity, maxDistance: Double, tickDelta: Float, predicate: Predicate<Entity?>): HitResult? {
-        val vec3d = entity.getEyePosition(tickDelta)
-        val vec3d2 = entity.getViewVector(tickDelta)
-        val vec3d3 = vec3d.add(vec3d2.x * maxDistance, vec3d2.y * maxDistance, vec3d2.z * maxDistance)
-        val box = entity.boundingBox.expandTowards(vec3d2.scale(maxDistance)).inflate(1.0, 1.0, 1.0)
-        return ProjectileUtil.getEntityHitResult(entity, vec3d, vec3d3, box, predicate, maxDistance)
-    }
+        val start = entity.getEyePosition(tickDelta)
+        val direction = entity.getViewVector(tickDelta)
+        val end = start.add(direction.x * maxDistance, direction.y * maxDistance, direction.z * maxDistance)
+        val box = entity.boundingBox.expandTowards(direction.scale(maxDistance)).inflate(1.0)
 
+        return ProjectileUtil.getEntityHitResult(
+            entity.level(),
+            entity,
+            start,
+            end,
+            box,
+            predicate,
+            0.3f
+        )
+    }
     @JvmRecord
     data class Serializer<T>(val codec: Codec<T>) : JsonSerializer<T>,
         JsonDeserializer<T> {

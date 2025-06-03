@@ -94,12 +94,9 @@ class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(pr
         @JvmStatic
         fun getImbuedItem(stack: ItemStack?): ItemStack {
             if (stack != null) {
-                val lists = stack.get(
-                    IMBUED.componentType()
-                )!!
-                    .stacks()
+                val lists = stack.get(IMBUED.componentType())?.stacks()
 
-                if (lists != null && !lists.isEmpty()) {
+                if (!lists.isNullOrEmpty()) {
                     return lists[0].resource().cachedStack
                 }
             }

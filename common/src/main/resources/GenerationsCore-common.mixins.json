@@ -9,9 +9,12 @@
     "AbstractFurnaceBlockEntityMixin",
     "BestSpawnConfigMixin",
     "FishingHookMixin",
+    "MixinVanillaDelegatingSlot",
     "PokemonBattleMixin",
+    "PokemonItemMixin",
     "ServerPlayerMixin",
     "ShowdownSpeciesMixin",
+    "client.PokemonItemRendererMixin",
     "client.PosableStateMixin",
     "datafix.ItemStackComponentizationFixMixin",
     "showdown.ShowdownActionRequestMixin"

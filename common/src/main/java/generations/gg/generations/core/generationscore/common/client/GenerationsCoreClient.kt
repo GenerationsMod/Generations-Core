@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.spawning.TimeRange
 import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry
+import com.cobblemon.mod.common.client.render.item.PokemonItemRenderer
 import com.cobblemon.mod.common.client.render.models.blockbench.pokeball.PokeBallModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokeBallModelRepository
@@ -120,14 +121,12 @@ object GenerationsCoreClient {
 
         ITextureLoader.setInstance(GenerationsTextureLoader)
 
-//        TODO: Readd
-//        var renderer = TimeCapsuleItemRenderer.INSTANCE;
-//
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(CobblemonItems.POKEMON_MODEL, renderer);
+        val renderer = PokemonItemRenderer()
+
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
 
 
         GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
