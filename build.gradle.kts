@@ -39,7 +39,7 @@ subprojects {
         maven("https://maven.generations.gg/releases")
         maven("https://generationsmaven.firstdark.dev/snapshots")
         maven("https://generationsmaven.firstdark.dev/releases")
-        
+
         maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
         maven("https://cursemaven.com").content { includeGroup("curse.maven") }
         maven("https://api.modrinth.com/maven").content { includeGroup("maven.modrinth") }
