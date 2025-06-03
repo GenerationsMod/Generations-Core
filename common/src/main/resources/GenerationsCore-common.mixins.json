@@ -20,9 +20,10 @@
     "showdown.ShowdownThreadMixin",
     "showdown.TerastallizeInstructionMixin",
     "TeraPacketExceptionMixin",
-    "datafix.ItemStackComponentizationFixMixin",
+    "datafix.ItemStackComponentizationFixMixin"
   ],
   "client": [
+    "client.BattleGimmickButtonMixin",
     "client.BattleMoveSelectionGUIMixin",
     "client.ClientRecipeBookMixin",
     "client.GuiMixin",

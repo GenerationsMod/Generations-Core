@@ -27,6 +27,7 @@ object GenerationsInstructionProcessor {
         if (s3.size < 2) return
 
         val battlePokemon = message.battlePokemon(0, battle) ?: return
+        val effectedPokemon = battlePokemon.effectedPokemon
 
         val name = s3[1]
 
@@ -36,13 +37,16 @@ object GenerationsInstructionProcessor {
 
         var pair: Pair<String, Any> = when(name) {
             "mega" -> "mega" to true
-            "mega-x" -> "mega-x" to true
-            "mega-y" -> "mega-y" to true
+            "mega-x" -> "mega_x" to true
+            "mega-y" -> "mega_y" to true
 //            "sunshine" -> "sunny" to true
 //            "school" -> "schooling" to true
             "primal" -> "primal" to true
             "ash" -> "ash" to true
-//            "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody-aspect" to true
+            "ultra" -> "prism_fusion" to "ultra"
+            "terastal" -> "tera_form" to "terastal"
+            "stellar" -> "tera_form" to "stellar"
+            "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody_aspect" to true
             else -> name to true
         } ?: let {
             battlePokemon.originalPokemon.removeBattleFeature()
@@ -65,40 +69,6 @@ object GenerationsInstructionProcessor {
     }
 
     @JvmStatic
-    fun processTerastillization (terastallizationEvent: TerastallizationEvent) {
-        val pokemon = terastallizationEvent.pokemon.effectedPokemon
-        val battle = terastallizationEvent.battle
-        if (pokemon.species.name.equals("Ogerpon")) {
-            FlagSpeciesFeature("embody-aspect", true).apply(terastallizationEvent.pokemon.effectedPokemon)
-            for (activeBattlePokemon in battle.activePokemon) {
-                val battleMon = activeBattlePokemon.battlePokemon
-                println(activeBattlePokemon.getPNX())
-                if (battleMon != null && battleMon.effectedPokemon.getOwnerPlayer() == pokemon.getOwnerPlayer() && battleMon == terastallizationEvent.pokemon) {
-                    println("Name: " + terastallizationEvent.pokemon.effectedPokemon.ability.name)
-                    battle.sendSidedUpdate(
-                        activeBattlePokemon.actor,
-                        BattleTransformPokemonPacket(activeBattlePokemon.getPNX(), terastallizationEvent.pokemon, true),
-                        BattleTransformPokemonPacket(activeBattlePokemon.getPNX(), terastallizationEvent.pokemon, false),
-                        false
-                    )
-                }
-            }
-        }
-    }
-
-    @JvmStatic
-    fun processMegaEvolution (megaEvolutionEvent: MegaEvolutionEvent) {
-        val battle = megaEvolutionEvent.battle
-        val pokemon = megaEvolutionEvent.pokemon.originalPokemon
-        val data = megaEvolutionEvent.pokemon.effectedPokemon.persistentData
-        println("PersistentData keys for ${megaEvolutionEvent.pokemon.originalPokemon.species.name}: ${data.allKeys}")
-        val form = if(data.contains("form_name")) data.getString("form_name") else return
-        println("form: " + form)
-        battle.dispatchGo {
-            StringSpeciesFeature("mega_evolution", form).apply(pokemon)
-        }
-    }
-    @JvmStatic
     fun processBattleEnd(battle: PokemonBattle) {
         battle.actors.forEach { actor ->
             if (!actor.getPlayerUUIDs().iterator().hasNext()) return@forEach
@@ -110,18 +80,14 @@ object GenerationsInstructionProcessor {
                 battlePokemon.originalPokemon.removeBattleFeature()
                 battlePokemon.effectedPokemon.removeBattleFeature()
                 battlePokemon.originalPokemon.restoreAbility(tempAbility, originalAbility, name)
-                if (battlePokemon.effectedPokemon.species.name.equals("Ogerpon")) {
-                    System.out.println("pass name check")
-                    FlagSpeciesFeature("embody-aspect", false).apply(battlePokemon.effectedPokemon)
-                    FlagSpeciesFeature("embody-aspect", false).apply(battlePokemon.originalPokemon)
-                }
-                println("Battle End: embody-aspect = ${battlePokemon.effectedPokemon.aspects.contains("embody-aspect")}")
-
+//                if (battlePokemon.effectedPokemon.species.name.equals("Ogerpon")) {
+//                    System.out.println("pass name check")
+//                    FlagSpeciesFeature("embody-aspect", false).apply(battlePokemon.effectedPokemon)
+//                    FlagSpeciesFeature("embody-aspect", false).apply(battlePokemon.originalPokemon)
+//                }
             }
         }
     }
-
-
 }
 
 private fun Pokemon.removeBattleFeature() {

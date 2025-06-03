@@ -1,6 +1,6 @@
 {
   "type": "choice",
-  "keys": ["ogerpon_mask"],
+  "keys": ["ogre_mask"],
   "default": "teal",
   "choices": [
     "teal",
@@ -9,5 +9,5 @@
     "cornerstone"
   ],
   "isAspect": true,
-  "aspectFormat": "{{choice}}"
+  "aspectFormat": "{{choice}}-mask"
 }
