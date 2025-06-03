@@ -1,16 +1,12 @@
 package generations.gg.generations.core.generationscore.common.client.screen.mails
 
 import com.cobblemon.mod.common.Cobblemon
-import com.cobblemon.mod.common.CobblemonNetwork
 import com.google.common.collect.Lists
-import com.mojang.blaze3d.platform.GlStateManager
 import com.mojang.blaze3d.systems.RenderSystem
-import com.mojang.blaze3d.vertex.*
-import generations.gg.generations.core.generationscore.common.GenerationsCore.implementation
 import generations.gg.generations.core.generationscore.common.network.packets.C2SEditMailPacket
 import generations.gg.generations.core.generationscore.common.world.item.MailItem
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents.SEALED_MAIL_DATA
-import generations.gg.generations.core.generationscore.common.world.item.components.SealedMailContent
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents.MAIL_DATA
+import generations.gg.generations.core.generationscore.common.world.item.components.MailContent
 import it.unimi.dsi.fastutil.ints.IntArrayList
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -23,8 +19,8 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.font.TextFieldHelper
 import net.minecraft.client.gui.screens.Screen
-import net.minecraft.client.renderer.GameRenderer
 import net.minecraft.client.renderer.Rect2i
+import net.minecraft.client.renderer.RenderType
 import net.minecraft.network.chat.CommonComponents
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.Style
@@ -73,9 +69,9 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
     private var displayCache: DisplayCache? = DisplayCache.EMPTY
 
     init {
-        val sealedMailContent: SealedMailContent? = book.get(SEALED_MAIL_DATA.value())
-        if (sealedMailContent != null) {
-            contents = sealedMailContent.content
+        val mailContent: MailContent? = book.get(MAIL_DATA.value())
+        if (mailContent != null) {
+            contents = mailContent.content
         }
 
         location = (book.item as MailItem).type.location
@@ -94,6 +90,10 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
                 )
             }
         }
+
+    override fun renderBlurredBackground(partialTick: Float) {
+
+    }
 
     override fun tick() {
         super.tick()
@@ -116,7 +116,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
         this.addRenderableWidget(
             Button.builder(
                 CommonComponents.GUI_DONE,
-                { arg: Button? ->
+                { arg ->
                     this.saveChanges(false)
                     minecraft!!.setScreen(null)
                 }).bounds(this.width / 2 + 2, correctedHeight + 2, 98, 20).build()
@@ -139,13 +139,13 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
     }
 
     private fun updateLocalCopy(sign: Boolean) {
-        val sealedMailContent: SealedMailContent = book.getOrDefault(SEALED_MAIL_DATA.value(), SealedMailContent())
+        val mailContent: MailContent = book.getOrDefault(MAIL_DATA.value(), MailContent())
 
-        if (!contents.isEmpty()) {
-            sealedMailContent.content = this.contents
+        if (contents.isNotEmpty()) {
+            mailContent.content = this.contents
         }
         if (sign) {
-            sealedMailContent.author = owner.gameProfile.name
+            mailContent.author = owner.gameProfile.name
         }
     }
 
@@ -308,7 +308,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
         for (lineInfo: LineInfo in displayCache!!.lines) {
             graphics.drawString(this.font, lineInfo.asComponent, lineInfo.x, lineInfo.y, -0x1000000, false)
         }
-        this.renderHighlight(displayCache.selection)
+        this.renderHighlight(graphics, displayCache.selection)
         this.renderCursor(graphics, displayCache.cursor, displayCache.cursorAtEnd)
 
         super.render(graphics, mouseX, mouseY, partialTick)
@@ -326,28 +326,14 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
         }
     }
 
-    private fun renderHighlight(selected: Array<Rect2i>) {
-        val tesselator: Tesselator = Tesselator.getInstance()
-        RenderSystem.setShader({ GameRenderer.getPositionShader() })
-        RenderSystem.setShaderColor(0.0f, 0.0f, 255.0f, 255.0f)
-        //        RenderSystem.disableTexture();
-        RenderSystem.enableColorLogicOp()
-        RenderSystem.logicOp(GlStateManager.LogicOp.OR_REVERSE)
-        val bufferBuilder: BufferBuilder = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION)
+    private fun renderHighlight(graphics: GuiGraphics, selected: Array<Rect2i>) {
         for (rect2i: Rect2i in selected) {
             val i: Int = rect2i.x
             val j: Int = rect2i.y
             val k: Int = i + rect2i.width
             val l: Int = j + rect2i.height
-            bufferBuilder.addVertex(i.toFloat(), l.toFloat(), 0.0f)
-            bufferBuilder.addVertex(k.toFloat(), l.toFloat(), 0.0f)
-            bufferBuilder.addVertex(k.toFloat(), j.toFloat(), 0.0f)
-            bufferBuilder.addVertex(i.toFloat(), j.toFloat(), 0.0f)
+            graphics.fill(RenderType.guiTextHighlight(), i, j, k, l, -16776961)
         }
-
-        BufferUploader.drawWithShader(bufferBuilder.buildOrThrow())
-        RenderSystem.disableColorLogicOp()
-        //        RenderSystem.enableTexture();
     }
 
     private fun convertScreenToLocal(screenPos: Pos2i): Pos2i {
@@ -522,7 +508,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
         i: Int,
         j: Int,
         k: Int,
-        l: Int
+        l: Int,
     ): Rect2i {
         val string: String = input.substring(l, i)
         val string2: String = input.substring(l, j)
@@ -550,7 +536,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
         val cursorAtEnd: Boolean,
         private val lineStarts: IntArray,
         val lines: Array<LineInfo>,
-        val selection: Array<Rect2i>
+        val selection: Array<Rect2i>,
     ) {
         fun getIndexAtPosition(font: Font, cursorPosition: Pos2i): Int {
             val i: Int = cursorPosition.y / font.lineHeight

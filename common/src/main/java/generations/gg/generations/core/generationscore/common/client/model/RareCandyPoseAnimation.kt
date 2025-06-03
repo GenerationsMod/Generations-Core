@@ -17,6 +17,6 @@ class RareCandyPoseAnimation(private val animation: RareCandyAnimation) : PoseAn
         headPitch: Float,
         intensity: Float,
     ) {
-        animation.run(context, state.animationSeconds, true)
+        animation.run(context, state.animationSeconds, false)
     }
 }

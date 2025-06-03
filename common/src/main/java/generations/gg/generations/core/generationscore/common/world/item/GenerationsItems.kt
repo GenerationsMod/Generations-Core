@@ -1243,6 +1243,29 @@ object GenerationsItems {
     @JvmField val MT_PYRE_DISC = createMusicDisc("mt_pyre_disc", RecordSongs.MT_PYRE);
 
     /**
+     * Tera Shards
+     */
+    @JvmField val TERA_BUG_SHARD = createTeraShard("tera_bug_shard", ElementalTypes.BUG)
+    @JvmField val TERA_DARK_SHARD = createTeraShard("tera_dark_shard", ElementalTypes.DARK)
+    @JvmField val TERA_DRAGON_SHARD = createTeraShard("tera_dragon_shard", ElementalTypes.DRAGON)
+    @JvmField val TERA_ELECTRIC_SHARD = createTeraShard("tera_electric_shard", ElementalTypes.ELECTRIC)
+    @JvmField val TERA_FAIRY_SHARD = createTeraShard("tera_fairy_shard", ElementalTypes.FAIRY)
+    @JvmField val TERA_FIGHTING_SHARD = createTeraShard("tera_fighting_shard", ElementalTypes.FIGHTING)
+    @JvmField val TERA_FIRE_SHARD = createTeraShard("tera_fire_shard", ElementalTypes.FIRE)
+    @JvmField val TERA_FLYING_SHARD = createTeraShard("tera_flying_shard", ElementalTypes.FLYING)
+    @JvmField val TERA_GHOST_SHARD = createTeraShard("tera_ghost_shard", ElementalTypes.GHOST)
+    @JvmField val TERA_GRASS_SHARD = createTeraShard("tera_grass_shard", ElementalTypes.GRASS)
+    @JvmField val TERA_GROUND_SHARD = createTeraShard("tera_ground_shard", ElementalTypes.GROUND)
+    @JvmField val TERA_ICE_SHARD = createTeraShard("tera_ice_shard", ElementalTypes.ICE)
+    @JvmField val TERA_NORMAL_SHARD = createTeraShard("tera_normal_shard", ElementalTypes.NORMAL)
+    @JvmField val TERA_POISON_SHARD = createTeraShard("tera_poison_shard", ElementalTypes.POISON)
+    @JvmField val TERA_PSYCHIC_SHARD = createTeraShard("tera_psychic_shard", ElementalTypes.PSYCHIC)
+    @JvmField val TERA_ROCK_SHARD = createTeraShard("tera_rock_shard", ElementalTypes.ROCK)
+    @JvmField val TERA_STEEL_SHARD = createTeraShard("tera_steel_shard", ElementalTypes.STEEL)
+    @JvmField val TERA_STELLAR_SHARD = createTeraShard("tera_stellar_shard", null)
+    @JvmField val TERA_WATER_SHARD = createTeraShard("tera_water_shard", ElementalTypes.WATER)
+
+    /**
      * Un-Implemented Items : Items currently have no in-game function
      */
     @JvmField val ABILITY_URGE = register("ability_urge", { Item(it.stacksTo(64)) }, UNIMPLEMENTED)
@@ -1574,6 +1597,10 @@ object GenerationsItems {
         { RelicSongItem(it.stacksTo(1), inert) },
         LEGENDARY_ITEMS
     )
+
+    private fun createTeraShard(name: String, element: ElementalType?): RegistrySupplier<Item> {
+        return register(name, { TerraSharditem(it, element) }, PLAYER_ITEMS)
+    }
 
     private fun registerHeldItem(
         name: String,

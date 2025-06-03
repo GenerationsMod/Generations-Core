@@ -22,8 +22,7 @@ class RksMachineContainer @JvmOverloads constructor(
     protected var playerInventory: Inventory,
     protected var rksMachine: Container = SimpleContainer(10),
     private val data: ContainerData = SimpleContainerData(4)
-) :
-    AbstractContainerMenu(GenerationsContainers.RKS_MACHINE.get(), id), Toggleable {
+) : AbstractContainerMenu(GenerationsContainers.RKS_MACHINE.get(), id), Toggleable {
     init {
         rksMachine.instanceOrNull<RksMachineBlockEntity>()?.addMenu(this)
 
@@ -104,7 +103,7 @@ class RksMachineContainer @JvmOverloads constructor(
 
     override var isToggled: Boolean
         get() = data[2] == 1
-        set(value) { data[2] = if (value) 1 else 0 }
+        set(value) { setData(2, if (value) 1 else 0) }
 
     val isPokemonPresent: Boolean
         get() = data[3] == 1
@@ -162,4 +161,6 @@ class RksMachineContainer @JvmOverloads constructor(
         const val DATA_WEAVE_TIME_TOAL: Int = 1
         const val NUM_DATA_VALUES: Int = 2
     }
+
+
 }

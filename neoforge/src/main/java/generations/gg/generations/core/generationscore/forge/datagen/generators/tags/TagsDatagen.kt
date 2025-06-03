@@ -672,7 +672,7 @@ object TagsDatagen {
                     ArmorItem.Type.CHESTPLATE -> tag(ItemTags.CHEST_ARMOR).add(armor.get())
                     ArmorItem.Type.LEGGINGS -> tag(ItemTags.LEG_ARMOR).add(armor.get())
                     ArmorItem.Type.BOOTS -> tag(ItemTags.FOOT_ARMOR).add(armor.get())
-                    ArmorItem.Type.BODY -> TODO()
+                    ArmorItem.Type.BODY -> null
                 }
             })
 

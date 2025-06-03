@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.spawning.TimeRange
 import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry
+import com.cobblemon.mod.common.client.render.item.PokemonItemRenderer
 import com.cobblemon.mod.common.client.render.models.blockbench.pokeball.PokeBallModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokeBallModelRepository
@@ -15,10 +16,13 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
+import dev.architectury.registry.ReloadListenerRegistry
 import dev.architectury.registry.item.ItemPropertiesRegistry
 import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER
+import generations.gg.generations.core.generationscore.common.GenerationsDataProvider
+import generations.gg.generations.core.generationscore.common.GenerationsDataProvider.SimpleResourceReloader
 import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.model.RunnableKeybind
@@ -67,6 +71,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.entity.ThrownItemRenderer
 import net.minecraft.core.BlockPos
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.packs.PackType
 import net.minecraft.util.Mth
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.Entity
@@ -82,10 +87,11 @@ import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraft.world.phys.Vec3
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
+import org.joml.Matrix4f
+import org.joml.Quaternionf
 import org.joml.Vector4f
 import org.lwjgl.glfw.GLFW
 import java.io.File
-import java.util.function.BiConsumer
 import java.util.function.Function
 import java.util.function.Supplier
 
@@ -115,16 +121,16 @@ object GenerationsCoreClient {
 
         ITextureLoader.setInstance(GenerationsTextureLoader)
 
-//        TODO: Readd
-//        var renderer = TimeCapsuleItemRenderer.INSTANCE;
-//
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
-//        CobblemonBuiltinItemRendererRegistry.INSTANCE.register(CobblemonItems.POKEMON_MODEL, renderer);
+        val renderer = PokemonItemRenderer()
 
-//      ReloadListenerRegistry.register(PackType.CLIENT_RESOURCES, (ResourceManagerReloadListener) Pipelines::onInitialize);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
+
+
+        GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
+
         setupClient(minecraft)
 
         GenerationsClientMolangFunctions.addAnimationFunctions()
@@ -444,7 +450,7 @@ object GenerationsCoreClient {
         x: Double,
         y: Double,
         z: Double,
-        color: Vector4f
+        color: Vector4f,
     ) {
         val pose = poseStack.last()
         // Create the vertex consumer shape by creating every edge.
@@ -472,7 +478,7 @@ object GenerationsCoreClient {
         vertexConsumer: VertexConsumer,
         blockPos: BlockPos,
         camPos: Vec3,
-        color: Vector4f
+        color: Vector4f,
     ) {
         val pose = poseStack.last()
         val pos = pos2 - pos1
@@ -505,7 +511,7 @@ object GenerationsCoreClient {
         camera: Camera,
         blockPos: BlockPos,
         blockState: BlockState,
-        color: Vector4f
+        color: Vector4f,
     ) {
         val pos = camera.position
         renderShape(

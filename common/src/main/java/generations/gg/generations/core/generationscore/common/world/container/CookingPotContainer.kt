@@ -7,6 +7,7 @@ import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.CurryResultSlot
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.Toggleable
 import net.minecraft.tags.ItemTags
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
@@ -22,9 +23,8 @@ class CookingPotContainer @JvmOverloads constructor(
     id: Int,
     playerInventory: Inventory,
     storage: SimpleItemStorage = SimpleItemStorage(14),
-    data: ContainerData = SimpleContainerData(4)
-) :
-    AbstractContainerMenu(GenerationsContainers.COOKING_POT.get(), id) {
+    val data: ContainerData = SimpleContainerData(4)
+) : AbstractContainerMenu(GenerationsContainers.COOKING_POT.get(), id), Toggleable {
     init {
         addSlot(MenuStorageSlot(storage, 0, 26, 8 + 11))
         addSlot(MenuStorageSlot(storage, 1, 44, 8 + 11))
@@ -118,10 +118,14 @@ class CookingPotContainer @JvmOverloads constructor(
     }
 
     val isCooking: Boolean
-        get() = false
+        get() = data[1] == 1
 
     val cookTime: Int
-        get() = 0
+        get() = data[0]
+
+    override var isToggled: Boolean
+        get() = data[2] == 1
+        set(value) { setData(2, if (value) 1 else 0) }
 
     companion object {
         fun isBowl(obj: Any): Boolean {

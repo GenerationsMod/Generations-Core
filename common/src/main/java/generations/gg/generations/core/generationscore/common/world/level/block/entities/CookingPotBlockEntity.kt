@@ -67,17 +67,21 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
     }
 
     private val data: ContainerData = object : ContainerData {
-        override fun get(index: Int): Int {
-            TODO("Not yet implemented")
+        override fun get(index: Int): Int = when(index) {
+            0 -> this@CookingPotBlockEntity.cookTime
+            1 -> if(this@CookingPotBlockEntity.isCooking) 1 else 0
+            2 -> if (this@CookingPotBlockEntity.isToggled) 1 else 0
+            else -> 0
         }
 
-        override fun set(index: Int, value: Int) {
-            TODO("Not yet implemented")
+        override fun set(index: Int, value: Int) = when(index) {
+            0 -> this@CookingPotBlockEntity.cookTime = value
+            1 -> this@CookingPotBlockEntity.isCooking = value == 1
+            2 -> this@CookingPotBlockEntity.isToggled = value == 1
+            else -> {}
         }
 
-        override fun getCount(): Int {
-            TODO("Not yet implemented")
-        }
+        override fun getCount(): Int = 3
     }
 
     private var customName: String? = null
@@ -137,7 +141,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                     val berriesTypes = berries.filter { berry: SimpleItemSlot -> !berry.isEmpty && berry.resource.item is BerryItem }
                         .mapNotNull { a -> (a.resource.asItem() as BerryItem).berry() }.toList()
 
-                    val event: Cook = Cook(type, berriesTypes, CurryData(type, berriesTypes))
+                    val event: Cook = Cook(type, berriesTypes, CurryData.create(type, berriesTypes))
 
                     if (!CurryEvents.COOK.invoker().act(event).isTrue()) {
                         val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY.get())

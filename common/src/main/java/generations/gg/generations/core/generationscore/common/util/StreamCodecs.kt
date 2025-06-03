@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.util
 
+import com.cobblemon.mod.common.api.berry.Flavor
 import dev.architectury.registry.registries.Registrar
+import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.NonNullList
 import net.minecraft.network.FriendlyByteBuf
@@ -76,4 +78,5 @@ object StreamCodecs {
         }
     }
 
+    val FLAVOR_STREAM_CODEC: StreamCodec<RegistryFriendlyByteBuf, Flavor> = ByteBufCodecs.STRING_UTF8.map(String::uppercase, String::lowercase).map(Flavor::valueOf, Flavor::name).asRegistryFriendly()
 }

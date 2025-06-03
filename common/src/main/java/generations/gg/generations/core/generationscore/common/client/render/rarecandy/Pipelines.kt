@@ -16,6 +16,7 @@ import gg.generations.rarecandy.renderer.animation.AnimationController
 import gg.generations.rarecandy.renderer.animation.Transform
 import gg.generations.rarecandy.renderer.loading.ITexture
 import gg.generations.rarecandy.renderer.model.material.Material
+import gg.generations.rarecandy.renderer.model.material.MaterialValues
 import gg.generations.rarecandy.renderer.model.material.PipelineRegistry
 import gg.generations.rarecandy.renderer.pipeline.Pipeline
 import gg.generations.rarecandy.renderer.pipeline.UniformUploadContext
@@ -39,6 +40,8 @@ object Pipelines {
         )
     )
     private val ONE = Vector3f(1f, 1f, 1f)
+    private val ZERO = Vector3f(0f, 0f, 0f)
+
 
     @JvmField
     var REGISTER: Event<Consumer<PipelineRegister>> = EventFactory.createConsumerLoop(
@@ -85,7 +88,7 @@ object Pipelines {
         val builder = Pipeline.Builder()
             .supplyUniform(
                 "viewMatrix"
-            ) { ctx: UniformUploadContext -> ctx.uniform().uploadMat4f(ctx.instance().viewMatrix()) }
+            ) { ctx -> ctx.uniform().uploadMat4f(RenderSystem.getModelViewMatrix()) }
             .supplyFloatUniform("FogStart") { RenderSystem.getShaderFogStart() }
             .supplyFloatUniform("FogEnd") { RenderSystem.getShaderFogEnd() }
             .supplyColorArray("FogColor") { RenderSystem.getShaderFogColor() }
@@ -97,7 +100,7 @@ object Pipelines {
             .supplyVec2("uvOffset") { it.transform.offset() ?: Transform.DEFAULT_OFFSET }
             .supplyVec2("uvScale") { it.transform.scale() ?: Transform.DEFAULT_SCALE }
             .supplyTexture("diffuse", 0) {
-                it.getTextureOrOther("diffuse") { ITextureLoader.instance().nuetralFallback }
+                it.instance.instanceOrNull<StatueInstance>()?.material?.let { GenerationsTextureLoader.getTextureOrNull(it) } ?: it.getTextureOrOther({ it.material.images().diffuse }) { ITextureLoader.instance().nuetralFallback }
             }
             .configure(::addLight)
             .supplyVec3("Light0_Direction") {
@@ -106,7 +109,7 @@ object Pipelines {
             .supplyVec3("Light1_Direction") {
                 RenderSystem.shaderLightDirections[1]
             }
-            .supplyVec3("cobblemonTint") { it.instance.instanceOrNull<CobblemonInstance>()?.tint ?: ONE }
+            .supplyVec3("cobblemonTint") { it.instance.instanceOrNull<CobblemonInstance>()?.tint?.takeIf { it != ZERO } ?: ONE }
             .prePostDraw({ material: Material ->
                 if (material.cullType() != CullType.None) {
                     RenderSystem.enableCull()
@@ -178,10 +181,12 @@ object Pipelines {
             .configure(::baseColors)
             .configure(::emissionColors)
             .supplyTexture("layer", 3) {
-                ctx -> ctx.getTexture("layer").takeIf { !ctx.isStatueMaterial } ?: ITextureLoader.instance().darkFallback
+                it.getTextureOrOther({ it.material.images().layer}) {
+                    ITextureLoader.instance().darkFallback
+                }
             }
             .supplyTexture("mask", 4) {
-                it.getTextureOrOther("mask") {
+                it.getTextureOrOther({ it.material.images().mask}) {
                     ITextureLoader.instance().darkFallback
                 }
             }
@@ -190,12 +195,10 @@ object Pipelines {
     private fun Pipeline.Builder.masked(): Pipeline.Builder {
         return this
             .supplyTexture("mask", 3) {
-                it.getTextureOrOther("mask") { ITextureLoader.instance().darkFallback }
+                it.getTextureOrOther({ it.material.images().mask }) { ITextureLoader.instance().darkFallback }
             }
             .supplyVec3("color") {
-                var color = it.instance.instanceOrNull<TintProvider>()?.getTint() ?: it.getColorValue("color")
-
-
+                var color = it.instance.instanceOrNull<TintProvider>()?.getTint() ?: it.material.values().baseColor1
                 color
             }
     }
@@ -220,65 +223,32 @@ object Pipelines {
     }
 
     private fun emissionColors(builder: Pipeline.Builder) = builder
-        .supplyVec3("emiColor1") {
-            it.getColorValue("emiColor1")
-        }
-        .supplyVec3("emiColor2") {
-            it.getColorValue("emiColor2")
-        }
-        .supplyVec3("emiColor3") {
-            it.getColorValue("emiColor3")
-        }
-        .supplyVec3("emiColor4") {
-            it.getColorValue("emiColor4")
-        }
+        .supplyVec3("emiColor1") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor1 ?: ONE }
+        .supplyVec3("emiColor2") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor2 ?: ONE }
+        .supplyVec3("emiColor3") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor3 ?: ONE }
+        .supplyVec3("emiColor4") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor4 ?: ONE }
         .supplyVec3("emiColor5") {
-            it.instance.instanceOrNull<TintProvider>()?.tint ?: it.getColorValue("emiColor5")
+            it.instance.instanceOrNull<TintProvider>()?.tint ?: it.material.values().emiColor5
         }
-        .supplyFloatUniform("emiIntensity1") {
-            it.getFloatValue("emiIntensity1")
-        }
-        .supplyFloatUniform("emiIntensity2") {
-            it.getFloatValue("emiIntensity2")
-        }
-        .supplyFloatUniform("emiIntensity3") {
-            it.getFloatValue("emiIntensity3")
-        }
-        .supplyFloatUniform("emiIntensity4") {
-            it.getFloatValue("emiIntensity4")
-        }
-        .supplyFloatUniform("emiIntensity5") {
-            it.getFloatValue("emiIntensity5", 1.0f)
-        }
+        .supplyFloatUniform("emiIntensity1") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity1 ?: 0.0f }
+        .supplyFloatUniform("emiIntensity2") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity2 ?: 0.0f }
+        .supplyFloatUniform("emiIntensity3") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity3 ?: 0.0f }
+        .supplyFloatUniform("emiIntensity4") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity4 ?: 0.0f }
+        .supplyFloatUniform("emiIntensity5") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity5 ?: 1.0f }
+
 
 
     private fun baseColors(builder: Pipeline.Builder) = builder
-        .supplyVec3("baseColor1") {
-            it.getColorValue("baseColor1")
-        }
-        .supplyVec3("baseColor2") {
-            it.getColorValue("baseColor2")
-        }
-        .supplyVec3("baseColor3") {
-            it.getColorValue("baseColor3")
-        }
-        .supplyVec3("baseColor4") {
-            it.getColorValue("baseColor4")
-        }
-        .supplyVec3("baseColor5") {
-            it.getColorValue("baseColor5")
-        }
+        .supplyVec3("baseColor1", { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor1 ?: ONE } )
+        .supplyVec3("baseColor2", { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor2 ?: ONE } )
+        .supplyVec3("baseColor3", { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor3 ?: ONE } )
+        .supplyVec3("baseColor4", { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor4 ?: ONE } )
+        .supplyVec3("baseColor5", { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor5 ?: ONE } )
 
-
-    private fun UniformUploadContext.getColorValue(id: String): Vector3f {
-        return (if (!this.isStatueMaterial) this.value<Vector3f>(id) else null) ?: ONE
-    }
-
-    private fun UniformUploadContext.getFloatValue(id: String, value: Float = 0.0f): Float {
-        return (if (!this.isStatueMaterial) this.value<Float>(id) else null) ?: value
-    }
-
-    private fun UniformUploadContext.getTextureOrOther(name: String, function: () -> ITexture): ITexture = this.getTexture(name)?.takeUnless { texture -> this.isStatueMaterial || texture === GenerationsTextureLoader.MissingTextureProxy } ?: function.invoke()
+    private fun UniformUploadContext.getTextureOrOther(
+        function: (UniformUploadContext) -> String?,
+        supplier: () -> ITexture
+    ): ITexture = GenerationsTextureLoader.getTexture(function.invoke(this))?.takeUnless { texture -> texture === GenerationsTextureLoader.MissingTextureProxy } ?: supplier.invoke()
 
     private fun addLight(builder: Pipeline.Builder) {
         builder
@@ -287,8 +257,8 @@ object Pipelines {
                 val light = (ctx.instance() as BlockLightValueProvider).light
                 ctx.uniform().upload2i(light and 0xFFFF, light shr 16 and 0xFFFF)
             }
-            .supplyTexture("emission", 2) { it.getTextureOrOther("emission") { ITextureLoader.instance().darkFallback } }
-            .supplyBooleanUniform("useLight") { it.value<Boolean>("useLight") ?: true }
+            .supplyTexture("emission", 2) { it.getTextureOrOther({ it.material.images().emission }) { ITextureLoader.instance().darkFallback } }
+            .supplyBooleanUniform("useLight") { it.material.values().useLight }
     }
 
 
@@ -379,10 +349,6 @@ private fun Pipeline.Builder.supplyVec3(name: String, function: (UniformUploadCo
 
 private fun Pipeline.Builder.supplyFloatUniform(name: String, function: (UniformUploadContext) -> Float): Pipeline.Builder {
     return this.supplyUniform(name) { it.uniform.uploadFloat(function.invoke(it))}
-}
-
-private inline fun <reified T> UniformUploadContext.value(name: String): T? {
-    return this.getValue(name).instanceOrNull<T>()
 }
 
 private fun Pipeline.Builder.supplyEnumUniform(name: String, value: Enum<*>): Pipeline.Builder = this.supplyInt(name) { value.ordinal }

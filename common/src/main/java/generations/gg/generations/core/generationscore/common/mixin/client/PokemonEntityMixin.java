@@ -7,19 +7,19 @@ import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(PokemonEntity.class)
-public abstract class PokemonEntityMixin implements CobblemonInstanceProvider {
-    private CobblemonInstance instance;
-
-    public CobblemonInstance getInstance() {
-        if (instance == null) {
-            instance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);
-        }
-
-        return instance;
-    }
-
-    private PokemonEntity self() {
-        return (PokemonEntity) (Object) this;
-    }
+public abstract class PokemonEntityMixin/* implements CobblemonInstanceProvider */{
+//    private CobblemonInstance instance;
+//
+//    public CobblemonInstance getInstance() {
+//        if (instance == null) {
+//            instance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);
+//        }
+//
+//        return instance;
+//    }
+//
+//    private PokemonEntity self() {
+//        return (PokemonEntity) (Object) this;
+//    }
 
 }

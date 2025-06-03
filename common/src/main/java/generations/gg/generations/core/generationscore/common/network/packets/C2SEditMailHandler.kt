@@ -3,7 +3,8 @@ package generations.gg.generations.core.generationscore.common.network.packets
 import com.cobblemon.mod.common.api.net.ServerNetworkPacketHandler
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.MailItem
-import net.minecraft.nbt.StringTag
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.MailContent
 import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Inventory
@@ -33,28 +34,32 @@ object C2SEditMailHandler : ServerNetworkPacketHandler<C2SEditMailPacket> {
                         contents
                     )
                 })
+        }
+    }
+
+    private fun updateMailContents(sender: ServerPlayer, slot: Int, contents: String) {
+        val itemStack = sender.inventory.getItem(slot)
+        if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
+            itemStack.update(GenerationsDataComponents.MAIL_DATA.get(), MailContent()) {
+                it.content = contents
+                return@update it
             }
         }
+    }
 
-        private fun updateMailContents(sender: ServerPlayer, slot: Int, contents: String) {
-            val itemStack = sender.inventory.getItem(slot)
-            if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
-//                itemStack.addTagElement("contents", StringTag.valueOf(contents))
+    private fun sealMail(sender: ServerPlayer, slot: Int, contents: String, title: String) {
+        val itemStack = sender.inventory.getItem(slot)
+        if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
+            val stack = MailItem.getSealed(itemStack.item)
+
+            stack.update(GenerationsDataComponents.MAIL_DATA.get(), MailContent()) {
+                it.content = contents
+                it.author = sender.name.string
+                it.title = title
+                return@update it
             }
-        }
 
-        private fun sealMail(sender: ServerPlayer, slot: Int, contents: String, title: String) {
-            val itemStack = sender.inventory.getItem(slot)
-            if (itemStack.`is`(GenerationsItemTags.POKEMAIL)) {
-//                val itemStack1 = MailItem.getSealed(itemStack.item)
-//                val compoundTag = itemStack.getTag()
-//                if (compoundTag != null) {
-//                    itemStack1.setTag(compoundTag)
-//                }
-//                itemStack1.addTagElement("author", StringTag.valueOf(sender.name.string))
-//                itemStack1.addTagElement("contents", StringTag.valueOf(contents))
-//                sender.inventory.setItem(slot, itemStack1)
-//            }
+            sender.inventory.setItem(slot, stack)
         }
     }
 }

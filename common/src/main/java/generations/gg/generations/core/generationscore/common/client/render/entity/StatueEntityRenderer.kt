@@ -45,8 +45,10 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         val renderable = entity.renderablePokemon() ?: return
         val state = entity.delegate as StatueClientDelegate
         val model = PokemonModelRepository.getPoser(renderable.species.resourceIdentifier, state)
+        this.model.posableModel = model
         model.context = this.model.context
         this.model.setupEntityTypeContext(entity)
+
         stack.pushPose()
         stack.scale(-1f, -1f, 1f)
         val scale: Float = entity.scale
@@ -66,9 +68,8 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
                 )
         )
 
-        model.getPose(entity.poseType)?.let { state.setPose(it.poseName) }
-
         state.updatePartialTicks(partialTicks)
+
         model.setLayerContext(
             buffer,
             state,
@@ -87,6 +88,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
             0f
         ) //TODO: Come back to make sure animations aren't scuffed
 
+
         this.model.renderToBuffer(stack, vertexConsumer, light, OverlayTexture.NO_OVERLAY, 0xffffffff.toInt())
 
         model.resetLayerContext()
@@ -94,67 +96,11 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         stack.popPose()
 
         if (this.shouldShowName(entity)) {
-            var yOffset = renderable.form.hitbox.height * scale
+            val yOffset = renderable.form.hitbox.height * scale
 
             super.renderNameTag(entity, entity.displayName!!, stack, buffer, light, yOffset)
         }
     }
-
-//      TODO: check if jank still needed
-//        override fun renderNameTag(
-//            entity: StatueEntity,
-//            displayName: Component,
-//            poseStack: PoseStack,
-//            buffer: MultiBufferSource?,
-//            packedLight: Int,
-//            yOffsetY: Float,
-//        ) {
-//            val d = entityRenderDispatcher.distanceToSqr(entity)
-//            if (!(d > 4096.0)) {
-//                val bl: Boolean = !entity.isDiscrete()
-//                val f: Float = yOffsetY
-//                val i = if ("deadmau5" == displayName.string) -10 else 0
-//                poseStack.pushPose()
-//                poseStack.translate(0.0f, f, 0.0f)
-//                poseStack.mulPose(entityRenderDispatcher.cameraOrientation())
-//                poseStack.scale(-0.025f, -0.025f, 0.025f)
-//                val matrix4f = poseStack.last().pose()
-//                val g = Minecraft.getInstance().options.getBackgroundOpacity(0.25f)
-//                val j = (g * 255.0f).toInt() shl 24
-//                val font = this.font
-//                val h = (-font.width(displayName) / 2).toFloat()
-//                font.drawInBatch(
-//                    displayName,
-//                    h,
-//                    i.toFloat(),
-//                    553648127,
-//                    false,
-//                    matrix4f,
-//                    buffer,
-//                    if (bl) Font.DisplayMode.SEE_THROUGH else Font.DisplayMode.NORMAL,
-//                    j,
-//                    packedLight
-//                )
-//                if (bl) {
-//                    font.drawInBatch(
-//                        displayName,
-//                        h,
-//                        i.toFloat(),
-//                        -1,
-//                        false,
-//                        matrix4f,
-//                        buffer,
-//                        Font.DisplayMode.NORMAL,
-//                        0,
-//                        packedLight
-//                    )
-//                }
-//
-//                poseStack.popPose()
-//            }
-//        }
-//    }
-
     override fun getTextureLocation(entity: StatueEntity): ResourceLocation {
         val material = entity.material
         if (material != null && GenerationsTextureLoader.has(material)) {
@@ -170,6 +116,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
     override fun shouldShowName(entity: StatueEntity): Boolean {
         return entity.label?.let { it.isNotEmpty() && it.isNotBlank() } ?: false
     }
+
 }
 
 class PoseableStatueEntityModel : PosableEntityModel<StatueEntity>() {
@@ -178,14 +125,13 @@ class PoseableStatueEntityModel : PosableEntityModel<StatueEntity>() {
 
         (entity as? StatueEntity)?.let {
             val renderable = entity.renderablePokemon()!!
-            var delegate = entity as StatueClientDelegate
+            var delegate = entity.delegate as StatueClientDelegate
 
             context.put(RenderContext.SCALE, renderable.form.baseScale)
             context.put(RenderContext.SPECIES, renderable.species.resourceIdentifier)
             context.put(RenderContext.ASPECTS, renderable.aspects)
             context.put(RenderContext.ENTITY, entity)
             context.put(RenderContext.POSABLE_STATE, delegate)
-            context.put(Pipelines.INSTANCE, delegate.instance)
         }
     }
 }

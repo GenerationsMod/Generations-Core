@@ -195,7 +195,7 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
      */
     private fun onInitialize(event: FMLCommonSetupEvent) {
         event.enqueueWork { VanillaCompat.setup() }
-        MutableBlockEntityType.blocksToAdd.forEach { block -> block.instanceOrNull<MutableBlockEntityType<*>>()?.addBlock(block) }
+        MutableBlockEntityType.blocksToAdd.forEach { block -> block.blockEntityType.instanceOrNull<MutableBlockEntityType<*>>()?.addBlock(block) }
     }
 
     private fun postInit(event: FMLLoadCompleteEvent) {

@@ -115,12 +115,10 @@ fun MutableList<Component>.add(pokemon: Pokemon) {
 
 fun ItemStack.savePokemon(poke: Pokemon) {
     set(GenerationsDataComponents.EMBEDDED_POKEMON, poke)
-    set(GenerationsDataComponents.CLIENT_POKEMON_DATA, poke.asRenderablePokemon())
 }
 
 fun ItemStack.removePokemon() {
     remove(GenerationsDataComponents.EMBEDDED_POKEMON)
-    remove(GenerationsDataComponents.CLIENT_POKEMON_DATA)
 }
 
 fun ItemStack.getRenderablePokemon(): RenderablePokemon? {
@@ -128,7 +126,7 @@ fun ItemStack.getRenderablePokemon(): RenderablePokemon? {
         return (item as StatueSpawnerItem).pokemon?.asRenderablePokemon() //TODO: See if this explodes.
     }
 
-    return get(GenerationsDataComponents.CLIENT_POKEMON_DATA)
+    return get(GenerationsDataComponents.EMBEDDED_POKEMON)?.asRenderablePokemon()
 }
 
 fun ItemStack.getPokemon(): Pokemon? {

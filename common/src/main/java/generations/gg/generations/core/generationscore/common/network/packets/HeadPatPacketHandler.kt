@@ -14,11 +14,14 @@ object HeadPatPacketHandler : ServerNetworkPacketHandler<HeadPatPacket> {
         val pokemonEntity = player.serverLevel().getEntity(packet.pokemonId)
         if (pokemonEntity is PokemonEntity) {
             if(pokemonEntity.isSilent) return
-                val pkt = PlayPosableAnimationPacket(pokemonEntity.id, setOf("glad"), Collections.emptyList())
-                player.level().getEntitiesOfClass(ServerPlayer::class.java, AABB.ofSize(pokemonEntity.position(), 64.0, 64.0, 64.0)) { true }
-                    .forEach {
-                    it.sendPacket(pkt)
-                }
+            PlayPosableAnimationPacket(pokemonEntity.id, setOf("glad"), Collections.emptyList()).sendToPlayersAround(pokemonEntity.x, pokemonEntity.y, pokemonEntity.z, 64.0, pokemonEntity.level().dimension())
+//            pkt.sendToPlayersAround()
+//
+//
+//                player.level().getEntitiesOfClass(ServerPlayer::class.java, AABB.ofSize(pokemonEntity.position(), 64.0, 64.0, 64.0)) { true }
+//                    .forEach {
+//                    it.sendPacket(pkt)
+//                }
             }
         }
 }

@@ -108,9 +108,12 @@ object GenerationsTextureLoader : ITextureLoader() {
 
     override fun getTextureEntries(): Set<String> = REGULAR.keys
 
-    fun has(texture: String): Boolean = REGULAR.containsKey(texture)
+    fun has(texture: String?): Boolean = REGULAR.containsKey(texture)
 
-    fun getLocation(material: String): ResourceLocation? = REGULAR.getOrDefault(material, null)
+    fun getLocation(material: String?): ResourceLocation? = REGULAR.getOrDefault(material, null)
+    fun getTextureOrNull(name: String?): ITexture? {
+        return if(has(name)) getTexture(name) else null
+    }
 
     private class SimpleTextureEnhanced(override var location: ResourceLocation) : SimpleTexture(location), ITextureWithResourceLocation {
 

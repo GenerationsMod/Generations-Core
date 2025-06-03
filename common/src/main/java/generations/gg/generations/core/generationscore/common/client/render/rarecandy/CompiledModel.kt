@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy
 
-import com.mojang.blaze3d.systems.RenderSystem
-import com.mojang.blaze3d.vertex.BufferUploader
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.GenerationsModelLoader
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.VanilaRenderModel
@@ -16,7 +14,6 @@ import gg.generations.rarecandy.renderer.storage.ObjectManager
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
-import java.io.IOException
 import java.util.function.Supplier
 
 /**
@@ -40,15 +37,6 @@ class CompiledModel @JvmOverloads constructor(
             if(GenerationsCore.CONFIG.client.logModelLoading) GenerationsCore.LOGGER.info("Loading PK: $name")
             renderObject = loader.compiledModelMethod(this, stream?.open(), supplier, name.toString(), requiresVariantTexture)
         }
-    }
-
-    fun renderGui(instance: ObjectInstance) {
-        if (renderObject == null) return
-        RenderSystem.enableDepthTest()
-        BufferUploader.reset()
-        instance.viewMatrix().set(RenderSystem.getModelViewMatrix())
-
-        ObjectManager.render(renderObject, instance)
     }
 
     fun render(instance: ObjectInstance, source: MultiBufferSource) {
