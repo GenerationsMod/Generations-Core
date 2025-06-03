@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.mixin.showdown;
 
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.battles.interpreter.instructions.FormeChangeInstruction;
 import com.cobblemon.mod.common.battles.interpreter.instructions.TerastallizeInstruction;
 import generations.gg.generations.core.generationscore.common.battle.GenerationsInstructionProcessor;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,12 +11,13 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(TerastallizeInstruction.class)
-public abstract class TerastallizeInstructionMixin {
+@Mixin(FormeChangeInstruction.class)
+public abstract class FormeChangeInstructionMixin {
     @Shadow(remap = false) public abstract BattleMessage getMessage();
 
-    @Inject(method = "invoke", at = @At("TAIL"), remap = false)
-    private void terastallizeInject(PokemonBattle battle, CallbackInfo ci) {
-        //GenerationsInstructionProcessor.processTerastillization(battle, getMessage());
+    @Inject(method = "invoke", at = @At("HEAD"), remap = false)
+    private void formeChangeInject(PokemonBattle battle, CallbackInfo ci) {
+        System.out.println("FORMECHANGEINSTRUCTIONWORKS");
+        GenerationsInstructionProcessor.processFormeChangeInstruction(battle, getMessage());
     }
 }

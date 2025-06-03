@@ -759,9 +759,9 @@ object GenerationsItems {
     @JvmField val FAIRY_FEATHER = registerHeldItem("fairy_feather")
 
     @JvmField val TEAL_MASK = registerHeldItem("teal_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "teal") }
-    @JvmField val WELLSPRING_MASK = registerHeldItem("wellspring_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "wellspring") }
-    @JvmField val HEARTHFLAME_MASK = registerHeldItem("hearthflame_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "hearthflame") }
-    @JvmField val CORNERSTONE_MASK = registerHeldItem("cornerstone_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "cornerstone") }
+    @JvmField val WELLSPRING_MASK = registerHeldItem("wellspring_mask") { properties -> createFormChangingItem(properties, "ogre_mask", "wellspring") }
+    @JvmField val HEARTHFLAME_MASK = registerHeldItem("hearthflame_mask") { properties -> createFormChangingItem(properties, "ogre_mask", "hearthflame") }
+    @JvmField val CORNERSTONE_MASK = registerHeldItem("cornerstone_mask") { properties -> createFormChangingItem(properties, "ogre_mask", "cornerstone") }
 
     /**
     * Vanilla Like Materials
@@ -878,8 +878,8 @@ object GenerationsItems {
     @JvmField val RED_CHAIN = register("red_chain", { RedChainItem(it.stacksTo(1)) }, LEGENDARY_ITEMS)
     @JvmField val DNA_SPLICERS = register("dna_splicers", { DnaSplicer(it) }, LEGENDARY_ITEMS)
     @JvmField val REINS_OF_UNITY = register("reins_of_unity", { ReinsOfUnityItem(it.stacksTo(1)) }, LEGENDARY_ITEMS)
-    @JvmField val N_SOLARIZER = register("n_solarizer", { NecroizerItemItem(it, "solgaleo", "sunsteelstrike", "duskmane") }, LEGENDARY_ITEMS)
-    @JvmField val N_LUNARIZER = register("n_lunarizer", { NecroizerItemItem(it, "lunala", "moongeistbeam", "dawnwings") }, LEGENDARY_ITEMS)
+    @JvmField val N_SOLARIZER = register("n_solarizer", { NecroizerItemItem(it, "solgaleo", "sunsteelstrike", "dusk") }, LEGENDARY_ITEMS)
+    @JvmField val N_LUNARIZER = register("n_lunarizer", { NecroizerItemItem(it, "lunala", "moongeistbeam", "dawn") }, LEGENDARY_ITEMS)
     @JvmField val LEGEND_FINDER = register("legend_finder", ::Item, LEGENDARY_ITEMS)
     @JvmField val HOOPA_RING = register("hoopa_ring", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val FADED_RED_ORB = register("faded_red_orb", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(250), ElementalTypes.FIRE) }, LEGENDARY_ITEMS)

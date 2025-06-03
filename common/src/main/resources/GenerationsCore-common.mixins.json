@@ -19,12 +19,14 @@
     "client.PokemonGuiUtilsMixin",
     "client.PokemonItemRendererMixin",
     "client.PosableStateMixin",
-    "datafix.ItemStackComponentizationFixMixin",
     "showdown.ShowdownActionRequestMixin",
     "showdown.ShowdownThreadMixin",
-    "showdown.TerastallizeInstructionMixin"
+    "showdown.TerastallizeInstructionMixin",
+    "showdown.FormeChangeInstructionMixin",
+    "datafix.ItemStackComponentizationFixMixin"
   ],
   "client": [
+    "client.BattleGimmickButtonMixin",
     "client.BattleMoveSelectionGUIMixin",
     "client.ClientRecipeBookMixin",
     "client.GuiMixin",

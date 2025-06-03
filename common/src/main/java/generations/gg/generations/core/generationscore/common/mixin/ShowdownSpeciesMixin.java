@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -26,10 +27,8 @@ public abstract class ShowdownSpeciesMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"), remap = false)
     private void injectConstructor(Species species, FormData form, CallbackInfo ci) {
-        if (form == null || Stream.of("mega", "mega_x", "mega_y").noneMatch(aspect -> form.getAspects().contains(aspect))) return;
-
+        if (form == null) return;
         Iterator<PotentialAbility> abilityIterator = form.getAbilities().iterator();
         abilities = Map.of("0", abilityIterator.hasNext() ? abilityIterator.next().getTemplate().getName() : NO_ABILITY);
     }
-
 }

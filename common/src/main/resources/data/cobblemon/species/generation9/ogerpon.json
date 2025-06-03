@@ -101,7 +101,7 @@
     "legendary"
   ],
   "aspects": [
-    "teal"
+    "teal-mask"
   ],
   "height": 12,
   "weight": 398,
@@ -145,7 +145,7 @@
         "legendary"
       ],
       "aspects": [
-        "wellspring"
+        "wellspring-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -189,7 +189,7 @@
         "legendary"
       ],
       "aspects": [
-        "hearthflame"
+        "hearthflame-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -233,7 +233,7 @@
         "legendary"
       ],
       "aspects": [
-        "cornerstone"
+        "cornerstone-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -276,8 +276,8 @@
         "legendary"
       ],
       "aspects": [
-        "embody-aspect",
-        "teal"
+        "embody_aspect",
+        "teal-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -321,8 +321,8 @@
         "legendary"
       ],
       "aspects": [
-        "embody-aspect",
-        "wellspring"
+        "embody_aspect",
+        "wellspring-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -366,8 +366,8 @@
         "legendary"
       ],
       "aspects": [
-        "embody-aspect",
-        "hearthflame"
+        "embody_aspect",
+        "hearthflame-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -411,8 +411,8 @@
         "legendary"
       ],
       "aspects": [
-        "embody-aspect",
-        "cornerstone"
+        "embody_aspect",
+        "cornerstone-mask"
       ],
       "height": 12,
       "weight": 398,

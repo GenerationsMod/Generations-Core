@@ -1,6 +1,0 @@
-{
-  "type": "flag",
-  "keys": ["terastal"],
-  "default": false,
-  "isAspect": true
-}

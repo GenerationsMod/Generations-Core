@@ -2365,7 +2365,7 @@ class BattleActions {
   canUltraBurst(pokemon) {
     if (
       ["Necrozma-Dawn-Wings", "Necrozma-Dusk-Mane"].includes(
-        pokemon.baseSpecies.name
+        pokemon.species.name
       ) &&
       pokemon.getItem().id === "ultranecroziumz"
     ) {
@@ -2376,6 +2376,7 @@ class BattleActions {
   runMegaEvo(pokemon) {
     const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
     if (!speciesid) return false;
+    this.battle.add('message', `[DEBUG] runMegaEvo: ${pokemon.name} attempting to transform into ${speciesid}`);
     pokemon.formeChange(speciesid, pokemon.getItem(), true);
     const wasMega = pokemon.canMegaEvo;
     for (const ally of pokemon.side.pokemon) {
