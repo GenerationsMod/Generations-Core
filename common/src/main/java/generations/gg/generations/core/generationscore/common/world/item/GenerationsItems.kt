@@ -2,6 +2,8 @@ package generations.gg.generations.core.generationscore.common.world.item
 
 import com.cobblemon.mod.common.api.types.ElementalType
 import com.cobblemon.mod.common.api.types.ElementalTypes
+import com.cobblemon.mod.common.api.types.tera.TeraType
+import com.cobblemon.mod.common.api.types.tera.TeraTypes
 import com.cobblemon.mod.common.item.PokeBallItem
 import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager
 import com.cobblemon.mod.common.util.cobblemonResource
@@ -759,9 +761,9 @@ object GenerationsItems {
     @JvmField val FAIRY_FEATHER = registerHeldItem("fairy_feather")
 
     @JvmField val TEAL_MASK = registerHeldItem("teal_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "teal") }
-    @JvmField val WELLSPRING_MASK = registerHeldItem("wellspring_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "wellspring") }
-    @JvmField val HEARTHFLAME_MASK = registerHeldItem("hearthflame_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "hearthflame") }
-    @JvmField val CORNERSTONE_MASK = registerHeldItem("cornerstone_mask") { properties -> createFormChangingItem(properties, "ogerpon_mask", "cornerstone") }
+    @JvmField val WELLSPRING_MASK = registerHeldItem("wellspring_mask") { properties -> createFormChangingItem(properties, "ogre_mask", "wellspring") }
+    @JvmField val HEARTHFLAME_MASK = registerHeldItem("hearthflame_mask") { properties -> createFormChangingItem(properties, "ogre_mask", "hearthflame") }
+    @JvmField val CORNERSTONE_MASK = registerHeldItem("cornerstone_mask") { properties -> createFormChangingItem(properties, "ogre_mask", "cornerstone") }
 
     /**
     * Vanilla Like Materials
@@ -804,6 +806,7 @@ object GenerationsItems {
     @JvmField val MEGA_RING = register("mega_ring", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
     @JvmField val Z_POWER_RING = register("z_power_ring", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
     @JvmField val Z_RING = register("z_ring", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
+    @JvmField val TERA_ORB = register("tera_orb", { Item(it.stacksTo(1)) }, PLAYER_ITEMS)
 
         /*
     public static final RegistrySupplier<Item> RED_BIKE = register("red_bike", Item::new, PLAYER_ITEMS);
@@ -877,8 +880,8 @@ object GenerationsItems {
     @JvmField val RED_CHAIN = register("red_chain", { RedChainItem(it.stacksTo(1)) }, LEGENDARY_ITEMS)
     @JvmField val DNA_SPLICERS = register("dna_splicers", { DnaSplicer(it) }, LEGENDARY_ITEMS)
     @JvmField val REINS_OF_UNITY = register("reins_of_unity", { ReinsOfUnityItem(it.stacksTo(1)) }, LEGENDARY_ITEMS)
-    @JvmField val N_SOLARIZER = register("n_solarizer", { NecroizerItemItem(it, "solgaleo", "sunsteelstrike", "duskmane") }, LEGENDARY_ITEMS)
-    @JvmField val N_LUNARIZER = register("n_lunarizer", { NecroizerItemItem(it, "lunala", "moongeistbeam", "dawnwings") }, LEGENDARY_ITEMS)
+    @JvmField val N_SOLARIZER = register("n_solarizer", { NecroizerItemItem(it, "solgaleo", "sunsteelstrike", "dusk") }, LEGENDARY_ITEMS)
+    @JvmField val N_LUNARIZER = register("n_lunarizer", { NecroizerItemItem(it, "lunala", "moongeistbeam", "dawn") }, LEGENDARY_ITEMS)
     @JvmField val LEGEND_FINDER = register("legend_finder", ::Item, LEGENDARY_ITEMS)
     @JvmField val HOOPA_RING = register("hoopa_ring", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     @JvmField val FADED_RED_ORB = register("faded_red_orb", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(250), ElementalTypes.FIRE) }, LEGENDARY_ITEMS)
@@ -1244,25 +1247,25 @@ object GenerationsItems {
     /**
      * Tera Shards
      */
-    @JvmField val TERA_BUG_SHARD = createTeraShard("tera_bug_shard", ElementalTypes.BUG)
-    @JvmField val TERA_DARK_SHARD = createTeraShard("tera_dark_shard", ElementalTypes.DARK)
-    @JvmField val TERA_DRAGON_SHARD = createTeraShard("tera_dragon_shard", ElementalTypes.DRAGON)
-    @JvmField val TERA_ELECTRIC_SHARD = createTeraShard("tera_electric_shard", ElementalTypes.ELECTRIC)
-    @JvmField val TERA_FAIRY_SHARD = createTeraShard("tera_fairy_shard", ElementalTypes.FAIRY)
-    @JvmField val TERA_FIGHTING_SHARD = createTeraShard("tera_fighting_shard", ElementalTypes.FIGHTING)
-    @JvmField val TERA_FIRE_SHARD = createTeraShard("tera_fire_shard", ElementalTypes.FIRE)
-    @JvmField val TERA_FLYING_SHARD = createTeraShard("tera_flying_shard", ElementalTypes.FLYING)
-    @JvmField val TERA_GHOST_SHARD = createTeraShard("tera_ghost_shard", ElementalTypes.GHOST)
-    @JvmField val TERA_GRASS_SHARD = createTeraShard("tera_grass_shard", ElementalTypes.GRASS)
-    @JvmField val TERA_GROUND_SHARD = createTeraShard("tera_ground_shard", ElementalTypes.GROUND)
-    @JvmField val TERA_ICE_SHARD = createTeraShard("tera_ice_shard", ElementalTypes.ICE)
-    @JvmField val TERA_NORMAL_SHARD = createTeraShard("tera_normal_shard", ElementalTypes.NORMAL)
-    @JvmField val TERA_POISON_SHARD = createTeraShard("tera_poison_shard", ElementalTypes.POISON)
-    @JvmField val TERA_PSYCHIC_SHARD = createTeraShard("tera_psychic_shard", ElementalTypes.PSYCHIC)
-    @JvmField val TERA_ROCK_SHARD = createTeraShard("tera_rock_shard", ElementalTypes.ROCK)
-    @JvmField val TERA_STEEL_SHARD = createTeraShard("tera_steel_shard", ElementalTypes.STEEL)
-    @JvmField val TERA_STELLAR_SHARD = createTeraShard("tera_stellar_shard", null)
-    @JvmField val TERA_WATER_SHARD = createTeraShard("tera_water_shard", ElementalTypes.WATER)
+    @JvmField val TERA_BUG_SHARD = createTeraShard("bug_tera_shard", TeraTypes.BUG)
+    @JvmField val TERA_DARK_SHARD = createTeraShard("dark_tera_shard", TeraTypes.DARK)
+    @JvmField val TERA_DRAGON_SHARD = createTeraShard("dragon_tera_shard", TeraTypes.DRAGON)
+    @JvmField val TERA_ELECTRIC_SHARD = createTeraShard("electric_tera_shard", TeraTypes.ELECTRIC)
+    @JvmField val TERA_FAIRY_SHARD = createTeraShard("fairy_tera_shard", TeraTypes.FAIRY)
+    @JvmField val TERA_FIGHTING_SHARD = createTeraShard("fighting_tera_shard", TeraTypes.FIGHTING)
+    @JvmField val TERA_FIRE_SHARD = createTeraShard("fire_tera_shard", TeraTypes.FIRE)
+    @JvmField val TERA_FLYING_SHARD = createTeraShard("flying_tera_shard", TeraTypes.FLYING)
+    @JvmField val TERA_GHOST_SHARD = createTeraShard("ghost_tera_shard", TeraTypes.GHOST)
+    @JvmField val TERA_GRASS_SHARD = createTeraShard("grass_tera_shard", TeraTypes.GRASS)
+    @JvmField val TERA_GROUND_SHARD = createTeraShard("ground_tera_shard", TeraTypes.GROUND)
+    @JvmField val TERA_ICE_SHARD = createTeraShard("ice_tera_shard", TeraTypes.ICE)
+    @JvmField val TERA_NORMAL_SHARD = createTeraShard("normal_tera_shard", TeraTypes.NORMAL)
+    @JvmField val TERA_POISON_SHARD = createTeraShard("poison_tera_shard", TeraTypes.POISON)
+    @JvmField val TERA_PSYCHIC_SHARD = createTeraShard("psychic_tera_shard", TeraTypes.PSYCHIC)
+    @JvmField val TERA_ROCK_SHARD = createTeraShard("rock_tera_shard", TeraTypes.ROCK)
+    @JvmField val TERA_STEEL_SHARD = createTeraShard("steel_tera_shard", TeraTypes.STEEL)
+    @JvmField val TERA_STELLAR_SHARD = createTeraShard("stellar_tera_shard", TeraTypes.STELLAR)
+    @JvmField val TERA_WATER_SHARD = createTeraShard("water_tera_shard", TeraTypes.WATER)
 
     /**
      * Un-Implemented Items : Items currently have no in-game function
@@ -1597,8 +1600,8 @@ object GenerationsItems {
         LEGENDARY_ITEMS
     )
 
-    private fun createTeraShard(name: String, element: ElementalType?): RegistrySupplier<Item> {
-        return register(name, { TerraSharditem(it, element) }, PLAYER_ITEMS)
+    private fun createTeraShard(name: String, teraType: TeraType): RegistrySupplier<Item> {
+        return register(name, { TeraSharditem(it, teraType) }, PLAYER_ITEMS)
     }
 
     private fun registerHeldItem(

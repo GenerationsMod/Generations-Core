@@ -142,6 +142,7 @@ object GenerationsCore {
         GenerationsArmor.init()
         GenerationsTools.init()
         GenerationsContainers.init()
+        GenerationsResources.init()
         RksResultType.init()
         GenerationsIngredidents.init()
         GenerationsCoreRecipeTypes.init()

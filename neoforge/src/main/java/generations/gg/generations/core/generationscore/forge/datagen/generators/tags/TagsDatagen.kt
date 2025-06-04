@@ -685,6 +685,7 @@ object TagsDatagen {
                 .add(GenerationsItems.MEGA_CUFF.get())
             tag(GenerationsItemTags.DYNAMAX_BANDS).add(GenerationsItems.DYNAMAX_BAND.get())
             tag(GenerationsItemTags.Z_RINGS).add(GenerationsItems.Z_RING.get()).add(GenerationsItems.Z_POWER_RING.get())
+            tag(GenerationsItemTags.TERA_ORBS).add(GenerationsItems.TERA_ORB.get());
             tag(GenerationsItemTags.MEMORY_DRIVES).add(
                 GenerationsItems.BUG_MEMORY_DRIVE.get(),
                 GenerationsItems.DARK_MEMORY_DRIVE.get(),

@@ -1,52 +1,60 @@
 package generations.gg.generations.core.generationscore.common.battle
 
+import com.cobblemon.mod.common.api.abilities.Ability
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
-import com.cobblemon.mod.common.api.battles.model.actor.BattleActor
+import com.cobblemon.mod.common.api.events.battles.instruction.FormeChangeEvent
+import com.cobblemon.mod.common.api.events.battles.instruction.MegaEvolutionEvent
+import com.cobblemon.mod.common.api.events.battles.instruction.TerastallizationEvent
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
-import com.cobblemon.mod.common.api.pokemon.feature.SynchronizedSpeciesFeature
-import com.cobblemon.mod.common.battles.ShowdownActionRequest
-import com.cobblemon.mod.common.battles.ShowdownMoveset
-import com.cobblemon.mod.common.battles.pokemon.BattlePokemon
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.net.messages.client.battle.BattleTransformPokemonPacket
 import com.cobblemon.mod.common.pokemon.Pokemon
-import com.cobblemon.mod.common.util.cobblemonResource
-import com.cobblemon.mod.common.util.hasKeyItem
 import com.mojang.datafixers.util.Unit
-import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
-import java.util.*
 
-//TODO Use
 object GenerationsInstructionProcessor {
+    private var originalAbility: Ability? = null
+
     @JvmStatic
-    fun processDetailsChange(battle: PokemonBattle, pokemon: BattlePokemon, formeName: String) {
+    fun processFormeChangeInstruction(battle: PokemonBattle, message: BattleMessage) {
+        val s1 = message.argumentAt(1) ?: return
+        val s2 = s1.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
+        if (s2.isEmpty()) return
+        val s3 = s2[0].lowercase().split("-".toRegex(), 2).dropLastWhile { it.isEmpty() }.toTypedArray()
 
-        val battlePokemon = pokemon
+        if (s3.size < 2) return
 
-        val name = formeName
+        val battlePokemon = message.battlePokemon(0, battle) ?: return
+        val effectedPokemon = battlePokemon.effectedPokemon
 
-        val pair: Pair<String, Any> = when(name) {
-            "mega" -> {
-                val megaStone = battlePokemon.heldItemManager.showdownId(battlePokemon) ?: return
-                when {
-                    megaStone.endsWith("x") -> "mega_x"
-                    megaStone.endsWith("y") -> "mega_y"
-                    else -> "mega"
-                } to true
-            }
-            "sunshine" -> "sunny" to true
-            "school" -> "schooling" to true
-//            "wellspring", "hearthflame", "cornerstone", "teal" -> s3.getOrNull(2)?.takeIf { it == "Tera" }.let { "terastal" to true } ?: null TODO: Figure out what ogrepon here uses in the new system.
+        val name = s3[1]
+
+        originalAbility = battlePokemon.originalPokemon.ability
+
+        if (effectedPokemon.form.name.equals("Dusk-Mane")) {
+            battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dusk")
+        } else if (effectedPokemon.form.name.equals("Dawn-Wings")) {
+            battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dawn")
+        }
+
+        var pair: Pair<String, Any> = when(name) {
+            "ash" -> "ash" to true
+            "mega" -> "mega" to true
+            "mega-x" -> "mega_x" to true
+            "mega-y" -> "mega_y" to true
+            "primal" -> "primal" to true
+            "stellar" -> "tera_form" to "stellar"
+            "terastal" -> "tera_form" to "terastal"
+            "ultra" -> "prism_fusion" to "ultra"
+            "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody_aspect" to true
             else -> name to true
         } ?: let {
             battlePokemon.originalPokemon.removeBattleFeature()
             battlePokemon.effectedPokemon.removeBattleFeature()
             return
         }
-
-        println(arrayOf("A", "A").contentToString())
-
         pair.let {
             when (it.second) {
                 is String -> it.let { StringSpeciesFeature(it.first, it.second as String) }
@@ -60,16 +68,6 @@ object GenerationsInstructionProcessor {
                 battlePokemon.effectedPokemon.applyBattleFeature(it)
             }
         }
-
-
-//            ?.let {
-//            battle.dispatchGo {
-//                FlagSpeciesFeature(it, true).also {
-//                    it.apply(battlePokemon.originalPokemon)
-//                    it.apply(battlePokemon.effectedPokemon)
-//                }
-//            }
-//        }
     }
 
     @JvmStatic
@@ -77,20 +75,31 @@ object GenerationsInstructionProcessor {
         battle.actors.forEach { actor ->
             if (!actor.getPlayerUUIDs().iterator().hasNext()) return@forEach
             actor.pokemonList.forEach { battlePokemon ->
+                val tempAbility = battlePokemon.originalPokemon.ability
+                val data = battlePokemon.effectedPokemon.persistentData
+
+                val name = if(data.contains("form_name")) data.getString("form_name") else ""
                 battlePokemon.originalPokemon.removeBattleFeature()
                 battlePokemon.effectedPokemon.removeBattleFeature()
 
-//                sequenceOf("mega", "mega_x", "mega_y", "primal", "stellar", "terastal", "hero", "hangry", "meteor", "blade", "pirouette", "sunny", "schooling", "ash", "busted").forEach { name ->
-//                    battlePokemon.effectedPokemon.features.removeIf { it.name == name }
-//                    battlePokemon.originalPokemon.features.removeIf { it.name == name }
-//                }
-//
-//                battlePokemon.effectedPokemon.updateAspects()
+                if (battlePokemon.effectedPokemon.species.name.equals("Terapagos")) {
+                    StringSpeciesFeature("tera_form", "normal").apply(battlePokemon.effectedPokemon)
+                    StringSpeciesFeature("tera_form", "normal").apply(battlePokemon.originalPokemon)
+                    battlePokemon.originalPokemon.updateAspects()
+                }
+                if (battlePokemon.effectedPokemon.species.name.equals("Necrozma")) {
+                    val necroForm = battlePokemon.originalPokemon.persistentData.getString("necro_fusion")
+                    if (!necroForm.isNullOrBlank()) {
+                        val necroFeature = StringSpeciesFeature("prism_fusion", necroForm)
+                        necroFeature.apply(battlePokemon.originalPokemon)
+                        necroFeature.apply(battlePokemon.effectedPokemon)
+                        battlePokemon.originalPokemon.updateAspects()
+                    }
+                }
+                battlePokemon.originalPokemon.restoreAbility(tempAbility, originalAbility, name)
             }
         }
     }
-
-
 }
 
 private fun Pokemon.removeBattleFeature() {
@@ -113,13 +122,22 @@ private fun Pokemon.removeBattleFeature() {
 
 private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
     this.persistentData.putString("form_name", feature.name)
-
     if(feature is StringSpeciesFeature) {
         this.persistentData.putString("form_value", feature.value)
         feature.apply(this)
     } else {
         (feature as FlagSpeciesFeature).apply(this)
     }
+}
 
-    updateForm()
+private fun Pokemon.restoreAbility(tempAbility: Ability, originalAbility: Ability?, name: String) {
+    if (name == "mega" || name == "mega_x" || name == "mega_y") {
+        if (tempAbility != originalAbility) {
+            originalAbility?.let { ability ->
+                this.updateAbility(ability)
+            } ?: run {
+                println("Original Ability is null")
+            }
+        }
+    }
 }

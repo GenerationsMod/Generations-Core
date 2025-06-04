@@ -48,7 +48,7 @@
                 "legendary"
             ],
             "aspects": [
-                "mega-x"
+                "mega_x"
             ],
             "height": 23,
             "weight": 1270,
@@ -93,7 +93,7 @@
                 "legendary"
             ],
             "aspects": [
-                "mega-y"
+                "mega_y"
             ],
             "height": 15,
             "weight": 330,
