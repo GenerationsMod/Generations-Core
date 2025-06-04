@@ -1,5 +1,7 @@
 #version 330 core
 #define MAX_BONES 220
+#define MINECRAFT_LIGHT_POWER   (0.6)
+#define MINECRAFT_AMBIENT_LIGHT (0.4)
 
 layout(location = 0) in vec3 positions;
 layout(location = 1) in vec2 texcoords;
@@ -10,6 +12,11 @@ layout(location = 4) in vec4 weights;
 out float vertexDistance;
 out vec4 vertexColor;
 out vec2 texCoord0;
+out vec3 fragNormal;
+out vec3 fragViewDir;
+out vec3 worldPos;
+
+uniform bool legacy;
 
 uniform int FogShape;
 
@@ -43,7 +50,16 @@ float fog_distance(mat4 modelViewMat, vec3 pos, int shape) {
     }
 }
 
-#vert
+vec4 getVertexColor() {
+    if(legacy) return vec4(1);
+
+    vec3 lightDir0 = normalize(Light0_Direction);
+    vec3 lightDir1 = normalize(Light1_Direction);
+    float light0 = max(0.0, dot(Light0_Direction, inNormal));
+    float light1 = max(0.0, dot(Light1_Direction, inNormal));
+    float lightAccum = min(1.0, (light0 + light1) * MINECRAFT_LIGHT_POWER + MINECRAFT_AMBIENT_LIGHT);
+    return vec4(lightAccum, lightAccum, lightAccum, 1);
+}
 
 void main() {
     mat4 worldSpace = projectionMatrix * viewMatrix;
@@ -53,5 +69,8 @@ void main() {
     texCoord0 = (texcoords * uvScale) + uvOffset;
     gl_Position = worldSpace * worldPosition;
     vertexDistance = fog_distance(worldSpace * modelTransform, positions, FogShape);
-    vertexColor = getVertexColor(Light0_Direction, Light1_Direction, inNormal);
+    vertexColor = getVertexColor();
+
+    fragViewDir = normalize(-(viewMatrix * worldPosition).xyz);
+    worldPos = worldPosition.xyz;
 }
