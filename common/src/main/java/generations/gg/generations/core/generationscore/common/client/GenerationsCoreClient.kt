@@ -347,7 +347,7 @@ object GenerationsCoreClient {
         consumer.register(GenerationsBlockEntities.COOKING_POT.get(), ::CookingPotRenderer)
         consumer.register(GenerationsBlockEntities.WEATHER_TRIO.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), ::SignRenderer)
-        consumer.register(GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get() as BlockEntityType<SignBlockEntity>, ::HangingSignRenderer)
+        GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get().instanceOrNull<BlockEntityType<SignBlockEntity>>()?.run { consumer.register(this, ::HangingSignRenderer) }
         consumer.register(GenerationsBlockEntities.GENERIC_CHEST.get(), ::GenericChestRenderer)
         consumer.register(GenerationsBlockEntities.GENERIC_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), ::GeneralUseBlockEntityRenderer)

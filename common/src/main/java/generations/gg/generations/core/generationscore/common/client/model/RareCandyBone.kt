@@ -7,6 +7,7 @@ import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext.RenderState
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.FormData
 import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.util.asResource
@@ -19,6 +20,7 @@ import generations.gg.generations.core.generationscore.common.client.render.Cobb
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.geom.ModelPart
 import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
@@ -82,6 +84,10 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         }
         if (model.renderObject!!.isReady) {
             instance.light = packedLight
+            instance.teraActive = context.request(RenderContext.ASPECTS)?.contains("terastal_active") ?: false
+
+            System.out.println(context.request(RenderContext.ASPECTS))
+
 //            instance.tint.set(r, g, b) TODO: convert color int into its float components for tint.
             val variant = getVariant(context)
             if (variant != null) {

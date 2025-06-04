@@ -12,6 +12,7 @@ import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
+import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
 
 open class GenericChestContainer<T>(
@@ -40,10 +41,8 @@ open class GenericChestContainer<T>(
 
         this.playerInventoryX = guiWidth / 2 - 80
 
-        val playerStorage = WrappedVanillaContainer(playerInventory)
-
-        populate(playerStorage, playerInventoryX, guiHeight - 82, 1, 3, 9)
-        populate(playerStorage, playerInventoryX, guiHeight - 24, 0, 1, 9)
+        populatePlayer(playerInventory, playerInventoryX, guiHeight - 82, 1, 3, 9)
+        populatePlayer(playerInventory, playerInventoryX, guiHeight - 24, 0, 1, 9)
     }
 
     private fun <V> populate(container: V, x: Int, y: Int, startingRow: Int, rows: Int, columns: Int) where V : CommonStorage<ItemResource> {
@@ -58,12 +57,20 @@ open class GenericChestContainer<T>(
         }
     }
 
-    private fun addSlot(container: CommonStorage<ItemResource>, slot: Int, x: Int, y: Int) {
-        this.addSlot(getSlot(container, slot, x, y))
+    private fun populatePlayer(container: Inventory, x: Int, y: Int, startingRow: Int, rows: Int, columns: Int) {
+        for (row in 0..<rows) {
+            for (column in 0..<columns) {
+                val slot = column + (startingRow + row) * columns
+                val xSlot = x + column * 18
+                val ySlot = y + row * 18
+
+                this.addSlot(if(locked == slot) LockedSlot(container, slot, xSlot, ySlot) else Slot(container, slot, x, y))
+            }
+        }
     }
 
-    open fun getSlot(container: CommonStorage<ItemResource>, slot: Int, x: Int, y: Int): MenuStorageSlot {
-        return if (locked == slot) LockedSlot(container, slot, x, y) else MenuStorageSlot(container, slot, x, y)
+    private fun addSlot(container: CommonStorage<ItemResource>, slot: Int, x: Int, y: Int) {
+        this.addSlot(MenuStorageSlot(container, slot, x, y))
     }
 
     override fun quickMoveStack(player: Player, index: Int): ItemStack {

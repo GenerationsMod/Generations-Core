@@ -47,7 +47,7 @@ class CameraItem(properties: Properties) : Item(properties) {
                         1.0f,
                         1.0f
                     )
-                    ContainerHelper.clearOrCountMatchingItems(player.getInventory(), { itemStack: ItemStack -> itemStack.`is`(GenerationsItems.FILM) }, 1, false)
+                    var amount = ContainerHelper.clearOrCountMatchingItems(player.getInventory(), { itemStack: ItemStack -> itemStack.`is`(GenerationsItems.FILM.get()) }, 1, false)
                     player.addItem(stack)
                     player.getCooldowns().addCooldown(this, 5)
                 }

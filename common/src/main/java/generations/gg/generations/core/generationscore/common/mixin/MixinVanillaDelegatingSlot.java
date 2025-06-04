@@ -1,21 +1,27 @@
 package generations.gg.generations.core.generationscore.common.mixin;
 
 import earth.terrarium.common_storage_lib.item.impl.vanilla.VanillaDelegatingSlot;
-import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer;
 import earth.terrarium.common_storage_lib.resources.ResourceStack;
 import earth.terrarium.common_storage_lib.resources.item.ItemResource;
 import earth.terrarium.common_storage_lib.storage.util.ModifiableItemSlot;
+import generations.gg.generations.core.generationscore.common.world.container.LockableSlot;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(VanillaDelegatingSlot.class)
-public class MixinVanillaDelegatingSlot implements ModifiableItemSlot {
+abstract public class MixinVanillaDelegatingSlot implements ModifiableItemSlot, LockableSlot {
     @Shadow @Final private Container container;
 
     @Shadow @Final private int slot;
+
+    @Unique private boolean locked;
 
     @Override
     public void setAmount(long l) {
@@ -27,6 +33,12 @@ public class MixinVanillaDelegatingSlot implements ModifiableItemSlot {
         container.setItem(slot, itemResource.toStack());
     }
 
+    @Inject(method = "extract(Learth/terrarium/common_storage_lib/resources/item/ItemResource;JZ)J", at = @At("HEAD"), cancellable = true)
+    public void extract(ItemResource resource, long amount, boolean simulate, CallbackInfoReturnable<Long> cir) {
+        if(locked) cir.setReturnValue(0L);
+
+    }
+
     @Override
     public void set(ItemStack stack) {
         container.setItem(slot, stack);
@@ -35,7 +47,6 @@ public class MixinVanillaDelegatingSlot implements ModifiableItemSlot {
     public void set(ResourceStack<ItemResource> data) {
         container.setItem(slot, ResourceStack.toItemStack(data));
     }
-
 
     @Override
     public ItemStack toItemStack() {
@@ -50,5 +61,10 @@ public class MixinVanillaDelegatingSlot implements ModifiableItemSlot {
     @Override
     public boolean isEmpty() {
         return container.getItem(slot).isEmpty();
+    }
+
+    @Override
+    public void lock() {
+        this.locked = true;
     }
 }
