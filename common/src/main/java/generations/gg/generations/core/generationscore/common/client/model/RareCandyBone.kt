@@ -86,8 +86,6 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             instance.light = packedLight
             instance.teraActive = context.request(RenderContext.ASPECTS)?.contains("terastal_active") ?: false
 
-            System.out.println(context.request(RenderContext.ASPECTS))
-
 //            instance.tint.set(r, g, b) TODO: convert color int into its float components for tint.
             val variant = getVariant(context)
             if (variant != null) {

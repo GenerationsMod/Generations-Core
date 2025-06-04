@@ -16,6 +16,8 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.entity.PokemonClientDelegate
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
@@ -52,14 +54,9 @@ class GenerationsCobblemonEvents {
 
 
         fun init() {
-            CobblemonEvents.TERASTALLIZATION.subscribe(Priority.NORMAL, {
-                var feature = FlagSpeciesFeature("terastal_active", true)
-
-                feature.apply(it.pokemon.originalPokemon)
-                feature.apply(it.pokemon.effectedPokemon)
-                it.pokemon.originalPokemon.updateAspects()
-            })
-
+            CobblemonEvents.TERASTALLIZATION.subscribe(Priority.NORMAL) {
+                FlagSpeciesFeature("terastal_active", true).run { it.pokemon.effectedPokemon.run(::apply) }
+            }
 
 
 //            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
