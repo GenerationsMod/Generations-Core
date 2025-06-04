@@ -123,7 +123,7 @@ object Pipelines {
             ctx.uniform().upload2i(light and 0xFFFF, light shr 16 and 0xFFFF)
         }
 
-        .supplyVec3("tint") { it.instance.instanceOrNull<CobblemonInstance>()?.tint?.takeIf { it != ZERO } ?: ONE }
+        .supplyVec3("tint") { /*it.instance.instanceOrNull<CobblemonInstance>()?.tint?.takeIf { it != ZERO } ?:*/ ONE }
 
         .supplyInt("frame") { pingpong(MinecraftClientGameProvider.getTimePassed()).toInt() }
 
@@ -147,7 +147,10 @@ object Pipelines {
         .supplyVec3("Light0_Direction") { RenderSystem.shaderLightDirections[0] }
         .supplyVec3("Light1_Direction") { RenderSystem.shaderLightDirections[1] }
 
-        .supplyBooleanUniform("useTera") { true }
+        .supplyBooleanUniform("useTera") {
+            val isActive = it.instance.instanceOrNull<CobblemonInstance>()?.teraActive ?: false
+            return@supplyBooleanUniform isActive
+        }
 
         .prePostDraw({ material ->
             if (material.cullType() != CullType.None) {

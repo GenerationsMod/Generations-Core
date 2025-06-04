@@ -76,7 +76,7 @@ float linear_fog_fade(float vertexDistance, float fogStart, float fogEnd) {
 // ===== Lighting Method =====
 
 vec4 minecraft_sample_lightmap(sampler2D lightMap, ivec2 uv) {
-    return texture(lightMap, (vec2(uv) + 0.5) / 16.0);
+    return texture(lightMap, clamp(uv / 256.0, vec2(0.5 / 16.0), vec2(15.5 / 16.0)));
 }
 
 // ===== Layered Color Method =====

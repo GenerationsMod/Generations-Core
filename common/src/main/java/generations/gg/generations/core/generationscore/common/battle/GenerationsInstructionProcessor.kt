@@ -13,6 +13,7 @@ import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.net.messages.client.battle.BattleTransformPokemonPacket
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.mojang.datafixers.util.Unit
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 
 object GenerationsInstructionProcessor {
     private var originalAbility: Ability? = null
@@ -136,7 +137,7 @@ private fun Pokemon.restoreAbility(tempAbility: Ability, originalAbility: Abilit
             originalAbility?.let { ability ->
                 this.updateAbility(ability)
             } ?: run {
-                println("Original Ability is null")
+                GenerationsCore.LOGGER.warn("Original Ability is null")
             }
         }
     }

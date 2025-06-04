@@ -1,0 +1,6 @@
+{
+  "type": "flag",
+  "keys": ["terastal_active"],
+  "default": false,
+  "isAspect": true
+}
