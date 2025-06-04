@@ -32,7 +32,7 @@ interface ArmorTickEffect : ArmorEffect {
                         material.`is`(
                             resourceKey
                         )
-                    }) return true
+                    }) return false
             }
 
             return true

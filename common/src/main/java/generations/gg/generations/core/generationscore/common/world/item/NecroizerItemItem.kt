@@ -16,7 +16,7 @@ import net.minecraft.world.item.ItemStack
 class NecroizerItemItem(private val properties: Properties, private val species: String, private val move: String, private val form: String) : Item(properties), PokemonInteraction {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
         if(entity.pokemon.isSpecies("necrozma")) {
-            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("necrozma_form") ?: return false
+            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("prism_fusion") ?: return false
             val feature = provider.getOrCreate(entity.pokemon)
 
             when(feature.value) {

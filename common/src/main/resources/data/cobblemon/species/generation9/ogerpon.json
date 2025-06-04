@@ -97,9 +97,12 @@
     "tm:zenheadbutt"
   ],
   "labels": [
-    "gen9"
+    "gen9",
+    "legendary"
   ],
-  "aspects": [],
+  "aspects": [
+    "teal-mask"
+  ],
   "height": 12,
   "weight": 398,
   "evolutions": [],
@@ -138,10 +141,11 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
-        "wellspring"
+        "wellspring-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -181,10 +185,11 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
-        "hearthflame"
+        "hearthflame-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -224,10 +229,11 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
-        "cornerstone"
+        "cornerstone-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -266,10 +272,12 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
-        "teal-tera"
+        "embody_aspect",
+        "teal-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -309,10 +317,12 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
-        "wellspring-tera"
+        "embody_aspect",
+        "wellspring-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -352,10 +362,12 @@
         "undiscovered"
       ],
       "labels": [
-        "gen9"
+        "gen9",
+        "legendary"
       ],
       "aspects": [
-        "hearthflame-tera"
+        "embody_aspect",
+        "hearthflame-mask"
       ],
       "height": 12,
       "weight": 398,
@@ -399,7 +411,8 @@
         "legendary"
       ],
       "aspects": [
-        "cornerstone-tera"
+        "embody_aspect",
+        "cornerstone-mask"
       ],
       "height": 12,
       "weight": 398,

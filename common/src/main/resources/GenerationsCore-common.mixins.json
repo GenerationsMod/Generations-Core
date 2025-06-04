@@ -14,12 +14,16 @@
     "PokemonItemMixin",
     "ServerPlayerMixin",
     "ShowdownSpeciesMixin",
+    "SuppressTeraPacketMixin",
     "client.PokemonItemRendererMixin",
     "client.PosableStateMixin",
-    "datafix.ItemStackComponentizationFixMixin",
-    "showdown.ShowdownActionRequestMixin"
+    "showdown.FormeChangeInstructionMixin",
+    "showdown.ShowdownActionRequestMixin",
+    "showdown.TerastallizeInstructionMixin",
+    "datafix.ItemStackComponentizationFixMixin"
   ],
   "client": [
+    "client.BattleGimmickButtonMixin",
     "client.BattleMoveSelectionGUIMixin",
     "client.ClientRecipeBookMixin",
     "client.GuiMixin",
