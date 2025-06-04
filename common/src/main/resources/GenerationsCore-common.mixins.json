@@ -14,15 +14,12 @@
     "PokemonItemMixin",
     "ServerPlayerMixin",
     "ShowdownSpeciesMixin",
-    "TeraPacketExceptionMixin",
-    "client.GuiUtilsMixin",
-    "client.PokemonGuiUtilsMixin",
+    "SuppressTeraPacketMixin",
     "client.PokemonItemRendererMixin",
     "client.PosableStateMixin",
-    "showdown.ShowdownActionRequestMixin",
-    "showdown.ShowdownThreadMixin",
-    "showdown.TerastallizeInstructionMixin",
     "showdown.FormeChangeInstructionMixin",
+    "showdown.ShowdownActionRequestMixin",
+    "showdown.TerastallizeInstructionMixin",
     "datafix.ItemStackComponentizationFixMixin"
   ],
   "client": [

@@ -318,6 +318,25 @@
     "generations_core:zinnia_disc",
     "generations_core:lavender_town_disc",
     "generations_core:lugia_disc",
-    "generations_core:mt_pyre_disc"
+    "generations_core:mt_pyre_disc",
+    "generations_core:bug_tera_shard",
+    "generations_core:dark_tera_shard",
+    "generations_core:dragon_tera_shard",
+    "generations_core:electric_tera_shard",
+    "generations_core:fairy_tera_shard",
+    "generations_core:fighting_tera_shard",
+    "generations_core:fire_tera_shard",
+    "generations_core:flying_tera_shard",
+    "generations_core:ghost_tera_shard",
+    "generations_core:grass_tera_shard",
+    "generations_core:ground_tera_shard",
+    "generations_core:ice_tera_shard",
+    "generations_core:normal_tera_shard",
+    "generations_core:poison_tera_shard",
+    "generations_core:psychic_tera_shard",
+    "generations_core:rock_tera_shard",
+    "generations_core:steel_tera_shard",
+    "generations_core:stellar_tera_shard",
+    "generations_core:water_tera_shard"
   ]
 }

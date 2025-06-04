@@ -17,7 +17,6 @@ public abstract class FormeChangeInstructionMixin {
 
     @Inject(method = "invoke", at = @At("HEAD"), remap = false)
     private void formeChangeInject(PokemonBattle battle, CallbackInfo ci) {
-        System.out.println("FORMECHANGEINSTRUCTIONWORKS");
         GenerationsInstructionProcessor.processFormeChangeInstruction(battle, getMessage());
     }
 }

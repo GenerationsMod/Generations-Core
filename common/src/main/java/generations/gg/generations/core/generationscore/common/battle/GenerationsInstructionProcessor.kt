@@ -33,19 +33,21 @@ object GenerationsInstructionProcessor {
 
         originalAbility = battlePokemon.originalPokemon.ability
 
-        println("Form: ${name}")
+        if (effectedPokemon.form.name.equals("Dusk-Mane")) {
+            battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dusk")
+        } else if (effectedPokemon.form.name.equals("Dawn-Wings")) {
+            battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dawn")
+        }
 
         var pair: Pair<String, Any> = when(name) {
+            "ash" -> "ash" to true
             "mega" -> "mega" to true
             "mega-x" -> "mega_x" to true
             "mega-y" -> "mega_y" to true
-//            "sunshine" -> "sunny" to true
-//            "school" -> "schooling" to true
             "primal" -> "primal" to true
-            "ash" -> "ash" to true
-            "ultra" -> "prism_fusion" to "ultra"
-            "terastal" -> "tera_form" to "terastal"
             "stellar" -> "tera_form" to "stellar"
+            "terastal" -> "tera_form" to "terastal"
+            "ultra" -> "prism_fusion" to "ultra"
             "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody_aspect" to true
             else -> name to true
         } ?: let {
@@ -79,12 +81,22 @@ object GenerationsInstructionProcessor {
                 val name = if(data.contains("form_name")) data.getString("form_name") else ""
                 battlePokemon.originalPokemon.removeBattleFeature()
                 battlePokemon.effectedPokemon.removeBattleFeature()
+
+                if (battlePokemon.effectedPokemon.species.name.equals("Terapagos")) {
+                    StringSpeciesFeature("tera_form", "normal").apply(battlePokemon.effectedPokemon)
+                    StringSpeciesFeature("tera_form", "normal").apply(battlePokemon.originalPokemon)
+                    battlePokemon.originalPokemon.updateAspects()
+                }
+                if (battlePokemon.effectedPokemon.species.name.equals("Necrozma")) {
+                    val necroForm = battlePokemon.originalPokemon.persistentData.getString("necro_fusion")
+                    if (!necroForm.isNullOrBlank()) {
+                        val necroFeature = StringSpeciesFeature("prism_fusion", necroForm)
+                        necroFeature.apply(battlePokemon.originalPokemon)
+                        necroFeature.apply(battlePokemon.effectedPokemon)
+                        battlePokemon.originalPokemon.updateAspects()
+                    }
+                }
                 battlePokemon.originalPokemon.restoreAbility(tempAbility, originalAbility, name)
-//                if (battlePokemon.effectedPokemon.species.name.equals("Ogerpon")) {
-//                    System.out.println("pass name check")
-//                    FlagSpeciesFeature("embody-aspect", false).apply(battlePokemon.effectedPokemon)
-//                    FlagSpeciesFeature("embody-aspect", false).apply(battlePokemon.originalPokemon)
-//                }
             }
         }
     }
