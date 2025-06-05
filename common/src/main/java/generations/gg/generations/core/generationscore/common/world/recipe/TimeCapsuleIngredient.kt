@@ -27,7 +27,7 @@ class TimeCapsuleIngredient(val key : SpeciesKey, val strictAspects: Boolean = f
 
     constructor(name: String, strictAspects: Boolean = false): this(
         SpeciesKey(
-            "cobblemon".asIdentifierDefaultingNamespace()
+            name.asIdentifierDefaultingNamespace()
         ), strictAspects)
 
     override val type: GenerationsIngredientType<*>
