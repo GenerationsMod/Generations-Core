@@ -104,6 +104,8 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
         }
     }
 
+
+
     protected abstract fun interact(
         level: Level,
         pos: BlockPos,
@@ -117,7 +119,7 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
         if (waitToDeactivateTime() == 0) getAssoicatedBlockEntity(
             level,
             pos
-        ).ifPresent { obj: T -> obj.triggerCountDown() }
+        )?.triggerCountDown()
     }
 
     fun deactivate(level: Level, pos: BlockPos, state: BlockState) {

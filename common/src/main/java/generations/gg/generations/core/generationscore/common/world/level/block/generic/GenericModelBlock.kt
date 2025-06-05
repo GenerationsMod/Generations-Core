@@ -83,13 +83,9 @@ abstract class GenericModelBlock<T> protected constructor(
         return Shapes.empty()
     }
 
-    fun getAssoicatedBlockEntity(level: BlockGetter, pos: BlockPos): Optional<T?> {
-        return blockEntityFunction.toOptional().map { a: MutableBlockEntityType<T> ->
-            a.getBlockEntity(
-                level,
-                getBaseBlockPos(pos, level.getBlockState(pos))
-            )
-        }
+    fun getAssoicatedBlockEntity(level: BlockGetter, pos: BlockPos): T? {
+        return blockEntityFunction.get()?.getBlockEntity(level, getBaseBlockPos(pos, level.getBlockState(pos)))
+
     }
 
     open fun computeRenderBoundingBox(level: Level, pos: BlockPos, state: BlockState): AABB {

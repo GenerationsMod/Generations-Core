@@ -96,7 +96,7 @@ class PrisonBottleStemBlock(materialIn: Properties) :
                 getAssoicatedBlockEntity(
                     world,
                     pos
-                ).ifPresent { obj: InteractShrineBlockEntity -> obj.triggerCountDown() }
+                )?.triggerCountDown()
             }
         }
         return true

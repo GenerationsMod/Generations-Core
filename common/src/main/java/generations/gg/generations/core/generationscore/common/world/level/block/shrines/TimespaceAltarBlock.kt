@@ -54,7 +54,7 @@ class TimespaceAltarBlock(properties: Properties) :
     ): Boolean {
         val stack = player.getItemInHand(hand)
 
-        val entity = getAssoicatedBlockEntity(level, pos).orElse(null) ?: return false
+        val entity = getAssoicatedBlockEntity(level, pos) ?: return false
 
         val handler = entity.container
 

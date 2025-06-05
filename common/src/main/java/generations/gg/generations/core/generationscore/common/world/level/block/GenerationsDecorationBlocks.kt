@@ -7,8 +7,8 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.util.GenerationsItemUtils
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.level.block.de.WorkDeskBlock
-import generations.gg.generations.core.generationscore.common.world.level.block.deco.ShelfBlock
+import generations.gg.generations.core.generationscore.common.world.level.block.decorations.WorkDeskBlock
+import generations.gg.generations.core.generationscore.common.world.level.block.decorations.ShelfBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock.DisplayState

@@ -49,7 +49,7 @@ class WeatherTrioShrineBlock(
         player.mainHandItem.shrink(1)
 
         toggleActive(level, pos)
-        getAssoicatedBlockEntity(level, pos).ifPresent { obj: WeatherTrioShrineBlockEntity -> obj.triggerCountDown() }
+        getAssoicatedBlockEntity(level, pos)?.triggerCountDown()
 
         //        ScheduledTask.schedule(() -> {
 //            PokemonUtil.spawn(getSpecies().createPokemon(70), level, pos, getAngle(state));

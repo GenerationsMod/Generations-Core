@@ -1,4 +1,4 @@
-package generations.gg.generations.core.generationscore.common.world.level.block.de
+package generations.gg.generations.core.generationscore.common.world.level.block.decorations
 
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
@@ -10,7 +10,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
