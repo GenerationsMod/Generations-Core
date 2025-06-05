@@ -13,9 +13,7 @@ class MelodyFluteContainer : SingleSlotContainer {
     private val slot: Int
 
     constructor(id: Int, playerInventory: Inventory, player: Player) : super(
-        GenerationsContainers.MELODY_FLUTE.get(), id, SimpleItemStorage(
-            PlayerContext.ofSlot(player, player.inventory.selected), IMBUED, 1
-        )
+        GenerationsContainers.MELODY_FLUTE.get(), id, SimpleItemStorage(player.inventory.getSelected(), IMBUED, 1)
     ) {
         slot = playerInventory.selected
         applyPlayerInventory(playerInventory)
