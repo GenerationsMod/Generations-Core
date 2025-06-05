@@ -114,6 +114,7 @@ object GenerationsBlockEntities {
 
     @JvmField
     val GENERIC_MODEL_PROVIDING: RegistrySupplier<MutableBlockEntityType<GenericModelProvidingBlockEntity>> = registerMutable("generic_model_providing", ::GenericModelProvidingBlockEntity)
+    val TRASH_CAN: RegistrySupplier<MutableBlockEntityType<TrashCanBlockEntity>> = registerMutable("generic_model_providing", ::TrashCanBlockEntity)
 
     @JvmField
     val COUCH: RegistrySupplier<MutableBlockEntityType<CouchBlockEntity>> = registerMutable("couch", ::CouchBlockEntity)

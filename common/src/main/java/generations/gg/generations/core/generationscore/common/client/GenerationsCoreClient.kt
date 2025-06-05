@@ -352,6 +352,7 @@ object GenerationsCoreClient {
         consumer.register(GenerationsBlockEntities.GENERIC_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.TRASH_CAN.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.VENDING_MACHINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.BALL_DISPLAY.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.BALL_LOOT.get(), ::PokeLootRendrer)
