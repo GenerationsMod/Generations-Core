@@ -15,10 +15,15 @@ out vec2 texCoord0;
 out vec3 fragNormal;
 out vec3 fragViewDir;
 out vec3 worldPos;
+out vec4 lightMapColor;
+
+uniform sampler2D lightmap;
 
 uniform bool legacy;
 
 uniform int FogShape;
+
+uniform ivec2 light;
 
 uniform mat4 viewMatrix;
 uniform mat4 modelMatrix;
@@ -40,12 +45,12 @@ mat4 getBoneTransform() {
     return boneTransform;
 }
 
-float fog_distance(mat4 modelViewMat, vec3 pos, int shape) {
+float fog_distance(vec3 pos, int shape) {
     if (shape == 0) {
-        return length((modelViewMat * vec4(pos, 1.0)).xyz);
+        return length(pos);
     } else {
-        float distXZ = length((modelViewMat * vec4(pos.x, 0.0, pos.z, 1.0)).xyz);
-        float distY = length((modelViewMat * vec4(0.0, pos.y, 0.0, 1.0)).xyz);
+        float distXZ = length(pos.xz);
+        float distY = abs(pos.y);
         return max(distXZ, distY);
     }
 }
@@ -66,10 +71,11 @@ void main() {
     mat4 modelTransform = modelMatrix * getBoneTransform();
     vec4 worldPosition = modelTransform * vec4(positions, 1.0);
 
-    texCoord0 = (texcoords * uvScale) + uvOffset;
     gl_Position = worldSpace * worldPosition;
-    vertexDistance = fog_distance(worldSpace * modelTransform, positions, FogShape);
     vertexColor = getVertexColor();
+    vertexDistance = fog_distance(positions, FogShape);
+    lightMapColor = texelFetch(lightmap, light / 16, 0);
+    texCoord0 = (texcoords * uvScale) + uvOffset;
 
     fragViewDir = normalize(-(viewMatrix * worldPosition).xyz);
     worldPos = worldPosition.xyz;

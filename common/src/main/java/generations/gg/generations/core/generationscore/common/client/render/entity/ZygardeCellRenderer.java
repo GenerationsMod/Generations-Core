@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.render.entity;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;

@@ -92,6 +92,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             if (variant != null) {
                 instance.setVariant(variant)
             }
+
             stack.pushPose()
             stack.mulPose(ROTATION_CORRECTION)
             stack.scale(-scale, -scale, scale)

@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.fabric.client
 
+import com.mojang.blaze3d.platform.GlStateManager
+import com.mojang.blaze3d.platform.GlStateManager.BlendState
+import com.mojang.blaze3d.systems.RenderSystem
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
@@ -10,10 +13,12 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderHighlightedPath
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandy
+import generations.gg.generations.core.generationscore.common.client.MatrixCache
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
 import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
+import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -22,11 +27,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents.AfterEntities
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents.AfterTranslucent
 import net.minecraft.client.Minecraft
-import net.minecraft.client.model.geom.ModelLayerLocation
-import net.minecraft.client.model.geom.builders.LayerDefinition
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
@@ -39,9 +41,8 @@ import net.minecraft.world.level.block.TransparentBlock
 import net.minecraft.world.level.block.TrapDoorBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
-import java.util.function.BiConsumer
+import org.joml.Matrix4f
 import java.util.function.Consumer
-import java.util.function.Supplier
 
 /**
  * The client initializer for the fabric client portion of the mod.
@@ -64,9 +65,30 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             )
         })
 
-//        WorldRenderEvents.AFTER_SETUP.register { GenerationsCoreClient.updateViewMatrix() }
+        WorldRenderEvents.BEFORE_ENTITIES.register {
+            MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
+        }
 
-        WorldRenderEvents.AFTER_ENTITIES.register { context: WorldRenderContext -> renderRareCandy(context.world()) }
+        WorldRenderEvents.AFTER_ENTITIES.register {
+            MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
+        }
+
+        WorldRenderEvents.BEFORE_DEBUG_RENDER.register {
+            RenderStateRecord.push()
+
+            renderRareCandy(RenderStage.SOLID, false)
+            renderRareCandy(RenderStage.TRANSPARENT, false)
+
+            RenderStateRecord.pop()
+        }
+
+        WorldRenderEvents.AFTER_TRANSLUCENT.register {
+            RenderStateRecord.push()
+
+            renderRareCandy(RenderStage.TRANSPARENT, true)
+            RenderStateRecord.pop()
+
+        }
 
         GenerationsFabricNetwork.registerClientHandlers()
 
@@ -101,6 +123,51 @@ class GenerationsCoreClientFabric : ClientModInitializer {
                 else if (block is TransparentBlock) renderLayerMap.putBlock(block, RenderType.cutoutMipped())
             })
             renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get(), RenderType.cutout())
+        }
+    }
+
+    private object RenderStateRecord {
+        var blendEnabled: Boolean = false
+        var srcRgb: Int = 0
+        var dstRgb: Int = 0
+        var srcAlpha: Int = 0
+        var dstAlpha: Int = 0
+
+        var depthTestEnabled: Boolean = false
+        var depthMask: Boolean = false
+        var depthFunc: Int = 0
+
+        var cullEnabled: Boolean = false
+
+        fun push() {
+            // Blend
+            blendEnabled = GlStateManager.BLEND.mode.enabled
+            srcRgb = GlStateManager.BLEND.srcRgb
+            dstRgb = GlStateManager.BLEND.dstRgb
+            srcAlpha = GlStateManager.BLEND.srcAlpha
+            dstAlpha = GlStateManager.BLEND.dstAlpha
+
+            // Depth
+            depthTestEnabled = GlStateManager.DEPTH.mode.enabled
+            depthMask = GlStateManager.DEPTH.mask
+            depthFunc = GlStateManager.DEPTH.func
+
+            // Cull
+            cullEnabled = GlStateManager.CULL.enable.enabled
+        }
+
+        fun pop() {
+            // Blend
+            if (blendEnabled) RenderSystem.enableBlend() else RenderSystem.disableBlend()
+            RenderSystem.blendFuncSeparate(srcRgb, dstRgb, srcAlpha, dstAlpha)
+
+            // Depth
+            if (depthTestEnabled) RenderSystem.enableDepthTest() else RenderSystem.disableDepthTest()
+            RenderSystem.depthMask(depthMask)
+            RenderSystem.depthFunc(depthFunc)
+
+            // Cull
+            if (cullEnabled) RenderSystem.enableCull() else RenderSystem.disableCull()
         }
     }
 }

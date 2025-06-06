@@ -8,6 +8,7 @@ import dev.architectury.event.Event
 import dev.architectury.event.EventFactory
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.GenerationsTextureLoader
+import generations.gg.generations.core.generationscore.common.client.MatrixCache
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.TintProvider
 import gg.generations.rarecandy.pokeutils.BlendType
 import gg.generations.rarecandy.pokeutils.CullType
@@ -96,9 +97,9 @@ object Pipelines {
     fun createShader(manager: ResourceManager): Pipeline = Pipeline.Builder()
         .supplyBooleanUniform("legacy") { useLegacy }
         .supplyEnumUniform("FogShape", RenderSystem.getShaderFogShape())
-        .supplyMat4("viewMatrix") { RenderSystem.getModelViewMatrix() }
+        .supplyMat4("viewMatrix") { MatrixCache.viewMatrix  }
         .supplyMat4("modelMatrix") { it.instance().transformationMatrix() }
-        .supplyMat4("projectionMatrix") { RenderSystem.getProjectionMatrix() }
+        .supplyMat4("projectionMatrix") { MatrixCache.projectionMatrix }
         .supplyVec2("uvOffset") { it.transform.offset() ?: Transform.DEFAULT_OFFSET }
         .supplyVec2("uvScale") { it.transform.scale() ?: Transform.DEFAULT_SCALE }
         .supplyMat4s("boneTransforms") { ctx -> ctx.instance.instanceOrNull<AnimatedObjectInstance>()?.transforms ?: AnimationController.NO_ANIMATION }
@@ -162,11 +163,11 @@ object Pipelines {
             if (material.blendType() == BlendType.Regular) {
                 RenderSystem.enableBlend()
                 RenderSystem.defaultBlendFunc()
-            } }, { material ->
+            } }, {/* material ->
                 if (material.blendType() == BlendType.Regular) {
                     RenderSystem.disableBlend()
                 }
-            })
+            */})
         .shader(manager, "shaders/animated.vs.glsl", "shaders/animated.fs.glsl")
         .build()
     }
@@ -211,29 +212,6 @@ object Pipelines {
     }
 
     private fun Pipeline.Builder.supplyBooleanUniform(name: String, function: (UniformUploadContext) -> Boolean): Pipeline.Builder { return this.supplyUniform(name) { it.uniform.uploadBoolean(function.invoke(it)) } }
-
-    private object BlendRecord {
-        var enabled: Boolean = false
-        var srcRgb: Int = 0
-        var dstRgb: Int = 0
-        var srcAlpha: Int = 0
-        var dstAlpha: Int = 0
-
-        fun push() {
-            enabled = GlStateManager.BLEND.mode.enabled
-            srcRgb = GlStateManager.BLEND.srcRgb
-            dstRgb = GlStateManager.BLEND.dstRgb
-            srcAlpha = GlStateManager.BLEND.srcAlpha
-            dstAlpha = GlStateManager.BLEND.dstAlpha
-        }
-
-        fun pop() {
-            if (enabled) RenderSystem.enableBlend()
-            else RenderSystem.disableBlend()
-
-            RenderSystem.blendFuncSeparate(srcRgb, dstRgb, srcAlpha, dstAlpha)
-        }
-    }
 
 fun read(manager: ResourceManager, name: ResourceLocation): String {
     try {
