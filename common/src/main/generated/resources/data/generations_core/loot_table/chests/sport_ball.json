@@ -1,0 +1,424 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:poke_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:apicot_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:aspear_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:assault_vest"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:black_belt"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:black_glasses"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:blue_flute"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bread"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:bright_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:charcoal_stick"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:chilan_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:chople_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dire_hit_3"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:dive_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:energy_root"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:expert_belt"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:fighting_gem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:fire_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:focus_band"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:focus_sash"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:hard_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:heal_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:heavy_duty_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:kelpsy_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:kings_rock"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lava_cookie"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:level_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:liechi_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lucky_punch"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:macho_brace"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mighty_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:muscle_band"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:belligerent_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:occa_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pink_scarf"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_anklet"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_bracer"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:elegant_wing"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:protective_pads"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:protein"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pungent_root"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:quick_claw"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:safety_goggles"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shoal_salt"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:smart_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:soft_sand"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:spice_mix"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:sport_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:sticky_barb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:super_potion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:terrain_extender"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:utility_umbrella"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:white_flute"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:wide_lens"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fighting_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:x_defense_3"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:x_special_defence"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:string"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gunpowder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit_foot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:rabbit_hide"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:music_disc_wait"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mark_charm"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rockstar_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:belle_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:popstar_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:phd_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:libre_costume"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:old_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:good_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:super_rod"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:rusty_iron_key_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shattered_ice_key_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:crumbled_rock_key_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fragmented_drago_key_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:discharged_eleki_key_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shattered_relic_song_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fire_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fighting_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:flame_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:fist_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_12"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_39"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_58"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_64"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_73"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_89"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_112"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_134"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_158"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_167"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_189"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_195"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_207"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_179"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_220"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_184"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_192"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_213"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_229"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2.0,
+        "min": 1.0
+      }
+    }
+  ],
+  "random_sequence": "generations_core:chests/sport_ball"
+}

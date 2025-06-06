@@ -1,0 +1,388 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:poke_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:heavy_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:heavy_duty_boots"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:hyper_potion"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:iron"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:iron_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dragon_soul"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:meteorite_shard"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:legend_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:rock_gem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:rocky_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:safety_goggles"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:sprink_lotad"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:steel_gem"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:sticky_barb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:strange_souvenir"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:stretchy_spring"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:timer_ball"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tough_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:upgrade"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:steel_candy"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:exp_candy_xl"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tin_of_beans"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:smoked_poke_tail"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:large_leek"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pack_of_potatoes"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:bottle_cap"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:eject_button"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:assault_vest"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:kings_rock"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:metal_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:metronome"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:soothe_bell"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:babiri_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:iron_plate"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:metal_coat"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:steel_memory_drive"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:enigma_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:sitrus_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:oran_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:figy_berry"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:absorb_bulb"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:damp_rock"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:crumbled_rock_key_1"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:crumbled_rock_key_2"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:crumbled_rock_key_3"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:crumbled_rock_key_4"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lustrous_globe"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:griseous_core"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:adamant_crystal"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:eviolite"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:hard_stone"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:lucky_egg"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_anklet"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_band"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_belt"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_bracer"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_lens"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:power_weight"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:rocky_helmet"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:room_service"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:soft_sand"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:thick_club"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:wide_lens"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:dynite_ore"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:z_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_31"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_53"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_93"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_43"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_99"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_104"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_121"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_170"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_180"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_223"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_225"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_179"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_220"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_184"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_192"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_213"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:tm_229"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:cascarrafa_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:slumbering_weald_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:pokemon_center_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:azalea_town_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:lillie_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:route_228_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:jubilife_village_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:goldenrod_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:eterna_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:vermilion_city_disc"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:mew_fossil"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "generations_core:chests/gigaton_ball"
+}

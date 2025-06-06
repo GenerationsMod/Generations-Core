@@ -1,14 +1,14 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.loot
 
+
 import com.cobblemon.mod.common.CobblemonItems
-import com.cobblemon.mod.common.CobblemonItems.BEAST_BALL
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.CHERISH_BALL
-import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.DIVE_BALL
-import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.DREAM_BALL
-import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.DUSK_BALL
-import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.FAST_BALL
-import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.registerBallLootPoolUniform
+import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.CHERISH_BALL
+import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.DIVE_BALL
+import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.DREAM_BALL
+import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.DUSK_BALL
+import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.FAST_BALL
+import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.registerBallLootPoolUniform
 import net.minecraft.resources.ResourceKey
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.storage.loot.LootTable
