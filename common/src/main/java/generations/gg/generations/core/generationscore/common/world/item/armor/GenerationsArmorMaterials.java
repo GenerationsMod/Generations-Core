@@ -54,7 +54,7 @@ public class GenerationsArmorMaterials {
             map.put(ArmorItem.Type.LEGGINGS, slotProtections[1]);
             map.put(ArmorItem.Type.CHESTPLATE, slotProtections[2]);
             map.put(ArmorItem.Type.HELMET, slotProtections[3]);
-        }), enchantmentValue, SoundEvents.ARMOR_EQUIP_IRON, Suppliers.memoize(() -> Ingredient.of(repairIngredient.get())), List.of(new ArmorMaterial.Layer(GenerationsCore.id(name)), toughness, knockbackResistance));
+        }), enchantmentValue, SoundEvents.ARMOR_EQUIP_IRON, Suppliers.memoize(() -> Ingredient.of(repairIngredient.get())), List.of(new ArmorMaterial.Layer(GenerationsCore.id(name))), toughness, knockbackResistance));
     }
 
     public static RegistrySupplier<ArmorMaterial> register(String name, int durabilityMultiplier, int[] slotProtections, int enchantmentValue, Supplier<Item> repairIngredient) {
