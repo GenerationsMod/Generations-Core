@@ -539,7 +539,7 @@ object GenerationsCoreClient {
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
 
-        ModelRegistry.worldRareCandy.render(RenderStage.SOLID, true, MinecraftClientGameProvider.getTimePassed())
+        ModelRegistry.worldRareCandy.render(RenderStage.SOLID, false, MinecraftClientGameProvider.getTimePassed())
         ModelRegistry.worldRareCandy.render(RenderStage.TRANSPARENT, true, MinecraftClientGameProvider.getTimePassed())
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms")
     }

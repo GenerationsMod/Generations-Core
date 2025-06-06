@@ -18,7 +18,7 @@ object GenerationsCoreEntityDataSerializers {
     val PROPERTIES = simple(FriendlyByteBuf::writePokemonProperties, FriendlyByteBuf::readPokemonProperties)
 
     @ExpectPlatform
-    private fun <T> simple(encoder: (RegistryFriendlyByteBuf, T) -> Unit, decoder: (RegistryFriendlyByteBuf) -> T): EntityDataSerializer<T> = EntityDataSerializer.forValueType(StreamCodec.of(encoder, decoder))
+    fun <T> simple(encoder: (RegistryFriendlyByteBuf, T) -> Unit, decoder: (RegistryFriendlyByteBuf) -> T): EntityDataSerializer<T> = EntityDataSerializer.forValueType(StreamCodec.of(encoder, decoder))
 
     @JvmStatic fun init() {
         GenerationsCore.implementation.registerEntityDataSerializer("properties", PROPERTIES)
