@@ -1,0 +1,62 @@
+{
+  "type": "cobblemon:fishing",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:deep_sea_scale"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:deep_sea_tooth"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:dragon_scale"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:kings_rock"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "cobblemon:prism_scale"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shard_of_emotion",
+          "conditions": [
+            {
+              "condition": "generations_core:species_key",
+              "key": "cobblemon:mesprit"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shard_of_knowledge",
+          "conditions": [
+            {
+              "condition": "generations_core:species_key",
+              "key": "cobblemon:uxie"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "generations_core:shard_of_willpower",
+          "conditions": [
+            {
+              "condition": "generations_core:species_key",
+              "key": "cobblemon:azelf"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "minecraft:gameplay/fishing/treasure"
+}
