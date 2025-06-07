@@ -124,11 +124,11 @@ object Pipelines {
             ctx.uniform().upload2i(light and 0xFFFF, light shr 16 and 0xFFFF)
         }
 
-        .supplyVec3("tint") { /*it.instance.instanceOrNull<CobblemonInstance>()?.tint?.takeIf { it != ZERO } ?:*/ ONE }
+        .supplyVec3("tint") { it.instance.instanceOrNull<CobblemonInstance>()?.tint?.takeIf { it != ZERO } ?: ONE }
 
         .supplyInt("frame") { pingpong(MinecraftClientGameProvider.getTimePassed()).toInt() }
 
-        .supplyVec3("baseColor1") { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor1 ?: ONE }
+        .supplyVec3("baseColor1") { ctx -> ctx.instance.instanceOrNull<TintProvider>()?.tint ?: ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor1 ?: ONE }
         .supplyVec3("baseColor2") { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor2 ?: ONE }
         .supplyVec3("baseColor3") { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor3 ?: ONE }
         .supplyVec3("baseColor4") { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor4 ?: ONE }
@@ -137,7 +137,7 @@ object Pipelines {
         .supplyVec3("emiColor2") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor2 ?: ONE }
         .supplyVec3("emiColor3") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor3 ?: ONE }
         .supplyVec3("emiColor4") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor4 ?: ONE }
-        .supplyVec3("emiColor5") { it.instance.instanceOrNull<TintProvider>()?.tint ?: it.material.values().emiColor5 }
+        .supplyVec3("emiColor5") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiColor5 ?: ONE }
         .supplyFloatUniform("emiIntensity1") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity1 ?: 0.0f }
         .supplyFloatUniform("emiIntensity2") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity2 ?: 0.0f }
         .supplyFloatUniform("emiIntensity3") { it.takeIf { !it.isStatueMaterial }?.material?.values()?.emiIntensity3 ?: 0.0f }

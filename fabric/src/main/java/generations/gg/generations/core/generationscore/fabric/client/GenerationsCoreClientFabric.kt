@@ -13,7 +13,10 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderHighlightedPath
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandy
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandySolid
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandyTransparent
 import generations.gg.generations.core.generationscore.common.client.MatrixCache
+import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
@@ -63,31 +66,26 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             renderHighlightedPath(
                 context.matrixStack()!!, Minecraft.getInstance().levelRenderer.ticks, context.camera()
             )
+
+            RenderStateRecord.push()
+            RenderSystem.enableDepthTest()
+            RenderSystem.defaultBlendFunc()
+            RenderSystem.enableBlend()
+            renderRareCandyTransparent(true)
+            RenderStateRecord.pop()
         })
 
-        WorldRenderEvents.BEFORE_ENTITIES.register {
-            MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
-        }
-
-        WorldRenderEvents.AFTER_ENTITIES.register {
-            MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
-        }
-
         WorldRenderEvents.BEFORE_DEBUG_RENDER.register {
+
+            MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
+            MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
+
             RenderStateRecord.push()
 
-            renderRareCandy(RenderStage.SOLID, false)
-            renderRareCandy(RenderStage.TRANSPARENT, false)
+            renderRareCandySolid()
+            renderRareCandyTransparent()
 
             RenderStateRecord.pop()
-        }
-
-        WorldRenderEvents.AFTER_TRANSLUCENT.register {
-            RenderStateRecord.push()
-
-            renderRareCandy(RenderStage.TRANSPARENT, true)
-            RenderStateRecord.pop()
-
         }
 
         GenerationsFabricNetwork.registerClientHandlers()
@@ -125,49 +123,6 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get(), RenderType.cutout())
         }
     }
-
-    private object RenderStateRecord {
-        var blendEnabled: Boolean = false
-        var srcRgb: Int = 0
-        var dstRgb: Int = 0
-        var srcAlpha: Int = 0
-        var dstAlpha: Int = 0
-
-        var depthTestEnabled: Boolean = false
-        var depthMask: Boolean = false
-        var depthFunc: Int = 0
-
-        var cullEnabled: Boolean = false
-
-        fun push() {
-            // Blend
-            blendEnabled = GlStateManager.BLEND.mode.enabled
-            srcRgb = GlStateManager.BLEND.srcRgb
-            dstRgb = GlStateManager.BLEND.dstRgb
-            srcAlpha = GlStateManager.BLEND.srcAlpha
-            dstAlpha = GlStateManager.BLEND.dstAlpha
-
-            // Depth
-            depthTestEnabled = GlStateManager.DEPTH.mode.enabled
-            depthMask = GlStateManager.DEPTH.mask
-            depthFunc = GlStateManager.DEPTH.func
-
-            // Cull
-            cullEnabled = GlStateManager.CULL.enable.enabled
-        }
-
-        fun pop() {
-            // Blend
-            if (blendEnabled) RenderSystem.enableBlend() else RenderSystem.disableBlend()
-            RenderSystem.blendFuncSeparate(srcRgb, dstRgb, srcAlpha, dstAlpha)
-
-            // Depth
-            if (depthTestEnabled) RenderSystem.enableDepthTest() else RenderSystem.disableDepthTest()
-            RenderSystem.depthMask(depthMask)
-            RenderSystem.depthFunc(depthFunc)
-
-            // Cull
-            if (cullEnabled) RenderSystem.enableCull() else RenderSystem.disableCull()
-        }
-    }
 }
+
+

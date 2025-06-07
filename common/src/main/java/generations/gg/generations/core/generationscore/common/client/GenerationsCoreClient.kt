@@ -532,6 +532,14 @@ object GenerationsCoreClient {
             .get() /*&& Minecraft.getInstance().options.renderDebugCharts*/ && !Minecraft.getInstance().options.hideGui
     }
 
+    fun renderRareCandySolid() {
+        renderRareCandy(RenderStage.SOLID, false)
+    }
+
+    fun renderRareCandyTransparent(clear: Boolean = false) {
+        renderRareCandy(RenderStage.TRANSPARENT, clear)
+    }
+
     fun renderRareCandy(stage: RenderStage, clear: Boolean) {
         if (GenerationsCore.CONFIG.client.useVanilla) return
 
