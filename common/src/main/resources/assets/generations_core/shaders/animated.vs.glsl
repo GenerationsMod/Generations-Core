@@ -73,7 +73,7 @@ void main() {
 
     gl_Position = worldSpace * worldPosition;
     vertexColor = getVertexColor();
-    vertexDistance = fog_distance(positions, FogShape);
+    vertexDistance = fog_distance(gl_Position.xyz, FogShape);
     lightMapColor = texelFetch(lightmap, light / 16, 0);
     texCoord0 = (texcoords * uvScale) + uvOffset;
 
