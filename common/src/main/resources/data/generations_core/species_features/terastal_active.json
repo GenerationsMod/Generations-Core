@@ -1,10 +1,6 @@
 {
   "type": "flag",
-<<<<<<<< HEAD:common/src/main/resources/data/generations_core/species_features/embody_aspect.json
-  "keys": ["embody-aspect"],
-========
   "keys": ["terastal_active"],
->>>>>>>> 825fcf025c4e263d5e4ec4719750798f07c2cd3a:common/src/main/resources/data/generations_core/species_features/terastal_active.json
   "default": false,
   "isAspect": true
 }

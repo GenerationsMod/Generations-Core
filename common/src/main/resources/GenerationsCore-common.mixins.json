@@ -30,6 +30,7 @@
     "client.LevelRendererMixin",
     "client.LightTextureMixin",
     "client.ModelAssetVariationMixin",
+    "client.PokemonClientDelegateMixin",
     "client.PokemonEntityMixin",
     "client.PokemonOnShoulderRendererCompanionAccessorMixin",
     "client.PokemonOnShoulderRenderMixin"

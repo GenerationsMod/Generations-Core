@@ -54,14 +54,7 @@ class GenerationsCobblemonEvents {
         fun init() {
 //            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
 
-            CobblemonEvents.TERASTALLIZATION.subscribe(Priority.NORMAL, {
-                var feature = FlagSpeciesFeature("terastal_active", true)
-
-                feature.apply(it.pokemon.originalPokemon)
-                feature.apply(it.pokemon.effectedPokemon)
-                it.pokemon.originalPokemon.updateAspects()
-            })
-
+            CobblemonEvents.TERASTALLIZATION.subscribe(Priority.NORMAL, GenerationsInstructionProcessor::processTerastallization)
 
 
 //            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })

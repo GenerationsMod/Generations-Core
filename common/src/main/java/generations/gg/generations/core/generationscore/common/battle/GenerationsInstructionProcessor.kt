@@ -1,23 +1,16 @@
 package generations.gg.generations.core.generationscore.common.battle
 
+import com.cobblemon.mod.common.api.abilities.Abilities
 import com.cobblemon.mod.common.api.abilities.Ability
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
-import com.cobblemon.mod.common.api.events.battles.instruction.FormeChangeEvent
-import com.cobblemon.mod.common.api.events.battles.instruction.MegaEvolutionEvent
 import com.cobblemon.mod.common.api.events.battles.instruction.TerastallizationEvent
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import com.cobblemon.mod.common.net.messages.client.battle.BattleTransformPokemonPacket
 import com.cobblemon.mod.common.pokemon.Pokemon
-import com.mojang.datafixers.util.Unit
-
-import generations.gg.generations.core.generationscore.common.GenerationsCore
 
 object GenerationsInstructionProcessor {
-    private var originalAbility: Ability? = null
 
     @JvmStatic
     fun processFormeChangeInstruction(battle: PokemonBattle, message: BattleMessage) {
@@ -33,7 +26,8 @@ object GenerationsInstructionProcessor {
 
         val name = s3[1]
 
-        originalAbility = battlePokemon.originalPokemon.ability
+        val ability = battlePokemon.originalPokemon.ability.name
+        battlePokemon.originalPokemon.persistentData.putString("original_ability", ability)
 
         if (effectedPokemon.form.name.equals("Dusk-Mane")) {
             battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dusk")
@@ -73,6 +67,15 @@ object GenerationsInstructionProcessor {
     }
 
     @JvmStatic
+    fun processTerastallization(terastallizationEvent: TerastallizationEvent) {
+        val battle = terastallizationEvent.battle
+        val teraCheck = FlagSpeciesFeature("terastal_active", true)
+
+        terastallizationEvent.pokemon.effectedPokemon.applyBattleFeature(teraCheck)
+        battle.dispatchWaitingToFront(2.5f) { Unit }
+    }
+
+    @JvmStatic
     fun processBattleEnd(battle: PokemonBattle) {
         battle.actors.forEach { actor ->
             if (!actor.getPlayerUUIDs().iterator().hasNext()) return@forEach
@@ -98,7 +101,7 @@ object GenerationsInstructionProcessor {
                         battlePokemon.originalPokemon.updateAspects()
                     }
                 }
-                battlePokemon.originalPokemon.restoreAbility(tempAbility, originalAbility, name)
+                battlePokemon.originalPokemon.restoreAbility(tempAbility)
             }
         }
     }
@@ -106,16 +109,25 @@ object GenerationsInstructionProcessor {
 
 private fun Pokemon.removeBattleFeature() {
     val data = this.persistentData
-    val name = if(data.contains("form_name")) data.getString("form_name").also { data.remove("form_name") } else return
-    val value = if(data.contains("form_value")) data.getString("form_value").also { data.remove("form_value") } else null
 
-    if(value == null) {
-        features.removeIf { it.name == name }
-    } else {
-        val feature = features.firstOrNull { it.name == name } ?: return
+    if (data.contains("terastal")) {
+        val name = data.getString("terastal")
+        features.removeIf {it.name == name}
+        data.remove("terastal")
+    }
 
-        if(feature is StringSpeciesFeature) {
-            feature.value = value
+    if (data.contains("form_name")) {
+        val name = data.getString("form_name").also { data.remove("form_name") }
+        val value = if(data.contains("form_value")) data.getString("form_value").also { data.remove("form_value") } else null
+
+        if(value == null) {
+            features.removeIf { it.name == name }
+        } else {
+            val feature = features.firstOrNull { it.name == name } ?: return
+
+            if(feature is StringSpeciesFeature) {
+                feature.value = value
+            }
         }
     }
 
@@ -123,7 +135,11 @@ private fun Pokemon.removeBattleFeature() {
 }
 
 private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
-    this.persistentData.putString("form_name", feature.name)
+    if (feature.name.equals("terastal_active")) {
+        this.persistentData.putString("terastal", feature.name)
+    } else {
+        this.persistentData.putString("form_name", feature.name)
+    }
     if(feature is StringSpeciesFeature) {
         this.persistentData.putString("form_value", feature.value)
         feature.apply(this)
@@ -132,14 +148,14 @@ private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
     }
 }
 
-private fun Pokemon.restoreAbility(tempAbility: Ability, originalAbility: Ability?, name: String) {
-    if (name == "mega" || name == "mega_x" || name == "mega_y") {
-        if (tempAbility != originalAbility) {
-            originalAbility?.let { ability ->
-                this.updateAbility(ability)
-            } ?: run {
-                GenerationsCore.LOGGER.warn("Original Ability is null")
-            }
+private fun Pokemon.restoreAbility(tempAbility: Ability) {
+    val abilityId = this.persistentData.getString("original_ability")
+    val template = Abilities.get(abilityId)
+
+    if (template != null) {
+        val ability = template.create()
+        if (tempAbility.template != template) {
+            this.updateAbility(ability)
         }
     }
 }
