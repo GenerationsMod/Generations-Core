@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.client.model
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines
 import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.components.AnimatedMeshObject
 import net.minecraft.resources.ResourceLocation
@@ -23,14 +22,19 @@ data class RareCandyAnimation(private val model: ResourceLocation, private val n
     fun run(
         context: RenderContext,
         animationSeconds: Float,
-        shouldLoop: Boolean
+        intensity: Float
     ): Boolean {
-        val instance = context.request(Pipelines.INSTANCE) ?: context.request(RenderContext.ENTITY)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: return false
-        val anim = animation ?: return false
+        val instance = context.request(RenderContext.POSABLE_STATE)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: return false
 
-        val duration = anim.animationDuration.toFloat()
+        val anim = animation ?: let {
+            System.out.println("Warning! Animation $name is current not loaded or null")
+            return false
+        }
+
+        val duration = anim.animationDuration.div(anim.ticksPerSecond).toFloat()
+
         var currentSeconds = animationSeconds
-        if (shouldLoop) {
+        if (anim.loops) {
             currentSeconds %= duration
         } else if (animationSeconds > duration && duration > 0) {
             return false

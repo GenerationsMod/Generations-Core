@@ -66,16 +66,15 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         packedOverlay: Int,
         color: Int
     ) {
+
+        val instance = context.request(RenderContext.Companion.POSABLE_STATE).instanceOrNull<CobblemonInstanceProvider>()?.instance
+
+        if(instance != null) {
+            let {  }
+        }
+
         val model = objectSupplier.invoke()
         if (model?.renderObject == null) return
-
-        var instance = context.request(Pipelines.INSTANCE)
-        if (instance == null) {
-            val entity = context.request(RenderContext.Companion.POSABLE_STATE)
-            if (entity is CobblemonInstanceProvider) {
-                instance = entity.instance
-            }
-        }
 
         var scale = model.renderObject!!.scale // / context.requires(RenderContext.SCALE)
         if (instance == null) {
@@ -118,7 +117,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     override fun get(): Bone = this
 
     companion object {
-                val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
+        val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
         private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
         private val temp = Vector3f()
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)

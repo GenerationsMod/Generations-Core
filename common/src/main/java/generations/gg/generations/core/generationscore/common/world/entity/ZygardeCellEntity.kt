@@ -23,7 +23,7 @@ import org.joml.Matrix4f
 
 class ZygardeCellEntity : Entity {
     @JvmField
-    var instance: BlockObjectInstance = BlockObjectInstance(Matrix4f(), Matrix4f(), null)
+    var instance: BlockObjectInstance = BlockObjectInstance(Matrix4f(), null)
 
     constructor(level: Level) : super(GenerationsEntities.ZYGARDE_CELL.get(), level)
 
