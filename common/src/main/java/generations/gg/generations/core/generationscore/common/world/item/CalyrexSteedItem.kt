@@ -26,11 +26,11 @@ class CalyrexSteedItem(name: String, arg: Properties, private val speices: Speci
         if (!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND) {
             val carrots = getCarrots(player.getItemInHand(usedHand))
 
-            val isFull = (0..18).map(carrots::get).all { it.amount >=64 }
+            val isFull = (0..< 18).map(carrots::get).all { it.amount >=64 }
 
             if (!isFull) {
 
-                (0..18).forEach { carrots.filter(it) { it.item.equals(Items.CARROT) } }
+                (0..<18).forEach { carrots.filter(it) { it.item.equals(Items.CARROT) } }
 
                 GenericContainer.openScreen(carrots, 9, 2, Component.translatable(defaultTranslation), player, player.inventory.selected)
                 return InteractionResultHolder.success(player.getItemInHand(usedHand))

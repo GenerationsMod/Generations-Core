@@ -11,6 +11,7 @@ import generations.gg.generations.core.generationscore.common.network.packets.S2
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
+import generations.gg.generations.core.generationscore.common.util.extensions.component
 import generations.gg.generations.core.generationscore.common.util.extensions.get
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
@@ -31,7 +32,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.JukeboxPlayable
 import net.minecraft.world.level.Level
 
-class WalkmonItem(properties: Properties, private val row: Int, type: String) : Item(properties) {
+class WalkmonItem(properties: Properties, private val row: Int, type: String) : Item(properties.component(GenerationsDataComponents.WALKMON_DATA, WalkmonData(0, 0, false, Component.literal("Walkmon")))) {
     private val defaultTranslation: String = "container.$type"
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
@@ -42,7 +43,7 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
             if(walkmon != null) {
 
-                if (player.isShiftKeyDown) GenericContainer.openScreen(SimpleItemStorage(PlayerContext.ofHand(player, usedHand), GenerationsStorage.ITEM_CONTENTS.componentType(), 9 * row), 9, row, walkmon.title.takeUnless { it == Component.EMPTY } ?: Component.translatable(defaultTranslation), player, player.inventory.selected)
+                if (player.isShiftKeyDown) GenericContainer.openScreen(SimpleItemStorage(stack, GenerationsStorage.ITEM_CONTENTS, 9 * row), 9, row, walkmon.title.takeUnless { it == Component.EMPTY } ?: Component.translatable(defaultTranslation), player, player.inventory.selected)
                 else {
                     walkmon.toggle()
                 }
@@ -119,20 +120,22 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
         private fun ItemStorageData.next(): JukeboxPlayable? {
             val size = stacks.size
-
-            var index = currentSlot
+            var index = currentSlot + 1
 
             while (index < size) {
-                index++
-
                 val stack = stacks[index]
-                if(stack.isEmpty) continue
+                if (stack.isEmpty) {
+                    index++
+                    continue
+                }
 
                 val playable = stack.resource.get(DataComponents.JUKEBOX_PLAYABLE)
-                if(playable != null) {
+                if (playable != null) {
                     currentSlot = index
                     return playable
                 }
+
+                index++
             }
 
             return null

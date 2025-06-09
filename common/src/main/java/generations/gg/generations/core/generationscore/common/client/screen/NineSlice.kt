@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.screen
 
+import net.minecraft.client.gui.Gui
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.resources.ResourceLocation
 
