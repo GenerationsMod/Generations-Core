@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 public record PotionToolEffect(Holder<MobEffect> potionEffect, int amplifier, int duration, int durabilityCost) implements ToolEffect {
     @Override
     public boolean use(Level world, Player player, InteractionHand usedHand) {
+        if(world.isClientSide) return false;
         MobEffectInstance currentEffect = player.getEffect(potionEffect);
         if (currentEffect != null && currentEffect.getAmplifier() > amplifier) return false;
         if (currentEffect != null && currentEffect.getAmplifier() == amplifier && currentEffect.getDuration() >= duration) return false;
