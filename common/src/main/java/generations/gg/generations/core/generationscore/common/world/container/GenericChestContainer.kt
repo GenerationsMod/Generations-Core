@@ -6,8 +6,8 @@ import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import earth.terrarium.common_storage_lib.storage.base.UpdateManager
-import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot
+import generations.gg.generations.core.generationscore.common.world.container.slots.MenuStorageSlot
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player

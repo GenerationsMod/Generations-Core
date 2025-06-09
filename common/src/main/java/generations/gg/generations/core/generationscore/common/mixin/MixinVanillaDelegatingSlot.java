@@ -42,6 +42,7 @@ abstract public class MixinVanillaDelegatingSlot implements ModifiableItemSlot, 
     @Override
     public void set(ItemStack stack) {
         container.setItem(slot, stack);
+        container.setChanged();
     }
 
     public void set(ResourceStack<ItemResource> data) {
@@ -50,7 +51,7 @@ abstract public class MixinVanillaDelegatingSlot implements ModifiableItemSlot, 
 
     @Override
     public ItemStack toItemStack() {
-        return container.getItem(slot).copy();
+        return container.getItem(slot);
     }
 
     @Override
