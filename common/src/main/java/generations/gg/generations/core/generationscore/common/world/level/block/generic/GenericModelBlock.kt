@@ -32,7 +32,7 @@ import java.util.*
 
 abstract class GenericModelBlock<T> protected constructor(
     properties: Properties,
-    protected val blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+    protected val blockEntityFunction: RegistrySupplier<BlockEntityType<T>>,
     private val baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_POS_FUNCTION,
     protected val modelResource: ResourceLocation?
 ) : BaseEntityBlock(properties), SimpleWaterloggedBlock,

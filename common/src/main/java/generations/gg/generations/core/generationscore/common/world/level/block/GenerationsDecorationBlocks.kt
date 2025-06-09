@@ -147,24 +147,12 @@ object GenerationsDecorationBlocks {
     val HDTV: RegistrySupplier<Block> =
         registerDecorationItem("hdtv") { HdTvBlock(of().sound(SoundType.WOOD).strength(.5f)) }
 
-    @JvmField
-    val SHOP_DISPLAY_CASE_1: RegistrySupplier<Block> =
-        registerDecorationItem("shop_display_case_1") { ShopDisplayBlock(of(), 1, 0, 0, "case_1") }
-    @JvmField
-    val SHOP_DISPLAY_CASE_2: RegistrySupplier<Block> =
-        registerDecorationItem("shop_display_case_2") { ShopDisplayBlock(of(), 1, 0, 0, "case_2") }
-    @JvmField
-    val SHOP_DISPLAY_SMALL_1: RegistrySupplier<Block> =
-        registerDecorationItem("shop_display_small_1") { ShopDisplayBlock(of(), 1, 1, 0, "round_1") }
-    @JvmField
-    val SHOP_DISPLAY_SMALL_2: RegistrySupplier<Block> =
-        registerDecorationItem("shop_display_small_2") { ShopDisplayBlock(of(), 1, 1, 0, "round_2") }
-    @JvmField
-    val SHOP_DISPLAY_LARGE_SHELF_1: RegistrySupplier<Block> =
-        registerDecorationItem("shop_display_large_shelf_1") { ShopDisplayBlock(of(), 1, 2, 0, "shelf_1") }
-    @JvmField
-    val SHOP_DISPLAY_LARGE_SHELF_2: RegistrySupplier<Block> =
-        registerDecorationItem("shop_display_large_shelf_2") { ShopDisplayBlock(of(), 1, 2, 0, "shelf_2") }
+    @JvmField val SHOP_DISPLAY_CASE_1: RegistrySupplier<Block> = registerDecorationItem("shop_display_case_1") { ShopDisplayBlock(of(), 1, 0, 0, "case_1") }
+    @JvmField val SHOP_DISPLAY_CASE_2: RegistrySupplier<Block> = registerDecorationItem("shop_display_case_2") { ShopDisplayBlock(of(), 1, 0, 0, "case_2") }
+    @JvmField val SHOP_DISPLAY_SMALL_1: RegistrySupplier<Block> = registerDecorationItem("shop_display_small_1") { ShopDisplayBlock(of(), 1, 1, 0, "round_1") }
+    @JvmField val SHOP_DISPLAY_SMALL_2: RegistrySupplier<Block> = registerDecorationItem("shop_display_small_2") { ShopDisplayBlock(of(), 1, 1, 0, "round_2") }
+    @JvmField val SHOP_DISPLAY_LARGE_SHELF_1: RegistrySupplier<Block> = registerDecorationItem("shop_display_large_shelf_1") { ShopDisplayBlock(of(), 1, 2, 0, "shelf_1") }
+    @JvmField val SHOP_DISPLAY_LARGE_SHELF_2: RegistrySupplier<Block> = registerDecorationItem("shop_display_large_shelf_2") { ShopDisplayBlock(of(), 1, 2, 0, "shelf_2") }
 
     //Cushion
     @JvmField
@@ -203,60 +191,33 @@ object GenerationsDecorationBlocks {
      * Decoration Blocks (Vending Machine)
      */
     //Ball Displays
-    @JvmField
-    val EMPTY_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.EMPTY)
-    @JvmField
-    val POKE_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.POKE)
-    @JvmField
-    val GREAT_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.GREAT)
-    @JvmField
-    val ULTRA_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.ULTRA)
-    @JvmField
-    val MASTER_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.MASTER)
-    @JvmField
-    val CHERISH_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.CHERISH)
-    @JvmField
-    val DIVE_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.DIVE)
-    @JvmField
-    val DUSK_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.DUSK)
-    @JvmField
-    val FAST_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.FAST)
-    @JvmField
-    val FRIEND_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.FRIEND)
-
+    @JvmField val EMPTY_BALL_DISPLAY = registerBallDisplay(DisplayState.EMPTY)
+    @JvmField val POKE_BALL_DISPLAY = registerBallDisplay(DisplayState.POKE)
+    @JvmField val GREAT_BALL_DISPLAY = registerBallDisplay(DisplayState.GREAT)
+    @JvmField val ULTRA_BALL_DISPLAY = registerBallDisplay(DisplayState.ULTRA)
+    @JvmField val MASTER_BALL_DISPLAY = registerBallDisplay(DisplayState.MASTER)
+    @JvmField val CHERISH_BALL_DISPLAY = registerBallDisplay(DisplayState.CHERISH)
+    @JvmField val DIVE_BALL_DISPLAY = registerBallDisplay(DisplayState.DIVE)
+    @JvmField val DUSK_BALL_DISPLAY = registerBallDisplay(DisplayState.DUSK)
+    @JvmField val FAST_BALL_DISPLAY = registerBallDisplay(DisplayState.FAST)
+    @JvmField val FRIEND_BALL_DISPLAY = registerBallDisplay(DisplayState.FRIEND)
+    @JvmField val HEAVY_BALL_DISPLAY = registerBallDisplay(DisplayState.HEAVY)
+    @JvmField val LEVEL_BALL_DISPLAY = registerBallDisplay(DisplayState.LEVEL)
+    @JvmField val LOVE_BALL_DISPLAY = registerBallDisplay(DisplayState.LOVE)
+    @JvmField val LURE_BALL_DISPLAY = registerBallDisplay(DisplayState.LURE)
+    @JvmField val LUXURY_BALL_DISPLAY = registerBallDisplay(DisplayState.LUXURY)
+    @JvmField val MOON_BALL_DISPLAY = registerBallDisplay(DisplayState.MOON)
+    @JvmField val NEST_BALL_DISPLAY = registerBallDisplay(DisplayState.NEST)
+    @JvmField val NET_BALL_DISPLAY = registerBallDisplay(DisplayState.NET)
+    @JvmField val PARK_BALL_DISPLAY = registerBallDisplay(DisplayState.PARK)
+    @JvmField val PREMIER_BALL_DISPLAY = registerBallDisplay(DisplayState.PREMIER)
+    @JvmField val QUICK_BALL_DISPLAY = registerBallDisplay(DisplayState.QUICK)
+    @JvmField val REPEAT_BALL_DISPLAY = registerBallDisplay(DisplayState.REPEAT)
+    @JvmField val SAFARI_BALL_DISPLAY = registerBallDisplay(DisplayState.SAFARI)
+    @JvmField val SPORT_BALL_DISPLAY = registerBallDisplay(DisplayState.SPORT)
+    @JvmField val TIMER_BALL_DISPLAY = registerBallDisplay(DisplayState.TIMER)
+    @JvmField val HEAL_BALL_DISPLAY = registerBallDisplay(DisplayState.HEAL)
     //public static final RegistrySupplier<BallDisplayBlock> GS_BALL_DISPLAY = registerBallDisplay(DisplayState.GS);
-    @JvmField
-    val HEAL_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.HEAL)
-    @JvmField
-    val HEAVY_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.HEAVY)
-    @JvmField
-    val LEVEL_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.LEVEL)
-    @JvmField
-    val LOVE_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.LOVE)
-    @JvmField
-    val LURE_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.LURE)
-    @JvmField
-    val LUXURY_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.LUXURY)
-    @JvmField
-    val MOON_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.MOON)
-    @JvmField
-    val NEST_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.NEST)
-    @JvmField
-    val NET_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.NET)
-    @JvmField
-    val PARK_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.PARK)
-    @JvmField
-    val PREMIER_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.PREMIER)
-    @JvmField
-    val QUICK_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.QUICK)
-    @JvmField
-    val REPEAT_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.REPEAT)
-    @JvmField
-    val SAFARI_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.SAFARI)
-    @JvmField
-    val SPORT_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.SPORT)
-    @JvmField
-    val TIMER_BALL_DISPLAY: RegistrySupplier<BallDisplayBlock> = registerBallDisplay(DisplayState.TIMER)
 
     private fun registerBallDisplay(state: DisplayState): RegistrySupplier<BallDisplayBlock> =
         registerDecorationItem(state.name.lowercase(Locale.getDefault()) + "_ball_display") { BallDisplayBlock(state) }.also {

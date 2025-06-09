@@ -343,8 +343,6 @@ object GenerationsCoreClient {
         consumer.register(GenerationsBlockEntities.TAO_TRIO_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.TAPU_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.INTERACT_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.BREEDER.get(), ::BreederBlocEntityRenderer)
-
         consumer.register(GenerationsBlockEntities.COOKING_POT.get(), ::CookingPotRenderer)
         consumer.register(GenerationsBlockEntities.WEATHER_TRIO.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), ::SignRenderer)

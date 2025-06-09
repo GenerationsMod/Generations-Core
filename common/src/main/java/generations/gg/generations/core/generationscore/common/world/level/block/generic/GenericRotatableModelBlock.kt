@@ -15,6 +15,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.LevelReader
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.entity.BlockEntity
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.DirectionProperty
@@ -23,7 +24,7 @@ import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.level.storage.loot.LootParams
 import net.minecraft.world.phys.AABB
 
-abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>, posFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model: ResourceLocation? = null, val width: Int = 0, val height: Int = 0, val length: Int = 0) : GenericModelBlock<T>(properties, blockEntityFunction, posFunction, model) where T : BlockEntity, T : ModelContextProviders.ModelProvider {
+abstract class GenericRotatableModelBlock<T>(properties: Properties, blockEntityFunction: RegistrySupplier<BlockEntityType<T>>, posFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model: ResourceLocation? = null, val width: Int = 0, val height: Int = 0, val length: Int = 0) : GenericModelBlock<T>(properties, blockEntityFunction, posFunction, model) where T : BlockEntity, T : ModelContextProviders.ModelProvider {
 
     init {
         assignSize(width, height, length)

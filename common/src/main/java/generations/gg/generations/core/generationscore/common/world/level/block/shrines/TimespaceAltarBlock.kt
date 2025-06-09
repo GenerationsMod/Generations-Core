@@ -23,12 +23,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class TimespaceAltarBlock(properties: Properties) :
-    InteractShrineBlock<TimeSpaceAltarBlockEntity>(
-        properties,
-        GenerationsBlockEntities.TIMESPACE_ALTAR,
-        GenerationsBlockEntityModels.TIME_SPACE_ALTAR
-    ) {
+class TimespaceAltarBlock(properties: Properties) : InteractShrineBlock<TimeSpaceAltarBlockEntity>(properties, GenerationsBlockEntities.TIMESPACE_ALTAR, GenerationsBlockEntityModels.TIME_SPACE_ALTAR) {
     override fun codec(): MapCodec<TimespaceAltarBlock> = CODEC
 
     override fun isStackValid(stack: ItemStack): Boolean {

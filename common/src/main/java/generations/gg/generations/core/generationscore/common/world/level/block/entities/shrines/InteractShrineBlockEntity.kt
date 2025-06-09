@@ -6,12 +6,13 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.InteractShrineBlock
 import net.minecraft.core.BlockPos
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 
 open class InteractShrineBlockEntity : ShrineBlockEntity {
     private var countdown = 0
 
-    constructor(blockEntityType: MutableBlockEntityType<out ModelProvidingBlockEntity>, pos: BlockPos, state: BlockState) : super(blockEntityType, pos, state)
+    constructor(blockEntityType: BlockEntityType<out ModelProvidingBlockEntity>, pos: BlockPos, state: BlockState) : super(blockEntityType, pos, state)
 
     constructor(
         pos: BlockPos,
