@@ -3,6 +3,7 @@
 in vec2 texCoord0;
 in vec4 vertexColor;
 in float vertexDistance;
+in vec4 lightMapColor;
 
 out vec4 outColor;
 
@@ -16,14 +17,11 @@ uniform vec4 FogColor;
 uniform sampler2D diffuse;
 uniform sampler2D mask;
 uniform sampler2D layer;
-uniform sampler2D lightmap;
 uniform sampler2D emission;
 uniform sampler2D paradoxMask;
 
 uniform int colorMethod;
 uniform int effect;
-
-uniform ivec2 light;
 
 uniform vec3 tint;
 
@@ -377,10 +375,7 @@ void main() {
         outColor.rgb = calculateTersaalizationEffect(outColor.rgb);
     } else if (useLight) {
         outColor *= vertexColor;
-        // Sample Minecraft's light level from the lightmap texture
-        vec4 minecraftLight = minecraft_sample_lightmap(lightmap, light);
-
-        outColor *= mix(minecraftLight, vec4(1, 1, 1, 1), texture(emission, texCoord0).r);
+        outColor *= mix(lightMapColor, vec4(1, 1, 1, 1), texture(emission, texCoord0).r);
     }
 
     outColor = linear_fog(outColor, vertexDistance, FogStart, FogEnd, FogColor);

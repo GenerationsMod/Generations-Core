@@ -15,4 +15,6 @@ class GenericBlastFurnaceBlockEntity(arg: BlockPos, arg2: BlockState) :
     override fun getDefaultName(): Component = Component.translatable("container.$name")
 
     override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.GENERIC_BLAST_FURNACE.get()
+
+    override fun isValidBlockState(blockState: BlockState): Boolean = GenerationsBlockEntities.GENERIC_BLAST_FURNACE.get().isValid(blockState)
 }

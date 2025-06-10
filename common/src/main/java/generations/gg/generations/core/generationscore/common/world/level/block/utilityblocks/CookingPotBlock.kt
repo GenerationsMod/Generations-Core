@@ -27,8 +27,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.stream.Stream
 
-class CookingPotBlock(materialIn: Properties) :
-    GenericRotatableModelBlock<CookingPotBlockEntity>(
+class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock<CookingPotBlockEntity>(
         materialIn,
         GenerationsBlockEntities.COOKING_POT,
         model = GenerationsBlockEntityModels.COOKING_POT

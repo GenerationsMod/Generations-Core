@@ -1,22 +1,17 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.tags
 
-import com.google.common.collect.Streams
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.BUILDING_BLOCKS
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.INERT_RELIC_SONG
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.POKEMAIL_AIR
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools
 import generations.gg.generations.core.generationscore.common.world.item.tools.GenerationsHammerItem
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet
 import net.minecraft.core.HolderLookup
-import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.PackOutput
 import net.minecraft.data.tags.ItemTagsProvider
@@ -24,9 +19,6 @@ import net.minecraft.data.tags.PaintingVariantTagsProvider
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.ItemTags
-import net.minecraft.tags.PaintingVariantTags
-import net.minecraft.tags.TagEntry
-import net.minecraft.world.entity.decoration.PaintingVariant
 import net.minecraft.world.item.*
 import net.minecraft.world.level.block.*
 import net.neoforged.neoforge.common.Tags
@@ -131,8 +123,8 @@ object TagsDatagen {
                 GenerationsUtilityBlocks.PINK_ELEVATOR.get(),
                 GenerationsDecorationBlocks.DESK.get(),
                 GenerationsDecorationBlocks.FRIDGE.get()
-            ).add(*GenerationsDecorationBlocks.STREET_LAMP.toArray())
-                .add(*GenerationsUtilityBlocks.PC.toArray())
+            ).add(*GenerationsDecorationBlocks.STREET_LAMP.toExposedArray())
+                .add(*GenerationsUtilityBlocks.PC.toExposedArray())
                 .add(*GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.map(RegistrySupplier<BallDisplayBlock>::get).toTypedArray())
 
 
@@ -339,12 +331,12 @@ object TagsDatagen {
                 GenerationsUtilityBlocks.SCARECROW.get(),
                 GenerationsUtilityBlocks.BOX.get()
             )
-                .add(*GenerationsDecorationBlocks.COUCH_ARM_LEFT.toArray())
-                .add(*GenerationsDecorationBlocks.COUCH_ARM_RIGHT.toArray())
-                .add(*GenerationsDecorationBlocks.COUCH_CORNER_LEFT.toArray())
-                .add(*GenerationsDecorationBlocks.COUCH_CORNER_RIGHT.toArray())
-                .add(*GenerationsDecorationBlocks.COUCH_MIDDLE.toArray())
-                .add(*GenerationsDecorationBlocks.COUCH_OTTOMAN.toArray())
+                .add(*GenerationsDecorationBlocks.COUCH_ARM_LEFT.toExposedArray())
+                .add(*GenerationsDecorationBlocks.COUCH_ARM_RIGHT.toExposedArray())
+                .add(*GenerationsDecorationBlocks.COUCH_CORNER_LEFT.toExposedArray())
+                .add(*GenerationsDecorationBlocks.COUCH_CORNER_RIGHT.toExposedArray())
+                .add(*GenerationsDecorationBlocks.COUCH_MIDDLE.toExposedArray())
+                .add(*GenerationsDecorationBlocks.COUCH_OTTOMAN.toExposedArray())
             tag(BlockTags.ENDERMAN_HOLDABLE).add(
                 GenerationsBlocks.CURSED_PUMPKIN.get(),
                 GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()

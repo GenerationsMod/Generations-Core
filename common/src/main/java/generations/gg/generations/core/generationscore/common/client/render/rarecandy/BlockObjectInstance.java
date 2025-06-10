@@ -9,8 +9,8 @@ public class BlockObjectInstance extends ObjectInstance implements BlockLightVal
     private int light = 0x000000;
     private Vector3f tint = null;
 
-    public BlockObjectInstance(Matrix4f transformationMatrix, Matrix4f viewMatrix, String variant) {
-        super(transformationMatrix, viewMatrix, variant);
+    public BlockObjectInstance(Matrix4f transformationMatrix, String variant) {
+        super(transformationMatrix, variant);
     }
 
 

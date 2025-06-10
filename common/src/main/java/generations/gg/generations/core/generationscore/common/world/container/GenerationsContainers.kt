@@ -36,12 +36,14 @@ object GenerationsContainers {
     val GENERIC: RegistrySupplier<MenuType<GenericChestContainer<*>>> = CONTAINERS.register(
         "generic"
     ) {
-        MenuRegistry.ofExtended { containerId: Int, playerInventory: Inventory, buf: FriendlyByteBuf ->
+        MenuRegistry.ofExtended { containerId, playerInventory, buf ->
+            val width = buf.readVarInt()
+            val height = buf.readVarInt()
+            val lock = buf.readVarInt()
             GenericChestContainer(
                 containerId,
-                playerInventory, SimpleItemStorage(buf.readVarInt()),
-                buf.readVarInt(),
-                buf.readVarInt()
+                playerInventory, SimpleItemStorage(width * height),
+                width, height, lock
             )
         }
     }

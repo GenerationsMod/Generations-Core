@@ -6,8 +6,8 @@ import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import earth.terrarium.common_storage_lib.storage.base.UpdateManager
-import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot
+import generations.gg.generations.core.generationscore.common.world.container.slots.MenuStorageSlot
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
@@ -17,15 +17,12 @@ import net.minecraft.world.item.ItemStack
 
 open class GenericChestContainer<T>(
     containerId: Int,
-    @JvmField val playerInventory: Inventory,
+    val playerInventory: Inventory,
     private val container: T,
     val inventoryWidth: Int,
     val inventoryHeight: Int,
-    protected val locked: Int = -1
-) : AbstractContainerMenu(
-        GenerationsContainers.GENERIC.get(),
-        containerId
-    ) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
+    lock: Int = -1
+) : AbstractContainerMenu(GenerationsContainers.GENERIC.get(), containerId) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
     @JvmField
     val guiWidth: Int =  14 + this.inventoryWidth * 18
     @JvmField
@@ -41,13 +38,13 @@ open class GenericChestContainer<T>(
 
         this.playerInventoryX = guiWidth / 2 - 80
 
-        populatePlayer(playerInventory, playerInventoryX, guiHeight - 82, 1, 3, 9)
-        populatePlayer(playerInventory, playerInventoryX, guiHeight - 24, 0, 1, 9)
+        populatePlayer(playerInventory, playerInventoryX, guiHeight - 82, 1, 3, 9, lock)
+        populatePlayer(playerInventory, playerInventoryX, guiHeight - 24, 0, 1, 9, lock)
     }
 
     private fun <V> populate(container: V, x: Int, y: Int, startingRow: Int, rows: Int, columns: Int) where V : CommonStorage<ItemResource> {
-        for (row in 0..<rows) {
-            for (column in 0..<columns) {
+        for (row in 0..< rows) {
+            for (column in 0..< columns) {
                 val slot = column + (startingRow + row) * columns
                 val xSlot = x + column * 18
                 val ySlot = y + row * 18
@@ -57,14 +54,16 @@ open class GenericChestContainer<T>(
         }
     }
 
-    private fun populatePlayer(container: Inventory, x: Int, y: Int, startingRow: Int, rows: Int, columns: Int) {
+    private fun populatePlayer(container: Inventory, x: Int, y: Int, startingRow: Int, rows: Int, columns: Int, lock: Int) {
+
+
         for (row in 0..<rows) {
             for (column in 0..<columns) {
                 val slot = column + (startingRow + row) * columns
                 val xSlot = x + column * 18
                 val ySlot = y + row * 18
 
-                this.addSlot(if(locked == slot) LockedSlot(container, slot, xSlot, ySlot) else Slot(container, slot, x, y))
+                this.addSlot(if(lock == slot) LockedSlot(container, slot, xSlot, ySlot) else Slot(container, slot, xSlot, ySlot))
             }
         }
     }

@@ -1,6 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
 import com.mojang.serialization.MapCodec
+import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
+import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem
@@ -9,11 +11,11 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.RegigigasShrineBlockEntity
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.RegigigasShrineBlockEntity.Companion.getRegiOrbIndex
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
+import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
@@ -53,30 +55,43 @@ class RegigigasShrineBlock(materialIn: Properties) :
     ): Boolean {
         val stack = player.getItemInHand(hand)
 
-        val entity = getAssoicatedBlockEntity(level, pos).orElse(null) ?: return false
+        val entity = getAssoicatedBlockEntity(level, pos) ?: return false
 
         val handler = entity.container
 
         var succeeded = false
-//TODO: Fix this
-//        if (stack.item is RegiOrbItem && !handler.contains(item)) {
-//            player.setItemInHand(hand, handler.get(getRegiOrbIndex(item)).insertItem(OptionalInt.of(getRegiOrbIndex(item)).asInt, stack, false))
-//
-//            if (handler.isFull) {
-//                PokemonUtil.spawn(LegendKeys.REGIGIGAS.createProperties(70), level, pos.above())
-//                handler.clear()
-//            }
-//
-//            succeeded = true
-//        } else {
-//            for (i in 0..4) {
-//                if (!handler.get(i).isEmpty) {
-//                    player.inventory.placeItemBackInInventory(handler.extractItem(i, 1, false))
-//                    succeeded = true
-//                    break
-//                }
-//            }
-//        }
+
+        val item = stack.item
+
+        if(!handler.has(item) && handler.insert(stack.asResouce(), 1, false) > 0) {
+
+            stack.shrink(1)
+
+            if (handler.isFull()) {
+                PokemonUtil.spawn(LegendKeys.REGIGIGAS.createProperties(70), level, pos.above())
+                handler.clear()
+            }
+
+            handler.update()
+
+            succeeded = true
+        } else {
+            for (i in 0..4) {
+                val slot = handler.get(i).takeUnless { it.isEmpty } ?: continue
+
+                var resource = slot.resource
+
+                val extracted = handler.extract(resource, 1, false)
+
+                if(extracted > 0) {
+                    player.inventory.placeItemBackInInventory(resource.toStack(extracted.toInt()))
+
+                    handler.update()
+                    succeeded = true
+                    break
+                }
+            }
+        }
 
         if (succeeded) entity.sync()
 
@@ -84,7 +99,7 @@ class RegigigasShrineBlock(materialIn: Properties) :
     }
 
     override fun isStackValid(stack: ItemStack): Boolean {
-        return stack.item is RegiOrbItem
+        return stack.item is RegiOrbItem || stack.isEmpty
     }
 
     override fun getVariant(blockState: BlockState): String? {
@@ -106,3 +121,13 @@ class RegigigasShrineBlock(materialIn: Properties) :
         }
     }
 }
+
+private fun SimpleItemStorage.clear() {
+    (0..< size()).map(this::get).forEach { it.resource =  ItemResource.BLANK }
+}
+
+private fun SimpleItemStorage.isFull(): Boolean = (0..< size()).map(this::getResource).none { it.isBlank }
+
+private fun ItemStack.asResouce(): ItemResource = ItemResource.of(this)
+
+private fun SimpleItemStorage.has(item: Item): Boolean = (0..< size()).map(this::getResource).any { it.isOf(item) }

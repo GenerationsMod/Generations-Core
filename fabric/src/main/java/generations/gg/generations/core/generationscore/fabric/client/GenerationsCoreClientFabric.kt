@@ -1,5 +1,8 @@
 package generations.gg.generations.core.generationscore.fabric.client
 
+import com.mojang.blaze3d.platform.GlStateManager
+import com.mojang.blaze3d.platform.GlStateManager.BlendState
+import com.mojang.blaze3d.systems.RenderSystem
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
@@ -10,10 +13,15 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderHighlightedPath
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandy
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandySolid
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandyTransparent
+import generations.gg.generations.core.generationscore.common.client.MatrixCache
+import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
 import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
+import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -22,11 +30,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents.AfterEntities
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents.AfterTranslucent
 import net.minecraft.client.Minecraft
-import net.minecraft.client.model.geom.ModelLayerLocation
-import net.minecraft.client.model.geom.builders.LayerDefinition
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
@@ -39,9 +44,8 @@ import net.minecraft.world.level.block.TransparentBlock
 import net.minecraft.world.level.block.TrapDoorBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
-import java.util.function.BiConsumer
+import org.joml.Matrix4f
 import java.util.function.Consumer
-import java.util.function.Supplier
 
 /**
  * The client initializer for the fabric client portion of the mod.
@@ -62,11 +66,27 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             renderHighlightedPath(
                 context.matrixStack()!!, Minecraft.getInstance().levelRenderer.ticks, context.camera()
             )
+
+            RenderStateRecord.push()
+            RenderSystem.enableDepthTest()
+            RenderSystem.defaultBlendFunc()
+            RenderSystem.enableBlend()
+            renderRareCandyTransparent(true)
+            RenderStateRecord.pop()
         })
 
-//        WorldRenderEvents.AFTER_SETUP.register { GenerationsCoreClient.updateViewMatrix() }
+        WorldRenderEvents.BEFORE_DEBUG_RENDER.register {
 
-        WorldRenderEvents.AFTER_ENTITIES.register { context: WorldRenderContext -> renderRareCandy(context.world()) }
+            MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
+            MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
+
+            RenderStateRecord.push()
+
+            renderRareCandySolid()
+            renderRareCandyTransparent()
+
+            RenderStateRecord.pop()
+        }
 
         GenerationsFabricNetwork.registerClientHandlers()
 
@@ -104,3 +124,5 @@ class GenerationsCoreClientFabric : ClientModInitializer {
         }
     }
 }
+
+

@@ -26,6 +26,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.LevelReader
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.storage.loot.LootParams
 import net.minecraft.world.phys.BlockHitResult
@@ -43,7 +44,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Holder<Block>>,
-        biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+        biFunction: RegistrySupplier<BlockEntityType<T>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation,
@@ -58,7 +59,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Holder<Block>>,
-        biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+        biFunction: RegistrySupplier<BlockEntityType<T>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation
@@ -71,7 +72,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         arg: Properties,
         color: DyeColor,
         function: Map<DyeColor, Holder<Block>>,
-        biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+        biFunction: RegistrySupplier<BlockEntityType<T>>,
         model: ResourceLocation,
         width: Int,
         height: Int,
@@ -84,7 +85,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Holder<Block>>,
-        biFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+        biFunction: RegistrySupplier<BlockEntityType<T>>,
         arg: Properties,
         model: ResourceLocation
     ) : super(arg, biFunction, model = model) {

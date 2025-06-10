@@ -18,7 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntity
 import java.util.*
 import java.util.function.Predicate
 
-class TrashItemStorage : CommonStorage<ItemResource>, UpdateManager<ItemStorageData> {
+object TrashItemStorage : CommonStorage<ItemResource>, UpdateManager<ItemStorageData> {
     val slot: StorageSlot<ItemResource> = object : StorageSlot<ItemResource>, ModifiableItemSlot {
         override fun insert(resource: ItemResource, count: Long, simulate: Boolean): Long = count
 

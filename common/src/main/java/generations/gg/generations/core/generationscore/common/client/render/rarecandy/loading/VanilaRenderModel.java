@@ -62,17 +62,16 @@ public class VanilaRenderModel implements RenderModel {
 
         if(tint == null) tint = WHITE;
         var modelMatrix = instance.transformationMatrix();
-        var viewMatrix = instance.viewMatrix();
 
         for (int i = 0; i < indexSize; i += 3) {
-            addVertex(consumer, i, tint, light, modelMatrix, viewMatrix, transform, transforms);
-            addVertex(consumer, i, tint, light, modelMatrix, viewMatrix, transform, transforms);
-            addVertex(consumer, i + 1, tint, light, modelMatrix, viewMatrix, transform, transforms);
-            addVertex(consumer, i + 2, tint, light, modelMatrix, viewMatrix, transform, transforms);
+            addVertex(consumer, i, tint, light, modelMatrix, transform, transforms);
+            addVertex(consumer, i, tint, light, modelMatrix, transform, transforms);
+            addVertex(consumer, i + 1, tint, light, modelMatrix, transform, transforms);
+            addVertex(consumer, i + 2, tint, light, modelMatrix, transform, transforms);
         }
     }
 
-    private void addVertex(VertexConsumer consumer, int i, Vector3f tint, int light, Matrix4f modelMatrix, Matrix4f viewMatrix, Transform transform, Matrix4f[] transforms) {
+    private void addVertex(VertexConsumer consumer, int i, Vector3f tint, int light, Matrix4f modelMatrix, Transform transform, Matrix4f[] transforms) {
         var bufferIndex = indicies[i];
 
         var posIndex = bufferIndex * 3;

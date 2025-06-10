@@ -16,13 +16,10 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
-import dev.architectury.registry.ReloadListenerRegistry
 import dev.architectury.registry.item.ItemPropertiesRegistry
 import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER
-import generations.gg.generations.core.generationscore.common.GenerationsDataProvider
-import generations.gg.generations.core.generationscore.common.GenerationsDataProvider.SimpleResourceReloader
 import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.model.RunnableKeybind
@@ -88,7 +85,6 @@ import net.minecraft.world.phys.Vec3
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
 import org.joml.Matrix4f
-import org.joml.Quaternionf
 import org.joml.Vector4f
 import org.lwjgl.glfw.GLFW
 import java.io.File
@@ -105,6 +101,11 @@ private operator fun Vec3.times(scale: Float): Vec3 {
 
 private operator fun Vec3.minus(vec3: Vec3): Vec3 {
     return this.subtract(vec3)
+}
+
+object MatrixCache {
+    var projectionMatrix = Matrix4f()
+    var viewMatrix = Matrix4f()
 }
 
 object GenerationsCoreClient {
@@ -342,8 +343,6 @@ object GenerationsCoreClient {
         consumer.register(GenerationsBlockEntities.TAO_TRIO_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.TAPU_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.INTERACT_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.BREEDER.get(), ::BreederBlocEntityRenderer)
-
         consumer.register(GenerationsBlockEntities.COOKING_POT.get(), ::CookingPotRenderer)
         consumer.register(GenerationsBlockEntities.WEATHER_TRIO.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), ::SignRenderer)
@@ -352,6 +351,7 @@ object GenerationsCoreClient {
         consumer.register(GenerationsBlockEntities.GENERIC_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.TRASH_CAN.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.VENDING_MACHINE.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.BALL_DISPLAY.get(), ::GeneralUseBlockEntityRenderer)
         consumer.register(GenerationsBlockEntities.BALL_LOOT.get(), ::PokeLootRendrer)
@@ -530,16 +530,23 @@ object GenerationsCoreClient {
             .get() /*&& Minecraft.getInstance().options.renderDebugCharts*/ && !Minecraft.getInstance().options.hideGui
     }
 
-    fun renderRareCandy(level: ClientLevel) {
+    fun renderRareCandySolid() {
+        renderRareCandy(RenderStage.SOLID, false)
+    }
+
+    fun renderRareCandyTransparent(clear: Boolean = false) {
+        renderRareCandy(RenderStage.TRANSPARENT, clear)
+    }
+
+    fun renderRareCandy(stage: RenderStage, clear: Boolean) {
         if (GenerationsCore.CONFIG.client.useVanilla) return
 
         var startTime = System.currentTimeMillis()
-        level.profiler.popPush("render_models")
+//        level.profiler.popPush("render_models")
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
 
-        ModelRegistry.worldRareCandy.render(RenderStage.SOLID, true, MinecraftClientGameProvider.getTimePassed())
-        ModelRegistry.worldRareCandy.render(RenderStage.TRANSPARENT, true, MinecraftClientGameProvider.getTimePassed())
+        ModelRegistry.worldRareCandy.render(stage, clear, MinecraftClientGameProvider.getTimePassed())
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms")
     }
 }

@@ -74,15 +74,9 @@ class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock<RksMachineB
     ): BlockEntityTicker<T>? = createTickerHelper(blockEntityType, GenerationsBlockEntities.RKS_MACHINE.get(), RksMachineBlockEntity::serverTick)
 
     protected fun openContainer(level: Level, bpos: BlockPos, player: Player) {
-        val rksMachine = getAssoicatedBlockEntity(level, bpos).orElseThrow {
-            IllegalStateException(
-                "Our named container provider is missing!"
-            )
-        }
-        if (rksMachine != null) {
-            MenuRegistry.openMenu(player as ServerPlayer, rksMachine)
-            player.awardStat(Stats.INTERACT_WITH_FURNACE)
-        }
+        val rksMachine = getAssoicatedBlockEntity(level, bpos) ?: run { throw IllegalStateException("Our named container provider is missing!") }
+        MenuRegistry.openMenu(player as ServerPlayer, rksMachine)
+        player.awardStat(Stats.INTERACT_WITH_FURNACE)
     }
 
     override fun useWithoutItem(

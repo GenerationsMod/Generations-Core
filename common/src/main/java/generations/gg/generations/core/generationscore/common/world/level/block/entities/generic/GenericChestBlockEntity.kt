@@ -40,8 +40,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     private var width: Int = 9,
     private var height: Int = 1,
     private var defaultTranslation: String = "container.chest"
-) :
-    RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST.get(), arg, arg2), LidBlockEntity {
+) : RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST.get(), arg, arg2), LidBlockEntity {
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {
             this@GenericChestBlockEntity.playSound(state, SoundEvents.CHEST_OPEN)
@@ -66,6 +65,8 @@ class GenericChestBlockEntity @JvmOverloads constructor(
 
     private val chestLidController = ChestLidController()
 
+    private var items: NonNullList<ItemStack> = NonNullList.withSize(width * height, ItemStack.EMPTY)
+
     override fun getContainerSize(): Int {
         return width * height
     }
@@ -79,13 +80,13 @@ class GenericChestBlockEntity @JvmOverloads constructor(
         this.width = tag.getInt("width")
         this.height = tag.getInt("height")
         this.defaultTranslation = tag.getString("defaultTranslation")
-//        this.items = NonNullList.withSize(this.containerSize, ItemStack.EMPTY)
-//        if (!this.tryLoadLootTable(tag)) ContainerHelper.loadAllItems(tag, this.items, provider)
+        this.items = NonNullList.withSize(this.containerSize, ItemStack.EMPTY)
+        if (!this.tryLoadLootTable(tag)) ContainerHelper.loadAllItems(tag, this.items, provider)
     }
 
     override fun saveAdditional(tag: CompoundTag, provider: HolderLookup.Provider) {
         super.saveAdditional(tag, provider)
-//        if (!this.trySaveLootTable(tag)) ContainerHelper.saveAllItems(tag, this.items, provider)
+        if (!this.trySaveLootTable(tag)) ContainerHelper.saveAllItems(tag, this.items, provider)
         tag.putInt("width", width)
         tag.putInt("height", height)
         tag.putString("defaultTranslation", defaultTranslation)
@@ -125,11 +126,15 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     }
 
     override fun getItems(): NonNullList<ItemStack> {
-        return NonNullList.create()
+        return items
     }
 
+//    override fun getItem(index: Int): ItemStack {
+//        return if (index in 0 until items.size) items[index] else ItemStack.EMPTY
+//    }
+
     override fun setItems(itemStacks: NonNullList<ItemStack>) {
-//        this.items = itemStacks
+        this.items = itemStacks
     }
 
     override fun getOpenNess(partialTicks: Float): Float {

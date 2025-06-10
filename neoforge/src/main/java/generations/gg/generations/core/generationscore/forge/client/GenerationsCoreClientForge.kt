@@ -11,6 +11,10 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderHighlightedPath
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandy
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandySolid
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandyTransparent
+import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
+import generations.gg.generations.core.generationscore.common.mixin.client.LevelRendererMixin
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
@@ -83,8 +87,14 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
         private fun renderHighlightedPath(event: RenderLevelStageEvent) {
             if (event.stage === RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
                 renderHighlightedPath(event.poseStack, event.renderTick, event.camera)
+                renderRareCandyTransparent(true)
             } else if (event.stage === RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) {
-                renderRareCandy(Minecraft.getInstance().level!!)
+                RenderStateRecord.push()
+
+                renderRareCandySolid()
+                renderRareCandyTransparent()
+
+                RenderStateRecord.pop()
             }
         }
 

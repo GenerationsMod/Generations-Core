@@ -37,7 +37,7 @@ import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
 abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
-    type: RegistrySupplier<MutableBlockEntityType<T>>,
+    type: RegistrySupplier<BlockEntityType<T>>,
     private val blockEntityClass: Class<T>,
     arg: Properties,
     model: ResourceLocation,

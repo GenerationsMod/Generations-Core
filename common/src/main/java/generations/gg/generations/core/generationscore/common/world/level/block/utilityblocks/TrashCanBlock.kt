@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.generateDirectionVoxelShape
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.TrashCanBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
@@ -29,9 +30,9 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class TrashCanBlock(props: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
+class TrashCanBlock(props: Properties) : GenericRotatableModelBlock<TrashCanBlockEntity>(
         props,
-        GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
+        GenerationsBlockEntities.TRASH_CAN,
         model = GenerationsBlockEntityModels.TRASH_CAN
     ) {
     public override fun getShape(

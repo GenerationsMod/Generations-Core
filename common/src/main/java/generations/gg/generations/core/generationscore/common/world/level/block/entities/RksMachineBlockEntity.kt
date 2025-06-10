@@ -52,8 +52,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
 
     private var isProcessing = false
 
-    var inventory: NonNullList<ItemStack> =
-        NonNullList.withSize(
+    var inventory: NonNullList<ItemStack> = NonNullList.withSize(
             9,
             ItemStack.EMPTY
         )

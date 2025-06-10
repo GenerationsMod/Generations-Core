@@ -19,6 +19,7 @@ import gg.generations.rarecandy.shaded.caffeine.cache.RemovalCause
 import net.minecraft.client.Minecraft
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
+import org.joml.Matrix4f
 import java.time.Duration
 import java.time.Instant
 import java.util.concurrent.TimeUnit
@@ -82,7 +83,6 @@ object ModelRegistry {
         CompiledModel.init()
     }
 
-    @JvmStatic
     fun prepForBER(stack: PoseStack, supplier: AngleProvider) {
         stack.translate(0.5f, 0.0f, 0.5f)
         if (supplier is ModelProvidingBlockEntity) {

@@ -11,7 +11,7 @@ data class RareCandyActiveAnimation(private val animation: RareCandyAnimation): 
     override var enduresPrimaryAnimations: Boolean = true
 
     override val duration: Float
-        get() = animation.animation?.animationDuration?.toFloat() ?: 0F
+        get() = animation.animation?.animationDuration?.toFloat() ?: -0F
 
     private var afterAction: (RenderContext, PosableState) -> Unit = { _, _ -> }
 
@@ -37,7 +37,7 @@ data class RareCandyActiveAnimation(private val animation: RareCandyAnimation): 
         headPitch: Float,
         intensity: Float
     ): Boolean {
-        return animation.run(context, state.animationSeconds - startedSeconds, false).also {
+        return animation.run(context, state.animationSeconds - startedSeconds, intensity).also {
             if (!it) {
                 afterAction(context, state)
             }

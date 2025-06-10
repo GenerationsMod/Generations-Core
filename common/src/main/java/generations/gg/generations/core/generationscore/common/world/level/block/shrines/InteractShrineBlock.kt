@@ -26,13 +26,13 @@ import net.minecraft.world.phys.BlockHitResult
 abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<T> {
     protected constructor(
         materialIn: Properties,
-        blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+        blockEntityFunction: RegistrySupplier<BlockEntityType<T>>,
         model: ResourceLocation
     ) : super(materialIn, blockEntityFunction, model)
 
     protected constructor(
         materialIn: Properties,
-        blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+        blockEntityFunction: RegistrySupplier<BlockEntityType<T>>,
         model: ResourceLocation,
         width: Int,
         height: Int,
@@ -104,6 +104,8 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
         }
     }
 
+
+
     protected abstract fun interact(
         level: Level,
         pos: BlockPos,
@@ -117,7 +119,7 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
         if (waitToDeactivateTime() == 0) getAssoicatedBlockEntity(
             level,
             pos
-        ).ifPresent { obj: T -> obj.triggerCountDown() }
+        )?.triggerCountDown()
     }
 
     fun deactivate(level: Level, pos: BlockPos, state: BlockState) {

@@ -49,7 +49,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
     //11: bowl
     //12: log
     //13: out
-    private val handler = SimpleItemStorage(this, GenerationsStorage.ITEM_CONTENTS, 14).let {
+    private val handler = SimpleItemStorage(this, GenerationsStorage.ITEM_CONTENTS, 14).also {
         it.filter(0, CookingPotContainer::isBerryOrMaxMushrooms)
         it.filter(1, CookingPotContainer::isBerryOrMaxMushrooms)
         it.filter(2, CookingPotContainer::isBerryOrMaxMushrooms)
@@ -112,8 +112,6 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         super.loadAdditional(nbt, provider)
         this.isCooking = nbt.getBoolean("isCooking")
         this.cookTime = nbt.getInt("cookTime")
-
-        //        this.handler.deserializeNBT(nbt.getCompound("inventory"));
         if (nbt.contains("customName", 8)) this.setCustomName(nbt.getString("customName"))
     }
 

@@ -7,12 +7,13 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.entity.EntityTypeTest
 import net.minecraft.world.phys.AABB
 
 open class PcBlockEntity<T : PcBlockEntity<T>>(
-    type: MutableBlockEntityType<T>, blockPos: BlockPos, blockState: BlockState,
+    type: BlockEntityType<T>, blockPos: BlockPos, blockState: BlockState,
 ) : ModelProvidingBlockEntity(type, blockPos, blockState), VariantProvider {
     fun <T : PcBlockEntity<T>> togglePCOn(on: Boolean) {
         val pcBlock = blockState.block as GenericRotatableModelBlock<*>

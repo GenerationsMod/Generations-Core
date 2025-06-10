@@ -194,7 +194,6 @@ object GenerationsCore {
             ) && !isUsed(left) && right.isEmpty
         ) {
             output.accept(setEnchanted(left.copy(), true))
-            cost.accept(Int.MAX_VALUE)
             materialCost.accept(0)
         }
     }

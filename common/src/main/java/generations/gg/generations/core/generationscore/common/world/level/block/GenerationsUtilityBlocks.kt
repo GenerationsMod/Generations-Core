@@ -51,9 +51,7 @@ object GenerationsUtilityBlocks {
 
     //PC Blocks
     @JvmField
-    val TABLE_PC: RegistrySupplier<TablePc> = registerBlockItem(
-        "table_pc"
-    ) {
+    val TABLE_PC: RegistrySupplier<TablePc> = registerBlockItem("table_pc") {
         TablePc(
             BlockBehaviour.Properties.of().noOcclusion()
                 .requiresCorrectToolForDrops().strength(2f)
@@ -107,9 +105,7 @@ object GenerationsUtilityBlocks {
         )
     }
 
-    val PC: DyedGroup = registerDyed<ModelProvidingBlockEntity>(
-        "pc"
-    ) { color: DyeColor, dyeColorRegistrySupplierMap: Map<DyeColor, Holder<Block>> ->
+    val PC = registerDyed<ModelProvidingBlockEntity>("pc") { color: DyeColor, dyeColorRegistrySupplierMap: Map<DyeColor, Holder<Block>> ->
         Supplier {
             DyedPcBlock(Properties.of().noOcclusion()
                 .requiresCorrectToolForDrops().strength(2f)
@@ -140,39 +136,39 @@ object GenerationsUtilityBlocks {
     @JvmField val MAGENTA_ELEVATOR: RegistrySupplier<Block> = registerBlockItem("magenta_elevator") { ElevatorBlock() }
     @JvmField val PINK_ELEVATOR: RegistrySupplier<Block> = registerBlockItem("pink_elevator") { ElevatorBlock() }
 
-    @JvmField var BEAST_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("beast", PokeBalls.BEAST_BALL)
-    @JvmField var CHERISH_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("cherish", PokeBalls.CHERISH_BALL)
-    @JvmField var DIVE_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("dive", PokeBalls.DIVE_BALL)
-    @JvmField var DREAM_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("dream", PokeBalls.DREAM_BALL)
-    @JvmField var DUSK_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("dusk", PokeBalls.DUSK_BALL)
-    @JvmField var FAST_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("fast", PokeBalls.FAST_BALL)
-    @JvmField var FRIEND_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("friend", PokeBalls.FRIEND_BALL)
-    @JvmField var GIGATON_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("gigaton", PokeBalls.ANCIENT_GIGATON_BALL)
-    @JvmField var GREAT_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("great", PokeBalls.GREAT_BALL)
-    @JvmField var HEAL_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("heal", PokeBalls.HEAL_BALL)
-    @JvmField var HEAVY_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("heavy", PokeBalls.HEAVY_BALL)
-    @JvmField var JET_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("jet", PokeBalls.ANCIENT_JET_BALL)
-    @JvmField var LEADEN_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("leaden", PokeBalls.ANCIENT_LEADEN_BALL)
-    @JvmField var LEVEL_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("level", PokeBalls.LEVEL_BALL)
-    @JvmField var LOVE_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("love", PokeBalls.LOVE_BALL)
-    @JvmField var LURE_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("lure", PokeBalls.LURE_BALL)
-    @JvmField var LUXURY_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("luxury", PokeBalls.LUXURY_BALL)
-    @JvmField var MASTER_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("master", PokeBalls.MASTER_BALL)
-    @JvmField var MOON_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("moon", PokeBalls.MOON_BALL)
-    @JvmField var NEST_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("nest", PokeBalls.NEST_BALL)
-    @JvmField var NET_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("net", PokeBalls.NET_BALL)
-    @JvmField var ORIGIN_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("origin", PokeBalls.ANCIENT_ORIGIN_BALL)
-    @JvmField var PARK_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("park", PokeBalls.PARK_BALL)
-    @JvmField var POKE_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("poke", PokeBalls.POKE_BALL)
-    @JvmField var PREMIER_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("premier", PokeBalls.PREMIER_BALL)
-    @JvmField var QUICK_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("quick", PokeBalls.QUICK_BALL)
-    @JvmField var REPEAT_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("repeat", PokeBalls.REPEAT_BALL)
-    @JvmField var SAFARI_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("safari", PokeBalls.SAFARI_BALL)
-    @JvmField var SPORT_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("sport", PokeBalls.SPORT_BALL)
-    @JvmField var STRANGE_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("strange", STRANGE_BALL)
-    @JvmField var TIMER_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("timer", PokeBalls.TIMER_BALL)
-    @JvmField var ULTRA_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("ultra", PokeBalls.ULTRA_BALL)
-    @JvmField var WING_BALL_LOOT: RegistrySupplier<BallLootBlock> = registerLoot("wing", PokeBalls.ANCIENT_WING_BALL)
+    @JvmField var BEAST_BALL_LOOT = registerLoot("beast", PokeBalls.BEAST_BALL)
+    @JvmField var CHERISH_BALL_LOOT = registerLoot("cherish", PokeBalls.CHERISH_BALL)
+    @JvmField var DIVE_BALL_LOOT = registerLoot("dive", PokeBalls.DIVE_BALL)
+    @JvmField var DREAM_BALL_LOOT = registerLoot("dream", PokeBalls.DREAM_BALL)
+    @JvmField var DUSK_BALL_LOOT = registerLoot("dusk", PokeBalls.DUSK_BALL)
+    @JvmField var FAST_BALL_LOOT = registerLoot("fast", PokeBalls.FAST_BALL)
+    @JvmField var FRIEND_BALL_LOOT = registerLoot("friend", PokeBalls.FRIEND_BALL)
+    @JvmField var GIGATON_BALL_LOOT = registerLoot("gigaton", PokeBalls.ANCIENT_GIGATON_BALL)
+    @JvmField var GREAT_BALL_LOOT = registerLoot("great", PokeBalls.GREAT_BALL)
+    @JvmField var HEAL_BALL_LOOT = registerLoot("heal", PokeBalls.HEAL_BALL)
+    @JvmField var HEAVY_BALL_LOOT = registerLoot("heavy", PokeBalls.HEAVY_BALL)
+    @JvmField var JET_BALL_LOOT = registerLoot("jet", PokeBalls.ANCIENT_JET_BALL)
+    @JvmField var LEADEN_BALL_LOOT = registerLoot("leaden", PokeBalls.ANCIENT_LEADEN_BALL)
+    @JvmField var LEVEL_BALL_LOOT = registerLoot("level", PokeBalls.LEVEL_BALL)
+    @JvmField var LOVE_BALL_LOOT = registerLoot("love", PokeBalls.LOVE_BALL)
+    @JvmField var LURE_BALL_LOOT = registerLoot("lure", PokeBalls.LURE_BALL)
+    @JvmField var LUXURY_BALL_LOOT = registerLoot("luxury", PokeBalls.LUXURY_BALL)
+    @JvmField var MASTER_BALL_LOOT = registerLoot("master", PokeBalls.MASTER_BALL)
+    @JvmField var MOON_BALL_LOOT = registerLoot("moon", PokeBalls.MOON_BALL)
+    @JvmField var NEST_BALL_LOOT = registerLoot("nest", PokeBalls.NEST_BALL)
+    @JvmField var NET_BALL_LOOT = registerLoot("net", PokeBalls.NET_BALL)
+    @JvmField var ORIGIN_BALL_LOOT = registerLoot("origin", PokeBalls.ANCIENT_ORIGIN_BALL)
+    @JvmField var PARK_BALL_LOOT = registerLoot("park", PokeBalls.PARK_BALL)
+    @JvmField var POKE_BALL_LOOT = registerLoot("poke", PokeBalls.POKE_BALL)
+    @JvmField var PREMIER_BALL_LOOT = registerLoot("premier", PokeBalls.PREMIER_BALL)
+    @JvmField var QUICK_BALL_LOOT = registerLoot("quick", PokeBalls.QUICK_BALL)
+    @JvmField var REPEAT_BALL_LOOT = registerLoot("repeat", PokeBalls.REPEAT_BALL)
+    @JvmField var SAFARI_BALL_LOOT = registerLoot("safari", PokeBalls.SAFARI_BALL)
+    @JvmField var SPORT_BALL_LOOT = registerLoot("sport", PokeBalls.SPORT_BALL)
+    @JvmField var STRANGE_BALL_LOOT = registerLoot("strange", STRANGE_BALL)
+    @JvmField var TIMER_BALL_LOOT = registerLoot("timer", PokeBalls.TIMER_BALL)
+    @JvmField var ULTRA_BALL_LOOT = registerLoot("ultra", PokeBalls.ULTRA_BALL)
+    @JvmField var WING_BALL_LOOT = registerLoot("wing", PokeBalls.ANCIENT_WING_BALL)
 
     private fun registerLoot(name: String, ball: PokeBall): RegistrySupplier<BallLootBlock> {
         val properties = Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion().noLootTable()
@@ -184,27 +180,21 @@ object GenerationsUtilityBlocks {
         return block
     }
 
-    //	public static final RegistrySupplier<BreederBlock> BREEDER = registerBlock("breeder", () -> new BreederBlock(BlockBehaviour.Properties.of().destroyTime(1.0f).sound(SoundType.WOOD).ignitedByLava()));
     @JvmField
-    val CHARGE_STONE_FURNACE: RegistrySupplier<GenericFurnaceBlock> = registerBlockItem(
-        "charge_stone_furnace"
-    ) { GenericFurnaceBlock() }
+    val CHARGE_STONE_FURNACE: RegistrySupplier<GenericFurnaceBlock> = registerBlockItem("charge_stone_furnace", ::GenericFurnaceBlock)
+
     @JvmField
-    val CHARGE_STONE_BLAST_FURNACE: RegistrySupplier<GenericBlastFurnaceBlock> = registerBlockItem(
-        "charge_stone_blast_furnace"
-    ) { GenericBlastFurnaceBlock() }
+    val CHARGE_STONE_BLAST_FURNACE: RegistrySupplier<GenericBlastFurnaceBlock> = registerBlockItem("charge_stone_blast_furnace", ::GenericBlastFurnaceBlock)
+
     @JvmField
-    val CHARGE_STONE_SMOKER: RegistrySupplier<GenericSmokerBlock> = registerBlockItem(
-        "charge_stone_smoker"
-    ) { GenericSmokerBlock() }
+    val CHARGE_STONE_SMOKER: RegistrySupplier<GenericSmokerBlock> = registerBlockItem("charge_stone_smoker", ::GenericSmokerBlock)
+
     @JvmField
-    val VOLCANIC_STONE_FURNACE: RegistrySupplier<GenericFurnaceBlock> = registerBlockItem(
-        "volcanic_stone_furnace"
-    ) { GenericFurnaceBlock() }
+    val VOLCANIC_STONE_FURNACE: RegistrySupplier<GenericFurnaceBlock> = registerBlockItem("volcanic_stone_furnace", ::GenericFurnaceBlock)
+
     @JvmField
-    val VOLCANIC_STONE_BLAST_FURNACE: RegistrySupplier<GenericBlastFurnaceBlock> = registerBlockItem(
-        "volcanic_stone_blast_furnace"
-    ) { GenericBlastFurnaceBlock() }
+    val VOLCANIC_STONE_BLAST_FURNACE: RegistrySupplier<GenericBlastFurnaceBlock> = registerBlockItem("volcanic_stone_blast_furnace", ::GenericBlastFurnaceBlock)
+
     @JvmField
     val VOLCANIC_STONE_SMOKER: RegistrySupplier<GenericSmokerBlock> = registerBlockItem(
         "volcanic_stone_smoker"

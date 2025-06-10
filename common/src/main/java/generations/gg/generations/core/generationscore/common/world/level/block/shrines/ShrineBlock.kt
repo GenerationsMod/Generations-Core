@@ -5,10 +5,11 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.entity.BlockEntityType
 
 abstract class ShrineBlock<T : ShrineBlockEntity>(
     properties: Properties,
-    blockEntityFunction: RegistrySupplier<MutableBlockEntityType<T>>,
+    blockEntityFunction: RegistrySupplier<BlockEntityType<T>>,
     model: ResourceLocation? = null,
     width: Int = 0,
     height: Int = 0,

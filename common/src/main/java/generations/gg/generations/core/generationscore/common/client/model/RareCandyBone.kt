@@ -11,6 +11,7 @@ import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.FormData
 import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.util.asResource
+import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
@@ -65,16 +66,15 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         packedOverlay: Int,
         color: Int
     ) {
+
+        val instance = context.request(RenderContext.Companion.POSABLE_STATE).instanceOrNull<CobblemonInstanceProvider>()?.instance
+
+        if(instance != null) {
+            let {  }
+        }
+
         val model = objectSupplier.invoke()
         if (model?.renderObject == null) return
-
-        var instance = context.request(Pipelines.INSTANCE)
-        if (instance == null) {
-            val entity = context.request(RenderContext.Companion.POSABLE_STATE)
-            if (entity is CobblemonInstanceProvider) {
-                instance = entity.instance
-            }
-        }
 
         var scale = model.renderObject!!.scale // / context.requires(RenderContext.SCALE)
         if (instance == null) {
@@ -86,13 +86,12 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             instance.light = packedLight
             instance.teraActive = context.request(RenderContext.ASPECTS)?.contains("terastal_active") ?: false
 
-//            System.out.println(context.request(RenderContext.ASPECTS))
-
 //            instance.tint.set(r, g, b) TODO: convert color int into its float components for tint.
             val variant = getVariant(context)
             if (variant != null) {
                 instance.setVariant(variant)
             }
+
             stack.pushPose()
             stack.mulPose(ROTATION_CORRECTION)
             stack.scale(-scale, -scale, scale)
@@ -118,7 +117,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     override fun get(): Bone = this
 
     companion object {
-                val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
+        val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
         private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
         private val temp = Vector3f()
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)

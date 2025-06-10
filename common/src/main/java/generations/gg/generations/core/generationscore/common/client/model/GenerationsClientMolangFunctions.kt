@@ -1,8 +1,10 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
 import com.bedrockk.molang.runtime.MoParams
+import com.bedrockk.molang.runtime.value.MoValue
 import com.cobblemon.mod.common.api.molang.ObjectValue
 import com.cobblemon.mod.common.client.ClientMoLangFunctions
+import com.cobblemon.mod.common.client.render.models.blockbench.ExcludedLabels
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableModel
 import com.cobblemon.mod.common.client.render.models.blockbench.animation.PrimaryAnimation
 import com.cobblemon.mod.common.client.render.models.blockbench.wavefunction.WaveFunction
@@ -37,7 +39,7 @@ object GenerationsClientMolangFunctions {
             val anim = pkStateful(group, animation)
 
             val excludedLabels = mutableSetOf<String>()
-            val curve: WaveFunction = { t ->
+            var curve: WaveFunction = /*{ t ->
                 if (t < 0.1) {
                     t * 10
                 } else if (t < 0.9) {
@@ -45,9 +47,19 @@ object GenerationsClientMolangFunctions {
                 } else {
                     1F
                 }
-            }
-
+            }*/ { 1f } //TODO: revert once we get around to adding proper curve input to the resource packs.
             for (index in 2 until params.params.size) {
+                val param = params.get<MoValue>(index)
+                if (param is ObjectValue<*>) {
+                    val obj = param.obj
+                    if (obj is ExcludedLabels) {
+                        excludedLabels.addAll(obj.labels)
+                    } else {
+                        curve = param.obj as WaveFunction
+                    }
+                    continue
+                }
+
                 val label = params.getString(index) ?: continue
                 excludedLabels.add(label)
             }

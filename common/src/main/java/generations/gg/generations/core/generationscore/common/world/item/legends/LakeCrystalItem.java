@@ -36,7 +36,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand usedHand) {
-        if (!level.isClientSide() && !GenerationsCore.CONFIG.caught.capped((ServerPlayer) player, speciesKey)) {
+        if (!level.isClientSide() && GenerationsCore.CONFIG.caught.capped((ServerPlayer) player, speciesKey)) {
             ItemStack stack = player.getItemInHand(usedHand);
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= stack.getMaxDamage()) {

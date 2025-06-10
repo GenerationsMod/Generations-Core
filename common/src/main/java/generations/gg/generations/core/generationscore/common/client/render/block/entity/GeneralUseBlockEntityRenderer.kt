@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.common.client.render.block.entity
 
+import com.cobblemon.mod.common.util.set
+import com.cobblemon.mod.common.util.toVec3d
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.FrameProvider
@@ -12,10 +14,14 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import gg.generations.rarecandy.renderer.animation.AnimationInstance
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance
+import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.resources.ResourceLocation
+import org.joml.Matrix4f
+import org.joml.Quaternionf
+import org.joml.Vector3f
 
 open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: BlockEntityRendererProvider.Context) :
     BlockEntityRenderer<T> {
@@ -72,7 +78,6 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
             }
 
             instance.transformationMatrix().set(stack.last().pose())
-//            instance.viewMatrix().set(RenderSystem.getModelViewMatrix())
 
             (instance as BlockObjectInstance).light = packedLight
             if (blockEntity is TintProvider) instance.tint = blockEntity.tint
@@ -114,7 +119,11 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
             }
         }
 
-        primeInstance.transformationMatrix().set(stack.last().pose())
+        var offset = blockEntity.blockPos.toVec3d().subtract(Minecraft.getInstance().cameraEntity!!.position())
+
+        primeInstance.transformationMatrix().set(stack.last().pose()).translate(offset.x.toFloat(),
+            offset.y.toFloat(), offset.z.toFloat()
+        )
         (primeInstance as BlockLightValueProvider).light = packedLight
         if (blockEntity is TintProvider) (primeInstance as BlockAnimatedObjectInstance).tint = blockEntity.tint
 

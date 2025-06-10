@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
+import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericBlastFurnaceBlockEntity
 import net.minecraft.core.BlockPos
@@ -11,8 +12,10 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 
-class GenericBlastFurnaceBlock : BlastFurnaceBlock(Properties.ofFullCopy(Blocks.BLAST_FURNACE)) {
-    override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity? {
+class GenericBlastFurnaceBlock(properties: Properties = Properties.ofFullCopy(Blocks.BLAST_FURNACE)) : BlastFurnaceBlock(properties) {
+    override fun codec(): MapCodec<BlastFurnaceBlock> = CODEC
+
+    override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity {
         return GenericBlastFurnaceBlockEntity(pos, state)
     }
 
@@ -22,5 +25,9 @@ class GenericBlastFurnaceBlock : BlastFurnaceBlock(Properties.ofFullCopy(Blocks.
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
         return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_BLAST_FURNACE.get())
+    }
+
+    companion object {
+        val CODEC = simpleCodec<BlastFurnaceBlock>(::GenericBlastFurnaceBlock)
     }
 }

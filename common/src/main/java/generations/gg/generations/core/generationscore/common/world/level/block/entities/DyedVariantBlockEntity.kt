@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.common.client.model.Model
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.world.item.DyeColor
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import org.joml.Vector3f
 
@@ -14,7 +15,7 @@ fun Int.toVec3f(): Vector3f = Vector3f(
 )
 
 abstract class DyedVariantBlockEntity<T : DyedVariantBlockEntity<T>>(
-    arg: MutableBlockEntityType<T>,
+    arg: BlockEntityType<T>,
     arg2: BlockPos,
     arg3: BlockState,
 ) : ModelProvidingBlockEntity(arg, arg2, arg3), TintProvider {

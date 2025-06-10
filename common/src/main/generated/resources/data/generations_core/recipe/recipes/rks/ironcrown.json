@@ -6,7 +6,7 @@
   "pattern": [
     {
       "type": "generations_core:time_capsule",
-      "key": "cobblemon:cobblemon",
+      "key": "cobblemon:cobalion",
       "strict": false
     },
     {

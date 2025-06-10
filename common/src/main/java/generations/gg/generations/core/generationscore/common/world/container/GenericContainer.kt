@@ -1,10 +1,12 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
+import dev.architectury.registry.menu.ExtendedMenuProvider
 import dev.architectury.registry.menu.MenuRegistry
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import earth.terrarium.common_storage_lib.storage.base.UpdateManager
+import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.MenuProvider
@@ -14,19 +16,26 @@ import net.minecraft.world.inventory.AbstractContainerMenu
 
 object GenericContainer {
 
-    fun <T> openScreen(storage: T, width: Int, height: Int, title: Component, player: Player, lockedSlot: Int = -1) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
+    fun <T> openScreen(storage: T, width: Int, height: Int, title: Component, player: Player, lock: Int = -1) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
+
         if (!player.isLocalPlayer) MenuRegistry.openExtendedMenu(
             player as ServerPlayer,
-            object : MenuProvider {
+            object : MenuProvider, ExtendedMenuProvider {
                 override fun createMenu(id: Int, inventory: Inventory, player: Player): AbstractContainerMenu {
-                    return GenericChestContainer(id, inventory, storage, width, height, lockedSlot)
+                    return GenericChestContainer(id, inventory, storage, width, height, lock)
                 }
 
                 override fun getDisplayName(): Component {
                     return title
                 }
+
+                override fun saveExtraData(buffer: FriendlyByteBuf) {
+                    buffer.writeVarInt(width)
+                    buffer.writeVarInt(height)
+                    buffer.writeVarInt(lock)
+                }
             }
-        ) { byteBuf -> byteBuf.writeVarInt(width).writeVarInt(height).writeVarInt(lockedSlot) }
+        )
     }
 
 //    override fun createMenu(i: Int, arg: Inventory, arg2: Player): AbstractContainerMenu? {

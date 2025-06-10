@@ -17,8 +17,7 @@ import net.minecraft.resources.ResourceLocation
 import java.util.*
 import java.util.stream.Collectors
 
-@JvmRecord
-data class SpeciesKey(@JvmField val species: ResourceLocation, @JvmField val aspects: Set<String> = emptySet()) {
+data class SpeciesKey(val species: ResourceLocation, val aspects: Set<String> = emptySet()) {
     @JvmOverloads
     constructor(species: String, aspects: Set<String> = emptySet()) : this(
         ResourceLocation.parse(species),

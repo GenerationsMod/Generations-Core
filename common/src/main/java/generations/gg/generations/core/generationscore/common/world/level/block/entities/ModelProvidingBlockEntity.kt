@@ -39,8 +39,8 @@ abstract class ModelProvidingBlockEntity(
     override fun getVariant(): String? = blockState.block.instanceOrNull<VariantProvider>()?.variant
 
     fun generateInstance(): ObjectInstance {
-        return if (isAnimated) BlockAnimatedObjectInstance(Matrix4f(), Matrix4f(), null) else BlockObjectInstance(
-            Matrix4f(), Matrix4f(), null
+        return if (isAnimated) BlockAnimatedObjectInstance(Matrix4f(), null, null) else BlockObjectInstance(
+            Matrix4f(), null
         )
     }
 
