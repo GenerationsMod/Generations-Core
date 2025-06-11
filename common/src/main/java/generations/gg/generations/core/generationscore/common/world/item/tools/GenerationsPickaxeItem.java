@@ -18,8 +18,8 @@ import java.util.Set;
 public class GenerationsPickaxeItem extends PickaxeItem implements ToolEffectHolder<GenerationsPickaxeItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsPickaxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, /*(int) attackDamage, attackSpeed,*/ properties); //TODO: Readd values if needed
+    public GenerationsPickaxeItem(Tier tier, Properties properties) {
+        super(tier, properties);
     }
 
     public GenerationsPickaxeItem addToolEffects(ToolEffect... toolEffect) {

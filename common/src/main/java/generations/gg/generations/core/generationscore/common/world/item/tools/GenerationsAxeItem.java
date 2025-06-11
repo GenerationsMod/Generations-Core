@@ -18,8 +18,8 @@ import java.util.Set;
 public class GenerationsAxeItem extends AxeItem implements ToolEffectHolder<GenerationsAxeItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsAxeItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, /*attackDamage, attackSpeed,*/ properties); //TODO: Readd values if needed
+    public GenerationsAxeItem(Tier tier, Properties properties) {
+        super(tier, properties);
     }
 
     public GenerationsAxeItem addToolEffects(ToolEffect... toolEffect) {
@@ -42,6 +42,7 @@ public class GenerationsAxeItem extends AxeItem implements ToolEffectHolder<Gene
     @Override
     public @NotNull InteractionResult useOn(@NotNull UseOnContext context) {
         boolean result = false;
+
         for (ToolEffect toolEffect : toolEffects)
             result = result || toolEffect.useOn(context);
 

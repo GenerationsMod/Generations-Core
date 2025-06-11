@@ -23,8 +23,8 @@ data class EnchantmentArmorEffect(val enchantment: ResourceKey<Enchantment>, val
         player: Player,
         generationsArmorItem: GenerationsArmorItem
     ) {
+        if (world.isClientSide()) return
         val holder = world.enchantmentRegistry.getHolder(enchantment).getOrNull() ?: return
-        if (world.isClientSide) return
         if (!ArmorTickEffect.isWearingFullSet(player, generationsArmorItem.material)) {
             itemStack.removeEnchantment(holder, level)
             return

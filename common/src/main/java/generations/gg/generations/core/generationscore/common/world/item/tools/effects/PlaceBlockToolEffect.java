@@ -20,8 +20,9 @@ public record PlaceBlockToolEffect(Block block, int durabilityCost) implements T
 
     @Override
     public boolean useOn(UseOnContext context) {
+        if (context.getLevel().isClientSide()) return false;
         BlockPos blockPosRelative = context.getClickedPos().relative(context.getClickedFace());
-        if (context.getLevel().isClientSide() || !context.getLevel().getBlockState(blockPosRelative).isAir()) return false;
+        if (!context.getLevel().getBlockState(blockPosRelative).isAir()) return false;
         context.getLevel().setBlockAndUpdate(blockPosRelative, block.defaultBlockState());
         context.getItemInHand().hurtAndBreak(durabilityCost, (ServerLevel) context.getLevel(), (ServerPlayer) context.getPlayer(),(owner) -> {} /*owner.broadcastBreakEvent(context.getHand()*/);
         return true;

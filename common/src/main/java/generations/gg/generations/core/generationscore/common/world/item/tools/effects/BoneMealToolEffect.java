@@ -23,17 +23,21 @@ public record BoneMealToolEffect(int durabilityCost) implements ToolEffect {
 
     @Override
     public boolean useOn(UseOnContext context) {
+        if (context.getLevel().isClientSide()) return false;
         BlockPos blockPos = context.getClickedPos();
         BlockPos blockPosRelative = blockPos.relative(context.getClickedFace());
+
         if (!BoneMealItem.growCrop(new ItemStack(Items.BONE_MEAL), context.getLevel(), blockPos/*, Objects.requireNonNull(context.getPlayer())*/)) {
             BlockState blockstate = context.getLevel().getBlockState(blockPos);
             if (!blockstate.isFaceSturdy(context.getLevel(), blockPos, context.getClickedFace())) return false;
-            if (!BoneMealItem.growWaterPlant(context.getItemInHand().copy(), context.getLevel(), blockPosRelative, context.getClickedFace())) return false;
+            if (!BoneMealItem.growWaterPlant(context.getItemInHand().copy(), context.getLevel(), blockPosRelative, context.getClickedFace()))
+                return false;
         }
-        if (!context.getLevel().isClientSide())
-            context.getLevel().levelEvent(1505, blockPosRelative, 0);
+        context.getLevel().levelEvent(1505, blockPosRelative, 0);
 
-        context.getItemInHand().hurtAndBreak(durabilityCost, (ServerLevel) context.getLevel(), (ServerPlayer) Objects.requireNonNull(context.getPlayer()), (owner) -> {} /*owner.broadcastBreakEvent(context.getHand())*/);
+        context.getItemInHand().hurtAndBreak(durabilityCost, (ServerLevel) context.getLevel(), (ServerPlayer) Objects.requireNonNull(context.getPlayer()), (owner) -> {
+        } /*owner.broadcastBreakEvent(context.getHand())*/);
         return true;
+
     }
 }
