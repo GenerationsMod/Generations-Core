@@ -363,8 +363,8 @@ const Abilities = {
         return;
       if (source.abilityState.battleBondTriggered)
         return;
-      if (source.species.id === "greninja" && source.hp && !source.transformed && source.side.foePokemonLeft()) {
-        source.formeChange("Greninja-Ash", this.effect, false, "[msg]");
+      if (source.species.id === "greninjabond" && source.hp && !source.transformed && source.side.foePokemonLeft()) {
+        source.formeChange("Greninja-Ash", this.effect, true, "[msg]");
         source.abilityState.battleBondTriggered = true;
       }
     },

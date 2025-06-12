@@ -43,7 +43,6 @@ public class PokemonClientDelegateMixin {
             if (uuid == null) return;
 
             if (isTera && !TeraStateTracker.hasPlayed(uuid)) {
-                TeraStateTracker.markPlayed(uuid);
                 TeraVisualEffectHandler.playTeraAmbient(currentEntity);
 
                 Minecraft.getInstance().execute(() -> {
@@ -52,6 +51,7 @@ public class PokemonClientDelegateMixin {
                             Thread.sleep(2000);
                         } catch (InterruptedException ignored) {}
                         Minecraft.getInstance().execute(() -> {
+                            TeraStateTracker.markPlayed(uuid);
                             pokemon.setForcedAspects(currentAspects);
                             pokemon.updateForm();
                             currentEntity.refreshDimensions();

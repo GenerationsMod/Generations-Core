@@ -1,14 +1,22 @@
 package generations.gg.generations.core.generationscore.common.battle
 
+import com.cobblemon.mod.common.CobblemonNetwork
 import com.cobblemon.mod.common.api.abilities.Abilities
 import com.cobblemon.mod.common.api.abilities.Ability
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
+import com.cobblemon.mod.common.api.battles.model.actor.BattleActor
 import com.cobblemon.mod.common.api.events.battles.instruction.TerastallizationEvent
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
+import com.cobblemon.mod.common.net.messages.client.battle.BattleInitializePacket
+import com.cobblemon.mod.common.net.messages.client.battle.BattleTransformPokemonPacket
 import com.cobblemon.mod.common.pokemon.Pokemon
+import com.cobblemon.mod.common.util.server
+import java.util.UUID
+
+import net.minecraft.server.level.ServerPlayer
 
 object GenerationsInstructionProcessor {
 
@@ -36,7 +44,7 @@ object GenerationsInstructionProcessor {
         }
 
         var pair: Pair<String, Any> = when(name) {
-            "ash" -> "ash" to true
+//            "ash" -> "ash" to true
             "mega" -> "mega" to true
             "mega-x" -> "mega_x" to true
             "mega-y" -> "mega_y" to true
@@ -70,8 +78,24 @@ object GenerationsInstructionProcessor {
     fun processTerastallization(terastallizationEvent: TerastallizationEvent) {
         val battle = terastallizationEvent.battle
         val teraCheck = FlagSpeciesFeature("terastal_active", true)
+        val pokemon = terastallizationEvent.pokemon
 
         terastallizationEvent.pokemon.effectedPokemon.applyBattleFeature(teraCheck)
+
+        val active = battle.activePokemon.find {
+            it.battlePokemon?.uuid == pokemon.uuid || it.battlePokemon?.effectedPokemon?.uuid == pokemon.uuid
+        }
+        val pnx = active?.getPNX()
+        val updated = pokemon
+        if (pnx != null) {
+            (battle.playerUUIDs + battle.spectators).forEach { viewer ->
+                val isAlly = battle.isAllied(viewer, pokemon.actor)
+                println("UUID: " + viewer)
+                val packet = BattleTransformPokemonPacket(pnx, updated, isAlly)
+                getPlayerFromUUID(viewer)?.let { CobblemonNetwork.sendPacketToPlayer(it, packet) }
+            }
+        }
+
         battle.dispatchWaitingToFront(2.5f) { Unit }
     }
 
@@ -158,4 +182,13 @@ private fun Pokemon.restoreAbility(tempAbility: Ability) {
             this.updateAbility(ability)
         }
     }
+}
+
+fun PokemonBattle.isAllied(uuid: UUID, actor: BattleActor?): Boolean {
+    if (actor == null) return false
+    return actors.any { it != actor && it.getPlayerUUIDs().contains(uuid) && it.getSide() == actor.getSide() }
+}
+
+fun getPlayerFromUUID(uuid: UUID): ServerPlayer? {
+    return server()?.playerList?.getPlayer(uuid)
 }

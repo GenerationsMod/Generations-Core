@@ -3,10 +3,10 @@ package generations.gg.generations.core.generationscore.common.client
 import com.cobblemon.mod.common.api.gui.blitk
 import com.cobblemon.mod.common.api.gui.drawPosablePortrait
 import com.cobblemon.mod.common.api.pokedex.PokedexEntryProgress
+import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.text.bold
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.api.types.tera.TeraType
-import com.cobblemon.mod.common.api.types.tera.TeraTypes
 import com.cobblemon.mod.common.client.CobblemonClient
 import com.cobblemon.mod.common.client.CobblemonResources
 import com.cobblemon.mod.common.client.battle.ActiveClientBattlePokemon
@@ -58,6 +58,7 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
 import generations.gg.generations.core.generationscore.common.client.screen.TeraTypeIcon
+import generations.gg.generations.core.generationscore.common.client.render.tera.TeraStateTracker
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.renderer.LightTexture
@@ -122,7 +123,7 @@ object BattleOverlayProxy {
             level = battlePokemon.level,
             displayName = battlePokemon.displayName,
             gender = battlePokemon.gender,
-            teraType = battlePokemon.properties.teraType?.let { TeraTypes.get(it) },
+            teraType = if (battlePokemon.state.currentAspects.contains("terastal_active")) truePokemon?.teraType else null,
             status = battlePokemon.status,
             state = battlePokemon.state,
             colour = Triple(r, g, b),
@@ -172,8 +173,8 @@ object BattleOverlayProxy {
         val tileWidth = if (isCompact) COMPACT_TILE_WIDTH else TILE_WIDTH
         val portraitOffsetX = if (isCompact) COMPACT_PORTRAIT_OFFSET_X else PORTRAIT_OFFSET_X
         val portraitOffsetY = if (isCompact) COMPACT_PORTRAIT_OFFSET_Y else PORTRAIT_OFFSET_Y
-        val teraXOffset = if(isCompact) 26 else 38
-        val teraYOffset = if(isCompact) 22 else 28
+        val teraXOffset = if(isCompact) 82 else 94
+        val teraYOffset = y + if(isCompact) 5 else 7
         var teraDiameter = if(isCompact) 9 else 18
 
         val portraitDiameter = if (isCompact) COMPACT_PORTRAIT_DIAMETER else PORTRAIT_DIAMETER
@@ -410,7 +411,7 @@ object BattleOverlayProxy {
         }
 
         TeraTypeIcon(
-            teraYOffset, teraStartX, teraType, small = isCompact, opacity = opacity
+            teraStartX, teraYOffset, teraType, small = true, opacity = opacity
 
         ).render(context)
     }
