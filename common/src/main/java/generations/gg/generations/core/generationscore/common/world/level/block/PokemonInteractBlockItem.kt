@@ -21,6 +21,8 @@ open class PokemonInteractBlockItem(block: Block, properties: Item.Properties, v
         feature.enabled = !feature.enabled
         feature.apply(entity)
         player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
+
+        return true
     }
 
 }
