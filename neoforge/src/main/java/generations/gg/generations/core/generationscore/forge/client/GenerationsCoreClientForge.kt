@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.client
 
+import com.mojang.blaze3d.systems.RenderSystem
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
@@ -13,6 +14,7 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandy
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandySolid
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandyTransparent
+import generations.gg.generations.core.generationscore.common.client.MatrixCache
 import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
 import generations.gg.generations.core.generationscore.common.mixin.client.LevelRendererMixin
 import net.minecraft.client.DeltaTracker
@@ -85,16 +87,33 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
 
     companion object {
         private fun renderHighlightedPath(event: RenderLevelStageEvent) {
-            if (event.stage === RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
-                renderHighlightedPath(event.poseStack, event.renderTick, event.camera)
-                renderRareCandyTransparent(true)
-            } else if (event.stage === RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) {
-                RenderStateRecord.push()
+            when (event.stage) {
+                RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS -> {
+                    renderHighlightedPath(
+                        event.poseStack,
+                        event.partialTick.getGameTimeDeltaPartialTick(false).toInt(),
+                        event.camera
+                    )
 
-                renderRareCandySolid()
-                renderRareCandyTransparent()
+                    RenderStateRecord.push()
+                    RenderSystem.enableDepthTest()
+                    RenderSystem.defaultBlendFunc()
+                    RenderSystem.enableBlend()
+                    renderRareCandyTransparent(true)
+                    RenderStateRecord.pop()
+                }
 
-                RenderStateRecord.pop()
+                RenderLevelStageEvent.Stage.AFTER_LEVEL -> {
+                    MatrixCache.projectionMatrix = event.projectionMatrix
+                    MatrixCache.viewMatrix = event.modelViewMatrix
+
+                    RenderStateRecord.push()
+                    renderRareCandySolid()
+                    renderRareCandyTransparent()
+                    RenderStateRecord.pop()
+                }
+
+                else -> {}
             }
         }
 
