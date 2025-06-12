@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.client
 
+import com.mojang.blaze3d.systems.RenderSystem
+import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
@@ -13,8 +15,12 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandy
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandySolid
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandyTransparent
+import generations.gg.generations.core.generationscore.common.client.MatrixCache
 import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
+import generations.gg.generations.core.generationscore.common.client.screen.container.*
 import generations.gg.generations.core.generationscore.common.mixin.client.LevelRendererMixin
+import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers
+import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
@@ -33,6 +39,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent
 import net.neoforged.neoforge.client.event.RenderLevelStageEvent
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers
 import net.neoforged.neoforge.common.NeoForge
@@ -63,6 +70,18 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
                 override fun <T : Entity> register(type: EntityType<T>, provider: EntityRendererProvider<T>) = event.registerEntityRenderer(type, provider)
             })
         })
+
+        eventBus.addListener<RegisterMenuScreensEvent>({
+            it.register(GenerationsContainers.COOKING_POT.get(), ::CookingPotScreen)
+            it.register(GenerationsContainers.GENERIC.get(), ::GenericChestScreen)
+//        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON.get(), GenericChestScreen::new);
+//        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED.get(), GenericChestScreen::new);
+            it.register(GenerationsContainers.MACHINE_BLOCK.get(), ::MachineBlockScreen)
+            it.register(GenerationsContainers.MELODY_FLUTE.get(), ::MelodyFluteScreen)
+            it.register(GenerationsContainers.TRASHCAN.get(), ::TrashCanScreen)
+            it.register(GenerationsContainers.RKS_MACHINE.get(), ::RksMachineScreen)
+        })
+
         eventBus.addListener({ event: RegisterLayerDefinitions ->
             registerLayerDefinitions({ layerLocation, supplier -> event.registerLayerDefinition(layerLocation, supplier) })
         })
@@ -85,16 +104,33 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
 
     companion object {
         private fun renderHighlightedPath(event: RenderLevelStageEvent) {
-            if (event.stage === RenderLevelStageEvent.Stage.AFTER_PARTICLES) {
-                renderHighlightedPath(event.poseStack, event.renderTick, event.camera)
-                renderRareCandyTransparent(true)
-            } else if (event.stage === RenderLevelStageEvent.Stage.AFTER_BLOCK_ENTITIES) {
-                RenderStateRecord.push()
+            when (event.stage) {
+                RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS -> {
+                    renderHighlightedPath(
+                        event.poseStack,
+                        event.partialTick.getGameTimeDeltaPartialTick(false).toInt(),
+                        event.camera
+                    )
 
-                renderRareCandySolid()
-                renderRareCandyTransparent()
+                    MatrixCache.projectionMatrix = event.projectionMatrix
+                    MatrixCache.viewMatrix = event.modelViewMatrix
 
-                RenderStateRecord.pop()
+                    RenderStateRecord.push()
+                    RenderSystem.enableDepthTest()
+                    RenderSystem.defaultBlendFunc()
+                    RenderSystem.enableBlend()
+                    renderRareCandyTransparent(true)
+                    RenderStateRecord.pop()
+                }
+
+                RenderLevelStageEvent.Stage.AFTER_LEVEL -> {
+                    RenderStateRecord.push()
+                    renderRareCandySolid()
+                    renderRareCandyTransparent()
+                    RenderStateRecord.pop()
+                }
+
+                else -> {}
             }
         }
 
