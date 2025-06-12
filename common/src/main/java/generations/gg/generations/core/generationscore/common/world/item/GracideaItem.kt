@@ -21,12 +21,16 @@ class GracideaItem(properties: Properties) : Item(properties), PokemonInteractio
             val provider = entity.pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>("sky") ?: return false
             val feature = provider.getOrCreate(entity.pokemon)
 
-            if (!feature.enabled && entity.level().isDay) {
-                feature.enabled = true
-                feature.apply(entity)
-                player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
-                return true
-            }
+            val state = when {
+                !feature.enabled && entity.level().isDay -> true
+                feature.enabled -> false
+                else -> null
+            } ?: return false
+
+            feature.enabled = state
+            feature.apply(entity)
+            player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
+            return true
         }
 
         return false
