@@ -2,8 +2,11 @@ package generations.gg.generations.core.generationscore.common.client.render
 
 import com.mojang.blaze3d.platform.GlStateManager
 import com.mojang.blaze3d.systems.RenderSystem
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.read
 
 object RenderStateRecord {
+    private var readOnly = false
+
     var blendEnabled: Boolean = false
     var srcRgb: Int = 0
     var dstRgb: Int = 0
@@ -16,24 +19,29 @@ object RenderStateRecord {
 
     var cullEnabled: Boolean = false
 
+    fun isActive() = readOnly
+
     fun push() {
+        readOnly = true;
         // Blend
-        blendEnabled = GlStateManager.BLEND.mode.enabled
-        srcRgb = GlStateManager.BLEND.srcRgb
-        dstRgb = GlStateManager.BLEND.dstRgb
-        srcAlpha = GlStateManager.BLEND.srcAlpha
-        dstAlpha = GlStateManager.BLEND.dstAlpha
-
-        // Depth
-        depthTestEnabled = GlStateManager.DEPTH.mode.enabled
-        depthMask = GlStateManager.DEPTH.mask
-        depthFunc = GlStateManager.DEPTH.func
-
-        // Cull
-        cullEnabled = GlStateManager.CULL.enable.enabled
+//        blendEnabled = GlStateManager.BLEND.mode.enabled
+//        srcRgb = GlStateManager.BLEND.srcRgb
+//        dstRgb = GlStateManager.BLEND.dstRgb
+//        srcAlpha = GlStateManager.BLEND.srcAlpha
+//        dstAlpha = GlStateManager.BLEND.dstAlpha
+//
+//        // Depth
+//        depthTestEnabled = GlStateManager.DEPTH.mode.enabled
+//        depthMask = GlStateManager.DEPTH.mask
+//        depthFunc = GlStateManager.DEPTH.func
+//
+//        // Cull
+//        cullEnabled = GlStateManager.CULL.enable.enabled
     }
 
     fun pop() {
+        readOnly = false
+
         // Blend
         if (blendEnabled) RenderSystem.enableBlend() else RenderSystem.disableBlend()
         RenderSystem.blendFuncSeparate(srcRgb, dstRgb, srcAlpha, dstAlpha)

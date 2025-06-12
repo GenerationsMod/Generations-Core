@@ -37,6 +37,7 @@
     "client.PokemonOnShoulderRendererCompanionAccessorMixin",
     "client.PokemonOnShoulderRenderMixin",
     "client.PosableStateMixin",
+    "client.RenderSystemMixin",
     "client.SummaryMixin"
   ],
   "injectors": {
