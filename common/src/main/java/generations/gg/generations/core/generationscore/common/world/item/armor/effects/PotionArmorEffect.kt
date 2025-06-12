@@ -18,7 +18,7 @@ data class PotionArmorEffect(val potionEffect: Holder<MobEffect>, val amplifier:
         player: Player,
         generationsArmorItem: GenerationsArmorItem
     ) {
-        if (world.isClientSide) return
+        if (world.isClientSide()) return
         if (!ArmorTickEffect.isWearingFullSet(player, generationsArmorItem.material)) return
         val currentEffect = player.getEffect(potionEffect)
         if (currentEffect != null && currentEffect.amplifier > amplifier) return

@@ -20,6 +20,8 @@ import java.util.Map;
 public record EnchantmentToolEffect(ResourceKey<Enchantment> enchantment, int level, int durabilityCost) implements ToolEffect {
     @Override
     public boolean use(Level world, Player player, InteractionHand usedHand) {
+        if (world.isClientSide()) return false;
+
         var holder = world.registryAccess().registry(Registries.ENCHANTMENT).get().getHolderOrThrow(enchantment);
 
         ItemStack itemStack = player.getItemInHand(usedHand);

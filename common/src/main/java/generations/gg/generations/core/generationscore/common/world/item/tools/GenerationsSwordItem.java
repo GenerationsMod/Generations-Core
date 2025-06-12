@@ -18,8 +18,8 @@ import java.util.Set;
 public class GenerationsSwordItem extends SwordItem implements ToolEffectHolder<GenerationsSwordItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsSwordItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, /*(int) attackDamage, attackSpeed,*/ properties); //TODO: Readd these custom values if needed
+    public GenerationsSwordItem(Tier tier, Properties properties) {
+        super(tier, properties);
     }
 
     public GenerationsSwordItem addToolEffects(ToolEffect... toolEffect) {

@@ -28,11 +28,7 @@ interface ArmorTickEffect : ArmorEffect {
 
                 val equippedItemStack = player.getItemBySlot(equipmentSlot)
                 if (equippedItemStack.item !is ArmorItem) return false
-                if ((equippedItemStack.item as ArmorItem).material.`is` { resourceKey: ResourceKey<ArmorMaterial?>? ->
-                        material.`is`(
-                            resourceKey
-                        )
-                    }) return false
+                if ((equippedItemStack.item as ArmorItem).material.`is`(material::`is`)) return false
             }
 
             return true

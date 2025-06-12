@@ -6,7 +6,6 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.item.armor.ArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorItem
 import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorMaterials
-import generations.gg.generations.core.generationscore.common.world.item.armor.effects.DoubleSpeedArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.EnchantmentArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.PotionArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.SpeedModifier
@@ -49,13 +48,13 @@ object GenerationsArmor {
     }
 
     val AETHER: ArmorSet = ArmorSet.create("aether", GenerationsArmorMaterials.AETHER) {
-        speed(0.5f)
+        speed(0.5)
     }
 
     val AQUA: ArmorSet = ArmorSet.create("aqua", GenerationsArmorMaterials.AQUA)
     val FLARE: ArmorSet = ArmorSet.create("flare", GenerationsArmorMaterials.FLARE)
     val GALACTIC: ArmorSet = ArmorSet.create("galactic", GenerationsArmorMaterials.GALACTIC) {
-        speed(0.5f)
+        speed(0.5)
     }
     val ULTRITE: ArmorSet = ArmorSet.create("ultrite", GenerationsArmorMaterials.ULTRITE)
     val MAGMA: ArmorSet = ArmorSet.create("magma", GenerationsArmorMaterials.MAGMA)
@@ -63,57 +62,57 @@ object GenerationsArmor {
     val PLASMA: ArmorSet = ArmorSet.create("plasma", GenerationsArmorMaterials.PLASMA)
     val ROCKET: ArmorSet = ArmorSet.create("rocket", GenerationsArmorMaterials.ROCKET)
     val SKULL: ArmorSet = ArmorSet.create("skull", GenerationsArmorMaterials.SKULL) {
-        speed(0.5f)
+        speed(0.5)
     }
     val ULTRA: ArmorSet = ArmorSet.create("ultra", GenerationsArmorMaterials.ULTRA) {
         potion(MobEffects.MOVEMENT_SPEED, 1)
-        speed(0.25f)
+        speed(0.25)
     }
     val CRYSTALLIZED: ArmorSet = ArmorSet.create("crystallized", GenerationsArmorMaterials.CRYSTAL) {
         potion(MobEffects.MOVEMENT_SPEED, 1)
-        speed(0.1f)
+        speed(0.1)
     }
     val DAWN_STONE: ArmorSet = ArmorSet.create("dawn_stone", GenerationsArmorMaterials.DAWN_STONE) {
         potion(MobEffects.JUMP, 3)
-        speed(0.5f)
+        speed(0.5)
     }
     val DUSK_STONE: ArmorSet = ArmorSet.create("dusk_stone", GenerationsArmorMaterials.DUSK_STONE) {
         potion(MobEffects.SATURATION, 4)
-        speed(0.5f)
+        speed(0.5)
     }
     val FIRE_STONE: ArmorSet = ArmorSet.create("fire_stone", GenerationsArmorMaterials.FIRE_STONE) {
         enchantment(Enchantments.FIRE_PROTECTION, 2)
         potion(MobEffects.FIRE_RESISTANCE, 1)
-        speed(0.5f)
+        speed(0.5)
     }
 
     val LEAF_STONE: ArmorSet = ArmorSet.create("leaf_stone", GenerationsArmorMaterials.LEAF_STONE) {
         enchantment(Enchantments.FEATHER_FALLING, 3)
         enchantment(Enchantments.THORNS, 3)
-        speed(0.5f)
+        speed(0.5)
     }
     val ICE_STONE: ArmorSet = ArmorSet.create("ice_stone", GenerationsArmorMaterials.ICE_STONE) {
         enchantment(Enchantments.FROST_WALKER, 2)
-        speed(0.5f)
+        speed(0.5)
     }
     val MOON_STONE: ArmorSet = ArmorSet.create("moon_stone", GenerationsArmorMaterials.MOON_STONE) {
         enchantment(Enchantments.PROTECTION, 4)
         enchantment(Enchantments.PROJECTILE_PROTECTION, 4)
-        speed(0.5f)
+        speed(0.5)
     }
     val SUN_STONE: ArmorSet = ArmorSet.create("sun_stone", GenerationsArmorMaterials.SUN_STONE) {
         enchantment(Enchantments.PROTECTION, 4)
         enchantment(Enchantments.PROJECTILE_PROTECTION, 4)
-        speed(0.5f)
+        speed(0.5)
     }
     val THUNDER_STONE: ArmorSet = ArmorSet.create("thunder_stone", GenerationsArmorMaterials.THUNDER_STONE) {
         potion(MobEffects.DIG_SPEED, 1)
-        speed(0.5f)
+        speed(0.5)
     }
     val WATER_STONE: ArmorSet = ArmorSet.create("water_stone", GenerationsArmorMaterials.WATER_STONE) {
         potion(MobEffects.WATER_BREATHING, 1)
         enchantment(Enchantments.AQUA_AFFINITY, 2)
-        speed(0.5f)
+        speed(0.5)
     }
 
     fun of(): Item.Properties {
@@ -156,13 +155,8 @@ object GenerationsArmor {
                 return this
             }
 
-            fun speed(speed: Float): Builder {
-                return speed(speed, false)
-            }
-
-            fun speed(speed: Float, doubleWhenFullSet: Boolean): Builder {
-                effects.add(SpeedModifier(speed))
-                if (doubleWhenFullSet) effects.add(DoubleSpeedArmorEffect())
+            fun speed(speed: Double, speedWhenFull: Double = speed): Builder {
+                effects.add(SpeedModifier(speed, speedWhenFull))
                 return this
             }
 
@@ -172,6 +166,8 @@ object GenerationsArmor {
         }
 
         companion object {
+            val MATERIAL_TO_SET = mutableMapOf<Holder<ArmorMaterial>, ArmorSet>()
+
             fun create(name: String, armorMaterial: Holder<ArmorMaterial>, block: Builder.() -> Unit): ArmorSet {
                 val builder = builder(name, armorMaterial)
                 block.invoke(builder)
@@ -226,7 +222,7 @@ object GenerationsArmor {
                         )
                     },
                     armorMaterial
-                )
+                ).also { MATERIAL_TO_SET[armorMaterial] = it }
             }
 
             fun register(

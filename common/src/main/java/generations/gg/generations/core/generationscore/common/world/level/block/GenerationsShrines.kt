@@ -90,7 +90,7 @@ object GenerationsShrines {
     val PRISON_BOTTLE: RegistrySupplier<PrisonBottleBlock> = registerBlockItem(
         "prison_bottle",
         { PrisonBottleBlock(BOTTLE_PROPERTIES) },
-        { block, properties -> FormChangingBlockItem(block, properties, "unbound") }, GenerationsItems.LEGENDARY_ITEMS
+        { block, properties -> PokemonInteractBlockItem(block, properties, "unbound")  }, GenerationsItems.LEGENDARY_ITEMS
     )
 
 

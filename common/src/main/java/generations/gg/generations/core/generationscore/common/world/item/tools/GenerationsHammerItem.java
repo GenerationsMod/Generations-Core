@@ -19,8 +19,8 @@ import java.util.Set;
 public class GenerationsHammerItem extends DiggerItem implements ToolEffectHolder<GenerationsHammerItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsHammerItem(Tier tier, float attackDamageBonus, float attackSpeed, Properties properties) {
-        super(/*(int) attackDamageBonus, attackSpeed,*/ tier, BlockTags.ANVIL, properties); //TODO: Readd values if needed
+    public GenerationsHammerItem(Tier tier, Properties properties) {
+        super(tier, BlockTags.ANVIL, properties);
     }
 
     public GenerationsHammerItem addToolEffects(ToolEffect... toolEffect) {

@@ -18,6 +18,7 @@ import java.util.Objects;
 public record TransformToolEffect(Block blockFrom, Block blockTo, int durabilityCost) implements ToolEffect {
     @Override
     public boolean use(Level world, Player player, InteractionHand usedHand) {
+        if (world.isClientSide()) return false;
         if (blockFrom.defaultBlockState().canOcclude()) return false;
         BlockHitResult blockhitresult = getPlayerPOVHitResult(world, player);
         if (!world.mayInteract(player, blockhitresult.getBlockPos())) return false;
@@ -29,6 +30,7 @@ public record TransformToolEffect(Block blockFrom, Block blockTo, int durability
 
     @Override
     public boolean useOn(UseOnContext context) {
+        if (context.getLevel().isClientSide()) return false;
         if (!blockFrom.defaultBlockState().canOcclude()) return false;
         if (!context.getLevel().getBlockState(context.getClickedPos()).getBlock().equals(blockFrom)) return false;
         context.getLevel().setBlockAndUpdate(context.getClickedPos(), blockTo.defaultBlockState());

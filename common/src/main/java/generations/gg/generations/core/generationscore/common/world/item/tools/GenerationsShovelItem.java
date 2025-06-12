@@ -18,8 +18,8 @@ import java.util.Set;
 public class GenerationsShovelItem extends ShovelItem implements ToolEffectHolder<GenerationsShovelItem> {
     public final Set<ToolEffect> toolEffects = new HashSet<>();
 
-    public GenerationsShovelItem(Tier tier, float attackDamage, float attackSpeed, Properties properties) {
-        super(tier, /*attackDamage, attackSpeed,*/ properties); //TODO: Readd values if needed
+    public GenerationsShovelItem(Tier tier, Properties properties) {
+        super(tier, properties); //TODO: Readd values if needed
     }
 
     public GenerationsShovelItem addToolEffects(ToolEffect... toolEffect) {

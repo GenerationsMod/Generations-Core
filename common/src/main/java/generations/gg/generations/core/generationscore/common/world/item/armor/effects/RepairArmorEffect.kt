@@ -14,7 +14,7 @@ class RepairArmorEffect : ArmorTickEffect {
         player: Player,
         generationsArmorItem: GenerationsArmorItem
     ) {
-        if (world.isClientSide) return
+        if (world.isClientSide()) return
         if (!itemStack.isDamaged) return
         itemStack.damageValue = 0
     }

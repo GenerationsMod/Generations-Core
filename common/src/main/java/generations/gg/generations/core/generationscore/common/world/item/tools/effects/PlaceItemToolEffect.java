@@ -21,7 +21,8 @@ public record PlaceItemToolEffect(BlockItem item, int durabilityCost) implements
 
     @Override
     public boolean useOn(UseOnContext context) {
-        if (context.getLevel().isClientSide() || !item.useOn(new UseOnContext(context.getLevel(), context.getPlayer(), context.getHand(), new ItemStack(item), new BlockHitResult(context.getClickLocation(), context.getClickedFace(), context.getClickedPos(), context.isInside()))).consumesAction()) return false;
+        if (context.getLevel().isClientSide()) return false;
+        if (!item.useOn(new UseOnContext(context.getLevel(), context.getPlayer(), context.getHand(), new ItemStack(item), new BlockHitResult(context.getClickLocation(), context.getClickedFace(), context.getClickedPos(), context.isInside()))).consumesAction()) return false;
         context.getItemInHand().hurtAndBreak(durabilityCost, (ServerLevel) context.getLevel(), (ServerPlayer) Objects.requireNonNull(context.getPlayer()), (owner) -> {} /*owner.broadcastBreakEvent(context.getHand())*/);
         return true;
     }

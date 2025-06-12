@@ -16,7 +16,7 @@ class UnbreakableArmorEffect : ArmorTickEffect {
         player: Player,
         generationsArmorItem: GenerationsArmorItem
     ) {
-        if (world.isClientSide) return
+        if (world.isClientSide()) return
         if (itemStack.has(DataComponents.UNBREAKABLE)) return
         itemStack.set(DataComponents.UNBREAKABLE, Unbreakable(false))
     }
