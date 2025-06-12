@@ -112,6 +112,9 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
                         event.camera
                     )
 
+                    MatrixCache.projectionMatrix = event.projectionMatrix
+                    MatrixCache.viewMatrix = event.modelViewMatrix
+
                     RenderStateRecord.push()
                     RenderSystem.enableDepthTest()
                     RenderSystem.defaultBlendFunc()
@@ -121,9 +124,6 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
                 }
 
                 RenderLevelStageEvent.Stage.AFTER_LEVEL -> {
-                    MatrixCache.projectionMatrix = event.projectionMatrix
-                    MatrixCache.viewMatrix = event.modelViewMatrix
-
                     RenderStateRecord.push()
                     renderRareCandySolid()
                     renderRareCandyTransparent()
