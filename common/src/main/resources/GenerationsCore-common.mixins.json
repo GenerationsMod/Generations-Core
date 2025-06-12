@@ -10,6 +10,7 @@
     "BestSpawnConfigMixin",
     "FishingHookMixin",
     "MixinVanillaDelegatingSlot",
+    "MoveTypeMixin",
     "PokemonBattleMixin",
     "PokemonItemMixin",
     "ServerPlayerMixin",
