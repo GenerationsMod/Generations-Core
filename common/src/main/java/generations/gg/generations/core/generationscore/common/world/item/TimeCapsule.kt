@@ -54,7 +54,7 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties), Poke
 
         fun registerItemProperty() {
             ItemPropertiesRegistry.register(
-                GenerationsItems.TIME_CAPSULE.get(), GenerationsCore.id("has_pokemon")
+                GenerationsItems.TIME_CAPSULE, GenerationsCore.id("has_pokemon")
             ) { itemStack: ItemStack, clientLevel: ClientLevel?, livingEntity: LivingEntity?, i: Int ->
                 if (itemStack.getRenderablePokemon() == null) 0f else 1f
             }

@@ -39,7 +39,7 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
             return if (index == 0) {
                 resource.item is CreationTrioItem
             } else {
-                resource.isOf(GenerationsItems.RED_CHAIN.get()) && resource.get(GenerationsDataComponents.ENCHANTED.get()) == false
+                resource.isOf(GenerationsItems.RED_CHAIN) && resource.get(GenerationsDataComponents.ENCHANTED) == false
             }
         }
 

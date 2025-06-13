@@ -13,7 +13,7 @@
 //import org.jetbrains.annotations.NotNull;
 //
 //public enum GenerationToolTiers implements Tier {
-//    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock().asItem()),
+//    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.CHARGE_STONE_SET.baseBlock.asItem()),
 //    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.VOLCANIC_STONE.get().asItem()),
 //    AMETHYST(2, 300, 6.5F, 2.0F, 14, Items.AMETHYST_SHARD),
 //    CRYSTAL(2, 300, 6.5F, 2.0F, 14, GenerationsItems.CRYSTAL.get()),
@@ -24,10 +24,10 @@
 //    LEAF_STONE(2, 250, 6.0F, 2.0F, 14, CobblemonItems.LEAF_STONE.asItem()),
 //    MOON_STONE(3, 1561, 12.0F, 0.0F, 22, CobblemonItems.MOON_STONE.asItem()),
 //
-//    RUBY(2, 300, 6.5F, 2.0F, 14, GenerationsItems.RUBY.get()),
+//    RUBY(2, 300, 6.5F, 2.0F, 14, GenerationsItems.RUBY),
 //
-//    SAPPHIRE(2, 300, 6.5F, 2.0F, 14, GenerationsItems.SAPPHIRE.get()),
-//    SILICON(2, 100, 45F, 10F, 30, GenerationsItems.SILICON.get()),
+//    SAPPHIRE(2, 300, 6.5F, 2.0F, 14, GenerationsItems.SAPPHIRE),
+//    SILICON(2, 100, 45F, 10F, 30, GenerationsItems.SILICON),
 //    SUN_STONE(3, 1561, 12.0F, 0.0F, 22, CobblemonItems.SUN_STONE.asItem()),
 //    THUNDER_STONE(3, 1561, 12.0F, 0.0F, 22, CobblemonItems.THUNDER_STONE.asItem()),
 //    WATER_STONE(3, 1561, 8.0F, 3.0F, 10, CobblemonItems.WATER_STONE.asItem());

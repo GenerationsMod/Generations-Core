@@ -1,23 +1,17 @@
-package generations.gg.generations.core.generationscore.common.world.level.block;
+package generations.gg.generations.core.generationscore.common.world.level.block
 
-import dev.architectury.registry.registries.DeferredRegister;
-import dev.architectury.registry.registries.RegistrySupplier;
-import generations.gg.generations.core.generationscore.common.GenerationsCore;
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems;
-import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
+import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.util.valueproviders.UniformInt
+import net.minecraft.world.item.BlockItem
+import net.minecraft.world.item.Item
+import net.minecraft.world.level.block.Block
 
-import java.util.function.Function;
-import java.util.function.Supplier;
-
-public class GenerationsOres {
-	public static final DeferredRegister<Block> ORES = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK);
-
-	/*
+object GenerationsOres: BlockPlatformRegistry() {
+    /*
 	 * Stone Ores (Charge Stone Variants) Temporarly disabled till ready to use in chargestone cave modules
 
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DAWN_STONE_ORE = registerBlockItem("charge_stone_dawn_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
@@ -31,23 +25,31 @@ public class GenerationsOres {
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_WATER_STONE_ORE = registerBlockItem("charge_stone_water_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_MOON_STONE_ORE = registerBlockItem("charge_stone_moon_stone_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
 	 */
-
-	public static final GenerationsOreSet MEGASTONE_ORE_SET = new GenerationsOreSet("megastone_ore", GenerationsItems.MEGASTONE_SHARD);
-	public static final GenerationsOreSet METEORITE_ORE_SET = new GenerationsOreSet("meteorite_ore");
-
-
-	/**
-	 * Other Ores
-	 */
-	public static final GenerationsOreSet CRYSTAL_ORE_SET = new GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL, UniformInt.of(2, 5));
-	public static final GenerationsOreSet RUBY_ORE_SET = new GenerationsOreSet("ruby_ore", GenerationsItems.RUBY, UniformInt.of(2, 5));
-	public static final GenerationsOreSet SAPPHIRE_ORE_SET = new GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE, UniformInt.of(2, 5));
-	public static final GenerationsOreSet SILICON_ORE_SET = new GenerationsOreSet("silicon_ore", GenerationsItems.SILICON);
-	public static final GenerationsOreSet Z_CRYSTAL_ORE_SET = new GenerationsOreSet("z_crystal_ore");
+	@JvmField
+	val MEGASTONE_ORE_SET: GenerationsOreSet = GenerationsOreSet("megastone_ore", GenerationsItems.MEGASTONE_SHARD)
+    @JvmField
+	val METEORITE_ORE_SET: GenerationsOreSet = GenerationsOreSet("meteorite_ore")
 
 
-	// Charge Stone Vanilla Ores
-	/*
+    /**
+     * Other Ores
+     */
+	@JvmField
+	val CRYSTAL_ORE_SET: GenerationsOreSet =
+        GenerationsOreSet("crystal_ore", GenerationsItems.CRYSTAL, UniformInt.of(2, 5))
+    @JvmField
+	val RUBY_ORE_SET: GenerationsOreSet = GenerationsOreSet("ruby_ore", GenerationsItems.RUBY, UniformInt.of(2, 5))
+    @JvmField
+	val SAPPHIRE_ORE_SET: GenerationsOreSet =
+        GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE, UniformInt.of(2, 5))
+    @JvmField
+	val SILICON_ORE_SET: GenerationsOreSet = GenerationsOreSet("silicon_ore", GenerationsItems.SILICON)
+    @JvmField
+	val Z_CRYSTAL_ORE_SET: GenerationsOreSet = GenerationsOreSet("z_crystal_ore")
+
+
+    // Charge Stone Vanilla Ores
+    /*
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_COAL_ORE = registerOreBlockItem("charge_stone_coal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE).dropsLike(Blocks.COAL_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_DIAMOND_ORE = registerOreBlockItem("charge_stone_diamond_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE).dropsLike(Blocks.DIAMOND_ORE)));
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_EMERALD_ORE = registerOreBlockItem("charge_stone_emerald_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.EMERALD_ORE).dropsLike(Blocks.EMERALD_ORE)));
@@ -57,20 +59,16 @@ public class GenerationsOres {
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_LAPIS_LAZULI_ORE = registerOreBlockItem("charge_stone_lapis_lazuli_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_ORE).dropsLike(Blocks.LAPIS_ORE)));
 	public static final RegistrySupplier<RedStoneOreBlock> CHARGE_STONE_REDSTONE_ORE = registerOreBlockItem("charge_stone_redstone_ore", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).dropsLike(Blocks.REDSTONE_ORE)));
 	 */
+    private fun register(name: String, itemSupplier: (Item.Properties) -> Item) = GenerationsItems.ITEMS.create(name.generationsResource(), itemSupplier.invoke(Item.Properties()))
 
+    fun <T : Block> registerOreBlockItem(name: String, blockSupplier: T): T {
+        val block =  create(name.generationsResource(), blockSupplier)
+        register(name) { properties -> BlockItem(block, properties) }
+        return block
+    }
 
-	private static void register(String name, Function<Item.Properties, Item> itemSupplier) {
-		GenerationsItems.ITEMS.register(name, () -> itemSupplier.apply(new Item.Properties()));
-	}
-
-	public static <T extends Block> RegistrySupplier<T> registerOreBlockItem(String name, Supplier<T> blockSupplier) {
-		RegistrySupplier<T> block = ORES.register(name, blockSupplier);
-		register(name, properties -> new BlockItem(block.get(), properties));
-		return block;
-	}
-
-	public static void init() {
-		GenerationsCore.LOGGER.info("Registering Generations Ores");
-		ORES.register();
-	}
+    override fun init(consumer: (ResourceLocation, Block) -> Unit) {
+        GenerationsCore.LOGGER.info("Registering Generations Ores")
+        super.init(consumer)
+    }
 }

@@ -31,7 +31,7 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class VariantCouchBlock(
     properties: Properties,
     color: DyeColor,
-    function: Map<DyeColor, Holder<Block>>,
+    function: Map<DyeColor, Block>,
     private val variant: Variant
 ) :
     DyeableBlock<CouchBlockEntity, VariantCouchBlock>(

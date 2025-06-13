@@ -74,7 +74,7 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
 
                 if (!isActive(state) && stack.damageValue >= stack.maxDamage && pokemonProperties != null) {
                     toggleActive(level, pos)
-                    level.playSound(null, pos, GenerationsSounds.LUGIA_SHRINE_SONG.get(), SoundSource.BLOCKS)
+                    level.playSound(null, pos, GenerationsSounds.LUGIA_SHRINE_SONG, SoundSource.BLOCKS)
 
                     if (!player.isCreative) stack.shrink(1)
 

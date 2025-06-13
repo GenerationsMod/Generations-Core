@@ -61,10 +61,10 @@ class BoxBlock(properties: Properties) : BaseEntityBlock(properties) {
 
             if (player.isShiftKeyDown) {
                 if (open) {
-                    blockEntity.playSound(state, GenerationsSounds.BOX_CLOSED.get())
+                    blockEntity.playSound(state, GenerationsSounds.BOX_CLOSED)
                     blockEntity.updateBlockState(state, false)
                 } else {
-                    blockEntity.playSound(state, GenerationsSounds.BOX_OPEN.get())
+                    blockEntity.playSound(state, GenerationsSounds.BOX_OPEN)
                     blockEntity.updateBlockState(state, true)
                 }
             } else if (open) {

@@ -24,6 +24,8 @@ class GenerationsDataProvider : DataProvider {
     private val scheduledActions = mutableMapOf<UUID, MutableList<() -> Unit>>()
 
     fun registerDefaults() {
+        PlatformEvents.RENDER
+
 //        this.register(Shops)
 //        this.register(ShopPresets)
         PlatformEvents.SERVER_PLAYER_LOGOUT.subscribe(Priority.HIGH) {

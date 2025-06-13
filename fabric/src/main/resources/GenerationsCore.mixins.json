@@ -11,9 +11,11 @@
     "ItemCombinerMenuMixin",
     "LivingEntityMixin",
     "MagmaCubeMixin",
+    "MixinPlayer",
     "PortalShapeMixin"
   ],
   "client": [
+    "client.MixinMultiPlayerGameMode"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -7,7 +7,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -39,11 +38,11 @@ fun <T: Any> T.applyIfTrue(predicate: (T) -> Boolean, action: (T) -> T): T {
 abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V>> : GenericRotatableModelBlock<T> {
     @JvmField
     val color: DyeColor
-    val map: Map<DyeColor, Holder<Block>>
+    val map: Map<DyeColor, Block>
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, Holder<Block>>,
+        function: Map<DyeColor, Block>,
         biFunction: RegistrySupplier<BlockEntityType<T>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
@@ -58,7 +57,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, Holder<Block>>,
+        function: Map<DyeColor, Block>,
         biFunction: RegistrySupplier<BlockEntityType<T>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
@@ -71,7 +70,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         arg: Properties,
         color: DyeColor,
-        function: Map<DyeColor, Holder<Block>>,
+        function: Map<DyeColor, Block>,
         biFunction: RegistrySupplier<BlockEntityType<T>>,
         model: ResourceLocation,
         width: Int,
@@ -84,7 +83,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, Holder<Block>>,
+        function: Map<DyeColor, Block>,
         biFunction: RegistrySupplier<BlockEntityType<T>>,
         arg: Properties,
         model: ResourceLocation
@@ -129,9 +128,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         return getBlockFromDyeColor(color).asItem()
     }
 
-    fun getBlockFromDyeColor(color: DyeColor): Block {
-        return map[color]!!.value()
-    }
+    fun getBlockFromDyeColor(color: DyeColor): Block = map[color]!!
 
     fun tryDyeColor(
         state: BlockState,
@@ -230,13 +227,13 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     }
 
     companion object {
-        fun <T: DyeableBlock<*, *>> simpleDyedCodec(supplier: (Properties, DyeColor, Map<DyeColor, Holder<Block>>) -> T): MapCodec<T> = RecordCodecBuilder.mapCodec<T> { dyedCodecBuilder(it).apply(it, supplier::invoke) }
+        fun <T: DyeableBlock<*, *>> simpleDyedCodec(supplier: (Properties, DyeColor, Map<DyeColor, Block>) -> T): MapCodec<T> = RecordCodecBuilder.mapCodec<T> { dyedCodecBuilder(it).apply(it, supplier::invoke) }
 
-        fun <T: DyeableBlock<*, *>> dyedCodecBuilder(instance: RecordCodecBuilder.Instance<T>): Products.P3<RecordCodecBuilder.Mu<T>, Properties, DyeColor, MutableMap<DyeColor, Holder<Block>>> {
+        fun <T: DyeableBlock<*, *>> dyedCodecBuilder(instance: RecordCodecBuilder.Instance<T>): Products.P3<RecordCodecBuilder.Mu<T>, Properties, DyeColor, MutableMap<DyeColor, Block>> {
             return instance.group(
                 propertiesCodec(),
                 DyeColor.CODEC.fieldOf("color").forGetter { it.color },
-                Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("map").forGetter { it.map }
+                Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.byNameCodec()).fieldOf("map").forGetter { it.map }
             )
         }
     }

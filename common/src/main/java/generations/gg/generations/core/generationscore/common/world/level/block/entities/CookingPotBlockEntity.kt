@@ -10,9 +10,9 @@ import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import generations.gg.generations.core.generationscore.common.GenerationsStorage
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
-import generations.gg.generations.core.generationscore.common.api.events.CurryEvents.Cook
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.util.extensions.resourceKey
 import generations.gg.generations.core.generationscore.common.util.shrink
 import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
@@ -130,7 +130,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
             if (cookTime >= 200) {
                 val hasBerry = Stream.of(*berries).anyMatch { a: SimpleItemSlot -> !a.isEmpty }
                 val hasMaxMushrooms = Stream.of<SimpleItemSlot>(*berries).anyMatch { a: SimpleItemSlot ->
-                    a.resource.asHolder().`is`(GenerationsItems.MAX_MUSHROOMS.getKey())
+                    a.resource.asHolder().`is`(GenerationsItems.MAX_MUSHROOMS.resourceKey())
                 }
 
                 if (hasBerry && !hasMaxMushrooms) {
@@ -139,18 +139,18 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                     val berriesTypes = berries.filter { berry: SimpleItemSlot -> !berry.isEmpty && berry.resource.item is BerryItem }
                         .mapNotNull { a -> (a.resource.asItem() as BerryItem).berry() }.toList()
 
-                    val event: Cook = Cook(type, berriesTypes, CurryData.create(type, berriesTypes))
+                    CurryEvents.COOK.postThen(CurryEvents.Cook(type, berriesTypes, CurryData.create(type, berriesTypes)), ifSucceeded = {
+                        event ->
+                            val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY)
+                                .set(GenerationsDataComponents.CURRY_DATA, event.output)
 
-                    if (!CurryEvents.COOK.invoker().act(event).isTrue()) {
-                        val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY.get())
-                            .set(GenerationsDataComponents.CURRY_DATA.get(), event.output)
+                            hasInserted = handler.insert(13, curry, 1, false) > 0
 
-                        hasInserted = handler.insert(13, curry, 1, false) > 0
-                    }
-                } else if (hasMaxMushrooms && !hasBerry && (mainIngredient.isEmpty || mainIngredient.resource.item === GenerationsItems.MAX_HONEY.get())) {
+                    })
+                } else if (hasMaxMushrooms && !hasBerry && (mainIngredient.isEmpty || mainIngredient.resource.item === GenerationsItems.MAX_HONEY)) {
                     val count = AtomicLong()
                     Stream.of<SimpleItemSlot>(*berries)
-                        .filter { a: SimpleItemSlot -> a.resource.isOf(GenerationsItems.MAX_MUSHROOMS.get()) }
+                        .filter { a: SimpleItemSlot -> a.resource.isOf(GenerationsItems.MAX_MUSHROOMS) }
                         .forEach { b: SimpleItemSlot -> count.addAndGet(b.amount) }
                     if (count.get() > 2) {
                         var amountTaken = 0
@@ -168,9 +168,9 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                             }
                         }
 
-                        val maxSoupStack: ItemStack = ItemStack(GenerationsItems.MAX_SOUP.get())
+                        val maxSoupStack: ItemStack = ItemStack(GenerationsItems.MAX_SOUP)
 
-                        if (!mainIngredient.isEmpty && mainIngredient.resource.item === GenerationsItems.MAX_HONEY.get()) {
+                        if (!mainIngredient.isEmpty && mainIngredient.resource.item === GenerationsItems.MAX_HONEY) {
 //                            CompoundTag compound = new CompoundTag(); //TODO: Convert when we have use for it.
 //                            compound.putBoolean("MaxSoupHoney", true);
 //                            compound.putBoolean("GlowEffect", true);

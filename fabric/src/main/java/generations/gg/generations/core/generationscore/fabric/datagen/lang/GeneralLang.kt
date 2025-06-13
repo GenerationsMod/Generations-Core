@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
@@ -13,7 +14,9 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.PackOutput
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
@@ -31,19 +34,19 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         addBlockEntries(GenerationsBlocks.BLOCKS)
         addBlockEntries(GenerationsBlocks.ULTRA_BLOCKS)
         addBlockEntries(GenerationsBlocks.STONE)
-        addBlockEntries(GenerationsDecorationBlocks.DECORATIONS)
+        addBlockEntries(GenerationsDecorationBlocks)
         addBlockEntries(GenerationsWood.WOOD_BLOCKS)
-        addBlockEntries(GenerationsShrines.SHRINES)
-        addBlockEntries(GenerationsPokeDolls.POKEDOLLS)
-        addBlockEntries(GenerationsUtilityBlocks.UTILITY_BLOCKS)
-        addBlockEntries(GenerationsOres.ORES)
+        addBlockEntries(GenerationsShrines)
+        addBlockEntries(GenerationsPokeDolls)
+        addBlockEntries(GenerationsUtilityBlocks)
+        addBlockEntries(GenerationsOres)
 
-        addItemEntries(GenerationsTools.TOOLS)
-        addItemEntries(GenerationsArmor.ARMOR)
+        addItemEntries(GenerationsTools)
+        addItemEntries(GenerationsArmor)
         addItemEntries(GenerationsItems.ITEMS)
         addItemEntries(GenerationsItems.BADGES)
         addItemEntries(GenerationsItems.RIBBONS)
-        addItemEntries(GenerationsItems.UNIMPLEMENTED, this::getNameGens) { item, _ -> add(item.get().asItem().descriptionId + ".desc", "Not currently implemented") }
+        addItemEntries(GenerationsItems.UNIMPLEMENTED, this::getNameGens) { item, _ -> add(item.asItem().descriptionId + ".desc", "Not currently implemented") }
 
         addItemEntries(GenerationsItems.CUISINE)
         addItemEntries(GenerationsItems.NATURAL)
@@ -574,7 +577,7 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
             )
         }
 
-        translationBuilder.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), "Ultrite Upgrade Smithing Template")
+        translationBuilder.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE, "Ultrite Upgrade Smithing Template")
 
         this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot")
         this.add(
@@ -624,15 +627,13 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         glitchCityRecordDescription(GenerationsItems.MT_PYRE_DISC)
     }
 
-    private fun glitchCityRecordDescription(item: RegistrySupplier<Item>) {
-        add(
-            item.get().descriptionId + ".desc",
-            "GlitchxCity - " + getNameGens(item, item.id.toString().replace("_disc", ""))
+    private fun glitchCityRecordDescription(item: Item) {
+        add(item.descriptionId + ".desc", "GlitchxCity - " + getNameGens(item, item.id.toString().replace("_disc", ""))
         )
     }
 
 
-    protected fun getNameGens(item: RegistrySupplier<out ItemLike>?, name: String): String {
+    protected fun getNameGens(item: ItemLike?, name: String): String {
         var name = name
         name = name.substring(name.indexOf(":") + 1) //Removes Mod Tag from front of name
         name = name.replace('_', ' ')
@@ -650,16 +651,16 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         return name
     }
 
-    protected fun getPokeBrickName(item: RegistrySupplier<out ItemLike>?, name: String): String {
+    protected fun getPokeBrickName(item: ItemLike, name: String): String {
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick")
     }
 
-    fun addTooltip(registrySupplier: RegistrySupplier<out ItemLike>, entry: String) {
+    fun addTooltip(registrySupplier: ItemLike, entry: String) {
         addTooltip(registrySupplier, null, entry)
     }
 
-    fun addTooltip(registrySupplier: RegistrySupplier<out ItemLike>, sub: String?, entry: String) {
-        registrySupplier.get()?.asItem()?.instanceOrNull<LangTooltip>()?.run {
+    fun addTooltip(registrySupplier: ItemLike, sub: String?, entry: String) {
+        registrySupplier.asItem().instanceOrNull<LangTooltip>()?.run {
             add(this.tooltipId() + (if (sub != null) ".$sub" else ""), entry)
 
         }
@@ -671,27 +672,17 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
     }
 
     fun addBlockEntries(
-        entries: DeferredRegister<Block>,
-        function: (RegistrySupplier<Block>, String) -> String = this::getNameGens
-    ) {
-        entries.forEach(Consumer { block: RegistrySupplier<Block> ->
-            translationBuilder.add(
-                block.get(),
-                function.invoke(block, block.id.toString())
-            )
-        })
-    }
+        entries: BlockPlatformRegistry,
+        function: (Block, String) -> String = this::getNameGens
+    ) = entries.all().forEach { block  -> translationBuilder.add(block, function.invoke(block, block.id.toString())) }
 
     fun  addItemEntries(
-        entries: DeferredRegister<Item>,
-        function: (RegistrySupplier<out ItemLike>, String) -> String = this::getNameGens,
-        additionalActions: (RegistrySupplier<out ItemLike>, (RegistrySupplier<out ItemLike>, String) -> String) -> Unit = { _, _ -> }
-    ) {
-        entries.forEach(Consumer { item ->
-            translationBuilder.add(item.get(), function.invoke(item, item.id.toString()))
-            additionalActions.invoke(item, function)
-        })
-    }
+        entries: ItemPlatformRegistry,
+        function: (ItemLike, String) -> String = this::getNameGens,
+        additionalActions: (ItemLike, (ItemLike, String) -> String) -> Unit = { _, _ -> }
+    ) = entries.all().forEach { item ->
+        translationBuilder.add(item, function.invoke(item, item.id.toString()))
+        additionalActions.invoke(item, function) }
 
     override fun generateTranslations(provider: HolderLookup.Provider, builder: TranslationBuilder) {
         this.translationBuilder = builder

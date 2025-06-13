@@ -104,7 +104,7 @@ class BallLootBlock(properties: Properties, val type: String, private val ball: 
                         player.x,
                         player.y,
                         player.z,
-                        GenerationsSounds.LUGIA_SHRINE_SONG.get(),
+                        GenerationsSounds.LUGIA_SHRINE_SONG,
                         SoundSource.BLOCKS,
                         0.2f,
                         1.0f

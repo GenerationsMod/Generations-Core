@@ -6,21 +6,24 @@ import com.cobblemon.mod.common.pokemon.Species
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.DataKeys
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
 import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem
+import net.minecraft.core.Registry
 import net.minecraft.core.component.DataComponentType
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
+import net.minecraft.resources.ResourceKey
 
-object GenerationsDataComponents {
-
-    var REGISTER = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.DATA_COMPONENT_TYPE)
+object GenerationsDataComponents: PlatformRegistry<DataComponentType<*>>() {
+    override val registry: Registry<DataComponentType<*>> = BuiltInRegistries.DATA_COMPONENT_TYPE
+    override val resourceKey: ResourceKey<Registry<DataComponentType<*>>> = Registries.DATA_COMPONENT_TYPE
 
     var DISTANCE = register<Double>(
         DataKeys.DISTANCE,
@@ -48,17 +51,9 @@ object GenerationsDataComponents {
     val WALKMON_DATA = register("walkmon_data", WalkmonItem.WalkmonData.CODEC, WalkmonItem.WalkmonData.STREAM_CODEC)
     val FISHED_SHARDS = register("fished_shards", RubyRodItem.FishedShards.CODEC)
 
-    @JvmStatic
-    fun init() = REGISTER.register()
-
     private fun <T> register(
         name: String,
         codec: Codec<T>,
         streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>? = null,
-    ): RegistrySupplier<DataComponentType<T>> {
-        return REGISTER.register(name) {
-            DataComponentType.builder<T>().persistent(codec).cacheEncoding()
-                .networkSynchronized(streamCodec).build()
-        }
-    }
+    ): DataComponentType<T> = create(GenerationsCore.id(name), DataComponentType.builder<T>().persistent(codec).cacheEncoding().networkSynchronized(streamCodec).build())
 }

@@ -12,32 +12,24 @@ import net.minecraft.world.level.block.state.properties.BlockSetType
 import org.jetbrains.annotations.ApiStatus
 
 open class GenerationsFullBlockSet : GenerationsBlockSet {
-    private val button: RegistrySupplier<ButtonBlock>
-    private val pressurePlate: RegistrySupplier<PressurePlateBlock>
+    private val button: ButtonBlock
+    private val pressurePlate: PressurePlateBlock
 
     constructor(
         name: String,
         properties: BlockBehaviour.Properties,
         type: BlockSetType,
-        baseBlock: RegistrySupplier<Block>
+        baseBlock: Block
     ) : super(name, baseBlock, properties) {
-        button = registerBlockItem(
-            name + "_button"
-        ) { ButtonBlock(type, 20, properties) }
-        pressurePlate = registerBlockItem(
-            name + "_pressure_plate"
-        ) { PressurePlateBlock(type, properties) }
+        button = registerBlockItem(name + "_button", ButtonBlock(type, 20, properties))
+        pressurePlate = registerBlockItem(name + "_pressure_plate", PressurePlateBlock(type, properties))
         blockSets.remove(this)
         fullBlockSets.add(this)
     }
 
     constructor(name: String, properties: BlockBehaviour.Properties, type: BlockSetType) : super(name, properties) {
-        button = registerBlockItem(
-            name + "_button"
-        ) { ButtonBlock(type, 20, properties) }
-        pressurePlate = registerBlockItem(
-            name + "_pressure_plate"
-        ) { PressurePlateBlock(type, properties) }
+        button = registerBlockItem(name + "_button", ButtonBlock(type, 20, properties))
+        pressurePlate = registerBlockItem(name + "_pressure_plate", PressurePlateBlock(type, properties))
         blockSets.remove(this)
         fullBlockSets.add(this)
     }
@@ -65,17 +57,13 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
      * Gets the button.
      * @return The button.
      */
-    fun getButton(): ButtonBlock {
-        return button.get()
-    }
+    fun getButton(): ButtonBlock = button
 
     /**
      * Gets the pressure plate.
      * @return The pressure plate.
      */
-    fun getPressurePlate(): PressurePlateBlock {
-        return pressurePlate.get()
-    }
+    fun getPressurePlate(): PressurePlateBlock = pressurePlate
 
     /**
      * Returns a list of the full family
@@ -83,14 +71,14 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
      */
     override val allBlocks: List<Block>
         get() = listOf(
-            getBaseBlock(),
-            getSlab(), getStairs(), getWall(), getButton(), getPressurePlate()
+            baseBlock,
+            slab, getStairs(), getWall(), getButton(), pressurePlate
         )
 
 
     fun updateBlockFamily() {
         this.blockFamily =
-            BlockFamily.Builder(getBaseBlock()).slab(getSlab()).stairs(getStairs()).wall(
+            BlockFamily.Builder(baseBlock).slab(slab).stairs(getStairs()).wall(
                 getWall()
             ).button(getButton()).pressurePlate(getPressurePlate()).recipeGroupPrefix(name)
                 .recipeUnlockedBy("has_$name").family

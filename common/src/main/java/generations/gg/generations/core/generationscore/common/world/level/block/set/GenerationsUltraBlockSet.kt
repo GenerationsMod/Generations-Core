@@ -9,7 +9,7 @@ import org.jetbrains.annotations.ApiStatus
 import java.util.function.Supplier
 
 @ApiStatus.Internal
-class GenerationsUltraBlockSet(name: String, baseBlock: RegistrySupplier<Block>) :
+class GenerationsUltraBlockSet(name: String, baseBlock: Block) :
     GenerationsFullBlockSet(name, GenerationsBlocks.ULTRA_BLOCK_SETTINGS, GenerationsBlockSetTypes.ULTRA, baseBlock) {
     init {
         fullBlockSets.remove(this)
@@ -17,7 +17,7 @@ class GenerationsUltraBlockSet(name: String, baseBlock: RegistrySupplier<Block>)
         ultraBlockSets.add(this)
     }
 
-    override fun <T : Block> registerBlockItem(name: String, blockSupplier: Supplier<T>): RegistrySupplier<T> {
+    override fun <T : Block> registerBlockItem(name: String, blockSupplier: T): T {
         return registerUltraBlock(name, blockSupplier)
     }
 

@@ -388,7 +388,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
                         level.playSound(
                             null,
                             blockpos,
-                            GenerationsSounds.RKS_MACHINE.get(),
+                            GenerationsSounds.RKS_MACHINE,
                             SoundSource.BLOCKS,
                             1.0f,
                             1.0f

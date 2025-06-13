@@ -3,15 +3,19 @@ package generations.gg.generations.core.generationscore.common.world.item
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.armor.ArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorItem
 import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorMaterials
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.EnchantmentArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.PotionArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.SpeedModifier
+import generations.gg.generations.core.generationscore.common.world.level.block.BlockPlatformRegistry
 import net.minecraft.core.Holder
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.effect.MobEffect
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
@@ -21,31 +25,24 @@ import java.util.function.Function
 import java.util.function.Supplier
 import java.util.stream.Stream
 
-object GenerationsArmor {
-    val ARMOR: DeferredRegister<Item> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM)
+object GenerationsArmor: ItemPlatformRegistry() {
+    val ARMOR = object: ItemPlatformRegistry() {}
 
     /**
      * Armor Sets
      */
-    fun register(
+    fun create(
         name: String,
-        function: Function<Item.Properties, Item>,
+        function: (Item.Properties) -> Item,
         tab: ResourceKey<CreativeModeTab>
-    ): RegistrySupplier<Item> {
-        return ARMOR.register(
-            name
-        ) { function.apply(of().`arch$tab`(tab)) }
-    }
+    ): Item = create(name.generationsResource(), function.invoke(of().`arch$tab`(tab)))
+
 
     fun register(
         name: String,
         function: Function<Item.Properties, Item>,
         tab: CreativeModeTab
-    ): RegistrySupplier<Item> {
-        return ARMOR.register(
-            name
-        ) { function.apply(of().`arch$tab`(tab)) }
-    }
+    ): Item = create(name.generationsResource(), function.apply(of().`arch$tab`(tab)))
 
     val AETHER: ArmorSet = ArmorSet.create("aether", GenerationsArmorMaterials.AETHER) {
         speed(0.5)
@@ -119,20 +116,19 @@ object GenerationsArmor {
         return Item.Properties()
     }
 
-    @JvmStatic fun init() {
+    override fun init(consumer: (ResourceLocation, Item) -> Unit) {
         GenerationsCore.LOGGER.info("Registering Generations Armor")
-        ARMOR.register()
+        super.init(consumer)
     }
 
-    @JvmRecord
     data class ArmorSet(
-        val helmet: RegistrySupplier<Item>,
-        val chestplate: RegistrySupplier<Item>,
-        val leggings: RegistrySupplier<Item>,
-        val boots: RegistrySupplier<Item>,
+        val helmet: Item,
+        val chestplate: Item,
+        val leggings: Item,
+        val boots: Item,
         val armorMaterial: Holder<ArmorMaterial>
     ) {
-        fun stream(): Stream<RegistrySupplier<Item>> {
+        fun stream(): Stream<Item> {
             return Stream.of(
                 helmet,
                 chestplate,
@@ -227,11 +223,11 @@ object GenerationsArmor {
 
             fun register(
                 name: String,
-                function: Function<Item.Properties, GenerationsArmorItem>
-            ): RegistrySupplier<Item> {
-                return register(
+                function: (Item.Properties) -> GenerationsArmorItem
+            ): Item {
+                return create(
                     name,
-                    { t: Item.Properties -> function.apply(t) }, CreativeModeTabs.COMBAT
+                    { t: Item.Properties -> function.invoke(t) }, CreativeModeTabs.COMBAT
                 )
             }
         }

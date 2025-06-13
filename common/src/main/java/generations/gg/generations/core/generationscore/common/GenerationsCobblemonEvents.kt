@@ -138,7 +138,7 @@ class GenerationsCobblemonEvents {
 
                     player.sendSystemMessage("Due to ${it.pokemon.getDisplayName().string} happiness reaching max, it gave you an egg.".text())
 
-                    player.giveOrDropItemStack(GenerationsItems.PHIONE_EGG.get().defaultInstance, true)
+                    player.giveOrDropItemStack(GenerationsItems.PHIONE_EGG.defaultInstance, true)
                     it.pokemon.persistentData.putBoolean(DataKeys.GAVE_EGG, true)
                 }
             }

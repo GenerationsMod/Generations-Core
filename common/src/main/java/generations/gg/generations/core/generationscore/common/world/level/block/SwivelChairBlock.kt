@@ -26,7 +26,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock<GenericDyedVariantBlockEntity, SwivelChairBlock>(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, properties, GenerationsBlockEntityModels.SWIVEL_CHAIR), SittableBlock {
+class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<GenericDyedVariantBlockEntity, SwivelChairBlock>(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, properties, GenerationsBlockEntityModels.SWIVEL_CHAIR), SittableBlock {
 
     override fun codec(): MapCodec<SwivelChairBlock> = CODEC
 

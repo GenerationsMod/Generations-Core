@@ -55,7 +55,7 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
 
                 feature.value += 1
                 pokemon.markFeatureDirty(feature)
-                GenerationsItems.MEW_DNA_FIBER.get().defaultInstance.dropAsItemEntity(entity.level(), entity.position())
+                GenerationsItems.MEW_DNA_FIBER.defaultInstance.dropAsItemEntity(entity.level(), entity.position())
 
                 player.sendSystemMessage("generations_core.pokemon.extracted_dna_fiber_succeed".asTranslated(pokemon.getDisplayName().string))
 

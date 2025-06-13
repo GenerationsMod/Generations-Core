@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation

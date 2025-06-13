@@ -54,8 +54,8 @@ object GenerationsCobblemonInteractions {
     private val customInteractions: MutableList<PokemonInteraction> = ArrayList()
 
     object KeldeoInteraction: FlagFeatureChangeInteraction({ entity, stack -> stack.`is`(ItemTags.SWORDS) && entity.pokemon.isSpecies("keldeo") }, "resolute")
-    object MeloettaInteraction: FlagFeatureChangeInteraction({ entity, stack -> stack.`is`(GenerationsItems.INERT_RELIC_SONG.get()) && entity.pokemon.isSpecies("meloetta") }, "piroette")
-    object TherianInteraction: FlagFeatureChangeInteraction({ _, stack -> stack.`is`(GenerationsItems.REVEAL_GLASS.get()) }, "therian")
+    object MeloettaInteraction: FlagFeatureChangeInteraction({ entity, stack -> stack.`is`(GenerationsItems.INERT_RELIC_SONG) && entity.pokemon.isSpecies("meloetta") }, "piroette")
+    object TherianInteraction: FlagFeatureChangeInteraction({ _, stack -> stack.`is`(GenerationsItems.REVEAL_GLASS) }, "therian")
 
     open class FlagFeatureChangeInteraction(private val checkPredicate: (PokemonEntity, ItemStack) -> Boolean, private val key: String, override val isConsumed: Boolean = false) : PokemonInteraction {
         override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {

@@ -29,11 +29,11 @@ class WeatherTrioShrineBlock(
     properties: Properties,
     model: ResourceLocation,
     val species: SpeciesKey,
-    private val requiredItem: Holder<Item>
+    private val requiredItem: Item
 ) : InteractShrineBlock<WeatherTrioShrineBlockEntity>(properties, GenerationsBlockEntities.WEATHER_TRIO, model) {
 
     override fun isStackValid(stack: ItemStack): Boolean {
-        return stack.`is`(requiredItem.value()) && stack.damageValue >= stack.maxDamage
+        return stack.`is`(requiredItem) && stack.damageValue >= stack.maxDamage
     }
 
     override fun codec(): MapCodec<WeatherTrioShrineBlock> = CODEC
@@ -103,7 +103,7 @@ class WeatherTrioShrineBlock(
             propertiesCodec(),
             Codecs.modelCodec(),
             SpeciesKey.CODEC.fieldOf("species").forGetter { it.species },
-            BuiltInRegistries.ITEM.holderByNameCodec().fieldOf("requiredItem").forGetter { it.requiredItem }
+            BuiltInRegistries.ITEM.byNameCodec().fieldOf("requiredItem").forGetter { it.requiredItem }
         ).apply(this, ::WeatherTrioShrineBlock) }
     }
 }

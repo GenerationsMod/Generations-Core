@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
+import net.minecraft.core.Holder
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.worldgen.BootstrapContext
 import net.minecraft.network.chat.Component
@@ -49,7 +49,7 @@ object RecordSongs {
 
     private fun create(name: String): ResourceKey<JukeboxSong> = ResourceKey.create(Registries.JUKEBOX_SONG, GenerationsCore.id(name))
 
-    private fun <T : Item> song(item: RegistrySupplier<T>, holder: RegistrySupplier<SoundEvent>, ticks: Int): JukeboxSong = JukeboxSong(holder, Component.translatable(item.get().descriptionId + ".desc"), ticks.toFloat(), 0)
+    private fun <T : Item> song(item: T, holder: SoundEvent, ticks: Int): JukeboxSong = JukeboxSong(Holder.direct(holder), Component.translatable(item.descriptionId + ".desc"), ticks.toFloat(), 0)
 
     @JvmStatic
     fun bootstrap(bootstrap: BootstrapContext<JukeboxSong>) {

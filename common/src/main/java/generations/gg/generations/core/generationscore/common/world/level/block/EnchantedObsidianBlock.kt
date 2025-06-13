@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockState
 class EnchantedObsidianBlock(arg: Properties) : Block(arg),
     IPortalBlock {
     override fun isPortalFrame(state: BlockState, level: BlockGetter, pos: BlockPos): Boolean {
-        return state.`is`(GenerationsBlocks.ENCHANTED_OBSIDIAN_SET.getBaseBlock())
+        return state.`is`(GenerationsBlocks.ENCHANTED_OBSIDIAN_SET.baseBlock)
     }
 }
 

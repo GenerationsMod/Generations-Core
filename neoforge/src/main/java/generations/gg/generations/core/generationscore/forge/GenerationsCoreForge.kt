@@ -8,22 +8,22 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore.in
 import generations.gg.generations.core.generationscore.common.GenerationsCore.onAnvilChange
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
+import generations.gg.generations.core.generationscore.common.api.events.general.InteractionEvents
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge
 import net.minecraft.client.Minecraft
-import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.Component
-import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ReloadableResourceManager
+import net.minecraft.world.InteractionResult
 import net.minecraft.world.item.AxeItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
@@ -36,11 +36,15 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent
 import net.neoforged.fml.loading.FMLPaths
 import net.neoforged.neoforge.common.NeoForge
+import net.neoforged.neoforge.common.util.TriState
 import net.neoforged.neoforge.event.AddReloadListenerEvent
 import net.neoforged.neoforge.event.AnvilUpdateEvent
 import net.neoforged.neoforge.event.OnDatapackSyncEvent
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract
 import net.neoforged.neoforge.registries.NeoForgeRegistries
+import org.jetbrains.annotations.NotNull
 import java.util.*
 import java.util.function.BiConsumer
 import java.util.function.Consumer
@@ -48,6 +52,12 @@ import java.util.function.Function
 import java.util.function.Supplier
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
+
+fun generations.gg.generations.core.generationscore.common.api.events.TriState.asNeoForge(): TriState = when(this) {
+    generations.gg.generations.core.generationscore.common.api.events.TriState.TRUE -> TriState.TRUE
+    generations.gg.generations.core.generationscore.common.api.events.TriState.FALSE -> TriState.FALSE
+    generations.gg.generations.core.generationscore.common.api.events.TriState.INDETERMINATE -> TriState.DEFAULT
+}
 
 /**
  * Forge Main class for GenerationsCore.
@@ -95,6 +105,26 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
                 { materialCost: Int -> event.materialCost = materialCost })
         })
         EVENT_BUS.addListener<LivingJumpEvent> { event -> EntityEvents.jump(event.entity) }
+        EVENT_BUS.addListener<PlayerInteractEvent.RightClickBlock>  {
+            val result = InteractionEvents.fireRightClick(it.entity, it.hand, it.pos, it.face)
+
+            if(result != InteractionResult.PASS) {
+                it.isCanceled = true
+                it.cancellationResult = result
+                it.useItem = TriState.FALSE
+                it.useBlock = TriState.FALSE
+            }
+        }
+
+        EVENT_BUS.addListener<EntityInteract>({ event ->
+            val result = InteractionEvents.fireEntityInteract(event.entity, event.target, event.hand)
+
+            if (result != InteractionResult.PASS) {
+                event.isCanceled = true
+                event.cancellationResult = result
+            }
+        })
+
         //            addListener(this::onLogin)
 //            addListener(this::onLogout)
         EVENT_BUS.addListener { e: AddReloadListenerEvent -> this.onReload(e) }
@@ -127,11 +157,19 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     @SafeVarargs
     override fun create(
         name: String,
-        o: Supplier<ItemStack>,
-        vararg deferredRegister: DeferredRegister<out ItemLike?>
-    ): Supplier<CreativeModeTab> {
-        return GenerationsCreativeTabsForge.create(name, o, *deferredRegister)
-    }
+        icon: Supplier<ItemStack>,
+        items: Array<out PlatformRegistry<out ItemLike>>
+    ): CreativeModeTab = CreativeModeTab.builder()
+                .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
+                .icon(icon)
+            .displayItems { _, context ->
+                for (item in items) item.all().forEach({ itemEntry ->
+                        context.accept(
+                            itemEntry.asItem().defaultInstance
+                        )
+                    })
+            }.withSearchBar()
+            .build()
 
     override fun <T : Any> registerEntityDataSerializer(
         name: String,
@@ -195,7 +233,6 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
      */
     private fun onInitialize(event: FMLCommonSetupEvent) {
         event.enqueueWork { VanillaCompat.setup() }
-        MutableBlockEntityType.blocksToAdd.forEach { block -> block.blockEntityType.instanceOrNull<MutableBlockEntityType<*>>()?.addBlock(block) }
     }
 
     private fun postInit(event: FMLLoadCompleteEvent) {

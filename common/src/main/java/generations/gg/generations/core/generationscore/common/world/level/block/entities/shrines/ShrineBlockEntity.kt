@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState

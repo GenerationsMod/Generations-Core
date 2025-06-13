@@ -112,8 +112,8 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
                         event.camera
                     )
 
-                    MatrixCache.projectionMatrix = event.projectionMatrix
-                    MatrixCache.viewMatrix = event.modelViewMatrix
+                    MatrixCache.projectionMatrix.set(RenderSystem.getProjectionMatrix())
+                    MatrixCache.viewMatrix.set(RenderSystem.getModelViewMatrix())
 
                     RenderStateRecord.push()
                     RenderSystem.enableDepthTest()

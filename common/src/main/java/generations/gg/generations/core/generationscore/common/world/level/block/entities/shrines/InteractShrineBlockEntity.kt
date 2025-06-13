@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.InteractShrineBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.entity.BlockEntityType

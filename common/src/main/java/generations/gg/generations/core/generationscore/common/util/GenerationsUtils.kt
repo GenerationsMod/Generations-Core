@@ -8,10 +8,8 @@ import com.mojang.datafixers.util.Pair
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
 import com.mojang.serialization.JsonOps
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.world.level.block.BlockPlatformRegistry
 import net.minecraft.locale.Language
 import net.minecraft.nbt.NbtOps
 import net.minecraft.nbt.Tag
@@ -32,7 +30,6 @@ import java.math.BigInteger
 import java.util.*
 import java.util.function.BiFunction
 import java.util.function.Predicate
-import java.util.function.Supplier
 import kotlin.math.floor
 
 object GenerationsUtils {
@@ -129,21 +126,11 @@ object GenerationsUtils {
     }
 
     fun <T : Block> registerBlock(
-        deferredRegister: DeferredRegister<Block>,
+        deferredRegister: BlockPlatformRegistry,
         name: String,
-        blockSupplier: Supplier<T>
-    ): RegistrySupplier<T> {
-        return deferredRegister.register(name, applyMutable(blockSupplier))
-    }
-
-    private fun <T : Block?> applyMutable(blockSupplier: Supplier<T>): Supplier<T> {
-        return Supplier {
-            val block = blockSupplier.get()
-            if (block is GenericModelBlock<*>) {
-                MutableBlockEntityType.blocksToAdd.add(block)
-            }
-            block
-        }
+        blockSupplier: T
+    ): T {
+        return deferredRegister.create(name.generationsResource(), blockSupplier)
     }
 
     fun raycast(entity: Entity, maxDistance: Double, tickDelta: Float, predicate: Predicate<Entity?>): HitResult? {

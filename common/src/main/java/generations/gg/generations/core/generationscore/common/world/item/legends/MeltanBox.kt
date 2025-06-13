@@ -27,6 +27,6 @@ class MeltanBox(settings: Properties) : PostBattleUpdatingWithItem(
     }) {
 
     override fun postSpawn(level: Level, player: Player, usedHand: InteractionHand) {
-        player.setItemInHand(usedHand, ItemStack(MELTAN_BOX_CHARGED.get()))
+        player.setItemInHand(usedHand, ItemStack(MELTAN_BOX_CHARGED))
     }
 }

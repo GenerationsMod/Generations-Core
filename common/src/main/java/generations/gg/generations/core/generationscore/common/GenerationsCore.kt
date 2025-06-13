@@ -121,9 +121,9 @@ object GenerationsCore {
             ZygardeCellDetail::class.java
         )
 
-        GenerationsDataComponents.init()
-        GenerationsStorage.init()
         GenerationsCoreEntityDataSerializers.init()
+        GenerationsStorage.init()
+        GenerationsDataComponents.init()
         GenerationsSounds.init()
         GenerationsBlocks.init()
         GenerationsPokeDolls.init()
@@ -134,13 +134,14 @@ object GenerationsCore {
         LootItemConditionTypes.init()
         GenerationsUtilityBlocks.init()
         GenerationsShrines.init()
+        GenerationsBlocks.initItems()
         GenerationsItems.init()
         GenerationsBlockEntities.init()
         GenerationsEntities.init()
-        GenerationsCreativeTabs.init()
         GenerationsArmorMaterials.init()
         GenerationsArmor.init()
         GenerationsTools.init()
+        GenerationsCreativeTabs.init()
         GenerationsContainers.init()
         GenerationsResources.init()
         RksResultType.init()
@@ -208,3 +209,4 @@ object GenerationsCore {
 }
 
 fun <T> T?.orFalse(predicate: (T) -> Boolean): Boolean = this?.let(predicate) ?: false
+fun String.generationsResource() = GenerationsCore.id(this)

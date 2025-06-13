@@ -1,27 +1,28 @@
 package generations.gg.generations.core.generationscore.fabric
 
-import com.cobblemon.mod.common.api.serialization.DataSerializer
 import dev.architectury.registry.registries.DeferredRegister
+import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.init
 import generations.gg.generations.core.generationscore.common.GenerationsCore.initBuiltinPacks
 import generations.gg.generations.core.generationscore.common.GenerationsCore.onAnvilChange
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.api.events.general.InteractionEvents
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
-import generations.gg.generations.core.generationscore.common.util.extensions.supplier
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MutableBlockEntityType
 import generations.gg.generations.core.generationscore.fabric.AnvilEvents.AnvilChange
 import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
-import generations.gg.generations.core.generationscore.fabric.world.item.creativetab.GenerationsCreativeTabsFabric
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SyncDataPackContents
+import net.fabricmc.fabric.api.event.player.UseBlockCallback
+import net.fabricmc.fabric.api.item.v1.FabricItem
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry
@@ -30,9 +31,8 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
 import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint
-import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
-import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.resources.ResourceLocation
@@ -47,8 +47,7 @@ import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
-import java.util.function.BiConsumer
-import java.util.function.Function
+import java.util.function.Consumer
 import java.util.function.Supplier
 
 /**
@@ -72,6 +71,13 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
                 player
             )
         })
+
+        UseBlockCallback.EVENT.register({ player, level, hand, hitResult ->
+
+
+            return@register InteractionEvents.fireRightClick(player, hand, hitResult.blockPos, hitResult.direction);
+        })
+
         GenerationsFabricNetwork.registerMessages()
         GenerationsFabricNetwork.registerServerHandlers()
 
@@ -93,8 +99,6 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
             )
         }
 
-        MutableBlockEntityType.blocksToAdd.forEach { block -> block.blockEntityType.instanceOrNull<MutableBlockEntityType<*>>()?.addBlock(block) }
-
         GenerationsConfiguredFeatures.init()
         GenerationsPlacedFeatures.init()
         GenerationsFabricBiomemodifiers.generateOres()
@@ -115,16 +119,24 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
 
     @SafeVarargs
     override fun create(
-        name: String,
-        supplier: Supplier<ItemStack>,
-        vararg deferredRegister: DeferredRegister<out ItemLike?>,
-    ): Supplier<CreativeModeTab> {
-        return GenerationsCreativeTabsFabric.create(name, supplier, *deferredRegister)
-    }
+            name: String,
+            icon: Supplier<ItemStack>,
+            items: Array<out PlatformRegistry<out ItemLike>>,
+        ): CreativeModeTab = FabricItemGroup.builder()
+                .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
+                .icon(icon)
+                .displayItems { _, context ->
+                    for (item in items) item.all().forEach(
+                        Consumer { itemEntry ->
+                            context.accept(
+                                itemEntry.asItem().defaultInstance
+                            )
+                        })
+                }.build()
 
     override fun <T : Any> registerEntityDataSerializer(
         name: String,
-        dataSerializer: EntityDataSerializer<T>
+        dataSerializer: EntityDataSerializer<T>,
     ) {
         return EntityDataSerializers.registerSerializer(dataSerializer)
     }

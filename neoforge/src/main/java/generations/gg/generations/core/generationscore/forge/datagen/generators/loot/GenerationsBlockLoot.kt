@@ -69,19 +69,19 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
     private var fortune: Holder.Reference<Enchantment>? = null
 
     override fun generate() {
-        this.fortune = registries.lookupOrThrow(Registries.ENCHANTMENT)[Enchantments.FORTUNE].get()
+        this.fortune = registries.lookupOrThrow(Registries.ENCHANTMENT)[Enchantments.FORTUNE].orElseThrow()
 
-        GenerationsBlocks.STONE.forEach(Consumer { block: RegistrySupplier<Block> -> dropSelfStoneCobble(block.get()) })
-        GenerationsWood.WOOD_BLOCKS.forEach(Consumer { block: RegistrySupplier<Block> -> dropSelfUpdated(block.get()) })
+        GenerationsBlocks.STONE.all().forEach(::dropSelfStoneCobble)
+        GenerationsWood.WOOD_BLOCKS.all().forEach(::dropSelfUpdated)
 
-        GenerationsBlocks.ULTRA_BLOCKS.forEach(Consumer { block: RegistrySupplier<Block> -> dropSelfUpdated(block.get()) })
-        //createDoubleDyedBlock(GenerationsUtilityBlocks.PC.get(), PCBlock.HALF, DoubleBlockHalf.LOWER);
-        //createDyedBlock(GenerationsUtilityBlocks.CLOCK.get());
-        //createDyedBlock(GenerationsDecorationBlocks.UMBRELLA.get());
-        //createDyedBlock(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.get());
-        //createDyedBlock(GenerationsDecorationBlocks.VENDING_MACHINE.get());
+        GenerationsBlocks.ULTRA_BLOCKS.all().forEach(::dropSelfUpdated)
+        //createDoubleDyedBlock(GenerationsUtilityBlocks.PC, PCBlock.HALF, DoubleBlockHalf.LOWER);
+        //createDyedBlock(GenerationsUtilityBlocks.CLOCK);
+        //createDyedBlock(GenerationsDecorationBlocks.UMBRELLA);
+        //createDyedBlock(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
+        //createDyedBlock(GenerationsDecorationBlocks.VENDING_MACHINE);
         //GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> add(block, createSinglePropConditionTable(block, DoubleDyeableBlock.HALF, DoubleBlockHalf.LOWER)));
-        GenerationsPokeDolls.POKEDOLLS.forEach(Consumer { block -> dropSelf(block.get()) })
+        GenerationsPokeDolls.all().forEach(::dropSelf)
         BlockDatagen.dropSelfList.stream().map { block -> block as Block }.forEach(this::dropSelf)
         dropSelf(GenerationsShrines.DARK_CRYSTAL)
         dropSelf(GenerationsShrines.LIGHT_CRYSTAL)
@@ -106,13 +106,13 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         })
 
         add(
-            GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(),
-            createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())
+            GenerationsBlocks.CHARGE_STONE_SET.baseBlock,
+            createSingleItemTable(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock)
         )
 
-        dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE.get())
+        dropSelf(GenerationsBlocks.VOLCANIC_FIRESTONE)
 
-        dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND.get())
+        dropSelf(GenerationsBlocks.GOLDEN_TEMPLE_SAND)
 
         //Ores
         addOreSet(GenerationsOres.CRYSTAL_ORE_SET)
@@ -120,133 +120,133 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         addOreSet(GenerationsOres.SAPPHIRE_ORE_SET)
         addOreSet(GenerationsOres.SILICON_ORE_SET)
 
-        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getOre())
-        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.getDeepslateOre())
+        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.ore)
+        dropSelf(GenerationsOres.Z_CRYSTAL_ORE_SET.deepslateOre)
 
-        //dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE.get());
+        //dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE);
         addAll(
-            GenerationsBlocks.RUBY_BLOCK.get(),
-            GenerationsBlocks.RUBY_SLAB.get(),
-            GenerationsBlocks.RUBY_STAIRS.get(),
-            GenerationsBlocks.RUBY_WALL.get()
+            GenerationsBlocks.RUBY_BLOCK,
+            GenerationsBlocks.RUBY_SLAB,
+            GenerationsBlocks.RUBY_STAIRS,
+            GenerationsBlocks.RUBY_WALL
         )
 
         addAll(
-            GenerationsBlocks.SAPPHIRE_BLOCK.get(),
-            GenerationsBlocks.SAPPHIRE_SLAB.get(),
-            GenerationsBlocks.SAPPHIRE_STAIRS.get(),
-            GenerationsBlocks.SAPPHIRE_WALL.get()
+            GenerationsBlocks.SAPPHIRE_BLOCK,
+            GenerationsBlocks.SAPPHIRE_SLAB,
+            GenerationsBlocks.SAPPHIRE_STAIRS,
+            GenerationsBlocks.SAPPHIRE_WALL
         )
 
         addAll(
-            GenerationsBlocks.CRYSTAL_BLOCK.get(),
-            GenerationsBlocks.CRYSTAL_SLAB.get(),
-            GenerationsBlocks.CRYSTAL_STAIRS.get(),
-            GenerationsBlocks.CRYSTAL_WALL.get()
+            GenerationsBlocks.CRYSTAL_BLOCK,
+            GenerationsBlocks.CRYSTAL_SLAB,
+            GenerationsBlocks.CRYSTAL_STAIRS,
+            GenerationsBlocks.CRYSTAL_WALL
         )
 
-        dropSelf(GenerationsBlocks.SILICON_BLOCK.get())
-        dropSelf(GenerationsBlocks.Z_BLOCK.get())
+        dropSelf(GenerationsBlocks.SILICON_BLOCK)
+        dropSelf(GenerationsBlocks.Z_BLOCK)
 
         //Ultra Space
-        dropSelf(GenerationsBlocks.ULTRA_SAND.get())
-        dropWhenSilkTouch(GenerationsBlocks.GHOST_LANTERN.get())
-        add(GenerationsBlocks.MACHINE_BLOCK.get(), createSingleItemTable(GenerationsBlocks.MACHINE_BLOCK.get()))
-        dropSelf(GenerationsBlocks.RUINS_SAND.get())
-        dropSelf(GenerationsBlocks.RICH_SOIL_1.get())
-        dropSelf(GenerationsBlocks.RICH_SOIL_2.get())
-        dropSelf(GenerationsBlocks.RICH_SOIL_3.get())
-        dropSelf(GenerationsBlocks.RICH_SOIL_4.get())
+        dropSelf(GenerationsBlocks.ULTRA_SAND)
+        dropWhenSilkTouch(GenerationsBlocks.GHOST_LANTERN)
+        add(GenerationsBlocks.MACHINE_BLOCK, createSingleItemTable(GenerationsBlocks.MACHINE_BLOCK))
+        dropSelf(GenerationsBlocks.RUINS_SAND)
+        dropSelf(GenerationsBlocks.RICH_SOIL_1)
+        dropSelf(GenerationsBlocks.RICH_SOIL_2)
+        dropSelf(GenerationsBlocks.RICH_SOIL_3)
+        dropSelf(GenerationsBlocks.RICH_SOIL_4)
 
         add(
-            GenerationsBlocks.POKEBALL_CHEST.get(),
-            createNameableBlockEntityTable(GenerationsBlocks.POKEBALL_CHEST.get())
+            GenerationsBlocks.POKEBALL_CHEST,
+            createNameableBlockEntityTable(GenerationsBlocks.POKEBALL_CHEST)
         )
         add(
-            GenerationsBlocks.GREATBALL_CHEST.get(),
-            createNameableBlockEntityTable(GenerationsBlocks.GREATBALL_CHEST.get())
+            GenerationsBlocks.GREATBALL_CHEST,
+            createNameableBlockEntityTable(GenerationsBlocks.GREATBALL_CHEST)
         )
         add(
-            GenerationsBlocks.ULTRABALL_CHEST.get(),
-            createNameableBlockEntityTable(GenerationsBlocks.ULTRABALL_CHEST.get())
+            GenerationsBlocks.ULTRABALL_CHEST,
+            createNameableBlockEntityTable(GenerationsBlocks.ULTRABALL_CHEST)
         )
         add(
-            GenerationsBlocks.MASTERBALL_CHEST.get(),
-            createNameableBlockEntityTable(GenerationsBlocks.MASTERBALL_CHEST.get())
+            GenerationsBlocks.MASTERBALL_CHEST,
+            createNameableBlockEntityTable(GenerationsBlocks.MASTERBALL_CHEST)
         )
 
 
-        addOreSetWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE_SET, GenerationsItems.MEGASTONE_SHARD.get())
-        addOreSetWithRandomAmountDrops(GenerationsOres.METEORITE_ORE_SET, GenerationsItems.METEORITE_SHARD.get())
+        addOreSetWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE_SET, GenerationsItems.MEGASTONE_SHARD)
+        addOreSetWithRandomAmountDrops(GenerationsOres.METEORITE_ORE_SET, GenerationsItems.METEORITE_SHARD)
 
         //Pumpkins
-        dropSelf(GenerationsBlocks.CURSED_PUMPKIN.get())
-        dropSelf(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get())
-        dropSelf(GenerationsBlocks.CURSED_JACK_O_LANTERN.get())
+        dropSelf(GenerationsBlocks.CURSED_PUMPKIN)
+        dropSelf(GenerationsBlocks.CURSED_CARVED_PUMPKIN)
+        dropSelf(GenerationsBlocks.CURSED_JACK_O_LANTERN)
 
         //Furnaces
         add(
-            GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get(),
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
+            GenerationsUtilityBlocks.CHARGE_STONE_FURNACE,
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
         )
         add(
-            GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get(),
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get())
+            GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE,
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE)
         )
         add(
-            GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get(),
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get())
+            GenerationsUtilityBlocks.CHARGE_STONE_SMOKER,
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER)
         )
         add(
-            GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get(),
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
+            GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE,
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
         )
         add(
-            GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get(),
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get())
+            GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE,
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE)
         )
         add(
-            GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get(),
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get())
+            GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER,
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER)
         )
 
 
 
-        dropSelf(GenerationsBlocks.POKEMART_SIGN.get())
-        dropSelf(GenerationsBlocks.POKECENTER_SIGN.get())
+        dropSelf(GenerationsBlocks.POKEMART_SIGN)
+        dropSelf(GenerationsBlocks.POKECENTER_SIGN)
 
-        dropSelf(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
+        dropSelf(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY)
 
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get(), POKE_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get(), GREAT_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get(), ULTRA_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get(), MASTER_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get(), CHERISH_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get(), DIVE_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get(), DUSK_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get(), FAST_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get(), FRIEND_BALL.asItem())
-        //dropDisplayStandWithBall(GenerationsDecorationBlocks.GS_BALL_DISPLAY.get(), null);
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get(), HEAL_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get(), HEAVY_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get(), LEVEL_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get(), LOVE_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get(), LURE_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get(), LUXURY_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get(), MOON_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get(), NEST_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.NET_BALL_DISPLAY.get(), NET_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get(), PARK_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get(), PREMIER_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get(), QUICK_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get(), REPEAT_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get(), SAFARI_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get(), SPORT_BALL.asItem())
-        dropDisplayStandWithBall(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get(), TIMER_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.POKE_BALL_DISPLAY, POKE_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.GREAT_BALL_DISPLAY, GREAT_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY, ULTRA_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.MASTER_BALL_DISPLAY, MASTER_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY, CHERISH_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.DIVE_BALL_DISPLAY, DIVE_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.DUSK_BALL_DISPLAY, DUSK_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.FAST_BALL_DISPLAY, FAST_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY, FRIEND_BALL.asItem())
+        //dropDisplayStandWithBall(GenerationsDecorationBlocks.GS_BALL_DISPLAY, null);
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.HEAL_BALL_DISPLAY, HEAL_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY, HEAVY_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY, LEVEL_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LOVE_BALL_DISPLAY, LOVE_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LURE_BALL_DISPLAY, LURE_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY, LUXURY_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.MOON_BALL_DISPLAY, MOON_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.NEST_BALL_DISPLAY, NEST_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.NET_BALL_DISPLAY, NET_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.PARK_BALL_DISPLAY, PARK_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY, PREMIER_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.QUICK_BALL_DISPLAY, QUICK_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY, REPEAT_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY, SAFARI_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY, SPORT_BALL.asItem())
+        dropDisplayStandWithBall(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, TIMER_BALL.asItem())
 
-        createGenericRotationModelBlockTable(GenerationsUtilityBlocks.RKS_MACHINE.get())
-        createGenericRotationModelBlockTable(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get())
-        createGenericRotationModelBlockTable(GenerationsShrines.PRISON_BOTTLE.get())
+        createGenericRotationModelBlockTable(GenerationsUtilityBlocks.RKS_MACHINE)
+        createGenericRotationModelBlockTable(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP)
+        createGenericRotationModelBlockTable(GenerationsShrines.PRISON_BOTTLE)
         prisonBottleStem()
 
         dropSelf(GenerationsBlocks.CASTLE_PILLAR)
@@ -275,34 +275,34 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         dropSelf(GenerationsBlocks.POKECENTER_DOOR)
 
         createSignDrops(
-            GenerationsItems.ULTRA_DARK_SIGN.get(),
-            GenerationsWood.ULTRA_DARK_SIGN.get(),
-            GenerationsWood.ULTRA_DARK_WALL_SIGN.get()
+            GenerationsItems.ULTRA_DARK_SIGN,
+            GenerationsWood.ULTRA_DARK_SIGN,
+            GenerationsWood.ULTRA_DARK_WALL_SIGN
         )
         createSignDrops(
-            GenerationsItems.ULTRA_DARK_HANGING_SIGN.get(),
-            GenerationsWood.ULTRA_DARK_HANGING_SIGN.get(),
-            GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.get()
+            GenerationsItems.ULTRA_DARK_HANGING_SIGN,
+            GenerationsWood.ULTRA_DARK_HANGING_SIGN,
+            GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN
         )
         createSignDrops(
-            GenerationsItems.ULTRA_JUNGLE_SIGN.get(),
-            GenerationsWood.ULTRA_JUNGLE_SIGN.get(),
-            GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.get()
+            GenerationsItems.ULTRA_JUNGLE_SIGN,
+            GenerationsWood.ULTRA_JUNGLE_SIGN,
+            GenerationsWood.ULTRA_JUNGLE_WALL_SIGN
         )
         createSignDrops(
-            GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN.get(),
-            GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.get(),
-            GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.get()
+            GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN,
+            GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN,
+            GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN
         )
         createSignDrops(
-            GenerationsItems.GHOST_SIGN.get(),
-            GenerationsWood.GHOST_SIGN.get(),
-            GenerationsWood.GHOST_WALL_SIGN.get()
+            GenerationsItems.GHOST_SIGN,
+            GenerationsWood.GHOST_SIGN,
+            GenerationsWood.GHOST_WALL_SIGN
         )
         createSignDrops(
-            GenerationsItems.GHOST_HANGING_SIGN.get(),
-            GenerationsWood.GHOST_HANGING_SIGN.get(),
-            GenerationsWood.GHOST_WALL_HANGING_SIGN.get()
+            GenerationsItems.GHOST_HANGING_SIGN,
+            GenerationsWood.GHOST_HANGING_SIGN,
+            GenerationsWood.GHOST_WALL_HANGING_SIGN
         )
     }
 
@@ -311,24 +311,20 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         createItemDropTable(item, wallSignBlock)
     }
 
-    protected fun <T : Block?> dropSelf(block: RegistrySupplier<T>) {
-        super.dropSelf(block.get())
-    }
-
     private fun dropDisplayStandWithBall(block: Block, item: Item) {
         add(
             block, LootTable
                 .lootTable()
                 .withPool(
                     applyExplosionCondition(
-                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(),
+                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY,
                         LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f))
-                            .add(LootItem.lootTableItem(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()))
+                            .add(LootItem.lootTableItem(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY))
                     )
                 )
                 .withPool(
                     applyExplosionCondition(
-                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get(),
+                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY,
                         LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f)).add(LootItem.lootTableItem(item))
                     )
                 )
@@ -338,11 +334,11 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
 
     private fun addOreSetWithRandomAmountDrops(oreSet: GenerationsOreSet, drop: Item) {
         add(
-            oreSet.getOre(),
+            oreSet.ore,
             createSilkTouchDispatchTable(
-                oreSet.getOre(),
+                oreSet.ore,
                 applyExplosionDecay(
-                    oreSet.getOre(),
+                    oreSet.ore,
                     LootItem.lootTableItem(drop)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f)))
                         .apply(ApplyBonusCount.addOreBonusCount(fortune!!))
@@ -350,11 +346,11 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
             )
         )
         add(
-            oreSet.getDeepslateOre(),
+            oreSet.deepslateOre,
             createSilkTouchDispatchTable(
-                oreSet.getDeepslateOre(),
+                oreSet.deepslateOre,
                 applyExplosionDecay(
-                    oreSet.getDeepslateOre(),
+                    oreSet.deepslateOre,
                     LootItem.lootTableItem(drop)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f)))
                         .apply(ApplyBonusCount.addOreBonusCount(fortune!!))
@@ -364,9 +360,9 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
     }
 
     private fun addOreSet(oreSet: GenerationsOreSet) {
-        if (oreSet.getDrop() == null) return
-        add(oreSet.getOre(), createOreDrop(oreSet.getOre(), oreSet.getDrop()!!))
-        add(oreSet.getDeepslateOre(), createOreDrop(oreSet.getDeepslateOre(), oreSet.getDrop()!!))
+        if (oreSet.drop == null) return
+        add(oreSet.ore, createOreDrop(oreSet.ore, oreSet.drop!!))
+        add(oreSet.deepslateOre, createOreDrop(oreSet.deepslateOre, oreSet.drop!!))
     }
 
     private fun addOreSet(ore: Block, drop: Item) {
@@ -392,9 +388,9 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
     }
 
     private fun dropSelfStoneCobble(block: Block) {
-        if (block === GenerationsBlocks.VOLCANIC_STONE.get()) add(
+        if (block === GenerationsBlocks.VOLCANIC_STONE) add(
             block,
-            createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock())
+            createSingleItemTable(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock)
         )
         else dropSelfUpdated(block)
     }
@@ -494,7 +490,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
     }
 
     protected fun prisonBottleStem() {
-        val block = GenerationsShrines.PRISON_BOTTLE_STEM.get()
+        val block = GenerationsShrines.PRISON_BOTTLE_STEM
         val statePropertiesPredicate: () -> StatePropertiesPredicate.Builder = {
             val builder = StatePropertiesPredicate.Builder.properties()
 
@@ -530,12 +526,12 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
 
     fun ringLoot(state: PrisonBottleState, ring: Int, builder: StatePropertiesPredicate.Builder): LootPool.Builder {
         return this.applyExplosionCondition(
-            GenerationsItems.HOOPA_RING.get(), LootPool.lootPool()
+            GenerationsItems.HOOPA_RING, LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(ring.toFloat()))
                 .add(
-                    LootItem.lootTableItem(GenerationsItems.HOOPA_RING.get())
+                    LootItem.lootTableItem(GenerationsItems.HOOPA_RING)
                         .`when`(
-                            LootItemBlockStatePropertyCondition.hasBlockStateProperties(GenerationsShrines.PRISON_BOTTLE_STEM.get())
+                            LootItemBlockStatePropertyCondition.hasBlockStateProperties(GenerationsShrines.PRISON_BOTTLE_STEM)
                                 .setProperties(builder.hasProperty(PrisonBottleStemBlock.STATE, state))
                         )
                 )

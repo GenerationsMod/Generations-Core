@@ -21,28 +21,6 @@ class MutableBlockEntityType<T : BlockEntity>(factory: (BlockPos, BlockState) ->
     }
 
 
-    class Builder<T : BlockEntity> private constructor(
-        private val factory: (BlockPos, BlockState) -> T,
-        private val blocks: Set<Block>
-    ) {
-        @JvmOverloads
-        fun build(type: Type<*>? = null): MutableBlockEntityType<T> {
-            return MutableBlockEntityType(this.factory, this.blocks, type)
-        }
-
-        companion object {
-            fun <T : BlockEntity> create(factory: (BlockPos, BlockState) -> T, vararg blocks: Block): Builder<T> {
-                // ensure mutability
-                return Builder(factory, mutableSetOf(*blocks))
-            }
-        }
-    }
-
-
-    // exists for convenience so that no access widener for BlockEntityType.BlockEntityFactory is necessary
-    @FunctionalInterface
-    interface BlockEntityFactory<T : BlockEntity> : BlockEntitySupplier<T>
-
     companion object {
         @JvmField
 		var blocksToAdd: MutableSet<GenericModelBlock<*>> = HashSet()

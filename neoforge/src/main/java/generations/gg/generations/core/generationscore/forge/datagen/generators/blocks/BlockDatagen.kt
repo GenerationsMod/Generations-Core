@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
+import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock
@@ -339,7 +340,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         registerCarvedPumpkin(GenerationsBlocks.CURSED_CARVED_PUMPKIN, GenerationsBlocks.CURSED_PUMPKIN)
         registerCarvedPumpkin(GenerationsBlocks.CURSED_JACK_O_LANTERN, GenerationsBlocks.CURSED_PUMPKIN)
 
-        registerDoor(GenerationsBlocks.POKECENTER_DOOR.get())
+        registerDoor(GenerationsBlocks.POKECENTER_DOOR)
 
 
         pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, "poke_ball")
@@ -362,24 +363,24 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
         registerLog(GenerationsBlocks.GHOST_PILLAR)
 
-        GenerationsPokeDolls.POKEDOLLS.forEach(Consumer { block: RegistrySupplier<Block> -> this.registerPokeDoll(block) })
+        GenerationsPokeDolls.all().forEach(Consumer(this::registerPokeDoll))
 
         //        registerNoModel(GenerationsDecorationBlocks.VENDING_MACHINE.block());
 //        registerNoModel(GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block());
-        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach(Consumer { block: RegistrySupplier<BallDisplayBlock> ->
+        GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.forEach { block ->
             registerBlockItemParticle(
-                block.get(),
+                block,
                 "ball_displays",
                 true
             )
-        })
+        }
 
 
-        registerBlockItemParticleWithDrop(GenerationsBlocks.POKECENTER_SCARLET_SIGN.get(), "sign")
+        registerBlockItemParticleWithDrop(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "sign")
 
 
-        GenerationsShrines.SHRINES.forEach(Consumer { block: RegistrySupplier<Block> ->
-            val block1 = block.get()
+        GenerationsShrines.all().forEach(Consumer { block: Block ->
+            val block1 = block
             if (block1 is PrisonBottleStemBlock || block1 is PrisonBottleBlock) registerBlockItemParticle(
                 block1,
                 "legend_items",
@@ -393,15 +394,15 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         })
         GenerationsUtilityBlocks.BALL_LOOTS.forEach(Consumer { block: RegistrySupplier<BallLootBlock> ->
             registerBlockItemParticle(
-                block.get(),
+                block,
                 "ball_loots",
                 true
             )
         })
-        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TRASH_CAN.get(), "utility_blocks")
-        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.COOKING_POT.get(), "utility_blocks")
-        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.ROTOM_PC.get(), "utility_blocks")
-        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TABLE_PC.get(), "utility_blocks")
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TRASH_CAN, "utility_blocks")
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.COOKING_POT, "utility_blocks")
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.ROTOM_PC, "utility_blocks")
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TABLE_PC, "utility_blocks")
 
         registerDyeGroup(GenerationsDecorationBlocks.PASTEL_BEAN_BAG, "bean_bags")
         registerDyeGroup(GenerationsDecorationBlocks.VENDING_MACHINE, "vending_machines")
@@ -418,34 +419,34 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
         //        registerNoModel(GenerationsUtilityBlocks.CLOCK.block());
 //        registerNoModel(GenerationsUtilityBlocks.HEALER.block());
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.HOUSE_LAMP.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BENCH.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.GREATBALL_CUSHION.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.POKEBALL_CUSHION.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.FOONGUS_CUSHION.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.MASTERBALL_CUSHION.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.COUCH.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BUSH.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.HDTV.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.DESK.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.FRIDGE.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.WORK_DESK.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHELF.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BOOK_SHELF.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.POKEBALL_PILLAR.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SWITCH.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.LITWICK_CANDLES.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get(), "decorations")
-        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), "bean_bags")
-        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.RKS_MACHINE.get(), "utility_blocks")
-        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.SCARECROW.get(), "utility_blocks")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.HOUSE_LAMP, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BENCH, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.GREATBALL_CUSHION, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.POKEBALL_CUSHION, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.FOONGUS_CUSHION, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.MASTERBALL_CUSHION, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.COUCH, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BUSH, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.HDTV, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.DESK, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.FRIDGE, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.WORK_DESK, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHELF, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.BOOK_SHELF, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.POKEBALL_PILLAR, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SWITCH, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.LITWICK_CANDLE, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.LITWICK_CANDLES, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP, "decorations")
+        registerBlockItemParticleWithDrop(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG, "bean_bags")
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.RKS_MACHINE, "utility_blocks")
+        registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.SCARECROW, "utility_blocks")
 
         registerBlockItem(GenerationsBlocks.LIGHTNING_LANTERN)
 
@@ -484,7 +485,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
         val box = GenerationsUtilityBlocks.BOX
 
-        getVariantBuilder(box.get())
+        getVariantBuilder(box)
             .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.NORTH)
             .modelForState().modelFile(open).addModel()
             .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.EAST)
@@ -502,132 +503,132 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.WEST)
             .modelForState().modelFile(closed).rotationY(270).addModel()
 
-        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(box.get().asItem())).toString())
+        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(box.asItem())).toString())
             .parent(UncheckedModelFile("item/generated"))
-            .texture("layer0", key(box.get()).withPrefix("item/blocks/utility_blocks/"))
+            .texture("layer0", key(box).withPrefix("item/blocks/utility_blocks/"))
 
-        dropSelfList.add(box.get())
+        dropSelfList.add(box)
     }
 
     private fun registerDyeGroup(
         group: DyedGroup,
         dir: String
     ) {
-        group.block.values.asSequence().map { it.value() }.forEach { block ->
+        group.block.values.forEach { block ->
             registerBlockItemParticle(block, dir, true)
             dropSelfList.add(block)
         }
     }
 
-    private fun <T : Block> registerNoModel(block: RegistrySupplier<T>) {
-        this.simpleBlock(block.get(), *ConfiguredModel.builder().modelFile(models().getBuilder(block.id.path)).build())
+    private fun <T : Block> registerNoModel(block: T) {
+        this.simpleBlock(block, *ConfiguredModel.builder().modelFile(models().getBuilder(block.id.path)).build())
     }
 
     private fun registerPallet(
-        block: RegistrySupplier<Block>,
-        slab: RegistrySupplier<SlabBlock>?,
-        stairs: RegistrySupplier<StairBlock>?,
-        wall: RegistrySupplier<WallBlock>?,
-        button: RegistrySupplier<ButtonBlock>?,
-        pressurePlate: RegistrySupplier<PressurePlateBlock>?,
+        block: Block,
+        slab: SlabBlock?,
+        stairs: StairBlock?,
+        wall: WallBlock?,
+        button: ButtonBlock?,
+        pressurePlate: PressurePlateBlock?,
         dropSelf: Boolean
     ) {
-        if (!registered(block.get())) registerBlockItem(block)
-        if (dropSelf) dropSelfList.add(block.get())
+        if (!registered(block)) registerBlockItem(block)
+        if (dropSelf) dropSelfList.add(block)
 
         if (slab != null) {
-            if (!registered(slab.get())) registerSlab(slab.get(), block.get())
-            if (dropSelf) dropSelfList.add(slab.get())
+            if (!registered(slab)) registerSlab(slab, block)
+            if (dropSelf) dropSelfList.add(slab)
         }
         if (stairs != null) {
-            if (!registered(stairs.get())) registerStairs(stairs.get(), block.get())
-            if (dropSelf) dropSelfList.add(stairs.get())
+            if (!registered(stairs)) registerStairs(stairs, block)
+            if (dropSelf) dropSelfList.add(stairs)
         }
         if (wall != null) {
-            if (!registered(wall.get())) registerWall(wall.get(), block.get())
-            if (dropSelf) dropSelfList.add(wall.get())
+            if (!registered(wall)) registerWall(wall, block)
+            if (dropSelf) dropSelfList.add(wall)
         }
         if (button != null) {
-            if (!registered(button.get())) registerButton(button.get(), block.get())
-            if (dropSelf) dropSelfList.add(button.get())
+            if (!registered(button)) registerButton(button, block)
+            if (dropSelf) dropSelfList.add(button)
         }
         if (pressurePlate != null) {
-            if (!registered(pressurePlate.get())) registerPressurePlate(pressurePlate.get(), block.get())
-            if (dropSelf) dropSelfList.add(pressurePlate.get())
+            if (!registered(pressurePlate)) registerPressurePlate(pressurePlate, block)
+            if (dropSelf) dropSelfList.add(pressurePlate)
         }
     }
 
 
     private fun registerSandStonePallet(
-        sandstone: RegistrySupplier<Block>,
-        slab: RegistrySupplier<SlabBlock>?,
-        stairs: RegistrySupplier<StairBlock>?,
-        wall: RegistrySupplier<WallBlock>?,
-        smooth: RegistrySupplier<Block>?,
-        smoothslab: RegistrySupplier<SlabBlock>?,
-        smoothstair: RegistrySupplier<StairBlock>?,
-        smoothWall: RegistrySupplier<WallBlock>?,
-        chiseled: RegistrySupplier<Block>,
-        cutSandstone: RegistrySupplier<Block>?,
-        cutSlab: RegistrySupplier<SlabBlock>?
+        sandstone: Block,
+        slab: SlabBlock?,
+        stairs: StairBlock?,
+        wall: WallBlock?,
+        smooth: Block?,
+        smoothslab: SlabBlock?,
+        smoothstair: StairBlock?,
+        smoothWall: WallBlock?,
+        chiseled: Block,
+        cutSandstone: Block?,
+        cutSlab: SlabBlock?
     ) {
-        if (!registered(sandstone.get())) registerSandStone(sandstone)
-        dropSelfList.add(sandstone.get())
+        if (!registered(sandstone)) registerSandStone(sandstone)
+        dropSelfList.add(sandstone)
         if (slab != null) {
-            if (!registered(slab.get())) registerSandStoneSlab(slab, sandstone)
-            dropSelfList.add(slab.get())
+            if (!registered(slab)) registerSandStoneSlab(slab, sandstone)
+            dropSelfList.add(slab)
         }
         if (stairs != null) {
-            if (!registered(stairs.get())) registerSandStoneStairs(stairs, sandstone)
-            dropSelfList.add(stairs.get())
+            if (!registered(stairs)) registerSandStoneStairs(stairs, sandstone)
+            dropSelfList.add(stairs)
         }
         if (wall != null) {
-            if (!registered(wall.get())) registerWall(wall.get(), sandstone.get())
-            dropSelfList.add(wall.get())
+            if (!registered(wall)) registerWall(wall, sandstone)
+            dropSelfList.add(wall)
         }
         val top = id("block/" + sandstone.id.path + "_top")
         if (smooth != null) {
             val smoothsandstoneBlock =
                 models().cubeAll(smooth.id.path, id("block/" + sandstone.id.path + "_top"))
-            if (!registered(smooth.get())) simpleBlockWithItem(smooth.get(), smoothsandstoneBlock)
+            if (!registered(smooth)) simpleBlockWithItem(smooth, smoothsandstoneBlock)
 
-            dropSelfList.add(smooth.get())
+            dropSelfList.add(smooth)
             if (smoothslab != null) {
-                if (!registered(smoothslab.get())) {
-                    slabBlock(smoothslab.get(), id("block/" + smooth.id.path), top, top, top)
-                    simpleBlockItem(smoothslab.get(), models().slab(smoothslab.id.path, top, top, top))
+                if (!registered(smoothslab)) {
+                    slabBlock(smoothslab, id("block/" + smooth.id.path), top, top, top)
+                    simpleBlockItem(smoothslab, models().slab(smoothslab.id.path, top, top, top))
                 }
-                dropSelfList.add(smoothslab.get())
+                dropSelfList.add(smoothslab)
             }
             if (smoothstair != null) {
-                if (!registered(smoothstair.get())) {
-                    stairsBlock(smoothstair.get(), top)
-                    simpleBlockItem(smoothstair.get(), models().stairs(smoothstair.id.path, top, top, top))
+                if (!registered(smoothstair)) {
+                    stairsBlock(smoothstair, top)
+                    simpleBlockItem(smoothstair, models().stairs(smoothstair.id.path, top, top, top))
                 }
-                dropSelfList.add(smoothstair.get())
+                dropSelfList.add(smoothstair)
             }
             if (smoothWall != null) {
-                if (!registered(smoothWall.get())) {
-                    wallBlock(smoothWall.get(), top)
-                    simpleBlockItem(smoothWall.get(), models().wallInventory(smoothWall.id.path, top))
+                if (!registered(smoothWall)) {
+                    wallBlock(smoothWall, top)
+                    simpleBlockItem(smoothWall, models().wallInventory(smoothWall.id.path, top))
                 }
-                dropSelfList.add(smoothWall.get())
+                dropSelfList.add(smoothWall)
             }
 
-            if (!registered(chiseled.get())) cubeColumn(chiseled, top)
+            if (!registered(chiseled)) cubeColumn(chiseled, top)
             if (cutSandstone != null) {
-                if (!registered(cutSandstone.get())) cubeColumn(cutSandstone, top)
+                if (!registered(cutSandstone)) cubeColumn(cutSandstone, top)
                 if (cutSlab != null) {
-                    if (!registered(cutSlab.get())) {
+                    if (!registered(cutSlab)) {
                         slabBlock(
-                            cutSlab.get(),
+                            cutSlab,
                             id("block/" + cutSandstone.id.path),
                             top,
                             id("block/" + cutSandstone.id.path),
                             top
                         )
                         simpleBlockItem(
-                            cutSlab.get(),
+                            cutSlab,
                             models().slab(
                                 cutSlab.id.path,
                                 id("block/" + cutSandstone.id.path),
@@ -636,18 +637,18 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
                             )
                         )
                     }
-                    dropSelfList.add(cutSlab.get())
+                    dropSelfList.add(cutSlab)
                 }
             }
         }
     }
 
-    private fun cubeColumn(cutSandstone: RegistrySupplier<Block>, top: ResourceLocation) {
+    private fun cubeColumn(cutSandstone: Block, top: ResourceLocation) {
         if (cutSandstone != null) {
             val cutBlock =
                 models().cubeColumn(cutSandstone.id.path, id("block/" + cutSandstone.id.path), top)
-            simpleBlockWithItem(cutSandstone.get(), cutBlock)
-            dropSelfList.add(cutSandstone.get())
+            simpleBlockWithItem(cutSandstone, cutBlock)
+            dropSelfList.add(cutSandstone)
         }
     }
 
@@ -724,8 +725,8 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         itemModels().trapdoorBottom(trapDoorId.path, texture)
     }
 
-    private fun registerTrapDoor(trapDoor: RegistrySupplier<TrapDoorBlock>) {
-        registerTrapDoor(trapDoor.get(), trapDoor.get())
+    private fun registerTrapDoor(trapDoor: TrapDoorBlock) {
+        registerTrapDoor(trapDoor, trapDoor)
     }
 
     private fun registerSign(sign: StandingSignBlock?, wallsign: WallSignBlock, plank: Block) {
@@ -738,41 +739,41 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         simpleBlock(wallsign, thing)
     }
 
-    private fun registerMushroom(crossBlock: RegistrySupplier<GenerationsMushroomBlock>) {
-        getVariantBuilder(crossBlock.get()).forAllStates { state: BlockState? ->
+    private fun registerMushroom(crossBlock: GenerationsMushroomBlock) {
+        getVariantBuilder(crossBlock).forAllStates { state: BlockState? ->
             ConfiguredModel.builder()
-                .modelFile(models().cross(crossBlock.id.path, blockTexture(crossBlock.get())).renderType("cutout"))
+                .modelFile(models().cross(crossBlock.id.path, blockTexture(crossBlock)).renderType("cutout"))
                 .build()
         }
 
-        MUSHROOM_BLOCKS.add(crossBlock.get())
+        MUSHROOM_BLOCKS.add(crossBlock)
     }
 
-    private fun registerFlabebeFlower(crossBlock: RegistrySupplier<FlabebeFlowerBlock>) {
-        val name = key(crossBlock.get())
+    private fun registerFlabebeFlower(crossBlock: FlabebeFlowerBlock) {
+        val name = key(crossBlock)
         val location = ResourceLocation.fromNamespaceAndPath(name.namespace, ModelProvider.BLOCK_FOLDER + "/flowers/" + name.path)
 
-        getVariantBuilder(crossBlock.get()).forAllStates { state: BlockState? ->
+        getVariantBuilder(crossBlock).forAllStates { state: BlockState? ->
             ConfiguredModel.builder()
                 .modelFile(models().cross(crossBlock.id.path, location).renderType("cutout"))
                 .build()
         }
 
-        dropSelfList.add(crossBlock.get())
+        dropSelfList.add(crossBlock)
     }
 
-    private fun registerLog(log: RegistrySupplier<RotatedPillarBlock>) {
+    private fun registerLog(log: RotatedPillarBlock) {
         val name = log.id.path
         val logBlock = models().withExistingParent(log.id.toString(), mcLoc("block/oak_log"))
             .texture("side", id("block/$name"))
             .texture("top", id("block/" + name + "_top"))
-        logBlock(log.get())
-        simpleBlockItem(log.get(), logBlock)
+        logBlock(log)
+        simpleBlockItem(log, logBlock)
     }
 
     private fun registerBlockItem(block: RegistrySupplier<out Block>) {
-        registerBlockItem(block.get())
-        dropSelfList.add(block.get())
+        registerBlockItem(block)
+        dropSelfList.add(block)
     }
 
     private fun registerBlockItem(block: Block) {
@@ -780,9 +781,9 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         dropSelfList.add(block)
     }
 
-    private fun registerPillar(block: RegistrySupplier<out Block>) {
+    private fun registerPillar(block: Block) {
         val texture = id("block/${block.id.path}")
-        val item = id("item/blocks/pillars/" + BuiltInRegistries.BLOCK.getKey(block.get())!!.path)
+        val item = id("item/blocks/pillars/" + BuiltInRegistries.BLOCK.getKey(block).path)
 
         val model = models().withExistingParent(block.id.path, id("block/pillar"))
             .texture("texture", texture)
@@ -832,11 +833,11 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             }
         }
 
-        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.get().asItem())).toString())
+        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.asItem())).toString())
             .parent(UncheckedModelFile("item/generated"))
             .texture("layer0", item)
 
-        dropSelfList.add(block.get())
+        dropSelfList.add(block)
     }
 
     private fun VariantBlockStateBuilder.partialState(block: VariantBlockStateBuilder.PartialBlockstate.() -> Unit): VariantBlockStateBuilder.PartialBlockstate? {
@@ -846,7 +847,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
     }
 
     private fun <T: Block> variantBuilder(block: RegistrySupplier<T>, function: VariantBlockStateBuilder.() -> Unit) {
-        variantBuilder(block.get(), function)
+        variantBuilder(block, function)
     }
 
     private fun variantBuilder(block: Block, function: VariantBlockStateBuilder.() -> Unit) {
@@ -860,7 +861,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
     }
 
 
-    private fun unownBlock(block: RegistrySupplier<out Block>) {
+    private fun unownBlock(block: Block) {
         val model = models().cubeBottomTop(
             block.id.path,
             block.id.withPrefix("block/"),
@@ -868,8 +869,8 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             id("block/unown_block_top")
         )
 
-        simpleBlockWithItem(block.get(), model)
-        dropSelfList.add(block.get())
+        simpleBlockWithItem(block, model)
+        dropSelfList.add(block)
     }
 
     private fun registerBlockItemParticleWithDrop(block: Block, name: String) {
@@ -896,17 +897,17 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         }
     }
 
-    private fun registerPokeDoll(block: RegistrySupplier<Block>) {
-        val blockId = checkNotNull(BuiltInRegistries.BLOCK.getKey(block.get()))
+    private fun registerPokeDoll(block: Block) {
+        val blockId = checkNotNull(BuiltInRegistries.BLOCK.getKey(block))
         val textureId = ResourceLocation.fromNamespaceAndPath(blockId.namespace, "item/dolls/" + blockId.path.replace("shiny_", "shiny/"))
 
         simpleBlock(
-            block.get(),
-            models().sign(Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block.get()))!!.path, textureId)
+            block,
+            models().sign(Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(block))!!.path, textureId)
         )
 
         val key = Objects.requireNonNull(
-            BuiltInRegistries.BLOCK.getKey(block.get()),
+            BuiltInRegistries.BLOCK.getKey(block),
             "Tried to create json model for unregistered Item."
         )!!
         var texPath = id("item/dolls/" + key.path)
@@ -914,15 +915,15 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             id("item/dolls/shiny/" + key.path.replace("shiny_", ""))
 
 
-        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.get().asItem())).toString())
+        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(block.asItem())).toString())
             .parent(UncheckedModelFile("item/generated"))
             .texture("layer0", texPath)
     }
 
-    private fun registerSandStone(block: RegistrySupplier<Block>) {
+    private fun registerSandStone(block: Block) {
         val name = block.id.path
         simpleBlockWithItem(
-            block.get(),
+            block,
             models().cubeBottomTop(
                 name,
                 id("block/$name"),
@@ -932,15 +933,15 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         )
     }
 
-    private fun registerSandStoneStairs(stairs: RegistrySupplier<StairBlock>, block: RegistrySupplier<Block>) {
+    private fun registerSandStoneStairs(stairs: StairBlock, block: Block) {
         stairsBlock(
-            stairs.get(),
+            stairs,
             id("block/" + block.id.path),
             id("block/" + block.id.path + "_bottom"),
             id("block/" + block.id.path + "_top")
         )
         simpleBlockItem(
-            stairs.get(),
+            stairs,
             itemModels().stairs(
                 "block/" + stairs.id.path,
                 id("block/" + block.id.path),
@@ -950,16 +951,16 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         )
     }
 
-    private fun registerSandStoneSlab(slab: RegistrySupplier<SlabBlock>, block: RegistrySupplier<Block>) {
+    private fun registerSandStoneSlab(slab: SlabBlock, block: Block) {
         slabBlock(
-            slab.get(),
+            slab,
             id("block/" + block.id.path),
             id("block/" + block.id.path),
             id("block/" + block.id.path + "_bottom"),
             id("block/" + block.id.path + "_top")
         )
         simpleBlockItem(
-            slab.get(),
+            slab,
             itemModels().slab(
                 "block/" + slab.id.path,
                 id("block/" + block.id.path),
@@ -969,52 +970,49 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         )
     }
 
-    private fun registerGlassBlock(block: RegistrySupplier<out TransparentBlock>) {
-        getVariantBuilder(block.get()).forAllStates { state: BlockState? ->
+    private fun registerGlassBlock(block: TransparentBlock) {
+        getVariantBuilder(block).forAllStates { state: BlockState? ->
             ConfiguredModel.builder()
                 .modelFile(
                     models().cubeAll(block.id.path, modLoc("block/" + block.id.path)).renderType("cutout_mipped")
                 )
                 .build()
         }
-        simpleBlockItem(block.get(), cubeAll(block.get()))
+        simpleBlockItem(block, cubeAll(block))
     }
 
     @SafeVarargs
-    private fun registerCarpetLike(vararg block: RegistrySupplier<Block>) {
+    private fun registerCarpetLike(vararg block: Block) {
         for (carpet in block) {
-            simpleBlockWithItem(carpet.get(), models().carpet(carpet.id.path, modLoc("block/" + carpet.id.path)))
-            dropSelfList.add(carpet.get())
+            simpleBlockWithItem(carpet, models().carpet(carpet.id.path, modLoc("block/" + carpet.id.path)))
+            dropSelfList.add(carpet)
         }
     }
 
     private fun registerOreBlocks() {
-        GenerationsOres.ORES.forEach(Consumer { ore: RegistrySupplier<Block?> ->
+        GenerationsOres.all().forEach { ore ->
             val name = ore.id.path
-            simpleBlockWithItem(
-                ore.get(),
-                models().singleTexture(name, mcLoc("block/cube_all"), "all", id("block/ores/$name"))
-            )
-        })
+            simpleBlockWithItem(ore, models().singleTexture(name, mcLoc("block/cube_all"), "all", id("block/ores/$name")))
+        }
     }
 
-    private fun pokeBallChests(chest: RegistrySupplier<GenericChestBlock>, ballName: String) {
+    private fun pokeBallChests(chest: GenericChestBlock, ballName: String) {
         simpleBlock(
-            chest.get(),
+            chest,
             models().getBuilder(chest.id.path).texture("particle", id("item/pokeballs/$ballName"))
         )
     }
 
 
-    private fun registerPumpkin(pumpkin: RegistrySupplier<out Block>) {
+    private fun registerPumpkin(pumpkin: Block) {
         val pumpkinModel = models().withExistingParent(pumpkin.id.toString(), mcLoc("block/pumpkin"))
             .texture("side", id("block/" + pumpkin.id.path + "_side"))
             .texture("end", id("block/" + pumpkin.id.path + "_end"))
-        simpleBlockWithItem(pumpkin.get(), pumpkinModel)
+        simpleBlockWithItem(pumpkin, pumpkinModel)
     }
 
 
-    private fun registerFurnace(furnace: RegistrySupplier<out Block>) {
+    private fun registerFurnace(furnace: Block) {
         val off = models().orientable(
             furnace.id.path,
             id("block/furnace/" + furnace.id.path + "_side"),
@@ -1028,26 +1026,26 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             id("block/furnace/" + furnace.id.path + "_top")
         )
         horizontalBlock(
-            furnace.get()
+            furnace
         ) { state: BlockState -> if (state.getValue(FurnaceBlock.LIT)) on else off }
-        simpleBlockItem(furnace.get(), off)
+        simpleBlockItem(furnace, off)
     }
 
     private fun registerCarvedPumpkin(
-        carvedPumpkin: RegistrySupplier<out Block>,
-        pumpkin: RegistrySupplier<out CarvedPumpkinBlock>
+        carvedPumpkin: Block,
+        pumpkin: CarvedPumpkinBlock
     ) {
         val pumpkinModel = models().withExistingParent(carvedPumpkin.id.toString(), mcLoc("block/carved_pumpkin"))
             .texture("side", id("block/" + pumpkin.id.path + "_side"))
             .texture("top", id("block/" + pumpkin.id.path + "_end"))
             .texture("front", id("block/" + carvedPumpkin.id.path))
-        horizontalBlock(carvedPumpkin.get(), pumpkinModel)
-        simpleBlockItem(carvedPumpkin.get(), pumpkinModel)
+        horizontalBlock(carvedPumpkin, pumpkinModel)
+        simpleBlockItem(carvedPumpkin, pumpkinModel)
     }
 
     private fun registerCraftingTable(
-        table: RegistrySupplier<GenerationsCraftingTableBlock>,
-        plank: RegistrySupplier<Block>
+        table: GenerationsCraftingTableBlock,
+        plank: Block
     ) {
         val tableModel = models().withExistingParent(table.id.toString(), mcLoc("block/cube"))
             .texture("down", id("block/" + plank.id.path))
@@ -1057,26 +1055,26 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             .texture("south", id("block/crafting_table/" + table.id.path + "_side"))
             .texture("up", id("block/crafting_table/" + table.id.path + "_top"))
             .texture("west", id("block/crafting_table/" + table.id.path + "_front"))
-        simpleBlockWithItem(table.get(), tableModel)
+        simpleBlockWithItem(table, tableModel)
     }
 
-    private fun registerBookShelf(bookshelf: RegistrySupplier<Block>, plank: RegistrySupplier<Block>) {
+    private fun registerBookShelf(bookshelf: Block, plank: Block) {
         val bookshelfModel = models().withExistingParent(bookshelf.id.toString(), mcLoc("block/cube_column"))
             .texture("side", id("block/" + bookshelf.id.path))
             .texture("end", id("block/" + plank.id.path))
-        simpleBlockWithItem(bookshelf.get(), bookshelfModel)
+        simpleBlockWithItem(bookshelf, bookshelfModel)
     }
 
-    private fun registerInfestedBlock(block: RegistrySupplier<InfestedBlock>) {
+    private fun registerInfestedBlock(block: InfestedBlock) {
         models().withExistingParent(
             block.id.toString().replace("infested_", "") + "_mirrored",
             mcLoc("block/cube_mirrored_all")
         )
-            .texture("all", blockTexture(block.get().hostBlock))
-        val normal = UncheckedModelFile(ModelLocationUtils.getModelLocation(block.get().hostBlock))
-        val mirrored = UncheckedModelFile(blockTexture(block.get().hostBlock).toString() + "_mirrored")
+            .texture("all", blockTexture(block.hostBlock))
+        val normal = UncheckedModelFile(ModelLocationUtils.getModelLocation(block.hostBlock))
+        val mirrored = UncheckedModelFile(blockTexture(block.hostBlock).toString() + "_mirrored")
 
-        getVariantBuilder(block.get()).partialState()
+        getVariantBuilder(block).partialState()
             .addModels(
                 *ConfiguredModel.builder().modelFile(normal)
                     .nextModel().modelFile(mirrored)
@@ -1084,10 +1082,10 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
                     .nextModel().modelFile(mirrored).rotationY(180)
                     .build()
             )
-        itemModels().withExistingParent(block.id.path, blockTexture(block.get().hostBlock))
+        itemModels().withExistingParent(block.id.path, blockTexture(block.hostBlock))
     }
 
-    private fun registerDripStone(dripstone: RegistrySupplier<PointedChargeDripstoneBlock>) {
+    private fun registerDripStone(dripstone: PointedChargeDripstoneBlock) {
         val name = dripstone.id.toString()
         val parts = arrayOf(
             "down_base",
@@ -1149,47 +1147,47 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
     }
 
     private fun registerWoodPallet(
-        Log: RegistrySupplier<RotatedPillarBlock>,
-        StrippedLog: RegistrySupplier<RotatedPillarBlock>,
-        Plank: RegistrySupplier<Block>,
-        slab: RegistrySupplier<SlabBlock>,
-        stair: RegistrySupplier<StairBlock>,
-        button: RegistrySupplier<ButtonBlock>,
-        pressurePlate: RegistrySupplier<PressurePlateBlock>,
-        door: RegistrySupplier<DoorBlock>,
-        trapDoor: RegistrySupplier<TrapDoorBlock>,
-        wood: RegistrySupplier<out Block>,
-        StrippedWood: RegistrySupplier<out Block>,
-        fence: RegistrySupplier<FenceBlock>,
-        gate: RegistrySupplier<FenceGateBlock>,
-        sign: RegistrySupplier<StandingSignBlock>,
-        wallSign: RegistrySupplier<WallSignBlock>,
-        craftingTable: RegistrySupplier<GenerationsCraftingTableBlock>,
-        hangingSignBlock: RegistrySupplier<CeilingHangingSignBlock>,
-        wallHangingSignBlock: RegistrySupplier<WallHangingSignBlock>,
-        bookshelf: RegistrySupplier<Block>
+        Log: RotatedPillarBlock,
+        StrippedLog: RotatedPillarBlock,
+        Plank: Block,
+        slab: SlabBlock,
+        stair: StairBlock,
+        button: ButtonBlock,
+        pressurePlate: PressurePlateBlock,
+        door: DoorBlock,
+        trapDoor: TrapDoorBlock,
+        wood: Block,
+        StrippedWood: Block,
+        fence: FenceBlock,
+        gate: FenceGateBlock,
+        sign: StandingSignBlock,
+        wallSign: WallSignBlock,
+        craftingTable: GenerationsCraftingTableBlock,
+        hangingSignBlock: CeilingHangingSignBlock,
+        wallHangingSignBlock: WallHangingSignBlock,
+        bookshelf: Block
     ) {
-        if (!registered(Log.get())) registerLog(Log)
-        if (!registered(StrippedLog.get())) registerLog(StrippedLog)
-        if (!registered(Plank.get())) registerBlockItem(Plank)
-        if (!registered(wood.get())) registerBlockItem(wood)
-        if (!registered(StrippedWood.get())) registerBlockItem(StrippedWood)
-        if (!registered(slab.get())) registerSlab(slab.get(), Plank.get())
-        if (!registered(stair.get())) registerStairs(stair.get(), Plank.get())
-        if (!registered(button.get())) registerButton(button.get(), Plank.get())
-        if (!registered(pressurePlate.get())) registerPressurePlate(pressurePlate.get(), Plank.get())
-        if (!registered(door.get())) registerDoor(door.get())
-        if (!registered(trapDoor.get())) registerTrapDoor(trapDoor)
-        if (!registered(gate.get())) registerGate(gate.get(), null, Plank.get())
-        if (!registered(fence.get())) registerFence(fence.get(), Plank.get())
-        if (!registered(sign.get())) registerSign(sign.get(), wallSign.get(), Plank.get())
-        if (!registered(hangingSignBlock.get())) registerHangingSign(
-            hangingSignBlock.get(),
-            wallHangingSignBlock.get(),
-            StrippedLog.get()
+        if (!registered(Log)) registerLog(Log)
+        if (!registered(StrippedLog)) registerLog(StrippedLog)
+        if (!registered(Plank)) registerBlockItem(Plank)
+        if (!registered(wood)) registerBlockItem(wood)
+        if (!registered(StrippedWood)) registerBlockItem(StrippedWood)
+        if (!registered(slab)) registerSlab(slab, Plank)
+        if (!registered(stair)) registerStairs(stair, Plank)
+        if (!registered(button)) registerButton(button, Plank)
+        if (!registered(pressurePlate)) registerPressurePlate(pressurePlate, Plank)
+        if (!registered(door)) registerDoor(door)
+        if (!registered(trapDoor)) registerTrapDoor(trapDoor)
+        if (!registered(gate)) registerGate(gate, null, Plank)
+        if (!registered(fence)) registerFence(fence, Plank)
+        if (!registered(sign)) registerSign(sign, wallSign, Plank)
+        if (!registered(hangingSignBlock)) registerHangingSign(
+            hangingSignBlock,
+            wallHangingSignBlock,
+            StrippedLog
         )
-        if (!registered(craftingTable.get())) registerCraftingTable(craftingTable, Plank)
-        if (!registered(bookshelf.get())) registerBookShelf(bookshelf, Plank)
+        if (!registered(craftingTable)) registerCraftingTable(craftingTable, Plank)
+        if (!registered(bookshelf)) registerBookShelf(bookshelf, Plank)
     }
 
     companion object {

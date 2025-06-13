@@ -36,6 +36,6 @@ class CustomTechnicalMachineItem(properties: Properties) : MoveTeachingItem(prop
     }
 
     fun createTm(move: String, number: Int): ItemStack {
-        return GenerationsItems.CUSTOM_TM.get().defaultInstance.also { it.set(GenerationsDataComponents.TM_DETAILS, TmDetails(move, number)) }
+        return GenerationsItems.CUSTOM_TM.defaultInstance.also { it.set(GenerationsDataComponents.TM_DETAILS, TmDetails(move, number)) }
     }
 }

@@ -144,7 +144,7 @@ object GenerationsBlockEntities {
 
     val PC = registerRegular("pc", ::DefaultPcBlockEntity, GenerationsUtilityBlocks.ROTOM_PC, GenerationsUtilityBlocks.TABLE_PC)
     @JvmField
-    val DYED_PC = registerRegularWithArray("dyed_pc", ::DyedPcBlockEntity, GenerationsUtilityBlocks.PC.toArray())
+    val DYED_PC = registerRegular("dyed_pc", ::DyedPcBlockEntity, GenerationsUtilityBlocks.PC.toArray())
 
     @JvmField
     val BALL_LOOT = registerRegular("poke_loot", ::BallLootBlockEntity,

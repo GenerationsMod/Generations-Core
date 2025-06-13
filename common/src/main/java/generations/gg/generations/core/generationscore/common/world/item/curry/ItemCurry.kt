@@ -49,12 +49,13 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
         if (player is ServerPlayer) {
 
             val data = stack.getOrDefault(GenerationsDataComponents.CURRY_DATA, CurryData())
-            val rating = CurryEvents.MODIFY_RATING.invoker().modifyRating(CurryTasteRating.Milcery, player, data)!! //CurryDex.of(player).currentTaste
 
-            data.setRating(rating)
-            rating.configureData(data)
-            stack.set(GenerationsDataComponents.CURRY_DATA, data)
+            CurryEvents.MODIFY_RATING.post(CurryEvents.ModifyRating(player, data, CurryTasteRating.Milcery), then = { event ->
+                data.setRating(event.rating)
+                event.rating.configureData(data)
+                stack.set(GenerationsDataComponents.CURRY_DATA, data)
 //            CurryDex.add(player, data)
+            })
         }
     }
 
@@ -94,7 +95,7 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
     companion object {
         @JvmStatic
         fun createStack(data: CurryData): ItemStack {
-            val stack = ItemStack(GenerationsItems.CURRY.get())
+            val stack = ItemStack(GenerationsItems.CURRY)
             stack.set(GenerationsDataComponents.CURRY_DATA, data)
             return stack
         }

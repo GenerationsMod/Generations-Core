@@ -120,7 +120,7 @@ tasks {
             "architectury.common.json",
             ".cache/**")
         configurations = listOf(project.configurations.getByName("shadowBundle"))
-        relocate("org.lwjgl.assimp", "generations.gg.generations.shaded.assimp")
+//        relocate("org.lwjgl.assimp", "generations.gg.generations.shaded.assimp")
         archiveClassifier.set("dev-shadow")
     }
 

@@ -69,7 +69,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
     private var displayCache: DisplayCache? = DisplayCache.EMPTY
 
     init {
-        val mailContent: MailContent? = book.get(MAIL_DATA.value())
+        val mailContent: MailContent? = book.get(MAIL_DATA)
         if (mailContent != null) {
             contents = mailContent.content
         }
@@ -139,7 +139,7 @@ class MailEditScreen(private val owner: Player, private val book: ItemStack, pri
     }
 
     private fun updateLocalCopy(sign: Boolean) {
-        val mailContent: MailContent = book.getOrDefault(MAIL_DATA.value(), MailContent())
+        val mailContent: MailContent = book.getOrDefault(MAIL_DATA, MailContent())
 
         if (contents.isNotEmpty()) {
             mailContent.content = this.contents

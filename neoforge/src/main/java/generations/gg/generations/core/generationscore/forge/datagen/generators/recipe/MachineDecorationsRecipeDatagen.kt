@@ -69,13 +69,13 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
 
         //FURNACES
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
-            .define('X', GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())
+            .define('X', GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock)
             .pattern("XXX")
             .pattern("X X")
             .pattern("XXX")
             .unlockedBy(
-                getHasName(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()),
-                has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock),
+                has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(
@@ -105,13 +105,13 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
-            .define('X', GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock())
+            .define('X', GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock)
             .pattern("XXX")
             .pattern("X X")
             .pattern("XXX")
             .unlockedBy(
-                getHasName(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()),
-                has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock),
+                has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(
@@ -142,13 +142,13 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
             .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
-            .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
+            .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             .define('#', Items.BOWL)
             .pattern(" # ")
             .pattern("XYX")
             .unlockedBy(
-                getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.GRAY_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
 
@@ -555,26 +555,26 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHELF.get(), 1)
-            .define('B', GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock())
+            .define('B', GenerationsBlocks.BLUE_MARBLE_SET.baseBlock)
             .define('W', Items.WHITE_DYE)
             .define('O', Items.OAK_PLANKS)
             .pattern("BBB")
             .pattern("OOO")
             .pattern("WWW")
             .unlockedBy(
-                getHasName(GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.BLUE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.BLUE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BOOK_SHELF.get(), 1)
             .define('B', Items.BOOK)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("WWW")
             .pattern("BBB")
             .pattern("WWW")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(
@@ -585,13 +585,13 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .define('P', POTION)
             .define('R', RARE_CANDY)
             .define('G', Items.GLASS)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("PRP")
             .pattern("GGG")
             .pattern("WWW")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(
@@ -602,13 +602,13 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .define('R', RARE_CANDY)
             .define('L', Items.LIME_WOOL)
             .define('G', Items.GLASS)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("RLR")
             .pattern("GGG")
             .pattern("WWW")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(
@@ -618,12 +618,12 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
         )
             .define('P', POTION)
             .define('R', RARE_CANDY)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("PRP")
             .pattern("WWW")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(
@@ -633,51 +633,51 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
         )
             .define('R', RARE_CANDY)
             .define('L', Items.LIME_WOOL)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("RLR")
             .pattern("WWW")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1.get(), 1)
             .define('G', Items.GLASS)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("GGG")
             .pattern("WWW")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2.get(), 1)
             .define('G', Items.GLASS)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("WWW")
             .pattern("GGG")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.WORK_DESK.get(), 1)
-            .define('G', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
-            .define('B', GenerationsBlocks.BLUE_MARBLE_SET.getBaseBlock())
+            .define('G', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
+            .define('B', GenerationsBlocks.BLUE_MARBLE_SET.baseBlock)
             .pattern("GGG")
             .pattern("GBG")
             .unlockedBy(
-                getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.GRAY_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.DESK.get(), 1)
-            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+            .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("WWW")
             .pattern("W W")
             .unlockedBy(
-                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.WHITE_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TRASH_CAN.get(), 1)
@@ -858,15 +858,15 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
             .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
-            .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
+            .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             .define('#', Items.BOWL)
             .define('Z', pokeball)
             .pattern(" Z ")
             .pattern(" # ")
             .pattern("XYX")
             .unlockedBy(
-                getHasName(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock()),
-                has(GenerationsBlocks.GRAY_MARBLE_SET.getBaseBlock())
+                getHasName(GenerationsBlocks.GRAY_MARBLE_SET.baseBlock),
+                has(GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             )
             .save(
                 consumer,

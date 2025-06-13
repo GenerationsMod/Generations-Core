@@ -41,7 +41,7 @@ public class LakeCrystalItem extends EnchantableItem implements PostBattleUpdati
 
             if (!isEnchanted(stack) && stack.getDamageValue() >= stack.getMaxDamage()) {
                 PokemonUtil.spawn(pokemonProperties.createPokemon(70), level, player.getOnPos(), player.getYRot());
-                stack.set(GenerationsDataComponents.INSTANCE.getENCHANTED().get(), true);
+                stack.set(GenerationsDataComponents.INSTANCE.getENCHANTED(), true);
                 return InteractionResultHolder.success(stack);
             }
         }

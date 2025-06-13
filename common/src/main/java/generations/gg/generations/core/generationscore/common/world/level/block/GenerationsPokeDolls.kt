@@ -3,16 +3,18 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.registerBlock
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock
 import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 
 @Suppress("unused")
-object GenerationsPokeDolls {
+object GenerationsPokeDolls: BlockPlatformRegistry() {
     val POKEDOLLS: DeferredRegister<Block> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK)
 
     /**
@@ -184,18 +186,14 @@ object GenerationsPokeDolls {
     val SHINY_ZAPDOS_POKEDOLL = registerBlockItem("zapdos", true)
 
 
-    private fun registerBlockItem(name: String, shiny: Boolean, scale: Float = 1.0f): RegistrySupplier<Block> {
-        val block = registerBlock<Block>(
-            POKEDOLLS, (if (shiny) "shiny_" else "") + name + "_doll"
-        ) { PokeDollBlock(name, shiny, scale) }
-        GenerationsItems.ITEMS.register(
-            (if (shiny) "shiny_" else "") + name + "_doll"
-        ) { BlockItem(block.get(), Item.Properties()) }
+    private fun registerBlockItem(name: String, shiny: Boolean, scale: Float = 1.0f): Block {
+        val block = registerBlock<Block>(this, (if (shiny) "shiny_" else "") + name + "_doll", PokeDollBlock(name, shiny, scale))
+        GenerationsItems.ITEMS.create(((if (shiny) "shiny_" else "") + name + "_doll").generationsResource(), BlockItem(block, Item.Properties()))
         return block
     }
 
-    fun init() {
+    override fun init(consumer: (ResourceLocation, Block) -> Unit) {
         GenerationsCore.LOGGER.info("Registering Generations PokeDolls")
-        POKEDOLLS.register()
+        init(consumer)
     }
 }

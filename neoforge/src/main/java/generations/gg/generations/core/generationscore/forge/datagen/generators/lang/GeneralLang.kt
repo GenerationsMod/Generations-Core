@@ -5,6 +5,8 @@ import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
+import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
@@ -23,136 +25,34 @@ import java.util.function.Consumer
 class GeneralLang(packOutput: PackOutput, locale: String) :
     LanguageProvider(packOutput, GenerationsCore.MOD_ID, locale) {
     override fun addTranslations() {
-        addBlockEntries(
-            GenerationsBlocks.BLOCKS
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsBlocks.ULTRA_BLOCKS
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsBlocks.STONE
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsDecorationBlocks.DECORATIONS
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsWood.WOOD_BLOCKS
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsShrines.SHRINES
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsPokeDolls.POKEDOLLS
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsUtilityBlocks.UTILITY_BLOCKS
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
-        addBlockEntries(
-            GenerationsOres.ORES
-        ) { item: RegistrySupplier<Block>?, name: String ->
-            this.getNameGens(
-                item,
-                name
-            )
-        }
+        addBlockEntries(GenerationsBlocks.BLOCKS)
+        addBlockEntries(GenerationsBlocks.ULTRA_BLOCKS)
+        addBlockEntries(GenerationsBlocks.STONE)
+        addBlockEntries(GenerationsDecorationBlocks)
+        addBlockEntries(GenerationsWood.WOOD_BLOCKS)
+        addBlockEntries(GenerationsShrines)
+        addBlockEntries(GenerationsPokeDolls)
+        addBlockEntries(GenerationsUtilityBlocks)
+        addBlockEntries(GenerationsOres)
 
-        addItemEntries(GenerationsTools.TOOLS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsArmor.ARMOR,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.ITEMS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.BADGES,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.RIBBONS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.UNIMPLEMENTED,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? ->
-                add(
-                    item.get().asItem().descriptionId + ".desc",
-                    "Not currently implemented"
-                )
-            })
+        addItemEntries(GenerationsTools)
+        addItemEntries(GenerationsArmor.ARMOR)
+        addItemEntries(GenerationsItems.ITEMS)
+        addItemEntries(GenerationsItems.BADGES)
+        addItemEntries(GenerationsItems.RIBBONS)
+        addItemEntries(GenerationsItems.UNIMPLEMENTED, additionalActions = { item, _ -> add(item.asItem().descriptionId + ".desc", "Not currently implemented") })
 
-        addItemEntries(GenerationsItems.CUISINE,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.NATURAL,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.RESTORATION,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.PLAYER_ITEMS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.HELD_ITEMS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.LEGENDARY_ITEMS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.UTILITY,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.VALUABLES,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.FORM_ITEMS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.BUILDING_BLOCKS,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
-        addItemEntries(GenerationsItems.POKEMAIL,
-            { item: RegistrySupplier<out ItemLike>?, name: String -> this.getNameGens(item, name) },
-            { item: RegistrySupplier<out ItemLike>?, function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>? -> })
+        addItemEntries(GenerationsItems.CUISINE)
+        addItemEntries(GenerationsItems.NATURAL)
+        addItemEntries(GenerationsItems.RESTORATION)
+        addItemEntries(GenerationsItems.PLAYER_ITEMS)
+        addItemEntries(GenerationsItems.HELD_ITEMS)
+        addItemEntries(GenerationsItems.LEGENDARY_ITEMS)
+        addItemEntries(GenerationsItems.UTILITY)
+        addItemEntries(GenerationsItems.VALUABLES)
+        addItemEntries(GenerationsItems.FORM_ITEMS)
+        addItemEntries(GenerationsItems.BUILDING_BLOCKS)
+        addItemEntries(GenerationsItems.POKEMAIL)
 
         recordDescriptions()
 
@@ -671,7 +571,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
             )
         }
 
-        this.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.get(), "Ultrite Upgrade Smithing Template")
+        this.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE, "Ultrite Upgrade Smithing Template")
 
         this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot")
         this.add(
@@ -721,15 +621,15 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         glitchCityRecordDescription(GenerationsItems.MT_PYRE_DISC)
     }
 
-    private fun glitchCityRecordDescription(item: RegistrySupplier<Item>) {
+    private fun glitchCityRecordDescription(item: Item) {
         add(
-            item.get().descriptionId + ".desc",
+            item.descriptionId + ".desc",
             "GlitchxCity - " + getNameGens(item, item.id.toString().replace("_disc", ""))
         )
     }
 
 
-    protected fun getNameGens(item: RegistrySupplier<out ItemLike>?, name: String): String {
+    protected fun getNameGens(item: ItemLike?, name: String): String {
         var name = name
         name = name.substring(name.indexOf(":") + 1) //Removes Mod Tag from front of name
         name = name.replace('_', ' ')
@@ -747,16 +647,16 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         return name
     }
 
-    protected fun getPokeBrickName(item: RegistrySupplier<out ItemLike>?, name: String): String {
+    protected fun getPokeBrickName(item: ItemLike?, name: String): String {
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick")
     }
 
-    fun addTooltip(registrySupplier: RegistrySupplier<out ItemLike>, entry: String) {
+    fun addTooltip(registrySupplier: ItemLike, entry: String) {
         addTooltip(registrySupplier, null, entry)
     }
 
-    fun addTooltip(registrySupplier: RegistrySupplier<out ItemLike>, sub: String?, entry: String) {
-        registrySupplier.get()?.asItem()?.instanceOrNull<LangTooltip>()?.run {
+    fun addTooltip(registrySupplier: ItemLike, sub: String?, entry: String) {
+        registrySupplier.asItem().instanceOrNull<LangTooltip>()?.run {
             add(this.tooltipId() + (if (sub != null) ".$sub" else ""), entry)
 
         }
@@ -768,26 +668,26 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
     }
 
     fun addBlockEntries(
-        entries: DeferredRegister<Block>,
-        function: BiFunction<RegistrySupplier<Block>?, String, String>
+        entries: BlockPlatformRegistry,
+        function: (Block?, String) -> String = this::getNameGens
     ) {
-        entries.forEach(Consumer { block: RegistrySupplier<Block> ->
+        entries.all().forEach({ block: Block ->
             add(
-                block.get(),
-                function.apply(block, block.id.toString())
+                block,
+                function.invoke(block, block.id.toString())
             )
         })
     }
 
     fun addItemEntries(
-        entries: DeferredRegister<Item>,
-        function: BiFunction<RegistrySupplier<out ItemLike>?, String, String>,
-        additionalActions: BiConsumer<RegistrySupplier<out ItemLike>, BiFunction<RegistrySupplier<out ItemLike>?, String, String>?>
+        entries: ItemPlatformRegistry,
+        function: (ItemLike?, String) -> String = this::getNameGens,
+        additionalActions: (ItemLike, (ItemLike?, String) -> String?) -> Unit = { _, _ ->}
     ) {
-        entries.forEach(Consumer { item: RegistrySupplier<Item> ->
-            add(item.get(), function.apply(item, item.id.toString()))
-            additionalActions.accept(item, function)
-        })
+        entries.all().forEach { item: Item ->
+            add(item, function.invoke(item, item.id.toString()))
+            additionalActions.invoke(item, function)
+        }
     }
 
     override fun add(key: String, value: String) {

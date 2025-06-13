@@ -29,7 +29,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.concurrent.CompletableFuture
 
-class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock<VendingMachineBlockEntity, VendingMachineBlock>(
+class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<VendingMachineBlockEntity, VendingMachineBlock>(
     properties,
     color,
     function,
@@ -126,10 +126,10 @@ class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map
         )
 
         val CODEC: MapCodec<VendingMachineBlock> = RecordCodecBuilder.mapCodec { instance ->
-                instance.group<Properties, DyeColor, Map<DyeColor, Holder<Block>>>(
+                instance.group(
                     propertiesCodec(),
                     DyeColor.CODEC.fieldOf("color").forGetter(VendingMachineBlock::color),
-                    Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("function").forGetter(VendingMachineBlock::map)
+                    Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.byNameCodec()).fieldOf("function").forGetter(VendingMachineBlock::map)
                 ).apply(instance, ::VendingMachineBlock)
             }
     }

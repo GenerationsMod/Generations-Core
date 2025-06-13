@@ -19,16 +19,16 @@ open class GenerationsBlockSet(
      * @return The name of the base block.
      */
     val name: String,
+    properties: BlockBehaviour.Properties = BlockBehaviour.Properties.ofFullCopy(Blocks.STONE),
     /**
      * Gets BaseBlock's RegistrySupplier.
      * @return The base block's RegistrySupplier.
      */
-    val baseBlockSupplier: RegistrySupplier<Block>,
-    properties: BlockBehaviour.Properties
+    val baseBlock: Block = GenerationsBlocks.registerBlockItem<Block>(name, Block(properties))
 ) {
-    private val slab: RegistrySupplier<SlabBlock>
-    private val stairs: RegistrySupplier<StairBlock>
-    private val wall: RegistrySupplier<WallBlock>
+    val slab: SlabBlock
+    val stairs: StairBlock
+    val wall: WallBlock
     /**
      * Gets the block family.
      * @return The block family.
@@ -43,80 +43,36 @@ open class GenerationsBlockSet(
     /**
      * Creates a new Generations block set.
      * @param name The name of the base block.
-     * @param properties The properties of the blocks
-     */
-    /**
-     * Creates a new Generations block set with the default properties from Blocks#STONE.
-     * @param name The name of the base block.
-     */
-    @JvmOverloads
-    constructor(
-        name: String,
-        properties: BlockBehaviour.Properties = BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
-    ) : this(
-        name, GenerationsBlocks.registerBlockItem<Block>(name,
-            { Block(properties) }), properties
-    )
-
-    /**
-     * Creates a new Generations block set.
-     * @param name The name of the base block.
      * @param baseBlock The base block.
      * @param properties The properties of the blocks
      */
     init {
-        slab = registerBlockItem(
-            name + "_slab",
-            { SlabBlock(properties) })
-        stairs = registerBlockItem(
-            name + "_stairs",
-            {
-                StairBlock(
-                    baseBlockSupplier.get().defaultBlockState(), properties
-                )
-            })
-        wall = registerBlockItem(
-            name + "_wall",
-            { WallBlock(properties) })
+        slab = registerBlockItem("${name}_slab", SlabBlock(properties))
+        stairs = registerBlockItem("${name}_stairs", StairBlock(baseBlock.defaultBlockState(), properties))
+        wall = registerBlockItem("${name}_wall", WallBlock(properties))
         blockFamily = null
         blockSets.add(this)
     }
 
-    protected open fun <T : Block> registerBlockItem(name: String, blockSupplier: Supplier<T>): RegistrySupplier<T> {
-        return GenerationsBlocks.registerBlockItem(name, blockSupplier)
-    }
+    protected open fun <T : Block> registerBlockItem(name: String, blockSupplier: T): T = GenerationsBlocks.registerBlockItem(name, blockSupplier)
 
     /**
      * Gets the base block.
      * @return The base block.
      */
-    fun getBaseBlock(): Block {
-        return baseBlockSupplier.get()
-    }
-
-    /**
-     * Gets the slab block.
-     * @return The slab block.
-     */
-    fun getSlab(): SlabBlock {
-        return slab.get()
-    }
+    fun getBaseBlock(): Block = baseBlock
 
     /**
      * Gets the stairs block.
      * @return The stairs block.
      */
-    fun getStairs(): StairBlock {
-        return stairs.get()
-    }
+    fun getStairs(): StairBlock = stairs
 
     /**
      * Gets the wall block.
      * @return The wall block.
      */
-    fun getWall(): WallBlock {
-        return wall.get()
-    }
+    fun getWall(): WallBlock = wall
 
     open val allBlocks: List<Block>
         /**
@@ -124,8 +80,8 @@ open class GenerationsBlockSet(
          * @return The full family
          */
         get() = listOf(
-            getBaseBlock(),
-            getSlab(),
+            baseBlock,
+            slab,
             getStairs(),
             getWall()
         )
@@ -144,7 +100,7 @@ open class GenerationsBlockSet(
         @ApiStatus.Internal
         fun generateAllBlockFamilies() {
             for (blockSet: GenerationsBlockSet in blockSets) blockSet.blockFamily =
-                BlockFamily.Builder(blockSet.getBaseBlock()).slab(blockSet.getSlab())
+                BlockFamily.Builder(blockSet.baseBlock).slab(blockSet.slab)
                     .stairs(blockSet.getStairs()).wall(blockSet.getWall()).recipeGroupPrefix(blockSet.name)
                     .recipeUnlockedBy("has_" + blockSet.name).family
             updateBlockFamilies()

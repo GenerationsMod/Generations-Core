@@ -47,7 +47,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
-class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Holder<Block>>) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(properties, color, map, GenerationsBlockEntities.DYED_PC, GenerationsBlockEntityModels.PC, 0, 1, 0) {
+class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Block>) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(properties, color, map, GenerationsBlockEntities.DYED_PC, GenerationsBlockEntityModels.PC, 0, 1, 0) {
     private val SHAPE = generateRotationalVoxelShape(
         Shapes.or(
             Shapes.box(0.07500000000000001, 0.0, 0.025000000000000022, 0.925, 1.5, 0.725),

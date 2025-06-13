@@ -25,7 +25,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class PastelBeanBagBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>(
+class PastelBeanBagBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>(
         color,
         function,
         GenerationsBlockEntities.GENERIC_DYED_VARIANT,

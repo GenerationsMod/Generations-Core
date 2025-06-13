@@ -104,11 +104,11 @@ class RubyRodItem(properties: Properties?, tier: Teir?) :
         }
 
         private fun getShardType(item: Item): LakeTrioShardType? {
-            if (item === GenerationsItems.SHARD_OF_EMOTION.get()) {
+            if (item === GenerationsItems.SHARD_OF_EMOTION) {
                 return LakeTrioShardType.EMOTION
-            } else if (item === GenerationsItems.SHARD_OF_KNOWLEDGE.get()) {
+            } else if (item === GenerationsItems.SHARD_OF_KNOWLEDGE) {
                 return LakeTrioShardType.KNOWLEDGE
-            } else if (item === GenerationsItems.SHARD_OF_WILLPOWER.get()) {
+            } else if (item === GenerationsItems.SHARD_OF_WILLPOWER) {
                 return LakeTrioShardType.WILLPOWER
             }
             return null
@@ -119,7 +119,7 @@ class RubyRodItem(properties: Properties?, tier: Teir?) :
 
         private fun isShard(itemStack: ItemStack): Boolean {
             val item = itemStack.item
-            return item === GenerationsItems.SHARD_OF_EMOTION.get() || item === GenerationsItems.SHARD_OF_KNOWLEDGE.get() || item === GenerationsItems.SHARD_OF_WILLPOWER.get()
+            return item === GenerationsItems.SHARD_OF_EMOTION || item === GenerationsItems.SHARD_OF_KNOWLEDGE || item === GenerationsItems.SHARD_OF_WILLPOWER
         }
 
         @JvmStatic
