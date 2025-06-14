@@ -12,7 +12,7 @@
     {
       "id": "intro",
       "lines": [
-        "Which island guardian should I summon?"
+        "Which genie should I summon?"
       ],
       "input": {
         "type": "option",

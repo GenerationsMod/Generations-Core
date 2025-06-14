@@ -167,6 +167,7 @@ class GenerationsCobblemonEvents {
                 }
 
                 HeldItemFormeChange.ogerMaskChange(it)
+                HeldItemFormeChange.doggoChange(it)
             }
 
 

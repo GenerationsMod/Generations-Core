@@ -105,7 +105,7 @@
       "id": "create_congrats",
       "allowSkip": false,
       "lines": [
-        "Congradulations!",
+        "Congratulations!",
         {
           "type": "expression",
           "expression": "'You created have created a ' + v.form + ' zygarde with the ability ' + v.ability_name + '."

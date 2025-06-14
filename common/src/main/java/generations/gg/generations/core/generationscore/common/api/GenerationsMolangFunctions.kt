@@ -18,6 +18,7 @@ import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.util.getOrCreate
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 import generations.gg.generations.core.generationscore.common.util.isSpecies
+import generations.gg.generations.core.generationscore.common.util.removeMove
 import generations.gg.generations.core.generationscore.common.util.removePokemon
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import net.minecraft.core.BlockPos
@@ -83,6 +84,14 @@ object GenerationsMolangFunctions {
                             is IntSpeciesFeature -> it.getIntOrNull(1)?.also { feature.value = it }?.also { feature.apply(pokemon) }
                             else -> return@Function DoubleValue.ZERO
                         }
+                    },
+
+                    "remove_rotom_move" to Function {
+                        pokemon.removeMove("overheat")
+                        pokemon.removeMove("hydropump")
+                        pokemon.removeMove("blizzard")
+                        pokemon.removeMove("airslash")
+                        pokemon.removeMove("leafstorm")
                     }
                 )
             })
