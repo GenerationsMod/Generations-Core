@@ -18,7 +18,7 @@ open class GenerationsBoatEntity(entityType: EntityType<out GenerationsBoatEntit
     }
 
     constructor(worldIn: Level, x: Double, y: Double, z: Double) : this(
-        GenerationsEntities.BOAT_ENTITY.get(),
+        GenerationsEntities.BOAT_ENTITY,
         worldIn
     ) {
         this.setPos(x, y, z)
@@ -42,9 +42,9 @@ open class GenerationsBoatEntity(entityType: EntityType<out GenerationsBoatEntit
 
     override fun getDropItem(): Item {
         return when (this.modBoatType) {
-            Type.GHOST -> GenerationsItems.GHOST_BOAT_ITEM.get()
-            Type.ULTRA_DARK -> GenerationsItems.ULTRA_DARK_BOAT_ITEM.get()
-            Type.ULTRA_JUNGLE -> GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get()
+            Type.GHOST -> GenerationsItems.GHOST_BOAT_ITEM
+            Type.ULTRA_DARK -> GenerationsItems.ULTRA_DARK_BOAT_ITEM
+            Type.ULTRA_JUNGLE -> GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM
         }
     }
 

@@ -25,7 +25,7 @@ class GenericSmokerBlock(properties: Properties = Properties.ofFullCopy(Blocks.S
         state: BlockState,
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
-        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_SMOKER.get())
+        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_SMOKER)
     }
 
     companion object {

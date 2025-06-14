@@ -141,7 +141,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
-            .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
+            .define('X', GenerationsBlocks.GRAY_MARBLE_SET.stairs)
             .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             .define('#', Items.BOWL)
             .pattern(" # ")
@@ -857,7 +857,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(consumer)
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
-            .define('X', GenerationsBlocks.GRAY_MARBLE_SET.getStairs())
+            .define('X', GenerationsBlocks.GRAY_MARBLE_SET.stairs)
             .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             .define('#', Items.BOWL)
             .define('Z', pokeball)

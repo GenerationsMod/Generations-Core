@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
@@ -15,7 +16,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
 class LugiaShrineBlock(materialIn: Properties) :
-    BirdShrineBlock(materialIn, GenerationsBlockEntityModels.LUGIA_SHRINE, 2, 1, 0, GenerationsItems.SILVER_WING) {
+    BirdShrineBlock(materialIn, GenerationsBlockEntityModels.LUGIA_SHRINE, 2, 1, 0, "silver_wing".generationsResource()) {
     public override fun getShape(
         state: BlockState,
         level: BlockGetter,

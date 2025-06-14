@@ -4,32 +4,30 @@ import com.mojang.serialization.MapCodec
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.StreamCodec
+import net.minecraft.resources.ResourceKey
 import net.minecraft.world.item.crafting.Recipe
 import net.minecraft.world.item.crafting.RecipeSerializer
 
-object GenerationsCoreRecipeSerializers {
-    var RECIPE_SERIALIZERS: DeferredRegister<RecipeSerializer<*>> =
-        DeferredRegister.create(GenerationsCore.MOD_ID, Registries.RECIPE_SERIALIZER)
-    var SHAPED_RKS: RegistrySupplier<RecipeSerializer<ShapedRksRecipe>> = register("shaped_rks", ShapedRksRecipe.CODEC, ShapedRksRecipe.STREAM_CODEC)
-    var SHAPELESS_RKS: RegistrySupplier<RecipeSerializer<ShapelessRksRecipe>> = register("shapeless_rks", ShapelessRksRecipe.CODEC, ShapelessRksRecipe.STREAM_CODEC)
+object GenerationsCoreRecipeSerializers: PlatformRegistry<RecipeSerializer<*>>() {
+    override val registry: Registry<RecipeSerializer<*>> = BuiltInRegistries.RECIPE_SERIALIZER
+    override val resourceKey: ResourceKey<Registry<RecipeSerializer<*>>> = Registries.RECIPE_SERIALIZER
 
-    @JvmStatic
-    fun init() {
-        RECIPE_SERIALIZERS.register()
-    }
+    var SHAPED_RKS = register("shaped_rks", ShapedRksRecipe.CODEC, ShapedRksRecipe.STREAM_CODEC)
+    var SHAPELESS_RKS = register("shapeless_rks", ShapelessRksRecipe.CODEC, ShapelessRksRecipe.STREAM_CODEC)
 
     fun <T : Recipe<*>> register(
         name: String,
         codec: MapCodec<T>,
         streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>
-    ): RegistrySupplier<RecipeSerializer<T>> {
-        return RECIPE_SERIALIZERS.register(
-            name
-        ) {
-            object : RecipeSerializer<T> {
+    ): RecipeSerializer<T> {
+        return create(name.generationsResource(), object : RecipeSerializer<T> {
                 override fun codec(): MapCodec<T> {
                     return codec
                 }
@@ -37,7 +35,6 @@ object GenerationsCoreRecipeSerializers {
                 override fun streamCodec(): StreamCodec<RegistryFriendlyByteBuf, T> {
                     return streamCodec
                 }
-            }
-        }
+            })
     }
 }

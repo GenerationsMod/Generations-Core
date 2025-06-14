@@ -49,7 +49,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock<LunarShrineBlockEnt
     ): BlockEntityTicker<T>? {
         return createTickerHelper(
             blockEntityType,
-            GenerationsBlockEntities.LUNAR_SHRINE.get(),
+            GenerationsBlockEntities.LUNAR_SHRINE,
             if (level.isClientSide) BlockEntityTicker { _, _, _, _ -> } else BlockEntityTicker { world: Level, pos: BlockPos, _, _ ->
                 val blockstate = world.getBlockState(pos).setValue(
                     IS_LIGHT, world.getMaxLocalRawBrightness(pos) >= 10
@@ -71,7 +71,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock<LunarShrineBlockEnt
             val key = getSpecies(state)
 
             val block =
-                (if (key === LegendKeys.CRESSELIA) GenerationsShrines.LIGHT_CRYSTAL else GenerationsShrines.DARK_CRYSTAL).get()
+                (if (key === LegendKeys.CRESSELIA) GenerationsShrines.LIGHT_CRYSTAL else GenerationsShrines.DARK_CRYSTAL)
 
             val list = RegiShrineBlock.searchForBlock(
                 level, pos, 15, 5

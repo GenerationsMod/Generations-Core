@@ -9,11 +9,11 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.state.BlockState
 
-class RegigigasShrineBlockEntity(pos: BlockPos, state: BlockState) : InteractShrineBlockEntity(GenerationsBlockEntities.REGIGIGAS_SHRINE.get(), pos, state) {
+class RegigigasShrineBlockEntity(pos: BlockPos, state: BlockState) : InteractShrineBlockEntity(GenerationsBlockEntities.REGIGIGAS_SHRINE, pos, state) {
     val container: SimpleItemStorage = SimpleItemStorage(this, GenerationsStorage.REGI_ORBS, 5)
-        .filter(0) { it.isOf(GenerationsItems.REGICE_ORB.get()) }
-        .filter(1) { it.isOf(GenerationsItems.REGIROCK_ORB.get()) }
-        .filter(2) { it.isOf(GenerationsItems.REGISTEEL_ORB.get()) }
-        .filter(3) { it.isOf(GenerationsItems.REGIDRAGO_ORB.get()) }
-        .filter(4) { it.isOf(GenerationsItems.REGIELEKI_ORB.get()) }
+        .filter(0) { it.isOf(GenerationsItems.REGICE_ORB) }
+        .filter(1) { it.isOf(GenerationsItems.REGIROCK_ORB) }
+        .filter(2) { it.isOf(GenerationsItems.REGISTEEL_ORB) }
+        .filter(3) { it.isOf(GenerationsItems.REGIDRAGO_ORB) }
+        .filter(4) { it.isOf(GenerationsItems.REGIELEKI_ORB) }
 }

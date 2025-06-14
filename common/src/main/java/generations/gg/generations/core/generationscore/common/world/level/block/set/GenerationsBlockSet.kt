@@ -56,24 +56,6 @@ open class GenerationsBlockSet(
 
     protected open fun <T : Block> registerBlockItem(name: String, blockSupplier: T): T = GenerationsBlocks.registerBlockItem(name, blockSupplier)
 
-    /**
-     * Gets the base block.
-     * @return The base block.
-     */
-    fun getBaseBlock(): Block = baseBlock
-
-    /**
-     * Gets the stairs block.
-     * @return The stairs block.
-     */
-    fun getStairs(): StairBlock = stairs
-
-    /**
-     * Gets the wall block.
-     * @return The wall block.
-     */
-    fun getWall(): WallBlock = wall
-
     open val allBlocks: List<Block>
         /**
          * Returns a list of the full family
@@ -82,8 +64,8 @@ open class GenerationsBlockSet(
         get() = listOf(
             baseBlock,
             slab,
-            getStairs(),
-            getWall()
+            stairs,
+            wall
         )
 
     companion object {
@@ -101,7 +83,7 @@ open class GenerationsBlockSet(
         fun generateAllBlockFamilies() {
             for (blockSet: GenerationsBlockSet in blockSets) blockSet.blockFamily =
                 BlockFamily.Builder(blockSet.baseBlock).slab(blockSet.slab)
-                    .stairs(blockSet.getStairs()).wall(blockSet.getWall()).recipeGroupPrefix(blockSet.name)
+                    .stairs(blockSet.stairs).wall(blockSet.wall).recipeGroupPrefix(blockSet.name)
                     .recipeUnlockedBy("has_" + blockSet.name).family
             updateBlockFamilies()
         }

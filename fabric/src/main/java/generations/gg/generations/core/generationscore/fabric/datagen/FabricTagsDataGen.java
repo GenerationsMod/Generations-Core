@@ -40,7 +40,7 @@ class BlockTagsProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider arg) {
         getOrCreateTagBuilder(ConventionalBlockTags.ORES).forceAddTag(GenerationsBlockTags.GENERATIONSORES);
-        getOrCreateTagBuilder(ConventionalBlockTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF.get(), GenerationsWood.ULTRA_DARK_BOOKSHELF.get(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get());
+        getOrCreateTagBuilder(ConventionalBlockTags.BOOKSHELVES).add(GenerationsWood.GHOST_BOOKSHELF, GenerationsWood.ULTRA_DARK_BOOKSHELF.get(), GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get());
         getOrCreateTagBuilder(ConventionalBlockTags.CHESTS).forceAddTag(GenerationsBlockTags.POKEBALL_CHESTS);
     }
 }

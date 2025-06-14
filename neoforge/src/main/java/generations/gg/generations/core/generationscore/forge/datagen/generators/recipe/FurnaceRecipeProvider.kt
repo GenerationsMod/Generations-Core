@@ -129,27 +129,27 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
         )
 
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()),
+            Ingredient.of(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock),
             RecipeCategory.MISC,
-            GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock(),
+            GenerationsBlocks.CHARGE_STONE_SET.baseBlock,
             0.1f,
             200
-        ).unlockedBy("has_charge_stone_cobble", has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock()))
+        ).unlockedBy("has_charge_stone_cobble", has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock))
             .save(recipeOutput)
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock()),
+            Ingredient.of(GenerationsBlocks.CHARGE_STONE_SET.baseBlock),
             RecipeCategory.MISC,
             GenerationsBlocks.SMOOTH_CHARGE_STONE.get(),
             0.1f,
             200
-        ).unlockedBy("has_charge_stone", has(GenerationsBlocks.CHARGE_STONE_SET.getBaseBlock())).save(recipeOutput)
+        ).unlockedBy("has_charge_stone", has(GenerationsBlocks.CHARGE_STONE_SET.baseBlock)).save(recipeOutput)
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()),
+            Ingredient.of(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock),
             RecipeCategory.MISC,
             GenerationsBlocks.VOLCANIC_STONE.get(),
             0.1f,
             200
-        ).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock()))
+        ).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock))
             .save(recipeOutput)
         SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(GenerationsBlocks.VOLCANIC_STONE.get()),

@@ -174,7 +174,7 @@ class MailViewScreen private constructor(arg: MailAccess, bl: Boolean) : Screen(
         private val type: MailType
 
         init {
-            val mail = arg.get(MAIL_DATA.value())
+            val mail = arg.get(MAIL_DATA)
 
             this.contents = mail?.content ?: ""
             this.type = (arg.item as ClosedMailItem).type
@@ -198,7 +198,7 @@ class MailViewScreen private constructor(arg: MailAccess, bl: Boolean) : Screen(
         private val type: MailType
 
         init {
-            val mail = arg.get(MAIL_DATA.value())
+            val mail = arg.get(MAIL_DATA)
 
             this.contents = mail?.content ?: Component.translatable("book.invalid.tag").withStyle(ChatFormatting.DARK_RED).string
             this.author = mail?.author ?: ""

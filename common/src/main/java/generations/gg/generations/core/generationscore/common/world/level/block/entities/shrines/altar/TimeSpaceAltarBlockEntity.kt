@@ -19,7 +19,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.state.BlockState
 
-class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShrineBlockEntity(GenerationsBlockEntities.TIMESPACE_ALTAR.get(), pos, state), ItemProvider.BlockEntity, ModelContextProviders.VariantProvider {
+class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShrineBlockEntity(GenerationsBlockEntities.TIMESPACE_ALTAR, pos, state), ItemProvider.BlockEntity, ModelContextProviders.VariantProvider {
     private var handler: TimeSpaceAltarItemStackHandler = TimeSpaceAltarItemStackHandler()
 
     override fun getVariant(): String {

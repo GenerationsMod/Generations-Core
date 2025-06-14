@@ -28,7 +28,7 @@ class ResouceKeyEntry internal constructor(
 ) :
     LootPoolSingletonContainer(weight, quality, conditions, functions) {
     override fun getType(): LootPoolEntryType {
-        return LootPoolEntryTypes.RESOURCE_KEY.get()
+        return LootPoolEntryTypes.RESOURCE_KEY
     }
 
     public override fun createItemStack(stackConsumer: Consumer<ItemStack>, lootContext: LootContext) {

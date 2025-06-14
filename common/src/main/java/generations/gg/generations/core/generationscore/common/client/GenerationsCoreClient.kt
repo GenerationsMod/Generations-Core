@@ -124,10 +124,10 @@ object GenerationsCoreClient {
 
         val renderer = PokemonItemRenderer()
 
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE.get(), renderer);
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE.get(), renderer);
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE.get(), renderer);
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE.get(), renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE, renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE, renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE, renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE, renderer);
 
 
         GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
@@ -203,12 +203,12 @@ object GenerationsCoreClient {
         }
 
         ItemPropertiesRegistry.register(
-            GenerationsItems.CURRY.get(),
+            GenerationsItems.CURRY,
             GenerationsCore.id("curry_type")
         ) { itemStack, _, _, _ -> return@register itemStack.get(GenerationsDataComponents.CURRY_DATA)?.curryType?.ordinal?.let { it / 100f } ?: 0f }
 
         ItemPropertiesRegistry.register(
-            GenerationsItems.MELODY_FLUTE.get(),
+            GenerationsItems.MELODY_FLUTE,
             GenerationsCore.id("flute_type"),
             { arg, arg2, arg3, i ->
                 var stack = MelodyFluteItem.getImbuedItem(arg)
@@ -227,7 +227,7 @@ object GenerationsCoreClient {
             })
 
         ItemPropertiesRegistry.register(
-            GenerationsShrines.CELESTIAL_ALTAR.get(),
+            GenerationsShrines.CELESTIAL_ALTAR,
             GenerationsCore.id("time")
         ) { itemStack, clientLevel, livingEntity, i ->
             val entity = livingEntity ?: itemStack.entityRepresentation ?: return@register 0f
@@ -240,7 +240,7 @@ object GenerationsCoreClient {
         }
 
         ItemPropertiesRegistry.register(
-            GenerationsShrines.LUNAR_SHRINE.get(),
+            GenerationsShrines.LUNAR_SHRINE,
             GenerationsCore.id("light_level")
         ) { itemStack, clientLevel, livingEntity, i ->
             val entity = livingEntity ?: itemStack.entityRepresentation ?: return@register 0f
@@ -257,16 +257,16 @@ object GenerationsCoreClient {
         registerFishingRod(GenerationsItems.SUPER_ROD)
         registerFishingRod(GenerationsItems.RUBY_ROD)
 
-//        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE.get(), GenerationsCore.id("lit"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
+//        ItemPropertiesRegistry.register(GenerationsShrines.LUNAR_SHRINE, GenerationsCore.id("lit"), (itemStack, clientLevel, livingEntity, i) -> clientLevel.isDay() ? 0.0f : 1.0f);
 
-        registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST.get())
-        registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST.get())
-        registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST.get())
-        registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST.get())
+        registerChestRenderer(GenerationsBlocks.POKEBALL_CHEST)
+        registerChestRenderer(GenerationsBlocks.GREATBALL_CHEST)
+        registerChestRenderer(GenerationsBlocks.ULTRABALL_CHEST)
+        registerChestRenderer(GenerationsBlocks.MASTERBALL_CHEST)
     }
 
-    private fun registerFishingRod(item: Supplier<out Item>) {
-        ItemPropertiesRegistry.register(item.get(), GenerationsCore.id("cast")) { arg, arg2, arg3, i ->
+    private fun registerFishingRod(item: Item) {
+        ItemPropertiesRegistry.register(item, GenerationsCore.id("cast")) { arg, arg2, arg3, i ->
             var entity = arg3 ?: return@register 0f
 
             var flag = entity.mainHandItem == arg
@@ -293,14 +293,14 @@ object GenerationsCoreClient {
     }
 
     private fun registerScreens() {
-        MenuRegistry.registerScreenFactory(GenerationsContainers.COOKING_POT.get(), ::CookingPotScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.GENERIC.get(), ::GenericChestScreen)
-//        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON.get(), GenericChestScreen::new);
-//        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED.get(), GenericChestScreen::new);
-        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK.get(), ::MachineBlockScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.MELODY_FLUTE.get(), ::MelodyFluteScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.TRASHCAN.get(), ::TrashCanScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.RKS_MACHINE.get(), ::RksMachineScreen)
+        MenuRegistry.registerScreenFactory(GenerationsContainers.COOKING_POT, ::CookingPotScreen)
+        MenuRegistry.registerScreenFactory(GenerationsContainers.GENERIC, ::GenericChestScreen)
+//        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON, GenericChestScreen::new);
+//        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED, GenericChestScreen::new);
+        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK, ::MachineBlockScreen)
+        MenuRegistry.registerScreenFactory(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
+        MenuRegistry.registerScreenFactory(GenerationsContainers.TRASHCAN, ::TrashCanScreen)
+        MenuRegistry.registerScreenFactory(GenerationsContainers.RKS_MACHINE, ::RksMachineScreen)
     }
 
     /**
@@ -313,13 +313,13 @@ object GenerationsCoreClient {
     }
 
     fun registerEntityRenderers(consumer: EntityRendererHandler) {
-        consumer.register(GenerationsEntities.SEAT.get(), ::SittableEntityRenderer)
-        consumer.register(GenerationsEntities.TIERED_FISHING_BOBBER.get(), ::TieredFishingHookRenderer)
-        consumer.register(GenerationsEntities.BOAT_ENTITY.get(), { GenerationsBoatRenderer(it, false) })
-        consumer.register(GenerationsEntities.CHEST_BOAT_ENTITY.get(), { GenerationsBoatRenderer(it, true) })
-        consumer.register(GenerationsEntities.MAGMA_CRYSTAL.get(), ::ThrownItemRenderer)
-        consumer.register(GenerationsEntities.STATUE_ENTITY.get(), ::StatueEntityRenderer)
-        consumer.register(GenerationsEntities.ZYGARDE_CELL.get(), ::ZygardeCellRenderer)
+        consumer.register(GenerationsEntities.SEAT, ::SittableEntityRenderer)
+        consumer.register(GenerationsEntities.TIERED_FISHING_BOBBER, ::TieredFishingHookRenderer)
+        consumer.register(GenerationsEntities.BOAT_ENTITY, { GenerationsBoatRenderer(it, false) })
+        consumer.register(GenerationsEntities.CHEST_BOAT_ENTITY, { GenerationsBoatRenderer(it, true) })
+        consumer.register(GenerationsEntities.MAGMA_CRYSTAL, ::ThrownItemRenderer)
+        consumer.register(GenerationsEntities.STATUE_ENTITY, ::StatueEntityRenderer)
+        consumer.register(GenerationsEntities.ZYGARDE_CELL, ::ZygardeCellRenderer)
     }
 
     interface BlockEntityRendererHandler {
@@ -332,35 +332,35 @@ object GenerationsCoreClient {
      * @see GenerationsBlockEntities
      */
     fun registerBlockEntityRenderers(consumer: BlockEntityRendererHandler) {
-        consumer.register(GenerationsBlockEntities.POKE_DOLL.get(), ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.POKE_DOLL, ::GeneralUseBlockEntityRenderer)
 
-        consumer.register(GenerationsBlockEntities.TIMESPACE_ALTAR.get(), ::TimeSpaceAltarEntityRenderer)
-        consumer.register(GenerationsBlockEntities.ABUNDANT_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.CELESTIAL_ALTAR.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.LUNAR_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.MELOETTA_MUSIC_BOX.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.REGIGIGAS_SHRINE.get(), ::RegigigasShrineBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.TAO_TRIO_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.TAPU_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.INTERACT_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.COOKING_POT.get(), ::CookingPotRenderer)
-        consumer.register(GenerationsBlockEntities.WEATHER_TRIO.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.get(), ::SignRenderer)
-        GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get().instanceOrNull<BlockEntityType<SignBlockEntity>>()?.run { consumer.register(this, ::HangingSignRenderer) }
-        consumer.register(GenerationsBlockEntities.GENERIC_CHEST.get(), ::GenericChestRenderer)
-        consumer.register(GenerationsBlockEntities.GENERIC_SHRINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.TRASH_CAN.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.VENDING_MACHINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.BALL_DISPLAY.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.BALL_LOOT.get(), ::PokeLootRendrer)
-        consumer.register(GenerationsBlockEntities.RKS_MACHINE.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.PC.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.DYED_PC.get(), ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.TIMESPACE_ALTAR, ::TimeSpaceAltarEntityRenderer)
+        consumer.register(GenerationsBlockEntities.ABUNDANT_SHRINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.CELESTIAL_ALTAR, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.LUNAR_SHRINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.MELOETTA_MUSIC_BOX, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.REGIGIGAS_SHRINE, ::RegigigasShrineBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.TAO_TRIO_SHRINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.TAPU_SHRINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.INTERACT_SHRINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.COOKING_POT, ::CookingPotRenderer)
+        consumer.register(GenerationsBlockEntities.WEATHER_TRIO, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.SIGN_BLOCK_ENTITIES, ::SignRenderer)
+        GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.instanceOrNull<BlockEntityType<SignBlockEntity>>()?.run { consumer.register(this, ::HangingSignRenderer) }
+        consumer.register(GenerationsBlockEntities.GENERIC_CHEST, ::GenericChestRenderer)
+        consumer.register(GenerationsBlockEntities.GENERIC_SHRINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.GENERIC_DYED_VARIANT, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.TRASH_CAN, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.VENDING_MACHINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.BALL_DISPLAY, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.BALL_LOOT, ::PokeLootRendrer)
+        consumer.register(GenerationsBlockEntities.RKS_MACHINE, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.PC, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.DYED_PC, ::GeneralUseBlockEntityRenderer)
 
-        consumer.register(GenerationsBlockEntities.COUCH.get(), ::GeneralUseBlockEntityRenderer)
-        consumer.register(GenerationsBlockEntities.STREET_LAMP.get(), ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.COUCH, ::GeneralUseBlockEntityRenderer)
+        consumer.register(GenerationsBlockEntities.STREET_LAMP, ::GeneralUseBlockEntityRenderer)
     }
 
     fun registerLayerDefinitions(consumer: (ModelLayerLocation, () -> LayerDefinition) -> Unit) {

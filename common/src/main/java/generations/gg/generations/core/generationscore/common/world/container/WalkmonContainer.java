@@ -13,11 +13,11 @@
 //public class WalkmonContainer extends GenericChestContainer {
 //
 //    public WalkmonContainer(int containerId, Inventory playerInventory, FriendlyByteBuf buf) {
-//        super(GenerationsContainers.WALKMON.get(), containerId, playerInventory, buf);
+//        super(GenerationsContainers.WALKMON, containerId, playerInventory, buf);
 //    }
 //
 //    public WalkmonContainer(int containerId, Inventory playerInventory, GenericContainer.SimpleGenericContainer container, int lockedSlot) {
-//        super(GenerationsContainers.WALKMON.get(), containerId, playerInventory, container, lockedSlot);
+//        super(GenerationsContainers.WALKMON, containerId, playerInventory, container, lockedSlot);
 //    }
 //
 //    @Override

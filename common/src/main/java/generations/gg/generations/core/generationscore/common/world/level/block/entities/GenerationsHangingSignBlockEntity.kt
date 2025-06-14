@@ -6,5 +6,5 @@ import net.minecraft.world.level.block.entity.HangingSignBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 
 class GenerationsHangingSignBlockEntity(pos: BlockPos, state: BlockState) : HangingSignBlockEntity(pos, state) {
-    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES.get()
+    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.HANGING_SIGN_BLOCK_ENTITIES
 }

@@ -9,6 +9,6 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.block.state.BlockState
 
-class TrashCanBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.TRASH_CAN.get(), pos, state), ItemProvider.BlockEntity {
+class TrashCanBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.TRASH_CAN, pos, state), ItemProvider.BlockEntity {
     override fun getItems(dir: Direction?): CommonStorage<ItemResource> = if(dir == Direction.UP) { TrashItemStorage } else NoOpsItemContainer.NO_OPS
 }

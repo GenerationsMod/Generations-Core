@@ -20,7 +20,7 @@ import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 
 class BoxBlockEntity(pos: BlockPos, blockState: BlockState) :
-    RandomizableContainerBlockEntity(GenerationsBlockEntities.BOX.get(), pos, blockState) {
+    RandomizableContainerBlockEntity(GenerationsBlockEntities.BOX, pos, blockState) {
     private var items: NonNullList<ItemStack> = NonNullList.withSize(27, ItemStack.EMPTY)
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {

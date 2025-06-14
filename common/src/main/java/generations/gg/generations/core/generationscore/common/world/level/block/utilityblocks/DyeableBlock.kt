@@ -43,7 +43,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: RegistrySupplier<BlockEntityType<T>>,
+        biFunction: BlockEntityType<T>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation,
@@ -58,7 +58,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: RegistrySupplier<BlockEntityType<T>>,
+        biFunction: BlockEntityType<T>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation
@@ -71,7 +71,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         arg: Properties,
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: RegistrySupplier<BlockEntityType<T>>,
+        biFunction: BlockEntityType<T>,
         model: ResourceLocation,
         width: Int,
         height: Int,
@@ -84,7 +84,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: RegistrySupplier<BlockEntityType<T>>,
+        biFunction: BlockEntityType<T>,
         arg: Properties,
         model: ResourceLocation
     ) : super(arg, biFunction, model = model) {

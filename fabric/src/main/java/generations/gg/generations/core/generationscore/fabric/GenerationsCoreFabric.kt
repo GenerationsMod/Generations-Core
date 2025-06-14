@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.fabric
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.init
 import generations.gg.generations.core.generationscore.common.GenerationsCore.initBuiltinPacks
@@ -12,27 +10,34 @@ import generations.gg.generations.core.generationscore.common.compat.ImpactorCom
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures
 import generations.gg.generations.core.generationscore.fabric.AnvilEvents.AnvilChange
 import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers
+import io.netty.buffer.ByteBufUtil
+import io.netty.buffer.Unpooled
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SyncDataPackContents
 import net.fabricmc.fabric.api.event.player.UseBlockCallback
-import net.fabricmc.fabric.api.item.v1.FabricItem
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry
 import net.fabricmc.fabric.api.resource.IdentifiableResourceReloadListener
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType
 import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint
+import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
+import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.resources.ResourceLocation
@@ -41,6 +46,10 @@ import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ResourceManager
 import net.minecraft.util.profiling.ProfilerFiller
+import net.minecraft.world.entity.player.Inventory
+import net.minecraft.world.entity.player.Player
+import net.minecraft.world.inventory.AbstractContainerMenu
+import net.minecraft.world.inventory.MenuType
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.ItemLike
@@ -48,6 +57,7 @@ import net.minecraft.world.level.block.Block
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
 import java.util.function.Consumer
+import java.util.function.Function
 import java.util.function.Supplier
 
 /**
@@ -117,6 +127,8 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
         CompostingChanceRegistry.INSTANCE.add(block, chance)
     }
 
+    override fun <T : Any> register(register: PlatformRegistry<T>) = register.init()
+
     @SafeVarargs
     override fun create(
             name: String,
@@ -139,6 +151,35 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
         dataSerializer: EntityDataSerializer<T>,
     ) {
         return EntityDataSerializers.registerSerializer(dataSerializer)
+    }
+
+    override fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): MenuType<T> {
+        return ExtendedScreenHandlerType({ id, inventory, data ->
+            var buf = FriendlyByteBuf(Unpooled.wrappedBuffer(data))
+            val menu = constructor.invoke(id, inventory, buf)
+            buf.release()
+            menu
+        }, ByteBufCodecs.BYTE_ARRAY.mapStream(Function.identity()))
+    }
+
+    override fun openExtendedMenu(serverPlayer: ServerPlayer, menuProvider: ExtendedMenuProvider) {
+        serverPlayer.openMenu(object : ExtendedScreenHandlerFactory<ByteArray> {
+            override fun getScreenOpeningData(player: ServerPlayer): ByteArray {
+                val buf = PacketByteBufs.create()
+                menuProvider.saveExtraData(buf)
+                val bytes = ByteBufUtil.getBytes(buf)
+                buf.release()
+                return bytes
+            }
+
+            override fun getDisplayName(): Component {
+                return menuProvider.displayName
+            }
+
+            override fun createMenu(i: Int, inventory: Inventory, player: Player): AbstractContainerMenu? {
+                return menuProvider.createMenu(i, inventory, player)
+            }
+        })
     }
 
     override fun registerResourceReloader(

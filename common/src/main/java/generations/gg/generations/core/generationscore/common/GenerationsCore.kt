@@ -11,6 +11,7 @@ import com.cobblemon.mod.common.api.data.DataProvider
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail.Companion.registerSpawnType
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry.register
 import com.mojang.logging.LogUtils
+import com.mojang.serialization.MapCodec
 import dev.architectury.event.events.common.LootEvent
 import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers
@@ -38,13 +39,14 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.loot.LootItemConditionTypes
 import generations.gg.generations.core.generationscore.common.world.loot.LootPoolEntryTypes
-import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeSerializers
-import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes
-import generations.gg.generations.core.generationscore.common.world.recipe.RksResultType
+import generations.gg.generations.core.generationscore.common.world.recipe.*
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import generations.gg.generations.core.generationscore.common.world.spawning.ZygardeCellDetail
 import net.minecraft.core.registries.Registries
+import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.chat.MutableComponent
+import net.minecraft.network.codec.ByteBufCodecs
+import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
@@ -65,6 +67,7 @@ import java.util.function.IntConsumer
  * @author Joseph T. McQuigg, WaterPicker
  */
 object GenerationsCore {
+
     /** The mod id of the Generations-Core mod.  */
     const val MOD_ID: String = "generations_core"
 
@@ -80,6 +83,8 @@ object GenerationsCore {
     @JvmField
 	var dataProvider: DataProvider = GenerationsDataProvider.INSTANCE
 
+    lateinit var RKS_RESULT_TYPE: RegistryContainer<RksResultType<*>, RksResult<*>>
+
     /**
      * Initializes the Generations-Core mod.
      */
@@ -90,6 +95,7 @@ object GenerationsCore {
         )
         GenerationsCore.implementation = implementation
 
+        RKS_RESULT_TYPE = RegistryContainer( "rks_result", RksResult<*>::type, RksResultType<*>::codec, RksResultType<*>::streamCodec)
 
         //		GenerationsDataProvider.INSTANCE.register(ShopPresets.instance());
 //		GenerationsDataProvider.INSTANCE.register(Shops.instance());
@@ -123,32 +129,10 @@ object GenerationsCore {
 
         GenerationsCoreEntityDataSerializers.init()
         GenerationsStorage.init()
-        GenerationsDataComponents.init()
-        GenerationsSounds.init()
-        GenerationsBlocks.init()
-        GenerationsPokeDolls.init()
-        GenerationsWood.init()
-        GenerationsOres.init()
-        GenerationsDecorationBlocks.init()
-        LootPoolEntryTypes.init()
-        LootItemConditionTypes.init()
-        GenerationsUtilityBlocks.init()
-        GenerationsShrines.init()
-        GenerationsBlocks.initItems()
-        GenerationsItems.init()
-        GenerationsBlockEntities.init()
-        GenerationsEntities.init()
-        GenerationsArmorMaterials.init()
-        GenerationsArmor.init()
-        GenerationsTools.init()
-        GenerationsCreativeTabs.init()
-        GenerationsContainers.init()
         GenerationsResources.init()
-        RksResultType.init()
         GenerationsIngredidents.init()
-        GenerationsCoreRecipeTypes.init()
-        GenerationsCoreRecipeSerializers.init()
-        GenerationsCoreStats.init()
+
+        registerRegistires()
 
         GenerationsDataProvider.INSTANCE.registerDefaults()
 
@@ -175,7 +159,6 @@ object GenerationsCore {
         registerDefaultCustomInteractions()
 
 
-        //		BuiltInRegistries.BLOCK.stream().map(a -> a.arch$registryName() + ": " + a.getLootTable()).forEach(a -> System.out.println(a));
     }
 
     fun initBuiltinPacks(consumer: TriConsumer<PackType?, ResourceLocation?, MutableComponent?>?) {
@@ -206,6 +189,40 @@ object GenerationsCore {
 	fun id(path: String): ResourceLocation {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path)
     }
+
+    fun registerRegistires() {
+        implementation.register(GenerationsDataComponents)
+        implementation.register(GenerationsSounds)
+        GenerationsBlocks.init(implementation::register)
+        implementation.register(GenerationsPokeDolls)
+        GenerationsWood.init(implementation::register)
+        implementation.register(GenerationsOres)
+        implementation.register(GenerationsDecorationBlocks)
+        implementation.register(LootPoolEntryTypes)
+        implementation.register(LootItemConditionTypes)
+        implementation.register(GenerationsUtilityBlocks)
+        implementation.register(GenerationsShrines)
+        GenerationsItems.init(implementation::register)
+        GenerationsBlocks.initItems(implementation::register)
+        implementation.register(GenerationsBlockEntities)
+        implementation.register(GenerationsEntities)
+        implementation.register(GenerationsArmorMaterials)
+        implementation.register(GenerationsArmor)
+        implementation.register(GenerationsTools)
+        implementation.register(GenerationsCreativeTabs)
+        implementation.register(GenerationsContainers)
+        implementation.register(GenerationsCoreRecipeTypes)
+        implementation.register(GenerationsCoreRecipeSerializers)
+        implementation.register(GenerationsCoreStats)
+        implementation.register(GenerationsRksTypes)
+    }
+}
+
+class RegistryContainer<T: Any, V: Any>(name: String, from: (V) -> T, mapCodec: (T) -> MapCodec<out V>, streamCodec: (T) -> StreamCodec<RegistryFriendlyByteBuf, out V>) {
+    val key = ResourceKey.createRegistryKey<T>(name.generationsResource())
+    val registry = GenerationsCore.implementation.createRegistry(key, true)
+    val codec = registry.byNameCodec().dispatch(from::invoke, mapCodec::invoke)
+    val streamCodec = ByteBufCodecs.registry(key).dispatch(from::invoke, streamCodec::invoke)
 }
 
 fun <T> T?.orFalse(predicate: (T) -> Boolean): Boolean = this?.let(predicate) ?: false

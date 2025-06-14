@@ -9,6 +9,7 @@ import earth.terrarium.common_storage_lib.storage.base.UpdateManager
 import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.MenuStorageSlot
 import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
@@ -22,7 +23,7 @@ open class GenericChestContainer<T>(
     val inventoryWidth: Int,
     val inventoryHeight: Int,
     lock: Int = -1
-) : AbstractContainerMenu(GenerationsContainers.GENERIC.get(), containerId) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
+) : AbstractContainerMenu(GenerationsContainers.GENERIC, containerId) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
     @JvmField
     val guiWidth: Int =  14 + this.inventoryWidth * 18
     @JvmField
@@ -111,4 +112,18 @@ open class GenericChestContainer<T>(
     fun getContainer(): T = container
 
     open fun save(player: Player?) {}
+
+    companion object {
+        fun fromBuffer(
+            containerId: Int,
+            playerInventory: Inventory,
+            buffer: FriendlyByteBuf
+        ): GenericChestContainer<*> {
+            val row = buffer.readVarInt()
+            val column = buffer.readVarInt()
+            val selected = buffer.readVarInt()
+
+            return GenericChestContainer(containerId, playerInventory, SimpleItemStorage(row * column), row, column, selected)
+        }
+    }
 }

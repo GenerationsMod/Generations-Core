@@ -88,7 +88,7 @@ class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock<Cooki
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
         return if (level.isClientSide) null else createTickerHelper(
-            blockEntityType, GenerationsBlockEntities.COOKING_POT.get()
+            blockEntityType, GenerationsBlockEntities.COOKING_POT
         ) { _, _, _, pot -> pot.serverTick() }
     }
 
@@ -98,7 +98,7 @@ class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock<Cooki
         pos: BlockPos,
         context: CollisionContext
     ): VoxelShape {
-        return (if (level.getBlockEntity(pos, GenerationsBlockEntities.COOKING_POT.get())
+        return (if (level.getBlockEntity(pos, GenerationsBlockEntities.COOKING_POT)
                 .filter { obj: CookingPotBlockEntity -> obj.hasLogs() }.isPresent
         ) WITH_CAMPFIRE else WITHOUT_CAMPFIRE).getShape(state)
     }

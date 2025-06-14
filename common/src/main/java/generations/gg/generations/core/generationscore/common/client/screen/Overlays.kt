@@ -70,7 +70,7 @@ object Overlays {
 
             if (player.inventory.hasAnyMatching { stack: ItemStack ->
                     stack.`is`(
-                        GenerationsItems.FILM.get()
+                        GenerationsItems.FILM
                     )
                 }) {
                 if (player.inventory.freeSlot > -1) {
@@ -105,7 +105,7 @@ object Overlays {
 
             ScreenUtils.drawTextWithHeight(
                 graphics,
-                player.inventory.items.stream().filter { a: ItemStack -> a.`is`(GenerationsItems.FILM.get()) }
+                player.inventory.items.stream().filter { a: ItemStack -> a.`is`(GenerationsItems.FILM) }
                     .mapToInt { obj: ItemStack -> obj.count }.sum().toString(),
                 0f,
                 0f,
@@ -158,7 +158,7 @@ object Overlays {
 
     fun renderPumpkin(guiGraphics: GuiGraphics, deltaTracker: DeltaTracker?): Boolean {
         if (Minecraft.getInstance().player!!.inventory.getArmor(3)
-                .`is`(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().asItem())
+                .`is`(GenerationsBlocks.CURSED_CARVED_PUMPKIN.asItem())
         ) {
             RenderSystem.disableDepthTest()
             RenderSystem.enableBlend()

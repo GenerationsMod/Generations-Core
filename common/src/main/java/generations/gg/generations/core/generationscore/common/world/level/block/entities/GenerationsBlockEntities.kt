@@ -3,6 +3,8 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.GREATBALL_CHEST
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.MASTERBALL_CHEST
@@ -13,15 +15,20 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity
 import net.minecraft.core.Holder
+import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.entity.HangingSignBlockEntity
 import net.minecraft.world.level.block.entity.SignBlockEntity
 
-object GenerationsBlockEntities {
-    val BLOCK_ENTITIES: DeferredRegister<BlockEntityType<*>> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK_ENTITY_TYPE)
+object GenerationsBlockEntities: PlatformRegistry<BlockEntityType<*>>() {
+    override val registry: Registry<BlockEntityType<*>> = BuiltInRegistries.BLOCK_ENTITY_TYPE
+    override val resourceKey: ResourceKey<Registry<BlockEntityType<*>>> = Registries.BLOCK_ENTITY_TYPE
 
     val POKE_DOLL = registerRegular("pokedoll", ::PokeDollBlockEntity,
         GenerationsPokeDolls.ARCEUS_POKEDOLL, GenerationsPokeDolls.ARTICUNO_POKEDOLL, GenerationsPokeDolls.AZELF_POKEDOLL, GenerationsPokeDolls.AZURILL_POKEDOLL,
@@ -121,7 +128,7 @@ object GenerationsBlockEntities {
     )
 
     @JvmField
-    val MACHINE_BLOCK: RegistrySupplier<BlockEntityType<MachineBlockEntity>> = registerRegular("machine_block", ::MachineBlockEntity, GenerationsBlocks.MACHINE_BLOCK)
+    val MACHINE_BLOCK = registerRegular("machine_block", ::MachineBlockEntity, GenerationsBlocks.MACHINE_BLOCK)
 
     @JvmField
     val VENDING_MACHINE = registerRegularWithArray("vending_machine", ::VendingMachineBlockEntity, GenerationsDecorationBlocks.VENDING_MACHINE.toArray())
@@ -144,7 +151,7 @@ object GenerationsBlockEntities {
 
     val PC = registerRegular("pc", ::DefaultPcBlockEntity, GenerationsUtilityBlocks.ROTOM_PC, GenerationsUtilityBlocks.TABLE_PC)
     @JvmField
-    val DYED_PC = registerRegular("dyed_pc", ::DyedPcBlockEntity, GenerationsUtilityBlocks.PC.toArray())
+    val DYED_PC = registerRegularWithArray("dyed_pc", ::DyedPcBlockEntity, GenerationsUtilityBlocks.PC.toArray())
 
     @JvmField
     val BALL_LOOT = registerRegular("poke_loot", ::BallLootBlockEntity,
@@ -186,7 +193,7 @@ object GenerationsBlockEntities {
     val RKS_MACHINE = registerRegular("rks_machine", ::RksMachineBlockEntity, GenerationsUtilityBlocks.RKS_MACHINE)
     @JvmField
     val STREET_LAMP = registerRegularWithArray("street_lamp", ::StreetLampBlockEntity, GenerationsDecorationBlocks.STREET_LAMP.toArray())
-    val BOX: RegistrySupplier<BlockEntityType<BoxBlockEntity>> = registerRegular("box", ::BoxBlockEntity, GenerationsUtilityBlocks.BOX)
+    val BOX = registerRegular("box", ::BoxBlockEntity, GenerationsUtilityBlocks.BOX)
 
 
 
@@ -194,26 +201,17 @@ object GenerationsBlockEntities {
     fun <T : BlockEntity> registerRegular(
         name: String,
         aNew: BlockEntityType.BlockEntitySupplier<T>,
-        vararg blocks: Holder<out Block>
-    ): RegistrySupplier<BlockEntityType<T>> {
-        return BLOCK_ENTITIES.register(name) {
-            BlockEntityType.Builder.of(aNew, *blocks.map(Holder<out Block>::value).toTypedArray()).build(null)
-        }
-    }
+        vararg blocks: Block
+    ): BlockEntityType<T> = create(name.generationsResource(), BlockEntityType.Builder.of(aNew, *blocks).build(null))
 
     fun <T : BlockEntity> registerRegularWithArray(
         name: String,
         aNew: BlockEntityType.BlockEntitySupplier<T>,
-        blocks: Array<Holder<out Block>>
-    ): RegistrySupplier<BlockEntityType<T>> {
-        return BLOCK_ENTITIES.register(name) {
-            BlockEntityType.Builder.of(aNew, *blocks.map(Holder<out Block>::value).toTypedArray()).build(null)
-        }
-    }
+        blocks: Array<out Block>
+    ): BlockEntityType<T> = create(name.generationsResource(), BlockEntityType.Builder.of(aNew, *blocks).build(null))
 
-    @JvmStatic
-    fun init() {
+    override fun init(consumer: (ResourceLocation, BlockEntityType<*>) -> Unit) {
         GenerationsCore.LOGGER.info("Registering Generations Block Entities")
-        BLOCK_ENTITIES.register()
+        super.init(consumer)
     }
 }

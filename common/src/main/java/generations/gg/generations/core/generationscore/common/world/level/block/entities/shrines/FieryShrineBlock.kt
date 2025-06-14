@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
@@ -18,7 +19,7 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class FieryShrineBlock(properties: Properties) : BirdShrineBlock(
     properties = properties,
     model = GenerationsBlockEntityModels.MOLTRES_SHRINE,
-    imbuedItems = arrayOf(GenerationsItems.FIERY_WING, GenerationsItems.SINISTER_WING)
+    imbuedItems = arrayOf("fiery_wing".generationsResource(), "sinister_wing".generationsResource())
 ) {
     override fun codec(): MapCodec<FieryShrineBlock> = CODEC
 

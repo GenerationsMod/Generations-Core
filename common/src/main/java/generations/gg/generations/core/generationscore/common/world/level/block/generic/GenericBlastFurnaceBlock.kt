@@ -24,7 +24,7 @@ class GenericBlastFurnaceBlock(properties: Properties = Properties.ofFullCopy(Bl
         state: BlockState,
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
-        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_BLAST_FURNACE.get())
+        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_BLAST_FURNACE)
     }
 
     companion object {

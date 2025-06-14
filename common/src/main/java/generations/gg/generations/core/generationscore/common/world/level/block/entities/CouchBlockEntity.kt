@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.state.BlockState
 import org.joml.Vector3f
 
-class CouchBlockEntity(pos: BlockPos, state: BlockState) : DyedVariantBlockEntity<CouchBlockEntity>(GenerationsBlockEntities.COUCH.get(), pos, state), TintProvider {
+class CouchBlockEntity(pos: BlockPos, state: BlockState) : DyedVariantBlockEntity<CouchBlockEntity>(GenerationsBlockEntities.COUCH, pos, state), TintProvider {
     override fun getTint(): Vector3f? {
         return COLOR_MAP[color]
     }

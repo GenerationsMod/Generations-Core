@@ -41,7 +41,7 @@ class CursedPumpkinBlock : PumpkinBlock(Properties.ofFullCopy(Blocks.PUMPKIN)) {
                 val direction1 = if (direction.axis === Direction.Axis.Y) player.direction.opposite else direction
                 level.playSound(null, pos, SoundEvents.PUMPKIN_CARVE, SoundSource.BLOCKS, 1.0f, 1.0f)
                 level.setBlock(
-                    pos, GenerationsBlocks.CURSED_CARVED_PUMPKIN.get().defaultBlockState().setValue(
+                    pos, GenerationsBlocks.CURSED_CARVED_PUMPKIN.defaultBlockState().setValue(
                         CarvedPumpkinBlock.FACING, direction1
                     ), 11
                 )

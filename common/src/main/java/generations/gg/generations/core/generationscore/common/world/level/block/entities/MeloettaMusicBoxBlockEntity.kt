@@ -27,7 +27,7 @@ import net.minecraft.world.ticks.ContainerSingleItem
 import java.util.*
 
 class MeloettaMusicBoxBlockEntity(pos: BlockPos, state: BlockState) :
-    ShrineBlockEntity(GenerationsBlockEntities.MELOETTA_MUSIC_BOX.get(), pos, state), Clearable, ContainerSingleItem {
+    ShrineBlockEntity(GenerationsBlockEntities.MELOETTA_MUSIC_BOX, pos, state), Clearable, ContainerSingleItem {
     private var item: ItemStack
     val songPlayer: JukeboxSongPlayer
 
@@ -37,9 +37,9 @@ class MeloettaMusicBoxBlockEntity(pos: BlockPos, state: BlockState) :
     }
 
     fun onSongChanged() {
-        if (theItem.`is`(GenerationsItems.RELIC_SONG.get())) {
+        if (theItem.`is`(GenerationsItems.RELIC_SONG)) {
             PokemonUtil.spawn(LegendKeys.MELOETTA.createPokemon(70), level, blockPos, angle)
-            this.setSongItemWithoutPlaying(ItemStack(GenerationsItems.INERT_RELIC_SONG.get()))
+            this.setSongItemWithoutPlaying(ItemStack(GenerationsItems.INERT_RELIC_SONG))
         }
 
         level!!.updateNeighborsAt(this.blockPos, blockState.block)

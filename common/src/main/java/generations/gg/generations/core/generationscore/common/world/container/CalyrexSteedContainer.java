@@ -3,11 +3,11 @@ package generations.gg.generations.core.generationscore.common.world.container;
 //public class CalyrexSteedContainer /*extends GenericChestContainer*/ {
 
 //    public CalyrexSteedContainer(int containerId, Inventory playerInventory, FriendlyByteBuf buf) {
-//        super(GenerationsContainers.CALYREX_STEED.get(), containerId, playerInventory, buf);
+//        super(GenerationsContainers.CALYREX_STEED, containerId, playerInventory, buf);
 //    }
 //
 //    public CalyrexSteedContainer(int containerId, Inventory playerInventory, GenericContainer container, int lockedSlot) {
-//        super(GenerationsContainers.CALYREX_STEED.get(), containerId, playerInventory, container, lockedSlot);
+//        super(GenerationsContainers.CALYREX_STEED, containerId, playerInventory, container, lockedSlot);
 //    }
 //
 //    @Override

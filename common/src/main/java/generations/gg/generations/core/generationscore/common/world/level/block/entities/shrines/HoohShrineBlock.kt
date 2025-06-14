@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
@@ -14,7 +15,7 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class HoohShrineBlock(properties: Properties) : BirdShrineBlock(properties, GenerationsBlockEntityModels.HO_OH_SHRINE, 2, 1, 0, GenerationsItems.RAINBOW_WING) {
+class HoohShrineBlock(properties: Properties) : BirdShrineBlock(properties, GenerationsBlockEntityModels.HO_OH_SHRINE, 2, 1, 0, "rainbow_wing".generationsResource()) {
 
     override fun codec(): MapCodec<HoohShrineBlock> = CODEC
 

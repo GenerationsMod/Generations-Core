@@ -16,7 +16,7 @@ open class InteractShrineBlockEntity : ShrineBlockEntity {
     constructor(
         pos: BlockPos,
         state: BlockState
-    ) : this(GenerationsBlockEntities.INTERACT_SHRINE.get(), pos, state)
+    ) : this(GenerationsBlockEntities.INTERACT_SHRINE, pos, state)
 
     override fun getVariant(): String? = blockState.block.instanceOrNull<InteractShrineBlock<*>>()?.getVariant(blockState)
 

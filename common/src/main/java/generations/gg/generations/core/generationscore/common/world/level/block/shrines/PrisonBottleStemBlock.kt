@@ -140,7 +140,7 @@ class PrisonBottleStemBlock(materialIn: Properties) :
                                     pos.x + 0.5,
                                     pos.y + 0.5,
                                     pos.z + 0.5,
-                                    ItemStack(GenerationsShrines.PRISON_BOTTLE.get())
+                                    ItemStack(GenerationsShrines.PRISON_BOTTLE)
                                 )
                             )
                         }
@@ -151,7 +151,7 @@ class PrisonBottleStemBlock(materialIn: Properties) :
     }
 
     override fun isStackValid(stack: ItemStack): Boolean {
-        return stack.`is`(GenerationsItems.HOOPA_RING.get())
+        return stack.`is`(GenerationsItems.HOOPA_RING)
     }
 
     override fun getVariant(blockState: BlockState): String? {

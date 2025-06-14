@@ -25,7 +25,7 @@ class ZygardeCellEntity : Entity {
     @JvmField
     var instance: BlockObjectInstance = BlockObjectInstance(Matrix4f(), null)
 
-    constructor(level: Level) : super(GenerationsEntities.ZYGARDE_CELL.get(), level)
+    constructor(level: Level) : super(GenerationsEntities.ZYGARDE_CELL, level)
 
     constructor(entityType: EntityType<*>, level: Level) : super(entityType, level)
 
@@ -41,7 +41,7 @@ class ZygardeCellEntity : Entity {
     override fun interact(player: Player, hand: InteractionHand): InteractionResult {
         if(hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         val serverPlayer = player.instanceOrNull<ServerPlayer>() ?: return InteractionResult.PASS;
-        val stack = player.mainHandItem.takeIf { it.`is`(GenerationsItems.ZYGARDE_CUBE.get()) } ?: return InteractionResult.PASS
+        val stack = player.mainHandItem.takeIf { it.`is`(GenerationsItems.ZYGARDE_CUBE) } ?: return InteractionResult.PASS
 
         //Note: I'm treating Boolean? like a tristate here. True and null allow while false doesn't. This is to allow an alternate overflow message when taking a cell when full.
         val allowed = if(stack.damageValue != ZygardeCubeItem.FULL) true else if(GenerationsCore.CONFIG.legendary.enableZygardeCubeOverflow) null else false
@@ -54,7 +54,7 @@ class ZygardeCellEntity : Entity {
             level().playSound(
                 null,
                 blockPosition(),
-                GenerationsSounds.ZYGARDE_CELL.get(),
+                GenerationsSounds.ZYGARDE_CELL,
                 SoundSource.BLOCKS,
                 0.2f,
                 1.0f

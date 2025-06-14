@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.forge
 
 import com.google.common.collect.ImmutableMap
 import com.mojang.datafixers.util.Pair
-import dev.architectury.registry.registries.DeferredRegister
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.init
 import generations.gg.generations.core.generationscore.common.GenerationsCore.onAnvilChange
@@ -15,15 +14,23 @@ import generations.gg.generations.core.generationscore.common.compat.VanillaComp
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
+import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge
 import net.minecraft.client.Minecraft
+import net.minecraft.core.Registry
+import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.syncher.EntityDataSerializer
+import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ReloadableResourceManager
 import net.minecraft.world.InteractionResult
+import net.minecraft.world.entity.player.Inventory
+import net.minecraft.world.inventory.AbstractContainerMenu
+import net.minecraft.world.inventory.MenuType
 import net.minecraft.world.item.AxeItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
@@ -36,6 +43,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent
 import net.neoforged.fml.event.lifecycle.FMLLoadCompleteEvent
 import net.neoforged.fml.loading.FMLPaths
 import net.neoforged.neoforge.common.NeoForge
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension
 import net.neoforged.neoforge.common.util.TriState
 import net.neoforged.neoforge.event.AddReloadListenerEvent
 import net.neoforged.neoforge.event.AnvilUpdateEvent
@@ -44,14 +52,13 @@ import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract
 import net.neoforged.neoforge.registries.NeoForgeRegistries
-import org.jetbrains.annotations.NotNull
+import net.neoforged.neoforge.registries.NewRegistryEvent
+import net.neoforged.neoforge.registries.RegisterEvent
+import net.neoforged.neoforge.registries.RegistryBuilder
+import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 import java.util.*
-import java.util.function.BiConsumer
 import java.util.function.Consumer
-import java.util.function.Function
 import java.util.function.Supplier
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 fun generations.gg.generations.core.generationscore.common.api.events.TriState.asNeoForge(): TriState = when(this) {
     generations.gg.generations.core.generationscore.common.api.events.TriState.TRUE -> TriState.TRUE
@@ -69,6 +76,7 @@ fun generations.gg.generations.core.generationscore.common.api.events.TriState.a
  */
 @Mod(GenerationsCore.MOD_ID)
 class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
+    private val registries = mutableListOf<Registry<*>>()
     private val reloadableResources: MutableList<PreparableReloadListener> = ArrayList()
     private val packs: Map<PackType, List<Pair<ResourceLocation, Component>>> = EnumMap(net.minecraft.server.packs.PackType::class.java)
 
@@ -87,7 +95,6 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         init(this)
         //        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
         val EVENT_BUS = NeoForge.EVENT_BUS
-
 
 
         EVENT_BUS.addListener { event: OnDatapackSyncEvent ->
@@ -134,6 +141,27 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         if (ModList.get().isLoaded("impactor")) ImpactorCompat.init()
     }
 
+    override fun <T: Any> register(register: PlatformRegistry<T>) {
+        with(MOD_BUS) {
+            this.addListener<RegisterEvent> { event ->
+                if(event.registryKey.equals(register.resourceKey)) {
+                    event.register(register.resourceKey) { helper ->
+                        register.init(helper::register)
+                    }
+                }
+            }
+        }
+    }
+
+    override fun registerResourceReloader(
+        identifier: ResourceLocation?,
+        reloader: PreparableReloadListener?,
+        type: PackType?,
+        dependencies: Collection<ResourceLocation?>?,
+    ) {
+        TODO("Not yet implemented")
+    }
+
     override fun registerStrippable(log: Block, stripped: Block) {
         require(
             log.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
@@ -158,7 +186,7 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     override fun create(
         name: String,
         icon: Supplier<ItemStack>,
-        items: Array<out PlatformRegistry<out ItemLike>>
+        items: Array<out PlatformRegistry<out ItemLike>>,
     ): CreativeModeTab = CreativeModeTab.builder()
                 .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
                 .icon(icon)
@@ -173,8 +201,18 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
 
     override fun <T : Any> registerEntityDataSerializer(
         name: String,
-        dataSerializer: EntityDataSerializer<T>) { ENTITY_DATA_SERIALIZER_REGISTER.register(name, dataSerializer.supplier()) }
+        dataSerializer: EntityDataSerializer<T>,
+    ) { ENTITY_DATA_SERIALIZER_REGISTER.register(name, dataSerializer.supplier()) }
 
+    override fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): MenuType<T> = IMenuTypeExtension.create(constructor::invoke)
+
+    override fun openExtendedMenu(serverPlayer: ServerPlayer, menuProvider: ExtendedMenuProvider) {
+        serverPlayer.openMenu(menuProvider, menuProvider::saveExtraData)
+    }
+
+    override fun <T : Any> createRegistry(key: ResourceKey<Registry<T>>, sync: Boolean): Registry<T> {
+        return RegistryBuilder(key).sync(sync).create()
+    }
 
     //    public void addPackFinders(AddPackFindersEvent event) {
     //        var packList = packs.get(event.getPackType());
@@ -258,7 +296,7 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         identifier: ResourceLocation,
         reloader: PreparableReloadListener,
         type: PackType,
-        dependencies: Collection<ResourceLocation>
+        dependencies: Collection<ResourceLocation>,
     ) {
         if (type == PackType.SERVER_DATA) reloadableResources.add(reloader)
         else Minecraft.getInstance().resourceManager.instanceOrNull<ReloadableResourceManager>()?.registerReloadListener(reloader)

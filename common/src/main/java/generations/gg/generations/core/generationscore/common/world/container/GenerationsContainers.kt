@@ -6,93 +6,43 @@ import dev.architectury.registry.registries.DeferredRegister
 import dev.architectury.registry.registries.RegistrySupplier
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity
+import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.resources.ResourceKey
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.flag.FeatureFlagSet
+import net.minecraft.world.flag.FeatureFlags
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.MenuType
 import net.minecraft.world.level.block.entity.BlockEntity
 import java.util.function.Function
 
-object GenerationsContainers {
-    val CONTAINERS: DeferredRegister<MenuType<*>> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.MENU)
-    @JvmField
-    val COOKING_POT: RegistrySupplier<MenuType<CookingPotContainer>> = CONTAINERS.register(
-        "cooking_pot"
-    ) {
-        MenuType(
-            { id: Int, playerInventory: Inventory ->
-                CookingPotContainer(
-                    id,
-                    playerInventory
-                )
-            }, FeatureFlagSet.of()
-        )
-    }
-    @JvmField
-    val GENERIC: RegistrySupplier<MenuType<GenericChestContainer<*>>> = CONTAINERS.register(
-        "generic"
-    ) {
-        MenuRegistry.ofExtended { containerId, playerInventory, buf ->
-            val width = buf.readVarInt()
-            val height = buf.readVarInt()
-            val lock = buf.readVarInt()
-            GenericChestContainer(
-                containerId,
-                playerInventory, SimpleItemStorage(width * height),
-                width, height, lock
-            )
-        }
-    }
-    @JvmField
-    val MACHINE_BLOCK: RegistrySupplier<MenuType<MachineBlockContainer>> = register(
-        "machine_block",
-        Function<CreationContext<MachineBlockEntity>, MachineBlockContainer> { ctx: CreationContext<MachineBlockEntity> ->
-            MachineBlockContainer(
-                ctx
-            )
-        },
-        MachineBlockEntity::class.java
-    )
-    @JvmField
-    val MELODY_FLUTE: RegistrySupplier<MenuType<MelodyFluteContainer>> = CONTAINERS.register(
-        "melody_flute"
-    ) {
-        MenuType(::MelodyFluteContainer, FeatureFlagSet.of())
-    }
+object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
+    override val registry: Registry<MenuType<*>> = BuiltInRegistries.MENU
+    override val resourceKey: ResourceKey<Registry<MenuType<*>>> = Registries.MENU
 
     @JvmField
-    val TRASHCAN: RegistrySupplier<MenuType<TrashCanContainer>> = CONTAINERS.register(
-        "trashcan"
-    ) {
-        MenuType(
-            { id: Int, arg: Inventory -> TrashCanContainer(id, arg) },
-            FeatureFlagSet.of()
-        )
-    }
-
-    //    public static final RegistrySupplier<MenuType<WalkmonContainer>> WALKMON = CONTAINERS.register("walkmon", () -> MenuRegistry.ofExtended(WalkmonContainer::new));
-    //    public static final RegistrySupplier<MenuType<CalyrexSteedContainer>> CALYREX_STEED = CONTAINERS.register("calyrex_steed", () -> MenuRegistry.ofExtended(CalyrexSteedContainer::new));
-    @JvmField
-    val RKS_MACHINE: RegistrySupplier<MenuType<RksMachineContainer>> = CONTAINERS.register(
-        "rks_machine"
-    ) {
-        MenuType(
-            { id: Int, playerInventory: Inventory? ->
-                RksMachineContainer(
-                    id,
-                    playerInventory!!
-                )
-            }, FeatureFlagSet.of()
-        )
-    }
+    val COOKING_POT = register("cooking_pot", ::CookingPotContainer)
+    val MACHINE_BLOCK = register("machine_block", ::MachineBlockContainer, MachineBlockEntity::class.java)
+    val MELODY_FLUTE = register("melody_flute", ::MelodyFluteContainer)
+    val TRASHCAN = register("trashcan", ::TrashCanContainer)
+    val RKS_MACHINE = register("rks_machine", ::RksMachineContainer)
+    val GENERIC = registerExtended("generic", GenericChestContainer.Companion::fromBuffer)
 
 
-    fun init() {
-        CONTAINERS.register()
+    fun <T: AbstractContainerMenu> registerExtended(name: String, constructor: (Int, Inventory, FriendlyByteBuf) -> T): MenuType<T> = create(name.generationsResource(), GenerationsCore.implementation.createExtendedMenu(constructor))
+
+    override fun init(consumer: (ResourceLocation, MenuType<*>) -> Unit) {
+        super.init(consumer)
+
         PlayerEvent.CLOSE_MENU.register(PlayerEvent.CloseMenu { player: Player, container: AbstractContainerMenu ->
             onContainerClose(
                 player, container
@@ -111,27 +61,26 @@ object GenerationsContainers {
         if (container is RksMachineContainer) container.close()
     }
 
+    fun <T: AbstractContainerMenu> register(name: String, constructor: (Int, Inventory) -> T): MenuType<T> = create(name.generationsResource(), MenuType(constructor::invoke, FeatureFlags.VANILLA_SET))
+
     fun <T : AbstractContainerMenu, V : BlockEntity> register(
         name: String,
         function: Function<CreationContext<V>, T>,
         clazz: Class<V>
-    ): RegistrySupplier<MenuType<T>> {
-        return CONTAINERS.register(
-            name
-        ) {
-            MenuRegistry.ofExtended { id: Int, playerInventory: Inventory, arg2: FriendlyByteBuf ->
-                val be = playerInventory.player.level().getBlockEntity(arg2.readBlockPos())
-                if (clazz.isInstance(be)) return@ofExtended function.apply(
-                    CreationContext<V>(
-                        id,
-                        playerInventory,
-                        clazz.cast(be)
-                    )
+    ): MenuType<T> {
+        return create(name.generationsResource(), MenuRegistry.ofExtended { id: Int, playerInventory: Inventory, arg2: FriendlyByteBuf ->
+            val be = playerInventory.player.level().getBlockEntity(arg2.readBlockPos())
+            if (clazz.isInstance(be)) return@ofExtended function.apply(
+                CreationContext<V>(
+                    id,
+                    playerInventory,
+                    clazz.cast(be)
                 )
-                else return@ofExtended null
-            }
-        }
+            )
+            else return@ofExtended null
+        })
     }
+
 
     @JvmRecord
     data class CreationContext<V : BlockEntity?>(val id: Int, val playerInv: Inventory, val blockEntity: V)

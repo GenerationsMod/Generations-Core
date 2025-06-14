@@ -54,7 +54,7 @@ class CelestialAltarBlock(properties: Properties) :
     ): BlockEntityTicker<T>? {
         return createTickerHelper(
             blockEntityType,
-            GenerationsBlockEntities.CELESTIAL_ALTAR.get(),
+            GenerationsBlockEntities.CELESTIAL_ALTAR,
             if (level.isClientSide) BlockEntityTicker { level1: Level?, blockPos: BlockPos?, blockState: BlockState?, blockEntity: CelestialAltarBlockEntity? -> } else BlockEntityTicker { level12: Level, pos: BlockPos?, blockState: BlockState?, blockEntity: CelestialAltarBlockEntity? ->
                 val state1 = level12.getBlockState(pos).setValue(
                     IS_SUN, timeRanges["day"]!!

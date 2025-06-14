@@ -39,7 +39,7 @@ class GenericChestRenderer(arg: BlockEntityRendererProvider.Context) :
         val level = blockEntity.level
         val flag = level != null
         val blockstate =
-            if (flag) blockEntity.blockState else GenerationsBlocks.POKEBALL_CHEST.get().defaultBlockState().setValue(
+            if (flag) blockEntity.blockState else GenerationsBlocks.POKEBALL_CHEST.defaultBlockState().setValue(
                 ChestBlock.FACING, Direction.SOUTH
             )
 

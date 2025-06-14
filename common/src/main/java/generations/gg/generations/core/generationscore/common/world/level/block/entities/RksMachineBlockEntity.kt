@@ -42,7 +42,7 @@ import java.util.*
 import java.util.function.Consumer
 
 open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
-    ModelProvidingBlockEntity(GenerationsBlockEntities.RKS_MACHINE.get(), pos, state), MenuProvider,
+    ModelProvidingBlockEntity(GenerationsBlockEntities.RKS_MACHINE, pos, state), MenuProvider,
     Container, Toggleable {
     private val dataAccess: ContainerData
 
@@ -230,7 +230,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
         }
 
     private fun getMappedRecipe(manager: RecipeManager): Optional<RecipeHolder<RksRecipe>> {
-        return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS.get(), craftingInput, level)
+        return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS, craftingInput, level)
     }
 
     private fun getMappedRecipe(manager: RecipeManager, id: ResourceLocation): Optional<RecipeHolder<RksRecipe>> {

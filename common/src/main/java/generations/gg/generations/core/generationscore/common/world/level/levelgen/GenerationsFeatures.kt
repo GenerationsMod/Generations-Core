@@ -70,12 +70,12 @@ object GenerationsFeatures {
     private fun registerMushroom(
         context: BootstrapContext<ConfiguredFeature<*, *>>,
         key: ResourceKey<ConfiguredFeature<*, *>>,
-        mushroom: RegistrySupplier<GenerationsMushroomBlock>
+        mushroom: GenerationsMushroomBlock
     ) {
         FeatureUtils.register(
             context, key, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(
                 Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(
-                    BlockStateProvider.simple(mushroom.get())
+                    BlockStateProvider.simple(mushroom)
                 )
             )
         )

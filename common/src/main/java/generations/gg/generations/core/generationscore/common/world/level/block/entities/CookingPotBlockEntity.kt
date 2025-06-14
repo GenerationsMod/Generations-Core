@@ -41,7 +41,7 @@ import java.util.concurrent.atomic.AtomicLong
 import java.util.stream.Stream
 
 
-class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.COOKING_POT.get(), pos, state),
+class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.COOKING_POT, pos, state),
     MenuProvider,
     ItemProvider.BlockEntity, VariantProvider, Toggleable {
     //0-9: berries

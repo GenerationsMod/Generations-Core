@@ -19,7 +19,7 @@ class AbundantShrineBlock(properties: Properties) : ShrineBlock<AbundantShrineBl
     override fun codec(): MapCodec<AbundantShrineBlock> = CODEC
 
     companion object {
-        private val playerConsumer = Consumer { p: ServerPlayer -> GenerationsUtils.giveItem(p, GenerationsItems.REVEAL_GLASS.get().defaultInstance) }
+        private val playerConsumer = Consumer { p: ServerPlayer -> GenerationsUtils.giveItem(p, GenerationsItems.REVEAL_GLASS.defaultInstance) }
         val CODEC = simpleCodec(::AbundantShrineBlock)
     }
 }

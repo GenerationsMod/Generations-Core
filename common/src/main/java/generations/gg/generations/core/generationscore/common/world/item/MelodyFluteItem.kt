@@ -9,6 +9,7 @@ import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import generations.gg.generations.core.generationscore.common.GenerationsStorage.IMBUED
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
+import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.container.MelodyFluteContainer
 import generations.gg.generations.core.generationscore.common.world.item.legends.ElementalPostBattleUpdateItem
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
@@ -83,12 +84,8 @@ class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(pr
             return isItem(GenerationsItems.MELODY_FLUTE, stack)
         }
 
-        fun <T : ItemLike?> isItem(`object`: RegistrySupplier<T>, stack: ItemStack): Boolean {
-            return `object`.toOptional().map { obj: T -> obj!!.asItem() }.filter { item: Item? ->
-                stack.`is`(
-                    item
-                )
-            }.isPresent
+        fun <T : ItemLike> isItem(`object`: T, stack: ItemStack): Boolean {
+            return stack.`is`(`object`.asItem())
         }
 
         @JvmStatic

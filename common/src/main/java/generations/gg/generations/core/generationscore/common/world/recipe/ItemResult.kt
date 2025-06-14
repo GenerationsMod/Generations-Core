@@ -13,7 +13,7 @@ import java.util.function.Function
 
 data class ItemResult(override val stack: ItemStack) : RksResult<ItemResult> {
     override fun type(): RksResultType<ItemResult> {
-        return RksResultType.ITEM.get()
+        return GenerationsRksTypes.ITEM
     }
 
     override val isPokemon: Boolean

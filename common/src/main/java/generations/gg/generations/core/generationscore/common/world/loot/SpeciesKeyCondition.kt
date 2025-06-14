@@ -15,7 +15,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType
 @JvmRecord
 data class SpeciesKeyCondition(val key: SpeciesKey) : LootItemCondition {
     override fun getType(): LootItemConditionType {
-        return LootItemConditionTypes.SPECIES_KEY.get()
+        return LootItemConditionTypes.SPECIES_KEY
     }
 
     override fun test(lootContext: LootContext): Boolean {

@@ -43,7 +43,7 @@ class GenerationsCoreJeiCompat : IModPlugin {
     }
 
     override fun registerRecipeCatalysts(registration: IRecipeCatalystRegistration) {
-        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE.get(), RksRecipeCategory.RKS_MACHINE.get())
+        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE.get())
     }
 
     override fun registerGuiHandlers(registration: IGuiHandlerRegistration) {
@@ -52,7 +52,7 @@ class GenerationsCoreJeiCompat : IModPlugin {
 
     override fun registerRecipeTransferHandlers(registration: IRecipeTransferRegistration) {
         registration.addRecipeTransferHandler(
-            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE.get(), RksRecipeCategory.RKS_MACHINE.get(), 1, 9, 10, 36
+            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE.get(), 1, 9, 10, 36
         )
     }
 
@@ -65,7 +65,7 @@ class GenerationsCoreJeiCompat : IModPlugin {
 
         val recipeManager = Minecraft.getInstance().level?.recipeManager ?: return Pair(emptyList(), emptyList())
 
-        recipeManager.getAllRecipesFor(GenerationsCoreRecipeTypes.RKS.get()).forEach { recipe ->
+        recipeManager.getAllRecipesFor(GenerationsCoreRecipeTypes.RKS).forEach { recipe ->
                 if (validator.isRecipeHandled(recipe)) {
                     handled.add(recipe)
                 } else {

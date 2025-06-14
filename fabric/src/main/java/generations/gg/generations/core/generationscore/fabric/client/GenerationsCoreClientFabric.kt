@@ -115,7 +115,7 @@ class GenerationsCoreClientFabric : ClientModInitializer {
                 )
                 else if (block is TransparentBlock) renderLayerMap.putBlock(block, RenderType.cutoutMipped())
             })
-            renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get(), RenderType.cutout())
+            renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE, RenderType.cutout())
         }
     }
 }

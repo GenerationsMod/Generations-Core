@@ -1,11 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
-import dev.architectury.registry.menu.ExtendedMenuProvider
-import dev.architectury.registry.menu.MenuRegistry
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import earth.terrarium.common_storage_lib.storage.base.UpdateManager
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
@@ -18,9 +17,10 @@ object GenericContainer {
 
     fun <T> openScreen(storage: T, width: Int, height: Int, title: Component, player: Player, lock: Int = -1) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
 
-        if (!player.isLocalPlayer) MenuRegistry.openExtendedMenu(
+        if (!player.isLocalPlayer) GenerationsCore.implementation.openExtendedMenu(
             player as ServerPlayer,
-            object : MenuProvider, ExtendedMenuProvider {
+            object : ExtendedMenuProvider {
+
                 override fun createMenu(id: Int, inventory: Inventory, player: Player): AbstractContainerMenu {
                     return GenericChestContainer(id, inventory, storage, width, height, lock)
                 }
@@ -28,6 +28,8 @@ object GenericContainer {
                 override fun getDisplayName(): Component {
                     return title
                 }
+
+
 
                 override fun saveExtraData(buffer: FriendlyByteBuf) {
                     buffer.writeVarInt(width)

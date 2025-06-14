@@ -30,9 +30,9 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
                 GenerationsArmor.SUN_STONE,
                 GenerationsArmor.MOON_STONE,
                 GenerationsArmor.THUNDER_STONE,
-                GenerationsArmor.WATER_STONE).flatMap { it.stream().asSequence() }.map({ it.get() })
-            .map { obj -> ArmorItem::class.java.cast(obj) }
-            .forEach({ itemModelGenerators.generateGenerationsArmorTrims(it) })
+                GenerationsArmor.WATER_STONE).flatMap { it.stream().asSequence() }
+            .filterIsInstance<ArmorItem>()
+            .forEach { itemModelGenerators.generateGenerationsArmorTrims(it) }
     }
 
     private fun ItemModelGenerators.generateGenerationsArmorTrims(armorItem: ArmorItem) {

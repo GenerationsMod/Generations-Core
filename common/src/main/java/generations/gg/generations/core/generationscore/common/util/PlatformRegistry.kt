@@ -5,6 +5,6 @@ import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 
-abstract class PlatformRegistry<T>: PlatformRegistry<Registry<T>, ResourceKey<Registry<T>>, T>() {
-    open fun init(consumer: (ResourceLocation, T) -> Unit) = register(consumer)
+abstract class PlatformRegistry<T: Any>: PlatformRegistry<Registry<T>, ResourceKey<Registry<T>>, T>() {
+    open fun init(consumer: (ResourceLocation, T) -> Unit = { id, entry -> Registry.register(registry, id, entry) }) = register(consumer)
 }

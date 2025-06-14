@@ -79,7 +79,7 @@ class BallLootBlock(properties: Properties, val type: String, private val ball: 
             return ItemInteractionResult.CONSUME
         }
 
-        val lootEntity = level.getBlockEntity(pos, GenerationsBlockEntities.BALL_LOOT.get())
+        val lootEntity = level.getBlockEntity(pos, GenerationsBlockEntities.BALL_LOOT)
 
         if (lootEntity.isPresent) {
             val be = lootEntity.get()

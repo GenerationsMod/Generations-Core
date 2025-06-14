@@ -36,7 +36,7 @@ import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
 abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
-    type: RegistrySupplier<BlockEntityType<T>>,
+    type: BlockEntityType<T>,
     private val blockEntityClass: Class<T>,
     arg: Properties,
     model: ResourceLocation,
@@ -86,7 +86,7 @@ abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
         return SUCCESS
     }
 
-    override fun <T : BlockEntity> getTicker(world: Level, blockState: BlockState, BlockWithEntityType: BlockEntityType<T>) =  createTickerHelper(BlockWithEntityType, blockEntityFunction.get(), getTicker())
+    override fun <T : BlockEntity> getTicker(world: Level, blockState: BlockState, BlockWithEntityType: BlockEntityType<T>) =  createTickerHelper(BlockWithEntityType, blockEntityFunction, getTicker())
 
     abstract fun getTicker() :BlockEntityTicker<T>
 

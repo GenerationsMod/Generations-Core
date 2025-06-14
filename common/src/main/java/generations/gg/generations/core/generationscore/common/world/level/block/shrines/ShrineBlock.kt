@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType
 
 abstract class ShrineBlock<T : ShrineBlockEntity>(
     properties: Properties,
-    blockEntityFunction: RegistrySupplier<BlockEntityType<T>>,
+    blockEntityFunction: BlockEntityType<T>,
     model: ResourceLocation? = null,
     width: Int = 0,
     height: Int = 0,

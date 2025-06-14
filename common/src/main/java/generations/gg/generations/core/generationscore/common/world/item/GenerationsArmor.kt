@@ -126,7 +126,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
         val chestplate: Item,
         val leggings: Item,
         val boots: Item,
-        val armorMaterial: Holder<ArmorMaterial>
+        val armorMaterial: ArmorMaterial
     ) {
         fun stream(): Stream<Item> {
             return Stream.of(
@@ -138,7 +138,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
         }
 
 
-        class Builder(private val name: String, private val armormaterial: Holder<ArmorMaterial>) {
+        class Builder(private val name: String, private val armormaterial: ArmorMaterial) {
             private val effects: MutableList<ArmorEffect> = ArrayList()
 
             fun enchantment(enchantment: ResourceKey<Enchantment>, level: Int): Builder {
@@ -162,29 +162,31 @@ object GenerationsArmor: ItemPlatformRegistry() {
         }
 
         companion object {
-            val MATERIAL_TO_SET = mutableMapOf<Holder<ArmorMaterial>, ArmorSet>()
+            val MATERIAL_TO_SET = mutableMapOf<ArmorMaterial, ArmorSet>()
 
-            fun create(name: String, armorMaterial: Holder<ArmorMaterial>, block: Builder.() -> Unit): ArmorSet {
+            fun create(name: String, armorMaterial: ArmorMaterial, block: Builder.() -> Unit): ArmorSet {
                 val builder = builder(name, armorMaterial)
                 block.invoke(builder)
                 return builder.build()
             }
 
-            fun builder(name: String, armorMaterial: Holder<ArmorMaterial>): Builder {
+            fun builder(name: String, armorMaterial: ArmorMaterial): Builder {
                 return Builder(name, armorMaterial)
             }
 
             fun create(
                 name: String,
-                armorMaterial: Holder<ArmorMaterial>,
-                vararg armorEffects: ArmorEffect?
+                armorMaterial: ArmorMaterial,
+                vararg armorEffects: ArmorEffect
             ): ArmorSet {
+                val holder = Holder.direct(armorMaterial) //TODO: Verify this doens't cause trouble
+
                 return ArmorSet(
                     register(
                         name + "_helmet"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            armorMaterial,
+                            holder,
                             ArmorItem.Type.HELMET,
                             properties
                         )
@@ -193,7 +195,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
                         name + "_chestplate"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            armorMaterial,
+                            holder,
                             ArmorItem.Type.CHESTPLATE,
                             properties
                         )
@@ -202,7 +204,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
                         name + "_leggings"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            armorMaterial,
+                            holder,
                             ArmorItem.Type.LEGGINGS,
                             properties
                         )
@@ -211,7 +213,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
                         name + "_boots"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            armorMaterial,
+                            holder,
                             ArmorItem.Type.BOOTS,
                             properties,
                             *armorEffects

@@ -1,22 +1,17 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood.WOOD_BLOCKS
 import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes
-import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.properties.BlockSetType
 import net.minecraft.world.level.block.state.properties.WoodType
-import java.util.function.Function
-import java.util.function.Supplier
+import kotlin.reflect.KFunction1
 
 /**
  * @author JT122406
@@ -24,8 +19,8 @@ import java.util.function.Supplier
  */
 object GenerationsWood {
     @JvmField
-    val WOOD_BLOCKS = object: BlockPlatformRegistry()
-    val WOOD_SIGN = object: BlockPlatformRegistry()
+    val WOOD_BLOCKS = object: BlockPlatformRegistry() {}
+    val WOOD_SIGN = object: BlockPlatformRegistry() {}
 
     val ULTRA_JUNGLE_LOG = registerRotatedPillar("ultra_jungle_log", Blocks.JUNGLE_LOG)
     val STRIPPED_ULTRA_JUNGLE_LOG = registerRotatedPillar("stripped_ultra_jungle_log", Blocks.STRIPPED_JUNGLE_LOG)
@@ -125,9 +120,9 @@ object GenerationsWood {
         return WOOD_SIGN.create(name.generationsResource(), blockSupplier)
     }
 
-    fun init(consumer: (ResourceLocation, Block) -> Unit) {
+    fun init(consumer: (PlatformRegistry<Block>) -> Unit) {
         GenerationsCore.LOGGER.info("Registering Generations Wood")
-        WOOD_BLOCKS.register(consumer)
-        WOOD_SIGN.register(consumer)
+        consumer.invoke(WOOD_BLOCKS)
+        consumer.invoke(WOOD_SIGN)
     }
 }

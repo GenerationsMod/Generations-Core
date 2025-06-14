@@ -5,6 +5,7 @@ import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.GenericChestBlockItem
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.BLOCKS
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.BLOCK_ITEMS
@@ -534,16 +535,15 @@ object GenerationsBlocks {
 
     private fun registerUnownBlock(name: String, glyph: String? = null): UnownBlock = registerBlockItem("unown_block_$name", UnownBlock(glyph ?: name.uppercase(), STONE_PROPERTY))
 
-    @JvmStatic
-    fun init(consumer: (ResourceLocation, Block) -> Unit) {
+    fun init(consumer: (BlockPlatformRegistry) -> Unit) {
         GenerationsCore.LOGGER.info("Registering Generations Blocks")
-        BLOCKS.register(consumer)
-        ULTRA_BLOCKS.register(consumer)
-        STONE.register(consumer)
+        consumer.invoke(BLOCKS)
+        consumer.invoke(ULTRA_BLOCKS)
+        consumer.invoke(STONE)
     }
 
-    fun initItems(consumer: (ResourceLocation, Item) -> Unit) {
-        BLOCK_ITEMS.register(consumer)
+    fun initItems(consumer: (ItemPlatformRegistry) -> Unit) {
+        consumer.invoke(BLOCK_ITEMS)
     }
 }
 

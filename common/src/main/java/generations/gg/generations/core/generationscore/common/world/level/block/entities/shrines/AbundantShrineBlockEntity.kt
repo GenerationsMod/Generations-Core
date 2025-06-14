@@ -5,4 +5,4 @@ import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.state.BlockState
 
 class AbundantShrineBlockEntity(pos: BlockPos, state: BlockState) :
-    ShrineBlockEntity(GenerationsBlockEntities.ABUNDANT_SHRINE.get(), pos, state)
+    ShrineBlockEntity(GenerationsBlockEntities.ABUNDANT_SHRINE, pos, state)

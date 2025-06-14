@@ -39,7 +39,7 @@ import org.checkerframework.checker.units.qual.C
 import java.util.function.Supplier
 
 @Suppress("deprecation")
-class GenericChestBlock(properties: Properties, private val width: Int, private val height: Int, val materialType: String) : AbstractChestBlock<GenericChestBlockEntity>(properties, Supplier<BlockEntityType<out GenericChestBlockEntity>> { GenerationsBlockEntities.GENERIC_CHEST.get() }),
+class GenericChestBlock(properties: Properties, private val width: Int, private val height: Int, val materialType: String) : AbstractChestBlock<GenericChestBlockEntity>(properties, Supplier<BlockEntityType<out GenericChestBlockEntity>> { GenerationsBlockEntities.GENERIC_CHEST }),
     SimpleWaterloggedBlock {
     private val defaultTranslation = "container.$materialType"
 
@@ -166,7 +166,7 @@ class GenericChestBlock(properties: Properties, private val width: Int, private 
         blockEntityType: BlockEntityType<T>,
     ): BlockEntityTicker<T>? {
         return if (level.isClientSide) createTickerHelper(
-            blockEntityType, GenerationsBlockEntities.GENERIC_CHEST.get()
+            blockEntityType, GenerationsBlockEntities.GENERIC_CHEST
         ) { level: Level, pos: BlockPos, state: BlockState, blockEntity: GenericChestBlockEntity ->
             GenericChestBlockEntity.lidAnimateTick(
                 level,

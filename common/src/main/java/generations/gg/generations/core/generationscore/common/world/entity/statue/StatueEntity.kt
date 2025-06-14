@@ -13,6 +13,7 @@ import com.cobblemon.mod.common.entity.PosableEntity
 import com.cobblemon.mod.common.entity.PoseType
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers
 import generations.gg.generations.core.generationscore.common.api.events.general.StatueEvents
+import generations.gg.generations.core.generationscore.common.client.screen.statue.optional
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenPacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
 import generations.gg.generations.core.generationscore.common.util.DataKeys
@@ -33,12 +34,14 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityDimensions
+import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.Pose
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.Level
 import net.minecraft.world.phys.Vec3
+import kotlin.jvm.optionals.getOrNull
 
-class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(), level), PosableEntity, Schedulable {
+class StatueEntity(type: EntityType<StatueEntity> = GenerationsEntities.STATUE_ENTITY, level: Level) : Entity(type, level), PosableEntity, Schedulable {
     companion object {
         val PROPERTIES = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.PROPERTIES)
         val LABEL = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.NULLABLE_STRING)
@@ -87,8 +90,8 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
             this.entityData.set(PROPERTIES, value)
         }
     var label : String?
-        get() = this.entityData[LABEL]
-        set(value) = this.entityData.set(LABEL, value)
+        get() = this.entityData[LABEL].getOrNull()
+        set(value) = this.entityData.set(LABEL, value.optional())
     @Deprecated("Marked for removal in 1.21 due to native entity scaling being available")
     var scale: Float
         get() = this.entityData[SCALE]
@@ -127,9 +130,9 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
         }
 
     var material: String?
-        get() = this.entityData[MATERIAL]
+        get() = this.entityData[MATERIAL].getOrNull()
         set(value) {
-            this.entityData[MATERIAL] = value
+            this.entityData[MATERIAL] = value.optional()
         }
 
     var orientation: Float
@@ -140,14 +143,14 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
 
     override fun defineSynchedData(builder: SynchedEntityData.Builder) {
         builder.define(PROPERTIES, parse("charizard"))
-        builder.define(LABEL, "Statue")
+        builder.define(LABEL, "Statue".optional())
         builder.define(SCALE, 1.0f)
         builder.define(POSE_TYPE, PoseType.NONE)
         builder.define(STATIC_TOGGLE, false)
         builder.define(STATIC_PARTIAL, 0.0f)
         builder.define(STATIC_AGE, 0)
         builder.define(INTERACTABLE, false)
-        builder.define(MATERIAL, "")
+        builder.define(MATERIAL, "".optional())
         builder.define(ORIENTATION, 0.0f)
     }
 
@@ -218,13 +221,13 @@ class StatueEntity(level: Level) : Entity(GenerationsEntities.STATUE_ENTITY.get(
     override fun interact(player: Player, hand: InteractionHand): InteractionResult {
         if (!level().isClientSide()) {
             val stack = player.getItemInHand(hand)
-            if (stack.`is`(GenerationsItems.SACRED_ASH.get()) && interactable /* && SacredAshItem.isFullyCharged(stack)*/) {
+            if (stack.`is`(GenerationsItems.SACRED_ASH) && interactable /* && SacredAshItem.isFullyCharged(stack)*/) {
                 val entity = properties.createEntity(level())
                 entity.setPos(Vec3.atBottomCenterOf(onPos.above()))
                 level().addFreshEntity(entity)
                 stack.shrink(1)
                 return InteractionResult.SUCCESS
-            } else if (player.getItemInHand(hand).item == GenerationsItems.CHISEL.get()) {
+            } else if (player.getItemInHand(hand).item == GenerationsItems.CHISEL) {
                 var canUse = player.isCreative
 
                 StatueEvents.CAN_USE_CHISEL.post(StatueEvents.CanUseChisel(player as ServerPlayer, player.isCreative()), then = { canUse = it.canUse })

@@ -5,4 +5,4 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.state.BlockState
 
-class GenericModelProvidingBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING.get(), pos, state)
+class GenericModelProvidingBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.GENERIC_MODEL_PROVIDING, pos, state)

@@ -10,6 +10,7 @@ import generations.gg.generations.core.generationscore.common.util.writePokemonP
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
+import java.util.Optional
 
 abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId: Int, var value: V) : NetworkPacket<T> {
     override fun encode(buf: RegistryFriendlyByteBuf) {
@@ -24,8 +25,8 @@ abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId:
         override val id: ResourceLocation = PROPERTIES_ID
     }
 
-    class Label(entityId: Int, value: String?) : UpdateStatuePacket<String?, Label>(entityId, value) {
-        override fun encodeValue(buf: RegistryFriendlyByteBuf) = buf.writeNullableString(value)
+    class Label(entityId: Int, value: Optional<String>) : UpdateStatuePacket<Optional<String>, Label>(entityId, value) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) = buf.writeOptional(value, FriendlyByteBuf::writeUtf)
 
         override val id: ResourceLocation = LABEL_ID
     }
@@ -77,10 +78,8 @@ abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId:
         override val id: ResourceLocation = INTERACTABLE_ID
     }
 
-    class Material(entityId: Int, value: String?) : UpdateStatuePacket<String?, Material>(entityId, value) {
-        override fun encodeValue(buf: RegistryFriendlyByteBuf) {
-            buf.writeNullableString(value)
-        }
+    class Material(entityId: Int, value: Optional<String>) : UpdateStatuePacket<Optional<String>, Material>(entityId, value) {
+        override fun encodeValue(buf: RegistryFriendlyByteBuf) = buf.writeOptional(value, FriendlyByteBuf::writeUtf)
 
         override val id: ResourceLocation = MATERIAL_ID
     }
@@ -106,14 +105,14 @@ abstract class UpdateStatuePacket<V, T : UpdateStatuePacket<V, T>>(var entityId:
         val ORIENTATION_ID = GenerationsCore.id("update_statue_orientation")
 
         fun propertiesDecode(buf:FriendlyByteBuf): Properties = decode(buf, FriendlyByteBuf::readPokemonProperties, ::Properties)
-        fun labelDecode(buf: FriendlyByteBuf): Label = decode(buf, FriendlyByteBuf::readNullableString, ::Label)
+        fun labelDecode(buf: FriendlyByteBuf): Label = decode(buf, { it.readOptional(FriendlyByteBuf::readUtf)}, ::Label)
         fun scaleDecode(buf: FriendlyByteBuf): Scale = decode(buf, FriendlyByteBuf::readFloat, ::Scale)
         fun poseTypeDecode(buf: FriendlyByteBuf): PoseType = decode(buf, { it.readEnum(com.cobblemon.mod.common.entity.PoseType::class.java) }, ::PoseType)
         fun staticToggleDecode(buf: FriendlyByteBuf): StaticToggle = decode(buf, FriendlyByteBuf::readBoolean, ::StaticToggle)
         fun staticPartialDecode(buf: FriendlyByteBuf): StaticPartial = decode(buf, FriendlyByteBuf::readFloat, ::StaticPartial)
         fun staticAgeDecode(buf: FriendlyByteBuf): StaticAge = decode(buf, FriendlyByteBuf::readInt, ::StaticAge)
         fun interactableDecode(buf: FriendlyByteBuf): Interactable = decode(buf, FriendlyByteBuf::readBoolean, ::Interactable)
-        fun materialDecode(buf: FriendlyByteBuf): Material = decode(buf, FriendlyByteBuf::readNullableString, ::Material)
+        fun materialDecode(buf: FriendlyByteBuf): Material = decode(buf, { it.readOptional(FriendlyByteBuf::readUtf)}, ::Material)
         fun orientationDecode(buf: FriendlyByteBuf): Orientation = decode(buf, FriendlyByteBuf::readFloat, ::Orientation)
         fun <T, V : UpdateStatuePacket<T, V>> decode(buf: FriendlyByteBuf, function : (FriendlyByteBuf) -> T, factory: (Int, T) -> V): V = factory.invoke(buf.readInt(), function.invoke(buf))
     }

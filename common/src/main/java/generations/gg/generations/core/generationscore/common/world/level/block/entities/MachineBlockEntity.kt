@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.BlockState
 import java.util.stream.IntStream
 
 class MachineBlockEntity(pos: BlockPos, state: BlockState) :
-    SimpleBlockEntity(GenerationsBlockEntities.MACHINE_BLOCK.get(), pos, state), ItemProvider.BlockEntity,
+    SimpleBlockEntity(GenerationsBlockEntities.MACHINE_BLOCK, pos, state), ItemProvider.BlockEntity,
     MenuProvider {
     @JvmField
     val candies: MachineBlockItemStackHandler = MachineBlockItemStackHandler()

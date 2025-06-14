@@ -32,6 +32,7 @@ import net.minecraft.resources.ResourceLocation
 import org.joml.Math
 import org.joml.Quaternionf
 import org.joml.Vector3f
+import java.util.*
 
 class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
     private var x = 0
@@ -81,7 +82,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 statue.label ?: "",
                 { true }) { s: String? -> run {
                     statue.label = s
-                    UpdateStatuePacket.Label(statue.id, s).sendToServer()
+                    UpdateStatuePacket.Label(statue.id, s.optional()).sendToServer()
                 }
             })
         poseTextField = addRenderableWidget(
@@ -148,7 +149,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
             ScreenUtils.createTextField(x + 59, y + 146 + 18, 126, 14, 500, statue.material ?: "", { true }) {
                 it.takeIf { it.isNotEmpty() }.run {
                     statue.material = it
-                    UpdateStatuePacket.Material(statue.id, it).sendToServer()
+                    UpdateStatuePacket.Material(statue.id, it.optional()).sendToServer()
                 }
             }
         )
@@ -332,5 +333,7 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
 //        Lighting.setupFor3DItems()
 //    }
 }
+
+fun <T: Any> T?.optional(): Optional<T> = Optional.ofNullable(this)
 
 fun Float.floor(): Float = Math.floor(this)

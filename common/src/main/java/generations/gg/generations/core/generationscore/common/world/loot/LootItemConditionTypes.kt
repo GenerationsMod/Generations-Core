@@ -1,21 +1,20 @@
 package generations.gg.generations.core.generationscore.common.world.loot
 
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
-import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceKey
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType
 
-object LootItemConditionTypes {
-    val REGISTER: DeferredRegister<LootItemConditionType> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.LOOT_CONDITION_TYPE)
+object LootItemConditionTypes: PlatformRegistry<LootItemConditionType>() {
+    override val registry: Registry<LootItemConditionType> = BuiltInRegistries.LOOT_CONDITION_TYPE
+    override val resourceKey: ResourceKey<Registry<LootItemConditionType>> = Registries.LOOT_CONDITION_TYPE
 
-    fun <T : LootItemCondition> register(name: String, supplier: MapCodec<T>): RegistrySupplier<LootItemConditionType> = REGISTER.register(name) { LootItemConditionType(supplier) }
+    val SPECIES_KEY: LootItemConditionType = register("species_key", SpeciesKeyCondition.CODEC)
 
-    val SPECIES_KEY: RegistrySupplier<LootItemConditionType> = register("species_key", SpeciesKeyCondition.CODEC)
-
-    fun init() {
-        REGISTER.register()
-    }
+    fun <T : LootItemCondition> register(name: String, supplier: MapCodec<T>): LootItemConditionType = create(name.generationsResource(), LootItemConditionType(supplier))
 }

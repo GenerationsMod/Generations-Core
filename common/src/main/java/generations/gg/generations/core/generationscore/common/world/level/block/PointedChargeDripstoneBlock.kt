@@ -366,7 +366,7 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
             thickness: DripstoneThickness
         ) {
             val blockState =
-                GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get().defaultBlockState().setValue(TIP_DIRECTION, direction)
+                GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.defaultBlockState().setValue(TIP_DIRECTION, direction)
                     .setValue(
                         THICKNESS, thickness
                     ).setValue(WATERLOGGED, level.getFluidState(pos).type === Fluids.WATER)
@@ -417,7 +417,7 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
             val direction = state.getValue(TIP_DIRECTION)
             val biPredicate =
                 BiPredicate { arg2: BlockPos, arg3: BlockState ->
-                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get()) && arg3.getValue(
+                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) && arg3.getValue(
                         TIP_DIRECTION
                     ) == direction
                 }
@@ -490,13 +490,13 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
             val direction = state.getValue(TIP_DIRECTION)
             val biPredicate =
                 BiPredicate { arg2: BlockPos, arg3: BlockState ->
-                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get()) && arg3.getValue(
+                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) && arg3.getValue(
                         TIP_DIRECTION
                     ) == direction
                 }
             return findBlockVertical(
                 level, pos, direction.opposite.axisDirection, biPredicate,
-                { arg: BlockState -> !arg.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get()) }, maxIterations
+                { arg: BlockState -> !arg.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) }, maxIterations
             )
         }
 
@@ -507,7 +507,7 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
         }
 
         private fun isTip(state: BlockState, isTipMerge: Boolean): Boolean {
-            if (!state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get())) return false
+            if (!state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE)) return false
 
             val dripstoneThickness = state.getValue(THICKNESS)
             return dripstoneThickness == DripstoneThickness.TIP || isTipMerge && dripstoneThickness == DripstoneThickness.TIP_MERGE
@@ -527,11 +527,11 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
 
         private fun isStalactiteStartPos(state: BlockState, level: LevelReader, pos: BlockPos): Boolean {
             return isStalactite(state) && !level.getBlockState(pos.above())
-                .`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get())
+                .`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE)
         }
 
         private fun isPointedDripstoneWithDirection(state: BlockState, dir: Direction): Boolean {
-            return state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.get()) && state.getValue(TIP_DIRECTION) == dir
+            return state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) && state.getValue(TIP_DIRECTION) == dir
         }
 
         private fun findFillableCauldronBelowStalactiteTip(level: Level, pos: BlockPos, fluid: Fluid): BlockPos? {
@@ -589,7 +589,7 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
         }
 
         private fun canGrow(dripstoneState: BlockState, state: BlockState): Boolean {
-            return dripstoneState.`is`(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.get()) && state.`is`(Blocks.WATER) && state.fluidState.isSource
+            return dripstoneState.`is`(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK) && state.`is`(Blocks.WATER) && state.fluidState.isSource
         }
 
         private fun getDripFluid(level: Level, fluid: Fluid): Fluid {

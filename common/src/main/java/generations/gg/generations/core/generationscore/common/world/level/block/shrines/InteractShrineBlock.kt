@@ -25,13 +25,13 @@ import net.minecraft.world.phys.BlockHitResult
 abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<T> {
     protected constructor(
         materialIn: Properties,
-        blockEntityFunction: RegistrySupplier<BlockEntityType<T>>,
+        blockEntityFunction: BlockEntityType<T>,
         model: ResourceLocation
     ) : super(materialIn, blockEntityFunction, model)
 
     protected constructor(
         materialIn: Properties,
-        blockEntityFunction: RegistrySupplier<BlockEntityType<T>>,
+        blockEntityFunction: BlockEntityType<T>,
         model: ResourceLocation,
         width: Int,
         height: Int,

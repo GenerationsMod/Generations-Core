@@ -20,7 +20,7 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
         properties: BlockBehaviour.Properties,
         type: BlockSetType,
         baseBlock: Block
-    ) : super(name, baseBlock, properties) {
+    ) : super(name, properties, baseBlock) {
         button = registerBlockItem(name + "_button", ButtonBlock(type, 20, properties))
         pressurePlate = registerBlockItem(name + "_pressure_plate", PressurePlateBlock(type, properties))
         blockSets.remove(this)
@@ -72,14 +72,14 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
     override val allBlocks: List<Block>
         get() = listOf(
             baseBlock,
-            slab, getStairs(), getWall(), getButton(), pressurePlate
+            slab, stairs, wall, getButton(), pressurePlate
         )
 
 
     fun updateBlockFamily() {
         this.blockFamily =
-            BlockFamily.Builder(baseBlock).slab(slab).stairs(getStairs()).wall(
-                getWall()
+            BlockFamily.Builder(baseBlock).slab(slab).stairs(stairs).wall(
+                wall
             ).button(getButton()).pressurePlate(getPressurePlate()).recipeGroupPrefix(name)
                 .recipeUnlockedBy("has_$name").family
     }

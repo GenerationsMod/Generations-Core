@@ -27,7 +27,7 @@ class SittableEntity(type: EntityType<out Entity?>, level: Level) :
     }
 
     private constructor(level: Level, pos: BlockPos, offset: Double, yaw: Float) : this(
-        GenerationsEntities.SEAT.get(),
+        GenerationsEntities.SEAT,
         level
     ) {
         this.setPos(pos.x + 0.5, pos.y + offset, pos.z + 0.5)

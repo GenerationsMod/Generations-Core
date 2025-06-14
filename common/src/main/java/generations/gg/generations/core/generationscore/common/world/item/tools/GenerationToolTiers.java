@@ -14,9 +14,9 @@
 //
 //public enum GenerationToolTiers implements Tier {
 //    CHARGE_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.CHARGE_STONE_SET.baseBlock.asItem()),
-//    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.VOLCANIC_STONE.get().asItem()),
+//    VOLCANIC_STONE(1, 185, 5.0F, 1.2F, 8, GenerationsBlocks.VOLCANIC_STONE.asItem()),
 //    AMETHYST(2, 300, 6.5F, 2.0F, 14, Items.AMETHYST_SHARD),
-//    CRYSTAL(2, 300, 6.5F, 2.0F, 14, GenerationsItems.CRYSTAL.get()),
+//    CRYSTAL(2, 300, 6.5F, 2.0F, 14, GenerationsItems.CRYSTAL),
 //    DAWN_STONE(3, 1561, 12.0F, 0.0F, 22, CobblemonItems.DAWN_STONE.asItem()),
 //    DUSK_STONE(3, 1561, 12.0F, 0.0F, 22, CobblemonItems.DUSK_STONE.asItem()),
 //    FIRE_STONE(3, 1561, 8.0F, 3.0F, 10, CobblemonItems.FIRE_STONE.asItem()),

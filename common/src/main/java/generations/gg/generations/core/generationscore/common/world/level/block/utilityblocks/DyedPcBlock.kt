@@ -107,7 +107,7 @@ class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Bl
         world: Level,
         blockState: BlockState,
         blockEntityType: BlockEntityType<T>,
-    ): BlockEntityTicker<T>? =  createTickerHelper(blockEntityType, GenerationsBlockEntities.DYED_PC.get(), DyedPcBlockEntity.TICKER::tick)
+    ): BlockEntityTicker<T>? =  createTickerHelper(blockEntityType, GenerationsBlockEntities.DYED_PC, DyedPcBlockEntity.TICKER::tick)
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder.add(PcBlock.ON))

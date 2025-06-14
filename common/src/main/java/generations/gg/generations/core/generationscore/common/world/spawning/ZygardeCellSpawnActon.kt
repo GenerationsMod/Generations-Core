@@ -9,6 +9,6 @@ import net.minecraft.world.item.ItemStack
 
 class ZygardeCellSpawnActon(ctx: SpawningContext, override val detail: ZygardeCellDetail) : SingleEntitySpawnAction<ZygardeCellEntity>(ctx, detail) {
     override fun createEntity(): ZygardeCellEntity? {
-        return GenerationsEntities.ZYGARDE_CELL.get().create(ctx.world)
+        return GenerationsEntities.ZYGARDE_CELL.create(ctx.world)
     }
 }

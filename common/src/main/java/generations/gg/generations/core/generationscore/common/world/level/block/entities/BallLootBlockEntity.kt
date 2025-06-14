@@ -38,7 +38,7 @@ private fun <A, B> Codec<A>.read(value: B, ops: DynamicOps<B>): A? {
 }
 
 class BallLootBlockEntity(pPos: BlockPos, pBlockState: BlockState) :
-    ModelProvidingBlockEntity(GenerationsBlockEntities.BALL_LOOT.get(), pPos, pBlockState) {
+    ModelProvidingBlockEntity(GenerationsBlockEntities.BALL_LOOT, pPos, pBlockState) {
     //    @Override
     //    public String getVariant() {
     //        return getBlockState().getBlock() instanceof BallLootBlock loot ? loot.getType() : "poke";

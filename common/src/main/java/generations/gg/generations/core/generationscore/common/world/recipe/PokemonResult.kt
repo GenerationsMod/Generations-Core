@@ -50,7 +50,7 @@ data class PokemonResult(
         get() = PokemonItem.from(getByIdentifier(species)!!, aspects, 1, Vector4f(1f, 1f, 1f, 1f))
 
     override fun type(): RksResultType<PokemonResult> {
-        return RksResultType.POKEMON.get()
+        return GenerationsRksTypes.POKEMON
     }
 
     override fun process(player: Player, rksMachineBlockEntity: RksMachineBlockEntity, stack: ItemStack) {

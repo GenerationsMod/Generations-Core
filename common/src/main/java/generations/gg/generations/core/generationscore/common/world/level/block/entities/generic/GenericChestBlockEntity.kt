@@ -40,7 +40,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     private var width: Int = 9,
     private var height: Int = 1,
     private var defaultTranslation: String = "container.chest"
-) : RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST.get(), arg, arg2), LidBlockEntity {
+) : RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST, arg, arg2), LidBlockEntity {
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {
             this@GenericChestBlockEntity.playSound(state, SoundEvents.CHEST_OPEN)

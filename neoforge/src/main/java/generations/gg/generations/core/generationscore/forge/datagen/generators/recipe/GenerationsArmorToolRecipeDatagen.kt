@@ -33,12 +33,12 @@ class GenerationsArmorToolRecipeDatagen(output: PackOutput, registries: Completa
     override fun buildRecipes(recipeOutput: RecipeOutput) {
         buildToolSetCrafting(
             recipeOutput,
-            GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock(),
+            GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock,
             GenerationsTools.CHARGE_STONE
         )
         buildToolSetCrafting(
             recipeOutput,
-            GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock(),
+            GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock,
             GenerationsTools.VOLCANIC_STONE
         )
         buildArmorToolFullSetCrafting(

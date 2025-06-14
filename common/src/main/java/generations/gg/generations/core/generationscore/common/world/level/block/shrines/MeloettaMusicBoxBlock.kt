@@ -157,7 +157,7 @@ class MeloettaMusicBoxBlock(properties: Properties) :
         level: Level,
         state: BlockState,
         blockEntityType: BlockEntityType<T>
-    ): BlockEntityTicker<T>? = if (state.getValue(HAS_RECORD)) createTickerHelper(blockEntityType, GenerationsBlockEntities.MELOETTA_MUSIC_BOX.get(), MeloettaMusicBoxBlockEntity.Companion::tick) else null
+    ): BlockEntityTicker<T>? = if (state.getValue(HAS_RECORD)) createTickerHelper(blockEntityType, GenerationsBlockEntities.MELOETTA_MUSIC_BOX, MeloettaMusicBoxBlockEntity.Companion::tick) else null
 
     companion object {
         private val SHAPE: VoxelShape = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.375, 0.75)

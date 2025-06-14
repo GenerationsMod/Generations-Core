@@ -66,8 +66,8 @@ object TagsDatagen {
 
             GenerationsFullBlockSet.fullBlockSets.forEach { blockSet ->
                 blockSet.allBlocks.forEach { _ ->
-                        if (blockSet.name.contains("poke_brick")) tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.getBaseBlock())
-                        else if (blockSet.name.contains("marble")) tag(GenerationsBlockTags.MARBLE).add(blockSet.getBaseBlock())
+                        if (blockSet.name.contains("poke_brick")) tag(GenerationsBlockTags.POKEBRICKS).add(blockSet.baseBlock)
+                        else if (blockSet.name.contains("marble")) tag(GenerationsBlockTags.MARBLE).add(blockSet.baseBlock)
                     }
             }
 
@@ -119,8 +119,8 @@ object TagsDatagen {
                 GenerationsUtilityBlocks.PINK_ELEVATOR,
                 GenerationsDecorationBlocks.DESK,
                 GenerationsDecorationBlocks.FRIDGE
-            ).add(*GenerationsDecorationBlocks.STREET_LAMP.toExposedArray())
-                .add(*GenerationsUtilityBlocks.PC.toExposedArray())
+            ).add(*GenerationsDecorationBlocks.STREET_LAMP.toArray())
+                .add(*GenerationsUtilityBlocks.PC.toArray())
                 .add(*GenerationsDecorationBlocks.BALL_DISPLAY_BLOCKS.toTypedArray())
 
 
@@ -307,7 +307,7 @@ object TagsDatagen {
             tag(GenerationsBlockTags.CHARGE_STONE_BRICKS)
                 .add(
                     GenerationsBlocks.CHARGE_STONE_BRICKS,
-                    GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.getBaseBlock(),
+                    GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.baseBlock,
                     GenerationsBlocks.CRACKED_CHARGE_STONE_BRICKS,
                     GenerationsBlocks.CHISELED_CHARGE_STONE_BRICKS
                 )
@@ -315,7 +315,7 @@ object TagsDatagen {
             tag(GenerationsBlockTags.VOLCANIC_STONE_BRICKS)
                 .add(
                     GenerationsBlocks.VOLCANIC_STONE_BRICKS,
-                    GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.getBaseBlock(),
+                    GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.baseBlock,
                     GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS,
                     GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS
                 )
@@ -327,12 +327,12 @@ object TagsDatagen {
                 GenerationsUtilityBlocks.SCARECROW,
                 GenerationsUtilityBlocks.BOX
             )
-                .add(*GenerationsDecorationBlocks.COUCH_ARM_LEFT.toExposedArray())
-                .add(*GenerationsDecorationBlocks.COUCH_ARM_RIGHT.toExposedArray())
-                .add(*GenerationsDecorationBlocks.COUCH_CORNER_LEFT.toExposedArray())
-                .add(*GenerationsDecorationBlocks.COUCH_CORNER_RIGHT.toExposedArray())
-                .add(*GenerationsDecorationBlocks.COUCH_MIDDLE.toExposedArray())
-                .add(*GenerationsDecorationBlocks.COUCH_OTTOMAN.toExposedArray())
+                .add(*GenerationsDecorationBlocks.COUCH_ARM_LEFT.toArray())
+                .add(*GenerationsDecorationBlocks.COUCH_ARM_RIGHT.toArray())
+                .add(*GenerationsDecorationBlocks.COUCH_CORNER_LEFT.toArray())
+                .add(*GenerationsDecorationBlocks.COUCH_CORNER_RIGHT.toArray())
+                .add(*GenerationsDecorationBlocks.COUCH_MIDDLE.toArray())
+                .add(*GenerationsDecorationBlocks.COUCH_OTTOMAN.toArray())
             tag(BlockTags.ENDERMAN_HOLDABLE).add(
                 GenerationsBlocks.CURSED_PUMPKIN,
                 GenerationsBlocks.CURSED_CARVED_PUMPKIN
@@ -518,8 +518,8 @@ object TagsDatagen {
             tag(ItemTags.CHEST_BOATS).add(GenerationsItems.GHOST_CHEST_BOAT_ITEM).add(GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM)
                 .add(GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM)
 
-            tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE_SET.getBaseBlock().asItem())
-                .add(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.getBaseBlock().asItem())
+            tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock.asItem())
+                .add(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock.asItem())
             GenerationsTools.TOOLS.forEach(Consumer { tool: RegistrySupplier<Item> ->
                 val item = tool
                 if (item is PickaxeItem) tag(ItemTags.PICKAXES).add(item)

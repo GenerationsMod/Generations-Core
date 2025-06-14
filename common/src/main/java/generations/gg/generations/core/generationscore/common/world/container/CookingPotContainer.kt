@@ -24,7 +24,7 @@ class CookingPotContainer @JvmOverloads constructor(
     playerInventory: Inventory,
     storage: SimpleItemStorage = SimpleItemStorage(14),
     val data: ContainerData = SimpleContainerData(4)
-) : AbstractContainerMenu(GenerationsContainers.COOKING_POT.get(), id), Toggleable {
+) : AbstractContainerMenu(GenerationsContainers.COOKING_POT, id), Toggleable {
     init {
         addSlot(MenuStorageSlot(storage, 0, 26, 8 + 11))
         addSlot(MenuStorageSlot(storage, 1, 44, 8 + 11))
@@ -145,12 +145,12 @@ class CookingPotContainer @JvmOverloads constructor(
 
         fun isBerryOrMaxMushrooms(stack: Any): Boolean {
             val item = getItem(stack)
-            return item is BerryItem || item === GenerationsItems.MAX_MUSHROOMS.get()
+            return item is BerryItem || item === GenerationsItems.MAX_MUSHROOMS
         }
 
         fun isCurryIngredientOrMaxHoney(stack: Any): Boolean {
             val item = getItem(stack)
-            return item is CurryIngredient || item === GenerationsItems.MAX_HONEY.get()
+            return item is CurryIngredient || item === GenerationsItems.MAX_HONEY
         }
     }
 }

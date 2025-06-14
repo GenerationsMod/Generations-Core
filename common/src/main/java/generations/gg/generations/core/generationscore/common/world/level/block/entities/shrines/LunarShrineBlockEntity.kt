@@ -7,6 +7,6 @@ import net.minecraft.core.BlockPos
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.state.BlockState
 
-class LunarShrineBlockEntity(pos: BlockPos, state: BlockState) : ShrineBlockEntity(GenerationsBlockEntities.LUNAR_SHRINE.get(), pos, state) {
+class LunarShrineBlockEntity(pos: BlockPos, state: BlockState) : ShrineBlockEntity(GenerationsBlockEntities.LUNAR_SHRINE, pos, state) {
     override fun getModel(): ResourceLocation = if (blockState.getValue(LunarShrineBlock.IS_LIGHT)) GenerationsBlockEntityModels.LIGHT_MODEL else GenerationsBlockEntityModels.DARK_MODEL
 }

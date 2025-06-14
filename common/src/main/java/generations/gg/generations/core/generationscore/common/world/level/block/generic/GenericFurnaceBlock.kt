@@ -22,7 +22,7 @@ class GenericFurnaceBlock(properties: Properties = Properties.ofFullCopy(Blocks.
         level: Level,
         state: BlockState,
         blockEntityType: BlockEntityType<T>
-    ): BlockEntityTicker<T>? = createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_FURNACE.get())
+    ): BlockEntityTicker<T>? = createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_FURNACE)
 
     companion object {
         val CODEC = simpleCodec<FurnaceBlock>(::GenericFurnaceBlock)

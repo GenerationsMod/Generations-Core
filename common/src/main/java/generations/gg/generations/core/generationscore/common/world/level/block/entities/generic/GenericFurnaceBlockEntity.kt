@@ -14,7 +14,7 @@ class GenericFurnaceBlockEntity(pos: BlockPos, state: BlockState) : FurnaceBlock
 
     override fun getDefaultName(): Component = "container.$name".asTranslated()
 
-    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.GENERIC_FURNACE.get()
+    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.GENERIC_FURNACE
 
-    override fun isValidBlockState(blockState: BlockState): Boolean = GenerationsBlockEntities.GENERIC_FURNACE.get().isValid(blockState)
+    override fun isValidBlockState(blockState: BlockState): Boolean = GenerationsBlockEntities.GENERIC_FURNACE.isValid(blockState)
 }

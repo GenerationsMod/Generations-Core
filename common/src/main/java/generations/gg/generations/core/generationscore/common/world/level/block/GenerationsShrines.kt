@@ -32,9 +32,6 @@ import java.util.function.BiFunction
 import java.util.function.Supplier
 
 object GenerationsShrines: BlockPlatformRegistry() {
-    @JvmField
-	val SHRINES: DeferredRegister<Block> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK)
-
 
     val SHRINE_PROPERTIES: BlockBehaviour.Properties =
         BlockBehaviour.Properties.of() /*of(Material.HEAVY_METAL) TODO: Verify we have all properties*/

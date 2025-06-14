@@ -25,7 +25,7 @@ class StatueSpawnerItem @JvmOverloads constructor(properties: Properties, privat
 
         StatueEvents.CAN_USE_CHISEL.post(StatueEvents.CanUseChisel(player, player.isCreative), then = {
             val pos = context.clickedPos
-            val statueEntity = StatueEntity(player.level())
+            val statueEntity = StatueEntity(level = player.level())
 
             if (key != null) {
                 statueEntity.properties = key.createPokemon(70).createPokemonProperties(PokemonPropertyExtractor.SPECIES, PokemonPropertyExtractor.LEVEL, PokemonPropertyExtractor.FORM, PokemonPropertyExtractor.ASPECTS)

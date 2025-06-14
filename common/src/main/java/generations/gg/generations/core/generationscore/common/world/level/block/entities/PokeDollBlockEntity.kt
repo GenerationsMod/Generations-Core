@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.state.BlockState
 
 class PokeDollBlockEntity(pos: BlockPos, state: BlockState) :
-    ModelProvidingBlockEntity(GenerationsBlockEntities.POKE_DOLL.get(), pos, state), VariantProvider, AngleProvider {
+    ModelProvidingBlockEntity(GenerationsBlockEntities.POKE_DOLL, pos, state), VariantProvider, AngleProvider {
     override fun getModel(): ResourceLocation {
         return pokeModDollBlock?.getModel() ?: DEFAULT_MODEL
     }

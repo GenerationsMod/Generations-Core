@@ -57,7 +57,7 @@ object GenerationsArchitecturyEvents {
 
             if (player is ServerPlayer) {
                 if (hand == InteractionHand.MAIN_HAND && player.level().getBlockState(pos)
-                        .`is`(GenerationsShrines.TAPU_SHRINE.get()) && player.getItemInHand(hand)
+                        .`is`(GenerationsShrines.TAPU_SHRINE) && player.getItemInHand(hand)
                         .`is`(GenerationsItems.SPARKLING_STONE)
                 ) {
                     val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("tapu_spawn")]
@@ -71,7 +71,7 @@ object GenerationsArchitecturyEvents {
                     event.result = TriState.TRUE
                     return@subscribe
                 } else if (hand == InteractionHand.MAIN_HAND && player.level().getBlockState(pos)
-                        .`is`(GenerationsShrines.ABUNDANT_SHRINE.get()) && player.getItemInHand(hand)
+                        .`is`(GenerationsShrines.ABUNDANT_SHRINE) && player.getItemInHand(hand)
                         .`is`(GenerationsItems.REVEAL_GLASS)
                 ) {
                     val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("therian_spawn")]

@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.state.BlockState
 import org.joml.Vector3f
 
 class DyedPcBlockEntity(blockPos: BlockPos, blockState: BlockState) :
-    PcBlockEntity<DyedPcBlockEntity>(GenerationsBlockEntities.DYED_PC.get(), blockPos, blockState), TintProvider {
+    PcBlockEntity<DyedPcBlockEntity>(GenerationsBlockEntities.DYED_PC, blockPos, blockState), TintProvider {
     val color: DyeColor
         get() = (blockState.block as DyeableBlock<*, *>).color
 

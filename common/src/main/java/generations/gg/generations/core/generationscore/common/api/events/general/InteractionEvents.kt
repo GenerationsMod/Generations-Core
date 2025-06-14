@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.api.events.genera
 
 import com.cobblemon.mod.common.api.events.Cancelable
 import com.cobblemon.mod.common.api.reactive.CancelableObservable
-import dev.architectury.event.EventResult
 import generations.gg.generations.core.generationscore.common.api.events.TriState
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction

@@ -17,7 +17,7 @@ class TypeSlot(
     index: Int,
     xPosition: Int,
     yPosition: Int,
-    private val candy: RegistrySupplier<Item>,
+    private val candy: Item,
     elementName: String,
     private val supplier: DoubleSupplier
 ) :
@@ -36,7 +36,7 @@ class TypeSlot(
     }
 
     override fun mayPlace(stack: ItemStack): Boolean {
-        return stack.`is`(candy.get())
+        return stack.`is`(candy)
     }
 
     override fun getNoItemIcon(): Pair<ResourceLocation, ResourceLocation>? {

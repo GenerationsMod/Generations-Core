@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.recipe
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents
 import generations.gg.generations.core.generationscore.common.recipe.RksInput
@@ -37,7 +38,7 @@ class ShapelessRksRecipe(
     }
 
     override fun getSerializer(): RecipeSerializer<*> {
-        return GenerationsCoreRecipeSerializers.SHAPELESS_RKS.get()
+        return GenerationsCoreRecipeSerializers.SHAPELESS_RKS
     }
 
     companion object {
@@ -45,7 +46,7 @@ class ShapelessRksRecipe(
 
         private fun toNetwork(buffer: RegistryFriendlyByteBuf, value: ShapelessRksRecipe) {
             ByteBufCodecs.STRING_UTF8.encode(buffer, value.group)
-            RksResultType.STREAM_CODEC.encode(buffer, value.result)
+            GenerationsCore.RKS_RESULT_TYPE.streamCodec.encode(buffer, value.result)
             ByteBufCodecs.BOOL.encode(buffer, value.consumesTimeCapsules)
             SpeciesKey.OPTIONAL_STREAM_CODEC.encode(buffer, value.key)
             ByteBufCodecs.FLOAT.encode(buffer, value.experience)
@@ -62,7 +63,7 @@ class ShapelessRksRecipe(
 
         private fun fromNetwork(buffer: RegistryFriendlyByteBuf): ShapelessRksRecipe {
             val group = ByteBufCodecs.STRING_UTF8.decode(buffer)
-            val result = RksResultType.STREAM_CODEC.decode(buffer)
+            val result = GenerationsCore.RKS_RESULT_TYPE.streamCodec.decode(buffer)
             val consumesTimeCapsules = ByteBufCodecs.BOOL.decode(buffer)
             val key = SpeciesKey.OPTIONAL_STREAM_CODEC.decode(buffer)
             val experience = ByteBufCodecs.FLOAT.decode(buffer)
@@ -80,7 +81,7 @@ class ShapelessRksRecipe(
 
         val CODEC: MapCodec<ShapelessRksRecipe> = RecordCodecBuilder.mapCodec { it.group(
             Codec.STRING.fieldOf("group").forGetter { it.group },
-            RksResultType.CODEC.fieldOf("result").forGetter { it.result },
+            GenerationsCore.RKS_RESULT_TYPE.codec.fieldOf("result").forGetter { it.result },
             Codec.BOOL.fieldOf("consumesTimeCapsules").forGetter { it.consumesTimeCapsules },
             SpeciesKey.CODEC.optionalFieldOf("key").forGetter { it.key },
             Codec.FLOAT.fieldOf("experience").forGetter { it.experience },

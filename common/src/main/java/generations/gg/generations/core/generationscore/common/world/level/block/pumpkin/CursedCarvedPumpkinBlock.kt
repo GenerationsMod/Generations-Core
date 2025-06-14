@@ -203,8 +203,8 @@ open class CursedCarvedPumpkinBlock(arg: Properties) : CarvedPumpkinBlock(arg) {
         val FACING: DirectionProperty = HorizontalDirectionalBlock.FACING
         private val CURSED_PUMPKINS_PREDICATE =
             Predicate { arg: BlockState? ->
-                arg != null && (arg.`is`(GenerationsBlocks.CURSED_CARVED_PUMPKIN.get()) || arg.`is`(
-                    GenerationsBlocks.CURSED_JACK_O_LANTERN.get()
+                arg != null && (arg.`is`(GenerationsBlocks.CURSED_CARVED_PUMPKIN) || arg.`is`(
+                    GenerationsBlocks.CURSED_JACK_O_LANTERN
                 ))
             }
     }

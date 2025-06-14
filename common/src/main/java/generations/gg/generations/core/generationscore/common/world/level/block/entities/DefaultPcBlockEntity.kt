@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.state.BlockState
 
-class DefaultPcBlockEntity(blockPos: BlockPos, blockState: BlockState) : PcBlockEntity<DefaultPcBlockEntity>(GenerationsBlockEntities.PC.get(), blockPos, blockState) {
+class DefaultPcBlockEntity(blockPos: BlockPos, blockState: BlockState) : PcBlockEntity<DefaultPcBlockEntity>(GenerationsBlockEntities.PC, blockPos, blockState) {
     companion object {
         val TICKER: BlockEntityTicker<DefaultPcBlockEntity> =
             BlockEntityTicker<DefaultPcBlockEntity> { world, _, _, blockEntity ->

@@ -48,7 +48,7 @@ abstract class RksRecipe(
         for (i in nonNullList.indices) {
             val itemStack = container.inventory[i].copy()
             val item = itemStack.item
-            if (itemStack.`is`(GenerationsItems.TIME_CAPSULE.get())) {
+            if (itemStack.`is`(GenerationsItems.TIME_CAPSULE)) {
                 container.pokemon = Optional.ofNullable(itemStack.getPokemon())
                 if (!consumesTimeCapsules) nonNullList[i] = itemStack.copy()
             } else if (item.hasCraftingRemainingItem()) nonNullList[i] =
@@ -73,7 +73,7 @@ abstract class RksRecipe(
     }
 
     override fun getType(): RecipeType<*> {
-        return GenerationsCoreRecipeTypes.RKS.get()
+        return GenerationsCoreRecipeTypes.RKS
     }
 }
 

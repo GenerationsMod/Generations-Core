@@ -1685,24 +1685,24 @@ object GenerationsItems {
         register("${name}_cap", { createFormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
 
     @JvmStatic
-    fun init(consumer: (net.minecraft.resources.ResourceLocation, Item) -> kotlin.Unit) {
+    fun init(consumer: (ItemPlatformRegistry) -> Unit) {
 
         GenerationsCore.LOGGER.info("Registering Generations Items")
-        ITEMS.register(consumer)
-        RIBBONS.register(consumer)
-        BADGES.register(consumer)
-        UNIMPLEMENTED.register(consumer)
-        CUISINE.register(consumer)
-        NATURAL.register(consumer)
-        RESTORATION.register(consumer)
-        PLAYER_ITEMS.register(consumer)
-        HELD_ITEMS.register(consumer)
-        POKEMAIL.register(consumer)
-        LEGENDARY_ITEMS.register(consumer)
-        UTILITY.register(consumer)
-        VALUABLES.register(consumer)
-        FORM_ITEMS.register(consumer)
-        BUILDING_BLOCKS.register(consumer)
+        consumer.invoke(ITEMS)
+        consumer.invoke(RIBBONS)
+        consumer.invoke(BADGES)
+        consumer.invoke(UNIMPLEMENTED)
+        consumer.invoke(CUISINE)
+        consumer.invoke(NATURAL)
+        consumer.invoke(RESTORATION)
+        consumer.invoke(PLAYER_ITEMS)
+        consumer.invoke(HELD_ITEMS)
+        consumer.invoke(POKEMAIL)
+        consumer.invoke(LEGENDARY_ITEMS)
+        consumer.invoke(UTILITY)
+        consumer.invoke(VALUABLES)
+        consumer.invoke(FORM_ITEMS)
+        consumer.invoke(BUILDING_BLOCKS)
     }
 }
 

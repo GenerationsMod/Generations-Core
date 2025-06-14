@@ -5,4 +5,4 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.state.BlockState
 
-class GenericDyedVariantBlockEntity(pos: BlockPos, state: BlockState) : DyedVariantBlockEntity<GenericDyedVariantBlockEntity>(GenerationsBlockEntities.GENERIC_DYED_VARIANT.get(), pos, state)
+class GenericDyedVariantBlockEntity(pos: BlockPos, state: BlockState) : DyedVariantBlockEntity<GenericDyedVariantBlockEntity>(GenerationsBlockEntities.GENERIC_DYED_VARIANT, pos, state)

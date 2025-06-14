@@ -5,4 +5,4 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.block.state.BlockState
 
-class GenericShrineBlockEntity(pos: BlockPos, state: BlockState) : ShrineBlockEntity(GenerationsBlockEntities.GENERIC_SHRINE.get(), pos, state)
+class GenericShrineBlockEntity(pos: BlockPos, state: BlockState) : ShrineBlockEntity(GenerationsBlockEntities.GENERIC_SHRINE, pos, state)

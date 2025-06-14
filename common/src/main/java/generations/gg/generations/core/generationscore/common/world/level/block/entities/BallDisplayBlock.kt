@@ -87,7 +87,7 @@ class BallDisplayBlock(properties: Properties, val state: DisplayState) : Generi
 
         if (!world.isClientSide() && ball != null && ball != block) {
             world.setBlockAndUpdate(
-                pos, ball.block.invoke().invoke().defaultBlockState().setValue(
+                pos, ball.block.invoke().defaultBlockState().setValue(
                     FACING, state.getValue(
                         FACING
                     )
@@ -102,36 +102,36 @@ class BallDisplayBlock(properties: Properties, val state: DisplayState) : Generi
 
     enum class DisplayState(
         val ball: () -> () -> Item,
-        internal val block: () -> () -> BallDisplayBlock
+        internal val block: () -> BallDisplayBlock
     ) {
-        EMPTY({ { Items.AIR.asItem() } }, { GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY::get }),
-        POKE({ { POKE_BALL.asItem() } }, { GenerationsDecorationBlocks.POKE_BALL_DISPLAY::get }),
-        GREAT({ { GREAT_BALL.asItem() } }, { GenerationsDecorationBlocks.GREAT_BALL_DISPLAY::get }),
-        ULTRA({ { ULTRA_BALL.asItem() } }, { GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY::get }),
-        MASTER({ { MASTER_BALL.asItem() } }, { GenerationsDecorationBlocks.MASTER_BALL_DISPLAY::get }),
-        CHERISH({ { CHERISH_BALL.asItem() } }, { GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY::get }),
-        DIVE({ { DIVE_BALL.asItem() } }, { GenerationsDecorationBlocks.DIVE_BALL_DISPLAY::get }),
-        DUSK({ { DUSK_BALL.asItem() } }, { GenerationsDecorationBlocks.DUSK_BALL_DISPLAY::get }),
-        FAST({ { FAST_BALL.asItem() } }, { GenerationsDecorationBlocks.FAST_BALL_DISPLAY::get }),
-        FRIEND({ { FRIEND_BALL.asItem() } }, { GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY::get }),
+        EMPTY({ { Items.AIR.asItem() } }, { GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY }),
+        POKE({ { POKE_BALL.asItem() } }, { GenerationsDecorationBlocks.POKE_BALL_DISPLAY }),
+        GREAT({ { GREAT_BALL.asItem() } }, { GenerationsDecorationBlocks.GREAT_BALL_DISPLAY }),
+        ULTRA({ { ULTRA_BALL.asItem() } }, { GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY }),
+        MASTER({ { MASTER_BALL.asItem() } }, { GenerationsDecorationBlocks.MASTER_BALL_DISPLAY }),
+        CHERISH({ { CHERISH_BALL.asItem() } }, { GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY }),
+        DIVE({ { DIVE_BALL.asItem() } }, { GenerationsDecorationBlocks.DIVE_BALL_DISPLAY }),
+        DUSK({ { DUSK_BALL.asItem() } }, { GenerationsDecorationBlocks.DUSK_BALL_DISPLAY }),
+        FAST({ { FAST_BALL.asItem() } }, { GenerationsDecorationBlocks.FAST_BALL_DISPLAY }),
+        FRIEND({ { FRIEND_BALL.asItem() } }, { GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY }),
 
         //GS(() -> CobblemonItems.GS_BALL::asItem, () -> GenerationsDecorationBlocks.GS_BALL_DISPLAY),
-        HEAL({ { HEAL_BALL.asItem() } }, { GenerationsDecorationBlocks.HEAL_BALL_DISPLAY::get }),
-        HEAVY({ { HEAVY_BALL.asItem() } }, { GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY::get }),
-        LEVEL({ { LEVEL_BALL.asItem() } }, { GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY::get }),
-        LOVE({ { LOVE_BALL.asItem() } }, { GenerationsDecorationBlocks.LOVE_BALL_DISPLAY::get }),
-        LURE({ { LURE_BALL.asItem() } }, { GenerationsDecorationBlocks.LURE_BALL_DISPLAY::get }),
-        LUXURY({ { LUXURY_BALL.asItem() } }, { GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY::get }),
-        MOON({ { MOON_BALL.asItem() } }, { GenerationsDecorationBlocks.MOON_BALL_DISPLAY::get }),
-        NEST({ { NEST_BALL.asItem() } }, { GenerationsDecorationBlocks.NEST_BALL_DISPLAY::get }),
-        NET({ { NET_BALL.asItem() } }, { GenerationsDecorationBlocks.NET_BALL_DISPLAY::get }),
-        PARK({ { PARK_BALL.asItem() } }, { GenerationsDecorationBlocks.PARK_BALL_DISPLAY::get }),
-        PREMIER({ { PREMIER_BALL.asItem() } }, { GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY::get }),
-        QUICK({ { QUICK_BALL.asItem() } }, { GenerationsDecorationBlocks.QUICK_BALL_DISPLAY::get }),
-        REPEAT({ { REPEAT_BALL.asItem() } }, { GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY::get }),
-        SAFARI({ { SAFARI_BALL.asItem() } }, { GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY::get }),
-        SPORT({ { SPORT_BALL.asItem() } }, { GenerationsDecorationBlocks.SPORT_BALL_DISPLAY::get }),
-        TIMER({ { TIMER_BALL.asItem() } }, { GenerationsDecorationBlocks.TIMER_BALL_DISPLAY::get });
+        HEAL({ { HEAL_BALL.asItem() } }, { GenerationsDecorationBlocks.HEAL_BALL_DISPLAY }),
+        HEAVY({ { HEAVY_BALL.asItem() } }, { GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY }),
+        LEVEL({ { LEVEL_BALL.asItem() } }, { GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY }),
+        LOVE({ { LOVE_BALL.asItem() } }, { GenerationsDecorationBlocks.LOVE_BALL_DISPLAY }),
+        LURE({ { LURE_BALL.asItem() } }, { GenerationsDecorationBlocks.LURE_BALL_DISPLAY }),
+        LUXURY({ { LUXURY_BALL.asItem() } }, { GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY }),
+        MOON({ { MOON_BALL.asItem() } }, { GenerationsDecorationBlocks.MOON_BALL_DISPLAY }),
+        NEST({ { NEST_BALL.asItem() } }, { GenerationsDecorationBlocks.NEST_BALL_DISPLAY }),
+        NET({ { NET_BALL.asItem() } }, { GenerationsDecorationBlocks.NET_BALL_DISPLAY }),
+        PARK({ { PARK_BALL.asItem() } }, { GenerationsDecorationBlocks.PARK_BALL_DISPLAY }),
+        PREMIER({ { PREMIER_BALL.asItem() } }, { GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY }),
+        QUICK({ { QUICK_BALL.asItem() } }, { GenerationsDecorationBlocks.QUICK_BALL_DISPLAY }),
+        REPEAT({ { REPEAT_BALL.asItem() } }, { GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY }),
+        SAFARI({ { SAFARI_BALL.asItem() } }, { GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY }),
+        SPORT({ { SPORT_BALL.asItem() } }, { GenerationsDecorationBlocks.SPORT_BALL_DISPLAY }),
+        TIMER({ { TIMER_BALL.asItem() } }, { GenerationsDecorationBlocks.TIMER_BALL_DISPLAY });
 
         companion object {
             fun getState(stack: ItemStack): DisplayState? {

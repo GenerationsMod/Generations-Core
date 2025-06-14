@@ -27,7 +27,7 @@ import kotlin.math.max
 import kotlin.math.sqrt
 
 class TieredFishingHookEntity @JvmOverloads constructor(
-    arg: EntityType<TieredFishingHookEntity?>,
+    arg: EntityType<TieredFishingHookEntity>,
     arg2: Level,
     i: Int = 0,
     j: Int = 0,
@@ -50,7 +50,7 @@ class TieredFishingHookEntity @JvmOverloads constructor(
         i: Int,
         j: Int,
         tier: Teir
-    ) : this(GenerationsEntities.TIERED_FISHING_BOBBER.get(), arg2, i, j, tier) {
+    ) : this(GenerationsEntities.TIERED_FISHING_BOBBER, arg2, i, j, tier) {
         this.owner = arg
         val f = arg.xRot
         val f1 = arg.yRot
