@@ -11,7 +11,6 @@ import com.cobblemon.mod.common.util.isInBattle
 import com.cobblemon.mod.common.util.lang
 import com.cobblemon.mod.common.util.playSoundServer
 import com.cobblemon.mod.common.util.toVec3d
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.PcBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
@@ -36,14 +35,13 @@ import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
 abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
-    type: BlockEntityType<T>,
     private val blockEntityClass: Class<T>,
     arg: Properties,
     model: ResourceLocation,
     width: Int = 0,
     height: Int = 0,
     length: Int = 0
-) : GenericRotatableModelBlock<T>(arg, type, model = model, width = width, height = height, length = length) {
+) : GenericRotatableModelBlock<T>(arg, model = model, width = width, height = height, length = length) {
     override fun createDefaultState(): BlockState {
         return super.createDefaultState().setValue(ON, false)
     }
@@ -86,7 +84,7 @@ abstract class PcBlock<T : PcBlockEntity<T>, V : PcBlock<T, V>>(
         return SUCCESS
     }
 
-    override fun <T : BlockEntity> getTicker(world: Level, blockState: BlockState, BlockWithEntityType: BlockEntityType<T>) =  createTickerHelper(BlockWithEntityType, blockEntityFunction, getTicker())
+    override fun <T : BlockEntity> getTicker(world: Level, blockState: BlockState, BlockWithEntityType: BlockEntityType<T>) =  createTickerHelper(BlockWithEntityType, blockEntityType, getTicker())
 
     abstract fun getTicker() :BlockEntityTicker<T>
 

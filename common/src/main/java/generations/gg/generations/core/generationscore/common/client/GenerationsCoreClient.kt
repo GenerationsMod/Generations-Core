@@ -16,7 +16,6 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
-import dev.architectury.registry.item.ItemPropertiesRegistry
 import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER
@@ -32,7 +31,6 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.client.screen.container.*
 import generations.gg.generations.core.generationscore.common.orFalse
-import generations.gg.generations.core.generationscore.common.util.extensions.get
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
@@ -66,6 +64,7 @@ import net.minecraft.client.renderer.blockentity.HangingSignRenderer
 import net.minecraft.client.renderer.blockentity.SignRenderer
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.client.renderer.entity.ThrownItemRenderer
+import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.core.BlockPos
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
@@ -89,7 +88,6 @@ import org.joml.Vector4f
 import org.lwjgl.glfw.GLFW
 import java.io.File
 import java.util.function.Function
-import java.util.function.Supplier
 
 private operator fun BlockPos.minus(pos: BlockPos): BlockPos {
     return this.subtract(pos)
@@ -124,10 +122,10 @@ object GenerationsCoreClient {
 
         val renderer = PokemonItemRenderer()
 
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE, renderer);
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE, renderer);
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE, renderer);
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE, renderer);
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE, renderer)
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE, renderer)
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE, renderer)
+        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE, renderer)
 
 
         GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
@@ -169,14 +167,14 @@ object GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE)
             addWoodType(GenerationsWoodTypes.ULTRA_DARK)
             addWoodType(GenerationsWoodTypes.GHOST)
-            Pipelines.REGISTER.register(Pipelines::initGenerationsPipelines)
+            Pipelines.REGISTER.subscribe(handler = Pipelines::initGenerationsPipelines)
 
             Pipelines.onInitialize(event.resourceManager)
 
             registerScreens()
         })
 
-        ItemPropertiesRegistry.registerGeneric(GenerationsCore.id("type")) { itemStack, clientLevel, livingEntity, i ->
+        GenerationsCore.implementation.registerGeneric(GenerationsCore.id("type")) { itemStack, clientLevel, livingEntity, i ->
             val type =
                 itemStack.item.instanceOrNull<MoveTeachingItem>()?.getType(itemStack) ?: return@registerGeneric 0.0f
             return@registerGeneric when (type) {
@@ -202,16 +200,16 @@ object GenerationsCoreClient {
             }
         }
 
-        ItemPropertiesRegistry.register(
+        ItemProperties.register(
             GenerationsItems.CURRY,
             GenerationsCore.id("curry_type")
         ) { itemStack, _, _, _ -> return@register itemStack.get(GenerationsDataComponents.CURRY_DATA)?.curryType?.ordinal?.let { it / 100f } ?: 0f }
 
-        ItemPropertiesRegistry.register(
+        ItemProperties.register(
             GenerationsItems.MELODY_FLUTE,
             GenerationsCore.id("flute_type"),
             { arg, arg2, arg3, i ->
-                var stack = MelodyFluteItem.getImbuedItem(arg)
+                val stack = MelodyFluteItem.getImbuedItem(arg)
 
                 return@register when {
                     isItem(GenerationsItems.ICY_WING, stack) -> 0.125f
@@ -226,8 +224,8 @@ object GenerationsCoreClient {
                 }
             })
 
-        ItemPropertiesRegistry.register(
-            GenerationsShrines.CELESTIAL_ALTAR,
+        ItemProperties.register(
+            GenerationsShrines.CELESTIAL_ALTAR.asItem(),
             GenerationsCore.id("time")
         ) { itemStack, clientLevel, livingEntity, i ->
             val entity = livingEntity ?: itemStack.entityRepresentation ?: return@register 0f
@@ -239,8 +237,8 @@ object GenerationsCoreClient {
             } else return@register 0f
         }
 
-        ItemPropertiesRegistry.register(
-            GenerationsShrines.LUNAR_SHRINE,
+        ItemProperties.register(
+            GenerationsShrines.LUNAR_SHRINE.asItem(),
             GenerationsCore.id("light_level")
         ) { itemStack, clientLevel, livingEntity, i ->
             val entity = livingEntity ?: itemStack.entityRepresentation ?: return@register 0f
@@ -266,10 +264,10 @@ object GenerationsCoreClient {
     }
 
     private fun registerFishingRod(item: Item) {
-        ItemPropertiesRegistry.register(item, GenerationsCore.id("cast")) { arg, arg2, arg3, i ->
-            var entity = arg3 ?: return@register 0f
+        ItemProperties.register(item, GenerationsCore.id("cast")) { arg, arg2, arg3, i ->
+            val entity = arg3 ?: return@register 0f
 
-            var flag = entity.mainHandItem == arg
+            val flag = entity.mainHandItem == arg
             var flag1 = entity.offhandItem == arg
 
             if (entity.mainHandItem.item is TieredFishingRodItem) {
@@ -297,7 +295,7 @@ object GenerationsCoreClient {
         MenuRegistry.registerScreenFactory(GenerationsContainers.GENERIC, ::GenericChestScreen)
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON, GenericChestScreen::new);
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED, GenericChestScreen::new);
-        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK, ::MachineBlockScreen)
+//        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK, ::MachineBlockScreen)
         MenuRegistry.registerScreenFactory(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
         MenuRegistry.registerScreenFactory(GenerationsContainers.TRASHCAN, ::TrashCanScreen)
         MenuRegistry.registerScreenFactory(GenerationsContainers.RKS_MACHINE, ::RksMachineScreen)

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
 import com.cobblemon.mod.common.pokemon.Pokemon
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem
@@ -14,7 +13,6 @@ import generations.gg.generations.core.generationscore.common.world.level.schedu
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Holder
-import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionHand
@@ -23,6 +21,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import java.util.*
@@ -37,12 +36,15 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
     vararg imbuedItems: ResourceLocation
 ) : ShrineBlock<GenericShrineBlockEntity>(
         properties,
-        GenerationsBlockEntities.GENERIC_SHRINE,
         model,
         width,
         height,
         length
     ) {
+
+    override val blockEntityType: BlockEntityType<GenericShrineBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_SHRINE
+
     private val allowedImbuedItems: Set<ResourceLocation> = imbuedItems.asSequence()
             .filter(Objects::nonNull)
             .toSet()

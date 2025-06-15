@@ -48,10 +48,10 @@ class LootTableDatagen(output: PackOutput, registries: CompletableFuture<HolderL
                             )
                             .add(
                                 AlternativesEntry.alternatives(
-                                    LootItem.lootTableItem(GenerationsItems.SHADEROOT_CARROT.get())
+                                    LootItem.lootTableItem(GenerationsItems.SHADEROOT_CARROT)
                                         .`when`(LootItemRandomChanceCondition.randomChance(0.5f))
                                         .`when`(SpeciesKeyCondition.Builder().key(LegendKeys.SPECTRIER)),
-                                    LootItem.lootTableItem(GenerationsItems.ICEROOT_CARROT.get())
+                                    LootItem.lootTableItem(GenerationsItems.ICEROOT_CARROT)
                                         .`when`(SpeciesKeyCondition.Builder().key(LegendKeys.GLASTRIER))
 
                                 )

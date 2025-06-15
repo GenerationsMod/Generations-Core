@@ -1,16 +1,12 @@
 package generations.gg.generations.core.generationscore.common.world.level.levelgen
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.worldgen.BootstrapContext
 import net.minecraft.data.worldgen.features.FeatureUtils
-import net.minecraft.data.worldgen.features.TreeFeatures
 import net.minecraft.resources.ResourceKey
-import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature
 import net.minecraft.world.level.levelgen.feature.Feature
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration
@@ -81,14 +77,4 @@ object GenerationsFeatures {
         )
     }
 
-    private fun registerTree(
-        context: BootstrapContext<ConfiguredFeature<*, *>>,
-        key: ResourceKey<ConfiguredFeature<*, *>>,
-        name: String,
-        leaves: RegistrySupplier<Block>
-    ) {
-        val configuration =
-            TreeFeatures.createStraightBlobTree(Blocks.OAK_LOG, leaves.get(), 4, 2, 0, 2).ignoreVines().build()
-        FeatureUtils.register(context, key, Feature.TREE, configuration)
-    }
 }

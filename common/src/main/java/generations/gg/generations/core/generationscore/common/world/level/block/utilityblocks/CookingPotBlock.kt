@@ -29,9 +29,11 @@ import java.util.stream.Stream
 
 class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock<CookingPotBlockEntity>(
         materialIn,
-        GenerationsBlockEntities.COOKING_POT,
         model = GenerationsBlockEntityModels.COOKING_POT
     ) {
+    override val blockEntityType: BlockEntityType<CookingPotBlockEntity>
+        get() = GenerationsBlockEntities.COOKING_POT
+
     public override fun useItemOn(
         stack: ItemStack,
         state: BlockState,

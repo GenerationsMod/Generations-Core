@@ -2,16 +2,16 @@ package generations.gg.generations.core.generationscore.common
 
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
+import net.minecraft.client.renderer.item.ClampedItemPropertyFunction
 import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
-import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
-import net.minecraft.world.MenuProvider
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.MenuType
@@ -19,17 +19,15 @@ import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
-import java.util.*
-import java.util.function.Consumer
 import java.util.function.Supplier
 
 interface GenerationsImplementation {
 
     fun registerResourceReloader(
-        identifier: ResourceLocation?,
-        reloader: PreparableReloadListener?,
-        type: PackType?,
-        dependencies: Collection<ResourceLocation?>?,
+        identifier: ResourceLocation,
+        reloader: PreparableReloadListener,
+        type: PackType,
+        dependencies: Collection<ResourceLocation>,
     )
 
     /**
@@ -71,6 +69,10 @@ interface GenerationsImplementation {
         FABRIC,
         FORGE
     }
+
+    val server: MinecraftServer?
+
+    fun registerGeneric(propertyId: ResourceLocation, function: ClampedItemPropertyFunction)
 
     enum class Environment {
         CLIENT,

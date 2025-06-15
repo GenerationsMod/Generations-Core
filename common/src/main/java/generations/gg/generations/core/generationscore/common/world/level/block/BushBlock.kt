@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
@@ -15,12 +16,14 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class BushBlock(properties: Properties) :
     GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         properties,
-        GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.BUSH,
         width = 0,
         height = 1,
         length = 0
     ) {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
     override fun codec(): MapCodec<BushBlock> {
         return CODEC
     }

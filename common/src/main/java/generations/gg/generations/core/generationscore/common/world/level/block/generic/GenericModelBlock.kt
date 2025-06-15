@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import net.minecraft.core.BlockPos
@@ -31,7 +30,6 @@ import java.util.*
 
 abstract class GenericModelBlock<T> protected constructor(
     properties: Properties,
-    protected val blockEntityFunction: BlockEntityType<T>,
     private val baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_POS_FUNCTION,
     protected val modelResource: ResourceLocation?
 ) : BaseEntityBlock(properties), SimpleWaterloggedBlock,
@@ -66,7 +64,7 @@ abstract class GenericModelBlock<T> protected constructor(
     }
 
     override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity? =
-        if (baseBlockPosFunction.invoke(pos, state) == pos) blockEntityFunction.create(pos, state) else null
+        if (baseBlockPosFunction.invoke(pos, state) == pos) blockEntityType.create(pos, state) else null
 
     public override fun getSeed(state: BlockState, pos: BlockPos): Long = Mth.getSeed(getBaseBlockPos(pos, state))
 
@@ -83,7 +81,7 @@ abstract class GenericModelBlock<T> protected constructor(
     }
 
     fun getAssoicatedBlockEntity(level: BlockGetter, pos: BlockPos): T? {
-        return blockEntityFunction?.getBlockEntity(level, getBaseBlockPos(pos, level.getBlockState(pos)))
+        return blockEntityType.getBlockEntity(level, getBaseBlockPos(pos, level.getBlockState(pos)))
 
     }
 
@@ -126,8 +124,7 @@ abstract class GenericModelBlock<T> protected constructor(
         return super.updateShape(blockState, direction, blockState2, levelAccessor, blockPos, blockPos2)
     }
 
-    val blockEntityType: BlockEntityType<T>
-        get() = blockEntityFunction
+    abstract val blockEntityType: BlockEntityType<T>
 
     override fun getVariant(): String? {
         return null

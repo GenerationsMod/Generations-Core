@@ -11,19 +11,20 @@ import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.entity.BlockEntityTicker
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class RotomPc(arg: Properties) :
-    PcBlock<DefaultPcBlockEntity, RotomPc>(
-        GenerationsBlockEntities.PC,
-        DefaultPcBlockEntity::class.java, arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 2, 0
+class RotomPc(arg: Properties) : PcBlock<DefaultPcBlockEntity, RotomPc>(DefaultPcBlockEntity::class.java, arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 2, 0
     ) {
     override fun codec(): MapCodec<out BaseEntityBlock?> {
         return CODEC
     }
+
+    override val blockEntityType: BlockEntityType<DefaultPcBlockEntity>
+        get() = GenerationsBlockEntities.PC
 
     public override fun getShape(
         state: BlockState,

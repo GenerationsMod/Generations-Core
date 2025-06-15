@@ -22,6 +22,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.EnumProperty
@@ -29,15 +30,16 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class PrisonBottleStemBlock(materialIn: Properties) :
-    InteractShrineBlock<InteractShrineBlockEntity>(
+class PrisonBottleStemBlock(materialIn: Properties) : InteractShrineBlock<InteractShrineBlockEntity>(
         materialIn,
-        GenerationsBlockEntities.INTERACT_SHRINE,
         GenerationsBlockEntityModels.PRISON_BOTTLE,
         0,
         2,
         0
     ) {
+    override val blockEntityType: BlockEntityType<InteractShrineBlockEntity>
+        get() = GenerationsBlockEntities.INTERACT_SHRINE
+
     init {
         this.registerDefaultState(defaultBlockState().setValue(STATE, PrisonBottleState.EMPTY))
     }

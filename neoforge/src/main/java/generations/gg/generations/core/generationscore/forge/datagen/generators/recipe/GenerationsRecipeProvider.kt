@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe
 
 import com.cobblemon.mod.common.util.asResource
-import dev.architectury.registry.registries.RegistrySupplier
 import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput

@@ -1,12 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.set
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.registerUltraBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes
 import net.minecraft.world.level.block.Block
 import org.jetbrains.annotations.ApiStatus
-import java.util.function.Supplier
 
 @ApiStatus.Internal
 class GenerationsUltraBlockSet(name: String, baseBlock: Block) :

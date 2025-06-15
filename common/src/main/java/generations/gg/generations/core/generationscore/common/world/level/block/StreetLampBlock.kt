@@ -12,12 +12,15 @@ import net.minecraft.core.Holder
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class StreetLampBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<StreetLampBlockEntity, StreetLampBlock>(properties, color, function, GenerationsBlockEntities.STREET_LAMP, GenerationsBlockEntityModels.STREET_LAMP, 0, 1, 0) {
+class StreetLampBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<StreetLampBlockEntity, StreetLampBlock>(properties, color, function, GenerationsBlockEntityModels.STREET_LAMP, 0, 1, 0) {
+    override val blockEntityType: BlockEntityType<StreetLampBlockEntity>
+        get() = GenerationsBlockEntities.STREET_LAMP
 
     public override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape = SHAPE.getShape(state)
 

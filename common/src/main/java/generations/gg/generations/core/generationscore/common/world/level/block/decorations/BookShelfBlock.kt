@@ -10,6 +10,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
@@ -18,12 +19,14 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class BookShelfBlock(properties: Properties) :
     GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         properties = properties,
-        blockEntityFunction = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.BOOKSHELF,
         width = 2,
         height = 2,
         length = 0
     ) {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
     override fun codec(): MapCodec<BookShelfBlock> {
         return CODEC
     }

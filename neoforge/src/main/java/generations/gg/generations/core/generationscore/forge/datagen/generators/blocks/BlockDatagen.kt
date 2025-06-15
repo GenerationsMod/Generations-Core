@@ -1,10 +1,8 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.blocks
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.level.block.*
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallDisplayBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsBlockSet
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet
@@ -21,12 +19,8 @@ import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockState
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel
-import net.neoforged.neoforge.client.model.generators.ModelFile
+import net.neoforged.neoforge.client.model.generators.*
 import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile
-import net.neoforged.neoforge.client.model.generators.ModelProvider
-import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder
 import java.util.*
 import java.util.function.Consumer
 
@@ -392,13 +386,13 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
                 !(block1 is LunarShrineBlock || block1 is CelestialAltarBlock)
             )
         })
-        GenerationsUtilityBlocks.BALL_LOOTS.forEach(Consumer { block: RegistrySupplier<BallLootBlock> ->
+        GenerationsUtilityBlocks.BALL_LOOTS.forEach { block ->
             registerBlockItemParticle(
                 block,
                 "ball_loots",
                 true
             )
-        })
+        }
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.TRASH_CAN, "utility_blocks")
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.COOKING_POT, "utility_blocks")
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.ROTOM_PC, "utility_blocks")
@@ -771,11 +765,6 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         simpleBlockItem(log, logBlock)
     }
 
-    private fun registerBlockItem(block: RegistrySupplier<out Block>) {
-        registerBlockItem(block)
-        dropSelfList.add(block)
-    }
-
     private fun registerBlockItem(block: Block) {
         simpleBlockWithItem(block, cubeAll(block))
         dropSelfList.add(block)
@@ -844,10 +833,6 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         val partialState = partialState()
         block.invoke(partialState)
         return partialState
-    }
-
-    private fun <T: Block> variantBuilder(block: RegistrySupplier<T>, function: VariantBlockStateBuilder.() -> Unit) {
-        variantBuilder(block, function)
     }
 
     private fun variantBuilder(block: Block, function: VariantBlockStateBuilder.() -> Unit) {

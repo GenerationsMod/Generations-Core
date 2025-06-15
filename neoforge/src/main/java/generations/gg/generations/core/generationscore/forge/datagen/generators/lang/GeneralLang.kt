@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.lang
 
 import com.cobblemon.mod.common.api.berry.Flavor
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
@@ -10,7 +8,6 @@ import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
-import generations.gg.generations.core.generationscore.common.world.item.legends.*
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import net.minecraft.data.PackOutput
 import net.minecraft.world.item.Item
@@ -18,9 +15,6 @@ import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.common.data.LanguageProvider
 import java.util.*
-import java.util.function.BiConsumer
-import java.util.function.BiFunction
-import java.util.function.Consumer
 
 class GeneralLang(packOutput: PackOutput, locale: String) :
     LanguageProvider(packOutput, GenerationsCore.MOD_ID, locale) {
@@ -36,7 +30,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         addBlockEntries(GenerationsOres)
 
         addItemEntries(GenerationsTools)
-        addItemEntries(GenerationsArmor.ARMOR)
+        addItemEntries(GenerationsArmor)
         addItemEntries(GenerationsItems.ITEMS)
         addItemEntries(GenerationsItems.BADGES)
         addItemEntries(GenerationsItems.RIBBONS)
@@ -418,7 +412,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore3", "Collect Zygarde Cells to summon the balance.")
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore4", "Cells collected: %s/%s")
 
-        addEntityType(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells")
+        add(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells")
         add("gui.zygarde_cube", "Zygarde Cube")
         add("gui.zygarde_cube.select", "Merge Zygarde Cells")
         add("gui.zygarde_cube.merge_10.name", "Create 10%")
@@ -541,7 +535,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         add("generations_core.pokemon.defused", "%s was defused from %s.")
         add("generations_core.pokemon.encoded", "%s was encoded.")
 
-        addEntityType(GenerationsEntities.STATUE_ENTITY, "Statue")
+        add(GenerationsEntities.STATUE_ENTITY, "Statue")
 
         add("item.unimplemented_until_1_dot_6_cobblemon", "Currently unimplemented. Will be looked in 1.6+ cobblemon.")
 

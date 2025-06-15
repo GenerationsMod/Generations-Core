@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.entity
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
@@ -16,7 +14,6 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.MobCategory
-import net.minecraft.world.level.Level
 
 object GenerationsEntities: PlatformRegistry<EntityType<*>>() {
     override val registry: Registry<EntityType<*>> = BuiltInRegistries.ENTITY_TYPE

@@ -1,30 +1,25 @@
 package generations.gg.generations.core.generationscore.fabric.datagen.lang
 
 import com.cobblemon.mod.common.api.berry.Flavor
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
+import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
-import generations.gg.generations.core.generationscore.common.world.item.*
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools
+import generations.gg.generations.core.generationscore.common.world.item.LangTooltip
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
-import generations.gg.generations.core.generationscore.common.world.item.legends.*
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.minecraft.core.HolderLookup
-import net.minecraft.core.registries.BuiltInRegistries
-import net.minecraft.data.PackOutput
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import java.util.*
 import java.util.concurrent.CompletableFuture
-import java.util.function.BiConsumer
-import java.util.function.BiFunction
-import java.util.function.Consumer
 
 class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<HolderLookup.Provider>, locale: String = "en_us") : FabricLanguageProvider(packOutput, locale, lookup) {
 
@@ -424,7 +419,7 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore3", "Collect Zygarde Cells to summon the balance.")
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore4", "Cells collected: %s/%s")
 
-        translationBuilder.add(GenerationsEntities.ZYGARDE_CELL.get(), "Zygarde Cells")
+        translationBuilder.add(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells")
         add("gui.zygarde_cube", "Zygarde Cube")
         add("gui.zygarde_cube.select", "Merge Zygarde Cells")
         add("gui.zygarde_cube.merge_10.name", "Create 10%")
@@ -547,7 +542,7 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         add("generations_core.pokemon.defused", "%s was defused from %s.")
         add("generations_core.pokemon.encoded", "%s was encoded.")
 
-        translationBuilder.add(GenerationsEntities.STATUE_ENTITY.get(), "Statue")
+        translationBuilder.add(GenerationsEntities.STATUE_ENTITY, "Statue")
 
         add("item.unimplemented_until_1_dot_6_cobblemon", "Currently unimplemented. Will be looked in 1.6+ cobblemon.")
 

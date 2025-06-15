@@ -14,6 +14,7 @@ import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -23,11 +24,12 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class CouchBlock(properties: Properties) :
     GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         properties = properties,
-        blockEntityFunction = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.COUCH,
         width = 1
-    ),
-    SittableBlock {
+    ), SittableBlock {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
     override fun codec(): MapCodec<CouchBlock> = CODEC
 
     public override fun getShape(

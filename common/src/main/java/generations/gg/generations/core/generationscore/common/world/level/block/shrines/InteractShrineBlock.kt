@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity
 import net.minecraft.core.BlockPos
@@ -25,18 +24,16 @@ import net.minecraft.world.phys.BlockHitResult
 abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<T> {
     protected constructor(
         materialIn: Properties,
-        blockEntityFunction: BlockEntityType<T>,
         model: ResourceLocation
-    ) : super(materialIn, blockEntityFunction, model)
+    ) : super(materialIn, model)
 
     protected constructor(
         materialIn: Properties,
-        blockEntityFunction: BlockEntityType<T>,
         model: ResourceLocation,
         width: Int,
         height: Int,
         length: Int
-    ) : super(materialIn, blockEntityFunction, model, width, height, length)
+    ) : super(materialIn, model, width, height, length)
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder)

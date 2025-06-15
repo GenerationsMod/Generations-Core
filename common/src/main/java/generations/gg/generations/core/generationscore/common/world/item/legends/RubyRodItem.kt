@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item.legend
 
 import com.mojang.serialization.Codec
 import generations.gg.generations.core.generationscore.common.util.Codecs
-import generations.gg.generations.core.generationscore.common.util.extensions.get
 import generations.gg.generations.core.generationscore.common.world.entity.TieredFishingHookEntity.Teir
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip

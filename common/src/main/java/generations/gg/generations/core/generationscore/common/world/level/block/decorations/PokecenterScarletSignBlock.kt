@@ -11,6 +11,7 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.LevelReader
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
@@ -18,9 +19,11 @@ import net.minecraft.world.phys.shapes.VoxelShape
 
 class PokecenterScarletSignBlock(materialIn: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         properties = materialIn,
-        blockEntityFunction = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.POKECENTER_SCARLET_SIGN
     ) {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
     override fun codec(): MapCodec<PokecenterScarletSignBlock> = CODEC
 
     public override fun getShape(

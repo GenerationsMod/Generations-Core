@@ -6,7 +6,6 @@ import com.cobblemon.mod.common.util.asTranslated
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.util.cycle
-import generations.gg.generations.core.generationscore.common.util.extensions.component
 import generations.gg.generations.core.generationscore.common.util.getOrCreate
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
 import generations.gg.generations.core.generationscore.common.util.isSpecies

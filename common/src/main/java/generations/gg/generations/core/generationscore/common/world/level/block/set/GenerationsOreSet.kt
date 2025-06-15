@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.set
 
 import com.google.common.collect.ImmutableList
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsOres
 import net.minecraft.util.valueproviders.ConstantInt
 import net.minecraft.util.valueproviders.IntProvider

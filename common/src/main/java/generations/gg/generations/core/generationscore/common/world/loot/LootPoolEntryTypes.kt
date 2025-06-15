@@ -1,16 +1,12 @@
 package generations.gg.generations.core.generationscore.common.world.loot
 
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
-import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer
 import net.minecraft.world.level.storage.loot.entries.LootPoolEntryType
 

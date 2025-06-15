@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
@@ -11,9 +9,7 @@ import generations.gg.generations.core.generationscore.common.world.item.armor.G
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.EnchantmentArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.PotionArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.SpeedModifier
-import generations.gg.generations.core.generationscore.common.world.level.block.BlockPlatformRegistry
 import net.minecraft.core.Holder
-import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.effect.MobEffect
@@ -22,11 +18,9 @@ import net.minecraft.world.item.*
 import net.minecraft.world.item.enchantment.Enchantment
 import net.minecraft.world.item.enchantment.Enchantments
 import java.util.function.Function
-import java.util.function.Supplier
 import java.util.stream.Stream
 
 object GenerationsArmor: ItemPlatformRegistry() {
-    val ARMOR = object: ItemPlatformRegistry() {}
 
     /**
      * Armor Sets

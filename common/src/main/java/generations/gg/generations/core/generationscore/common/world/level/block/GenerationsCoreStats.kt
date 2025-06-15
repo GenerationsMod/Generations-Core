@@ -1,8 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
-import dev.architectury.registry.registries.DeferredRegister
-import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import net.minecraft.core.Registry

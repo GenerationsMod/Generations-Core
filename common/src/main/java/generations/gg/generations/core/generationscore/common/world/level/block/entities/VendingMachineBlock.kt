@@ -21,6 +21,7 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.BooleanOp
@@ -33,12 +34,14 @@ class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map
     properties,
     color,
     function,
-    GenerationsBlockEntities.VENDING_MACHINE,
     GenerationsBlockEntityModels.VENDING_MACHINE,
     0,
     1,
     0
 ) {
+    override val blockEntityType: BlockEntityType<VendingMachineBlockEntity>
+        get() = GenerationsBlockEntities.VENDING_MACHINE
+
     public override fun getShape(
         state: BlockState,
         level: BlockGetter,

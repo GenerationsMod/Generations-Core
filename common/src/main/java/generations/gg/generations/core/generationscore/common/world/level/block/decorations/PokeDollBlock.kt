@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.EnumProperty
@@ -23,9 +24,10 @@ import net.minecraft.world.phys.Vec3
 import org.joml.Math
 
 @Suppress("deprecation")
-class PokeDollBlock(val name: String, private val isShiny: Boolean, val scale: Float) :
-    GenericModelBlock<PokeDollBlockEntity>(Properties.of().sound(SoundType.WOOL).strength(1.0f), GenerationsBlockEntities.POKE_DOLL, modelResource = GenerationsCore.id("models/block/pokedolls/$name.pk")
-    ) {
+class PokeDollBlock(val name: String, private val isShiny: Boolean, val scale: Float) : GenericModelBlock<PokeDollBlockEntity>(Properties.of().sound(SoundType.WOOL).strength(1.0f), modelResource = GenerationsCore.id("models/block/pokedolls/$name.pk")) {
+    override val blockEntityType: BlockEntityType<PokeDollBlockEntity>
+        get() = GenerationsBlockEntities.POKE_DOLL
+
     private val variant = if (isShiny) "shiny" else "regular"
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {

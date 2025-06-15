@@ -19,6 +19,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -28,10 +29,12 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class PastelBeanBagBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>(
         color,
         function,
-        GenerationsBlockEntities.GENERIC_DYED_VARIANT,
         properties,
         GenerationsBlockEntityModels.PASTEL_BEAN_BAG
     ) {
+    override val blockEntityType: BlockEntityType<GenericDyedVariantBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_DYED_VARIANT
+
     public override fun getShape(
         state: BlockState,
         world: BlockGetter,

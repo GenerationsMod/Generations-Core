@@ -1,11 +1,9 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy
 
+import com.cobblemon.mod.common.api.reactive.EventObservable
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.google.gson.reflect.TypeToken
-import com.mojang.blaze3d.platform.GlStateManager
 import com.mojang.blaze3d.systems.RenderSystem
-import dev.architectury.event.Event
-import dev.architectury.event.EventFactory
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.GenerationsTextureLoader
 import generations.gg.generations.core.generationscore.common.client.MatrixCache
@@ -27,7 +25,6 @@ import org.joml.Matrix4f
 import org.joml.Vector2f
 import org.joml.Vector3f
 import org.joml.Vector4f
-import java.util.function.Consumer
 import kotlin.math.sin
 
 object Pipelines {
@@ -41,9 +38,8 @@ object Pipelines {
 
 
     @JvmField
-    var REGISTER: Event<Consumer<PipelineRegister>> = EventFactory.createConsumerLoop(
-        PipelineRegister::class.java
-    )
+    var REGISTER = EventObservable<PipelineRegister>()
+
     private var useLegacy = false
 
     private val PIPELINE_MAP: MutableMap<String, (String) -> Pipeline?> = HashMap()
@@ -68,10 +64,11 @@ object Pipelines {
     @JvmStatic
     fun onInitialize(manager: ResourceManager) {
         if (!initialized) {
-            REGISTER.invoker().accept(PipelineRegister(manager, PIPELINE_MAP))
-            initialized = true
-            useLegacy = GenerationsCore.CONFIG.client.usePixelmonShading
-            PipelineRegistry.setFunction(::getPipeline)
+            REGISTER.post(PipelineRegister(manager, PIPELINE_MAP), then = {
+                initialized = true
+                useLegacy = GenerationsCore.CONFIG.client.usePixelmonShading
+                PipelineRegistry.setFunction(::getPipeline)
+            })
         }
     }
 

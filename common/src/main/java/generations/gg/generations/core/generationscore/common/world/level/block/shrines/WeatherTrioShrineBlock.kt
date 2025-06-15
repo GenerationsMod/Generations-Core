@@ -19,6 +19,7 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.BooleanOp
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -30,7 +31,9 @@ class WeatherTrioShrineBlock(
     model: ResourceLocation,
     val species: SpeciesKey,
     private val requiredItem: Item
-) : InteractShrineBlock<WeatherTrioShrineBlockEntity>(properties, GenerationsBlockEntities.WEATHER_TRIO, model) {
+) : InteractShrineBlock<WeatherTrioShrineBlockEntity>(properties, model) {
+    override val blockEntityType: BlockEntityType<WeatherTrioShrineBlockEntity>
+        get() = GenerationsBlockEntities.WEATHER_TRIO
 
     override fun isStackValid(stack: ItemStack): Boolean {
         return stack.`is`(requiredItem) && stack.damageValue >= stack.maxDamage

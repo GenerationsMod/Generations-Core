@@ -67,7 +67,7 @@ class StatueClientDelegate(entity: StatueEntity) : StatueSideDelegate, PosableSt
 
         val currentPoseType = currentEntity.getCurrentPoseType()
         // Doing this awful thing because otherwise evolution particle won't start until the client looks at it. Which sucks slightly more than this.
-        val pose = this.currentModel!!.getFirstSuitablePose(this, currentPoseType)
+        val pose = this.currentModel?.getFirstSuitablePose(this, currentPoseType) ?: return
         doLater { setPose(pose.poseName) }
     }
 

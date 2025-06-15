@@ -11,11 +11,7 @@ import com.cobblemon.mod.common.util.isInBattle
 import com.cobblemon.mod.common.util.lang
 import com.cobblemon.mod.common.util.playSoundServer
 import com.cobblemon.mod.common.util.toVec3d
-import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
-import com.mojang.serialization.codecs.RecordCodecBuilder
-import dev.architectury.registry.registries.RegistrySupplier
-import generations.gg.generations.core.generationscore.common.util.Codecs
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.generateRotationalVoxelShape
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedPcBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
@@ -47,7 +43,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
-class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Block>) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(properties, color, map, GenerationsBlockEntities.DYED_PC, GenerationsBlockEntityModels.PC, 0, 1, 0) {
+class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Block>) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(properties, color, map, GenerationsBlockEntityModels.PC, 0, 1, 0) {
     private val SHAPE = generateRotationalVoxelShape(
         Shapes.or(
             Shapes.box(0.07500000000000001, 0.0, 0.025000000000000022, 0.925, 1.5, 0.725),
@@ -59,6 +55,9 @@ class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Bl
         ),
         Direction.SOUTH, 1, 2, 1, 0.0, 0.0
     )
+
+    override val blockEntityType: BlockEntityType<DyedPcBlockEntity>
+        get() = GenerationsBlockEntities.DYED_PC
 
     override fun codec(): MapCodec<DyedPcBlock> = CODEC
 

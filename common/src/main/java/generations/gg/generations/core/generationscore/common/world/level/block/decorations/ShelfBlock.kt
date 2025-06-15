@@ -9,17 +9,18 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class ShelfBlock(props: Properties) :
-    GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
+class ShelfBlock(props: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         props,
-        GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.SHELF,
         width = 1) {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
 
     override fun codec(): MapCodec<ShelfBlock> = CODEC
 

@@ -9,7 +9,6 @@ import com.mojang.serialization.DataResult
 import com.mojang.serialization.JsonOps
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import dev.architectury.registry.registries.Registrar
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.Registry
@@ -47,8 +46,6 @@ object Codecs {
     }
 
     fun <A> Codec<A>.set(): Codec<Set<A>> = listOf().xmap({ it.toSet() }, { it.toList() })
-
-    fun <T> Registrar<T>.codec(): Codec<T> = ResourceLocation.CODEC.xmap({ this.get(it)!! }, { this.getId(it) })
 
     fun <T1, V> codec1(
         name1: String, c1: Codec<T1>, g1: (V) -> T1,

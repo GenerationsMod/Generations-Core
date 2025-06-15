@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import com.cobblemon.mod.common.Cobblemon.storage
-import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Species
 import dev.architectury.registry.item.ItemPropertiesRegistry
@@ -10,16 +8,11 @@ import generations.gg.generations.core.generationscore.common.util.*
 import net.minecraft.client.multiplayer.ClientLevel
 import net.minecraft.core.component.DataComponents
 import net.minecraft.network.chat.Component
-import net.minecraft.network.chat.MutableComponent
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
-import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.entity.LivingEntity
-import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.Level
 
 class TimeCapsule(properties: Properties) : PokemonStoringItem(properties), PokemonProvidingItem {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {

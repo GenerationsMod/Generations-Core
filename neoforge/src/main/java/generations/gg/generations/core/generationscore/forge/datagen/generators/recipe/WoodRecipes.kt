@@ -24,44 +24,44 @@ class WoodRecipes(output: PackOutput, registries: CompletableFuture<HolderLookup
         buildAllWoodCraftingRecipes(
             consumer,
             GenerationsItemTags.ULTRA_DARK_LOGS,
-            GenerationsWood.ULTRA_DARK_PLANKS.get(),
-            GenerationsWood.ULTRA_DARK_WOOD.get(),
-            GenerationsWood.STRIPPED_GHOST_WOOD.get(),
-            GenerationsWood.STRIPPED_GHOST_LOG.get(),
-            GenerationsWood.ULTRA_DARK_LOG.get(),
-            GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.get(),
-            GenerationsItems.ULTRA_DARK_BOAT_ITEM.get(),
-            GenerationsWood.ULTRA_DARK_CRAFTING_TABLE.get(),
-            GenerationsItems.ULTRA_DARK_HANGING_SIGN.get(),
-            GenerationsWood.ULTRA_DARK_BOOKSHELF.get()
+            GenerationsWood.ULTRA_DARK_PLANKS,
+            GenerationsWood.ULTRA_DARK_WOOD,
+            GenerationsWood.STRIPPED_GHOST_WOOD,
+            GenerationsWood.STRIPPED_GHOST_LOG,
+            GenerationsWood.ULTRA_DARK_LOG,
+            GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM,
+            GenerationsItems.ULTRA_DARK_BOAT_ITEM,
+            GenerationsWood.ULTRA_DARK_CRAFTING_TABLE,
+            GenerationsItems.ULTRA_DARK_HANGING_SIGN,
+            GenerationsWood.ULTRA_DARK_BOOKSHELF
         )
         buildAllWoodCraftingRecipes(
             consumer,
             GenerationsItemTags.ULTRA_JUNGLE_LOGS,
-            GenerationsWood.ULTRA_JUNGLE_PLANKS.get(),
-            GenerationsWood.ULTRA_JUNGLE_WOOD.get(),
-            GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD.get(),
-            GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG.get(),
-            GenerationsWood.ULTRA_JUNGLE_LOG.get(),
-            GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.get(),
-            GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.get(),
-            GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE.get(),
-            GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN.get(),
-            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.get()
+            GenerationsWood.ULTRA_JUNGLE_PLANKS,
+            GenerationsWood.ULTRA_JUNGLE_WOOD,
+            GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD,
+            GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG,
+            GenerationsWood.ULTRA_JUNGLE_LOG,
+            GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM,
+            GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM,
+            GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE,
+            GenerationsItems.ULTRA_JUNGLE_HANGING_SIGN,
+            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF
         )
         buildAllWoodCraftingRecipes(
             consumer,
             GenerationsItemTags.GHOST_LOGS,
-            GenerationsWood.GHOST_PLANKS.get(),
-            GenerationsWood.GHOST_WOOD.get(),
-            GenerationsWood.STRIPPED_ULTRA_DARK_WOOD.get(),
-            GenerationsWood.STRIPPED_ULTRA_DARK_LOG.get(),
-            GenerationsWood.GHOST_LOG.get(),
-            GenerationsItems.GHOST_CHEST_BOAT_ITEM.get(),
-            GenerationsItems.GHOST_BOAT_ITEM.get(),
-            GenerationsWood.GHOST_CRAFTING_TABLE.get(),
-            GenerationsItems.GHOST_HANGING_SIGN.get(),
-            GenerationsWood.GHOST_BOOKSHELF.get()
+            GenerationsWood.GHOST_PLANKS,
+            GenerationsWood.GHOST_WOOD,
+            GenerationsWood.STRIPPED_ULTRA_DARK_WOOD,
+            GenerationsWood.STRIPPED_ULTRA_DARK_LOG,
+            GenerationsWood.GHOST_LOG,
+            GenerationsItems.GHOST_CHEST_BOAT_ITEM,
+            GenerationsItems.GHOST_BOAT_ITEM,
+            GenerationsWood.GHOST_CRAFTING_TABLE,
+            GenerationsItems.GHOST_HANGING_SIGN,
+            GenerationsWood.GHOST_BOOKSHELF
         )
     }
 

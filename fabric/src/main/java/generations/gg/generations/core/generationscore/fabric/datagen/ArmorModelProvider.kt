@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.datagen
 
 import com.cobblemon.mod.common.util.asResource
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
@@ -12,8 +11,6 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.ArmorMaterial
 import net.minecraft.world.item.ArmorMaterials
-import net.minecraft.world.item.Item
-import java.util.stream.Stream
 import kotlin.streams.asSequence
 
 internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricModelProvider(fabricDataOutput) {

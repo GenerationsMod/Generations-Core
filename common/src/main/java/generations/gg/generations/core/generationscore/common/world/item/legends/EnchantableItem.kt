@@ -1,8 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item.legends
 
-import generations.gg.generations.core.generationscore.common.util.extensions.component
-import generations.gg.generations.core.generationscore.common.util.extensions.getOrDefault
-import generations.gg.generations.core.generationscore.common.util.extensions.set
 import generations.gg.generations.core.generationscore.common.world.item.ItemWithLangTooltipImpl
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.server.level.ServerPlayer

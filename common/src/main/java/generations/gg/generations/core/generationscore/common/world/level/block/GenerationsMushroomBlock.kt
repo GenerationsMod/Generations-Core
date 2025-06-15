@@ -4,7 +4,6 @@ import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.orFalse
 import generations.gg.generations.core.generationscore.common.util.Codecs
 import generations.gg.generations.core.generationscore.common.util.Codecs.codec
-import generations.gg.generations.core.generationscore.common.util.Codecs.tagCodec
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey

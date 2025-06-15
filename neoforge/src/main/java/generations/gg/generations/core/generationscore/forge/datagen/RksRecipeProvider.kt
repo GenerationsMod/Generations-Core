@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.forge.datagen
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.CobblemonItems.MYSTIC_WATER
 import com.cobblemon.mod.common.CobblemonItems.WATER_GEM
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey

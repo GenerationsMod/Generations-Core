@@ -9,18 +9,20 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.BooleanOp
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class TapuShrineBlock(properties: Properties) :
-    ShrineBlock<GenericShrineBlockEntity>(
+class TapuShrineBlock(properties: Properties) : ShrineBlock<GenericShrineBlockEntity>(
         properties,
-        GenerationsBlockEntities.GENERIC_SHRINE,
         GenerationsBlockEntityModels.TAPU_SHRINE
     ) {
+    override val blockEntityType: BlockEntityType<GenericShrineBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_SHRINE
+
     public override fun getShape(
         state: BlockState,
         level: BlockGetter,

@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies.getByIdentifier
 import com.cobblemon.mod.common.api.types.ElementalType
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
-import dev.architectury.registry.registries.RegistrySupplier
 import earth.terrarium.common_storage_lib.resources.ResourceStack
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import generations.gg.generations.core.generationscore.common.GenerationsStorage.IMBUED

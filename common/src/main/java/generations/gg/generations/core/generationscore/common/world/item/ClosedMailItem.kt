@@ -3,8 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.Cobblemon.implementation
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
-import generations.gg.generations.core.generationscore.common.util.extensions.get
-import generations.gg.generations.core.generationscore.common.util.extensions.set
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.ChatFormatting
 import net.minecraft.commands.CommandSourceStack

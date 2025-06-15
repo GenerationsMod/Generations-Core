@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.entity.block
 
-import dev.architectury.networking.NetworkManager
+import dev.architectury.networking.SpawnEntityPacket
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity
 import net.minecraft.core.BlockPos
@@ -11,7 +11,6 @@ import net.minecraft.network.syncher.SynchedEntityData
 import net.minecraft.server.level.ServerEntity
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.Mth
-import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.LivingEntity
@@ -86,7 +85,7 @@ class SittableEntity(type: EntityType<out Entity?>, level: Level) :
     }
 
     override fun getAddEntityPacket(entity: ServerEntity): Packet<ClientGamePacketListener> {
-        return NetworkManager.createAddEntityPacket(this, entity)
+        return SpawnEntityPacket.create(this, entity)
     }
 
     // Tick the key and check if the block is removed or if there are no more passengers

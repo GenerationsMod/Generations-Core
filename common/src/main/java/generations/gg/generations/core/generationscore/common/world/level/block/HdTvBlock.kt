@@ -10,6 +10,7 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
@@ -17,12 +18,14 @@ import net.minecraft.world.phys.shapes.VoxelShape
 
 class HdTvBlock(properties: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
     properties,
-    blockEntityFunction = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
     model = GenerationsBlockEntityModels.HDTV,
     width = 2,
     height = 1,
     length = 0
 ) {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
     override fun codec(): MapCodec<HdTvBlock> = CODEC
 
     public override fun getShape(

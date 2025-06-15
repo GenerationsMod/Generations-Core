@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.loot
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import net.minecraft.core.registries.Registries
@@ -124,7 +123,7 @@ class GenerationsChestLoot : LootTableSubProvider {
 
         fun processItems(objects: Array<out Any>): Array<Item> = objects.map { `object`: Any -> process(`object`) }.filterNotNull().toTypedArray()
 
-        fun process(`object`: Any): Item? = `object`.instanceOrNull<RegistrySupplier<*>>()?.get()?.instanceOrNull<ItemLike>()?.asItem() ?: `object`.instanceOrNull<ItemLike>()?.asItem()
+        fun process(`object`: Any): Item? = `object`.instanceOrNull<ItemLike>()?.asItem()
 
         fun createPool(rolls: NumberProvider, vararg items: Item): LootPool.Builder {
             val pool = LootPool.lootPool().setRolls(rolls)

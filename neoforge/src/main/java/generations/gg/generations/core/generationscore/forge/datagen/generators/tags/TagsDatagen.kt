@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.tags
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
@@ -520,15 +519,16 @@ object TagsDatagen {
 
             tag(ItemTags.STONE_TOOL_MATERIALS).add(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock.asItem())
                 .add(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock.asItem())
-            GenerationsTools.TOOLS.forEach(Consumer { tool: RegistrySupplier<Item> ->
-                val item = tool
-                if (item is PickaxeItem) tag(ItemTags.PICKAXES).add(item)
-                else if (item is AxeItem) tag(ItemTags.AXES).add(item)
-                else if (item is ShovelItem) tag(ItemTags.SHOVELS).add(item)
-                else if (item is HoeItem) tag(ItemTags.HOES).add(item)
-                else if (item is SwordItem) tag(ItemTags.SWORDS).add(item)
-                else if (item is GenerationsHammerItem) tag(GenerationsItemTags.HAMMERS).add(item)
-            })
+            GenerationsTools.all().forEach { tool ->
+                when (tool) {
+                    is PickaxeItem -> tag(ItemTags.PICKAXES).add(tool)
+                    is AxeItem -> tag(ItemTags.AXES).add(tool)
+                    is ShovelItem -> tag(ItemTags.SHOVELS).add(tool)
+                    is HoeItem -> tag(ItemTags.HOES).add(tool)
+                    is SwordItem -> tag(ItemTags.SWORDS).add(tool)
+                    is GenerationsHammerItem -> tag(GenerationsItemTags.HAMMERS).add(tool)
+                }
+            }
 
 //            tag(ItemTags.TOOLS).addTag(GenerationsItemTags.HAMMERS) //TODO: Find what is new tag
             tag(Tags.Items.TOOLS).addTag(GenerationsItemTags.HAMMERS)
@@ -654,13 +654,16 @@ object TagsDatagen {
             )
 
             //Forge Armor Tags
-            GenerationsArmor.ARMOR.all().forEach { armor ->
-                when ((armor as ArmorItem).type) {
-                    ArmorItem.Type.HELMET -> tag(ItemTags.HEAD_ARMOR).add(armor)
-                    ArmorItem.Type.CHESTPLATE -> tag(ItemTags.CHEST_ARMOR).add(armor)
-                    ArmorItem.Type.LEGGINGS -> tag(ItemTags.LEG_ARMOR).add(armor)
-                    ArmorItem.Type.BOOTS -> tag(ItemTags.FOOT_ARMOR).add(armor)
-                    ArmorItem.Type.BODY -> null
+            GenerationsArmor.all().forEach { armor ->
+                if(armor is ArmorItem) {
+
+                    when (armor.type) {
+                        ArmorItem.Type.HELMET -> tag(ItemTags.HEAD_ARMOR).add(armor)
+                        ArmorItem.Type.CHESTPLATE -> tag(ItemTags.CHEST_ARMOR).add(armor)
+                        ArmorItem.Type.LEGGINGS -> tag(ItemTags.LEG_ARMOR).add(armor)
+                        ArmorItem.Type.BOOTS -> tag(ItemTags.FOOT_ARMOR).add(armor)
+                        else -> {}
+                    }
                 }
             }
 

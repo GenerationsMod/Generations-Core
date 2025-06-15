@@ -3,9 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.item.legend
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.util.add
-import generations.gg.generations.core.generationscore.common.util.extensions.component
-import generations.gg.generations.core.generationscore.common.util.extensions.getOrDefault
-import generations.gg.generations.core.generationscore.common.util.extensions.update
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.network.chat.Component

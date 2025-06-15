@@ -22,6 +22,8 @@ import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SyncDataPackContents
 import net.fabricmc.fabric.api.event.player.UseBlockCallback
+import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
+import net.fabricmc.fabric.api.event.registry.RegistryAttribute
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
@@ -34,13 +36,16 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType
 import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint
+import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.network.syncher.EntityDataSerializers
+import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
@@ -60,6 +65,7 @@ import java.util.function.Consumer
 import java.util.function.Function
 import java.util.function.Supplier
 
+
 /**
  * Fabric Main class and entry point for GenerationsCore.
  * @see ModInitializer
@@ -70,6 +76,8 @@ import java.util.function.Supplier
  * @author Joseph T. McQuigg, WaterPicker
  */
 class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
+    private var serverBacking: MinecraftServer? = null
+
     override fun onInitialize() {
         init(this)
         VanillaCompat.setup()
@@ -82,9 +90,14 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
             )
         })
 
+        ServerLifecycleEvents.SERVER_STARTING.register { server ->
+            serverBacking = server
+        }
+        ServerLifecycleEvents.SERVER_STOPPED.register {
+            serverBacking = null
+        }
+
         UseBlockCallback.EVENT.register({ player, level, hand, hitResult ->
-
-
             return@register InteractionEvents.fireRightClick(player, hand, hitResult.blockPos, hitResult.direction);
         })
 
@@ -182,60 +195,33 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
         })
     }
 
+    override fun <T : Any> createRegistry(key: ResourceKey<Registry<T>>, sync: Boolean): Registry<T> = FabricRegistryBuilder.createSimple(key).attribute(RegistryAttribute.SYNCED).buildAndRegister()
+
     override fun registerResourceReloader(
         identifier: ResourceLocation,
         reloader: PreparableReloadListener,
         type: PackType,
         dependencies: Collection<ResourceLocation>,
     ) {
-        ResourceManagerHelper.get(type).registerReloadListener(
-            GenerationsReloadListener(
-                identifier,
-                reloader,
-                dependencies
-            )
-        )
+        ResourceManagerHelper.get(type).registerReloadListener(GenerationsReloadListener(identifier, reloader, dependencies))
     }
+
+
+    private class GenerationsReloadListener(private val identifier: ResourceLocation, private val reloader: PreparableReloadListener, private val dependencies: Collection<ResourceLocation>) : IdentifiableResourceReloadListener {
+
+        override fun reload(synchronizer: PreparableReloadListener.PreparationBarrier, manager: ResourceManager, prepareProfiler: ProfilerFiller, applyProfiler: ProfilerFiller, prepareExecutor: Executor, applyExecutor: Executor): CompletableFuture<Void> = this.reloader.reload(synchronizer, manager, prepareProfiler, applyProfiler, prepareExecutor, applyExecutor)
+
+        override fun getFabricId(): ResourceLocation = this.identifier
+
+        override fun getName(): String = this.reloader.name
+
+        override fun getFabricDependencies(): MutableCollection<ResourceLocation> = this.dependencies.toMutableList()
+    }
+
+    override val server: MinecraftServer?
+        get() = serverBacking
 
     override fun onPreLaunch() {
         setConfigDirectory(FabricLoader.getInstance().configDir)
-    }
-
-    @JvmRecord
-    private data class GenerationsReloadListener(
-        val identifier: ResourceLocation,
-        val reloader: PreparableReloadListener,
-        val dependencies: Collection<ResourceLocation>,
-    ) :
-        IdentifiableResourceReloadListener {
-        override fun reload(
-            preparationBarrier: PreparableReloadListener.PreparationBarrier,
-            resourceManager: ResourceManager,
-            preparationsProfiler: ProfilerFiller,
-            reloadProfiler: ProfilerFiller,
-            backgroundExecutor: Executor,
-            gameExecutor: Executor,
-        ): CompletableFuture<Void> {
-            return reloader.reload(
-                preparationBarrier,
-                resourceManager,
-                preparationsProfiler,
-                reloadProfiler,
-                backgroundExecutor,
-                gameExecutor
-            )
-        }
-
-        override fun getFabricId(): ResourceLocation {
-            return this.identifier
-        }
-
-        override fun getName(): String {
-            return reloader.name
-        }
-
-        override fun getFabricDependencies(): Collection<ResourceLocation> {
-            return this.dependencies
-        }
     }
 }

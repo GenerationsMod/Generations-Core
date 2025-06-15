@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.set
 
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet.Companion.updateBlockFamilies
 import net.minecraft.data.BlockFamily

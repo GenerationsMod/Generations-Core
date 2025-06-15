@@ -33,9 +33,11 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class CelestialAltarBlock(properties: Properties) :
     GenericRotatableModelBlock<CelestialAltarBlockEntity>(
         properties = properties,
-        blockEntityFunction = GenerationsBlockEntities.CELESTIAL_ALTAR,
         model = GenerationsBlockEntityModels.CELESTIAL_ALTAR
     ) {
+    override val blockEntityType: BlockEntityType<CelestialAltarBlockEntity>
+        get() = GenerationsBlockEntities.CELESTIAL_ALTAR
+
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder)
         builder.add(IS_SUN)

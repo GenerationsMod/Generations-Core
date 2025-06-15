@@ -1,21 +1,11 @@
 package generations.gg.generations.core.generationscore.common.recipe
 
-import com.google.common.collect.BiMap
-import com.google.common.collect.HashBiMap
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.Registrar
-import dev.architectury.registry.registries.RegistrarManager
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asFriendly
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
 import generations.gg.generations.core.generationscore.common.world.recipe.*
-import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
-import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 
 object GenerationsIngredidents {

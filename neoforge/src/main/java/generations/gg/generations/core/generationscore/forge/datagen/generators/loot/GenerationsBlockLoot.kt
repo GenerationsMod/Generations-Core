@@ -25,7 +25,6 @@ import com.cobblemon.mod.common.CobblemonItems.SAFARI_BALL
 import com.cobblemon.mod.common.CobblemonItems.SPORT_BALL
 import com.cobblemon.mod.common.CobblemonItems.TIMER_BALL
 import com.cobblemon.mod.common.CobblemonItems.ULTRA_BALL
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock

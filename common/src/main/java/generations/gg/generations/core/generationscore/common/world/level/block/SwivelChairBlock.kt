@@ -20,13 +20,16 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<GenericDyedVariantBlockEntity, SwivelChairBlock>(color, function, GenerationsBlockEntities.GENERIC_DYED_VARIANT, properties, GenerationsBlockEntityModels.SWIVEL_CHAIR), SittableBlock {
+class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<GenericDyedVariantBlockEntity, SwivelChairBlock>(color, function, properties, GenerationsBlockEntityModels.SWIVEL_CHAIR), SittableBlock {
+    override val blockEntityType: BlockEntityType<GenericDyedVariantBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_DYED_VARIANT
 
     override fun codec(): MapCodec<SwivelChairBlock> = CODEC
 

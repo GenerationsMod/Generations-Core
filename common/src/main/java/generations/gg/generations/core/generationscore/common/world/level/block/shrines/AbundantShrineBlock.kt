@@ -9,13 +9,16 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.entity.BlockEntityType
 import java.util.function.Consumer
 
 class AbundantShrineBlock(properties: Properties) : ShrineBlock<AbundantShrineBlockEntity>(
     properties,
-    GenerationsBlockEntities.ABUNDANT_SHRINE,
     GenerationsBlockEntityModels.ABUNDANT_SHRINE
 ) {
+    override val blockEntityType: BlockEntityType<AbundantShrineBlockEntity>
+        get() = GenerationsBlockEntities.ABUNDANT_SHRINE
+
     override fun codec(): MapCodec<AbundantShrineBlock> = CODEC
 
     companion object {

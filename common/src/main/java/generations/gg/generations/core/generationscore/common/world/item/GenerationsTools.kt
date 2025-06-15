@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
@@ -19,8 +17,6 @@ import java.util.function.Function
 import java.util.function.Supplier
 
 object GenerationsTools: ItemPlatformRegistry() {
-    val TOOLS: DeferredRegister<Item> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ITEM)
-
     /**
      * Tools
      */

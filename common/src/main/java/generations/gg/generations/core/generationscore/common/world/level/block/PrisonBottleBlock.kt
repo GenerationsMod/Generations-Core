@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
@@ -16,12 +17,14 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class PrisonBottleBlock(properties: Properties) :
     GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         properties,
-        GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.PRISON_BOTTLE,
         width = 0,
         height = 2,
         length = 0
     ) {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
     override fun getVariant(): String? {
         return "ring_6"
     }

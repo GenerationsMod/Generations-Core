@@ -1,9 +1,7 @@
 package generations.gg.generations.core.generationscore.forge.client
 
 import com.mojang.blaze3d.systems.RenderSystem
-import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.EntityRendererHandler
@@ -72,14 +70,14 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
         })
 
         eventBus.addListener<RegisterMenuScreensEvent>({
-            it.register(GenerationsContainers.COOKING_POT.get(), ::CookingPotScreen)
-            it.register(GenerationsContainers.GENERIC.get(), ::GenericChestScreen)
-//        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON.get(), GenericChestScreen::new);
-//        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED.get(), GenericChestScreen::new);
-            it.register(GenerationsContainers.MACHINE_BLOCK.get(), ::MachineBlockScreen)
-            it.register(GenerationsContainers.MELODY_FLUTE.get(), ::MelodyFluteScreen)
-            it.register(GenerationsContainers.TRASHCAN.get(), ::TrashCanScreen)
-            it.register(GenerationsContainers.RKS_MACHINE.get(), ::RksMachineScreen)
+            it.register(GenerationsContainers.COOKING_POT, ::CookingPotScreen)
+            it.register(GenerationsContainers.GENERIC, ::GenericChestScreen)
+//        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON, GenericChestScreen::new);
+//        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED, GenericChestScreen::new);
+//            it.register(GenerationsContainers.MACHINE_BLOCK, ::MachineBlockScreen)
+            it.register(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
+            it.register(GenerationsContainers.TRASHCAN, ::TrashCanScreen)
+            it.register(GenerationsContainers.RKS_MACHINE, ::RksMachineScreen)
         })
 
         eventBus.addListener({ event: RegisterLayerDefinitions ->

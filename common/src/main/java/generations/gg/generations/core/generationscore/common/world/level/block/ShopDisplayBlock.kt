@@ -10,17 +10,20 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.entity.BlockEntityType
 import org.bson.codecs.StringCodec
 
 class ShopDisplayBlock(properties: Properties, width: Int, height: Int, length: Int, private val variant: String) :
     GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         properties,
-        GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.SHOP,
         width = width,
         height = height,
         length = length
     ), VariantProvider {
+
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
 
     override fun getVariant(): String? {
         return variant

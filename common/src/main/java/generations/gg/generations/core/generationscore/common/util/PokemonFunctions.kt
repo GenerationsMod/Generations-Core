@@ -9,9 +9,6 @@ import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.pokemon.*
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.server
-import generations.gg.generations.core.generationscore.common.util.extensions.get
-import generations.gg.generations.core.generationscore.common.util.extensions.remove
-import generations.gg.generations.core.generationscore.common.util.extensions.set
 import generations.gg.generations.core.generationscore.common.world.item.StatueSpawnerItem
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents

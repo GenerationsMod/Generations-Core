@@ -10,6 +10,7 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
@@ -17,14 +18,15 @@ import net.minecraft.world.phys.shapes.VoxelShape
 
 class DoubleStreetLampBlock(materialIn: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
         materialIn,
-        GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
         model = GenerationsBlockEntityModels.DOUBLE_STREET_LAMP,
         width = 2,
         height = 4,
         length = 0
     ) {
-    override val baseX: Int
-        get() = 1
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
+    override val baseX: Int = 1
 
     override fun validPosition(x: Int, y: Int, z: Int): Boolean {
         return when (y) {

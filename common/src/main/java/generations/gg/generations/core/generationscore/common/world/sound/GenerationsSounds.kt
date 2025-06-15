@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.sound
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import net.minecraft.core.Registry

@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.util
 
 import com.cobblemon.mod.common.api.berry.Flavor
-import dev.architectury.registry.registries.Registrar
-import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
 import io.netty.buffer.ByteBuf
 import net.minecraft.core.NonNullList
 import net.minecraft.network.FriendlyByteBuf
@@ -38,8 +36,6 @@ object StreamCodecs {
     fun <B : ByteBuf, V> StreamCodec<B, V>.set(): StreamCodec<B, Set<V>> where V: Any {
         return this.apply(StreamCodecs.set())
     }
-
-    fun <T> Registrar<T>.streamCodec(): StreamCodec<RegistryFriendlyByteBuf, T> = ResourceLocation.STREAM_CODEC.map({ this.get(it)!! }, this::getId).asRegistryFriendly()
 
     fun <B : Any, C, T1: Any, T2: Any, T3: Any, T4: Any, T5: Any, T6: Any, T7: Any, T8: Any> composite(
         codec1: StreamCodec<B, T1>, getter1: (C) -> T1,

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.client
 
 import com.mojang.blaze3d.systems.RenderSystem
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.EntityRendererHandler
@@ -103,18 +102,16 @@ class GenerationsCoreClientFabric : ClientModInitializer {
          */
         private fun registerRenderTypes() {
             val renderLayerMap = BlockRenderLayerMap.INSTANCE
-            GenerationsWood.WOOD_BLOCKS.forEach(Consumer { `object`: RegistrySupplier<Block?> ->
-                val block = `object`.get()
+            GenerationsWood.WOOD_BLOCKS.all().forEach { block ->
                 if (block is DoorBlock || block is TrapDoorBlock) renderLayerMap.putBlock(block, RenderType.cutout())
-            })
-            GenerationsBlocks.BLOCKS.forEach(Consumer { `object`: RegistrySupplier<Block?> ->
-                val block = `object`.get()
+            }
+            GenerationsBlocks.BLOCKS.all().forEach { block ->
                 if (block is DoorBlock || block is GenerationsMushroomBlock) renderLayerMap.putBlock(
                     block,
                     RenderType.cutout()
                 )
                 else if (block is TransparentBlock) renderLayerMap.putBlock(block, RenderType.cutoutMipped())
-            })
+            }
             renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE, RenderType.cutout())
         }
     }

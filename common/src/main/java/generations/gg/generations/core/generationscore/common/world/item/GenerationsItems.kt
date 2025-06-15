@@ -9,6 +9,7 @@ import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager
 import com.cobblemon.mod.common.util.cobblemonResource
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
+import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity
@@ -915,7 +916,7 @@ object GenerationsItems {
     val SHADEROOT_CARROT = register("shaderoot_carrot", { CalyrexSteedItem("shaderoot", it.stacksTo(1).food(FoodProperties.Builder().alwaysEdible().build()), LegendKeys.SPECTRIER) }, LEGENDARY_ITEMS)
     val ENIGMA_STONE = register("enigma_stone", { EnigmaStoneItem(it.stacksTo(1).durability(100)) }, LEGENDARY_ITEMS)
     val ENIGMA_SHARD = register("enigma_shard", { ItemWithLangTooltipImpl(it.stacksTo(64)) }, LEGENDARY_ITEMS)
-    val ENIGMA_FRAGMENT = register("enigma_fragment",{ ItemWithLangTooltipImpl(it.stacksTo(64).fireResistant() /* just incase it falls into lava while in nether*/) }, LEGENDARY_ITEMS)
+    @JvmField val ENIGMA_FRAGMENT = register("enigma_fragment",{ ItemWithLangTooltipImpl(it.stacksTo(64).fireResistant() /* just incase it falls into lava while in nether*/) }, LEGENDARY_ITEMS)
     val SACRED_ASH = register("sacred_ash", { ItemWithLangTooltipImpl(it.stacksTo(1).durability(1)) }, LEGENDARY_ITEMS)
     val SHARD_OF_WILLPOWER = register("shard_of_willpower", { ItemWithLangTooltipImpl(it.stacksTo(9)) }, LEGENDARY_ITEMS)
     val SHARD_OF_EMOTION = register("shard_of_emotion", { ItemWithLangTooltipImpl(it.stacksTo(9)) }, LEGENDARY_ITEMS)
@@ -1614,13 +1615,13 @@ object GenerationsItems {
         name: String,
         itemSupplier: (Item.Properties) -> T,
         register: ItemPlatformRegistry = ITEMS
-    ): Item = register.create(name, itemSupplier.invoke(of()))
+    ): Item = register.create(name.generationsResource(), itemSupplier.invoke(of()))
 
     fun <T : MoveTeachingItem> registerTm(
         name: String,
         itemSupplier: (Item.Properties) -> T,
         register: ItemPlatformRegistry = ITEMS
-    ): T = register.create(name, itemSupplier.invoke(of()))
+    ): T = register.create(name.generationsResource(), itemSupplier.invoke(of()))
 
     fun registerTmRegular(name: String, move: String): TechnicalMachineItem =
         registerTm(name, { TechnicalMachineItem(move, it) }, PLAYER_ITEMS).also(TMS::add)

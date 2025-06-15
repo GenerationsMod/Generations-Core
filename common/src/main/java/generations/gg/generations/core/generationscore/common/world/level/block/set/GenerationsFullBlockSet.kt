@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.set
 
-import dev.architectury.registry.registries.RegistrySupplier
 import net.minecraft.data.BlockFamily
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block

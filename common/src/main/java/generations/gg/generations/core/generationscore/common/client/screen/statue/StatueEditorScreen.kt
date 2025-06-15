@@ -80,7 +80,9 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
                 14,
                 50,
                 statue.label ?: "",
-                { true }) { s: String? -> run {
+                { true }) { s: String? -> s?.run {
+
+
                     statue.label = s
                     UpdateStatuePacket.Label(statue.id, s.optional()).sendToServer()
                 }

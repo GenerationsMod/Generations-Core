@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.container.slots
 
 import com.mojang.datafixers.util.Pair
-import dev.architectury.registry.registries.RegistrySupplier
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot

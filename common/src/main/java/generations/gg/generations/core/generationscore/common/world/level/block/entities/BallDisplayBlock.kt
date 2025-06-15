@@ -41,6 +41,7 @@ import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -50,10 +51,12 @@ import java.util.function.Supplier
 
 class BallDisplayBlock(properties: Properties, val state: DisplayState) : GenericRotatableModelBlock<BallDisplayBlockEntity>(
     properties = properties,
-    blockEntityFunction = GenerationsBlockEntities.BALL_DISPLAY,
     model = GenerationsBlockEntityModels.BALL_DISPLAY
 ) {
     constructor(state: DisplayState) : this(Properties.ofFullCopy(Blocks.IRON_BLOCK), state)
+
+    override val blockEntityType: BlockEntityType<BallDisplayBlockEntity>
+        get() = GenerationsBlockEntities.BALL_DISPLAY
 
     private val variant = state.name.lowercase()
 

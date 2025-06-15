@@ -10,6 +10,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
@@ -17,12 +18,14 @@ import net.minecraft.world.phys.shapes.VoxelShape
 
 class WorkDeskBlock(properties: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
     properties = properties,
-    blockEntityFunction = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING,
     model = GenerationsBlockEntityModels.WORK_DESK,
     width = 2,
     height = 1,
     length = 1
 ) {
+    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
+
     public override fun getShape(
         state: BlockState,
         level: BlockGetter,

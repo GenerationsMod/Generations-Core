@@ -1,14 +1,11 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity
 import net.minecraft.core.BlockPos
-import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResult
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
@@ -38,7 +35,7 @@ class MachineBlock(properties: Properties) : BaseEntityBlock(properties) {
         hand: InteractionHand,
         hit: BlockHitResult
     ): ItemInteractionResult =
-        if (!level.isClientSide() && level.getBlockEntity(pos).instanceOrNull<MachineBlockEntity>()?.also { MenuRegistry.openMenu(player as ServerPlayer, it) } != null) ItemInteractionResult.SUCCESS else super.useItemOn(stack, state, level, pos, player, hand, hit)
+        if (!level.isClientSide() && level.getBlockEntity(pos).instanceOrNull<MachineBlockEntity>()?.also { player.openMenu(it) } != null) ItemInteractionResult.SUCCESS else super.useItemOn(stack, state, level, pos, player, hand, hit)
 
     public override fun getRenderShape(state: BlockState): RenderShape {
         return RenderShape.MODEL

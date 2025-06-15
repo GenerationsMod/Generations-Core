@@ -1,13 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.registerBlock
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock
-import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
@@ -15,8 +12,6 @@ import net.minecraft.world.level.block.Block
 
 @Suppress("unused")
 object GenerationsPokeDolls: BlockPlatformRegistry() {
-    val POKEDOLLS: DeferredRegister<Block> = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.BLOCK)
-
     /**
      * Pokedolls
      */
@@ -194,6 +189,6 @@ object GenerationsPokeDolls: BlockPlatformRegistry() {
 
     override fun init(consumer: (ResourceLocation, Block) -> Unit) {
         GenerationsCore.LOGGER.info("Registering Generations PokeDolls")
-        init(consumer)
+        super.init(consumer)
     }
 }

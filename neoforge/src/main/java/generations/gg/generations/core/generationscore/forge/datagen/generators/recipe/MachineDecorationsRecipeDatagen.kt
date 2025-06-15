@@ -40,6 +40,7 @@ import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.RecipeOutput
 import net.minecraft.data.recipes.ShapedRecipeBuilder
+import net.minecraft.data.recipes.ShapedRecipeBuilder.shaped
 import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.tags.ItemTags
 import net.minecraft.world.item.DyeColor
@@ -68,7 +69,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
         }
 
         //FURNACES
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
             .define('X', GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock)
             .pattern("XXX")
             .pattern("X X")
@@ -78,33 +79,33 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.CHARGE_COBBLESTONE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(
+        shaped(
             RecipeCategory.DECORATIONS,
-            GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.get()
+            GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE
         )
-            .define('#', GenerationsBlocks.SMOOTH_CHARGE_STONE.get())
-            .define('X', GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
+            .define('#', GenerationsBlocks.SMOOTH_CHARGE_STONE)
+            .define('X', GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
             .define('I', Items.IRON_INGOT)
             .pattern("III")
             .pattern("IXI")
             .pattern("###")
             .unlockedBy(
-                getHasName(GenerationsBlocks.SMOOTH_CHARGE_STONE.get()),
-                has(GenerationsBlocks.SMOOTH_CHARGE_STONE.get())
+                getHasName(GenerationsBlocks.SMOOTH_CHARGE_STONE),
+                has(GenerationsBlocks.SMOOTH_CHARGE_STONE)
             )
             .save(recipeOutput)
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CHARGE_STONE_SMOKER)
             .define('#', ItemTags.LOGS)
-            .define('X', GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
+            .define('X', GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
             .pattern(" # ").pattern("#X#").pattern(" # ")
             .unlockedBy(
-                getHasName(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get()),
-                has(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.get())
+                getHasName(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE),
+                has(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
             )
             .save(recipeOutput)
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
             .define('X', GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock)
             .pattern("XXX")
             .pattern("X X")
@@ -114,33 +115,33 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(
+        shaped(
             RecipeCategory.DECORATIONS,
-            GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.get()
+            GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE
         )
-            .define('#', GenerationsBlocks.SMOOTH_VOLCANIC_STONE.get())
-            .define('X', GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
+            .define('#', GenerationsBlocks.SMOOTH_VOLCANIC_STONE)
+            .define('X', GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
             .define('I', Items.IRON_INGOT)
             .pattern("III")
             .pattern("IXI")
             .pattern("###")
             .unlockedBy(
-                getHasName(GenerationsBlocks.SMOOTH_VOLCANIC_STONE.get()),
-                has(GenerationsBlocks.SMOOTH_VOLCANIC_STONE.get())
+                getHasName(GenerationsBlocks.SMOOTH_VOLCANIC_STONE),
+                has(GenerationsBlocks.SMOOTH_VOLCANIC_STONE)
             )
             .save(recipeOutput)
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER)
             .define('#', ItemTags.LOGS)
-            .define('X', GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
+            .define('X', GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
             .pattern(" # ").pattern("#X#").pattern(" # ")
             .unlockedBy(
-                getHasName(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get()),
-                has(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.get())
+                getHasName(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE),
+                has(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
             )
             .save(recipeOutput)
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY)
             .define('X', GenerationsBlocks.GRAY_MARBLE_SET.stairs)
             .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             .define('#', Items.BOWL)
@@ -152,34 +153,34 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             )
             .save(recipeOutput)
 
-        buildPokeBallDisplayRecipes(recipeOutput, POKE_BALL.asItem(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, GREAT_BALL.asItem(), GenerationsDecorationBlocks.GREAT_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, ULTRA_BALL.asItem(), GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, MASTER_BALL.asItem(), GenerationsDecorationBlocks.MASTER_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, CHERISH_BALL.asItem(), GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, DIVE_BALL.asItem(), GenerationsDecorationBlocks.DIVE_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, DUSK_BALL.asItem(), GenerationsDecorationBlocks.DUSK_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, FAST_BALL.asItem(), GenerationsDecorationBlocks.FAST_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, FRIEND_BALL.asItem(), GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY.get())
-        //buildPokeBallDisplayRecipes(consumer, CobblemonItems.GS_BALL.asItem(), GenerationsDecorationBlocks.GS_BALL_DISPLAY.get());
-        buildPokeBallDisplayRecipes(recipeOutput, HEAL_BALL.asItem(), GenerationsDecorationBlocks.HEAL_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, HEAVY_BALL.asItem(), GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, LEVEL_BALL.asItem(), GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, LOVE_BALL.asItem(), GenerationsDecorationBlocks.LOVE_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, LURE_BALL.asItem(), GenerationsDecorationBlocks.LURE_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, LUXURY_BALL.asItem(), GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, MOON_BALL.asItem(), GenerationsDecorationBlocks.MOON_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, NEST_BALL.asItem(), GenerationsDecorationBlocks.NEST_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, NET_BALL.asItem(), GenerationsDecorationBlocks.NET_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, PARK_BALL.asItem(), GenerationsDecorationBlocks.PARK_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, PREMIER_BALL.asItem(), GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, QUICK_BALL.asItem(), GenerationsDecorationBlocks.QUICK_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, REPEAT_BALL.asItem(), GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, SAFARI_BALL.asItem(), GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, SPORT_BALL.asItem(), GenerationsDecorationBlocks.SPORT_BALL_DISPLAY.get())
-        buildPokeBallDisplayRecipes(recipeOutput, TIMER_BALL.asItem(), GenerationsDecorationBlocks.TIMER_BALL_DISPLAY.get())
+        buildPokeBallDisplayRecipes(recipeOutput, POKE_BALL.asItem(), GenerationsDecorationBlocks.POKE_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, GREAT_BALL.asItem(), GenerationsDecorationBlocks.GREAT_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, ULTRA_BALL.asItem(), GenerationsDecorationBlocks.ULTRA_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, MASTER_BALL.asItem(), GenerationsDecorationBlocks.MASTER_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, CHERISH_BALL.asItem(), GenerationsDecorationBlocks.CHERISH_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, DIVE_BALL.asItem(), GenerationsDecorationBlocks.DIVE_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, DUSK_BALL.asItem(), GenerationsDecorationBlocks.DUSK_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, FAST_BALL.asItem(), GenerationsDecorationBlocks.FAST_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, FRIEND_BALL.asItem(), GenerationsDecorationBlocks.FRIEND_BALL_DISPLAY)
+        //buildPokeBallDisplayRecipes(consumer, CobblemonItems.GS_BALL.asItem(), GenerationsDecorationBlocks.GS_BALL_DISPLAY);
+        buildPokeBallDisplayRecipes(recipeOutput, HEAL_BALL.asItem(), GenerationsDecorationBlocks.HEAL_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, HEAVY_BALL.asItem(), GenerationsDecorationBlocks.HEAVY_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, LEVEL_BALL.asItem(), GenerationsDecorationBlocks.LEVEL_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, LOVE_BALL.asItem(), GenerationsDecorationBlocks.LOVE_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, LURE_BALL.asItem(), GenerationsDecorationBlocks.LURE_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, LUXURY_BALL.asItem(), GenerationsDecorationBlocks.LUXURY_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, MOON_BALL.asItem(), GenerationsDecorationBlocks.MOON_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, NEST_BALL.asItem(), GenerationsDecorationBlocks.NEST_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, NET_BALL.asItem(), GenerationsDecorationBlocks.NET_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, PARK_BALL.asItem(), GenerationsDecorationBlocks.PARK_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, PREMIER_BALL.asItem(), GenerationsDecorationBlocks.PREMIER_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, QUICK_BALL.asItem(), GenerationsDecorationBlocks.QUICK_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, REPEAT_BALL.asItem(), GenerationsDecorationBlocks.REPEAT_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, SAFARI_BALL.asItem(), GenerationsDecorationBlocks.SAFARI_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, SPORT_BALL.asItem(), GenerationsDecorationBlocks.SPORT_BALL_DISPLAY)
+        buildPokeBallDisplayRecipes(recipeOutput, TIMER_BALL.asItem(), GenerationsDecorationBlocks.TIMER_BALL_DISPLAY)
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GenerationsUtilityBlocks.SCARECROW.get())
+        shaped(RecipeCategory.MISC, GenerationsUtilityBlocks.SCARECROW)
             .pattern(" # ")
             .pattern("BAB")
             .pattern(" B ")
@@ -190,7 +191,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //Cooking Pot
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.COOKING_POT.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.COOKING_POT)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.CAULDRON)
             .pattern("IRI")
@@ -199,7 +200,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //Fridge
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.FRIDGE.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.FRIDGE)
             .define('I', Items.IRON_INGOT)
             .define('C', Items.ICE)
             .define('R', Items.REDSTONE)
@@ -210,12 +211,12 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //RKS Machine
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.RKS_MACHINE.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.RKS_MACHINE)
             .define('I', Items.IRON_INGOT)
             .define('G', Items.GLASS)
-            .define('R', GenerationsItems.RUBY.get())
+            .define('R', GenerationsItems.RUBY)
             .define('N', Items.NETHERITE_INGOT)
-            .define('S', GenerationsItems.SILICON.get())
+            .define('S', GenerationsItems.SILICON)
             .pattern("IRI")
             .pattern("GGG")
             .pattern("NSN")
@@ -223,7 +224,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //Box
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BOX.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BOX)
             .define('P', Items.PAPER)
             .define('C', Items.CHEST)
             .pattern("PPP")
@@ -233,9 +234,9 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //Meloetta Music Box
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsShrines.MELOETTA_MUSIC_BOX.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsShrines.MELOETTA_MUSIC_BOX)
             .define('J', Items.JUKEBOX)
-            .define('O', GenerationsItems.ORB.get())
+            .define('O', GenerationsItems.ORB)
             .pattern("JJJ")
             .pattern("JOJ")
             .pattern("JJJ")
@@ -243,9 +244,9 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //Prison Bottle Stem
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsShrines.PRISON_BOTTLE_STEM.get())
-            .define('R', GenerationsItems.RUBY.get())
-            .define('O', GenerationsItems.ORB.get())
+        shaped(RecipeCategory.DECORATIONS, GenerationsShrines.PRISON_BOTTLE_STEM)
+            .define('R', GenerationsItems.RUBY)
+            .define('O', GenerationsItems.ORB)
             .define('G', Items.GOLD_INGOT)
             .pattern("RRR")
             .pattern("GOG")
@@ -254,7 +255,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //PC
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ROTOM_PC.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ROTOM_PC, 1)
             .define('P', PC)
             .define('R', Items.REDSTONE)
             .define('D', Items.DIAMOND)
@@ -263,7 +264,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RDR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TABLE_PC.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TABLE_PC, 1)
             .define('P', PC)
             .define('R', Items.REDSTONE)
             .define('D', Items.IRON_INGOT)
@@ -274,7 +275,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
 
         //Elevators
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLACK_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLACK_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.BLACK_GLAZED_TERRACOTTA)
@@ -283,7 +284,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLUE_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BLUE_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.BLUE_GLAZED_TERRACOTTA)
@@ -292,7 +293,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BROWN_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.BROWN_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.BROWN_GLAZED_TERRACOTTA)
@@ -301,7 +302,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CYAN_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.CYAN_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.CYAN_GLAZED_TERRACOTTA)
@@ -310,7 +311,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.GRAY_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.GRAY_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.GRAY_GLAZED_TERRACOTTA)
@@ -319,7 +320,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.GREEN_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.GREEN_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.GREEN_GLAZED_TERRACOTTA)
@@ -328,7 +329,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.LIGHT_BLUE_GLAZED_TERRACOTTA)
@@ -337,7 +338,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.LIGHT_GRAY_GLAZED_TERRACOTTA)
@@ -346,7 +347,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIME_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.LIME_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.LIME_GLAZED_TERRACOTTA)
@@ -355,7 +356,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.MAGENTA_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.MAGENTA_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.MAGENTA_GLAZED_TERRACOTTA)
@@ -364,7 +365,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ORANGE_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.ORANGE_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.ORANGE_GLAZED_TERRACOTTA)
@@ -373,7 +374,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PINK_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PINK_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.PINK_GLAZED_TERRACOTTA)
@@ -382,7 +383,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PURPLE_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.PURPLE_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.PURPLE_GLAZED_TERRACOTTA)
@@ -391,7 +392,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.RED_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.RED_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.RED_GLAZED_TERRACOTTA)
@@ -400,7 +401,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.WHITE_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.WHITE_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.WHITE_GLAZED_TERRACOTTA)
@@ -409,7 +410,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("RIR")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.YELLOW_ELEVATOR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.YELLOW_ELEVATOR, 1)
             .define('I', Items.IRON_INGOT)
             .define('R', Items.REDSTONE)
             .define('T', Items.YELLOW_GLAZED_TERRACOTTA)
@@ -419,7 +420,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
         //Misc Furniture
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SNORLAX_BEAN_BAG.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SNORLAX_BEAN_BAG, 1)
             .define('B', Items.BLUE_WOOL)
             .define('Y', Items.YELLOW_WOOL)
             .define('W', Items.WHITE_WOOL)
@@ -427,7 +428,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("BWB")
             .unlockedBy(getHasName(Items.BLUE_WOOL), has(Items.BLUE_WOOL))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.COUCH.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.COUCH, 1)
             .define('G', Items.GREEN_WOOL)
             .define('Y', Items.YELLOW_WOOL)
             .define('O', Items.OAK_PLANKS)
@@ -436,7 +437,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("OOO")
             .unlockedBy(getHasName(Items.GREEN_WOOL), has(Items.GREEN_WOOL))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.HDTV.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.HDTV, 1)
             .define('G', Items.GLASS)
             .define('R', Items.IRON_INGOT)
             .define('I', Items.REDSTONE)
@@ -445,18 +446,18 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("III")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SWITCH.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SWITCH, 1)
             .define('C', Items.COPPER_INGOT)
             .define('R', Items.REDSTONE)
             .define('B', Items.BLUE_DYE)
             .define('D', Items.RED_DYE)
-            .define('S', GenerationsItems.SILICON.get())
+            .define('S', GenerationsItems.SILICON)
             .pattern("SRS")
             .pattern("SRS")
             .pattern("BCD")
             .unlockedBy(getHasName(Items.REDSTONE), has(Items.REDSTONE))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.FOONGUS_CUSHION.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.FOONGUS_CUSHION, 1)
             .define('W', Items.WHITE_WOOL)
             .define('R', Items.RED_WOOL)
             .define('M', Items.BROWN_MUSHROOM)
@@ -466,7 +467,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("WWW")
             .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.POKEBALL_CUSHION.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.POKEBALL_CUSHION, 1)
             .define('W', Items.WHITE_WOOL)
             .define('R', Items.RED_WOOL)
             .define('B', Items.BLACK_WOOL)
@@ -475,7 +476,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("WWW")
             .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.GREATBALL_CUSHION.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.GREATBALL_CUSHION, 1)
             .define('W', Items.WHITE_WOOL)
             .define('R', Items.BLUE_WOOL)
             .define('B', Items.BLACK_WOOL)
@@ -484,7 +485,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("WWW")
             .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.MASTERBALL_CUSHION.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.MASTERBALL_CUSHION, 1)
             .define('W', Items.WHITE_WOOL)
             .define('R', Items.PURPLE_WOOL)
             .define('B', Items.BLACK_WOOL)
@@ -493,7 +494,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("WWW")
             .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.POKEBALL_PILLAR.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.POKEBALL_PILLAR, 1)
             .define('S', Items.STONE)
             .define('P', POKE_BALL)
             .define('I', Items.COPPER_INGOT)
@@ -502,7 +503,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("SSS")
             .unlockedBy(getHasName(POKE_BALL), has(POKE_BALL))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BUSH.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BUSH, 1)
             .define('B', Items.BONE_MEAL)
             .define('O', Items.OAK_SAPLING)
             .define('I', Items.IRON_INGOT)
@@ -511,14 +512,14 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("III")
             .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BENCH.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BENCH, 1)
             .define('O', Items.OAK_PLANKS)
             .define('I', Items.IRON_INGOT)
             .pattern("OOO")
             .pattern("I I")
             .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.DOUBLE_STREET_LAMP, 1)
             .define('C', Items.COPPER_INGOT)
             .define('L', Items.REDSTONE_LAMP)
             .define('G', Items.GLASS)
@@ -527,7 +528,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern(" C ")
             .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.HOUSE_LAMP.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.HOUSE_LAMP, 1)
             .define('W', Items.WHITE_WOOL)
             .define('R', Items.REDSTONE_LAMP)
             .define('I', Items.IRON_INGOT)
@@ -536,7 +537,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("III")
             .unlockedBy(getHasName(Items.REDSTONE_LAMP), has(Items.REDSTONE_LAMP))
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.LITWICK_CANDLE.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.LITWICK_CANDLE, 1)
             .define('C', Items.WHITE_CANDLE)
             .define('Y', Items.YELLOW_CANDLE)
             .pattern("CYC")
@@ -545,16 +546,16 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
         ShapelessRecipeBuilder.shapeless(
             RecipeCategory.DECORATIONS,
-            GenerationsDecorationBlocks.LITWICK_CANDLES.get(),
+            GenerationsDecorationBlocks.LITWICK_CANDLES,
             1
         )
-            .requires(GenerationsDecorationBlocks.LITWICK_CANDLE.get(), 3)
+            .requires(GenerationsDecorationBlocks.LITWICK_CANDLE, 3)
             .unlockedBy(
-                getHasName(GenerationsDecorationBlocks.LITWICK_CANDLE.get()),
-                has(GenerationsDecorationBlocks.LITWICK_CANDLE.get())
+                getHasName(GenerationsDecorationBlocks.LITWICK_CANDLE),
+                has(GenerationsDecorationBlocks.LITWICK_CANDLE)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHELF.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHELF, 1)
             .define('B', GenerationsBlocks.BLUE_MARBLE_SET.baseBlock)
             .define('W', Items.WHITE_DYE)
             .define('O', Items.OAK_PLANKS)
@@ -566,7 +567,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.BLUE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BOOK_SHELF.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.BOOK_SHELF, 1)
             .define('B', Items.BOOK)
             .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("WWW")
@@ -577,9 +578,9 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(
+        shaped(
             RecipeCategory.DECORATIONS,
-            GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1.get(),
+            GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1,
             1
         )
             .define('P', POTION)
@@ -594,9 +595,9 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(
+        shaped(
             RecipeCategory.DECORATIONS,
-            GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2.get(),
+            GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2,
             1
         )
             .define('R', RARE_CANDY)
@@ -611,9 +612,9 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(
+        shaped(
             RecipeCategory.DECORATIONS,
-            GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1.get(),
+            GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1,
             1
         )
             .define('P', POTION)
@@ -626,9 +627,9 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(
+        shaped(
             RecipeCategory.DECORATIONS,
-            GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2.get(),
+            GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2,
             1
         )
             .define('R', RARE_CANDY)
@@ -641,7 +642,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1, 1)
             .define('G', Items.GLASS)
             .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("GGG")
@@ -651,7 +652,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2, 1)
             .define('G', Items.GLASS)
             .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("WWW")
@@ -661,7 +662,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.WORK_DESK.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.WORK_DESK, 1)
             .define('G', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             .define('B', GenerationsBlocks.BLUE_MARBLE_SET.baseBlock)
             .pattern("GGG")
@@ -671,7 +672,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.DESK.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.DESK, 1)
             .define('W', GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             .pattern("WWW")
             .pattern("W W")
@@ -680,7 +681,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 has(GenerationsBlocks.WHITE_MARBLE_SET.baseBlock)
             )
             .save(recipeOutput)
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TRASH_CAN.get(), 1)
+        shaped(RecipeCategory.DECORATIONS, GenerationsUtilityBlocks.TRASH_CAN, 1)
             .define('W', Items.IRON_INGOT)
             .define('C', Items.COMPOSTER)
             .pattern("WWW")
@@ -694,9 +695,8 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildPastelBeanBagRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val pastelBeanBag = GenerationsDecorationBlocks.PASTEL_BEAN_BAG.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+        shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
             .define('E', dye)
             .define('X', Items.WHITE_WOOL)
             .pattern("XEX")
@@ -720,12 +720,11 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildSwivelChairRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val pastelBeanBag = GenerationsDecorationBlocks.SWIVEL_CHAIR.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+        shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
             .define('E', dye)
             .define('X', Items.WHITE_WOOL)
-            .define('S', GenerationsItems.SILICON.get())
+            .define('S', GenerationsItems.SILICON)
             .define('I', Items.IRON_INGOT)
             .pattern("EXX")
             .pattern("XXX")
@@ -737,9 +736,8 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildCouchArmLeftRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val pastelBeanBag = GenerationsDecorationBlocks.COUCH_ARM_LEFT.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+        shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
             .define('E', dye)
             .define('W', Items.WHITE_WOOL)
             .define('P', Items.DARK_OAK_PLANKS)
@@ -753,9 +751,8 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildCouchArmRightRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val pastelBeanBag = GenerationsDecorationBlocks.COUCH_ARM_RIGHT.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+        shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
             .define('E', dye)
             .define('W', Items.WHITE_WOOL)
             .define('P', Items.DARK_OAK_PLANKS)
@@ -769,9 +766,8 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildCouchMiddleRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val pastelBeanBag = GenerationsDecorationBlocks.COUCH_MIDDLE.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+        shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
             .define('E', dye)
             .define('W', Items.WHITE_WOOL)
             .define('P', Items.DARK_OAK_PLANKS)
@@ -785,9 +781,8 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildCouchOttomanRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val pastelBeanBag = GenerationsDecorationBlocks.COUCH_OTTOMAN.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+        shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
             .define('E', dye)
             .define('W', Items.WHITE_WOOL)
             .define('P', Items.DARK_OAK_PLANKS)
@@ -801,9 +796,8 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildStreetLampRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val pastelBeanBag = GenerationsDecorationBlocks.STREET_LAMP.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
+        shaped(RecipeCategory.DECORATIONS, pastelBeanBag)
             .define('E', dye)
             .define('L', Items.REDSTONE_LAMP)
             .define('I', Items.IRON_INGOT)
@@ -817,19 +811,18 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildVendingMachineRecipes(consumer: RecipeOutput, color: DyeColor) {
         val dye = DyeItem.byColor(color)
         val vendingMachine = GenerationsDecorationBlocks.VENDING_MACHINE.block[color]!!
-            .value()
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, vendingMachine)
+        shaped(RecipeCategory.DECORATIONS, vendingMachine)
             .define('A', Items.IRON_INGOT)
             .define('B', Items.GLASS_PANE)
-            .define('C', GenerationsItems.FRESH_WATER.get())
-            .define('D', GenerationsItems.SODA_POP.get())
-            .define('E', GenerationsItems.LEMONADE.get())
+            .define('C', GenerationsItems.FRESH_WATER)
+            .define('D', GenerationsItems.SODA_POP)
+            .define('E', GenerationsItems.LEMONADE)
             .define('F', dye)
             .pattern("ABA")
             .pattern("CDE")
             .pattern("AFA")
-            .unlockedBy(getHasName(GenerationsItems.FRESH_WATER.get()), has(GenerationsItems.FRESH_WATER.get()))
+            .unlockedBy(getHasName(GenerationsItems.FRESH_WATER), has(GenerationsItems.FRESH_WATER))
             .save(consumer)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, vendingMachine)
@@ -848,15 +841,15 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
     private fun buildPokeBallDisplayRecipes(consumer: RecipeOutput, pokeball: Item, display: Block) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, display)
             .requires(pokeball)
-            .requires(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
+            .requires(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY)
             .unlockedBy(
-                getHasName(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get()),
-                has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.get())
+                getHasName(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY),
+                has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY)
             )
             .unlockedBy(getHasName(pokeball), has(pokeball))
             .save(consumer)
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, display)
+        shaped(RecipeCategory.DECORATIONS, display)
             .define('X', GenerationsBlocks.GRAY_MARBLE_SET.stairs)
             .define('Y', GenerationsBlocks.GRAY_MARBLE_SET.baseBlock)
             .define('#', Items.BOWL)

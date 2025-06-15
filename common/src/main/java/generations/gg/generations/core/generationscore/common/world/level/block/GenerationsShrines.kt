@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.generationsResource
@@ -16,20 +14,14 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.HoohShrineBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.StaticShrineBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.*
-import net.minecraft.core.BlockPos
-import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.entity.EntityType
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.context.BlockPlaceContext
-import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
-import java.util.function.BiFunction
-import java.util.function.Supplier
 
 object GenerationsShrines: BlockPlatformRegistry() {
 

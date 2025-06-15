@@ -5,7 +5,6 @@ import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredientType
-import generations.gg.generations.core.generationscore.common.util.Codecs.codec
 import net.minecraft.core.Holder
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries

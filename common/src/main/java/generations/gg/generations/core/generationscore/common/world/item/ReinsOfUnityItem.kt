@@ -11,7 +11,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.party
 import generations.gg.generations.core.generationscore.common.util.*
-import generations.gg.generations.core.generationscore.common.util.extensions.set
 import net.minecraft.ChatFormatting
 import net.minecraft.core.component.DataComponents
 import net.minecraft.network.chat.Component

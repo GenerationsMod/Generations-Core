@@ -3,8 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.Cobblemon.storage
 import com.cobblemon.mod.common.api.text.plus
 import com.cobblemon.mod.common.api.text.text
-import generations.gg.generations.core.generationscore.common.util.add
-import generations.gg.generations.core.generationscore.common.util.extensions.remove
 import generations.gg.generations.core.generationscore.common.util.getPokemon
 import generations.gg.generations.core.generationscore.common.util.removePokemon
 import generations.gg.generations.core.generationscore.common.util.setLore

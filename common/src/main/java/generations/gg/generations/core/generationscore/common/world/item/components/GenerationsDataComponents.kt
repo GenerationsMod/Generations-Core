@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.item.components
 
 import com.cobblemon.mod.common.pokemon.Pokemon
-import com.cobblemon.mod.common.pokemon.RenderablePokemon
-import com.cobblemon.mod.common.pokemon.Species
 import com.mojang.serialization.Codec
-import com.mojang.serialization.codecs.RecordCodecBuilder
-import dev.architectury.registry.registries.DeferredRegister
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry

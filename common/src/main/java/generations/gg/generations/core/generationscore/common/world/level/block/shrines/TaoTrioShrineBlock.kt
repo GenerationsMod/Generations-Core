@@ -15,6 +15,7 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.BooleanOp
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -23,9 +24,11 @@ import net.minecraft.world.phys.shapes.VoxelShape
 
 class TaoTrioShrineBlock(properties: Properties) : InteractShrineBlock<TaoTrioShrineBlockEntity>(
         properties,
-        GenerationsBlockEntities.TAO_TRIO_SHRINE,
         GenerationsBlockEntityModels.TAO_TRIO_SHRINE
     ) {
+    override val blockEntityType: BlockEntityType<TaoTrioShrineBlockEntity>
+        get() = GenerationsBlockEntities.TAO_TRIO_SHRINE
+
     override fun interact(
         level: Level,
         pos: BlockPos,

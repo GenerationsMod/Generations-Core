@@ -6,26 +6,26 @@ import generations.gg.generations.core.generationscore.common.world.item.armor.G
 import net.minecraft.core.Holder
 import net.minecraft.core.component.DataComponents
 import net.minecraft.resources.ResourceKey
-import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.enchantment.Enchantment
-import net.minecraft.world.item.enchantment.EnchantmentHelper
 import net.minecraft.world.item.enchantment.ItemEnchantments
 import net.minecraft.world.level.Level
 import kotlin.jvm.optionals.getOrNull
 
-data class EnchantmentArmorEffect(val enchantment: ResourceKey<Enchantment>, val level: Int) :
-    ArmorTickEffect {
-    override fun onArmorTick(
+data class EnchantmentArmorEffect(val enchantment: ResourceKey<Enchantment>, val level: Int) : ArmorTickEffect {
+    override fun inventoryTick(
         itemStack: ItemStack,
         world: Level,
-        player: Player,
+        entity: LivingEntity,
+        slotId: Int,
+        isSelected: Boolean,
         generationsArmorItem: GenerationsArmorItem
     ) {
         if (world.isClientSide()) return
         val holder = world.enchantmentRegistry.getHolder(enchantment).getOrNull() ?: return
-        if (!ArmorTickEffect.isWearingFullSet(player, generationsArmorItem.material)) {
+        if (!ArmorTickEffect.isWearingFullSet(entity, generationsArmorItem.material)) {
             itemStack.removeEnchantment(holder, level)
             return
         }
@@ -33,23 +33,6 @@ data class EnchantmentArmorEffect(val enchantment: ResourceKey<Enchantment>, val
         if (enchantments.getLevel(holder) >= level) return
         enchantments[holder] = level
         itemStack.set(DataComponents.ENCHANTMENTS, enchantments.toImmutable())
-    }
-
-    override fun inventoryTick(
-        itemStack: ItemStack,
-        world: Level,
-        entity: Entity,
-        slotId: Int,
-        isSelected: Boolean,
-        generationsArmorItem: GenerationsArmorItem
-    ) {
-//        TODO: Assume that armorTick is sufficent but keep just incase.
-
-//        if (world.isClientSide) return
-//        for (armorSlot in entity.getArmorSlots()) {
-//            if (itemStack == armorSlot) return
-//        }
-//        itemStack.removeTagKey("Enchantments")
     }
 }
 

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
@@ -9,7 +8,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
-import net.minecraft.server.level.ServerPlayer
 import net.minecraft.stats.Stats
 import net.minecraft.world.Containers
 import net.minecraft.world.InteractionResult
@@ -30,12 +28,13 @@ import net.minecraft.world.phys.shapes.VoxelShape
 
 class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock<RksMachineBlockEntity>(
         copy,
-        GenerationsBlockEntities.RKS_MACHINE,
         model = GenerationsBlockEntityModels.RKS_MACHINE,
         width = 1,
         height = 1,
         length = 1
     ) {
+    override val blockEntityType: BlockEntityType<RksMachineBlockEntity>
+        get() = GenerationsBlockEntities.RKS_MACHINE
 
     override fun codec(): MapCodec<out BaseEntityBlock> = CODEC
 
@@ -75,7 +74,7 @@ class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock<RksMachineB
 
     protected fun openContainer(level: Level, bpos: BlockPos, player: Player) {
         val rksMachine = getAssoicatedBlockEntity(level, bpos) ?: run { throw IllegalStateException("Our named container provider is missing!") }
-        MenuRegistry.openMenu(player as ServerPlayer, rksMachine)
+        player.openMenu(rksMachine)
         player.awardStat(Stats.INTERACT_WITH_FURNACE)
     }
 

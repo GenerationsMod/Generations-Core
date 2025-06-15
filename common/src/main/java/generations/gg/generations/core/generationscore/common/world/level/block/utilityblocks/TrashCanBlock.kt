@@ -1,21 +1,19 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks
 
 import com.mojang.serialization.MapCodec
-import dev.architectury.registry.menu.MenuRegistry
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.container.TrashCanContainer
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.generateDirectionVoxelShape
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.TrashCanBlockEntity
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResult
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.SimpleMenuProvider
 import net.minecraft.world.entity.player.Inventory
@@ -23,7 +21,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.BaseEntityBlock
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -32,9 +30,11 @@ import net.minecraft.world.phys.shapes.VoxelShape
 
 class TrashCanBlock(props: Properties) : GenericRotatableModelBlock<TrashCanBlockEntity>(
         props,
-        GenerationsBlockEntities.TRASH_CAN,
         model = GenerationsBlockEntityModels.TRASH_CAN
     ) {
+    override val blockEntityType: BlockEntityType<TrashCanBlockEntity>
+        get() = GenerationsBlockEntities.TRASH_CAN
+
     public override fun getShape(
         state: BlockState,
         world: BlockGetter,
@@ -55,10 +55,11 @@ class TrashCanBlock(props: Properties) : GenericRotatableModelBlock<TrashCanBloc
     ): ItemInteractionResult {
         if (player.isShiftKeyDown) return ItemInteractionResult.FAIL
 
-        if (worldIn.isClientSide) return ItemInteractionResult.SUCCESS
+        if (worldIn.isClientSide) return ItemInteractionResult.FAIL
 
-        MenuRegistry.openMenu(
-            player as ServerPlayer, SimpleMenuProvider(
+        val serverPlayer = player.instanceOrNull<ServerPlayer>() ?: return ItemInteractionResult.FAIL
+
+        serverPlayer.openMenu(SimpleMenuProvider(
                 { i: Int, arg: Inventory, arg2: Player ->
                     TrashCanContainer(
                         i,

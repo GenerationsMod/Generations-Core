@@ -5,9 +5,7 @@ import com.cobblemon.mod.common.util.asTranslated
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import dev.architectury.event.events.common.LifecycleEvent
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallLootBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.BallLootBlockEntity.LootMode
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
@@ -38,6 +36,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.SoundType
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.storage.loot.LootParams
@@ -57,14 +56,14 @@ import java.util.stream.Collectors
 
 class BallLootBlock(properties: Properties, val type: String, private val ball: PokeBall) : GenericRotatableModelBlock<BallLootBlockEntity>(
         properties = properties,
-        blockEntityFunction = GenerationsBlockEntities.BALL_LOOT,
         model = GenerationsBlockEntityModels.DESK
     ) {
+    override val blockEntityType: BlockEntityType<BallLootBlockEntity>
+        get() = GenerationsBlockEntities.BALL_LOOT
+
     val lootTableId: ResourceKey<LootTable> = ResourceKey.create(Registries.LOOT_TABLE, GenerationsCore.id("chests/${type}_ball"))
 
-    override fun codec(): MapCodec<out BaseEntityBlock> {
-        return CODEC
-    }
+    override fun codec(): MapCodec<out BaseEntityBlock> = CODEC
 
     override fun useItemOn(
         stack: ItemStack,

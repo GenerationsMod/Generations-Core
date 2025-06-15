@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import generations.gg.generations.core.generationscore.common.util.extensions.get
-import generations.gg.generations.core.generationscore.common.util.extensions.set
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.components.TmDetails
 import net.minecraft.network.chat.Component

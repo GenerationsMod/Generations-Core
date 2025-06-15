@@ -15,7 +15,6 @@ import generations.gg.generations.core.generationscore.common.config.ConfigLoade
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
-import generations.gg.generations.core.generationscore.forge.world.item.creativetab.GenerationsCreativeTabsForge
 import net.minecraft.client.Minecraft
 import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
@@ -23,6 +22,7 @@ import net.minecraft.network.chat.Component
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
@@ -55,6 +55,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries
 import net.neoforged.neoforge.registries.NewRegistryEvent
 import net.neoforged.neoforge.registries.RegisterEvent
 import net.neoforged.neoforge.registries.RegistryBuilder
+import net.neoforged.neoforge.server.ServerLifecycleHooks
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 import java.util.*
 import java.util.function.Consumer
@@ -87,57 +88,58 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
      */
     init {
         setConfigDirectory(FMLPaths.CONFIGDIR.get())
-        GenerationsCreativeTabsForge.init(MOD_BUS)
-        ENTITY_DATA_SERIALIZER_REGISTER.register(MOD_BUS)
-        //        EvenBus.registerModEventBus(GenerationsCore.MOD_ID, MOD_BUS);
-        MOD_BUS.addListener { event: FMLCommonSetupEvent -> this.onInitialize(event) }
-        MOD_BUS.addListener { event: FMLLoadCompleteEvent -> this.postInit(event) }
+
+        with(MOD_BUS) {
+            ENTITY_DATA_SERIALIZER_REGISTER.register(MOD_BUS)
+            addListener(::onInitialize)
+            addListener(::postInit)
+
+            addListener<NewRegistryEvent> { event ->
+                registries.forEach { event.register(it) }
+            }
+        }
+
         init(this)
-        //        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> GenerationsCoreClientForge.init(MOD_BUS));
-        val EVENT_BUS = NeoForge.EVENT_BUS
 
-
-        EVENT_BUS.addListener { event: OnDatapackSyncEvent ->
-            this.onDataPackSync(
-                event
-            )
-        }
-        EVENT_BUS.addListener(Consumer { event: AnvilUpdateEvent ->
-            onAnvilChange(event.left, event.right, event.player,
-                { output: ItemStack ->
-                    event.output =
-                        output
-                },
-                { cost: Int -> event.cost = cost.toLong() },
-                { materialCost: Int -> event.materialCost = materialCost })
-        })
-        EVENT_BUS.addListener<LivingJumpEvent> { event -> EntityEvents.jump(event.entity) }
-        EVENT_BUS.addListener<PlayerInteractEvent.RightClickBlock>  {
-            val result = InteractionEvents.fireRightClick(it.entity, it.hand, it.pos, it.face)
-
-            if(result != InteractionResult.PASS) {
-                it.isCanceled = true
-                it.cancellationResult = result
-                it.useItem = TriState.FALSE
-                it.useBlock = TriState.FALSE
+        with(NeoForge.EVENT_BUS) {
+            addListener { event: OnDatapackSyncEvent ->
+                onDataPackSync(
+                    event
+                )
             }
-        }
-
-        EVENT_BUS.addListener<EntityInteract>({ event ->
-            val result = InteractionEvents.fireEntityInteract(event.entity, event.target, event.hand)
-
-            if (result != InteractionResult.PASS) {
-                event.isCanceled = true
-                event.cancellationResult = result
+            addListener { event: AnvilUpdateEvent ->
+                onAnvilChange(event.left, event.right, event.player,
+                    { output: ItemStack ->
+                        event.output =
+                            output
+                    },
+                    { cost: Int -> event.cost = cost.toLong() },
+                    { materialCost: Int -> event.materialCost = materialCost })
             }
-        })
 
-        //            addListener(this::onLogin)
-//            addListener(this::onLogout)
-        EVENT_BUS.addListener { e: AddReloadListenerEvent -> this.onReload(e) }
+            addListener<LivingJumpEvent> { event -> EntityEvents.jump(event.entity) }
+            addListener<PlayerInteractEvent.RightClickBlock> {
+                val result = InteractionEvents.fireRightClick(it.entity, it.hand, it.pos, it.face)
 
-        //        GenerationsCore.initBuiltinPacks((packType, id, name) -> packs.computeIfAbsent(packType, a -> new ArrayList<>()).add(new Pair<>(id, name)));
-//        MOD_BUS.addListener(this::addPackFinders);
+                if (result != InteractionResult.PASS) {
+                    it.isCanceled = true
+                    it.cancellationResult = result
+                    it.useItem = TriState.FALSE
+                    it.useBlock = TriState.FALSE
+                }
+            }
+
+            addListener<EntityInteract> { event ->
+                val result = InteractionEvents.fireEntityInteract(event.entity, event.target, event.hand)
+
+                if (result != InteractionResult.PASS) {
+                    event.isCanceled = true
+                    event.cancellationResult = result
+                }
+            }
+
+            addListener(::onReload)
+        }
         if (ModList.get().isLoaded("impactor")) ImpactorCompat.init()
     }
 
@@ -151,15 +153,6 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
                 }
             }
         }
-    }
-
-    override fun registerResourceReloader(
-        identifier: ResourceLocation?,
-        reloader: PreparableReloadListener?,
-        type: PackType?,
-        dependencies: Collection<ResourceLocation?>?,
-    ) {
-        TODO("Not yet implemented")
     }
 
     override fun registerStrippable(log: Block, stripped: Block) {
@@ -211,7 +204,7 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     }
 
     override fun <T : Any> createRegistry(key: ResourceKey<Registry<T>>, sync: Boolean): Registry<T> {
-        return RegistryBuilder(key).sync(sync).create()
+        return RegistryBuilder(key).sync(sync).create().also(registries::add)
     }
 
     //    public void addPackFinders(AddPackFindersEvent event) {
@@ -301,4 +294,7 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         if (type == PackType.SERVER_DATA) reloadableResources.add(reloader)
         else Minecraft.getInstance().resourceManager.instanceOrNull<ReloadableResourceManager>()?.registerReloadListener(reloader)
     }
+
+    override val server: MinecraftServer?
+        get() = ServerLifecycleHooks.getCurrentServer()
 }

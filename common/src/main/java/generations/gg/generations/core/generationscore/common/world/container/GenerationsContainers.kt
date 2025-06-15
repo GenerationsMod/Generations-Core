@@ -1,29 +1,20 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
 import dev.architectury.event.events.common.PlayerEvent
-import dev.architectury.registry.menu.MenuRegistry
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.MachineBlockEntity
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.FriendlyByteBuf
-import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.flag.FeatureFlagSet
 import net.minecraft.world.flag.FeatureFlags
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.MenuType
-import net.minecraft.world.level.block.entity.BlockEntity
-import java.util.function.Function
 
 object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
     override val registry: Registry<MenuType<*>> = BuiltInRegistries.MENU
@@ -31,7 +22,7 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
 
     @JvmField
     val COOKING_POT = register("cooking_pot", ::CookingPotContainer)
-    val MACHINE_BLOCK = register("machine_block", ::MachineBlockContainer, MachineBlockEntity::class.java)
+//    val MACHINE_BLOCK = register("machine_block", ::MachineBlockContainer, MachineBlockEntity::class.java)
     val MELODY_FLUTE = register("melody_flute", ::MelodyFluteContainer)
     val TRASHCAN = register("trashcan", ::TrashCanContainer)
     val RKS_MACHINE = register("rks_machine", ::RksMachineContainer)
@@ -63,25 +54,25 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
 
     fun <T: AbstractContainerMenu> register(name: String, constructor: (Int, Inventory) -> T): MenuType<T> = create(name.generationsResource(), MenuType(constructor::invoke, FeatureFlags.VANILLA_SET))
 
-    fun <T : AbstractContainerMenu, V : BlockEntity> register(
-        name: String,
-        function: Function<CreationContext<V>, T>,
-        clazz: Class<V>
-    ): MenuType<T> {
-        return create(name.generationsResource(), MenuRegistry.ofExtended { id: Int, playerInventory: Inventory, arg2: FriendlyByteBuf ->
-            val be = playerInventory.player.level().getBlockEntity(arg2.readBlockPos())
-            if (clazz.isInstance(be)) return@ofExtended function.apply(
-                CreationContext<V>(
-                    id,
-                    playerInventory,
-                    clazz.cast(be)
-                )
-            )
-            else return@ofExtended null
-        })
-    }
+//    fun <T : AbstractContainerMenu, V : BlockEntity> register(
+//        name: String,
+//        function: Function<CreationContext<V>, T>,
+//        clazz: Class<V>
+//    ): MenuType<T> {
+//        return create(name.generationsResource(), GenerationsCore.implementation.createExtendedMenu { id: Int, playerInventory: Inventory, arg2: FriendlyByteBuf ->
+//            val be = playerInventory.player.level().getBlockEntity(arg2.readBlockPos())
+//            if (clazz.isInstance(be)) return@createExtendedMenu function.apply(
+//                CreationContext<V>(
+//                    id,
+//                    playerInventory,
+//                    clazz.cast(be)
+//                )
+//            )
+//            else return@createExtendedMenu null
+//        })
+//    }
 
 
-    @JvmRecord
-    data class CreationContext<V : BlockEntity?>(val id: Int, val playerInv: Inventory, val blockEntity: V)
+//    @JvmRecord
+//    data class CreationContext<V : BlockEntity?>(val id: Int, val playerInv: Inventory, val blockEntity: V)
 }

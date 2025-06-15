@@ -4,7 +4,6 @@ import com.mojang.datafixers.Products
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
@@ -43,14 +42,13 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: BlockEntityType<T>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation,
         width: Int,
         height: Int,
         length: Int
-    ) : super(arg, biFunction, baseBlockPosFunction, model, width, height, length) {
+    ) : super(arg, baseBlockPosFunction, model, width, height, length) {
         this.color = color
         this.map = function
     }
@@ -58,11 +56,10 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: BlockEntityType<T>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation
-    ) : super(arg, biFunction, baseBlockPosFunction, model) {
+    ) : super(arg, baseBlockPosFunction, model) {
         this.color = color
         this.map = function
     }
@@ -71,12 +68,11 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         arg: Properties,
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: BlockEntityType<T>,
         model: ResourceLocation,
         width: Int,
         height: Int,
         length: Int
-    ) : super(arg, biFunction, model = model, width = width, height = height, length = length) {
+    ) : super(arg, model = model, width = width, height = height, length = length) {
         this.color = color
         this.map = function
     }
@@ -84,10 +80,9 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         color: DyeColor,
         function: Map<DyeColor, Block>,
-        biFunction: BlockEntityType<T>,
         arg: Properties,
         model: ResourceLocation
-    ) : super(arg, biFunction, model = model) {
+    ) : super(arg, model = model) {
         this.color = color
         this.map = function
     }

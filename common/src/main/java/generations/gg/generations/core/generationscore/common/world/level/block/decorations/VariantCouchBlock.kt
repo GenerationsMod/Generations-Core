@@ -21,6 +21,7 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.BooleanOp
@@ -33,12 +34,12 @@ class VariantCouchBlock(
     color: DyeColor,
     function: Map<DyeColor, Block>,
     private val variant: Variant
-) :
-    DyeableBlock<CouchBlockEntity, VariantCouchBlock>(
-        properties, color, function, GenerationsBlockEntities.COUCH,
+) : DyeableBlock<CouchBlockEntity, VariantCouchBlock>(
+        properties, color, function,
         variant.model, 0, 0, 0
-    ),
-    SittableBlock {
+    ), SittableBlock {
+    override val blockEntityType: BlockEntityType<CouchBlockEntity>
+        get() = GenerationsBlockEntities.COUCH
 
     public override fun getShape(
         state: BlockState,

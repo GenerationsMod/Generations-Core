@@ -11,8 +11,6 @@ import generations.gg.generations.core.generationscore.common.network.packets.S2
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
-import generations.gg.generations.core.generationscore.common.util.extensions.component
-import generations.gg.generations.core.generationscore.common.util.extensions.get
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents

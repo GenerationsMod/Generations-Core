@@ -5,33 +5,25 @@ import earth.terrarium.common_storage_lib.item.util.ItemProvider
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer
-import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers.CreationContext
-import generations.gg.generations.core.generationscore.common.world.container.MachineBlockContainer
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.HolderLookup
 import net.minecraft.nbt.CompoundTag
-import net.minecraft.network.chat.Component
-import net.minecraft.world.MenuProvider
-import net.minecraft.world.entity.player.Inventory
-import net.minecraft.world.entity.player.Player
-import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import java.util.stream.IntStream
 
 class MachineBlockEntity(pos: BlockPos, state: BlockState) :
-    SimpleBlockEntity(GenerationsBlockEntities.MACHINE_BLOCK, pos, state), ItemProvider.BlockEntity,
-    MenuProvider {
+    SimpleBlockEntity(GenerationsBlockEntities.MACHINE_BLOCK, pos, state), ItemProvider.BlockEntity/*, MenuProvider*/ {
     @JvmField
     val candies: MachineBlockItemStackHandler = MachineBlockItemStackHandler()
 
     var bakeTime: Int = 0
         private set
 
-    override fun getDisplayName(): Component {
-        return Component.translatable("machine_block")
-    }
+//    override fun getDisplayName(): Component {
+//        return Component.translatable("machine_block")
+//    }
 
     override fun getItems(direction: Direction?): CommonStorage<ItemResource> {
         return candies
@@ -60,9 +52,9 @@ class MachineBlockEntity(pos: BlockPos, state: BlockState) :
         sync()
     }
 
-    override fun createMenu(i: Int, arg: Inventory, arg2: Player): AbstractContainerMenu? {
-        return MachineBlockContainer(CreationContext(i, arg, this))
-    }
+//    override fun createMenu(i: Int, arg: Inventory, arg2: Player): AbstractContainerMenu? {
+//        return MachineBlockContainer(CreationContext(i, arg, this))
+//    }
 
     inner class MachineBlockItemStackHandler : ExtendedsimpleItemContainer(this@MachineBlockEntity, 18) {
         var locked: Boolean = false

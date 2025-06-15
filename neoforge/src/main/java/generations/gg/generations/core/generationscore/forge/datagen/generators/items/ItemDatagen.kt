@@ -1,25 +1,18 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items
 
-import com.cobblemon.mod.common.util.asResource
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.item.*
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor.ArmorSet
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import net.minecraft.core.registries.BuiltInRegistries
-import net.minecraft.core.registries.Registries
 import net.minecraft.data.PackOutput
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.packs.PackType
-import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
-import net.neoforged.neoforge.client.model.generators.ModelFile
 import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile
 import net.neoforged.neoforge.common.data.ExistingFileHelper
 import java.util.*
@@ -324,8 +317,8 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.SILICON, "natural/")
         createItem(GenerationsItems.ULTRITE_REMNANT, "natural/")
 
-        GenerationsArmor.ARMOR.all().forEach(Consumer { armor: RegistrySupplier<Item> -> createItem(armor, "armor/") })
-        GenerationsTools.TOOLS.forEach(Consumer { tool: RegistrySupplier<Item> -> handheldItem(tool) })
+        GenerationsArmor.all().forEach { armor -> createItem(armor, "armor/") }
+        GenerationsTools.all().forEach { tool -> handheldItem(tool) }
 
         createItem(GenerationsItems.MARK_CHARM, "player_items/")
         createItem(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE, "player_items/")

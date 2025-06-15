@@ -23,6 +23,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.BooleanOp
@@ -35,9 +36,12 @@ import java.util.function.Consumer
 import java.util.stream.Collectors
 import java.util.stream.IntStream
 
-class RegiShrineBlock(properties: Properties, model: ResourceLocation, speciesKey: SpeciesKey) : ShrineBlock<GenericShrineBlockEntity>(properties, GenerationsBlockEntities.GENERIC_SHRINE, model) {
+class RegiShrineBlock(properties: Properties, model: ResourceLocation, speciesKey: SpeciesKey) : ShrineBlock<GenericShrineBlockEntity>(properties, model) {
     private val species: SpeciesKey
     private val list: List<String>
+
+    override val blockEntityType: BlockEntityType<GenericShrineBlockEntity>
+        get() = GenerationsBlockEntities.GENERIC_SHRINE
 
     override fun codec(): MapCodec<RegiShrineBlock> = CODEC
 

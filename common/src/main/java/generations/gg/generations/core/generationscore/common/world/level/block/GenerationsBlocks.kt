@@ -1,17 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
-import dev.architectury.registry.registries.DeferredRegister
-import dev.architectury.registry.registries.RegistrySupplier
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
-import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.GenericChestBlockItem
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.BLOCKS
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.BLOCK_ITEMS
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.STONE
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.ULTRA_BLOCKS
-import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.VOLCANIC_STONE
 import generations.gg.generations.core.generationscore.common.world.level.block.Properties.STONE_PROPERTY
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokecenterScarletSignBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock
@@ -22,20 +14,15 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsUltraBlockSet
 import generations.gg.generations.core.generationscore.common.world.level.block.state.properties.GenerationsBlockSetTypes
 import generations.gg.generations.core.generationscore.common.world.level.levelgen.GenerationsFeatures
-import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.ColorRGBA
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockBehaviour
-import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.properties.BlockSetType
 import net.minecraft.world.level.material.MapColor
-import java.util.function.BiFunction
 import java.util.function.Function
-import java.util.function.Supplier
 
 @Suppress("unused")
 object GenerationsBlocks {

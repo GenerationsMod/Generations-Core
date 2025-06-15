@@ -35,9 +35,11 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class MeloettaMusicBoxBlock(properties: Properties) :
     GenericRotatableModelBlock<MeloettaMusicBoxBlockEntity>(
         properties = properties,
-        blockEntityFunction = GenerationsBlockEntities.MELOETTA_MUSIC_BOX,
         model =GenerationsBlockEntityModels.MELOETTA_MUSIC_BOX
     ) {
+    override val blockEntityType: BlockEntityType<MeloettaMusicBoxBlockEntity>
+        get() = GenerationsBlockEntities.MELOETTA_MUSIC_BOX
+
     override fun codec(): MapCodec<MeloettaMusicBoxBlock> {
         return CODEC
     }

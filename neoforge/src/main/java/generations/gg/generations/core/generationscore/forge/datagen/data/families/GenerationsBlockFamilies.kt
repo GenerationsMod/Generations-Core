@@ -163,13 +163,13 @@ object GenerationsBlockFamilies : BlockFamilies() {
         dontGenerateModel()
     }
 
-    private fun familyBuilder(baseBlock: Holder<out Block>, dsl: Builder.() -> Unit): BlockFamily {
-        val builder = Builder(baseBlock.value())
+    private fun familyBuilder(baseBlock: Block, dsl: Builder.() -> Unit): BlockFamily {
+        val builder = Builder(baseBlock)
         dsl.invoke(builder)
 
-        if(MAP.containsKey(baseBlock.value())) throw IllegalStateException("Duplicate family definition for" + baseBlock.key)
+        if(MAP.containsKey(baseBlock)) throw IllegalStateException("Duplicate family definition for" + baseBlock.builtInRegistryHolder().key)
 
-        MAP[baseBlock.value()] = builder.family
+        MAP[baseBlock] = builder.family
         return builder.family
     }
 

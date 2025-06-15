@@ -38,21 +38,21 @@ class GenerationsCoreJeiCompat : IModPlugin {
         val ingredientManager = registration.ingredientManager
 
         val craftingRecipes: Pair<List<RecipeHolder<RksRecipe>>, List<RecipeHolder<RksRecipe>>> = ingredientManager.rksRecipes()
-        registration.addRecipes(RksRecipeCategory.RKS_MACHINE.get(), craftingRecipes.first)
-        registration.addRecipes(RksRecipeCategory.RKS_MACHINE.get(), craftingRecipes.second)
+        registration.addRecipes(RksRecipeCategory.RKS_MACHINE, craftingRecipes.first)
+        registration.addRecipes(RksRecipeCategory.RKS_MACHINE, craftingRecipes.second)
     }
 
     override fun registerRecipeCatalysts(registration: IRecipeCatalystRegistration) {
-        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE.get())
+        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE)
     }
 
     override fun registerGuiHandlers(registration: IGuiHandlerRegistration) {
-        registration.addRecipeClickArea(RksMachineScreen::class.java, 90, 35, 22, 15, RksRecipeCategory.RKS_MACHINE.get())
+        registration.addRecipeClickArea(RksMachineScreen::class.java, 90, 35, 22, 15, RksRecipeCategory.RKS_MACHINE)
     }
 
     override fun registerRecipeTransferHandlers(registration: IRecipeTransferRegistration) {
         registration.addRecipeTransferHandler(
-            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE.get(), 1, 9, 10, 36
+            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE, 1, 9, 10, 36
         )
     }
 
