@@ -61,8 +61,6 @@ configurations {
     dependencies {
         neoForge("net.neoforged:neoforge:${project.properties["neoforge_version"]}")
 
-        modApi("dev.architectury:architectury-neoforge:${project.properties["architectury_version"]}")
-
         "common"(project(":common", "namedElements")) { isTransitive = false }
         "shadowBundle"(project(":common", "transformProductionNeoForge"))
 

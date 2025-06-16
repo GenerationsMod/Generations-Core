@@ -17,8 +17,6 @@ import generations.gg.generations.core.generationscore.common.client.model.Model
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.util.getOrCreate
 import generations.gg.generations.core.generationscore.common.util.getProviderOrNull
-import generations.gg.generations.core.generationscore.common.util.isSpecies
-import generations.gg.generations.core.generationscore.common.util.removePokemon
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import net.minecraft.core.BlockPos
 import net.minecraft.core.registries.Registries
@@ -195,7 +193,7 @@ private fun String.parseYaw(player: ServerPlayer): Float =
 
 private fun TagKey<Block>.findNearestYaw(player: ServerPlayer): Float {
     return BlockPos.withinManhattanStream(player.onPos, 10, 10, 10)
-        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.`arch$holder`().`is`(this) }
+        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.builtInRegistryHolder().`is`(this) }
         .findFirst().getOrNull()?.let {
             var blockEntity = player.serverLevel().getBlockEntity(it)
 
@@ -211,7 +209,7 @@ private fun TagKey<Block>.findNearestYaw(player: ServerPlayer): Float {
 
 private fun ResourceKey<Block>.findNearestYaw(player: ServerPlayer): Float {
     return BlockPos.withinManhattanStream(player.onPos, 10, 10, 10)
-        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.`arch$holder`().`is`(this) }
+        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.builtInRegistryHolder().`is`(this) }
         .findFirst().getOrNull()?.let {
             var blockEntity = player.serverLevel().getBlockEntity(it)
 
@@ -231,13 +229,13 @@ private fun String.parsePos(player: ServerPlayer): Vec3 =
 
 private fun TagKey<Block>.findNearestPos(player: ServerPlayer): Vec3 {
     return BlockPos.withinManhattanStream(player.onPos, 10, 10, 10)
-        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.`arch$holder`().`is`(this) }
+        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.builtInRegistryHolder().`is`(this) }
         .findFirst().orElse(player.onPos).center
 }
 
 private fun ResourceKey<Block>.findNearestPos(player: ServerPlayer): Vec3 {
     return BlockPos.withinManhattanStream(player.onPos, 10, 10, 10)
-        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.`arch$holder`().`is`(this) }
+        .filter { it: BlockPos -> player.serverLevel().getBlockState(it).block.builtInRegistryHolder().`is`(this) }
         .findFirst().orElse(player.onPos).center
 }
 

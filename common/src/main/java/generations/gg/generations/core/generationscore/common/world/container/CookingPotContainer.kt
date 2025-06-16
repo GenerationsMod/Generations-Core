@@ -134,7 +134,7 @@ class CookingPotContainer @JvmOverloads constructor(
 
         fun isLog(stack: Any): Boolean {
             val item = getItem(stack)
-            return item!!.`arch$holder`().`is`(ItemTags.LOGS_THAT_BURN)
+            return item!!.builtInRegistryHolder().`is`(ItemTags.LOGS_THAT_BURN)
         }
 
         private fun getItem(obj: Any): Item? {

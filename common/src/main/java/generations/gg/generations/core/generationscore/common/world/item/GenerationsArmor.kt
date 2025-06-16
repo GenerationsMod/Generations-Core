@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.item
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.tab
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.armor.ArmorEffect
 import generations.gg.generations.core.generationscore.common.world.item.armor.GenerationsArmorItem
@@ -17,7 +18,6 @@ import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
 import net.minecraft.world.item.enchantment.Enchantment
 import net.minecraft.world.item.enchantment.Enchantments
-import java.util.function.Function
 import java.util.stream.Stream
 
 object GenerationsArmor: ItemPlatformRegistry() {
@@ -29,14 +29,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
         name: String,
         function: (Item.Properties) -> Item,
         tab: ResourceKey<CreativeModeTab>
-    ): Item = create(name.generationsResource(), function.invoke(of().`arch$tab`(tab)))
-
-
-    fun register(
-        name: String,
-        function: Function<Item.Properties, Item>,
-        tab: CreativeModeTab
-    ): Item = create(name.generationsResource(), function.apply(of().`arch$tab`(tab)))
+    ): Item = create(name.generationsResource(), function.invoke(of()).tab(tab))
 
     val AETHER: ArmorSet = ArmorSet.create("aether", GenerationsArmorMaterials.AETHER) {
         speed(0.5)

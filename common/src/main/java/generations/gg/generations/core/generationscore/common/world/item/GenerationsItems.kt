@@ -10,6 +10,7 @@ import com.cobblemon.mod.common.util.cobblemonResource
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.tab
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity
@@ -1635,7 +1636,7 @@ object GenerationsItems {
     private fun createMusicDisc(name: String, jukeboxSong: ResourceKey<JukeboxSong>): Item =
         register(
             name,
-            { Item(it.`arch$tab`(CreativeModeTabs.TOOLS_AND_UTILITIES).jukeboxPlayable(jukeboxSong).stacksTo(1)) },
+            { Item(it.jukeboxPlayable(jukeboxSong).stacksTo(1)).tab(CreativeModeTabs.TOOLS_AND_UTILITIES) },
             PLAYER_ITEMS
         )
 

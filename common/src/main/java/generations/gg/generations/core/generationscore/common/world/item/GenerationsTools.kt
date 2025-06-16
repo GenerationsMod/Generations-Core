@@ -2,19 +2,16 @@ package generations.gg.generations.core.generationscore.common.world.item
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.tab
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
-import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.item.tools.*
 import generations.gg.generations.core.generationscore.common.world.item.tools.effects.*
-import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
 import net.minecraft.world.item.enchantment.Enchantments
 import net.minecraft.world.level.block.Blocks
-import java.util.function.Function
-import java.util.function.Supplier
 
 object GenerationsTools: ItemPlatformRegistry() {
     /**
@@ -67,7 +64,7 @@ object GenerationsTools: ItemPlatformRegistry() {
         name: String,
         function: (Item.Properties) -> T,
         tab: ResourceKey<CreativeModeTab>
-    ): T = create(name.generationsResource(), function.invoke(of().`arch$tab`(tab)))
+    ): T = create(name.generationsResource(), function.invoke(of()).tab(tab))
 
 
     fun of(): Item.Properties {
@@ -128,3 +125,5 @@ object GenerationsTools: ItemPlatformRegistry() {
         }
     }
 }
+
+

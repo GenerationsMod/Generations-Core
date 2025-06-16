@@ -46,10 +46,7 @@ import net.neoforged.fml.loading.FMLPaths
 import net.neoforged.neoforge.common.NeoForge
 import net.neoforged.neoforge.common.extensions.IMenuTypeExtension
 import net.neoforged.neoforge.common.util.TriState
-import net.neoforged.neoforge.event.AddReloadListenerEvent
-import net.neoforged.neoforge.event.AnvilUpdateEvent
-import net.neoforged.neoforge.event.LootTableLoadEvent
-import net.neoforged.neoforge.event.OnDatapackSyncEvent
+import net.neoforged.neoforge.event.*
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract
@@ -105,12 +102,10 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         init(this)
 
         with(NeoForge.EVENT_BUS) {
-            addListener { event: OnDatapackSyncEvent ->
-                onDataPackSync(
-                    event
-                )
+            addListener(::onDataPackSync)
+            addListener<BuildCreativeModeTabContentsEvent> {
+                GenerationsCore.tabToItem.get(it.tabKey).forEach(it::accept)
             }
-
             addListener { event: LootTableLoadEvent ->
                 GenerationsCore.processLootTable(event.name) { event.table.addPool(it.build()) }
             }

@@ -10,6 +10,7 @@ package generations.gg.generations.core.generationscore.common
 import com.cobblemon.mod.common.api.data.DataProvider
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail.Companion.registerSpawnType
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry.register
+import com.google.common.collect.ArrayListMultimap
 import com.mojang.logging.LogUtils
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions
@@ -51,7 +52,9 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.entries.NestedLootTable
 import org.apache.logging.log4j.util.TriConsumer
@@ -82,6 +85,8 @@ object GenerationsCore {
 	var dataProvider: DataProvider = GenerationsDataProvider.INSTANCE
 
     lateinit var RKS_RESULT_TYPE: RegistryContainer<RksResultType<*>, RksResult<*>>
+
+    val tabToItem = ArrayListMultimap.create<ResourceKey<CreativeModeTab>, ItemLike>();
 
     /**
      * Initializes the Generations-Core mod.
@@ -214,6 +219,16 @@ object GenerationsCore {
             )
         }
     }
+
+
+
+    fun <T: ItemLike> addToTab(t: T, tab: ResourceKey<CreativeModeTab>) {
+        tabToItem.put(tab, t)
+    }
+}
+
+fun <T: ItemLike> T.tab(tab: ResourceKey<CreativeModeTab>): T {
+    return this.also { GenerationsCore.addToTab(this, tab) }
 }
 
 class RegistryContainer<T: Any, V: Any>(name: String, from: (V) -> T, mapCodec: (T) -> MapCodec<out V>, streamCodec: (T) -> StreamCodec<RegistryFriendlyByteBuf, out V>) {

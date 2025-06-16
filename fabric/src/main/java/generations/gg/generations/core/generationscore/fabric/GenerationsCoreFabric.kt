@@ -25,6 +25,8 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents.ModifyEntriesAll
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
@@ -38,6 +40,7 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType
 import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint
 import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
@@ -62,9 +65,9 @@ import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import java.util.concurrent.CompletableFuture
 import java.util.concurrent.Executor
-import java.util.function.Consumer
 import java.util.function.Function
 import java.util.function.Supplier
+import kotlin.jvm.optionals.getOrNull
 
 
 /**
@@ -93,6 +96,11 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
             if (isLogin) GenerationsCore.dataProvider.sync(
                 player
             )
+        })
+
+        ItemGroupEvents.MODIFY_ENTRIES_ALL.register(ModifyEntriesAll { creativeModeTab, helper ->
+            val list = BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(creativeModeTab).getOrNull()?.let(GenerationsCore.tabToItem::get) ?: return@ModifyEntriesAll
+            list.forEach(helper::accept)
         })
 
         LootTableEvents.MODIFY.register{ key, builder, source, lookup ->
@@ -157,12 +165,11 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
                 .title(Component.translatable("itemGroup." + GenerationsCore.MOD_ID + "." + name))
                 .icon(icon)
                 .displayItems { _, context ->
-                    for (item in items) item.all().forEach(
-                        Consumer { itemEntry ->
+                    for (item in items) item.all().forEach { itemEntry ->
                             context.accept(
                                 itemEntry.asItem().defaultInstance
                             )
-                        })
+                        }
                 }.build()
 
     override fun <T : Any> registerEntityDataSerializer(

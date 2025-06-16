@@ -2,14 +2,17 @@ package generations.gg.generations.core.generationscore.fabric;
 
 import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class AnvilEvents {
     public static final Event<AnvilChange> ANVIL_CHANGE = EventFactory.createArrayBacked(AnvilChange.class, callbacks -> (result, left, right, name, baseCost, player) -> {
         for(var callback : callbacks)
-            if (callback.change(result, left, right, name, baseCost, player)) return true;
+        if (callback.change(result, left, right, name, baseCost, player)) return true;
         return false;
     });
 
