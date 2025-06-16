@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
-import dev.architectury.event.events.common.PlayerEvent
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
@@ -34,11 +33,11 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
     override fun init(consumer: (ResourceLocation, MenuType<*>) -> Unit) {
         super.init(consumer)
 
-        PlayerEvent.CLOSE_MENU.register(PlayerEvent.CloseMenu { player: Player, container: AbstractContainerMenu ->
-            onContainerClose(
-                player, container
-            )
-        })
+//        PlayerEvent.CLOSE_MENU.register(PlayerEvent.CloseMenu { player: Player, container: AbstractContainerMenu ->
+//            onContainerClose(
+//                player, container
+//            )
+//        })
     }
 
     private fun onContainerClose(player: Player, container: AbstractContainerMenu) {
@@ -49,7 +48,7 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
 //        if (container instanceof WalkmonContainer genericChestContainer) genericChestContainer.save(player);
 //        if (container instanceof CalyrexSteedContainer genericChestContainer) genericChestContainer.save(player);
 
-        if (container is RksMachineContainer) container.close()
+//        if (container is RksMachineContainer) container.close()
     }
 
     fun <T: AbstractContainerMenu> register(name: String, constructor: (Int, Inventory) -> T): MenuType<T> = create(name.generationsResource(), MenuType(constructor::invoke, FeatureFlags.VANILLA_SET))

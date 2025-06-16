@@ -108,8 +108,14 @@ class RksMachineContainer @JvmOverloads constructor(
     val isPokemonPresent: Boolean
         get() = data[3] == 1
 
-    fun close() {
+
+    override fun removed(player: Player) {
+        super.removed(player)
+
         rksMachine.instanceOrNull<RksMachineBlockEntity>()?.removeMenu(this)
+    }
+
+    fun close() {
     }
 
     class ResultSlot(private val player: Player, rksMachineBlockEntity: Container, slot: Int, x: Int, y: Int) :

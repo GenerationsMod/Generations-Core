@@ -16,12 +16,10 @@ import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.BufferUploader
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
-import dev.architectury.registry.menu.MenuRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER
 import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
-import generations.gg.generations.core.generationscore.common.client.model.RunnableKeybind
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.*
 import generations.gg.generations.core.generationscore.common.client.render.entity.*
@@ -48,6 +46,7 @@ import gg.generations.rarecandy.renderer.rendering.RareCandy
 import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.minecraft.client.Camera
 import net.minecraft.client.Minecraft
+import net.minecraft.client.gui.screens.MenuScreens
 import net.minecraft.client.model.BoatModel
 import net.minecraft.client.model.ChestBoatModel
 import net.minecraft.client.model.geom.ModelLayerLocation
@@ -85,7 +84,6 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
 import org.joml.Matrix4f
 import org.joml.Vector4f
-import org.lwjgl.glfw.GLFW
 import java.io.File
 import java.util.function.Function
 
@@ -161,7 +159,6 @@ object GenerationsCoreClient {
 
 
     private fun setupClient(event: Minecraft) {
-        RunnableKeybind.create("toggleShaderRendering", GLFW.GLFW_KEY_P, "rendering", Pipelines::toggleRendering)
 
         event.tell({
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE)
@@ -174,7 +171,7 @@ object GenerationsCoreClient {
             registerScreens()
         })
 
-        GenerationsCore.implementation.registerGeneric(GenerationsCore.id("type")) { itemStack, clientLevel, livingEntity, i ->
+        ItemProperties.registerGeneric(GenerationsCore.id("type")) { itemStack, clientLevel, livingEntity, i ->
             val type =
                 itemStack.item.instanceOrNull<MoveTeachingItem>()?.getType(itemStack) ?: return@registerGeneric 0.0f
             return@registerGeneric when (type) {
@@ -290,15 +287,15 @@ object GenerationsCoreClient {
         Sheets.HANGING_SIGN_MATERIALS.put(woodType, createHangingSignMaterial(woodType))
     }
 
-    private fun registerScreens() {
-        MenuRegistry.registerScreenFactory(GenerationsContainers.COOKING_POT, ::CookingPotScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.GENERIC, ::GenericChestScreen)
+    fun registerScreens() {
+        MenuScreens.register(GenerationsContainers.COOKING_POT, ::CookingPotScreen)
+        MenuScreens.register(GenerationsContainers.GENERIC, ::GenericChestScreen)
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON, GenericChestScreen::new);
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED, GenericChestScreen::new);
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK, ::MachineBlockScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.TRASHCAN, ::TrashCanScreen)
-        MenuRegistry.registerScreenFactory(GenerationsContainers.RKS_MACHINE, ::RksMachineScreen)
+        MenuScreens.register(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
+        MenuScreens.register(GenerationsContainers.TRASHCAN, ::TrashCanScreen)
+        MenuScreens.register(GenerationsContainers.RKS_MACHINE, ::RksMachineScreen)
     }
 
     /**

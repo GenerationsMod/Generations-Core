@@ -15,6 +15,7 @@
     "PortalShapeMixin"
   ],
   "client": [
+    "client.KeyboardHandlerMixin",
     "client.MixinMultiPlayerGameMode"
   ],
   "injectors": {

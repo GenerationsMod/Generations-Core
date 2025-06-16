@@ -12,7 +12,6 @@ import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail.Companion.regist
 import com.cobblemon.mod.common.api.storage.player.PlayerDataExtensionRegistry.register
 import com.mojang.logging.LogUtils
 import com.mojang.serialization.MapCodec
-import dev.architectury.event.events.common.LootEvent
 import generations.gg.generations.core.generationscore.common.api.GenerationsMolangFunctions
 import generations.gg.generations.core.generationscore.common.api.data.GenerationsCoreEntityDataSerializers
 import generations.gg.generations.core.generationscore.common.api.player.AccountInfo
@@ -54,7 +53,6 @@ import net.minecraft.server.packs.PackType
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.storage.loot.LootPool
-import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.NestedLootTable
 import org.apache.logging.log4j.util.TriConsumer
 import org.slf4j.Logger
@@ -99,28 +97,6 @@ object GenerationsCore {
 
         //		GenerationsDataProvider.INSTANCE.register(ShopPresets.instance());
 //		GenerationsDataProvider.INSTANCE.register(Shops.instance());
-        LootEvent.MODIFY_LOOT_TABLE.register(LootEvent.ModifyLootTable { lootId: ResourceKey<LootTable?>, context: LootEvent.LootTableModificationContext, builtin: Boolean ->
-            val id = lootId.location()
-            if (id.namespace == "minecraft" && id.path.contains("chests") && !id.path.contains("inject")) {
-                val inject =
-                    ResourceLocation.fromNamespaceAndPath(id.namespace, id.path.replace("chests", "chests/inject"))
-                context.addPool(
-                    LootPool.lootPool()
-                        .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, inject)))
-                )
-            } else if (id.toString() == "minecraft:blocks/carrots") {
-                context.addPool(
-                    LootPool.lootPool().add(
-                        NestedLootTable.lootTableReference(
-                            ResourceKey.create(
-                                Registries.LOOT_TABLE,
-                                id("blocks/calyrex_roots")
-                            )
-                        )
-                    )
-                )
-            }
-        })
 
         registerSpawnType(
             ZygardeCellDetail.TYPE,
@@ -215,6 +191,28 @@ object GenerationsCore {
         implementation.register(GenerationsCoreRecipeSerializers)
         implementation.register(GenerationsCoreStats)
         implementation.register(GenerationsRksTypes)
+    }
+
+    fun processLootTable(lootId: ResourceLocation, lootTable: (LootPool.Builder) -> Unit) {
+        if (lootId.namespace == "minecraft" && lootId.path.contains("chests") && !lootId.path.contains("inject")) {
+            val inject =
+                ResourceLocation.fromNamespaceAndPath(lootId.namespace, lootId.path.replace("chests", "chests/inject"))
+            lootTable.invoke(
+                LootPool.lootPool()
+                    .add(NestedLootTable.lootTableReference(ResourceKey.create(Registries.LOOT_TABLE, inject)))
+            )
+        } else if (lootId.toString() == "minecraft:blocks/carrots") {
+            lootTable.invoke(
+                LootPool.lootPool().add(
+                    NestedLootTable.lootTableReference(
+                        ResourceKey.create(
+                            Registries.LOOT_TABLE,
+                            id("blocks/calyrex_roots")
+                        )
+                    )
+                )
+            )
+        }
     }
 }
 

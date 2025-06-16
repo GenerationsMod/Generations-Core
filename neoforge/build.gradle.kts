@@ -12,6 +12,10 @@ architectury {
     neoForge()
 }
 
+loom {
+    neoForge {}
+}
+
 val minecraftVersion = project.properties["minecraft_version"] as String
 
 configurations {
@@ -129,6 +133,11 @@ tasks {
         dependsOn(shadowJar)
     }
 }
+
+tasks.remapJar {
+    atAccessWideners.add("generationscore.accesswidener")
+}
+
 
 publisher {
     apiKeys {

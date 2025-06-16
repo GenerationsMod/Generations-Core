@@ -2,7 +2,6 @@ package generations.gg.generations.core.generationscore.common
 
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
-import net.minecraft.client.renderer.item.ClampedItemPropertyFunction
 import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.syncher.EntityDataSerializer
@@ -71,8 +70,6 @@ interface GenerationsImplementation {
     }
 
     val server: MinecraftServer?
-
-    fun registerGeneric(propertyId: ResourceLocation, function: ClampedItemPropertyFunction)
 
     enum class Environment {
         CLIENT,

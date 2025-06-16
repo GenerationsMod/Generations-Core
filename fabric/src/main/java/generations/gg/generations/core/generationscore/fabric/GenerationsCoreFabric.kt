@@ -25,6 +25,7 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder
 import net.fabricmc.fabric.api.event.registry.RegistryAttribute
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents
 import net.fabricmc.fabric.api.networking.v1.PacketByteBufs
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry
@@ -89,6 +90,10 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
                 player
             )
         })
+
+        LootTableEvents.MODIFY.register{ key, builder, source, lookup ->
+            GenerationsCore.processLootTable(key.location(), builder::withPool)
+        }
 
         ServerLifecycleEvents.SERVER_STARTING.register { server ->
             serverBacking = server

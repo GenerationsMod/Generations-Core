@@ -39,7 +39,6 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
 import java.util.*
-import java.util.function.Consumer
 
 open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
     ModelProvidingBlockEntity(GenerationsBlockEntities.RKS_MACHINE, pos, state), MenuProvider,
@@ -351,7 +350,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
 
     override fun setChanged() {
         super.setChanged()
-        openContainers.forEach(Consumer { obj: RksMachineContainer -> obj.broadcastChanges() })
+        openContainers.forEach(RksMachineContainer::broadcastChanges)
     }
 
     val craftingInput: RksInput

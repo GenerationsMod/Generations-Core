@@ -2,10 +2,10 @@ package generations.gg.generations.core.generationscore.common.world.item
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.Species
-import dev.architectury.registry.item.ItemPropertiesRegistry
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.*
 import net.minecraft.client.multiplayer.ClientLevel
+import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.core.component.DataComponents
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
@@ -46,7 +46,7 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties), Poke
     companion object {
 
         fun registerItemProperty() {
-            ItemPropertiesRegistry.register(
+            ItemProperties.register(
                 GenerationsItems.TIME_CAPSULE, GenerationsCore.id("has_pokemon")
             ) { itemStack: ItemStack, clientLevel: ClientLevel?, livingEntity: LivingEntity?, i: Int ->
                 if (itemStack.getRenderablePokemon() == null) 0f else 1f

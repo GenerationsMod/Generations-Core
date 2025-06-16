@@ -16,6 +16,7 @@ import generations.gg.generations.core.generationscore.common.util.PlatformRegis
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.item.ClampedItemPropertyFunction
 import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
@@ -47,6 +48,7 @@ import net.neoforged.neoforge.common.extensions.IMenuTypeExtension
 import net.neoforged.neoforge.common.util.TriState
 import net.neoforged.neoforge.event.AddReloadListenerEvent
 import net.neoforged.neoforge.event.AnvilUpdateEvent
+import net.neoforged.neoforge.event.LootTableLoadEvent
 import net.neoforged.neoforge.event.OnDatapackSyncEvent
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
@@ -107,6 +109,11 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
                     event
                 )
             }
+
+            addListener { event: LootTableLoadEvent ->
+                GenerationsCore.processLootTable(event.name) { event.table.addPool(it.build()) }
+            }
+
             addListener { event: AnvilUpdateEvent ->
                 onAnvilChange(event.left, event.right, event.player,
                     { output: ItemStack ->

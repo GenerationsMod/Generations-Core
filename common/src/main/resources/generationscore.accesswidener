@@ -45,3 +45,6 @@ accessible field net/minecraft/server/network/ServerCommonPacketListenerImpl con
 extendable method net/minecraft/world/entity/LivingEntity getDimensions (Lnet/minecraft/world/entity/Pose;)Lnet/minecraft/world/entity/EntityDimensions;
 extendable method net/minecraft/world/entity/LivingEntity canBreatheUnderwater ()Z
 accessible field net/minecraft/util/datafix/fixes/ItemStackComponentizationFix$ItemStackData item Ljava/lang/String;
+
+accessible method net/minecraft/client/renderer/item/ItemProperties registerGeneric (Lnet/minecraft/resources/ResourceLocation;Lnet/minecraft/client/renderer/item/ClampedItemPropertyFunction;)Lnet/minecraft/client/renderer/item/ClampedItemPropertyFunction;
+accessible method net/minecraft/client/gui/screens/MenuScreens register (Lnet/minecraft/world/inventory/MenuType;Lnet/minecraft/client/gui/screens/MenuScreens$ScreenConstructor;)V
