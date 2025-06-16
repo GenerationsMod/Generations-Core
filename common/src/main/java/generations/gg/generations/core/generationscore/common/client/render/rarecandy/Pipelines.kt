@@ -152,6 +152,7 @@ object Pipelines {
             val isActive = it.instance.instanceOrNull<CobblemonInstance>()?.teraActive ?: false
             return@supplyBooleanUniform isActive
         }
+        .supplyVec3("teraTint") { it.instance.instanceOrNull<CobblemonInstance>()?.teraTint?.takeIf { it != ZERO } ?: ONE }
 
         .prePostDraw({ material ->
             if (material.cullType() != CullType.None) {

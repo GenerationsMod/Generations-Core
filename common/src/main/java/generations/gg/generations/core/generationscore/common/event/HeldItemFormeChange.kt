@@ -50,43 +50,4 @@ object HeldItemFormeChange {
             }
         }
     }
-
-    fun doggoChange(post: HeldItemEvent.Post) {
-        val pokemon = post.pokemon
-
-        if (pokemon.species.name != "Zacian" && pokemon.species.name != "Zamazenta" ) return
-
-        val player: ServerPlayer? = pokemon.getOwnerPlayer()
-
-        if (pokemon.species.name == "Zacian") {
-            when {
-                post.received.`is`(GenerationsItems.CROWNED_SWORD.get()) -> {
-                    pokemon.exchangeMove(Moves.getByNameOrDummy("ironhead"), Moves.getByNameOrDummy("behemothblade"))
-                    pokemon.removeMove("ironhead")
-                }
-
-                post.returned.`is`(GenerationsItems.CROWNED_SWORD.get()) -> {
-                    pokemon.exchangeMove(Moves.getByNameOrDummy("behemothblade"), Moves.getByNameOrDummy("ironhead"))
-                    pokemon.removeMove("behemothblade")
-                }
-            }
-        }
-        if (pokemon.species.name == "Zamazenta") {
-            when {
-                post.received.`is`(GenerationsItems.CROWNED_SHIELD.get()) -> {
-                    pokemon.exchangeMove(Moves.getByNameOrDummy("ironhead"), Moves.getByNameOrDummy("behemothbash"))
-                    pokemon.removeMove("ironhead")
-                }
-
-                post.returned.`is`(GenerationsItems.CROWNED_SHIELD.get()) -> {
-                    pokemon.exchangeMove(Moves.getByNameOrDummy("behemothbash"), Moves.getByNameOrDummy("ironhead"))
-                    pokemon.removeMove("behemothbash")
-                }
-            }
-        }
-
-
-
-
-    }
 }

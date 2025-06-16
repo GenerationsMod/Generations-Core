@@ -113,6 +113,7 @@ object BattleOverlayProxy {
         val b = (hue and 0b11111111) / 255F
 
         val truePokemon = activeBattlePokemon.actor.pokemon.find { it.uuid == activeBattlePokemon.battlePokemon?.uuid }
+
         drawBattleTile(
             context = context,
             x = x,

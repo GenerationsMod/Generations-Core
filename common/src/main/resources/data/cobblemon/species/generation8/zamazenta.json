@@ -161,6 +161,9 @@
       "pokedex": [
         "cobblemon.species.zamazenta-crowned.desc"
       ],
+      "moves": [
+        "form_change:behemothblade"
+      ],
       "labels": [
         "gen8",
         "legendary",

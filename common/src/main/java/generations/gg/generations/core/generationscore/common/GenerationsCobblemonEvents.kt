@@ -10,6 +10,7 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents.HELD_ITEM_POST
 import com.cobblemon.mod.common.api.events.CobblemonEvents.LOOT_DROPPED
 import com.cobblemon.mod.common.api.events.CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
+import com.cobblemon.mod.common.api.moves.Moves
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
@@ -57,6 +58,7 @@ class GenerationsCobblemonEvents {
 //            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
 
             CobblemonEvents.TERASTALLIZATION.subscribe(Priority.NORMAL, GenerationsInstructionProcessor::processTerastallization)
+            CobblemonEvents.BATTLE_STARTED_PRE.subscribe(Priority.NORMAL, GenerationsInstructionProcessor::preBattleChanges)
 
 //            FORME_CHANGE.subscribe(Priority.NORMAL, {(a, b, c) -> GenerationsInstructionProcessor.processDetailsChange(a, b, c) })
 //            CobblemonEvents.MEGA_EVOLUTION.subscribe(Priority.NORMAL, GenerationsInstructionProcessor::processMegaEvolution)
@@ -167,7 +169,6 @@ class GenerationsCobblemonEvents {
                 }
 
                 HeldItemFormeChange.ogerMaskChange(it)
-                HeldItemFormeChange.doggoChange(it)
             }
 
 

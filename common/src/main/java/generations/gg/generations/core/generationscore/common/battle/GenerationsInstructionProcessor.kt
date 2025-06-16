@@ -6,14 +6,18 @@ import com.cobblemon.mod.common.api.abilities.Ability
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor
+import com.cobblemon.mod.common.api.events.battles.BattleStartedPreEvent
 import com.cobblemon.mod.common.api.events.battles.instruction.TerastallizationEvent
+import com.cobblemon.mod.common.api.moves.Moves
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
+import com.cobblemon.mod.common.battles.pokemon.BattlePokemon
 import com.cobblemon.mod.common.net.messages.client.battle.BattleInitializePacket
 import com.cobblemon.mod.common.net.messages.client.battle.BattleTransformPokemonPacket
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.server
+import generations.gg.generations.core.generationscore.common.util.replaceMove
 import java.util.UUID
 
 import net.minecraft.server.level.ServerPlayer
@@ -79,7 +83,6 @@ object GenerationsInstructionProcessor {
         val battle = terastallizationEvent.battle
         val teraCheck = FlagSpeciesFeature("terastal_active", true)
         val pokemon = terastallizationEvent.pokemon
-
         terastallizationEvent.pokemon.effectedPokemon.applyBattleFeature(teraCheck)
 
         val active = battle.activePokemon.find {
@@ -97,6 +100,16 @@ object GenerationsInstructionProcessor {
         }
 
         battle.dispatchWaitingToFront(2.5f) { Unit }
+    }
+
+    @JvmStatic
+    fun preBattleChanges(battleStartedPreEvent: BattleStartedPreEvent) {
+        val battle = battleStartedPreEvent.battle
+        for (actors in battle.actors) {
+            for (battlePokemon in actors.pokemonList) {
+                doggoMoveChanger(battlePokemon)
+            }
+        }
     }
 
     @JvmStatic
@@ -125,6 +138,7 @@ object GenerationsInstructionProcessor {
                         battlePokemon.originalPokemon.updateAspects()
                     }
                 }
+                doggoMoveChanger(battlePokemon)
                 battlePokemon.originalPokemon.restoreAbility(tempAbility)
             }
         }
@@ -138,6 +152,7 @@ private fun Pokemon.removeBattleFeature() {
         val name = data.getString("terastal")
         features.removeIf {it.name == name}
         data.remove("terastal")
+        data.remove("tera_type")
     }
 
     if (data.contains("form_name")) {
@@ -161,6 +176,7 @@ private fun Pokemon.removeBattleFeature() {
 private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
     if (feature.name.equals("terastal_active")) {
         this.persistentData.putString("terastal", feature.name)
+        this.persistentData.putString("tera_type", this.teraType.id.path)
     } else {
         this.persistentData.putString("form_name", feature.name)
     }
@@ -184,11 +200,59 @@ private fun Pokemon.restoreAbility(tempAbility: Ability) {
     }
 }
 
-fun PokemonBattle.isAllied(uuid: UUID, actor: BattleActor?): Boolean {
+private fun PokemonBattle.isAllied(uuid: UUID, actor: BattleActor?): Boolean {
     if (actor == null) return false
-    return actors.any { it != actor && it.getPlayerUUIDs().contains(uuid) && it.getSide() == actor.getSide() }
+    return actors.any {
+        it.getPlayerUUIDs().contains(uuid) && it.getSide() == actor.getSide()
+    }
 }
 
-fun getPlayerFromUUID(uuid: UUID): ServerPlayer? {
+private fun getPlayerFromUUID(uuid: UUID): ServerPlayer? {
     return server()?.playerList?.getPlayer(uuid)
 }
+
+private fun doggoMoveChanger(battlePokemon: BattlePokemon) {
+    val effectedPokemon = battlePokemon.effectedPokemon
+    val ironHead = Moves.getByNameOrDummy("ironhead")
+    val behemothBlade = Moves.getByNameOrDummy("behemothblade")
+    val behemothBash = Moves.getByNameOrDummy("behemothbash")
+
+    val speciesName = battlePokemon.originalPokemon.species.name.lowercase()
+
+    val hasIronHead = battlePokemon.moveSet.any {move -> move.template.name.equals("ironhead")}
+    val hasBehemoth = battlePokemon.moveSet.any { move ->
+        move.template.name.lowercase() in listOf("behemothblade", "behemothbash")
+    }
+    if (effectedPokemon.aspects.contains("crowned")) {
+        val benchedMoves = effectedPokemon.benchedMoves
+
+        println("PRE-CLEAR")
+        benchedMoves.forEach {
+            println("benchedmove: " + it.moveTemplate.name)
+        }
+
+        benchedMoves.clear()
+
+        println("POST-CLEAR")
+        benchedMoves.forEach {
+            println("benchedmove: " + it.moveTemplate.name)
+        }
+        if (hasIronHead) {
+            when (speciesName) {
+                "zacian" -> effectedPokemon.replaceMove("ironhead", "behemothblade")
+                "zamazenta" -> effectedPokemon.replaceMove("ironhead", "behemothbash")
+            }
+        } else if (hasBehemoth) {
+            when (speciesName) {
+                "zacian" -> {
+                    effectedPokemon.replaceMove("behemothblade", "ironhead")
+                }
+                "zamazenta" -> {
+                    effectedPokemon.replaceMove("behemothbash", "ironhead")
+                }
+            }
+        }
+    }
+}
+
+
