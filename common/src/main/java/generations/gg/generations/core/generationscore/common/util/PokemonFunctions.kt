@@ -63,6 +63,31 @@ fun Pokemon.removeMove(moveName: String) {
     benchedMoves.remove(Moves.getByNameOrDummy(moveName))
 }
 
+fun Pokemon.replaceMove(oldMove: String, newMove: String) {
+    for ((index, move) in moveSet.getMovesWithNulls().withIndex()) {
+        if (move != null && move.template.name.equals(oldMove)) {
+            val ppRatio = move.currentPp.toFloat() / move.maxPp
+            val newMoveMove = Moves.getByNameOrDummy(newMove).create()
+            newMoveMove.raisedPpStages = move.raisedPpStages
+            newMoveMove.currentPp = (ppRatio * newMoveMove.maxPp).toInt().coerceIn(0, newMoveMove.maxPp)
+            moveSet.setMove(index, newMoveMove)
+
+//            benchedMoves.doThenEmit {
+//                val iter = benchedMoves.iterator()
+//                while (iter.hasNext()) {
+//                    val benched = iter.next()
+//                    println("benched" + benched.moveTemplate.name)
+//                    if (benched.moveTemplate.name.equals(oldMove, ignoreCase = true)) {
+//                        iter.remove()
+//                    }
+//                }
+//            }
+
+            return
+        }
+    }
+}
+
 fun Pokemon.hasEmbeddedPokemon(): Boolean {
     return this.persistentData.contains(DataKeys.EMBEDDED_POKEMON)
 }

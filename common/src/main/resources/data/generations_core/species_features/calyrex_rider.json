@@ -1,6 +1,6 @@
 {
   "type": "choice",
-  "keys": ["calyrex_rider"],
+  "keys": ["king_steed"],
   "default": "false",
   "choices": [
     "ice",

@@ -29,14 +29,16 @@ class ZygardeCubeItem(properties: Properties) : Item(properties), LangTooltip {
     }
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
-        if(player is ServerPlayer && usedHand == InteractionHand.MAIN_HAND) {
-            val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("zygarde_cube")] ?: return InteractionResultHolder.fail(player.mainHandItem)
+        val stack = player.getItemInHand(usedHand)
+
+        if(player is ServerPlayer) {
+            val dialogue: Dialogue = Dialogues.dialogues[GenerationsCore.id("zygarde_cube")] ?: return InteractionResultHolder.fail(stack)
             player.openDialogue(dialogue)
 
-            return InteractionResultHolder.success(player.mainHandItem)
+            return InteractionResultHolder.success(stack)
         }
 
-        return InteractionResultHolder.fail(player.mainHandItem)
+        return InteractionResultHolder.pass(stack)
     }
 
     companion object {

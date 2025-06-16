@@ -8,19 +8,21 @@ object GenerationsResources {
     fun init() {
         val showdownPath = Path.of("./showdown/sim")
         val showdownFiles = listOf(
-            "battle-actions.js",
-            "abilities.js",
-            "moves.js"
+            "battle-actions.js" to "sim",
+            "abilities.js" to "data",
+            "moves.js" to "data"
         )
         Files.createDirectories(showdownPath)
 
-        for (file in showdownFiles) {
-            copyResourceIfChanged("/assets/generations_core/showdown_data/$file", showdownPath.resolve(file))
+        for ((file, subDir) in showdownFiles) {
+            val targetPath = showdownPath.resolveSibling(subDir).resolve(file)
+            GenerationsCore.LOGGER.info("Attempting to copy: $file")
+            copyResourceIfChanged("assets/generations_core/showdown_data/$file", targetPath)
         }
     }
 
     private fun copyResourceIfChanged(resourcePath: String, destination: Path) {
-        val inputStream: InputStream = javaClass.getResourceAsStream(resourcePath)
+        val inputStream: InputStream = javaClass.classLoader.getResourceAsStream(resourcePath)
             ?: run {
                 GenerationsCore.LOGGER.warn("Resource not found at: $resourcePath")
                 return

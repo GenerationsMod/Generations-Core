@@ -31,6 +31,10 @@ class TeraTypeIcon(
     }
 
     fun render(context: GuiGraphics) {
+        if (type !is ElementalTypeTeraType && type !is StellarTeraType) {
+            return
+        }
+
         val diameter = if (small) (TYPE_ICON_DIAMETER / 2) else TYPE_ICON_DIAMETER
         val offsetX = if (centeredX) (((diameter / 2) * SCALE)) else 0F;
 

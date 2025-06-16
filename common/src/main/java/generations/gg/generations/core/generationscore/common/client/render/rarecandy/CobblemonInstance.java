@@ -15,6 +15,7 @@ public class CobblemonInstance extends AnimatedObjectInstance implements BlockLi
     public Transform offsets;
     private final Vector3f tint = new Vector3f();
     private boolean teraActive = false;
+    private final Vector3f teraTint = new Vector3f();
 
     public Transform getOffset(String material) {
         return this.offsets != null ? this.currentAnimation.getOffset(material) : null;
@@ -58,6 +59,8 @@ public class CobblemonInstance extends AnimatedObjectInstance implements BlockLi
     public boolean getTeraActive() {
         return teraActive;
     }
+
+    public Vector3f getTeraTint() { return teraTint; }
 
     @Override
     public void setTeraActive(boolean teraActive) {

@@ -25,7 +25,7 @@ public class GenerationsArmorMaterials {
     public static final DeferredRegister<ArmorMaterial> REGISTER = DeferredRegister.create(GenerationsCore.MOD_ID, Registries.ARMOR_MATERIAL);
 
     public static final RegistrySupplier<ArmorMaterial> AETHER = register("aether", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SILICON);
-    public static final RegistrySupplier<ArmorMaterial> AQUA = register("saphire", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SAPPHIRE);
+    public static final RegistrySupplier<ArmorMaterial> AQUA = register("sapphire", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SAPPHIRE);
     public static final RegistrySupplier<ArmorMaterial> FLARE = register("flare", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.RUBY);
     public static final RegistrySupplier<ArmorMaterial> GALACTIC = register("galactic", 15, new int[] { 2, 5, 6, 2 }, 9, GenerationsItems.SILICON);
     public static final RegistrySupplier<ArmorMaterial> MAGMA = register("ruby", 15, new int[] { 2, 5, 6, 2 }, 19, GenerationsItems.RUBY);

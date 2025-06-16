@@ -320,6 +320,7 @@ vec4 process(vec4 color) {
 #define IRIDESCENCE_STRENGTH 0.2
 
 uniform bool useTera;
+uniform vec3 teraTint;
 
 in vec3 fragViewDir;
 in vec3 worldPos;
@@ -353,7 +354,7 @@ vec3 calculateTersaalizationEffect(vec3 baseColor) {
     vec3 iridescent = vec3(1.0, 0.9, 0.8) + vec3(0.05, -0.02, 0.03) * sin(shimmer * 20.0);
 
     // Tint variation based on light response
-    vec3 directionalTint = mix(TERATYPE_TINT, vec3(1.0), lightResponse);
+    vec3 directionalTint = mix(teraTint, vec3(1.0), lightResponse);
 
     // Final output
     return baseColor
