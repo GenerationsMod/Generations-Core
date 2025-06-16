@@ -76,11 +76,15 @@ import java.util.function.Supplier
  *
  * @author Joseph T. McQuigg, WaterPicker
  */
-class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
+object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
     private var serverBacking: MinecraftServer? = null
 
     override fun onInitialize() {
         init(this)
+
+        networkManager.registerMessages()
+        networkManager.registerServerHandlers()
+
         VanillaCompat.setup()
 
         if (FabricLoader.getInstance().isModLoaded("impactor")) ImpactorCompat.init()
@@ -105,9 +109,6 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
         UseBlockCallback.EVENT.register({ player, level, hand, hitResult ->
             return@register InteractionEvents.fireRightClick(player, hand, hitResult.blockPos, hitResult.direction);
         })
-
-        GenerationsFabricNetwork.registerMessages()
-        GenerationsFabricNetwork.registerServerHandlers()
 
         AnvilEvents.ANVIL_CHANGE.register(AnvilChange { result, left, right, name, baseCost, player ->
             onAnvilChange(
@@ -201,6 +202,7 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
     }
 
     override fun <T : Any> createRegistry(key: ResourceKey<Registry<T>>, sync: Boolean): Registry<T> = FabricRegistryBuilder.createSimple(key).attribute(RegistryAttribute.SYNCED).buildAndRegister()
+    override val networkManager: GenerationsFabricNetwork = GenerationsFabricNetwork
 
     override fun registerResourceReloader(
         identifier: ResourceLocation,
@@ -222,9 +224,6 @@ class GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaun
 
         override fun getFabricDependencies(): MutableCollection<ResourceLocation> = this.dependencies.toMutableList()
     }
-
-    override val server: MinecraftServer?
-        get() = serverBacking
 
     override fun onPreLaunch() {
         setConfigDirectory(FabricLoader.getInstance().configDir)

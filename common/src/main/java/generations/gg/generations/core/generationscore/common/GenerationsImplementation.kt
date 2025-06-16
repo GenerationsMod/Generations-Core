@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common
 
+import com.cobblemon.mod.common.NetworkManager
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import net.minecraft.core.Registry
@@ -7,7 +8,6 @@ import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
@@ -64,15 +64,5 @@ interface GenerationsImplementation {
 
     fun <T: Any> createRegistry(key: ResourceKey<Registry<T>>, sync: Boolean): Registry<T>
 
-    enum class ModAPI {
-        FABRIC,
-        FORGE
-    }
-
-    val server: MinecraftServer?
-
-    enum class Environment {
-        CLIENT,
-        SERVER
-    }
+    val networkManager: NetworkManager
 }

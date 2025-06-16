@@ -1,7 +1,10 @@
 package generations.gg.generations.core.generationscore.common.network
 
+import com.cobblemon.mod.common.api.net.NetworkPacket
 import com.cobblemon.mod.common.client.net.spawn.SpawnExtraDataEntityHandler
 import com.cobblemon.mod.common.net.PacketRegisterInfo
+import com.cobblemon.mod.common.util.server
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.network.packets.*
 import generations.gg.generations.core.generationscore.common.network.packets.shop.*
 import generations.gg.generations.core.generationscore.common.network.packets.statue.S2COpenStatueEditorScreenHandler
@@ -9,10 +12,17 @@ import generations.gg.generations.core.generationscore.common.network.packets.st
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatueHandler
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
-import generations.gg.generations.core.generationscore.common.world.shop.ShopPresetRegistrySyncPacket
-import generations.gg.generations.core.generationscore.common.world.shop.ShopRegistrySyncPacket
+import net.minecraft.server.level.ServerPlayer
 
 object GenerationsNetwork {
+    fun ServerPlayer.sendPacket(packet: NetworkPacket<*>) {
+        sendPacketToPlayer(this, packet)
+    }
+    fun sendToServer(packet: NetworkPacket<*>) {
+        GenerationsCore.implementation.networkManager.sendToServer(packet)
+    }
+    fun sendToAllPlayers(packet: NetworkPacket<*>) = sendPacketToPlayers(server()!!.playerList.players, packet)
+    fun sendPacketToPlayers(players: Iterable<ServerPlayer>, packet: NetworkPacket<*>) = players.forEach { sendPacketToPlayer(it, packet) }
 
     val s2cPayloads = generateS2CPacketInfoList()
     val c2sPayloads = generateC2SPacketInfoList()
@@ -54,5 +64,10 @@ object GenerationsNetwork {
         list.add(PacketRegisterInfo(UpdateStatuePacket.MATERIAL_ID, UpdateStatuePacket.Companion::materialDecode, UpdateStatueHandler.Material))
         list.add(PacketRegisterInfo(UpdateStatuePacket.ORIENTATION_ID, UpdateStatuePacket.Companion::orientationDecode, UpdateStatueHandler.Orientation))
         return list
+    }
+
+
+    fun sendPacketToPlayer(player: ServerPlayer, packet: NetworkPacket<*>) {
+        GenerationsCore.implementation.networkManager.sendPacketToPlayer(player, packet)
     }
 }

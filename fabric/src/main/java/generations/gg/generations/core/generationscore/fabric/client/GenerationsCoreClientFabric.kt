@@ -16,7 +16,7 @@ import generations.gg.generations.core.generationscore.common.client.render.Rend
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
-import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
+import generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -33,13 +33,11 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
-import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.DoorBlock
 import net.minecraft.world.level.block.TransparentBlock
 import net.minecraft.world.level.block.TrapDoorBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
-import java.util.function.Consumer
 
 /**
  * The client initializer for the fabric client portion of the mod.
@@ -82,7 +80,7 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             RenderStateRecord.pop()
         }
 
-        GenerationsFabricNetwork.registerClientHandlers()
+        GenerationsCoreFabric.networkManager.registerClientHandlers()
 
         onInitialize(Minecraft.getInstance())
         registerRenderTypes()

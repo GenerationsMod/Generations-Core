@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge
 
+import com.cobblemon.mod.common.NetworkManager
 import com.google.common.collect.ImmutableMap
 import com.mojang.datafixers.util.Pair
 import generations.gg.generations.core.generationscore.common.GenerationsCore
@@ -15,15 +16,14 @@ import generations.gg.generations.core.generationscore.common.config.ConfigLoade
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
+import generations.gg.generations.core.generationscore.forge.networking.GenerationsNeoForgeNetworkManager
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.item.ClampedItemPropertyFunction
 import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.MinecraftServer
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
@@ -57,7 +57,6 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries
 import net.neoforged.neoforge.registries.NewRegistryEvent
 import net.neoforged.neoforge.registries.RegisterEvent
 import net.neoforged.neoforge.registries.RegistryBuilder
-import net.neoforged.neoforge.server.ServerLifecycleHooks
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 import java.util.*
 import java.util.function.Consumer
@@ -95,6 +94,8 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
             ENTITY_DATA_SERIALIZER_REGISTER.register(MOD_BUS)
             addListener(::onInitialize)
             addListener(::postInit)
+
+            addListener(GenerationsNeoForgeNetworkManager::registerMessages)
 
             addListener<NewRegistryEvent> { event ->
                 registries.forEach { event.register(it) }
@@ -302,6 +303,5 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         else Minecraft.getInstance().resourceManager.instanceOrNull<ReloadableResourceManager>()?.registerReloadListener(reloader)
     }
 
-    override val server: MinecraftServer?
-        get() = ServerLifecycleHooks.getCurrentServer()
+    override val networkManager: NetworkManager = GenerationsNeoForgeNetworkManager
 }
