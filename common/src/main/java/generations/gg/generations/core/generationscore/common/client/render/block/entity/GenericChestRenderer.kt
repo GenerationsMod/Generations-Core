@@ -18,9 +18,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.resources.model.Material
 import net.minecraft.core.Direction
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.ChestBlock
-import java.util.function.Consumer
 
 class GenericChestRenderer(arg: BlockEntityRendererProvider.Context) :
     BlockEntityRenderer<GenericChestBlockEntity> {
@@ -39,7 +37,7 @@ class GenericChestRenderer(arg: BlockEntityRendererProvider.Context) :
         val level = blockEntity.level
         val flag = level != null
         val blockstate =
-            if (flag) blockEntity.blockState else GenerationsBlocks.POKEBALL_CHEST.defaultBlockState().setValue(
+            if (flag) blockEntity.blockState else GenerationsBlocks.POKEBALL_CHEST.value().defaultBlockState().setValue(
                 ChestBlock.FACING, Direction.SOUTH
             )
 

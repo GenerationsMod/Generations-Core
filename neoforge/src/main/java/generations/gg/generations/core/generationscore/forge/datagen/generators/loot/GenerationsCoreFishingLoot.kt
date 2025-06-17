@@ -3,7 +3,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.loot.GenerationCoreLootTables
 import net.minecraft.world.item.Items
-import net.minecraft.world.level.storage.loot.entries.LootItem.*
+import net.minecraft.world.level.storage.loot.entries.LootItem.lootTableItem
 
 class GenerationsCoreFishingLoot : net.minecraft.data.loot.LootTableSubProvider {
     override fun generate(biConsumer: java.util.function.BiConsumer<net.minecraft.resources.ResourceKey<net.minecraft.world.level.storage.loot.LootTable>, net.minecraft.world.level.storage.loot.LootTable.Builder>) {
@@ -21,9 +21,9 @@ class GenerationsCoreFishingLoot : net.minecraft.data.loot.LootTableSubProvider 
             GenerationCoreLootTables.FISHING_RUBY,
             net.minecraft.world.level.storage.loot.LootTable.lootTable().withPool(
                 net.minecraft.world.level.storage.loot.LootPool.lootPool()
-                    .add(lootTableItem(GenerationsItems.SHARD_OF_EMOTION))
-                    .add(lootTableItem(GenerationsItems.SHARD_OF_KNOWLEDGE))
-                    .add(lootTableItem(GenerationsItems.SHARD_OF_WILLPOWER))
+                    .add(lootTableItem(GenerationsItems.SHARD_OF_EMOTION.value()))
+                    .add(lootTableItem(GenerationsItems.SHARD_OF_KNOWLEDGE.value()))
+                    .add(lootTableItem(GenerationsItems.SHARD_OF_WILLPOWER.value()))
             )
         )
     }

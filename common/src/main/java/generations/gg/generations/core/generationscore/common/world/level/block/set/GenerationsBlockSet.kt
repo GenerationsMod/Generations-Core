@@ -2,11 +2,11 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet.Companion.updateBlockFamilies
+import net.minecraft.core.Holder
 import net.minecraft.data.BlockFamily
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockBehaviour
 import org.jetbrains.annotations.ApiStatus
-import java.util.function.Supplier
 
 /**
  * Makes it easier to create a set of blocks that are all related to each other.
@@ -23,11 +23,11 @@ open class GenerationsBlockSet(
      * Gets BaseBlock's RegistrySupplier.
      * @return The base block's RegistrySupplier.
      */
-    val baseBlock: Block = GenerationsBlocks.registerBlockItem<Block>(name, Block(properties))
+    val baseBlockHolder: Holder<Block> = GenerationsBlocks.registerBlockItem<Block>(name, { Block(properties)} )
 ) {
-    val slab: SlabBlock
-    val stairs: StairBlock
-    val wall: WallBlock
+    val slabHolder: Holder<Block>
+    val stairsHolder: Holder<Block>
+    val wallHolder: Holder<Block>
     /**
      * Gets the block family.
      * @return The block family.
@@ -46,14 +46,19 @@ open class GenerationsBlockSet(
      * @param properties The properties of the blocks
      */
     init {
-        slab = registerBlockItem("${name}_slab", SlabBlock(properties))
-        stairs = registerBlockItem("${name}_stairs", StairBlock(baseBlock.defaultBlockState(), properties))
-        wall = registerBlockItem("${name}_wall", WallBlock(properties))
+        slabHolder = registerBlockItem("${name}_slab") { SlabBlock(properties) }
+        stairsHolder = registerBlockItem("${name}_stairs") { StairBlock(baseBlock.defaultBlockState(), properties) }
+        wallHolder = registerBlockItem("${name}_wall") { WallBlock(properties) }
         blockFamily = null
         blockSets.add(this)
     }
 
-    protected open fun <T : Block> registerBlockItem(name: String, blockSupplier: T): T = GenerationsBlocks.registerBlockItem(name, blockSupplier)
+    protected open fun <T : Block> registerBlockItem(name: String, blockSupplier: () -> T): Holder<Block> = GenerationsBlocks.registerBlockItem(name, blockSupplier)
+
+    val baseBlock: Block get() = baseBlockHolder.value()
+    val slab: SlabBlock get() = slabHolder.value() as SlabBlock
+    val stairs: StairBlock get() = stairsHolder.value() as StairBlock
+    val wall: WallBlock get() = wallHolder.value() as WallBlock
 
     open val allBlocks: List<Block>
         /**

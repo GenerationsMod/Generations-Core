@@ -9,6 +9,8 @@ import generations.gg.generations.core.generationscore.common.api.events.general
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
+import generations.gg.generations.core.generationscore.common.generationsResource
+import generations.gg.generations.core.generationscore.common.util.EntryRegister
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures
@@ -39,6 +41,7 @@ import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType
 import net.fabricmc.loader.api.FabricLoader
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.network.FriendlyByteBuf
@@ -142,8 +145,8 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
         VanillaCompat.dispenserBehavior()
     }
 
-    override fun registerStrippable(log: Block, stripped: Block) {
-        StrippableBlockRegistry.register(log, stripped)
+    override fun registerStrippable(log: Holder<Block>, stripped: Holder<Block>) {
+        StrippableBlockRegistry.register(log.value(), stripped.value())
     }
 
     override fun registerFlammable(blockIn: Block, encouragement: Int, flammability: Int) {
@@ -154,7 +157,7 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
         CompostingChanceRegistry.INSTANCE.add(block, chance)
     }
 
-    override fun <T : Any> register(register: PlatformRegistry<T>) = register.init()
+    override fun <T : Any> register(register: () -> PlatformRegistry<T>) = register.invoke().init()
 
     @SafeVarargs
     override fun create(
@@ -179,13 +182,13 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
         return EntityDataSerializers.registerSerializer(dataSerializer)
     }
 
-    override fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): MenuType<T> {
-        return ExtendedScreenHandlerType({ id, inventory, data ->
+    override fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): () -> MenuType<T> {
+        return { ExtendedScreenHandlerType({ id, inventory, data ->
             var buf = FriendlyByteBuf(Unpooled.wrappedBuffer(data))
             val menu = constructor.invoke(id, inventory, buf)
             buf.release()
             menu
-        }, ByteBufCodecs.BYTE_ARRAY.mapStream(Function.identity()))
+        }, ByteBufCodecs.BYTE_ARRAY.mapStream(Function.identity())) }
     }
 
     override fun openExtendedMenu(serverPlayer: ServerPlayer, menuProvider: ExtendedMenuProvider) {
@@ -234,5 +237,13 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
 
     override fun onPreLaunch() {
         setConfigDirectory(FabricLoader.getInstance().configDir)
+    }
+
+    override fun <T: Any> entryRegister(registry: Registry<T>): EntryRegister<T> {
+        return FabricEntryRegister(registry)
+    }
+
+    class FabricEntryRegister<T: Any>(val registry: Registry<T>): EntryRegister<T>() {
+        override fun holder(name: String, supplier: () -> T): Holder<T> = Registry.registerForHolder(registry, name.generationsResource(), supplier.invoke())
     }
 }

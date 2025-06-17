@@ -6,24 +6,24 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.DefaultPcBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.PcBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.entity.BlockEntityTicker
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class RotomPc(arg: Properties) : PcBlock<DefaultPcBlockEntity, RotomPc>(DefaultPcBlockEntity::class.java, arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 2, 0
+class RotomPc(arg: Properties) : PcBlock<DefaultPcBlockEntity>(DefaultPcBlockEntity::class.java, arg, GenerationsBlockEntityModels.ROTOM_PC, 0, 2, 0
     ) {
     override fun codec(): MapCodec<out BaseEntityBlock?> {
         return CODEC
     }
 
-    override val blockEntityType: BlockEntityType<DefaultPcBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.PC
 
     public override fun getShape(
@@ -35,7 +35,7 @@ class RotomPc(arg: Properties) : PcBlock<DefaultPcBlockEntity, RotomPc>(DefaultP
         return SHAPE.getShape(state)
     }
 
-    override fun getTicker(): BlockEntityTicker<DefaultPcBlockEntity> {
+    override fun getTicker(): BlockEntityTicker<PcBlockEntity> {
         return DefaultPcBlockEntity.TICKER
     }
 

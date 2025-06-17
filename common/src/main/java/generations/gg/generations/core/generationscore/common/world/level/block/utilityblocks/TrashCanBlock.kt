@@ -7,7 +7,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.generateDirectionVoxelShape
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.TrashCanBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -21,18 +20,17 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class TrashCanBlock(props: Properties) : GenericRotatableModelBlock<TrashCanBlockEntity>(
+class TrashCanBlock(props: Properties) : GenericRotatableModelBlock(
         props,
         model = GenerationsBlockEntityModels.TRASH_CAN
     ) {
-    override val blockEntityType: BlockEntityType<TrashCanBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.TRASH_CAN
 
     public override fun getShape(

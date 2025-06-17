@@ -21,7 +21,7 @@ import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.BooleanProperty
 import net.minecraft.world.phys.BlockHitResult
 
-abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<T> {
+abstract class InteractShrineBlock : ShrineBlock {
     protected constructor(
         materialIn: Properties,
         model: ResourceLocation
@@ -112,7 +112,7 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
     ): Boolean
 
     protected fun activate(level: Level, pos: BlockPos) {
-        if (waitToDeactivateTime() == 0) getAssoicatedBlockEntity(
+        if (waitToDeactivateTime() == 0) getAssoicatedBlockEntity<InteractShrineBlockEntity>(
             level,
             pos
         )?.triggerCountDown()
@@ -142,7 +142,7 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
 
         @JvmStatic
         fun isActive(state: BlockState): Boolean {
-            return state.block is InteractShrineBlock<*> && state.getValue(ACTIVE)
+            return state.block is InteractShrineBlock && state.getValue(ACTIVE)
         }
 
         @JvmStatic
@@ -150,7 +150,7 @@ abstract class InteractShrineBlock<T : InteractShrineBlockEntity> : ShrineBlock<
             var pos = pos
             val state = level.getBlockState(pos)
 
-            var shrine = state.block.instanceOrNull<InteractShrineBlock<*>>() ?: return
+            var shrine = state.block.instanceOrNull<InteractShrineBlock>() ?: return
 
             if (shrine.isActivatable) {
                 var isActive = isActive(state)

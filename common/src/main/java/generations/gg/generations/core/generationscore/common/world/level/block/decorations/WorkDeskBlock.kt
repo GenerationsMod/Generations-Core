@@ -5,25 +5,23 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class WorkDeskBlock(properties: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
+class WorkDeskBlock(properties: Properties) : GenericRotatableModelBlock(
     properties = properties,
     model = GenerationsBlockEntityModels.WORK_DESK,
     width = 2,
     height = 1,
     length = 1
 ) {
-    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
 
     public override fun getShape(

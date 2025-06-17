@@ -19,10 +19,8 @@ import net.minecraft.world.entity.item.ItemEntity
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.EnumProperty
@@ -30,14 +28,14 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class PrisonBottleStemBlock(materialIn: Properties) : InteractShrineBlock<InteractShrineBlockEntity>(
+class PrisonBottleStemBlock(materialIn: Properties) : InteractShrineBlock(
         materialIn,
         GenerationsBlockEntityModels.PRISON_BOTTLE,
         0,
         2,
         0
     ) {
-    override val blockEntityType: BlockEntityType<InteractShrineBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.INTERACT_SHRINE
 
     init {
@@ -95,7 +93,7 @@ class PrisonBottleStemBlock(materialIn: Properties) : InteractShrineBlock<Intera
             }
 
             if (baseState.getValue(STATE) == PrisonBottleState.UNBOUND) {
-                getAssoicatedBlockEntity(
+                getAssoicatedBlockEntity<InteractShrineBlockEntity>(
                     world,
                     pos
                 )?.triggerCountDown()
@@ -142,7 +140,7 @@ class PrisonBottleStemBlock(materialIn: Properties) : InteractShrineBlock<Intera
                                     pos.x + 0.5,
                                     pos.y + 0.5,
                                     pos.z + 0.5,
-                                    ItemStack(GenerationsShrines.PRISON_BOTTLE)
+                                    ItemStack(GenerationsShrines.PRISON_BOTTLE.value())
                                 )
                             )
                         }

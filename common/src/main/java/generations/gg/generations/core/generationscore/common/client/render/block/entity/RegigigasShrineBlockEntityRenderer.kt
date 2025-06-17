@@ -4,15 +4,15 @@ import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.common.GenerationsStorage.REGI_ORBS
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.rgbFromInt
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.item.id
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.RegigigasShrineBlockEntity
 import net.minecraft.Util
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.core.particles.DustParticleOptions
-import net.minecraft.world.item.Item
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.phys.Vec3
 import org.joml.Vector3f
-import java.util.*
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -30,14 +30,14 @@ class RegigigasShrineBlockEntityRenderer(ctx: BlockEntityRendererProvider.Contex
     }
 
     companion object {
-        val map: Map<Item, Vector3f> = Util.make(
+        val map: Map<ResourceLocation, Vector3f> = Util.make(
             HashMap()
-        ) { m: HashMap<Item, Vector3f> ->
-            m[GenerationsItems.REGICE_ORB] = rgbFromInt(0x78AAC2)
-            m[GenerationsItems.REGIROCK_ORB] = rgbFromInt(0XC7412B)
-            m[GenerationsItems.REGISTEEL_ORB] = rgbFromInt(0X79797B)
-            m[GenerationsItems.REGIDRAGO_ORB] = rgbFromInt(0x851534)
-            m[GenerationsItems.REGIELEKI_ORB] = rgbFromInt(0XE0E731)
+        ) { m ->
+            m[GenerationsItems.REGICE_ORB.id] = rgbFromInt(0x78AAC2)
+            m[GenerationsItems.REGIROCK_ORB.id] = rgbFromInt(0XC7412B)
+            m[GenerationsItems.REGISTEEL_ORB.id] = rgbFromInt(0X79797B)
+            m[GenerationsItems.REGIDRAGO_ORB.id] = rgbFromInt(0x851534)
+            m[GenerationsItems.REGIELEKI_ORB.id] = rgbFromInt(0XE0E731)
         }
 
         fun processOrbs(shrineBlock: RegigigasShrineBlockEntity) {
@@ -46,7 +46,7 @@ class RegigigasShrineBlockEntityRenderer(ctx: BlockEntityRendererProvider.Contex
             val list = REGI_ORBS[shrineBlock]
 
             for (i in list.stacks().indices) {
-                val color = map[list.stacks()[i].resource().item]
+                val color = map[list.stacks()[i].resource().item.builtInRegistryHolder().id]
 
                 if (color != null) colors.add(color)
             }

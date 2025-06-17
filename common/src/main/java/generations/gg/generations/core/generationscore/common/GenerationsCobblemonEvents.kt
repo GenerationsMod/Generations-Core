@@ -13,19 +13,12 @@ import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
-import com.cobblemon.mod.common.client.entity.PokemonClientDelegate
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.giveOrDropItemStack
 import generations.gg.generations.core.generationscore.common.api.player.Caught
-import generations.gg.generations.core.generationscore.common.battle.GenerationsInstructionProcessor
-import generations.gg.generations.core.generationscore.common.client.TeraProvider
-import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -138,7 +131,7 @@ class GenerationsCobblemonEvents {
 
                     player.sendSystemMessage("Due to ${it.pokemon.getDisplayName().string} happiness reaching max, it gave you an egg.".text())
 
-                    player.giveOrDropItemStack(GenerationsItems.PHIONE_EGG.defaultInstance, true)
+                    player.giveOrDropItemStack(GenerationsItems.PHIONE_EGG.value().defaultInstance, true)
                     it.pokemon.persistentData.putBoolean(DataKeys.GAVE_EGG, true)
                 }
             }

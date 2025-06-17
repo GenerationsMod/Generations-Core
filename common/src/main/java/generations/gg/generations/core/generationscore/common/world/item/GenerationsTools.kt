@@ -1,13 +1,12 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.tab
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.tools.*
 import generations.gg.generations.core.generationscore.common.world.item.tools.effects.*
+import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceKey
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
 import net.minecraft.world.item.enchantment.Enchantments
@@ -64,25 +63,25 @@ object GenerationsTools: ItemPlatformRegistry() {
         name: String,
         function: (Item.Properties) -> T,
         tab: ResourceKey<CreativeModeTab>
-    ): T = create(name.generationsResource(), function.invoke(of()).tab(tab))
+    ): Holder<Item> = create(name, { function.invoke(of()).tab(tab) })
 
 
     fun of(): Item.Properties {
         return Item.Properties()
     }
 
-    override fun init(consumer: (ResourceLocation, Item) -> Unit) {
+    override fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Tools")
-        super.init(consumer)
+        super.init()
     }
 
     data class ToolSet(
-        val shovel: GenerationsShovelItem,
-        val pickaxe: GenerationsPickaxeItem,
-        val axe: GenerationsAxeItem,
-        val hoe: GenerationsHoeItem,
-        val hammer: GenerationsHammerItem,
-        val sword: GenerationsSwordItem
+        val shovel: Holder<Item>,
+        val pickaxe: Holder<Item>,
+        val axe: Holder<Item>,
+        val hoe: Holder<Item>,
+        val hammer: Holder<Item>,
+        val sword: Holder<Item>
     ) {
 
         companion object {
@@ -113,7 +112,7 @@ object GenerationsTools: ItemPlatformRegistry() {
                 tab: ResourceKey<CreativeModeTab>,
                 fireProof: Boolean,
                 vararg toolEffects: ToolEffect
-            ): T where T : Item, T : ToolEffectHolder<T> {
+            ): Holder<Item> where T : Item, T : ToolEffectHolder<T> {
                 return register(
                     name,
                     { properties: Item.Properties ->

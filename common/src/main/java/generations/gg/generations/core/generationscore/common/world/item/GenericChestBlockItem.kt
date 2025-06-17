@@ -1,14 +1,11 @@
-package generations.gg.generations.core.generationscore.common.world.item;
+package generations.gg.generations.core.generationscore.common.world.item
 
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock;
-import net.minecraft.world.item.BlockItem;
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlockItem
+import net.minecraft.core.Holder
+import net.minecraft.world.level.block.Block
 
-public class GenericChestBlockItem extends BlockItem {
-    public <T extends GenericChestBlock> GenericChestBlockItem(T arg, Properties arg2) {
-        super(arg, arg2);
-    }
-
-//    @Override TODO: figure this out
+class GenericChestBlockItem(arg: Holder<Block>, arg2: Properties) : GenerationsBlockItem(arg, arg2) {
+    //    @Override TODO: figure this out
 //    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
 //        consumer.accept(new IClientItemExtensions() {
 //            @Override

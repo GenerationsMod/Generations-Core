@@ -1,13 +1,11 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
-import generations.gg.generations.core.generationscore.common.util.extensions.toInteractionResult
 import generations.gg.generations.core.generationscore.common.util.extensions.toItemInteractionResult
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.SittableBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericDyedVariantBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -20,15 +18,14 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<GenericDyedVariantBlockEntity, SwivelChairBlock>(color, function, properties, GenerationsBlockEntityModels.SWIVEL_CHAIR), SittableBlock {
-    override val blockEntityType: BlockEntityType<GenericDyedVariantBlockEntity>
+class SwivelChairBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock(color, function, properties, GenerationsBlockEntityModels.SWIVEL_CHAIR), SittableBlock {
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_DYED_VARIANT
 
     override fun codec(): MapCodec<SwivelChairBlock> = CODEC

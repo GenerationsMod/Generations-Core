@@ -1,7 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.recipe
 
-import com.cobblemon.mod.common.util.codec.kotlinOptionalFieldOf
-import com.cobblemon.mod.common.util.codec.optionalFieldOfWithDefault
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
@@ -12,10 +10,9 @@ import net.minecraft.core.NonNullList
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.world.item.crafting.CraftingInput
 import net.minecraft.world.item.crafting.RecipeSerializer
 import net.minecraft.world.level.Level
-import java.util.Optional
+import java.util.*
 
 class ShapedRksRecipe(
     group: String,
@@ -28,7 +25,7 @@ class ShapedRksRecipe(
     val pattern: ShapedRecipePattern,
 ) : RksRecipe(group, result, consumesTimeCapsules, key, experience, processingTime, showNotification) {
 
-    override fun getSerializer(): RecipeSerializer<*> = GenerationsCoreRecipeSerializers.SHAPED_RKS
+    override fun getSerializer(): RecipeSerializer<*> = GenerationsCoreRecipeSerializers.SHAPED_RKS.value()
 
     override fun getRksIngredients(): NonNullList<GenerationsIngredient> = pattern.ingredients();
 

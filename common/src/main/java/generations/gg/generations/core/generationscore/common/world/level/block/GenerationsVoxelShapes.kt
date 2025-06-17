@@ -79,7 +79,7 @@ object GenerationsVoxelShapes {
         val length: Int
     ) {
         fun getShape(state: BlockState): VoxelShape {
-            return state.block.instanceOrNull<GenericRotatableModelBlock<*>>()?.let { block ->
+            return state.block.instanceOrNull<GenericRotatableModelBlock>()?.let { block ->
                 val x: Int = block.getWidthValue(state)
                 val y: Int = block.getHeightValue(state)
                 val z: Int = block.getLengthValue(state)

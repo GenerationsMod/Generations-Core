@@ -26,14 +26,14 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock<RksMachineBlockEntity>(
+class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock(
         copy,
         model = GenerationsBlockEntityModels.RKS_MACHINE,
         width = 1,
         height = 1,
         length = 1
     ) {
-    override val blockEntityType: BlockEntityType<RksMachineBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.RKS_MACHINE
 
     override fun codec(): MapCodec<out BaseEntityBlock> = CODEC
@@ -70,10 +70,10 @@ class RksMachineBlock(copy: Properties) : GenericRotatableModelBlock<RksMachineB
         level: Level,
         state: BlockState,
         blockEntityType: BlockEntityType<T>,
-    ): BlockEntityTicker<T>? = createTickerHelper(blockEntityType, GenerationsBlockEntities.RKS_MACHINE, RksMachineBlockEntity::serverTick)
+    ): BlockEntityTicker<T>? = createTickerHelper(blockEntityType, GenerationsBlockEntities.RKS_MACHINE.value() as BlockEntityType<RksMachineBlockEntity>, RksMachineBlockEntity::serverTick)
 
     protected fun openContainer(level: Level, bpos: BlockPos, player: Player) {
-        val rksMachine = getAssoicatedBlockEntity(level, bpos) ?: run { throw IllegalStateException("Our named container provider is missing!") }
+        val rksMachine = getAssoicatedBlockEntity<RksMachineBlockEntity>(level, bpos) ?: run { throw IllegalStateException("Our named container provider is missing!") }
         player.openMenu(rksMachine)
         player.awardStat(Stats.INTERACT_WITH_FURNACE)
     }

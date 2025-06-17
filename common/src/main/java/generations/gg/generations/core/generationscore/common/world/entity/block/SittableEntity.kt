@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.entity.block
 
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
+import generations.gg.generations.core.generationscore.common.world.entity.asValue
 import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.nbt.CompoundTag
@@ -22,7 +23,7 @@ class SittableEntity(type: EntityType<out Entity?>, level: Level) :
     }
 
     private constructor(level: Level, pos: BlockPos, offset: Double, yaw: Float) : this(
-        GenerationsEntities.SEAT,
+        GenerationsEntities.SEAT.asValue(),
         level
     ) {
         this.setPos(pos.x + 0.5, pos.y + offset, pos.z + 0.5)

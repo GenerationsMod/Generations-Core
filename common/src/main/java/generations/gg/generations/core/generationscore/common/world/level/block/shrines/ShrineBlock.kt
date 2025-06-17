@@ -4,13 +4,13 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.resources.ResourceLocation
 
-abstract class ShrineBlock<T : ShrineBlockEntity>(
+abstract class ShrineBlock(
     properties: Properties,
     model: ResourceLocation? = null,
     width: Int = 0,
     height: Int = 0,
     length: Int = 0
-) : GenericRotatableModelBlock<T>(properties = properties, model = model, width = width, height = height, length = length) {
+) : GenericRotatableModelBlock(properties = properties, model = model, width = width, height = height, length = length) {
 
     init {
         reassignStateDefinition()

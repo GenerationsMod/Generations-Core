@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.compat.jei
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.client.asValue
 import generations.gg.generations.core.generationscore.common.client.screen.container.RksMachineScreen
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer
@@ -43,7 +44,7 @@ class GenerationsCoreJeiCompat : IModPlugin {
     }
 
     override fun registerRecipeCatalysts(registration: IRecipeCatalystRegistration) {
-        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE)
+        registration.addRecipeCatalyst(GenerationsUtilityBlocks.RKS_MACHINE.value(), RksRecipeCategory.RKS_MACHINE)
     }
 
     override fun registerGuiHandlers(registration: IGuiHandlerRegistration) {
@@ -52,7 +53,7 @@ class GenerationsCoreJeiCompat : IModPlugin {
 
     override fun registerRecipeTransferHandlers(registration: IRecipeTransferRegistration) {
         registration.addRecipeTransferHandler(
-            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE, RksRecipeCategory.RKS_MACHINE, 1, 9, 10, 36
+            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE.asValue(), RksRecipeCategory.RKS_MACHINE, 1, 9, 10, 36
         )
     }
 
@@ -65,7 +66,7 @@ class GenerationsCoreJeiCompat : IModPlugin {
 
         val recipeManager = Minecraft.getInstance().level?.recipeManager ?: return Pair(emptyList(), emptyList())
 
-        recipeManager.getAllRecipesFor(GenerationsCoreRecipeTypes.RKS).forEach { recipe ->
+        recipeManager.getAllRecipesFor(GenerationsCoreRecipeTypes.RKS.asValue<RksRecipe>()).forEach { recipe ->
                 if (validator.isRecipeHandled(recipe)) {
                     handled.add(recipe)
                 } else {

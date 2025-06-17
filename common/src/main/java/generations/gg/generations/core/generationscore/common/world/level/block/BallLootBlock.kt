@@ -13,6 +13,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import net.minecraft.core.BlockPos
+import net.minecraft.core.Holder
 import net.minecraft.core.NonNullList
 import net.minecraft.core.particles.ParticleTypes
 import net.minecraft.core.registries.Registries
@@ -25,19 +26,16 @@ import net.minecraft.sounds.SoundSource
 import net.minecraft.util.RandomSource
 import net.minecraft.world.Containers
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResult
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.SoundType
+import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
-import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.storage.loot.LootParams
 import net.minecraft.world.level.storage.loot.LootTable
@@ -49,16 +47,14 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
-import java.util.function.Consumer
-import java.util.function.Function
 import java.util.function.Supplier
 import java.util.stream.Collectors
 
-class BallLootBlock(properties: Properties, val type: String, private val ball: PokeBall) : GenericRotatableModelBlock<BallLootBlockEntity>(
+class BallLootBlock(properties: Properties, val type: String, private val ball: PokeBall) : GenericRotatableModelBlock(
         properties = properties,
         model = GenerationsBlockEntityModels.DESK
     ) {
-    override val blockEntityType: BlockEntityType<BallLootBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.BALL_LOOT
 
     val lootTableId: ResourceKey<LootTable> = ResourceKey.create(Registries.LOOT_TABLE, GenerationsCore.id("chests/${type}_ball"))
@@ -78,7 +74,7 @@ class BallLootBlock(properties: Properties, val type: String, private val ball: 
             return ItemInteractionResult.CONSUME
         }
 
-        val lootEntity = level.getBlockEntity(pos, GenerationsBlockEntities.BALL_LOOT)
+        val lootEntity = level.getBlockEntity(pos, GenerationsBlockEntities.BALL_LOOT.asValue<BallLootBlockEntity>())
 
         if (lootEntity.isPresent) {
             val be = lootEntity.get()
@@ -109,7 +105,7 @@ class BallLootBlock(properties: Properties, val type: String, private val ball: 
                         1.0f
                     )
 
-                    player.awardStat(if(be.isCustomDrop) GenerationsCoreStats.HIDDEN_LOOT_FOUND else GenerationsCoreStats.NORMAL_LOOT_FOUND, 1)
+                    player.awardStat(if(be.isCustomDrop) GenerationsCoreStats.HIDDEN_LOOT_FOUND.value() else GenerationsCoreStats.NORMAL_LOOT_FOUND.value(), 1)
                 } else if (be.lootMode.isTimeEnabled) {
                     player.displayClientMessage("generations_core.blocks.timedclaim".asTranslated(), false)
                 } else {
@@ -238,3 +234,5 @@ class BallLootBlock(properties: Properties, val type: String, private val ball: 
         ).apply(it, ::BallLootBlock) }
     }
 }
+
+fun <T: BlockEntity> Holder<BlockEntityType<*>>.asValue() = this.value() as BlockEntityType<T>

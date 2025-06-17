@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
-import java.util.*
 
 //Direct copy of https://github.com/DimensionalDevelopment/DimDoors/blob/1.19/src/main/java/org/dimdev/dimdoors/api/block/entity/MutableBlockEntityType.java
 class MutableBlockEntityType<T : BlockEntity>(factory: (BlockPos, BlockState) -> T, blocks: Set<Block>, type: Type<*>?) :
@@ -23,6 +22,6 @@ class MutableBlockEntityType<T : BlockEntity>(factory: (BlockPos, BlockState) ->
 
     companion object {
         @JvmField
-		var blocksToAdd: MutableSet<GenericModelBlock<*>> = HashSet()
+		var blocksToAdd: MutableSet<GenericModelBlock> = HashSet()
     }
 }

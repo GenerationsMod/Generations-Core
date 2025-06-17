@@ -34,19 +34,21 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsDecorationBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
+import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.asValue
+import net.minecraft.advancements.Criterion
+import net.minecraft.advancements.critereon.InventoryChangeTrigger
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.PackOutput
-import net.minecraft.data.recipes.RecipeCategory
-import net.minecraft.data.recipes.RecipeOutput
-import net.minecraft.data.recipes.ShapedRecipeBuilder
+import net.minecraft.data.recipes.*
 import net.minecraft.data.recipes.ShapedRecipeBuilder.shaped
-import net.minecraft.data.recipes.ShapelessRecipeBuilder
 import net.minecraft.tags.ItemTags
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.DyeItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
+import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.common.conditions.IConditionBuilder
 import java.util.*
@@ -91,7 +93,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("###")
             .unlockedBy(
                 getHasName(GenerationsBlocks.SMOOTH_CHARGE_STONE),
-                has(GenerationsBlocks.SMOOTH_CHARGE_STONE)
+                has(GenerationsBlocks.SMOOTH_CHARGE_STONE.value())
             )
             .save(recipeOutput)
 
@@ -101,7 +103,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern(" # ").pattern("#X#").pattern(" # ")
             .unlockedBy(
                 getHasName(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE),
-                has(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
+                has(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.value())
             )
             .save(recipeOutput)
 
@@ -127,7 +129,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("###")
             .unlockedBy(
                 getHasName(GenerationsBlocks.SMOOTH_VOLCANIC_STONE),
-                has(GenerationsBlocks.SMOOTH_VOLCANIC_STONE)
+                has(GenerationsBlocks.SMOOTH_VOLCANIC_STONE.value())
             )
             .save(recipeOutput)
 
@@ -137,7 +139,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern(" # ").pattern("#X#").pattern(" # ")
             .unlockedBy(
                 getHasName(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE),
-                has(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
+                has(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.asValue())
             )
             .save(recipeOutput)
 
@@ -546,13 +548,13 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .save(recipeOutput)
         ShapelessRecipeBuilder.shapeless(
             RecipeCategory.DECORATIONS,
-            GenerationsDecorationBlocks.LITWICK_CANDLES,
+            GenerationsDecorationBlocks.LITWICK_CANDLES.value(),
             1
         )
             .requires(GenerationsDecorationBlocks.LITWICK_CANDLE, 3)
             .unlockedBy(
                 getHasName(GenerationsDecorationBlocks.LITWICK_CANDLE),
-                has(GenerationsDecorationBlocks.LITWICK_CANDLE)
+                has(GenerationsDecorationBlocks.LITWICK_CANDLE.asValue())
             )
             .save(recipeOutput)
         shaped(RecipeCategory.DECORATIONS, GenerationsDecorationBlocks.SHELF, 1)
@@ -704,7 +706,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .unlockedBy(getHasName(Items.WHITE_WOOL), has(Items.WHITE_WOOL))
             .save(consumer)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, pastelBeanBag)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, pastelBeanBag.value())
             .requires(dye)
             .requires(GenerationsItemTags.PASTEL_BEAN_BAG)
             .unlockedBy(
@@ -713,7 +715,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             )
             .save(
                 consumer,
-                Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(pastelBeanBag))
+                Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(pastelBeanBag.value()))
                     .withPath { a: String -> a + "_dyed" })
     }
 
@@ -822,10 +824,10 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             .pattern("ABA")
             .pattern("CDE")
             .pattern("AFA")
-            .unlockedBy(getHasName(GenerationsItems.FRESH_WATER), has(GenerationsItems.FRESH_WATER))
+            .unlockedBy(getHasName(GenerationsItems.FRESH_WATER), has(GenerationsItems.FRESH_WATER.value()))
             .save(consumer)
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, vendingMachine)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, vendingMachine.value())
             .requires(dye)
             .requires(GenerationsItemTags.VENDING_MACHINE)
             .unlockedBy(
@@ -834,17 +836,17 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
             )
             .save(
                 consumer,
-                Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(vendingMachine))
+                Objects.requireNonNull(BuiltInRegistries.BLOCK.getKey(vendingMachine.value()))
                     .withPath { a: String -> a + "_dyed" })
     }
 
-    private fun buildPokeBallDisplayRecipes(consumer: RecipeOutput, pokeball: Item, display: Block) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, display)
+    private fun buildPokeBallDisplayRecipes(consumer: RecipeOutput, pokeball: Item, display: Holder<Block>) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, display.value())
             .requires(pokeball)
             .requires(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY)
             .unlockedBy(
                 getHasName(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY),
-                has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY)
+                has(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.asValue())
             )
             .unlockedBy(getHasName(pokeball), has(pokeball))
             .save(consumer)
@@ -865,5 +867,20 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                 consumer,
                 "pokeball_display_with_" + Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(pokeball)).path
             )
+    }
+    fun getHasName(itemLike: Holder<out ItemLike>): String {
+        return RecipeProvider.getHasName(itemLike.value())
+    }
+
+    fun shaped(category: RecipeCategory, result: Holder<out ItemLike>, count: Int): ShapedRecipeBuilder {
+        return shaped(category, result.value(), count)
+    }
+
+    fun shaped(arg: RecipeCategory, result: Holder<out ItemLike>): ShapedRecipeBuilder {
+        return shaped(arg, result.value())
+    }
+
+    fun has(itemLike: Holder<ItemLike>): Criterion<InventoryChangeTrigger.TriggerInstance> {
+        return RecipeProvider.has(itemLike.value())
     }
 }

@@ -15,7 +15,6 @@ import generations.gg.generations.core.generationscore.common.util.StreamCodecs
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock.Companion.FACING
-import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
@@ -25,8 +24,6 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.phys.Vec3
 import org.joml.Vector4f
-import java.util.function.BiConsumer
-import java.util.function.Function
 
 private val Learnset.allMoves: MutableList<MoveTemplate>
     get() {
@@ -50,7 +47,7 @@ data class PokemonResult(
         get() = PokemonItem.from(getByIdentifier(species)!!, aspects, 1, Vector4f(1f, 1f, 1f, 1f))
 
     override fun type(): RksResultType<PokemonResult> {
-        return GenerationsRksTypes.POKEMON
+        return GenerationsRksTypes.POKEMON as RksResultType<PokemonResult>
     }
 
     override fun process(player: Player, rksMachineBlockEntity: RksMachineBlockEntity, stack: ItemStack) {

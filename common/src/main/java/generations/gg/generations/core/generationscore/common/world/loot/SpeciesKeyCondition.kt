@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.loot
 
-import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonObject
-import com.google.gson.JsonSerializationContext
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -15,7 +13,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType
 @JvmRecord
 data class SpeciesKeyCondition(val key: SpeciesKey) : LootItemCondition {
     override fun getType(): LootItemConditionType {
-        return LootItemConditionTypes.SPECIES_KEY
+        return LootItemConditionTypes.SPECIES_KEY.value()
     }
 
     override fun test(lootContext: LootContext): Boolean {

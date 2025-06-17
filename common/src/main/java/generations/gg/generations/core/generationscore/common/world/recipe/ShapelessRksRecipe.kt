@@ -13,7 +13,7 @@ import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.world.item.crafting.RecipeSerializer
 import net.minecraft.world.level.Level
-import java.util.Optional
+import java.util.*
 
 class ShapelessRksRecipe(
     group: String,
@@ -38,7 +38,7 @@ class ShapelessRksRecipe(
     }
 
     override fun getSerializer(): RecipeSerializer<*> {
-        return GenerationsCoreRecipeSerializers.SHAPELESS_RKS
+        return GenerationsCoreRecipeSerializers.SHAPELESS_RKS.value()
     }
 
     companion object {

@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.PokeDollBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -15,7 +14,6 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.*
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.EnumProperty
@@ -24,8 +22,8 @@ import net.minecraft.world.phys.Vec3
 import org.joml.Math
 
 @Suppress("deprecation")
-class PokeDollBlock(val name: String, private val isShiny: Boolean, val scale: Float) : GenericModelBlock<PokeDollBlockEntity>(Properties.of().sound(SoundType.WOOL).strength(1.0f), modelResource = GenerationsCore.id("models/block/pokedolls/$name.pk")) {
-    override val blockEntityType: BlockEntityType<PokeDollBlockEntity>
+class PokeDollBlock(val name: String, private val isShiny: Boolean, val scale: Float) : GenericModelBlock(Properties.of().sound(SoundType.WOOL).strength(1.0f), modelResource = GenerationsCore.id("models/block/pokedolls/$name.pk")) {
+    override val blockEntityType
         get() = GenerationsBlockEntities.POKE_DOLL
 
     private val variant = if (isShiny) "shiny" else "regular"

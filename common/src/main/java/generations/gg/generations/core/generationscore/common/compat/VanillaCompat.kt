@@ -43,27 +43,27 @@ object VanillaCompat {
 
     fun dispenserBehavior() {
         DispenserBlock.registerBehavior(
-            GenerationsItems.GHOST_BOAT_ITEM,
+            GenerationsItems.GHOST_BOAT_ITEM.value(),
             BoatDispenseItemBehavior(GenerationsBoatEntity.Type.GHOST)
         )
         DispenserBlock.registerBehavior(
-            GenerationsItems.GHOST_CHEST_BOAT_ITEM,
+            GenerationsItems.GHOST_CHEST_BOAT_ITEM.value(),
             BoatDispenseItemBehavior(GenerationsBoatEntity.Type.GHOST, true)
         )
         DispenserBlock.registerBehavior(
-            GenerationsItems.ULTRA_DARK_BOAT_ITEM,
+            GenerationsItems.ULTRA_DARK_BOAT_ITEM.value(),
             BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_DARK)
         )
         DispenserBlock.registerBehavior(
-            GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM,
+            GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.value(),
             BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_DARK, true)
         )
         DispenserBlock.registerBehavior(
-            GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM,
+            GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.value(),
             BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_JUNGLE)
         )
         DispenserBlock.registerBehavior(
-            GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM,
+            GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.value(),
             BoatDispenseItemBehavior(GenerationsBoatEntity.Type.ULTRA_JUNGLE, true)
         )
     }

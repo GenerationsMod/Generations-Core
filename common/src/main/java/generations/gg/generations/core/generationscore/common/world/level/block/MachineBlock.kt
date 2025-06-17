@@ -40,7 +40,7 @@ class MachineBlock(properties: Properties) : BaseEntityBlock(properties) {
         state: BlockState,
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
-        return if (level.isClientSide) null else createTickerHelper(blockEntityType, GenerationsBlockEntities.MACHINE_BLOCK, MachineBlockEntity.Companion::serverTick)
+        return if (level.isClientSide) null else createTickerHelper(blockEntityType, GenerationsBlockEntities.MACHINE_BLOCK.asValue(), MachineBlockEntity.Companion::serverTick)
     }
 
     val CODEC = simpleCodec(::MachineBlock)

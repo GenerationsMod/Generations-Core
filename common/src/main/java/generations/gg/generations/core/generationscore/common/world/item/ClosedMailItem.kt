@@ -3,7 +3,9 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.Cobblemon.implementation
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
+import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.MailContent
 import net.minecraft.ChatFormatting
 import net.minecraft.commands.CommandSourceStack
 import net.minecraft.network.chat.Component
@@ -33,7 +35,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA)
+        val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA.asValue<MailContent>())
 
         if (sealedMailData != null) {
             val string = sealedMailData.author
@@ -76,7 +78,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
             resolvingSource: CommandSourceStack?,
             resolvingPlayer: Player?
         ): Boolean {
-            val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA)
+            val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA.asValue<MailContent>())
             if (sealedMailData == null || sealedMailData.resolved) {
                 return false
             }
@@ -88,7 +90,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
 
             sealedMailData.content = string
 
-            stack.set(GenerationsDataComponents.MAIL_DATA, sealedMailData)
+            stack.set(GenerationsDataComponents.MAIL_DATA.asValue(), sealedMailData)
 
             return true
         }

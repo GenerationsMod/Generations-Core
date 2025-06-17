@@ -2,12 +2,12 @@ package generations.gg.generations.core.generationscore.common.world.item.compon
 
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.mojang.serialization.Codec
-import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.WalkmonItem
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
 import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.BuiltInRegistries
@@ -51,5 +51,6 @@ object GenerationsDataComponents: PlatformRegistry<DataComponentType<*>>() {
         name: String,
         codec: Codec<T>,
         streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>? = null,
-    ): DataComponentType<T> = create(GenerationsCore.id(name), DataComponentType.builder<T>().persistent(codec).cacheEncoding().networkSynchronized(streamCodec).build())
+    ): Holder<DataComponentType<*>> = create(name, { DataComponentType.builder<T>().persistent(codec).cacheEncoding().networkSynchronized(streamCodec).build() })
 }
+

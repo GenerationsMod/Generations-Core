@@ -1,11 +1,11 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericSmokerBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.BlastFurnaceBlock
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.SmokerBlock
 import net.minecraft.world.level.block.entity.BlockEntity
@@ -25,7 +25,7 @@ class GenericSmokerBlock(properties: Properties = Properties.ofFullCopy(Blocks.S
         state: BlockState,
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
-        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_SMOKER)
+        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_SMOKER.asValue())
     }
 
     companion object {

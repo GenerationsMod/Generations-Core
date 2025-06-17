@@ -5,11 +5,12 @@ import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.util.asTranslated
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import net.minecraft.core.Holder
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.Block
 
-class DarkCrystalItem(block: Block, properties: Properties) : BlockItemWithLang(block, properties), PokemonEntityInteraction {
+class DarkCrystalItem(block: Holder<Block>, properties: Properties) : BlockItemWithLang(block, properties), PokemonEntityInteraction {
     override val accepted: Set<PokemonEntityInteraction.Ownership>
         get() = setOf(PokemonEntityInteraction.Ownership.WILD, PokemonEntityInteraction.Ownership.OWNER, PokemonEntityInteraction.Ownership.OWNED_ANOTHER)
 

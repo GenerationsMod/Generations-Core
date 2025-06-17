@@ -10,7 +10,6 @@ import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.loot.LootTableProvider
 import net.minecraft.data.loot.LootTableSubProvider
-import net.minecraft.resources.ResourceKey
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.CropBlock
 import net.minecraft.world.level.storage.loot.LootPool
@@ -22,7 +21,6 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue
 import java.util.concurrent.CompletableFuture
-import java.util.function.BiConsumer
 
 class LootTableDatagen(output: PackOutput, registries: CompletableFuture<HolderLookup.Provider>) : LootTableProvider(
     output, setOf(), ImmutableList.of(
@@ -48,10 +46,10 @@ class LootTableDatagen(output: PackOutput, registries: CompletableFuture<HolderL
                             )
                             .add(
                                 AlternativesEntry.alternatives(
-                                    LootItem.lootTableItem(GenerationsItems.SHADEROOT_CARROT)
+                                    LootItem.lootTableItem(GenerationsItems.SHADEROOT_CARROT.value())
                                         .`when`(LootItemRandomChanceCondition.randomChance(0.5f))
                                         .`when`(SpeciesKeyCondition.Builder().key(LegendKeys.SPECTRIER)),
-                                    LootItem.lootTableItem(GenerationsItems.ICEROOT_CARROT)
+                                    LootItem.lootTableItem(GenerationsItems.ICEROOT_CARROT.value())
                                         .`when`(SpeciesKeyCondition.Builder().key(LegendKeys.GLASTRIER))
 
                                 )

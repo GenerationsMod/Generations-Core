@@ -12,7 +12,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsStorage
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
-import generations.gg.generations.core.generationscore.common.util.extensions.resourceKey
+import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.util.shrink
 import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
@@ -130,7 +130,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
             if (cookTime >= 200) {
                 val hasBerry = Stream.of(*berries).anyMatch { a: SimpleItemSlot -> !a.isEmpty }
                 val hasMaxMushrooms = Stream.of<SimpleItemSlot>(*berries).anyMatch { a: SimpleItemSlot ->
-                    a.resource.asHolder().`is`(GenerationsItems.MAX_MUSHROOMS.resourceKey())
+                    a.resource.asHolder().`is`(GenerationsItems.MAX_MUSHROOMS.unwrapKey().get())
                 }
 
                 if (hasBerry && !hasMaxMushrooms) {
@@ -142,7 +142,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                     CurryEvents.COOK.postThen(CurryEvents.Cook(type, berriesTypes, CurryData.create(type, berriesTypes)), ifSucceeded = {
                         event ->
                             val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY)
-                                .set(GenerationsDataComponents.CURRY_DATA, event.output)
+                                .set(GenerationsDataComponents.CURRY_DATA.asValue(), event.output)
 
                             hasInserted = handler.insert(13, curry, 1, false) > 0
 
@@ -150,7 +150,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                 } else if (hasMaxMushrooms && !hasBerry && (mainIngredient.isEmpty || mainIngredient.resource.item === GenerationsItems.MAX_HONEY)) {
                     val count = AtomicLong()
                     Stream.of<SimpleItemSlot>(*berries)
-                        .filter { a: SimpleItemSlot -> a.resource.isOf(GenerationsItems.MAX_MUSHROOMS) }
+                        .filter { a: SimpleItemSlot -> a.resource.isOf(GenerationsItems.MAX_MUSHROOMS.value()) }
                         .forEach { b: SimpleItemSlot -> count.addAndGet(b.amount) }
                     if (count.get() > 2) {
                         var amountTaken = 0

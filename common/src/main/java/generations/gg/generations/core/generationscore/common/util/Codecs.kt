@@ -439,5 +439,5 @@ object Codecs {
     }
 
     fun <A> mapCodec(block: RecordCodecBuilder.Instance<A>.() -> App<RecordCodecBuilder.Mu<A>, A>): MapCodec<A> = RecordCodecBuilder.mapCodec(block)
-    fun <T : GenericModelBlock<*>> modelCodec(): RecordCodecBuilder<T, ResourceLocation> = ResourceLocation.CODEC.fieldOf("model").forGetter { it.getModel()!! }
+    fun <T : GenericModelBlock> modelCodec(): RecordCodecBuilder<T, ResourceLocation> = ResourceLocation.CODEC.fieldOf("model").forGetter { it.getModel()!! }
 }

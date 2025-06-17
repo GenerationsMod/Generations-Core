@@ -158,7 +158,7 @@ object Overlays {
 
     fun renderPumpkin(guiGraphics: GuiGraphics, deltaTracker: DeltaTracker?): Boolean {
         if (Minecraft.getInstance().player!!.inventory.getArmor(3)
-                .`is`(GenerationsBlocks.CURSED_CARVED_PUMPKIN.asItem())
+                .`is`(GenerationsBlocks.CURSED_CARVED_PUMPKIN.value().asItem())
         ) {
             RenderSystem.disableDepthTest()
             RenderSystem.enableBlend()

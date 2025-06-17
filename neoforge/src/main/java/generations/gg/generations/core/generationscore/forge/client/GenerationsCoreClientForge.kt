@@ -57,7 +57,7 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
             })
         })
 
-        eventBus.addListener<InputEvent.Key> {
+        NeoForge.EVENT_BUS.addListener<InputEvent.Key> {
             Keybinds.pressDown(it.key, it.scanCode, it.action, it.modifiers)
         }
 

@@ -18,14 +18,13 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class TimespaceAltarBlock(properties: Properties) : InteractShrineBlock<TimeSpaceAltarBlockEntity>(properties, GenerationsBlockEntityModels.TIME_SPACE_ALTAR) {
-    override val blockEntityType: BlockEntityType<TimeSpaceAltarBlockEntity>
+class TimespaceAltarBlock(properties: Properties) : InteractShrineBlock(properties, GenerationsBlockEntityModels.TIME_SPACE_ALTAR) {
+    override val blockEntityType
         get() = GenerationsBlockEntities.TIMESPACE_ALTAR
 
     override fun codec(): MapCodec<TimespaceAltarBlock> = CODEC
@@ -53,7 +52,7 @@ class TimespaceAltarBlock(properties: Properties) : InteractShrineBlock<TimeSpac
     ): Boolean {
         val stack = player.getItemInHand(hand)
 
-        val entity = getAssoicatedBlockEntity(level, pos) ?: return false
+        val entity = getAssoicatedBlockEntity<TimeSpaceAltarBlockEntity>(level, pos) ?: return false
 
         val handler = entity.container
 

@@ -7,7 +7,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.TaoTrioShrineBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerPlayer
@@ -15,18 +14,17 @@ import net.minecraft.world.InteractionHand
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.BooleanOp
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class TaoTrioShrineBlock(properties: Properties) : InteractShrineBlock<TaoTrioShrineBlockEntity>(
+class TaoTrioShrineBlock(properties: Properties) : InteractShrineBlock(
         properties,
         GenerationsBlockEntityModels.TAO_TRIO_SHRINE
     ) {
-    override val blockEntityType: BlockEntityType<TaoTrioShrineBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.TAO_TRIO_SHRINE
 
     override fun interact(

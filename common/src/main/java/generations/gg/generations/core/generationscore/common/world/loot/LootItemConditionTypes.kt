@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.loot
 
 import com.mojang.serialization.MapCodec
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -14,7 +14,7 @@ object LootItemConditionTypes: PlatformRegistry<LootItemConditionType>() {
     override val registry: Registry<LootItemConditionType> = BuiltInRegistries.LOOT_CONDITION_TYPE
     override val resourceKey: ResourceKey<Registry<LootItemConditionType>> = Registries.LOOT_CONDITION_TYPE
 
-    val SPECIES_KEY: LootItemConditionType = register("species_key", SpeciesKeyCondition.CODEC)
+    val SPECIES_KEY = register("species_key", SpeciesKeyCondition.CODEC)
 
-    fun <T : LootItemCondition> register(name: String, supplier: MapCodec<T>): LootItemConditionType = create(name.generationsResource(), LootItemConditionType(supplier))
+    fun <T : LootItemCondition> register(name: String, supplier: MapCodec<T>): Holder<LootItemConditionType> = create(name, { LootItemConditionType(supplier) })
 }

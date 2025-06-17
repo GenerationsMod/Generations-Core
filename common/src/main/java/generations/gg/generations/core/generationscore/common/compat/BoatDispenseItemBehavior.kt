@@ -20,7 +20,7 @@ class BoatDispenseItemBehavior @JvmOverloads constructor(
     public override fun execute(source: BlockSource, stack: ItemStack): ItemStack {
         val direction = source.state().getValue(DispenserBlock.FACING)
         val level: Level = source.level()
-        val d = 0.5625 + GenerationsEntities.BOAT_ENTITY.getWidth() as Double / 2.0
+        val d = 0.5625 + GenerationsEntities.BOAT_ENTITY.value().getWidth() as Double / 2.0
         val e = source.pos().x + direction.stepX.toDouble() * d
         val f = source.pos().y + (direction.stepY.toFloat() * 1.125f).toDouble()
         val g = source.pos().z + direction.stepZ.toDouble() * d

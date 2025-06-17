@@ -3,12 +3,12 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.world.recipe.*
 import generations.gg.generations.core.generationscore.forge.datagen.nullableOptional
+import net.minecraft.core.Holder
 import net.minecraft.core.NonNullList
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
-import java.util.Optional
 
 class ShapelessRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<ShapelessRksRecipe, Unit>(result) {
     private val ingredients: NonNullList<GenerationsIngredient> = NonNullList.create()
@@ -56,6 +56,8 @@ class ShapelessRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder
     override fun validate(recipeId: ResourceLocation) = Unit
 
     companion object {
+        fun <T: ItemLike> create(output: Holder<T>): ShapelessRksRecipeJsonBuilder = create(output.value().asItem())
+
         fun create(output: ItemLike): ShapelessRksRecipeJsonBuilder {
             return ShapelessRksRecipeJsonBuilder(
                 ItemResult(

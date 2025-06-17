@@ -37,13 +37,6 @@ config="GenerationsCore-common.mixins.json"
    side="BOTH"
 
 [[dependencies.generations_core]]
-   modId="architectury"
-   mandatory=true
-   versionRange="[9.1.13,)"
-   ordering="AFTER"
-   side="BOTH"
-
-[[dependencies.generations_core]]
    modId="cobblemon"
    mandatory=true
    versionRange="[1.6.1+1.21.1]"

@@ -1,29 +1,22 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import com.mojang.serialization.MapCodec
-import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.util.Codecs
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericModelProvidingBlockEntity
-import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
-import generations.gg.generations.core.generationscore.common.world.level.block.shrines.LunarShrineBlock
-import jdk.jfr.consumer.RecordedClassLoader
 import net.minecraft.core.BlockPos
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.BaseEntityBlock
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class LunarCystalBlock(properties: Properties, model: ResourceLocation) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
+class LunarCystalBlock(properties: Properties, model: ResourceLocation) : GenericRotatableModelBlock(
         properties,
         model = model
     ) {
-    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
 
     public override fun getShape(

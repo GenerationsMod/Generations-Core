@@ -13,7 +13,6 @@ import net.minecraft.ChatFormatting
 import net.minecraft.core.component.DataComponents
 import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.entity.item.ItemEntity
@@ -55,7 +54,7 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
 
                 feature.value += 1
                 pokemon.markFeatureDirty(feature)
-                GenerationsItems.MEW_DNA_FIBER.defaultInstance.dropAsItemEntity(entity.level(), entity.position())
+                GenerationsItems.MEW_DNA_FIBER.value().defaultInstance.dropAsItemEntity(entity.level(), entity.position())
 
                 player.sendSystemMessage("generations_core.pokemon.extracted_dna_fiber_succeed".asTranslated(pokemon.getDisplayName().string))
 

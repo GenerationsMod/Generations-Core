@@ -13,23 +13,22 @@ import com.cobblemon.mod.common.util.playSoundServer
 import com.cobblemon.mod.common.util.toVec3d
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.generateRotationalVoxelShape
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.DyedPcBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.Holder
-import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.ItemInteractionResult
-import net.minecraft.world.ItemInteractionResult.*
+import net.minecraft.world.ItemInteractionResult.SUCCESS
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
@@ -43,7 +42,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
-class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Block>) : DyeableBlock<DyedPcBlockEntity, DyedPcBlock>(properties, color, map, GenerationsBlockEntityModels.PC, 0, 1, 0) {
+class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Holder<Block>>) : DyeableBlock(properties, color, map, GenerationsBlockEntityModels.PC, 0, 1, 0) {
     private val SHAPE = generateRotationalVoxelShape(
         Shapes.or(
             Shapes.box(0.07500000000000001, 0.0, 0.025000000000000022, 0.925, 1.5, 0.725),
@@ -56,7 +55,7 @@ class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Bl
         Direction.SOUTH, 1, 2, 1, 0.0, 0.0
     )
 
-    override val blockEntityType: BlockEntityType<DyedPcBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.DYED_PC
 
     override fun codec(): MapCodec<DyedPcBlock> = CODEC
@@ -102,11 +101,11 @@ class DyedPcBlock(properties: Properties, color: DyeColor, map: Map<DyeColor, Bl
         return SUCCESS
     }
 
-    override fun <T : BlockEntity?> getTicker(
+    override fun <T : BlockEntity> getTicker(
         world: Level,
         blockState: BlockState,
         blockEntityType: BlockEntityType<T>,
-    ): BlockEntityTicker<T>? =  createTickerHelper(blockEntityType, GenerationsBlockEntities.DYED_PC, DyedPcBlockEntity.TICKER::tick)
+    ): BlockEntityTicker<T>? =  createTickerHelper(blockEntityType, GenerationsBlockEntities.DYED_PC.asValue<DyedPcBlockEntity>(), DyedPcBlockEntity.TICKER::tick)
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
         super.createBlockStateDefinition(builder.add(PcBlock.ON))

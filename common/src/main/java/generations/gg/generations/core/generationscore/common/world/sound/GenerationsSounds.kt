@@ -1,7 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.sound
 
-import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -57,5 +58,5 @@ object GenerationsSounds: PlatformRegistry<SoundEvent>() {
     val LUGIA = registerSound("generations_core.music.special.lugia")
     val MT_PYRE = registerSound("generations_core.music.special.mt_pyre")
 
-    private fun registerSound(id: String): SoundEvent = create(GenerationsCore.id(id), SoundEvent.createVariableRangeEvent(GenerationsCore.id(id)))
+    private fun registerSound(id: String): Holder<SoundEvent> = create(id, { SoundEvent.createVariableRangeEvent(id.generationsResource()) })
 }

@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import net.minecraft.world.item.BlockItem
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlockItem
+import net.minecraft.core.Holder
 import net.minecraft.world.level.block.Block
 
-open class BlockItemWithLang(block: Block, properties: Properties) : BlockItem(block, properties), LangTooltip
+open class BlockItemWithLang(block: Holder<Block>, properties: Properties) : GenerationsBlockItem(block, properties), LangTooltip

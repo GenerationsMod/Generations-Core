@@ -1,8 +1,10 @@
 package generations.gg.generations.core.generationscore.common
 
 import com.cobblemon.mod.common.NetworkManager
+import generations.gg.generations.core.generationscore.common.util.EntryRegister
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.syncher.EntityDataSerializer
@@ -34,7 +36,7 @@ interface GenerationsImplementation {
      * @param log The log block of wood
      * @param stripped The stripped log block of wood
      */
-    fun registerStrippable(log: Block, stripped: Block)
+    fun registerStrippable(log: Holder<Block>, stripped: Holder<Block>)
 
     /**
      * Register a block as flammable.
@@ -58,11 +60,13 @@ interface GenerationsImplementation {
     ): CreativeModeTab
 
     fun <T: Any> registerEntityDataSerializer(name: String, dataSerializer: EntityDataSerializer<T>)
-    fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): MenuType<T>
-    fun <T: Any> register(register: PlatformRegistry<T>)
+    fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): () -> MenuType<T>
+    fun <T: Any> register(register: () -> PlatformRegistry<T>)
     fun openExtendedMenu(serverPlayer: ServerPlayer, menuProvider: ExtendedMenuProvider)
 
     fun <T: Any> createRegistry(key: ResourceKey<Registry<T>>, sync: Boolean): Registry<T>
 
     val networkManager: NetworkManager
+
+    fun <T: Any> entryRegister(resourceKey: Registry<T>): EntryRegister<T>
 }

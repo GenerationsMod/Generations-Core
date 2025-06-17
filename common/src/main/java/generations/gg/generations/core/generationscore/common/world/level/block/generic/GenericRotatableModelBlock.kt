@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.util.extensions.between
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -21,7 +20,7 @@ import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.level.storage.loot.LootParams
 import net.minecraft.world.phys.AABB
 
-abstract class GenericRotatableModelBlock<T>(properties: Properties, posFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model: ResourceLocation? = null, val width: Int = 0, val height: Int = 0, val length: Int = 0) : GenericModelBlock<T>(properties, posFunction, model) where T : BlockEntity, T : ModelContextProviders.ModelProvider {
+abstract class GenericRotatableModelBlock(properties: Properties, posFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_ROTATE_POS_FUNCTION, model: ResourceLocation? = null, val width: Int = 0, val height: Int = 0, val length: Int = 0) : GenericModelBlock(properties, posFunction, model) {
 
     init {
         assignSize(width, height, length)
@@ -329,7 +328,7 @@ abstract class GenericRotatableModelBlock<T>(properties: Properties, posFunction
 
         private val DEFAULT_BLOCK_ROTATE_POS_FUNCTION: (BlockPos, BlockState) -> BlockPos = { pos, state ->
             val block = state.block
-                if (block is GenericRotatableModelBlock<*>) {
+                if (block is GenericRotatableModelBlock) {
                     val facing: Direction = state.getValue(FACING)
                     val x: Int = block.getWidthValue(state)
                     val y: Int = block.getHeightValue(state)

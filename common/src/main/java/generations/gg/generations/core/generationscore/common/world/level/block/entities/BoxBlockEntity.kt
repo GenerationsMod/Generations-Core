@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities
 
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.BoxBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.HolderLookup
@@ -20,7 +21,7 @@ import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 
 class BoxBlockEntity(pos: BlockPos, blockState: BlockState) :
-    RandomizableContainerBlockEntity(GenerationsBlockEntities.BOX, pos, blockState) {
+    RandomizableContainerBlockEntity(GenerationsBlockEntities.BOX.asValue<BoxBlockEntity>(), pos, blockState) {
     private var items: NonNullList<ItemStack> = NonNullList.withSize(27, ItemStack.EMPTY)
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {

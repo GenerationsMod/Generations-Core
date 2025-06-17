@@ -1,15 +1,14 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
-import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import earth.terrarium.common_storage_lib.storage.base.UpdateManager
+import generations.gg.generations.core.generationscore.common.client.asValue
 import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.MenuStorageSlot
 import net.minecraft.network.FriendlyByteBuf
-import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
@@ -23,7 +22,7 @@ open class GenericChestContainer<T>(
     val inventoryWidth: Int,
     val inventoryHeight: Int,
     lock: Int = -1
-) : AbstractContainerMenu(GenerationsContainers.GENERIC, containerId) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
+) : AbstractContainerMenu(GenerationsContainers.GENERIC.asValue<GenericChestContainer<*>>(), containerId) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
     @JvmField
     val guiWidth: Int =  14 + this.inventoryWidth * 18
     @JvmField

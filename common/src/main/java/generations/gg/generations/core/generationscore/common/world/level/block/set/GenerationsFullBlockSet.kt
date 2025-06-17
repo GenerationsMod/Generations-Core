@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.set
 
+import net.minecraft.core.Holder
 import net.minecraft.data.BlockFamily
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
@@ -11,24 +12,24 @@ import net.minecraft.world.level.block.state.properties.BlockSetType
 import org.jetbrains.annotations.ApiStatus
 
 open class GenerationsFullBlockSet : GenerationsBlockSet {
-    private val button: ButtonBlock
-    private val pressurePlate: PressurePlateBlock
+    val buttonHolder: Holder<Block>
+    val pressurePlateHolder: Holder<Block>
 
     constructor(
         name: String,
         properties: BlockBehaviour.Properties,
         type: BlockSetType,
-        baseBlock: Block
+        baseBlock: Holder<Block>
     ) : super(name, properties, baseBlock) {
-        button = registerBlockItem(name + "_button", ButtonBlock(type, 20, properties))
-        pressurePlate = registerBlockItem(name + "_pressure_plate", PressurePlateBlock(type, properties))
+        buttonHolder = registerBlockItem(name + "_button") { ButtonBlock(type, 20, properties) }
+        pressurePlateHolder = registerBlockItem(name + "_pressure_plate") { PressurePlateBlock(type, properties) }
         blockSets.remove(this)
         fullBlockSets.add(this)
     }
 
     constructor(name: String, properties: BlockBehaviour.Properties, type: BlockSetType) : super(name, properties) {
-        button = registerBlockItem(name + "_button", ButtonBlock(type, 20, properties))
-        pressurePlate = registerBlockItem(name + "_pressure_plate", PressurePlateBlock(type, properties))
+        buttonHolder = registerBlockItem(name + "_button") { ButtonBlock(type, 20, properties) }
+        pressurePlateHolder = registerBlockItem(name + "_pressure_plate") { PressurePlateBlock(type, properties) }
         blockSets.remove(this)
         fullBlockSets.add(this)
     }
@@ -56,13 +57,13 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
      * Gets the button.
      * @return The button.
      */
-    fun getButton(): ButtonBlock = button
+    val button: ButtonBlock get() = buttonHolder.value() as ButtonBlock
 
     /**
      * Gets the pressure plate.
      * @return The pressure plate.
      */
-    fun getPressurePlate(): PressurePlateBlock = pressurePlate
+    val pressurePlate: PressurePlateBlock get() = pressurePlateHolder.value() as PressurePlateBlock
 
     /**
      * Returns a list of the full family
@@ -71,7 +72,7 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
     override val allBlocks: List<Block>
         get() = listOf(
             baseBlock,
-            slab, stairs, wall, getButton(), pressurePlate
+            slab, stairs, wall, button, pressurePlate
         )
 
 
@@ -79,7 +80,7 @@ open class GenerationsFullBlockSet : GenerationsBlockSet {
         this.blockFamily =
             BlockFamily.Builder(baseBlock).slab(slab).stairs(stairs).wall(
                 wall
-            ).button(getButton()).pressurePlate(getPressurePlate()).recipeGroupPrefix(name)
+            ).button(button).pressurePlate(pressurePlate).recipeGroupPrefix(name)
                 .recipeUnlockedBy("has_$name").family
     }
 

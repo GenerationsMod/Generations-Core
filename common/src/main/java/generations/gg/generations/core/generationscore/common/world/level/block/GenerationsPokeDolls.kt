@@ -1,12 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.registerBlock
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.PokeDollBlock
-import net.minecraft.resources.ResourceLocation
-import net.minecraft.world.item.BlockItem
+import net.minecraft.core.Holder
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 
@@ -181,14 +179,14 @@ object GenerationsPokeDolls: BlockPlatformRegistry() {
     val SHINY_ZAPDOS_POKEDOLL = registerBlockItem("zapdos", true)
 
 
-    private fun registerBlockItem(name: String, shiny: Boolean, scale: Float = 1.0f): Block {
-        val block = registerBlock<Block>(this, (if (shiny) "shiny_" else "") + name + "_doll", PokeDollBlock(name, shiny, scale))
-        GenerationsItems.ITEMS.create(((if (shiny) "shiny_" else "") + name + "_doll").generationsResource(), BlockItem(block, Item.Properties()))
+    private fun registerBlockItem(name: String, shiny: Boolean, scale: Float = 1.0f): Holder<Block> {
+        val block = registerBlock<Block>(this, (if (shiny) "shiny_" else "") + name + "_doll", { PokeDollBlock(name, shiny, scale) })
+        GenerationsItems.ITEMS.create(((if (shiny) "shiny_" else "") + name + "_doll"), { GenerationsBlockItem(block, Item.Properties()) })
         return block
     }
 
-    override fun init(consumer: (ResourceLocation, Block) -> Unit) {
+    override fun init() {
         GenerationsCore.LOGGER.info("Registering Generations PokeDolls")
-        super.init(consumer)
+        super.init()
     }
 }

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.tab
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.armor.ArmorEffect
@@ -12,24 +11,22 @@ import generations.gg.generations.core.generationscore.common.world.item.armor.e
 import generations.gg.generations.core.generationscore.common.world.item.armor.effects.SpeedModifier
 import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceKey
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.effect.MobEffect
 import net.minecraft.world.effect.MobEffects
 import net.minecraft.world.item.*
 import net.minecraft.world.item.enchantment.Enchantment
 import net.minecraft.world.item.enchantment.Enchantments
-import java.util.stream.Stream
 
 object GenerationsArmor: ItemPlatformRegistry() {
 
     /**
      * Armor Sets
      */
-    fun create(
+    fun <T:Item> create(
         name: String,
-        function: (Item.Properties) -> Item,
+        function: (Item.Properties) -> T,
         tab: ResourceKey<CreativeModeTab>
-    ): Item = create(name.generationsResource(), function.invoke(of()).tab(tab))
+    ): Holder<Item> = create(name, { function.invoke(of()).tab(tab) })
 
     val AETHER: ArmorSet = ArmorSet.create("aether", GenerationsArmorMaterials.AETHER) {
         speed(0.5)
@@ -103,29 +100,29 @@ object GenerationsArmor: ItemPlatformRegistry() {
         return Item.Properties()
     }
 
-    override fun init(consumer: (ResourceLocation, Item) -> Unit) {
+    override fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Armor")
-        super.init(consumer)
+        super.init()
     }
 
     data class ArmorSet(
-        val helmet: Item,
-        val chestplate: Item,
-        val leggings: Item,
-        val boots: Item,
-        val armorMaterial: ArmorMaterial
+        val helmet: Holder<Item>,
+        val chestplate: Holder<Item>,
+        val leggings: Holder<Item>,
+        val boots: Holder<Item>,
+        val armorMaterial: Holder<ArmorMaterial>
     ) {
-        fun stream(): Stream<Item> {
-            return Stream.of(
+        fun stream(): Sequence<Item> {
+            return sequenceOf(
                 helmet,
                 chestplate,
                 leggings,
                 boots
-            )
+            ).map { it.value() }
         }
 
 
-        class Builder(private val name: String, private val armormaterial: ArmorMaterial) {
+        class Builder(private val name: String, private val armormaterial: Holder<ArmorMaterial>) {
             private val effects: MutableList<ArmorEffect> = ArrayList()
 
             fun enchantment(enchantment: ResourceKey<Enchantment>, level: Int): Builder {
@@ -149,31 +146,30 @@ object GenerationsArmor: ItemPlatformRegistry() {
         }
 
         companion object {
-            val MATERIAL_TO_SET = mutableMapOf<ArmorMaterial, ArmorSet>()
+            val MATERIAL_TO_SET = mutableMapOf<Holder<ArmorMaterial>, ArmorSet>()
 
-            fun create(name: String, armorMaterial: ArmorMaterial, block: Builder.() -> Unit): ArmorSet {
+            fun create(name: String, armorMaterial: Holder<ArmorMaterial>, block: Builder.() -> Unit): ArmorSet {
                 val builder = builder(name, armorMaterial)
                 block.invoke(builder)
                 return builder.build()
             }
 
-            fun builder(name: String, armorMaterial: ArmorMaterial): Builder {
+            fun builder(name: String, armorMaterial: Holder<ArmorMaterial>): Builder {
                 return Builder(name, armorMaterial)
             }
 
             fun create(
                 name: String,
-                armorMaterial: ArmorMaterial,
+                armorMaterial: Holder<ArmorMaterial>,
                 vararg armorEffects: ArmorEffect
             ): ArmorSet {
-                val holder = Holder.direct(armorMaterial) //TODO: Verify this doens't cause trouble
 
                 return ArmorSet(
                     register(
                         name + "_helmet"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            holder,
+                            armorMaterial,
                             ArmorItem.Type.HELMET,
                             properties
                         )
@@ -182,7 +178,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
                         name + "_chestplate"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            holder,
+                            armorMaterial,
                             ArmorItem.Type.CHESTPLATE,
                             properties
                         )
@@ -191,7 +187,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
                         name + "_leggings"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            holder,
+                            armorMaterial,
                             ArmorItem.Type.LEGGINGS,
                             properties
                         )
@@ -200,7 +196,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
                         name + "_boots"
                     ) { properties: Item.Properties ->
                         GenerationsArmorItem(
-                            holder,
+                            armorMaterial,
                             ArmorItem.Type.BOOTS,
                             properties,
                             *armorEffects
@@ -213,7 +209,7 @@ object GenerationsArmor: ItemPlatformRegistry() {
             fun register(
                 name: String,
                 function: (Item.Properties) -> GenerationsArmorItem
-            ): Item {
+            ): Holder<Item> {
                 return create(
                     name,
                     { t: Item.Properties -> function.invoke(t) }, CreativeModeTabs.COMBAT

@@ -600,49 +600,49 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_1,
-            GenerationsBlocks.BURST_TURF
+            GenerationsBlocks.HOUSE_FLOOR_1.value(),
+            GenerationsBlocks.BURST_TURF.value()
         )
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_2,
+            GenerationsBlocks.HOUSE_FLOOR_2.value(),
             GenerationsBlocks.MIRRORED_FLOOR_1_SET.baseBlock
         )
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_3,
-            GenerationsBlocks.RUINS_SAND
+            GenerationsBlocks.HOUSE_FLOOR_3.value(),
+            GenerationsBlocks.RUINS_SAND.value()
         )
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_4,
+            GenerationsBlocks.HOUSE_FLOOR_4.value(),
             GenerationsBlocks.OCEAN_BLOCK_SET.baseBlock
         )
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_5,
+            GenerationsBlocks.HOUSE_FLOOR_5.value(),
             GenerationsBlocks.MIRROR_GLASS_SET.baseBlock
         )
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_6,
+            GenerationsBlocks.HOUSE_FLOOR_6.value(),
             GenerationsBlocks.NORMAL_SANDSTONE_SET.baseBlock
         )
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_7,
+            GenerationsBlocks.HOUSE_FLOOR_7.value(),
             GenerationsBlocks.ICE_PILLAR_TOP_SET.baseBlock
         )
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.HOUSE_FLOOR_8,
+            GenerationsBlocks.HOUSE_FLOOR_8.value(),
             Items.WAXED_EXPOSED_CUT_COPPER
         )
 
@@ -689,7 +689,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             define('Y', GenerationsBlocks.COOL_STONE_SET.baseBlock)
             pattern("XY")
             pattern("YX")
-            unlockedByItem(GenerationsBlocks.VOLCANIC_STONE)
+            unlockedByHolder(GenerationsBlocks.VOLCANIC_STONE)
         }
 
         recipeOutput.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.FLOOR_3_SET.baseBlock) {
@@ -768,7 +768,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             define('Y', GenerationsBlocks.RUINS_WALL)
             pattern("XY")
             pattern("XY")
-            unlockedByItem(GenerationsBlocks.RUINS_WALL)
+            unlockedByHolder(GenerationsBlocks.RUINS_WALL)
         }
 
         // ChargeStone Recipes
@@ -824,7 +824,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             define('#', GenerationsBlocks.VOLCANIC_STONE)
             pattern("##")
             pattern("##")
-            unlockedByItem(GenerationsBlocks.VOLCANIC_STONE)
+            unlockedByHolder(GenerationsBlocks.VOLCANIC_STONE)
         }
 
         // Mossy Volcanic Variants (VINE)
@@ -927,22 +927,22 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             define('#', GenerationsBlocks.GOLDEN_TEMPLE_SAND)
             pattern("##")
             pattern("##")
-            unlockedByItem(GenerationsBlocks.GOLDEN_TEMPLE_SAND)
+            unlockedByHolder(GenerationsBlocks.GOLDEN_TEMPLE_SAND)
         }
 
         nineBlockStorageRecipes(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsItems.CRYSTAL,
+            GenerationsItems.CRYSTAL.value(),
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.CRYSTAL_BLOCK
+            GenerationsBlocks.CRYSTAL_BLOCK.value()
         )
 
         //Crystal Slab
         recipeOutput.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.CRYSTAL_SLAB) {
             define('X', GenerationsItems.CRYSTAL)
             pattern("XXX")
-            unlockedByItem(GenerationsItems.CRYSTAL)
+            unlockedByHolder(GenerationsItems.CRYSTAL)
         }
 
         //Crystal Stairs
@@ -951,7 +951,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("X  ")
             pattern("XX ")
             pattern("XXX")
-            unlockedByItem(GenerationsItems.CRYSTAL)
+            unlockedByHolder(GenerationsItems.CRYSTAL)
         }
 
         //Crystal Wall
@@ -960,7 +960,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("X  ")
             pattern("XX ")
             pattern("XXX")
-            unlockedByItem(GenerationsItems.CRYSTAL)
+            unlockedByHolder(GenerationsItems.CRYSTAL)
         }
 
         //Crystal Light
@@ -970,11 +970,11 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("XXX")
             pattern("XYX")
             pattern("XXX")
-            unlockedByItem(GenerationsItems.CRYSTAL)
+            unlockedByHolder(GenerationsItems.CRYSTAL)
         }
 
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SAPPHIRE_BLOCK, GenerationsItems.SAPPHIRE)
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.RUBY_BLOCK, GenerationsItems.RUBY)
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SAPPHIRE_BLOCK.value(), GenerationsItems.SAPPHIRE.value())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.RUBY_BLOCK.value(), GenerationsItems.RUBY.value())
 
         /*
          * PokeChests
@@ -994,7 +994,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("EEE")
             pattern("EXE")
             pattern("EEE")
-            unlockedByItem(GenerationsBlocks.POKEBALL_CHEST)
+            unlockedByHolder(GenerationsBlocks.POKEBALL_CHEST)
         }
 
         recipeOutput.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.ULTRABALL_CHEST) {
@@ -1003,7 +1003,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("EEE")
             pattern("EXE")
             pattern("EEE")
-            unlockedByItem(GenerationsBlocks.GREATBALL_CHEST)
+            unlockedByHolder(GenerationsBlocks.GREATBALL_CHEST)
         }
 
         recipeOutput.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MASTERBALL_CHEST) {
@@ -1012,29 +1012,29 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("EEE")
             pattern("EXE")
             pattern("EEE")
-            unlockedByItem(GenerationsBlocks.ULTRABALL_CHEST)
+            unlockedByHolder(GenerationsBlocks.ULTRABALL_CHEST)
         }
 
         //Evolution Stone Block Recipes
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.DAWN_STONE_BLOCK, DAWN_STONE.asItem())
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.DUSK_STONE_BLOCK, DUSK_STONE.asItem())
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.FIRE_STONE_BLOCK, FIRE_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.DAWN_STONE_BLOCK.value(), DAWN_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.DUSK_STONE_BLOCK.value(), DUSK_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.FIRE_STONE_BLOCK.value(), FIRE_STONE.asItem())
 
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.ICE_STONE_BLOCK, ICE_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.ICE_STONE_BLOCK.value(), ICE_STONE.asItem())
 
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.LEAF_STONE_BLOCK, LEAF_STONE.asItem())
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.MOON_STONE_BLOCK, MOON_STONE.asItem())
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SHINY_STONE_BLOCK, SHINY_STONE.asItem())
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SUN_STONE_BLOCK, SUN_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.LEAF_STONE_BLOCK.value(), LEAF_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.MOON_STONE_BLOCK.value(), MOON_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SHINY_STONE_BLOCK.value(), SHINY_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SUN_STONE_BLOCK.value(), SUN_STONE.asItem())
 
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.THUNDER_STONE_BLOCK, THUNDER_STONE.asItem())
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.WATER_STONE_BLOCK, WATER_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.THUNDER_STONE_BLOCK.value(), THUNDER_STONE.asItem())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.WATER_STONE_BLOCK.value(), WATER_STONE.asItem())
 
         //Silicon Block
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SILICON_BLOCK, GenerationsItems.SILICON)
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.SILICON_BLOCK.value(), GenerationsItems.SILICON.value())
 
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.Z_BLOCK, GenerationsItems.Z_INGOT)
-        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.ULTRITE_BLOCK, GenerationsItems.ULTRITE_INGOT)
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.Z_BLOCK.value(), GenerationsItems.Z_INGOT.value())
+        nineStorageBlockRecipe(recipeOutput, GenerationsBlocks.ULTRITE_BLOCK.value(), GenerationsItems.ULTRITE_INGOT.value())
 
         //pokebrick Recipes
         buildBuildingBlockRecipes(
@@ -1245,7 +1245,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             define('J', Blocks.TORCH)
             pattern("E")
             pattern("J")
-            unlockedByItem(GenerationsBlocks.CURSED_CARVED_PUMPKIN)
+            unlockedByHolder(GenerationsBlocks.CURSED_CARVED_PUMPKIN)
         }
 
         /*
@@ -1282,7 +1282,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("YX")
             pattern("XY")
             unlockedByItem(GenerationsBlocks.GHOST_BRICKS_SET.baseBlock)
-            unlockedByItem(GenerationsWood.GHOST_PLANKS)
+            unlockedByHolder(GenerationsWood.GHOST_PLANKS)
         }
 
         //Ghost Log from Log
@@ -1307,7 +1307,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("XXX")
             pattern("ZYZ")
             pattern("XXX")
-            unlockedByItem(GenerationsWood.GHOST_PLANKS)
+            unlockedByHolder(GenerationsWood.GHOST_PLANKS)
             unlockedByItem(Items.GLOWSTONE_DUST)
             unlockedByItem(Blocks.REDSTONE_LAMP)
         }
@@ -1317,29 +1317,29 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             define('#', GenerationsBlocks.ULTRA_SAND)
             pattern("##")
             pattern("##")
-            unlockedByItem(GenerationsBlocks.ULTRA_SAND)
+            unlockedByHolder(GenerationsBlocks.ULTRA_SAND)
         }
 
         chiseled(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.ULTRA_CHISELED_SANDSTONE,
-            GenerationsBlocks.ULTRA_SANDSTONE
+            GenerationsBlocks.ULTRA_CHISELED_SANDSTONE.value(),
+            GenerationsBlocks.ULTRA_SANDSTONE.value()
         )
 
         cut(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.ULTRA_CUT_SANDSTONE,
-            GenerationsBlocks.ULTRA_SANDSTONE
+            GenerationsBlocks.ULTRA_CUT_SANDSTONE.value(),
+            GenerationsBlocks.ULTRA_SANDSTONE.value()
         )
 
         //Charge Dripstone
         twoByTwoPacker(
             recipeOutput,
             RecipeCategory.BUILDING_BLOCKS,
-            GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK,
-            GenerationsBlocks.POINTED_CHARGE_DRIPSTONE
+            GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.value(),
+            GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value()
         )
 
         ultriteUpgradeDuplication(recipeOutput)
@@ -1368,7 +1368,7 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
             pattern("XEX")
             pattern("XTX")
             pattern("XXX")
-            unlockedByItem(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE)
+            unlockedByHolder(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE)
         }
     }
 

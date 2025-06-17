@@ -1,14 +1,13 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.resources.ResourceKey
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.flag.FeatureFlags
@@ -28,10 +27,10 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
     val GENERIC = registerExtended("generic", GenericChestContainer.Companion::fromBuffer)
 
 
-    fun <T: AbstractContainerMenu> registerExtended(name: String, constructor: (Int, Inventory, FriendlyByteBuf) -> T): MenuType<T> = create(name.generationsResource(), GenerationsCore.implementation.createExtendedMenu(constructor))
+    fun <T: AbstractContainerMenu> registerExtended(name: String, constructor: (Int, Inventory, FriendlyByteBuf) -> T): Holder<MenuType<*>> = create(name, GenerationsCore.implementation.createExtendedMenu(constructor))
 
-    override fun init(consumer: (ResourceLocation, MenuType<*>) -> Unit) {
-        super.init(consumer)
+    override fun init() {
+        super.init()
 
 //        PlayerEvent.CLOSE_MENU.register(PlayerEvent.CloseMenu { player: Player, container: AbstractContainerMenu ->
 //            onContainerClose(
@@ -51,7 +50,7 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
 //        if (container is RksMachineContainer) container.close()
     }
 
-    fun <T: AbstractContainerMenu> register(name: String, constructor: (Int, Inventory) -> T): MenuType<T> = create(name.generationsResource(), MenuType(constructor::invoke, FeatureFlags.VANILLA_SET))
+    fun <T: AbstractContainerMenu> register(name: String, constructor: (Int, Inventory) -> T): Holder<MenuType<*>> = create(name) { MenuType(constructor::invoke, FeatureFlags.VANILLA_SET) }
 
 //    fun <T : AbstractContainerMenu, V : BlockEntity> register(
 //        name: String,

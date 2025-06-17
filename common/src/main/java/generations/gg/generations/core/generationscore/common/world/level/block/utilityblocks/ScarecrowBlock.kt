@@ -3,23 +3,21 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
 class ScarecrowBlock(props: Properties) :
-    GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
+    GenericRotatableModelBlock(
         props,
         model = GenerationsBlockEntityModels.SCARECROW,
         height = 1
     ) {
-    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
 
     override fun codec(): MapCodec<ScarecrowBlock> {

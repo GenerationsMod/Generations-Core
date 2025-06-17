@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.entity
 
-import com.cobblemon.mod.common.api.text.text
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
@@ -14,7 +13,6 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
-import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.player.Player
@@ -25,7 +23,7 @@ class ZygardeCellEntity : Entity {
     @JvmField
     var instance: BlockObjectInstance = BlockObjectInstance(Matrix4f(), null)
 
-    constructor(level: Level) : super(GenerationsEntities.ZYGARDE_CELL, level)
+    constructor(level: Level) : super(GenerationsEntities.ZYGARDE_CELL.value(), level)
 
     constructor(entityType: EntityType<*>, level: Level) : super(entityType, level)
 
@@ -54,7 +52,7 @@ class ZygardeCellEntity : Entity {
             level().playSound(
                 null,
                 blockPosition(),
-                GenerationsSounds.ZYGARDE_CELL,
+                GenerationsSounds.ZYGARDE_CELL.value(),
                 SoundSource.BLOCKS,
                 0.2f,
                 1.0f

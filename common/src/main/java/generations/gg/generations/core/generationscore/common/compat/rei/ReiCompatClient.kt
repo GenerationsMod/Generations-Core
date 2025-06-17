@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.compat.rei
 
 import generations.gg.generations.core.generationscore.common.client.screen.container.RksMachineScreen
+import generations.gg.generations.core.generationscore.common.compat.jei.asValue
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
 import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes
@@ -22,15 +23,15 @@ open class ReiCompatClient : REIClientPlugin {
             DefaultRksCategory()
         ) { configuration: CategoryRegistry.CategoryConfiguration<DefaultRksMachineRecipeDisplay<*>?> ->
             configuration.addWorkstations(
-                EntryStacks.of(GenerationsUtilityBlocks.RKS_MACHINE)
+                EntryStacks.of(GenerationsUtilityBlocks.RKS_MACHINE.value())
             )
         }
     }
 
     override fun registerDisplays(registry: DisplayRegistry) {
         registry.registerRecipeFiller(
-            RksRecipe::class.java, GenerationsCoreRecipeTypes.RKS
-        ) { recipe: RecipeHolder<RksRecipe?>? ->
+            RksRecipe::class.java, GenerationsCoreRecipeTypes.RKS.asValue()
+        ) { recipe: RecipeHolder<RksRecipe> ->
             DefaultRksMachineRecipeDisplay.of(
                 recipe
             )

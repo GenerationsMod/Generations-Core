@@ -8,8 +8,8 @@ import com.mojang.datafixers.util.Pair
 import com.mojang.serialization.Codec
 import com.mojang.serialization.DataResult
 import com.mojang.serialization.JsonOps
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.world.level.block.BlockPlatformRegistry
+import net.minecraft.core.Holder
 import net.minecraft.locale.Language
 import net.minecraft.nbt.NbtOps
 import net.minecraft.nbt.Tag
@@ -128,9 +128,9 @@ object GenerationsUtils {
     fun <T : Block> registerBlock(
         deferredRegister: BlockPlatformRegistry,
         name: String,
-        blockSupplier: T
-    ): T {
-        return deferredRegister.create(name.generationsResource(), blockSupplier)
+        blockSupplier: () -> T
+    ): Holder<Block> {
+        return deferredRegister.create(name, blockSupplier)
     }
 
     fun raycast(entity: Entity, maxDistance: Double, tickDelta: Float, predicate: Predicate<Entity?>): HitResult? {

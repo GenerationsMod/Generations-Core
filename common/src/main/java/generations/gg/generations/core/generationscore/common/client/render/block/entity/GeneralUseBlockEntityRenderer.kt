@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.render.block.entity
 
-import com.cobblemon.mod.common.util.set
 import com.cobblemon.mod.common.util.toVec3d
-import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.FrameProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.TintProvider
@@ -19,9 +17,6 @@ import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.resources.ResourceLocation
-import org.joml.Matrix4f
-import org.joml.Quaternionf
-import org.joml.Vector3f
 
 open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: BlockEntityRendererProvider.Context) :
     BlockEntityRenderer<T> {
@@ -33,7 +28,7 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
         packedLight: Int,
         packedOverlay: Int
     ) {
-        blockEntity.blockState.block.instanceOrNull<GenericModelBlock<*>>()?.takeIf { it.canRender(blockEntity) } ?: return
+        blockEntity.blockState.block.instanceOrNull<GenericModelBlock>()?.takeIf { it.canRender(blockEntity) } ?: return
 
         if (blockEntity.objectInstance == null) {
             val amount = instanceAmount()

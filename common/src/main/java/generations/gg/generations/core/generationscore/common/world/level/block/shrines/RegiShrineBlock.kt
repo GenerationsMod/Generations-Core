@@ -11,7 +11,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.UnownBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -23,7 +22,6 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.BooleanOp
@@ -36,11 +34,11 @@ import java.util.function.Consumer
 import java.util.stream.Collectors
 import java.util.stream.IntStream
 
-class RegiShrineBlock(properties: Properties, model: ResourceLocation, speciesKey: SpeciesKey) : ShrineBlock<GenericShrineBlockEntity>(properties, model) {
+class RegiShrineBlock(properties: Properties, model: ResourceLocation, speciesKey: SpeciesKey) : ShrineBlock(properties, model) {
     private val species: SpeciesKey
     private val list: List<String>
 
-    override val blockEntityType: BlockEntityType<GenericShrineBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_SHRINE
 
     override fun codec(): MapCodec<RegiShrineBlock> = CODEC

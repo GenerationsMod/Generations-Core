@@ -13,11 +13,13 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
+import generations.gg.generations.core.generationscore.common.util.EntryRegister
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.forge.networking.GenerationsNeoForgeNetworkManager
 import net.minecraft.client.Minecraft
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
@@ -50,10 +52,7 @@ import net.neoforged.neoforge.event.*
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract
-import net.neoforged.neoforge.registries.NeoForgeRegistries
-import net.neoforged.neoforge.registries.NewRegistryEvent
-import net.neoforged.neoforge.registries.RegisterEvent
-import net.neoforged.neoforge.registries.RegistryBuilder
+import net.neoforged.neoforge.registries.*
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 import java.util.*
 import java.util.function.Consumer
@@ -91,7 +90,9 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
             ENTITY_DATA_SERIALIZER_REGISTER.register(MOD_BUS)
             addListener(::onInitialize)
             addListener(::postInit)
-
+            addListener<BuildCreativeModeTabContentsEvent> {
+                GenerationsCore.tabToItem.get(it.tabKey).forEach(it::accept)
+            }
             addListener(GenerationsNeoForgeNetworkManager::registerMessages)
 
             addListener<NewRegistryEvent> { event ->
@@ -103,9 +104,6 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
 
         with(NeoForge.EVENT_BUS) {
             addListener(::onDataPackSync)
-            addListener<BuildCreativeModeTabContentsEvent> {
-                GenerationsCore.tabToItem.get(it.tabKey).forEach(it::accept)
-            }
             addListener { event: LootTableLoadEvent ->
                 GenerationsCore.processLootTable(event.name) { event.table.addPool(it.build()) }
             }
@@ -146,28 +144,30 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         if (ModList.get().isLoaded("impactor")) ImpactorCompat.init()
     }
 
-    override fun <T: Any> register(register: PlatformRegistry<T>) {
+    override fun <T: Any> register(register: () -> PlatformRegistry<T>) {
         with(MOD_BUS) {
             this.addListener<RegisterEvent> { event ->
-                if(event.registryKey.equals(register.resourceKey)) {
-                    event.register(register.resourceKey) { helper ->
-                        register.init(helper::register)
+                val platform = register.invoke()
+
+                if(event.registryKey.equals(platform.resourceKey)) {
+                    event.register(platform.resourceKey) { helper ->
+                        platform.init()
                     }
                 }
             }
         }
     }
 
-    override fun registerStrippable(log: Block, stripped: Block) {
+    override fun registerStrippable(log: Holder<Block>, stripped: Holder<Block>) {
         require(
-            log.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
+            log.value().defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
         ) { "Input block is missing required 'AXIS' property!" }
         require(
-            stripped.defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
+            stripped.value().defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
         ) { "Result block is missing required 'AXIS' property!" }
         if (AxeItem.STRIPPABLES is ImmutableMap<*, *>) AxeItem.STRIPPABLES = HashMap(AxeItem.STRIPPABLES)
 
-        AxeItem.STRIPPABLES[log] = stripped
+        AxeItem.STRIPPABLES[log.value()] = stripped.value()
     }
 
     override fun registerFlammable(blockIn: Block, encouragement: Int, flammability: Int) {
@@ -200,7 +200,7 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
         dataSerializer: EntityDataSerializer<T>,
     ) { ENTITY_DATA_SERIALIZER_REGISTER.register(name, dataSerializer.supplier()) }
 
-    override fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): MenuType<T> = IMenuTypeExtension.create(constructor::invoke)
+    override fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): () -> MenuType<T> = { IMenuTypeExtension.create(constructor::invoke) }
 
     override fun openExtendedMenu(serverPlayer: ServerPlayer, menuProvider: ExtendedMenuProvider) {
         serverPlayer.openMenu(menuProvider, menuProvider::saveExtraData)
@@ -299,4 +299,14 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     }
 
     override val networkManager: NetworkManager = GenerationsNeoForgeNetworkManager
+
+    override fun <T:Any> entryRegister(resourceKey: Registry<T>): EntryRegister<T> {
+        return NeoForgeEntryRegister(resourceKey, MOD_BUS)
+    }
+
+    class NeoForgeEntryRegister<T:Any>(resourceKey: Registry<T>, bus: IEventBus): EntryRegister<T>() {
+        val defferedRegister = DeferredRegister.create(resourceKey, GenerationsCore.MOD_ID).also { it.register(bus) }
+
+        override fun holder(name: String, supplier: () -> T): Holder<T> = defferedRegister.register(name, supplier)
+    }
 }

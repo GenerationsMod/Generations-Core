@@ -5,7 +5,6 @@ import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -24,7 +23,6 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.LevelReader
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.storage.loot.LootParams
 import net.minecraft.world.phys.BlockHitResult
@@ -34,14 +32,14 @@ fun <T: Any> T.applyIfTrue(predicate: (T) -> Boolean, action: (T) -> T): T {
     return this
 }
 
-abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V>> : GenericRotatableModelBlock<T> {
+abstract class DyeableBlock : GenericRotatableModelBlock {
     @JvmField
     val color: DyeColor
-    val map: Map<DyeColor, Block>
+    val map: Map<DyeColor, Holder<Block>>
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, Block>,
+        function: Map<DyeColor, Holder<Block>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation,
@@ -55,7 +53,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, Block>,
+        function: Map<DyeColor, Holder<Block>>,
         baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos,
         arg: Properties,
         model: ResourceLocation
@@ -67,7 +65,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     constructor(
         arg: Properties,
         color: DyeColor,
-        function: Map<DyeColor, Block>,
+        function: Map<DyeColor, Holder<Block>>,
         model: ResourceLocation,
         width: Int,
         height: Int,
@@ -79,7 +77,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
     constructor(
         color: DyeColor,
-        function: Map<DyeColor, Block>,
+        function: Map<DyeColor, Holder<Block>>,
         arg: Properties,
         model: ResourceLocation
     ) : super(arg, model = model) {
@@ -104,7 +102,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
             state = level.getBlockState(pos)
             val block = state.block
 
-            return if (block is DyeableBlock<*, *> && !block.tryDyeColor(state, level, pos, player, hand, hitResult)) {
+            return if (block is DyeableBlock && !block.tryDyeColor(state, level, pos, player, hand, hitResult)) {
                 block.serverUse(
                     stack,
                     state,
@@ -123,7 +121,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
         return getBlockFromDyeColor(color).asItem()
     }
 
-    fun getBlockFromDyeColor(color: DyeColor): Block = map[color]!!
+    fun getBlockFromDyeColor(color: DyeColor): Block = map[color]!!.value()
 
     fun tryDyeColor(
         state: BlockState,
@@ -144,7 +142,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
             val baseState = world.getBlockState(pos)
 
             if (javaClass.isInstance(baseState.block)) {
-                val baseBlock: DyeableBlock<*, *> = javaClass.cast(baseState.block)
+                val baseBlock: DyeableBlock = javaClass.cast(baseState.block)
 
 
                 if (baseBlock.color != dyeColor) {
@@ -152,7 +150,7 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
 
                     if (!player.isCreative) heldItem.shrink(1)
 
-                    val newBlock = getBlockFromDyeColor(dyeColor).instanceOrNull<DyeableBlock<*, *>>() ?: return false //TODO: This is a stop gap due to codec(). Yea its that expansive.
+                    val newBlock = getBlockFromDyeColor(dyeColor).instanceOrNull<DyeableBlock>() ?: return false //TODO: This is a stop gap due to codec(). Yea its that expansive.
 
                     val defaultState = newBlock.defaultBlockState().applyIfTrue({ it.hasProperty(FACING) }, { it.setValue(FACING, baseState.getValue(FACING)) } )
 
@@ -222,13 +220,13 @@ abstract class DyeableBlock<T : ModelProvidingBlockEntity, V : DyeableBlock<T, V
     }
 
     companion object {
-        fun <T: DyeableBlock<*, *>> simpleDyedCodec(supplier: (Properties, DyeColor, Map<DyeColor, Block>) -> T): MapCodec<T> = RecordCodecBuilder.mapCodec<T> { dyedCodecBuilder(it).apply(it, supplier::invoke) }
+        fun <T: DyeableBlock> simpleDyedCodec(supplier: (Properties, DyeColor, Map<DyeColor, Holder<Block>>) -> T): MapCodec<T> = RecordCodecBuilder.mapCodec<T> { dyedCodecBuilder(it).apply(it, supplier::invoke) }
 
-        fun <T: DyeableBlock<*, *>> dyedCodecBuilder(instance: RecordCodecBuilder.Instance<T>): Products.P3<RecordCodecBuilder.Mu<T>, Properties, DyeColor, MutableMap<DyeColor, Block>> {
+        fun <T: DyeableBlock> dyedCodecBuilder(instance: RecordCodecBuilder.Instance<T>): Products.P3<RecordCodecBuilder.Mu<T>, Properties, DyeColor, MutableMap<DyeColor, Holder<Block>>> {
             return instance.group(
                 propertiesCodec(),
                 DyeColor.CODEC.fieldOf("color").forGetter { it.color },
-                Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.byNameCodec()).fieldOf("map").forGetter { it.map }
+                Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("map").forGetter { it.map }
             )
         }
     }

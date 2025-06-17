@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level
 import java.util.function.Consumer
 
 class GenerationsArmorItem(
-    armorMaterial: Holder<ArmorMaterial?>,
+    armorMaterial: Holder<ArmorMaterial>,
     equipmentSlot: Type,
     properties: Properties,
     vararg armorEffects: ArmorEffect?

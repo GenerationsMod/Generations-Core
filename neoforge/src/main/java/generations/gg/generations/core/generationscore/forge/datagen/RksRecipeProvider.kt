@@ -11,6 +11,7 @@ import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.DNA_SPLICERS
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.MEW_FOSSIL
+import generations.gg.generations.core.generationscore.common.world.item.id
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.recipe.DamageIngredient
 import generations.gg.generations.core.generationscore.common.world.recipe.PokemonItemIngredient
@@ -28,7 +29,7 @@ import net.minecraft.data.recipes.RecipeOutput
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
-import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.ItemLike
 import java.util.*
 import java.util.Set
 import java.util.concurrent.CompletableFuture
@@ -44,7 +45,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .input('B', GenerationsItems.ORB)
             .input('C', GenerationsItems.MEW_DNA_FIBER)
             .key(LegendKeys.MEWTWO)
-            .criterion("mew_fossil", InventoryChangeTrigger.TriggerInstance.hasItems(MEW_FOSSIL))
+            .criterion("mew_fossil", InventoryChangeTrigger.TriggerInstance.hasItems(MEW_FOSSIL.value()))
             .save(exporter, id("mewtwo"))
 
         ShapedRksRecipeJsonBuilder.create(GenerationsItems.WONDER_EGG)
@@ -83,7 +84,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .input('A', GenerationsItems.HEART_SCALE)
             .input('B', GenerationsItems.ORB)
             .key(LegendKeys.MAGEARNA)
-            .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.HEART_SCALE))
+            .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.HEART_SCALE.value()))
             .save(exporter, id("soul_heart"))
 
         ShapedRksRecipeJsonBuilder.create(GenerationsItems.SOUL_HEART)
@@ -93,7 +94,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .input('A', GenerationsItems.HEART_SCALE)
             .input('B', GenerationsItems.ORB)
             .key(LegendKeys.MAGEARNA)
-            .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.HEART_SCALE))
+            .criterion("heart_scale", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.HEART_SCALE.value()))
             .save(exporter, id("soul_heart_alt"))
 
         ShapedRksRecipeJsonBuilder.create(LegendKeys.MAGEARNA, 70)
@@ -101,10 +102,10 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .pattern("ABA")
             .pattern("CAC")
             .input('A', Items.NETHERITE_INGOT)
-            .input('B', DamageIngredient(GenerationsItems.SOUL_HEART, 100))
+            .input('B', DamageIngredient(GenerationsItems.SOUL_HEART.value(), 100))
             .input('C', Items.IRON_INGOT)
             .key(LegendKeys.MAGEARNA)
-            .criterion("soul_heart", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.SOUL_HEART))
+            .criterion("soul_heart", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.SOUL_HEART.value()))
             .save(exporter, id("magearna"))
 
         ShapedRksRecipeJsonBuilder.create(LegendKeys.GENESECT)
@@ -119,7 +120,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .input('D', GenerationsItems.DOUSE_DRIVE)
             .input('R', Items.REDSTONE)
             .key(LegendKeys.GENESECT)
-            .criterion("orb", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.ORB))
+            .criterion("orb", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.ORB.value()))
             .save(exporter, id("genesect"))
 
         ShapedRksRecipeJsonBuilder.create(GenerationsItems.SACRED_ASH) //TODO: Add SpeciesKey if needed
@@ -127,7 +128,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .input('A', Items.TOTEM_OF_UNDYING)
             .input('B', Items.COAL)
             .input('C', GenerationsItems.RAINBOW_WING)
-            .criterion("rainbow_wing", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.RAINBOW_WING))
+            .criterion("rainbow_wing", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.RAINBOW_WING.value()))
             .save(exporter, id("rainbow_wing"))
 
         createParadoxPast("walkingwake", "suicune", exporter)
@@ -222,7 +223,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
         createZCyrstal(GenerationsItems.STEELIUM_Z, CobblemonItems.STEEL_GEM, exporter)
         createZCyrstal(GenerationsItems.WATERIUM_Z, WATER_GEM, exporter)
 
-        createZCyrstal<Any>(GenerationsItems.ALORAICHIUM_Z, "raichu", "alolan", exporter)
+        createZCyrstal(GenerationsItems.ALORAICHIUM_Z, "raichu", "alolan", exporter)
         createZCyrstal(GenerationsItems.DECIDIUM_Z, "decidueye", exporter)
         createZCyrstal(GenerationsItems.EEVIUM_Z, "eevee", exporter)
         createZCyrstal(GenerationsItems.INCINIUM_Z, "incineroar", exporter)
@@ -233,13 +234,13 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
         createZCyrstal(GenerationsItems.MEWNIUM_Z, "mew", exporter)
         createZCyrstal(GenerationsItems.MIMIKIUM_Z, "mimikyu", exporter)
         createZCyrstal(GenerationsItems.PIKANIUM_Z, "pikachu", exporter)
-        createZCyrstal<Any>(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "rock-star", exporter)
-        createZCyrstal<Any>(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "belle", exporter)
-        createZCyrstal<Any>(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "cosplayer", exporter)
-        createZCyrstal<Any>(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "pop-star", exporter)
-        createZCyrstal<Any>(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "phd", exporter)
-        createZCyrstal<Any>(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "libre", exporter)
-        createZCyrstal<Any>(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "original", exporter)
+        createZCyrstal(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "rock-star", exporter)
+        createZCyrstal(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "belle", exporter)
+        createZCyrstal(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "cosplayer", exporter)
+        createZCyrstal(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "pop-star", exporter)
+        createZCyrstal(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "phd", exporter)
+        createZCyrstal(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "libre", exporter)
+        createZCyrstal(GenerationsItems.PIKASHUNIUM_Z, "pikachu", "original", exporter)
         createZCyrstal(GenerationsItems.PRIMARIUM_Z, "primarina", exporter)
         createZCyrstal(GenerationsItems.SNORLIUM_Z, "snorlax", exporter)
         createZCyrstal(GenerationsItems.SOLGANIUM_Z, "solgaleo", exporter)
@@ -280,8 +281,8 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
         unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK, "questionmark")
     }
 
-    private fun <E> createZCyrstal(
-        result: Item,
+    private fun createZCyrstal(
+        result: Holder<Item>,
         pokemon: String,
         aspects: String,
         exporter: RecipeOutput
@@ -301,7 +302,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .pattern("XXX")
             .pattern("ABA")
             .pattern("XXX")
-            .criterion(GenerationsItems.Z_INGOT.id.path, InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.Z_INGOT))
+            .criterion(GenerationsItems.Z_INGOT.id.path, InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.Z_INGOT.value()))
             .save(exporter, result.id.withSuffix("_" + aspects.replace("-", "_")))
     }
 
@@ -322,17 +323,17 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
         createParadox(paradoxPokemon, toBeConverted, exporter, Items.REDSTONE)
     }
 
-    private fun createZCyrstal(result: Item, pokemon: String, exporter: RecipeOutput) {
+    private fun createZCyrstal(result: Holder<Item>, pokemon: String, exporter: RecipeOutput) {
         createZCyrstal(result, pokemon, false, exporter)
     }
 
     private fun createZCyrstal(
-        result: Item,
+        result: Holder<Item>,
         pokemon: String,
         multi: Boolean,
         exporter: RecipeOutput
     ) {
-        ShapedRksRecipeJsonBuilder.create(result)
+        ShapedRksRecipeJsonBuilder.create(result.value())
             .input('A', Items.NETHERITE_SCRAP)
             .input('B', TimeCapsuleIngredient(pokemon, false))
             .input('X', GenerationsItems.Z_INGOT)
@@ -341,24 +342,24 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .pattern("XXX")
             .doesntConsumeTimeCapsules()
             .criterion(
-                BuiltInRegistries.ITEM.getKey(GenerationsItems.Z_INGOT).path,
-                InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.Z_INGOT)
+                BuiltInRegistries.ITEM.getKey(GenerationsItems.Z_INGOT.value()).path,
+                InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.Z_INGOT.value())
             )
             .save(exporter, result.id.withSuffix(if (multi) "_$pokemon" else ""))
     }
 
-    private fun unownBlock(consumer: RecipeOutput, createdBlock: Block, form: String) {
+    private fun <T: ItemLike> unownBlock(consumer: RecipeOutput, createdBlock: Holder<T>, form: String) {
         create(createdBlock)
             .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.baseBlock)
             .requires(PokemonItemIngredient(ResourceLocation.fromNamespaceAndPath("cobblemon", "unown").optional(), Set.of(form).optional()))
             .criterion(
-                getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK),
-                has(GenerationsBlocks.UNOWN_BLOCK_BLANK)
+                getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.value()),
+                has(GenerationsBlocks.UNOWN_BLOCK_BLANK.value())
             )
             .save(consumer, createdBlock.id)
     }
 
-    private fun createZCyrstal(result: Item, item: Item, exporter: RecipeOutput) {
+    private fun createZCyrstal(result: Holder<Item>, item: Item, exporter: RecipeOutput) {
         ShapedRksRecipeJsonBuilder.create(result)
             .input('A', Items.NETHERITE_SCRAP)
             .input('B', item)
@@ -367,13 +368,13 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .pattern("ABA")
             .pattern("XXX")
             .criterion(
-                BuiltInRegistries.ITEM.getKey(GenerationsItems.Z_INGOT).path,
-                InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.Z_INGOT)
+                BuiltInRegistries.ITEM.getKey(GenerationsItems.Z_INGOT.value()).path,
+                InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.Z_INGOT.value())
             )
             .save(exporter, result.id)
     }
 
-    private fun createMegaStone(result: Item, pokemon: String, exporter: RecipeOutput) {
+    private fun createMegaStone(result: Holder<Item>, pokemon: String, exporter: RecipeOutput) {
         val phrase = result.id.path
         val index = phrase.indexOf("_")
         val special = if (index != -1) phrase[index + 1] else null
@@ -399,7 +400,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
         if (special != null) builder.input('D', item).pattern(" D ".uppercase(Locale.getDefault()))
         builder.pattern("ABC")
             .doesntConsumeTimeCapsules()
-            .criterion(GenerationsItems.KEY_STONE.id.path, InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.KEY_STONE))
+            .criterion(GenerationsItems.KEY_STONE.id.path, InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.KEY_STONE.value()))
             .save(exporter, result.id)
     }
 

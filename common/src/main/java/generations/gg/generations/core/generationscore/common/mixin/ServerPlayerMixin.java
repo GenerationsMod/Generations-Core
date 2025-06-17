@@ -63,7 +63,7 @@ public abstract class ServerPlayerMixin extends Player {
 
 
             if(!biomesVisited.hasVisited(currentBiome)) {
-                var stack = GenerationsItems.ENIGMA_FRAGMENT.getDefaultInstance();
+                var stack = GenerationsItems.ENIGMA_FRAGMENT.value().getDefaultInstance();
                 if(!getInventory().add(stack)) {
                     Containers.dropItemStack(level(), position().x, position().y, position().z, stack);
                 }

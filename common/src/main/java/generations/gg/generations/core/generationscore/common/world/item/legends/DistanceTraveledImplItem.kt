@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.item.legends
 
 import generations.gg.generations.core.generationscore.common.util.add
+import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.util.extensions.distance
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.network.chat.Component
@@ -51,11 +52,11 @@ abstract class DistanceTraveledImplItem(properties: Properties, override val max
     }
 
     override fun getDistance(stack: ItemStack): Double {
-        return stack.get(GenerationsDataComponents.DISTANCE) ?: 0.0
+        return stack.get(GenerationsDataComponents.DISTANCE.asValue()) ?: 0.0
     }
 
     override fun setDistance(stack: ItemStack, distance: Double) {
-        stack.set(GenerationsDataComponents.DISTANCE, distance.coerceIn(0.0, maxDistance))
+        stack.set(GenerationsDataComponents.DISTANCE.asValue(), distance.coerceIn(0.0, maxDistance))
     }
 
     override fun remainingNeededDistance(itemInHand: ItemStack): Double {

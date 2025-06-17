@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.api.spawning.TimeRange.Companion.timeRanges
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity
@@ -17,7 +18,6 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
@@ -31,11 +31,11 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
 class CelestialAltarBlock(properties: Properties) :
-    GenericRotatableModelBlock<CelestialAltarBlockEntity>(
+    GenericRotatableModelBlock(
         properties = properties,
         model = GenerationsBlockEntityModels.CELESTIAL_ALTAR
     ) {
-    override val blockEntityType: BlockEntityType<CelestialAltarBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.CELESTIAL_ALTAR
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
@@ -56,7 +56,7 @@ class CelestialAltarBlock(properties: Properties) :
     ): BlockEntityTicker<T>? {
         return createTickerHelper(
             blockEntityType,
-            GenerationsBlockEntities.CELESTIAL_ALTAR,
+            GenerationsBlockEntities.CELESTIAL_ALTAR.asValue<CelestialAltarBlockEntity>(),
             if (level.isClientSide) BlockEntityTicker { level1: Level?, blockPos: BlockPos?, blockState: BlockState?, blockEntity: CelestialAltarBlockEntity? -> } else BlockEntityTicker { level12: Level, pos: BlockPos?, blockState: BlockState?, blockEntity: CelestialAltarBlockEntity? ->
                 val state1 = level12.getBlockState(pos).setValue(
                     IS_SUN, timeRanges["day"]!!

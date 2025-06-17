@@ -1,10 +1,13 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.items
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.util.extensions.id
-import generations.gg.generations.core.generationscore.common.world.item.*
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.item.GenerationsTools
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
+import generations.gg.generations.core.generationscore.common.world.item.id
 import generations.gg.generations.core.generationscore.common.world.level.block.*
+import net.minecraft.core.Holder
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.PackOutput
 import net.minecraft.resources.ResourceLocation
@@ -15,9 +18,7 @@ import net.neoforged.neoforge.client.model.generators.ItemModelBuilder
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
 import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile
 import net.neoforged.neoforge.common.data.ExistingFileHelper
-import java.util.*
 import java.util.function.BiConsumer
-import java.util.function.Consumer
 
 class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper) : ItemModelProvider(packOutput, GenerationsCore.MOD_ID, existingFileHelper) {
 
@@ -308,8 +309,8 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.WATER_CANDY, "valuables/")
         createItem(GenerationsItems.NULL_CANDY, "valuables/")
 
-        GenerationsItems.BADGES.all().forEach { badge -> createItem(badge, "badges/") }
-        GenerationsItems.RIBBONS.all().forEach { ribbon -> createItem(ribbon, "ribbons/") }
+        GenerationsItems.BADGES.allHolders().forEach { badge -> createItem(badge, "badges/") }
+        GenerationsItems.RIBBONS.allHolders().forEach { ribbon -> createItem(ribbon, "ribbons/") }
 
         createItem(GenerationsItems.CRYSTAL, "natural/")
         createItem(GenerationsItems.RUBY, "natural/")
@@ -317,17 +318,17 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.SILICON, "natural/")
         createItem(GenerationsItems.ULTRITE_REMNANT, "natural/")
 
-        GenerationsArmor.all().forEach { armor -> createItem(armor, "armor/") }
+        GenerationsArmor.allHolders().forEach { armor -> createItem(armor, "armor/") }
         GenerationsTools.all().forEach { tool -> handheldItem(tool) }
 
         createItem(GenerationsItems.MARK_CHARM, "player_items/")
         createItem(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE, "player_items/")
         createItem(GenerationsItems.CATCHING_CHARM, "player_items/")
         createItem(GenerationsItems.EXP_CHARM, "player_items/")
-        createFishingRodItem(GenerationsItems.OLD_ROD)
-        createFishingRodItem(GenerationsItems.GOOD_ROD)
-        createFishingRodItem(GenerationsItems.SUPER_ROD)
-        createFishingRodItem(GenerationsItems.RUBY_ROD)
+        createFishingRodItem(GenerationsItems.OLD_ROD.value())
+        createFishingRodItem(GenerationsItems.GOOD_ROD.value())
+        createFishingRodItem(GenerationsItems.SUPER_ROD.value())
+        createFishingRodItem(GenerationsItems.RUBY_ROD.value())
         createItem(GenerationsItems.CAMERA, "player_items/")
         createItem(GenerationsItems.SNAP_CAMERA, "player_items/")
         createItem(GenerationsItems.FILM, "player_items/")
@@ -437,7 +438,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         //        createItemBlockDir(GenerationsShrines.PRISON_BOTTLE_STEM.asItem(), "legend_items");
 //        createItem(GenerationsItems.PRISON_BOTTLE, "legend_items/");
         createItem(GenerationsItems.MIRROR, "legend_items/")
-        createItem(GenerationsShrines.DARK_CRYSTAL.asItem(), "legend_items/")
+        createItem(GenerationsShrines.DARK_CRYSTAL, "legend_items/")
         createItem(GenerationsItems.ICEROOT_CARROT, "legend_items/")
         createItem(GenerationsItems.SHADEROOT_CARROT, "legend_items/")
         createItem(GenerationsItems.ICY_WING, "legend_items/")
@@ -462,11 +463,11 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.ADAMANT_CRYSTAL, "legend_items/")
         createItem(GenerationsItems.GRISEOUS_CORE, "legend_items/")
         createItem(GenerationsItems.FADED_JADE_ORB, "legend_items/")
-        createItem(GenerationsItems.MELTAN_BOX_CHARGED, "legend_items/", "meltan_box")
+        createItem(GenerationsItems.MELTAN_BOX_CHARGED.value(), "legend_items/", "meltan_box")
         createItem(GenerationsItems.MEW_DNA_FIBER, "legend_items/")
         createItem(GenerationsItems.MEW_FOSSIL, "legend_items/")
         createItem(GenerationsItems.LIGHT_SOUL, "legend_items/")
-        createItem(GenerationsShrines.LIGHT_CRYSTAL.asItem(), "legend_items/")
+        createItem(GenerationsShrines.LIGHT_CRYSTAL, "legend_items/")
         createItem(GenerationsItems.SOUL_HEART, "legend_items/")
         createItem(GenerationsItems.WONDER_EGG, "legend_items/")
         createItem(GenerationsItems.PHIONE_EGG, "legend_items/")
@@ -984,7 +985,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
 //        createItemBlock(GenerationsUtilityBlocks.TRASH_CAN, "item/blocks/utility_blocks/");
         createItemBlock(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "item/blocks/sign/")
 
-        createPointedDripstoneItem(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE, "item/blocks/dripstone/")
+        createPointedDripstoneItem(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value(), "item/blocks/dripstone/")
 
         //        GenerationsShrines.SHRINES.forEach(shrine -> createItemBlock(shrine, "item/blocks/shrines/"));
         createItemBlock(GenerationsBlocks.POKECENTER_DOOR, "item/blocks/doors/")
@@ -1093,8 +1094,8 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         }
     }
 
-    private fun createTm(tm: Item) {
-        val model = generated(tm.getModelKey().path, GenerationsCore.id("item/tms/tm_normal"))
+    private fun createTm(tm: Holder<out Item>) {
+        val model = generated(tm.value().getModelKey().path, GenerationsCore.id("item/tms/tm_normal"))
 
         val consumer = { name: String, i: Float ->
             val typeModel = generated("item/tms/tm_$name", GenerationsCore.id("item/tms/tm_$name"))
@@ -1143,7 +1144,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
     }
 
     private fun createCelestialAltar() {
-        val model = createItemBlockDir(GenerationsShrines.CELESTIAL_ALTAR.asItem(), "shrines")
+        val model = createItemBlockDir(GenerationsShrines.CELESTIAL_ALTAR.value().asItem(), "shrines")
 
         val consumer =
             BiConsumer { name: String, i: Float? ->
@@ -1162,7 +1163,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
     }
 
     private fun createLunarShrine() {
-        val model = createItemBlockDir(GenerationsShrines.LUNAR_SHRINE.asItem(), "shrines")
+        val model = createItemBlockDir(GenerationsShrines.LUNAR_SHRINE.value().asItem(), "shrines")
 
         val consumer =
             BiConsumer { name: String, i: Float? ->
@@ -1186,7 +1187,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         generated(getKey(material).path, GenerationsCore.id("item/tms/tm_material"))
     }
 
-    private fun createHeldItem(held: Item, directory: String = "") {
+    private fun createHeldItem(held: Holder<Item>, directory: String = "") {
         createItem(held, "held_items/$directory")
     }
 
@@ -1199,8 +1200,8 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         generated(key.path, texPath)
     }
 
-    fun createItemBlock(block: Block, directory: String): ItemModelBuilder {
-        val key = block.getModelKey()
+    fun createItemBlock(block: Holder<Block>, directory: String): ItemModelBuilder {
+        val key = block.value().getModelKey()
         return generated(key.path, GenerationsCore.id(directory + key.path))
     }
 
@@ -1222,8 +1223,8 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         return generated("item/curry/" + type.serializedName, type.resourceLocation)
     }
 
-    fun createItem(item: Item, directory: String, block: ItemModelBuilder.() -> Unit = {}): ItemModelBuilder? {
-        return createItem(item, directory, "")?.also(block)
+    fun createItem(item: Holder<out ItemLike>, directory: String, block: ItemModelBuilder.() -> Unit = {}): ItemModelBuilder? {
+        return createItem(item.value().asItem(), directory, "")?.also(block)
     }
 
     fun createItem(item: Item, directory: String, override: String, block: ItemModelBuilder.() -> Unit = {}): ItemModelBuilder? {
@@ -1239,8 +1240,8 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         }
     }
 
-    fun createEntityModelItem(item: Item): ItemModelBuilder {
-        return model(item.getModelKey().path) {
+    fun createEntityModelItem(item: Holder<Item>): ItemModelBuilder {
+        return model(item.value().getModelKey().path) {
             parent("minecraft:builtin/entity")
         }
     }

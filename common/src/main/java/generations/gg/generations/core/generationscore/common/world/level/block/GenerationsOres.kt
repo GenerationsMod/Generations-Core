@@ -1,12 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet
-import net.minecraft.resources.ResourceLocation
+import net.minecraft.core.Holder
 import net.minecraft.util.valueproviders.UniformInt
-import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 
@@ -59,16 +57,16 @@ object GenerationsOres: BlockPlatformRegistry() {
 	public static final RegistrySupplier<DropExperienceBlock> CHARGE_STONE_LAPIS_LAZULI_ORE = registerOreBlockItem("charge_stone_lapis_lazuli_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.LAPIS_ORE).dropsLike(Blocks.LAPIS_ORE)));
 	public static final RegistrySupplier<RedStoneOreBlock> CHARGE_STONE_REDSTONE_ORE = registerOreBlockItem("charge_stone_redstone_ore", () -> new RedStoneOreBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_ORE).dropsLike(Blocks.REDSTONE_ORE)));
 	 */
-    private fun register(name: String, itemSupplier: (Item.Properties) -> Item) = GenerationsItems.ITEMS.create(name.generationsResource(), itemSupplier.invoke(Item.Properties()))
+    private fun register(name: String, itemSupplier: (Item.Properties) -> Item): Holder<Item> = GenerationsItems.ITEMS.create(name, { itemSupplier.invoke(Item.Properties()) })
 
-    fun <T : Block> registerOreBlockItem(name: String, blockSupplier: T): T {
-        val block =  create(name.generationsResource(), blockSupplier)
-        register(name) { properties -> BlockItem(block, properties) }
+    fun <T : Block> registerOreBlockItem(name: String, blockSupplier: () -> T): Holder<Block> {
+        val block =  create(name, blockSupplier)
+        register(name) { properties -> GenerationsBlockItem(block, properties) }
         return block
     }
 
-    override fun init(consumer: (ResourceLocation, Block) -> Unit) {
+    override fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Ores")
-        super.init(consumer)
+        super.init()
     }
 }

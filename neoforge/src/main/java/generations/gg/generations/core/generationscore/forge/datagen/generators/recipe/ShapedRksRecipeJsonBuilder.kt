@@ -7,7 +7,7 @@ import com.google.common.collect.Sets
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.world.recipe.*
 import generations.gg.generations.core.generationscore.forge.datagen.nullableOptional
-import generations.gg.generations.core.generationscore.forge.datagen.optional
+import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
@@ -67,7 +67,16 @@ class ShapedRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<Sh
         return ShapedRecipePattern.of(inputs, pattern)
     }
 
+    fun input(symbol: Char, holder: Holder<Item>): ShapedRksRecipeJsonBuilder {
+        return input(symbol, holder.value())
+    }
+
     companion object {
+        @JvmStatic
+        fun create(output: Holder<out ItemLike>): ShapedRksRecipeJsonBuilder {
+            return create(output.value())
+        }
+
         @JvmStatic
         fun create(output: ItemLike): ShapedRksRecipeJsonBuilder {
             return ShapedRksRecipeJsonBuilder(ItemResult(output.asItem().defaultInstance))

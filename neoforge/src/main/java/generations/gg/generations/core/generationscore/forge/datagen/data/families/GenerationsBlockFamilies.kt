@@ -3,9 +3,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.data.famil
 import com.google.common.collect.Maps
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
-import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies.familyBuilder
 import net.minecraft.core.Holder
-import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.BlockFamilies
 import net.minecraft.data.BlockFamily
 import net.minecraft.data.BlockFamily.Builder
@@ -162,6 +160,8 @@ object GenerationsBlockFamilies : BlockFamilies() {
         recipeUnlockedBy("has_golden_temple_smooth_sandstone")
         dontGenerateModel()
     }
+
+    private fun familyBuilder(baseBlock: Holder<Block>, dsl: Builder.() -> Unit): BlockFamily = familyBuilder(baseBlock.value(), dsl)
 
     private fun familyBuilder(baseBlock: Block, dsl: Builder.() -> Unit): BlockFamily {
         val builder = Builder(baseBlock)

@@ -12,6 +12,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.BoxBlock
 import generations.gg.generations.core.generationscore.forge.datagen.data.families.GenerationsBlockFamilies
 import net.minecraft.core.Direction
+import net.minecraft.core.Holder
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.BlockFamily
 import net.minecraft.data.DataProvider
@@ -38,125 +39,125 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             .forEach(::registerBlockFamily)
 
         registerWoodPallet(
-            GenerationsWood.ULTRA_DARK_LOG,
-            GenerationsWood.STRIPPED_ULTRA_DARK_LOG,
-            GenerationsWood.ULTRA_DARK_PLANKS,
-            GenerationsWood.ULTRA_DARK_SLAB,
-            GenerationsWood.ULTRA_DARK_STAIRS,
-            GenerationsWood.ULTRA_DARK_BUTTON,
-            GenerationsWood.ULTRA_DARK_PRESSURE_PLATE,
-            GenerationsWood.ULTRA_DARK_DOOR,
-            GenerationsWood.ULTRA_DARK_TRAPDOOR,
-            GenerationsWood.ULTRA_DARK_WOOD,
-            GenerationsWood.STRIPPED_ULTRA_DARK_WOOD,
-            GenerationsWood.ULTRA_DARK_FENCE,
-            GenerationsWood.ULTRA_DARK_FENCE_GATE,
-            GenerationsWood.ULTRA_DARK_SIGN,
-            GenerationsWood.ULTRA_DARK_WALL_SIGN,
-            GenerationsWood.ULTRA_DARK_CRAFTING_TABLE,
-            GenerationsWood.ULTRA_DARK_HANGING_SIGN,
-            GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN,
-            GenerationsWood.ULTRA_DARK_BOOKSHELF
+            GenerationsWood.ULTRA_DARK_LOG.asValue(),
+            GenerationsWood.STRIPPED_ULTRA_DARK_LOG.asValue(),
+            GenerationsWood.ULTRA_DARK_PLANKS.asValue(),
+            GenerationsWood.ULTRA_DARK_SLAB.asValue(),
+            GenerationsWood.ULTRA_DARK_STAIRS.asValue(),
+            GenerationsWood.ULTRA_DARK_BUTTON.asValue(),
+            GenerationsWood.ULTRA_DARK_PRESSURE_PLATE.asValue(),
+            GenerationsWood.ULTRA_DARK_DOOR.asValue(),
+            GenerationsWood.ULTRA_DARK_TRAPDOOR.asValue(),
+            GenerationsWood.ULTRA_DARK_WOOD.asValue(),
+            GenerationsWood.STRIPPED_ULTRA_DARK_WOOD.asValue(),
+            GenerationsWood.ULTRA_DARK_FENCE.asValue(),
+            GenerationsWood.ULTRA_DARK_FENCE_GATE.asValue(),
+            GenerationsWood.ULTRA_DARK_SIGN.asValue(),
+            GenerationsWood.ULTRA_DARK_WALL_SIGN.asValue(),
+            GenerationsWood.ULTRA_DARK_CRAFTING_TABLE.asValue(),
+            GenerationsWood.ULTRA_DARK_HANGING_SIGN.asValue(),
+            GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.asValue(),
+            GenerationsWood.ULTRA_DARK_BOOKSHELF.asValue()
         )
         registerWoodPallet(
-            GenerationsWood.ULTRA_JUNGLE_LOG,
-            GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG,
-            GenerationsWood.ULTRA_JUNGLE_PLANKS,
-            GenerationsWood.ULTRA_JUNGLE_SLAB,
-            GenerationsWood.ULTRA_JUNGLE_STAIRS,
-            GenerationsWood.ULTRA_JUNGLE_BUTTON,
-            GenerationsWood.ULTRA_JUNGLE_PRESSURE_PLATE,
-            GenerationsWood.ULTRA_JUNGLE_DOOR,
-            GenerationsWood.ULTRA_JUNGLE_TRAPDOOR,
-            GenerationsWood.ULTRA_JUNGLE_WOOD,
-            GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD,
-            GenerationsWood.ULTRA_JUNGLE_FENCE,
-            GenerationsWood.ULTRA_JUNGLE_FENCE_GATE,
-            GenerationsWood.ULTRA_JUNGLE_SIGN,
-            GenerationsWood.ULTRA_JUNGLE_WALL_SIGN,
-            GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE,
-            GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN,
-            GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN,
-            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF
+            GenerationsWood.ULTRA_JUNGLE_LOG.asValue(),
+            GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_PLANKS.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_SLAB.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_STAIRS.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_BUTTON.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_PRESSURE_PLATE.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_DOOR.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_TRAPDOOR.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_WOOD.asValue(),
+            GenerationsWood.STRIPPED_ULTRA_JUNGLE_WOOD.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_FENCE.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_FENCE_GATE.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_SIGN.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_CRAFTING_TABLE.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.asValue(),
+            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.asValue()
         )
         registerWoodPallet(
-            GenerationsWood.GHOST_LOG,
-            GenerationsWood.STRIPPED_GHOST_LOG,
-            GenerationsWood.GHOST_PLANKS,
-            GenerationsWood.GHOST_SLAB,
-            GenerationsWood.GHOST_STAIRS,
-            GenerationsWood.GHOST_BUTTON,
-            GenerationsWood.GHOST_PRESSURE_PLATE,
-            GenerationsWood.GHOST_DOOR,
-            GenerationsWood.GHOST_TRAPDOOR,
-            GenerationsWood.GHOST_WOOD,
-            GenerationsWood.STRIPPED_GHOST_WOOD,
-            GenerationsWood.GHOST_FENCE,
-            GenerationsWood.GHOST_FENCE_GATE,
-            GenerationsWood.GHOST_SIGN,
-            GenerationsWood.GHOST_WALL_SIGN,
-            GenerationsWood.GHOST_CRAFTING_TABLE,
-            GenerationsWood.GHOST_HANGING_SIGN,
-            GenerationsWood.GHOST_WALL_HANGING_SIGN,
-            GenerationsWood.GHOST_BOOKSHELF
+            GenerationsWood.GHOST_LOG.asValue(),
+            GenerationsWood.STRIPPED_GHOST_LOG.asValue(),
+            GenerationsWood.GHOST_PLANKS.asValue(),
+            GenerationsWood.GHOST_SLAB.asValue(),
+            GenerationsWood.GHOST_STAIRS.asValue(),
+            GenerationsWood.GHOST_BUTTON.asValue(),
+            GenerationsWood.GHOST_PRESSURE_PLATE.asValue(),
+            GenerationsWood.GHOST_DOOR.asValue(),
+            GenerationsWood.GHOST_TRAPDOOR.asValue(),
+            GenerationsWood.GHOST_WOOD.asValue(),
+            GenerationsWood.STRIPPED_GHOST_WOOD.asValue(),
+            GenerationsWood.GHOST_FENCE.asValue(),
+            GenerationsWood.GHOST_FENCE_GATE.asValue(),
+            GenerationsWood.GHOST_SIGN.asValue(),
+            GenerationsWood.GHOST_WALL_SIGN.asValue(),
+            GenerationsWood.GHOST_CRAFTING_TABLE.asValue(),
+            GenerationsWood.GHOST_HANGING_SIGN.asValue(),
+            GenerationsWood.GHOST_WALL_HANGING_SIGN.asValue(),
+            GenerationsWood.GHOST_BOOKSHELF.asValue()
         )
 
         //House Floors
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_1)
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_2)
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_3)
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_4)
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_5)
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_6)
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_7)
-        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_8)
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_1.asValue())
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_2.asValue())
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_3.asValue())
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_4.asValue())
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_5.asValue())
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_6.asValue())
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_7.asValue())
+        registerBlockItem(GenerationsBlocks.HOUSE_FLOOR_8.asValue())
 
-        registerBlockItem(GenerationsBlocks.ULTRITE_BLOCK)
+        registerBlockItem(GenerationsBlocks.ULTRITE_BLOCK.asValue())
 
         //ChargeStone
-        registerBlockItem(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK)
+        registerBlockItem(GenerationsBlocks.CHARGE_DRIPSTONE_BLOCK.asValue())
 
         //Volcanic
-        registerBlockItem(GenerationsBlocks.VOLCANIC_FIRESTONE)
+        registerBlockItem(GenerationsBlocks.VOLCANIC_FIRESTONE.asValue())
 
         //Golden Temple
         registerSandStonePallet(
-            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE,
-            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE_SLAB,
-            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE_STAIRS,
-            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE_WALL,
-            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE,
-            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE_SLAB,
-            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE_STAIRS,
-            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE_WALL,
-            GenerationsBlocks.GOLDEN_TEMPLE_CHISELED_SANDSTONE,
-            GenerationsBlocks.GOLDEN_TEMPLE_CUT_SANDSTONE,
-            GenerationsBlocks.GOLDEN_TEMPLE_CUT_SANDSTONE_SLAB
+            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE_SLAB.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE_STAIRS.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE_WALL.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE_SLAB.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE_STAIRS.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE_WALL.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_CHISELED_SANDSTONE.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_CUT_SANDSTONE.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_CUT_SANDSTONE_SLAB.asValue()
         )
 
         registerPallet(
-            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE,
-            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_SLAB,
-            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_STAIRS,
-            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_WALL,
+            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_SLAB.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_STAIRS.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_DARK_PRISMARINE_WALL.asValue(),
             null,
             null,
             true
         )
         registerPallet(
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE,
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_SLAB,
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_STAIRS,
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_WALL,
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_SLAB.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_STAIRS.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_WALL.asValue(),
             null,
             null,
             true
         )
         registerPallet(
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS,
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_SLAB,
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_STAIRS,
-            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_WALL,
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICKS.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_SLAB.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_STAIRS.asValue(),
+            GenerationsBlocks.GOLDEN_TEMPLE_PRISMARINE_BRICK_WALL.asValue(),
             null,
             null,
             true
@@ -164,198 +165,198 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
         //Subway
         registerPallet(
-            GenerationsBlocks.SUBWAY_WALL,
-            GenerationsBlocks.SUBWAY_WALL_SLAB,
-            GenerationsBlocks.SUBWAY_WALL_STAIRS,
+            GenerationsBlocks.SUBWAY_WALL.asValue(),
+            GenerationsBlocks.SUBWAY_WALL_SLAB.asValue(),
+            GenerationsBlocks.SUBWAY_WALL_STAIRS.asValue(),
             null,
             null,
             null,
             true
         )
         registerPallet(
-            GenerationsBlocks.SUBWAY_WALL_2,
-            GenerationsBlocks.SUBWAY_WALL_2_SLAB,
-            GenerationsBlocks.SUBWAY_WALL_2_STAIRS,
+            GenerationsBlocks.SUBWAY_WALL_2.asValue(),
+            GenerationsBlocks.SUBWAY_WALL_2_SLAB.asValue(),
+            GenerationsBlocks.SUBWAY_WALL_2_STAIRS.asValue(),
             null,
             null,
             null,
             true
         )
 
-        registerBlockItem(GenerationsBlocks.POKEMART_SIGN)
-        registerBlockItem(GenerationsBlocks.POKECENTER_SIGN)
+        registerBlockItem(GenerationsBlocks.POKEMART_SIGN.asValue())
+        registerBlockItem(GenerationsBlocks.POKECENTER_SIGN.asValue())
 
-        registerBlockItem(GenerationsBlocks.RUINS_WALL)
-        registerBlockItem(GenerationsBlocks.DUSTY_RUINS_WALL)
+        registerBlockItem(GenerationsBlocks.RUINS_WALL.asValue())
+        registerBlockItem(GenerationsBlocks.DUSTY_RUINS_WALL.asValue())
 
-        registerPillar(GenerationsBlocks.CASTLE_PILLAR)
-        registerPillar(GenerationsBlocks.BROKEN_CASTLE_PILLAR)
+        registerPillar(GenerationsBlocks.CASTLE_PILLAR.asValue())
+        registerPillar(GenerationsBlocks.BROKEN_CASTLE_PILLAR.asValue())
 
-        registerPillar(GenerationsBlocks.PRISMARINE_PILLAR)
-        registerPillar(GenerationsBlocks.BROKEN_PRISMARINE_PILLAR)
+        registerPillar(GenerationsBlocks.PRISMARINE_PILLAR.asValue())
+        registerPillar(GenerationsBlocks.BROKEN_PRISMARINE_PILLAR.asValue())
 
-        registerPillar(GenerationsBlocks.DARK_PRISMARINE_PILLAR)
-        registerPillar(GenerationsBlocks.BROKEN_DARK_PRISMARINE_PILLAR)
+        registerPillar(GenerationsBlocks.DARK_PRISMARINE_PILLAR.asValue())
+        registerPillar(GenerationsBlocks.BROKEN_DARK_PRISMARINE_PILLAR.asValue())
 
-        registerPillar(GenerationsBlocks.ICE_PILLAR)
-        registerPillar(GenerationsBlocks.BROKEN_ICE_PILLAR)
+        registerPillar(GenerationsBlocks.ICE_PILLAR.asValue())
+        registerPillar(GenerationsBlocks.BROKEN_ICE_PILLAR.asValue())
 
-        registerPillar(GenerationsBlocks.HAUNTED_PILLAR)
-        registerPillar(GenerationsBlocks.BROKEN_HAUNTED_PILLAR)
+        registerPillar(GenerationsBlocks.HAUNTED_PILLAR.asValue())
+        registerPillar(GenerationsBlocks.BROKEN_HAUNTED_PILLAR.asValue())
 
-        registerBlockItem(GenerationsBlocks.DAWN_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.DUSK_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.FIRE_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.ICE_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.LEAF_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.MOON_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.SHINY_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.SUN_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.THUNDER_STONE_BLOCK)
-        registerBlockItem(GenerationsBlocks.WATER_STONE_BLOCK)
+        registerBlockItem(GenerationsBlocks.DAWN_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.DUSK_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.FIRE_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.ICE_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.LEAF_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.MOON_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.SHINY_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.SUN_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.THUNDER_STONE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.WATER_STONE_BLOCK.asValue())
 
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_A)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_B)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_C)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_D)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_E)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_F)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_G)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_H)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_I)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_J)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_K)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_L)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_M)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_N)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_O)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_P)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Q)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_R)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_S)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_T)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_U)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_V)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_W)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_X)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Y)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Z)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK)
-        unownBlock(GenerationsBlocks.UNOWN_BLOCK_BLANK)
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_A.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_B.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_C.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_D.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_E.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_F.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_G.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_H.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_I.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_J.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_K.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_L.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_M.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_N.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_O.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_P.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Q.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_R.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_S.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_T.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_U.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_V.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_W.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_X.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Y.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_Z.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK.asValue())
+        unownBlock(GenerationsBlocks.UNOWN_BLOCK_BLANK.asValue())
 
-        registerBlockItem(GenerationsBlocks.ULTRA_SAND)
+        registerBlockItem(GenerationsBlocks.ULTRA_SAND.asValue())
 
-        registerBlockItem(GenerationsBlocks.CRATE)
+        registerBlockItem(GenerationsBlocks.CRATE.asValue())
 
-        registerBlockItem(GenerationsBlocks.GOLDEN_TEMPLE_SAND)
+        registerBlockItem(GenerationsBlocks.GOLDEN_TEMPLE_SAND.asValue())
 
         registerPallet(
-            GenerationsBlocks.RUBY_BLOCK,
-            GenerationsBlocks.RUBY_SLAB,
-            GenerationsBlocks.RUBY_STAIRS,
-            GenerationsBlocks.RUBY_WALL,
-            null,
-            null,
-            true
-        )
-        registerPallet(
-            GenerationsBlocks.SAPPHIRE_BLOCK,
-            GenerationsBlocks.SAPPHIRE_SLAB,
-            GenerationsBlocks.SAPPHIRE_STAIRS,
-            GenerationsBlocks.SAPPHIRE_WALL,
+            GenerationsBlocks.RUBY_BLOCK.asValue(),
+            GenerationsBlocks.RUBY_SLAB.asValue(),
+            GenerationsBlocks.RUBY_STAIRS.asValue(),
+            GenerationsBlocks.RUBY_WALL.asValue(),
             null,
             null,
             true
         )
         registerPallet(
-            GenerationsBlocks.CRYSTAL_BLOCK,
-            GenerationsBlocks.CRYSTAL_SLAB,
-            GenerationsBlocks.CRYSTAL_STAIRS,
-            GenerationsBlocks.CRYSTAL_WALL,
+            GenerationsBlocks.SAPPHIRE_BLOCK.asValue(),
+            GenerationsBlocks.SAPPHIRE_SLAB.asValue(),
+            GenerationsBlocks.SAPPHIRE_STAIRS.asValue(),
+            GenerationsBlocks.SAPPHIRE_WALL.asValue(),
             null,
             null,
             true
         )
-        registerBlockItem(GenerationsBlocks.CRYSTAL_LIGHT)
-        registerBlockItem(GenerationsBlocks.SILICON_BLOCK)
-        registerBlockItem(GenerationsBlocks.Z_BLOCK)
+        registerPallet(
+            GenerationsBlocks.CRYSTAL_BLOCK.asValue(),
+            GenerationsBlocks.CRYSTAL_SLAB.asValue(),
+            GenerationsBlocks.CRYSTAL_STAIRS.asValue(),
+            GenerationsBlocks.CRYSTAL_WALL.asValue(),
+            null,
+            null,
+            true
+        )
+        registerBlockItem(GenerationsBlocks.CRYSTAL_LIGHT.asValue())
+        registerBlockItem(GenerationsBlocks.SILICON_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.Z_BLOCK.asValue())
 
-        registerMushroom(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM)
-        registerMushroom(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM)
-        registerMushroom(GenerationsBlocks.BALLONLEA_PINK_MUSHROOM)
-        registerMushroom(GenerationsBlocks.BALLONLEA_YELLOW_MUSHROOM)
+        registerMushroom(GenerationsBlocks.BALLONLEA_BLUE_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.BALLONLEA_GREEN_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.BALLONLEA_PINK_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.BALLONLEA_YELLOW_MUSHROOM.asValue())
 
-        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_BLUE_MUSHROOM)
-        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_GREEN_MUSHROOM)
-        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_PINK_MUSHROOM)
-        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_YELLOW_MUSHROOM)
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_BLUE_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_GREEN_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_PINK_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.GROUP_BALLONLEA_YELLOW_MUSHROOM.asValue())
 
-        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_BLUE_MUSHROOM)
-        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_GREEN_MUSHROOM)
-        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_PINK_MUSHROOM)
-        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_YELLOW_MUSHROOM)
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_BLUE_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_GREEN_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_PINK_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.TALL_BALLONLEA_YELLOW_MUSHROOM.asValue())
 
-        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_BLUE_MUSHROOM)
-        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_GREEN_MUSHROOM)
-        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_PINK_MUSHROOM)
-        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_YELLOW_MUSHROOM)
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_BLUE_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_GREEN_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_PINK_MUSHROOM.asValue())
+        registerMushroom(GenerationsBlocks.DOUBLE_BALLONLEA_YELLOW_MUSHROOM.asValue())
 
 
-        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_AZ)
-        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_BLUE)
-        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_ORANGE)
-        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_RED)
-        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_WHITE)
-        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_YELLOW)
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_AZ.asValue())
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_BLUE.asValue())
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_ORANGE.asValue())
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_RED.asValue())
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_WHITE.asValue())
+        registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_YELLOW.asValue())
 
         //Ultra Space
         registerSandStonePallet(
-            GenerationsBlocks.ULTRA_SANDSTONE,
-            GenerationsBlocks.ULTRA_SANDSTONE_SLAB,
-            GenerationsBlocks.ULTRA_SANDSTONE_STAIRS,
-            GenerationsBlocks.ULTRA_SANDSTONE_WALL,
-            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE,
-            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_SLAB,
-            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_STAIRS,
-            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_WALL,
-            GenerationsBlocks.ULTRA_CHISELED_SANDSTONE,
-            GenerationsBlocks.ULTRA_CUT_SANDSTONE,
-            GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB
+            GenerationsBlocks.ULTRA_SANDSTONE.asValue(),
+            GenerationsBlocks.ULTRA_SANDSTONE_SLAB.asValue(),
+            GenerationsBlocks.ULTRA_SANDSTONE_STAIRS.asValue(),
+            GenerationsBlocks.ULTRA_SANDSTONE_WALL.asValue(),
+            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE.asValue(),
+            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_SLAB.asValue(),
+            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_STAIRS.asValue(),
+            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE_WALL.asValue(),
+            GenerationsBlocks.ULTRA_CHISELED_SANDSTONE.asValue(),
+            GenerationsBlocks.ULTRA_CUT_SANDSTONE.asValue(),
+            GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB.asValue()
         )
-        registerBlockItem(GenerationsBlocks.GHOST_LANTERN)
-        registerBlockItem(GenerationsBlocks.MACHINE_BLOCK)
-        registerBlockItem(GenerationsBlocks.RUINS_SAND)
-        registerBlockItem(GenerationsBlocks.BURST_TURF)
+        registerBlockItem(GenerationsBlocks.GHOST_LANTERN.asValue())
+        registerBlockItem(GenerationsBlocks.MACHINE_BLOCK.asValue())
+        registerBlockItem(GenerationsBlocks.RUINS_SAND.asValue())
+        registerBlockItem(GenerationsBlocks.BURST_TURF.asValue())
 
-        registerBlockItem(GenerationsBlocks.WARNING_BLOCK)
+        registerBlockItem(GenerationsBlocks.WARNING_BLOCK.asValue())
 
-        registerPumpkin(GenerationsBlocks.CURSED_PUMPKIN)
-        registerCarvedPumpkin(GenerationsBlocks.CURSED_CARVED_PUMPKIN, GenerationsBlocks.CURSED_PUMPKIN)
-        registerCarvedPumpkin(GenerationsBlocks.CURSED_JACK_O_LANTERN, GenerationsBlocks.CURSED_PUMPKIN)
+        registerPumpkin(GenerationsBlocks.CURSED_PUMPKIN.asValue())
+        registerCarvedPumpkin(GenerationsBlocks.CURSED_CARVED_PUMPKIN.asValue(), GenerationsBlocks.CURSED_PUMPKIN.asValue())
+        registerCarvedPumpkin(GenerationsBlocks.CURSED_JACK_O_LANTERN.asValue(), GenerationsBlocks.CURSED_PUMPKIN.asValue())
 
-        registerDoor(GenerationsBlocks.POKECENTER_DOOR)
+        registerDoor(GenerationsBlocks.POKECENTER_DOOR.asValue())
 
 
-        pokeBallChests(GenerationsBlocks.POKEBALL_CHEST, "poke_ball")
-        pokeBallChests(GenerationsBlocks.GREATBALL_CHEST, "great_ball")
-        pokeBallChests(GenerationsBlocks.ULTRABALL_CHEST, "ultra_ball")
-        pokeBallChests(GenerationsBlocks.MASTERBALL_CHEST, "master_ball")
+        pokeBallChests(GenerationsBlocks.POKEBALL_CHEST.asValue(), "poke_ball")
+        pokeBallChests(GenerationsBlocks.GREATBALL_CHEST.asValue(), "great_ball")
+        pokeBallChests(GenerationsBlocks.ULTRABALL_CHEST.asValue(), "ultra_ball")
+        pokeBallChests(GenerationsBlocks.MASTERBALL_CHEST.asValue(), "master_ball")
 
         //Furnaces
-        registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
-        registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE)
-        registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER)
-        registerFurnace(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
-        registerFurnace(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE)
-        registerFurnace(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER)
+        registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.asValue())
+        registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.asValue())
+        registerFurnace(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.asValue())
+        registerFurnace(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.asValue())
+        registerFurnace(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.asValue())
+        registerFurnace(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.asValue())
 
-        registerBlockItem(GenerationsBlocks.RICH_SOIL_1)
-        registerBlockItem(GenerationsBlocks.RICH_SOIL_2)
-        registerBlockItem(GenerationsBlocks.RICH_SOIL_3)
-        registerBlockItem(GenerationsBlocks.RICH_SOIL_4)
+        registerBlockItem(GenerationsBlocks.RICH_SOIL_1.asValue())
+        registerBlockItem(GenerationsBlocks.RICH_SOIL_2.asValue())
+        registerBlockItem(GenerationsBlocks.RICH_SOIL_3.asValue())
+        registerBlockItem(GenerationsBlocks.RICH_SOIL_4.asValue())
 
-        registerLog(GenerationsBlocks.GHOST_PILLAR)
+        registerLog(GenerationsBlocks.GHOST_PILLAR.asValue())
 
         GenerationsPokeDolls.all().forEach(Consumer(this::registerPokeDoll))
 
@@ -442,32 +443,32 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.RKS_MACHINE, "utility_blocks")
         registerBlockItemParticleWithDrop(GenerationsUtilityBlocks.SCARECROW, "utility_blocks")
 
-        registerBlockItem(GenerationsBlocks.LIGHTNING_LANTERN)
+        registerBlockItem(GenerationsBlocks.LIGHTNING_LANTERN.asValue())
 
-        registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_COBBLESTONE)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_COBBLESTONE)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE_BRICKS)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE_BRICKS)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_MOSSY_CHARGE_STONE_BRICKS)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_MOSSY_VOLCANIC_STONE_BRICKS)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_CRACKED_CHARGE_STONE_BRICKS)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_CRACKED_VOLCANIC_STONE_BRICKS)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_CHARGE_STONE_BRICKS)
-        registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_VOLCANIC_STONE_BRICKS)
+        registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_COBBLESTONE.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_COBBLESTONE.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_CHARGE_STONE_BRICKS.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_VOLCANIC_STONE_BRICKS.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_MOSSY_CHARGE_STONE_BRICKS.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_MOSSY_VOLCANIC_STONE_BRICKS.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_CRACKED_CHARGE_STONE_BRICKS.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_CRACKED_VOLCANIC_STONE_BRICKS.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_CHARGE_STONE_BRICKS.asValue())
+        registerInfestedBlock(GenerationsBlocks.INFESTED_CHISELED_VOLCANIC_STONE_BRICKS.asValue())
 
-        registerDripStone(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE)
+        registerDripStone(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.asValue())
 
         registerCarpetLike(
-            GenerationsUtilityBlocks.BLACK_ELEVATOR, GenerationsUtilityBlocks.BLUE_ELEVATOR,
-            GenerationsUtilityBlocks.BROWN_ELEVATOR, GenerationsUtilityBlocks.CYAN_ELEVATOR,
-            GenerationsUtilityBlocks.GRAY_ELEVATOR, GenerationsUtilityBlocks.GREEN_ELEVATOR,
-            GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR, GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR,
-            GenerationsUtilityBlocks.LIME_ELEVATOR, GenerationsUtilityBlocks.MAGENTA_ELEVATOR,
-            GenerationsUtilityBlocks.ORANGE_ELEVATOR, GenerationsUtilityBlocks.PINK_ELEVATOR,
-            GenerationsUtilityBlocks.PURPLE_ELEVATOR, GenerationsUtilityBlocks.RED_ELEVATOR,
-            GenerationsUtilityBlocks.WHITE_ELEVATOR, GenerationsUtilityBlocks.YELLOW_ELEVATOR
+            GenerationsUtilityBlocks.BLACK_ELEVATOR.asValue(), GenerationsUtilityBlocks.BLUE_ELEVATOR.asValue(),
+            GenerationsUtilityBlocks.BROWN_ELEVATOR.asValue(), GenerationsUtilityBlocks.CYAN_ELEVATOR.asValue(),
+            GenerationsUtilityBlocks.GRAY_ELEVATOR.asValue(), GenerationsUtilityBlocks.GREEN_ELEVATOR.asValue(),
+            GenerationsUtilityBlocks.LIGHT_BLUE_ELEVATOR.asValue(), GenerationsUtilityBlocks.LIGHT_GRAY_ELEVATOR.asValue(),
+            GenerationsUtilityBlocks.LIME_ELEVATOR.asValue(), GenerationsUtilityBlocks.MAGENTA_ELEVATOR.asValue(),
+            GenerationsUtilityBlocks.ORANGE_ELEVATOR.asValue(), GenerationsUtilityBlocks.PINK_ELEVATOR.asValue(),
+            GenerationsUtilityBlocks.PURPLE_ELEVATOR.asValue(), GenerationsUtilityBlocks.RED_ELEVATOR.asValue(),
+            GenerationsUtilityBlocks.WHITE_ELEVATOR.asValue(), GenerationsUtilityBlocks.YELLOW_ELEVATOR.asValue()
         )
 
         registerBox()
@@ -479,7 +480,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
         val box = GenerationsUtilityBlocks.BOX
 
-        getVariantBuilder(box)
+        getVariantBuilder(box.value())
             .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.NORTH)
             .modelForState().modelFile(open).addModel()
             .partialState().with(BoxBlock.OPEN, true).with(BoxBlock.FACING, Direction.EAST)
@@ -497,9 +498,9 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             .partialState().with(BoxBlock.OPEN, false).with(BoxBlock.FACING, Direction.WEST)
             .modelForState().modelFile(closed).rotationY(270).addModel()
 
-        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(box.asItem())).toString())
+        itemModels().getBuilder(Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(box.value().asItem())).toString())
             .parent(UncheckedModelFile("item/generated"))
-            .texture("layer0", key(box).withPrefix("item/blocks/utility_blocks/"))
+            .texture("layer0", key(box.value()).withPrefix("item/blocks/utility_blocks/"))
 
         dropSelfList.add(box)
     }
@@ -858,12 +859,16 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         dropSelfList.add(block)
     }
 
-    private fun registerBlockItemParticleWithDrop(block: Block, name: String) {
+    private fun registerBlockItemParticleWithDrop(block: Holder<Block>, name: String) {
         registerBlockItemParticle(block, name, true)
-        dropSelfList.add(block)
+        dropSelfList.add(block.value())
     }
 
-    private fun <T: Block> registerBlockItemParticle(block: T, name: String, shouldGenerateItems: Boolean) {
+    private fun registerBlockItemParticle(holder: Holder<Block>, name: String, shouldGenerateItems: Boolean) {
+        registerBlockItemParticle(holder.value(), name, shouldGenerateItems)
+    }
+
+    private fun registerBlockItemParticle(block: Block, name: String, shouldGenerateItems: Boolean) {
         val blockId = key(block)
         val textureId = blockId.withPrefix("item/blocks/$name/")
         try {
@@ -1181,6 +1186,10 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         @JvmField
         val MUSHROOM_BLOCKS: ArrayList<GenerationsMushroomBlock> = ArrayList()
     }
+}
+
+fun <T> Holder<Block>.asValue(): T {
+    return this.value() as T
 }
 
 private fun BlockModelBuilder.configure(rotX: Int = 0, rotY: Int = 0): Array<ConfiguredModel> {

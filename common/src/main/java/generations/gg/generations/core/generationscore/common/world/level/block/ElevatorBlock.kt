@@ -16,9 +16,6 @@ import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
-import java.util.*
-import java.util.function.Consumer
-import java.util.function.Function
 
 class ElevatorBlock : Block(Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.8f)) {
     public override fun entityInside(state: BlockState, level: Level, pos: BlockPos, entity: Entity) {
@@ -71,7 +68,7 @@ class ElevatorBlock : Block(Properties.ofFullCopy(Blocks.IRON_BLOCK).strength(0.
                     player.serverLevel().playSound(
                         null,
                         this,
-                        GenerationsSounds.ELEVATOR,
+                        GenerationsSounds.ELEVATOR.value(),
                         SoundSource.BLOCKS,
                         0.5f,
                         1.0f

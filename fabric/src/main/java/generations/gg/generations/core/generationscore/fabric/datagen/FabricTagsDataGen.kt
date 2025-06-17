@@ -56,9 +56,9 @@ internal class BlockTagsProvider(
     override fun addTags(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(ConventionalBlockTags.ORES).forceAddTag(GenerationsBlockTags.GENERATIONSORES)
         getOrCreateTagBuilder(ConventionalBlockTags.BOOKSHELVES).add(
-            GenerationsWood.GHOST_BOOKSHELF,
-            GenerationsWood.ULTRA_DARK_BOOKSHELF,
-            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF
+            GenerationsWood.GHOST_BOOKSHELF.value(),
+            GenerationsWood.ULTRA_DARK_BOOKSHELF.value(),
+            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.value()
         )
         getOrCreateTagBuilder(ConventionalBlockTags.CHESTS).forceAddTag(GenerationsBlockTags.POKEBALL_CHESTS)
     }
@@ -76,11 +76,11 @@ internal class ItemTagsProvider(
     override fun addTags(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(ConventionalItemTags.ORES).forceAddTag(GenerationsItemTags.GENERATIONSORES)
         getOrCreateTagBuilder(ConventionalItemTags.BOOKSHELVES).add(
-            GenerationsWood.GHOST_BOOKSHELF.asItem(),
-            GenerationsWood.ULTRA_DARK_BOOKSHELF.asItem(),
-            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.asItem()
+            GenerationsWood.GHOST_BOOKSHELF.value().asItem(),
+            GenerationsWood.ULTRA_DARK_BOOKSHELF.value().asItem(),
+            GenerationsWood.ULTRA_JUNGLE_BOOKSHELF.value().asItem()
         )
-        getOrCreateTagBuilder(ConventionalItemTags.INGOTS).add(GenerationsItems.Z_INGOT)
+        getOrCreateTagBuilder(ConventionalItemTags.INGOTS).add(GenerationsItems.Z_INGOT.value())
         getOrCreateTagBuilder(ConventionalItemTags.CHESTS).forceAddTag(GenerationsItemTags.POKEBALL_CHESTS)
     }
 }
@@ -92,6 +92,6 @@ internal class EntityTypeTagsProvider(
     EntityTypeTagProvider(output, completableFuture) {
     override fun addTags(arg: HolderLookup.Provider) {
         getOrCreateTagBuilder(ConventionalEntityTypeTags.BOATS)
-            .add(GenerationsEntities.BOAT_ENTITY, GenerationsEntities.CHEST_BOAT_ENTITY)
+            .add(GenerationsEntities.BOAT_ENTITY.value(), GenerationsEntities.CHEST_BOAT_ENTITY.value())
     }
 }

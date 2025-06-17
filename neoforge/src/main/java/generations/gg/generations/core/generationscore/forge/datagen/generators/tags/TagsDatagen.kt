@@ -9,9 +9,11 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import generations.gg.generations.core.generationscore.common.world.item.tools.GenerationsHammerItem
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.PackOutput
+import net.minecraft.data.tags.IntrinsicHolderTagsProvider
 import net.minecraft.data.tags.ItemTagsProvider
 import net.minecraft.data.tags.PaintingVariantTagsProvider
 import net.minecraft.resources.ResourceLocation
@@ -31,7 +33,7 @@ object TagsDatagen {
         generator: DataGenerator,
         output: PackOutput,
         lookupProvider: CompletableFuture<HolderLookup.Provider>,
-        helper: ExistingFileHelper
+        helper: ExistingFileHelper,
     ) {
         val blockProvider = GenerationsBlockTagsProvider(output, lookupProvider, helper)
         generator.addProvider(true, blockProvider)
@@ -42,7 +44,7 @@ object TagsDatagen {
     private class GenerationsBlockTagsProvider(
         output: PackOutput,
         lookupProvider: CompletableFuture<HolderLookup.Provider>,
-        existingFileHelper: ExistingFileHelper
+        existingFileHelper: ExistingFileHelper,
     ) :
         BlockTagsProvider(output, lookupProvider, GenerationsCore.MOD_ID, existingFileHelper) {
         override fun addTags(arg: HolderLookup.Provider) {
@@ -305,18 +307,18 @@ object TagsDatagen {
             //Charge and Volcanic Stone Brick Tags like Vanilla
             tag(GenerationsBlockTags.CHARGE_STONE_BRICKS)
                 .add(
-                    GenerationsBlocks.CHARGE_STONE_BRICKS,
+                    GenerationsBlocks.CHARGE_STONE_BRICKS.value(),
                     GenerationsBlocks.MOSSY_CHARGE_STONE_BRICKS_SET.baseBlock,
-                    GenerationsBlocks.CRACKED_CHARGE_STONE_BRICKS,
-                    GenerationsBlocks.CHISELED_CHARGE_STONE_BRICKS
+                    GenerationsBlocks.CRACKED_CHARGE_STONE_BRICKS.value(),
+                    GenerationsBlocks.CHISELED_CHARGE_STONE_BRICKS.value()
                 )
 
             tag(GenerationsBlockTags.VOLCANIC_STONE_BRICKS)
                 .add(
-                    GenerationsBlocks.VOLCANIC_STONE_BRICKS,
+                    GenerationsBlocks.VOLCANIC_STONE_BRICKS.value(),
                     GenerationsBlocks.MOSSY_VOLCANIC_STONE_BRICKS_SET.baseBlock,
-                    GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS,
-                    GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS
+                    GenerationsBlocks.CRACKED_VOLCANIC_STONE_BRICKS.value(),
+                    GenerationsBlocks.CHISELED_VOLCANIC_STONE_BRICKS.value()
                 )
 
             tag(BlockTags.MINEABLE_WITH_AXE).add(
@@ -386,7 +388,7 @@ object TagsDatagen {
         arg: PackOutput,
         completableFuture: CompletableFuture<HolderLookup.Provider>,
         blockTagsProvider: BlockTagsProvider,
-        existingFileHelper: ExistingFileHelper?
+        existingFileHelper: ExistingFileHelper?,
     ) :
         ItemTagsProvider(
             arg,
@@ -704,7 +706,7 @@ object TagsDatagen {
     private class GenerationsPaintingTagProvider(
         arg: PackOutput,
         completableFuture: CompletableFuture<HolderLookup.Provider>,
-        existingFileHelper: ExistingFileHelper?
+        existingFileHelper: ExistingFileHelper?,
     ) :
         PaintingVariantTagsProvider(arg, completableFuture, GenerationsCore.MOD_ID, existingFileHelper) {
         override fun addTags(arg: HolderLookup.Provider) {
@@ -715,4 +717,10 @@ object TagsDatagen {
 //            })
         }
     }
+}
+
+@SafeVarargs
+fun <T: Any> IntrinsicHolderTagsProvider.IntrinsicTagAppender<T>.add(vararg values: Holder<T>): IntrinsicHolderTagsProvider.IntrinsicTagAppender<T> {
+    addAll(values.map(Holder<T>::getKey))
+    return this
 }

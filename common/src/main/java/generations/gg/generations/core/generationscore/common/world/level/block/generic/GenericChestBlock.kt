@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.mojang.serialization.Codec
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericChestBlockEntity
 import net.minecraft.core.BlockPos
@@ -35,11 +36,10 @@ import net.minecraft.world.level.pathfinder.PathComputationType
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
-import org.checkerframework.checker.units.qual.C
 import java.util.function.Supplier
 
 @Suppress("deprecation")
-class GenericChestBlock(properties: Properties, private val width: Int, private val height: Int, val materialType: String) : AbstractChestBlock<GenericChestBlockEntity>(properties, Supplier<BlockEntityType<out GenericChestBlockEntity>> { GenerationsBlockEntities.GENERIC_CHEST }),
+class GenericChestBlock(properties: Properties, private val width: Int, private val height: Int, val materialType: String) : AbstractChestBlock<GenericChestBlockEntity>(properties, Supplier<BlockEntityType<out GenericChestBlockEntity>> { GenerationsBlockEntities.GENERIC_CHEST.asValue() }),
     SimpleWaterloggedBlock {
     private val defaultTranslation = "container.$materialType"
 
@@ -166,7 +166,7 @@ class GenericChestBlock(properties: Properties, private val width: Int, private 
         blockEntityType: BlockEntityType<T>,
     ): BlockEntityTicker<T>? {
         return if (level.isClientSide) createTickerHelper(
-            blockEntityType, GenerationsBlockEntities.GENERIC_CHEST
+            blockEntityType, GenerationsBlockEntities.GENERIC_CHEST.asValue()
         ) { level: Level, pos: BlockPos, state: BlockState, blockEntity: GenericChestBlockEntity ->
             GenericChestBlockEntity.lidAnimateTick(
                 level,

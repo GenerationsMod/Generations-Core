@@ -5,6 +5,7 @@ import generations.gg.generations.core.generationscore.common.client.model.Model
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.PcBlock
 import net.minecraft.core.BlockPos
+import net.minecraft.core.Holder
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.entity.BlockEntityType
@@ -12,11 +13,11 @@ import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.entity.EntityTypeTest
 import net.minecraft.world.phys.AABB
 
-open class PcBlockEntity<T : PcBlockEntity<T>>(
-    type: BlockEntityType<T>, blockPos: BlockPos, blockState: BlockState,
+open class PcBlockEntity(
+    type: Holder<BlockEntityType<*>>, blockPos: BlockPos, blockState: BlockState,
 ) : ModelProvidingBlockEntity(type, blockPos, blockState), VariantProvider {
-    fun <T : PcBlockEntity<T>> togglePCOn(on: Boolean) {
-        val pcBlock = blockState.block as GenericRotatableModelBlock<*>
+    fun togglePCOn(on: Boolean) {
+        val pcBlock = blockState.block as GenericRotatableModelBlock
 
         if (level != null && !level!!.isClientSide) {
             val world = level!!
@@ -27,7 +28,7 @@ open class PcBlockEntity<T : PcBlockEntity<T>>(
 
             if (stateBottom.getValue(PcBlock.ON) != on) {
                 world.setBlockAndUpdate(posBottom, stateBottom.setValue(PcBlock.ON, on))
-                if((stateBottom.block as GenericRotatableModelBlock<*>).height == 1) world.setBlockAndUpdate(posTop, stateBottom.setValue(PcBlock.ON, on).setValue(pcBlock.heightProperty, 1))
+                if((stateBottom.block as GenericRotatableModelBlock).height == 1) world.setBlockAndUpdate(posTop, stateBottom.setValue(PcBlock.ON, on).setValue(pcBlock.heightProperty, 1))
             }
         }
     }

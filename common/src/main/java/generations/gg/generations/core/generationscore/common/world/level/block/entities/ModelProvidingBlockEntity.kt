@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import net.minecraft.core.BlockPos
+import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
@@ -16,18 +17,18 @@ import net.minecraft.world.phys.Vec3
 import org.joml.Matrix4f
 
 abstract class ModelProvidingBlockEntity(
-    type: BlockEntityType<out ModelProvidingBlockEntity>,
+    type: Holder<BlockEntityType<*>>,
     pos: BlockPos,
     state: BlockState
 ) : SimpleBlockEntity(type, pos, state), ModelContextProviders.ModelProvider, VariantProvider {
     var objectInstance: Array<ObjectInstance?>? = null
     private var boundingBox: AABB? = null
 
-    override fun getModel(): ResourceLocation = blockState.block.instanceOrNull<GenericModelBlock<*>>()?.getModel() ?: GenerationsBlockEntityModels.DEFAULT
+    override fun getModel(): ResourceLocation = blockState.block.instanceOrNull<GenericModelBlock>()?.model ?: GenerationsBlockEntityModels.DEFAULT
 
     val renderBoundingBox: AABB
         get() {
-            if (boundingBox == null) boundingBox = blockState.block.instanceOrNull<GenericModelBlock<*>>()?.computeRenderBoundingBox(
+            if (boundingBox == null) boundingBox = blockState.block.instanceOrNull<GenericModelBlock>()?.computeRenderBoundingBox(
                     getLevel()!!,
                     blockPos,
                     blockState

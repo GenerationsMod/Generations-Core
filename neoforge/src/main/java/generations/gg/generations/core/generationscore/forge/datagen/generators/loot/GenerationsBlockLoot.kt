@@ -35,6 +35,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.PrisonBottleStemBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.PrisonBottleStemBlock.PrisonBottleState
 import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.BlockDatagen
+import generations.gg.generations.core.generationscore.forge.datagen.generators.blocks.asValue
 import net.minecraft.advancements.critereon.StatePropertiesPredicate
 import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
@@ -124,24 +125,24 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
 
         //dropSelf(GenerationsOres.CHARGE_STONE_Z_CRYSTAL_ORE);
         addAll(
-            GenerationsBlocks.RUBY_BLOCK,
-            GenerationsBlocks.RUBY_SLAB,
-            GenerationsBlocks.RUBY_STAIRS,
-            GenerationsBlocks.RUBY_WALL
+            GenerationsBlocks.RUBY_BLOCK.asValue(),
+            GenerationsBlocks.RUBY_SLAB.asValue(),
+            GenerationsBlocks.RUBY_STAIRS.asValue(),
+            GenerationsBlocks.RUBY_WALL.asValue()
         )
 
         addAll(
-            GenerationsBlocks.SAPPHIRE_BLOCK,
-            GenerationsBlocks.SAPPHIRE_SLAB,
-            GenerationsBlocks.SAPPHIRE_STAIRS,
-            GenerationsBlocks.SAPPHIRE_WALL
+            GenerationsBlocks.SAPPHIRE_BLOCK.asValue(),
+            GenerationsBlocks.SAPPHIRE_SLAB.asValue(),
+            GenerationsBlocks.SAPPHIRE_STAIRS.asValue(),
+            GenerationsBlocks.SAPPHIRE_WALL.asValue()
         )
 
         addAll(
-            GenerationsBlocks.CRYSTAL_BLOCK,
-            GenerationsBlocks.CRYSTAL_SLAB,
-            GenerationsBlocks.CRYSTAL_STAIRS,
-            GenerationsBlocks.CRYSTAL_WALL
+            GenerationsBlocks.CRYSTAL_BLOCK.asValue(),
+            GenerationsBlocks.CRYSTAL_SLAB.asValue(),
+            GenerationsBlocks.CRYSTAL_STAIRS.asValue(),
+            GenerationsBlocks.CRYSTAL_WALL.asValue()
         )
 
         dropSelf(GenerationsBlocks.SILICON_BLOCK)
@@ -149,8 +150,8 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
 
         //Ultra Space
         dropSelf(GenerationsBlocks.ULTRA_SAND)
-        dropWhenSilkTouch(GenerationsBlocks.GHOST_LANTERN)
-        add(GenerationsBlocks.MACHINE_BLOCK, createSingleItemTable(GenerationsBlocks.MACHINE_BLOCK))
+        dropWhenSilkTouch(GenerationsBlocks.GHOST_LANTERN.value())
+        add(GenerationsBlocks.MACHINE_BLOCK.value(), createSingleItemTable(GenerationsBlocks.MACHINE_BLOCK.value()))
         dropSelf(GenerationsBlocks.RUINS_SAND)
         dropSelf(GenerationsBlocks.RICH_SOIL_1)
         dropSelf(GenerationsBlocks.RICH_SOIL_2)
@@ -158,25 +159,25 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         dropSelf(GenerationsBlocks.RICH_SOIL_4)
 
         add(
-            GenerationsBlocks.POKEBALL_CHEST,
-            createNameableBlockEntityTable(GenerationsBlocks.POKEBALL_CHEST)
+            GenerationsBlocks.POKEBALL_CHEST.value(),
+            createNameableBlockEntityTable(GenerationsBlocks.POKEBALL_CHEST.value())
         )
         add(
-            GenerationsBlocks.GREATBALL_CHEST,
-            createNameableBlockEntityTable(GenerationsBlocks.GREATBALL_CHEST)
+            GenerationsBlocks.GREATBALL_CHEST.value(),
+            createNameableBlockEntityTable(GenerationsBlocks.GREATBALL_CHEST.value())
         )
         add(
-            GenerationsBlocks.ULTRABALL_CHEST,
-            createNameableBlockEntityTable(GenerationsBlocks.ULTRABALL_CHEST)
+            GenerationsBlocks.ULTRABALL_CHEST.value(),
+            createNameableBlockEntityTable(GenerationsBlocks.ULTRABALL_CHEST.value())
         )
         add(
-            GenerationsBlocks.MASTERBALL_CHEST,
-            createNameableBlockEntityTable(GenerationsBlocks.MASTERBALL_CHEST)
+            GenerationsBlocks.MASTERBALL_CHEST.value(),
+            createNameableBlockEntityTable(GenerationsBlocks.MASTERBALL_CHEST.value())
         )
 
 
-        addOreSetWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE_SET, GenerationsItems.MEGASTONE_SHARD)
-        addOreSetWithRandomAmountDrops(GenerationsOres.METEORITE_ORE_SET, GenerationsItems.METEORITE_SHARD)
+        addOreSetWithRandomAmountDrops(GenerationsOres.MEGASTONE_ORE_SET, GenerationsItems.MEGASTONE_SHARD.value())
+        addOreSetWithRandomAmountDrops(GenerationsOres.METEORITE_ORE_SET, GenerationsItems.METEORITE_SHARD.value())
 
         //Pumpkins
         dropSelf(GenerationsBlocks.CURSED_PUMPKIN)
@@ -185,28 +186,28 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
 
         //Furnaces
         add(
-            GenerationsUtilityBlocks.CHARGE_STONE_FURNACE,
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE)
+            GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.value(),
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_FURNACE.value())
         )
         add(
-            GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE,
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE)
+            GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.value(),
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_BLAST_FURNACE.value())
         )
         add(
-            GenerationsUtilityBlocks.CHARGE_STONE_SMOKER,
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER)
+            GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.value(),
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.CHARGE_STONE_SMOKER.value())
         )
         add(
-            GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE,
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE)
+            GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.value(),
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_FURNACE.value())
         )
         add(
-            GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE,
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE)
+            GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.value(),
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_BLAST_FURNACE.value())
         )
         add(
-            GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER,
-            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER)
+            GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.value(),
+            createNameableBlockEntityTable(GenerationsUtilityBlocks.VOLCANIC_STONE_SMOKER.value())
         )
 
 
@@ -243,9 +244,9 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         dropDisplayStandWithBall(GenerationsDecorationBlocks.SPORT_BALL_DISPLAY, SPORT_BALL.asItem())
         dropDisplayStandWithBall(GenerationsDecorationBlocks.TIMER_BALL_DISPLAY, TIMER_BALL.asItem())
 
-        createGenericRotationModelBlockTable(GenerationsUtilityBlocks.RKS_MACHINE)
-        createGenericRotationModelBlockTable(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP)
-        createGenericRotationModelBlockTable(GenerationsShrines.PRISON_BOTTLE)
+        createGenericRotationModelBlockTable(GenerationsUtilityBlocks.RKS_MACHINE.asValue())
+        createGenericRotationModelBlockTable(GenerationsDecorationBlocks.DOUBLE_STREET_LAMP.asValue())
+        createGenericRotationModelBlockTable(GenerationsShrines.PRISON_BOTTLE.asValue())
         prisonBottleStem()
 
         dropSelf(GenerationsBlocks.CASTLE_PILLAR)
@@ -305,25 +306,25 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         )
     }
 
-    private fun createSignDrops(item: Item, standingSignBlock: Block, wallSignBlock: Block) {
-        createItemDropTable(item, standingSignBlock)
-        createItemDropTable(item, wallSignBlock)
+    private fun createSignDrops(item: Holder<Item>, standingSignBlock: Holder<Block>, wallSignBlock: Holder<Block>) {
+        createItemDropTable(item.value(), standingSignBlock.value())
+        createItemDropTable(item.value(), wallSignBlock.value())
     }
 
-    private fun dropDisplayStandWithBall(block: Block, item: Item) {
+    private fun dropDisplayStandWithBall(block: Holder<Block>, item: Item) {
         add(
-            block, LootTable
+            block.value(), LootTable
                 .lootTable()
                 .withPool(
                     applyExplosionCondition(
-                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY,
+                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.value(),
                         LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f))
-                            .add(LootItem.lootTableItem(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY))
+                            .add(LootItem.lootTableItem(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.value()))
                     )
                 )
                 .withPool(
                     applyExplosionCondition(
-                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY,
+                        GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY.value(),
                         LootPool.lootPool().setRolls(ConstantValue.exactly(1.0f)).add(LootItem.lootTableItem(item))
                     )
                 )
@@ -459,7 +460,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         )
     }
 
-    protected fun <T : GenericRotatableModelBlock<*>?> createGenericRotationModelBlockTable(block: T) {
+    protected fun <T : GenericRotatableModelBlock> createGenericRotationModelBlockTable(block: T) {
         val statePropertiesPredicate = StatePropertiesPredicate.Builder.properties()
 
         if (block!!.widthProperty != null) {
@@ -489,7 +490,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
     }
 
     protected fun prisonBottleStem() {
-        val block = GenerationsShrines.PRISON_BOTTLE_STEM
+        val block = GenerationsShrines.PRISON_BOTTLE_STEM.asValue<GenericRotatableModelBlock>()
         val statePropertiesPredicate: () -> StatePropertiesPredicate.Builder = {
             val builder = StatePropertiesPredicate.Builder.properties()
 
@@ -525,15 +526,19 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
 
     fun ringLoot(state: PrisonBottleState, ring: Int, builder: StatePropertiesPredicate.Builder): LootPool.Builder {
         return this.applyExplosionCondition(
-            GenerationsItems.HOOPA_RING, LootPool.lootPool()
+            GenerationsItems.HOOPA_RING.value(), LootPool.lootPool()
                 .setRolls(ConstantValue.exactly(ring.toFloat()))
                 .add(
-                    LootItem.lootTableItem(GenerationsItems.HOOPA_RING)
+                    LootItem.lootTableItem(GenerationsItems.HOOPA_RING.value())
                         .`when`(
-                            LootItemBlockStatePropertyCondition.hasBlockStateProperties(GenerationsShrines.PRISON_BOTTLE_STEM)
+                            LootItemBlockStatePropertyCondition.hasBlockStateProperties(GenerationsShrines.PRISON_BOTTLE_STEM.value())
                                 .setProperties(builder.hasProperty(PrisonBottleStemBlock.STATE, state))
                         )
                 )
         )
+    }
+
+    fun dropSelf(block: Holder<Block>) {
+        dropSelf(block.value())
     }
 }

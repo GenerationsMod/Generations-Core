@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.recipe
 
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -17,10 +18,12 @@ object GenerationsCoreRecipeTypes: PlatformRegistry<RecipeType<*>>() {
     @JvmField
 	var RKS = register<RksRecipe>("rks")
 
-    private fun <T : Recipe<*>> register(name: String): RecipeType<T> {
+    private fun <T : Recipe<*>> register(name: String): Holder<RecipeType<*>> {
         val id = name.generationsResource()
-        return create(id, object : RecipeType<T> {
-            override fun toString(): String = id.toString()
+        return create(name, {
+            object : RecipeType<T> {
+                override fun toString(): String = id.toString()
+            }
         })
     }
 }

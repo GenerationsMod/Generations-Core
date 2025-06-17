@@ -14,7 +14,7 @@ class GenericSmokerBlockEntity(pos: BlockPos, state: BlockState) : SmokerBlockEn
 
     override fun getDefaultName(): Component = "container.$name".asTranslated()
 
-    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.GENERIC_SMOKER
+    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.GENERIC_SMOKER.value()
 
-    override fun isValidBlockState(blockState: BlockState): Boolean = GenerationsBlockEntities.GENERIC_SMOKER.isValid(blockState)
+    override fun isValidBlockState(blockState: BlockState): Boolean = GenerationsBlockEntities.GENERIC_SMOKER.value().isValid(blockState)
 }

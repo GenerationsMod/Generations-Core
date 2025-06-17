@@ -4,7 +4,6 @@ import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.GenericRotatableShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.StreetLampBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -12,14 +11,13 @@ import net.minecraft.core.Holder
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class StreetLampBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<StreetLampBlockEntity, StreetLampBlock>(properties, color, function, GenerationsBlockEntityModels.STREET_LAMP, 0, 1, 0) {
-    override val blockEntityType: BlockEntityType<StreetLampBlockEntity>
+class StreetLampBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock(properties, color, function, GenerationsBlockEntityModels.STREET_LAMP, 0, 1, 0) {
+    override val blockEntityType
         get() = GenerationsBlockEntities.STREET_LAMP
 
     public override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape = SHAPE.getShape(state)

@@ -6,7 +6,6 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.decorations.SittableBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -14,19 +13,18 @@ import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class BenchBlock(properties: Properties) : GenericRotatableModelBlock<GenericModelProvidingBlockEntity>(
+class BenchBlock(properties: Properties) : GenericRotatableModelBlock(
     properties = properties,
     model = GenerationsBlockEntityModels.BENCH,
     width = 1
 ), SittableBlock {
-    override val blockEntityType: BlockEntityType<GenericModelProvidingBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_MODEL_PROVIDING
 
     public override fun getShape(

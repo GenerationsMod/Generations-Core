@@ -14,6 +14,7 @@ import generations.gg.generations.core.generationscore.common.world.item.curry.C
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
@@ -419,7 +420,7 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore3", "Collect Zygarde Cells to summon the balance.")
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore4", "Cells collected: %s/%s")
 
-        translationBuilder.add(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells")
+        translationBuilder.add(GenerationsEntities.ZYGARDE_CELL.value(), "Zygarde Cells")
         add("gui.zygarde_cube", "Zygarde Cube")
         add("gui.zygarde_cube.select", "Merge Zygarde Cells")
         add("gui.zygarde_cube.merge_10.name", "Create 10%")
@@ -542,7 +543,7 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         add("generations_core.pokemon.defused", "%s was defused from %s.")
         add("generations_core.pokemon.encoded", "%s was encoded.")
 
-        translationBuilder.add(GenerationsEntities.STATUE_ENTITY, "Statue")
+        translationBuilder.add(GenerationsEntities.STATUE_ENTITY.value(), "Statue")
 
         add("item.unimplemented_until_1_dot_6_cobblemon", "Currently unimplemented. Will be looked in 1.6+ cobblemon.")
 
@@ -572,7 +573,7 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
             )
         }
 
-        translationBuilder.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE, "Ultrite Upgrade Smithing Template")
+        translationBuilder.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.value(), "Ultrite Upgrade Smithing Template")
 
         this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot")
         this.add(
@@ -622,8 +623,8 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         glitchCityRecordDescription(GenerationsItems.MT_PYRE_DISC)
     }
 
-    private fun glitchCityRecordDescription(item: Item) {
-        add(item.descriptionId + ".desc", "GlitchxCity - " + getNameGens(item, item.id.toString().replace("_disc", ""))
+    private fun glitchCityRecordDescription(item: Holder<Item>) {
+        add(item.value().descriptionId + ".desc", "GlitchxCity - " + getNameGens(item.value(), item.unwrapKey().get().location().toString().replace("_disc", ""))
         )
     }
 
@@ -650,8 +651,16 @@ class GeneralLang(packOutput: FabricDataOutput, lookup: CompletableFuture<Holder
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick")
     }
 
+    fun addTooltip(registrySupplier: Holder<out ItemLike>, entry: String) {
+        addTooltip(registrySupplier.value(), entry)
+    }
+
     fun addTooltip(registrySupplier: ItemLike, entry: String) {
         addTooltip(registrySupplier, null, entry)
+    }
+
+    fun addTooltip(registrySupplier: Holder<out ItemLike>, sub: String?, entry: String) {
+        addTooltip(registrySupplier.value(), sub, entry)
     }
 
     fun addTooltip(registrySupplier: ItemLike, sub: String?, entry: String) {

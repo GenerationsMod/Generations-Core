@@ -6,12 +6,13 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider
 import net.minecraft.data.models.BlockModelGenerators
 import net.minecraft.data.models.ItemModelGenerators
-import net.minecraft.data.models.model.*
+import net.minecraft.data.models.model.ModelLocationUtils
+import net.minecraft.data.models.model.ModelTemplates
+import net.minecraft.data.models.model.TextureMapping
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.ArmorMaterial
 import net.minecraft.world.item.ArmorMaterials
-import kotlin.streams.asSequence
 
 internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricModelProvider(fabricDataOutput) {
     override fun generateBlockStateModels(blockModelGenerators: BlockModelGenerators) {
@@ -27,7 +28,7 @@ internal class ArmorModelProvider(fabricDataOutput: FabricDataOutput) : FabricMo
                 GenerationsArmor.SUN_STONE,
                 GenerationsArmor.MOON_STONE,
                 GenerationsArmor.THUNDER_STONE,
-                GenerationsArmor.WATER_STONE).flatMap { it.stream().asSequence() }
+                GenerationsArmor.WATER_STONE).flatMap { it.stream() }
             .filterIsInstance<ArmorItem>()
             .forEach { itemModelGenerators.generateGenerationsArmorTrims(it) }
     }

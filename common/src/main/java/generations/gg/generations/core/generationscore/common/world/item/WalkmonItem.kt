@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.CobblemonNetwork.sendPacketToPlayer
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import earth.terrarium.common_storage_lib.context.impl.PlayerContext
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import generations.gg.generations.core.generationscore.common.GenerationsStorage
@@ -11,6 +10,7 @@ import generations.gg.generations.core.generationscore.common.network.packets.S2
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.TEXT_STREAM_CODEC
+import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents
@@ -30,7 +30,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.JukeboxPlayable
 import net.minecraft.world.level.Level
 
-class WalkmonItem(properties: Properties, private val row: Int, type: String) : Item(properties.component(GenerationsDataComponents.WALKMON_DATA, WalkmonData(0, 0, false, Component.literal("Walkmon")))) {
+class WalkmonItem(properties: Properties, private val row: Int, type: String) : Item(properties.component(GenerationsDataComponents.WALKMON_DATA.asValue(), WalkmonData(0, 0, false, Component.literal("Walkmon")))) {
     private val defaultTranslation: String = "container.$type"
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
@@ -52,7 +52,7 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
     override fun inventoryTick(stack: ItemStack, level: Level, entity: Entity, slotId: Int, isSelected: Boolean) {
         if (!level.isClientSide && entity is ServerPlayer) {
-            stack.get(GenerationsDataComponents.WALKMON_DATA)?.tick(stack, entity)
+            stack.get(GenerationsDataComponents.WALKMON_DATA.asValue<WalkmonData>())?.tick(stack, entity)
         }
     }
 
@@ -146,4 +146,4 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 }
 
 private val ItemStack.walkmonData: WalkmonItem.WalkmonData?
-    get() = this.get(GenerationsDataComponents.WALKMON_DATA)
+    get() = this.get(GenerationsDataComponents.WALKMON_DATA.asValue())

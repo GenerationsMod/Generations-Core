@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.mojang.serialization.MapCodec
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.generateDirectionVoxelShape
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
@@ -27,11 +28,11 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.stream.Stream
 
-class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock<CookingPotBlockEntity>(
+class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock(
         materialIn,
         model = GenerationsBlockEntityModels.COOKING_POT
     ) {
-    override val blockEntityType: BlockEntityType<CookingPotBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.COOKING_POT
 
     public override fun useItemOn(
@@ -90,7 +91,7 @@ class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock<Cooki
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
         return if (level.isClientSide) null else createTickerHelper(
-            blockEntityType, GenerationsBlockEntities.COOKING_POT
+            blockEntityType, GenerationsBlockEntities.COOKING_POT.asValue<CookingPotBlockEntity>()
         ) { _, _, _, pot -> pot.serverTick() }
     }
 
@@ -100,7 +101,7 @@ class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock<Cooki
         pos: BlockPos,
         context: CollisionContext
     ): VoxelShape {
-        return (if (level.getBlockEntity(pos, GenerationsBlockEntities.COOKING_POT)
+        return (if (level.getBlockEntity(pos, GenerationsBlockEntities.COOKING_POT.asValue<CookingPotBlockEntity>())
                 .filter { obj: CookingPotBlockEntity -> obj.hasLogs() }.isPresent
         ) WITH_CAMPFIRE else WITHOUT_CAMPFIRE).getShape(state)
     }

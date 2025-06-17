@@ -1,11 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.generic
 
-import earth.terrarium.common_storage_lib.data.DataManager
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import earth.terrarium.common_storage_lib.storage.base.CommonStorage
-import generations.gg.generations.core.generationscore.common.GenerationsStorage
 import generations.gg.generations.core.generationscore.common.world.container.GenericChestContainer
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
@@ -19,7 +14,6 @@ import net.minecraft.network.chat.Component
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
-import net.minecraft.world.Container
 import net.minecraft.world.ContainerHelper
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
@@ -31,7 +25,6 @@ import net.minecraft.world.level.block.entity.ContainerOpenersCounter
 import net.minecraft.world.level.block.entity.LidBlockEntity
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
 import net.minecraft.world.level.block.state.BlockState
-import java.util.*
 
 @Suppress("deprecation")
 class GenericChestBlockEntity @JvmOverloads constructor(
@@ -40,7 +33,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     private var width: Int = 9,
     private var height: Int = 1,
     private var defaultTranslation: String = "container.chest"
-) : RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST, arg, arg2), LidBlockEntity {
+) : RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST.value(), arg, arg2), LidBlockEntity {
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {
             this@GenericChestBlockEntity.playSound(state, SoundEvents.CHEST_OPEN)

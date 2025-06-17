@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericBlastFurnaceBlockEntity
 import net.minecraft.core.BlockPos
@@ -24,7 +25,7 @@ class GenericBlastFurnaceBlock(properties: Properties = Properties.ofFullCopy(Bl
         state: BlockState,
         blockEntityType: BlockEntityType<T>
     ): BlockEntityTicker<T>? {
-        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_BLAST_FURNACE)
+        return createFurnaceTicker(level, blockEntityType, GenerationsBlockEntities.GENERIC_BLAST_FURNACE.asValue())
     }
 
     companion object {

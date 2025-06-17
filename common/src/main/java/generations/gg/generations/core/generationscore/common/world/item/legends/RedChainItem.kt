@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.item.legend
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.util.add
+import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.network.chat.Component
@@ -10,7 +11,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
-class RedChainItem(properties: Properties) : EnchantableItem(properties.component(GenerationsDataComponents.USES, 0)), LangTooltip {
+class RedChainItem(properties: Properties) : EnchantableItem(properties.component(GenerationsDataComponents.USES.asValue(), 0)), LangTooltip {
     override fun neededEnchantmentLevel(player: ServerPlayer): Int {
         val caught = GenerationsCore.CONFIG.caught
         return if (caught.capped(player, LegendKeys.DIALGA) || caught.capped(player, LegendKeys.GIRATINA) || caught.capped(player, LegendKeys.PALKIA)) super.neededEnchantmentLevel(player)
@@ -31,12 +32,12 @@ class RedChainItem(properties: Properties) : EnchantableItem(properties.componen
         @JvmStatic
         fun incrementUsage(stack: ItemStack) {
             setEnchanted(stack, false)
-            stack.update(GenerationsDataComponents.USES, 0) { it + 1 }
+            stack.update(GenerationsDataComponents.USES.asValue(), 0) { it + 1 }
         }
 
         @JvmStatic
         fun getUses(stack: ItemStack): Int {
-            return stack.getOrDefault(GenerationsDataComponents.USES, 0)
+            return stack.getOrDefault(GenerationsDataComponents.USES.asValue(), 0)
         }
     }
 }

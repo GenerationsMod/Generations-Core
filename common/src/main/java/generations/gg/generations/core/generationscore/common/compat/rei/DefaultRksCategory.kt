@@ -22,7 +22,7 @@ class DefaultRksCategory : DisplayCategory<DefaultRksMachineRecipeDisplay<*>> {
 
     override fun getTitle(): Component = Component.translatable("gui.recipe_viewer.category.rks_machine")
 
-    override fun getIcon(): Renderer = EntryStacks.of(GenerationsUtilityBlocks.RKS_MACHINE)
+    override fun getIcon(): Renderer = EntryStacks.of(GenerationsUtilityBlocks.RKS_MACHINE.value())
 
     override fun setupDisplay(display: DefaultRksMachineRecipeDisplay<*>, bounds: Rectangle): List<Widget> {
         val startPoint = Point(bounds.centerX - 58, bounds.centerY - 27)

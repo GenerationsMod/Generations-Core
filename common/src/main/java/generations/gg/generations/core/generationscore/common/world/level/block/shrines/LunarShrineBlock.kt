@@ -8,6 +8,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.block
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.LunarShrineBlockEntity
@@ -31,8 +32,8 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.function.Consumer
 
-class LunarShrineBlock(properties: Properties) : ShrineBlock<LunarShrineBlockEntity>(properties = properties) {
-    override val blockEntityType: BlockEntityType<LunarShrineBlockEntity>
+class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = properties) {
+    override val blockEntityType
         get() = GenerationsBlockEntities.LUNAR_SHRINE
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
@@ -51,7 +52,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock<LunarShrineBlockEnt
     ): BlockEntityTicker<T>? {
         return createTickerHelper(
             blockEntityType,
-            GenerationsBlockEntities.LUNAR_SHRINE,
+            GenerationsBlockEntities.LUNAR_SHRINE.asValue<LunarShrineBlockEntity>(),
             if (level.isClientSide) BlockEntityTicker { _, _, _, _ -> } else BlockEntityTicker { world: Level, pos: BlockPos, _, _ ->
                 val blockstate = world.getBlockState(pos).setValue(
                     IS_LIGHT, world.getMaxLocalRawBrightness(pos) >= 10

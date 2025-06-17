@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.RecipeCategory
@@ -13,7 +14,6 @@ import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.RotatedPillarBlock
 import net.neoforged.neoforge.common.conditions.IConditionBuilder
 import java.util.concurrent.CompletableFuture
 
@@ -68,25 +68,25 @@ class WoodRecipes(output: PackOutput, registries: CompletableFuture<HolderLookup
     private fun buildAllWoodCraftingRecipes(
         consumer: RecipeOutput,
         logTag: TagKey<Item>,
-        planks: Block,
-        wood: Block,
-        strippedWood: Block,
-        strippedLog: Block,
-        LogBlock: RotatedPillarBlock,
-        chestBoatItem: Item,
-        boat: Item,
-        craftingTable: Block,
-        hangingSign: ItemLike,
-        bookshelf: Block
+        planks: Holder<Block>,
+        wood: Holder<Block>,
+        strippedWood: Holder<Block>,
+        strippedLog: Holder<Block>,
+        logBlock: Holder<Block>,
+        chestBoatItem: Holder<Item>,
+        boat: Holder<Item>,
+        craftingTable: Holder<Block>,
+        hangingSign: Holder<out ItemLike>,
+        bookshelf: Holder<Block>
     ) {
-        planksFromLog(consumer, planks, logTag, 4) //planks from log
-        woodFromLogs(consumer, wood, LogBlock)
-        woodFromLogs(consumer, strippedWood, strippedLog)
-        twoByTwoPacker(consumer, RecipeCategory.DECORATIONS, craftingTable, planks)
-        woodenBoat(consumer, boat, planks)
-        chestBoat(consumer, chestBoatItem, boat)
-        hangingSign(consumer, hangingSign, strippedLog)
-        bookshelf(consumer, bookshelf, planks)
+        planksFromLog(consumer, planks.value(), logTag, 4) //planks from log
+        woodFromLogs(consumer, wood.value(), logBlock.value())
+        woodFromLogs(consumer, strippedWood.value(), strippedLog.value())
+        twoByTwoPacker(consumer, RecipeCategory.DECORATIONS, craftingTable.value(), planks.value())
+        woodenBoat(consumer, boat.value(), planks.value())
+        chestBoat(consumer, chestBoatItem.value(), boat.value())
+        hangingSign(consumer, hangingSign.value(), strippedLog.value())
+        bookshelf(consumer, bookshelf.value(), planks.value())
     }
 
     private fun bookshelf(consumer: RecipeOutput, bookshelf: Block, planks: Block) {

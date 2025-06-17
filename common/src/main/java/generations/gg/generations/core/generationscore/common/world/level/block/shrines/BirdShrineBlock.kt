@@ -6,7 +6,6 @@ import generations.gg.generations.core.generationscore.common.world.entity.block
 import generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem
 import generations.gg.generations.core.generationscore.common.world.item.WingItem
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericShrineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.InteractShrineBlock.Companion.isActive
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.InteractShrineBlock.Companion.toggleActive
 import generations.gg.generations.core.generationscore.common.world.level.schedule.ScheduledTask
@@ -21,20 +20,18 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import java.util.*
 
-@Suppress("deprecation")
 abstract class BirdShrineBlock @SafeVarargs constructor(
     properties: Properties,
     model: ResourceLocation,
     width: Int = 0,
     height: Int = 0,
     length: Int = 0,
-    vararg imbuedItems: ResourceLocation
-) : ShrineBlock<GenericShrineBlockEntity>(
+    vararg imbuedItems: Holder<Item>
+) : ShrineBlock(
         properties,
         model,
         width,
@@ -42,11 +39,11 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
         length
     ) {
 
-    override val blockEntityType: BlockEntityType<GenericShrineBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_SHRINE
 
     private val allowedImbuedItems: Set<ResourceLocation> = imbuedItems.asSequence()
-            .filter(Objects::nonNull)
+            .filter(Objects::nonNull).map { it.unwrapKey().orElseThrow().location() }
             .toSet()
 
     public override fun useItemOn(
@@ -63,18 +60,12 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
 
             if (MelodyFluteItem.isFlute(stack)) {
                 val imbuedStack = MelodyFluteItem.getImbuedItem(stack)
-                if (imbuedStack.isEmpty || allowedImbuedItems.stream().noneMatch { a: ResourceLocation? ->
-                        imbuedStack.`is` { item: Holder<Item?> ->
-                            item.`is`(
-                                a
-                            )
-                        }
-                    }) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
+                if (imbuedStack.isEmpty || allowedImbuedItems.none { a -> imbuedStack.`is` { item -> item.`is`(a) } }) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
                 val pokemonProperties = getProperties(imbuedStack)
 
                 if (!isActive(state) && stack.damageValue >= stack.maxDamage && pokemonProperties != null) {
                     toggleActive(level, pos)
-                    level.playSound(null, pos, GenerationsSounds.LUGIA_SHRINE_SONG, SoundSource.BLOCKS)
+                    level.playSound(null, pos, GenerationsSounds.LUGIA_SHRINE_SONG.value(), SoundSource.BLOCKS)
 
                     if (!player.isCreative) stack.shrink(1)
 

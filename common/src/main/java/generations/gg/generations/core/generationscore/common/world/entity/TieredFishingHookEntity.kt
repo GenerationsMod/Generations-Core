@@ -50,7 +50,7 @@ class TieredFishingHookEntity @JvmOverloads constructor(
         i: Int,
         j: Int,
         tier: Teir
-    ) : this(GenerationsEntities.TIERED_FISHING_BOBBER, arg2, i, j, tier) {
+    ) : this(GenerationsEntities.TIERED_FISHING_BOBBER.asValue(), arg2, i, j, tier) {
         this.owner = arg
         val f = arg.xRot
         val f1 = arg.yRot

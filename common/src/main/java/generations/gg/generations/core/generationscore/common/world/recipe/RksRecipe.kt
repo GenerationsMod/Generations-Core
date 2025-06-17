@@ -9,9 +9,11 @@ import net.minecraft.core.HolderLookup
 import net.minecraft.core.NonNullList
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.crafting.*
+import net.minecraft.world.item.crafting.Ingredient
+import net.minecraft.world.item.crafting.Recipe
+import net.minecraft.world.item.crafting.RecipeSerializer
+import net.minecraft.world.item.crafting.RecipeType
 import java.util.*
-import kotlin.jvm.optionals.getOrNull
 
 abstract class RksRecipe(
     @JvmField val group: String,
@@ -73,7 +75,7 @@ abstract class RksRecipe(
     }
 
     override fun getType(): RecipeType<*> {
-        return GenerationsCoreRecipeTypes.RKS
+        return GenerationsCoreRecipeTypes.RKS.value()
     }
 }
 

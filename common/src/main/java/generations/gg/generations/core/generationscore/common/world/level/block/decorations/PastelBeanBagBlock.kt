@@ -5,34 +5,30 @@ import generations.gg.generations.core.generationscore.common.util.extensions.to
 import generations.gg.generations.core.generationscore.common.world.entity.block.SittableEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericDyedVariantBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Holder
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
-import net.minecraft.world.InteractionResult
 import net.minecraft.world.ItemInteractionResult
 import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class PastelBeanBagBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<GenericDyedVariantBlockEntity, PastelBeanBagBlock>(
+class PastelBeanBagBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock(
         color,
         function,
         properties,
         GenerationsBlockEntityModels.PASTEL_BEAN_BAG
     ) {
-    override val blockEntityType: BlockEntityType<GenericDyedVariantBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.GENERIC_DYED_VARIANT
 
     public override fun getShape(

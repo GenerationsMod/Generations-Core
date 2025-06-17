@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.common.world.entity.Gener
 import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import generations.gg.generations.core.generationscore.common.world.level.block.*
+import net.minecraft.core.Holder
 import net.minecraft.data.PackOutput
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.ItemLike
@@ -412,7 +413,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore3", "Collect Zygarde Cells to summon the balance.")
         addTooltip(GenerationsItems.ZYGARDE_CUBE, "lore4", "Cells collected: %s/%s")
 
-        add(GenerationsEntities.ZYGARDE_CELL, "Zygarde Cells")
+        add(GenerationsEntities.ZYGARDE_CELL.value(), "Zygarde Cells")
         add("gui.zygarde_cube", "Zygarde Cube")
         add("gui.zygarde_cube.select", "Merge Zygarde Cells")
         add("gui.zygarde_cube.merge_10.name", "Create 10%")
@@ -535,7 +536,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         add("generations_core.pokemon.defused", "%s was defused from %s.")
         add("generations_core.pokemon.encoded", "%s was encoded.")
 
-        add(GenerationsEntities.STATUE_ENTITY, "Statue")
+        add(GenerationsEntities.STATUE_ENTITY.value(), "Statue")
 
         add("item.unimplemented_until_1_dot_6_cobblemon", "Currently unimplemented. Will be looked in 1.6+ cobblemon.")
 
@@ -565,7 +566,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
             )
         }
 
-        this.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE, "Ultrite Upgrade Smithing Template")
+        this.add(GenerationsItems.ULTRITE_UPGRADE_SMITHING_TEMPLATE.value(), "Ultrite Upgrade Smithing Template")
 
         this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot")
         this.add(
@@ -615,10 +616,10 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         glitchCityRecordDescription(GenerationsItems.MT_PYRE_DISC)
     }
 
-    private fun glitchCityRecordDescription(item: Item) {
+    private fun glitchCityRecordDescription(item: Holder<Item>) {
         add(
-            item.descriptionId + ".desc",
-            "GlitchxCity - " + getNameGens(item, item.id.toString().replace("_disc", ""))
+            item.value().descriptionId + ".desc",
+            "GlitchxCity - " + getNameGens(item.value(), item.id.toString().replace("_disc", ""))
         )
     }
 
@@ -645,12 +646,12 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         return getNameGens(item, name).replace("Poke Brick", "PokeBrick")
     }
 
-    fun addTooltip(registrySupplier: ItemLike, entry: String) {
+    fun addTooltip(registrySupplier: Holder<out ItemLike>, entry: String) {
         addTooltip(registrySupplier, null, entry)
     }
 
-    fun addTooltip(registrySupplier: ItemLike, sub: String?, entry: String) {
-        registrySupplier.asItem().instanceOrNull<LangTooltip>()?.run {
+    fun addTooltip(registrySupplier: Holder<out ItemLike>, sub: String?, entry: String) {
+        registrySupplier.value().asItem().instanceOrNull<LangTooltip>()?.run {
             add(this.tooltipId() + (if (sub != null) ".$sub" else ""), entry)
 
         }

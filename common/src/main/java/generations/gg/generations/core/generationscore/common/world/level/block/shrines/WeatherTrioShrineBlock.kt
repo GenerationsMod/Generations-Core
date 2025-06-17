@@ -19,7 +19,6 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.shapes.BooleanOp
 import net.minecraft.world.phys.shapes.CollisionContext
@@ -30,9 +29,9 @@ class WeatherTrioShrineBlock(
     properties: Properties,
     model: ResourceLocation,
     val species: SpeciesKey,
-    private val requiredItem: Item
-) : InteractShrineBlock<WeatherTrioShrineBlockEntity>(properties, model) {
-    override val blockEntityType: BlockEntityType<WeatherTrioShrineBlockEntity>
+    private val requiredItem: Holder<Item>
+) : InteractShrineBlock(properties, model) {
+    override val blockEntityType
         get() = GenerationsBlockEntities.WEATHER_TRIO
 
     override fun isStackValid(stack: ItemStack): Boolean {
@@ -52,7 +51,7 @@ class WeatherTrioShrineBlock(
         player.mainHandItem.shrink(1)
 
         toggleActive(level, pos)
-        getAssoicatedBlockEntity(level, pos)?.triggerCountDown()
+        getAssoicatedBlockEntity<WeatherTrioShrineBlockEntity>(level, pos)?.triggerCountDown()
 
         //        ScheduledTask.schedule(() -> {
 //            PokemonUtil.spawn(getSpecies().createPokemon(70), level, pos, getAngle(state));
@@ -106,7 +105,7 @@ class WeatherTrioShrineBlock(
             propertiesCodec(),
             Codecs.modelCodec(),
             SpeciesKey.CODEC.fieldOf("species").forGetter { it.species },
-            BuiltInRegistries.ITEM.byNameCodec().fieldOf("requiredItem").forGetter { it.requiredItem }
+            BuiltInRegistries.ITEM.holderByNameCodec().fieldOf("requiredItem").forGetter { it.requiredItem }
         ).apply(this, ::WeatherTrioShrineBlock) }
     }
 }

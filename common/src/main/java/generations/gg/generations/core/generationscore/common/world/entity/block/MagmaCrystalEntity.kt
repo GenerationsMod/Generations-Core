@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.entity.bloc
 
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.parseProperties
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
+import generations.gg.generations.core.generationscore.common.world.entity.asValue
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.EntityType
@@ -17,10 +18,10 @@ import net.minecraft.world.phys.HitResult
 class MagmaCrystalEntity : ThrowableItemProjectile {
     constructor(type: EntityType<MagmaCrystalEntity>, level: Level) : super(type, level)
 
-    constructor(level: Level, entity: LivingEntity) : super(GenerationsEntities.MAGMA_CRYSTAL, entity, level)
+    constructor(level: Level, entity: LivingEntity) : super(GenerationsEntities.MAGMA_CRYSTAL.asValue(), entity, level)
 
     override fun getDefaultItem(): Item {
-        return GenerationsItems.MAGMA_CRYSTAL
+        return GenerationsItems.MAGMA_CRYSTAL.value()
     }
 
     override fun onHit(result: HitResult) {

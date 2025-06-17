@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.AngleProvider
 import net.minecraft.core.BlockPos
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.protocol.Packet
@@ -12,10 +13,19 @@ import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 
-abstract class SimpleBlockEntity(pType: BlockEntityType<*>, pPos: BlockPos, pBlockState: BlockState) :
-    BlockEntity(pType, pPos, pBlockState), AngleProvider {
+abstract class SimpleBlockEntity(val holder: Holder<BlockEntityType<*>>, pPos: BlockPos, pBlockState: BlockState) :
+    BlockEntity(null, pPos, pBlockState), AngleProvider {
     protected open fun readNbt(nbt: CompoundTag, provider: HolderLookup.Provider) {}
     protected open fun writeNbt(nbt: CompoundTag, provider: HolderLookup.Provider) {}
+
+    override fun getType(): BlockEntityType<*> {
+        return holder.value()
+    }
+
+    override fun isValidBlockState(blockState: BlockState): Boolean {
+        return holder.value().isValid(blockState)
+    }
+
 
     fun sync() {
         setChanged()

@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
+import generations.gg.generations.core.generationscore.common.client.asValue
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.RksMachineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.Toggleable
@@ -22,7 +23,7 @@ class RksMachineContainer @JvmOverloads constructor(
     protected var playerInventory: Inventory,
     protected var rksMachine: Container = SimpleContainer(10),
     private val data: ContainerData = SimpleContainerData(4)
-) : AbstractContainerMenu(GenerationsContainers.RKS_MACHINE, id), Toggleable {
+) : AbstractContainerMenu(GenerationsContainers.RKS_MACHINE.asValue<RksMachineContainer>(), id), Toggleable {
     init {
         rksMachine.instanceOrNull<RksMachineBlockEntity>()?.addMenu(this)
 

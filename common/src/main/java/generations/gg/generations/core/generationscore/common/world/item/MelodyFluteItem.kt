@@ -8,20 +8,18 @@ import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import generations.gg.generations.core.generationscore.common.GenerationsStorage.IMBUED
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
-import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.container.MelodyFluteContainer
 import generations.gg.generations.core.generationscore.common.world.item.legends.ElementalPostBattleUpdateItem
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
+import net.minecraft.core.Holder
 import net.minecraft.locale.Language
 import net.minecraft.network.chat.Component
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.InteractionResultHolder
 import net.minecraft.world.SimpleMenuProvider
-import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
-import net.minecraft.world.inventory.MenuConstructor
-import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.context.UseOnContext
 import net.minecraft.world.level.ItemLike
@@ -83,8 +81,8 @@ class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(pr
             return isItem(GenerationsItems.MELODY_FLUTE, stack)
         }
 
-        fun <T : ItemLike> isItem(`object`: T, stack: ItemStack): Boolean {
-            return stack.`is`(`object`.asItem())
+        fun <T : ItemLike> isItem(`object`: Holder<T>, stack: ItemStack): Boolean {
+            return stack.`is`(`object`.value().asItem())
         }
 
         @JvmStatic
@@ -149,3 +147,6 @@ class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(pr
         }
     }
 }
+
+val <T: Any> Holder<T>.id: ResourceLocation get() = this.unwrapKey().orElseThrow().location()
+

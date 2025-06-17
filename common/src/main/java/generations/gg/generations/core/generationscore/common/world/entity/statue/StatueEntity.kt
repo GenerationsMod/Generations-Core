@@ -18,6 +18,7 @@ import generations.gg.generations.core.generationscore.common.network.packets.st
 import generations.gg.generations.core.generationscore.common.network.spawn.SpawnStatuePacket
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
+import generations.gg.generations.core.generationscore.common.world.entity.asValue
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
@@ -41,7 +42,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.phys.Vec3
 import kotlin.jvm.optionals.getOrNull
 
-class StatueEntity(type: EntityType<StatueEntity> = GenerationsEntities.STATUE_ENTITY, level: Level) : Entity(type, level), PosableEntity, Schedulable {
+class StatueEntity(type: EntityType<StatueEntity> = GenerationsEntities.STATUE_ENTITY.asValue(), level: Level) : Entity(type, level), PosableEntity, Schedulable {
     companion object {
         val PROPERTIES = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.PROPERTIES)
         val LABEL = SynchedEntityData.defineId(StatueEntity::class.java, GenerationsCoreEntityDataSerializers.NULLABLE_STRING)

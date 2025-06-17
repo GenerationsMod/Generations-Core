@@ -34,7 +34,7 @@ class GenerationsChestBoatEntity(entityType: EntityType<out GenerationsChestBoat
     }
 
     constructor(level: Level, d: Double, e: Double, f: Double) : this(
-        GenerationsEntities.CHEST_BOAT_ENTITY,
+        GenerationsEntities.CHEST_BOAT_ENTITY.asValue(),
         level
     ) {
         this.setPos(d, e, f)
@@ -176,9 +176,9 @@ class GenerationsChestBoatEntity(entityType: EntityType<out GenerationsChestBoat
 
     override fun getDropItem(): Item {
         return when (this.modBoatType) {
-            Type.GHOST -> GenerationsItems.GHOST_CHEST_BOAT_ITEM
-            Type.ULTRA_DARK -> GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM
-            Type.ULTRA_JUNGLE -> GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM
+            Type.GHOST -> GenerationsItems.GHOST_CHEST_BOAT_ITEM.value()
+            Type.ULTRA_DARK -> GenerationsItems.ULTRA_DARK_CHEST_BOAT_ITEM.value()
+            Type.ULTRA_JUNGLE -> GenerationsItems.ULTRA_JUNGLE_CHEST_BOAT_ITEM.value()
         }
     }
 

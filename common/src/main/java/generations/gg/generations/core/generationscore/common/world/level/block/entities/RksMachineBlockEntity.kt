@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.server
 import com.google.common.collect.Lists
+import generations.gg.generations.core.generationscore.common.compat.jei.asValue
 import generations.gg.generations.core.generationscore.common.recipe.RksInput
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer
 import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes
@@ -229,7 +230,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
         }
 
     private fun getMappedRecipe(manager: RecipeManager): Optional<RecipeHolder<RksRecipe>> {
-        return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS, craftingInput, level)
+        return manager.getRecipeFor(GenerationsCoreRecipeTypes.RKS.asValue(), craftingInput, level)
     }
 
     private fun getMappedRecipe(manager: RecipeManager, id: ResourceLocation): Optional<RecipeHolder<RksRecipe>> {
@@ -387,7 +388,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
                         level.playSound(
                             null,
                             blockpos,
-                            GenerationsSounds.RKS_MACHINE,
+                            GenerationsSounds.RKS_MACHINE.value(),
                             SoundSource.BLOCKS,
                             1.0f,
                             1.0f

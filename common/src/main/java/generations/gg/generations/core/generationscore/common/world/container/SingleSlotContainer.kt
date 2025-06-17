@@ -4,23 +4,21 @@ import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.impl.vanilla.PlayerContainer
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
-import earth.terrarium.common_storage_lib.storage.base.StorageSlot
 import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
-import generations.gg.generations.core.generationscore.common.world.container.slots.LockedSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler
+import net.minecraft.core.Holder
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.MenuType
-import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
 
 abstract class SingleSlotContainer protected constructor(
-    type: MenuType<out SingleSlotContainer>,
+    type: Holder<MenuType<*>>,
     id: Int,
     handler: CommonStorage<ItemResource> = SimpleItemStorage(1),
 ) :
-    AbstractContainerMenu(type, id) {
+    AbstractContainerMenu(type.value(), id) {
     init {
         this.addSlot(PredicateSlotItemHandler(
             handler, 0, 80, 35

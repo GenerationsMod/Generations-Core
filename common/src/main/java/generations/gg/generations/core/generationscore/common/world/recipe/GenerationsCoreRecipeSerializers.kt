@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.recipe
 
 import com.mojang.serialization.MapCodec
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -23,15 +23,15 @@ object GenerationsCoreRecipeSerializers: PlatformRegistry<RecipeSerializer<*>>()
         name: String,
         codec: MapCodec<T>,
         streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>
-    ): RecipeSerializer<T> {
-        return create(name.generationsResource(), object : RecipeSerializer<T> {
-                override fun codec(): MapCodec<T> {
-                    return codec
-                }
+    ): Holder<RecipeSerializer<*>> = create(name, {
+        object : RecipeSerializer<T> {
+            override fun codec(): MapCodec<T> {
+                return codec
+            }
 
-                override fun streamCodec(): StreamCodec<RegistryFriendlyByteBuf, T> {
-                    return streamCodec
-                }
-            })
-    }
+            override fun streamCodec(): StreamCodec<RegistryFriendlyByteBuf, T> {
+                return streamCodec
+            }
+        }
+    })
 }

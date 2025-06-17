@@ -9,13 +9,14 @@ import com.cobblemon.mod.common.CobblemonItems.FLYING_GEM
 import com.cobblemon.mod.common.CobblemonItems.SHINY_STONE
 import com.cobblemon.mod.common.CobblemonItems.WATER_GEM
 import com.cobblemon.mod.common.CobblemonItems.WATER_STONE
-import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import generations.gg.generations.core.generationscore.common.world.item.id
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
-import net.minecraft.data.recipes.*
+import net.minecraft.data.recipes.RecipeCategory
+import net.minecraft.data.recipes.RecipeOutput
 import net.minecraft.world.item.Items
 import net.neoforged.neoforge.common.conditions.IConditionBuilder
 import java.util.concurrent.CompletableFuture
@@ -27,14 +28,14 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             define('#', GenerationsItems.ENIGMA_SHARD)
             pattern("##")
             pattern("##")
-            unlockedByItem(GenerationsItems.ENIGMA_SHARD)
+            unlockedByHolder(GenerationsItems.ENIGMA_SHARD)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.ENIGMA_SHARD) {
             define('#', GenerationsItems.ENIGMA_FRAGMENT)
             pattern("##")
             pattern("##")
-            unlockedByItem(GenerationsItems.ENIGMA_FRAGMENT)
+            unlockedByHolder(GenerationsItems.ENIGMA_FRAGMENT)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.COPPER_PLATE) {
@@ -81,7 +82,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("DDD")
             pattern("GOG")
             pattern("DDD")
-            unlockedByItem(GenerationsItems.DRAGON_SOUL)
+            unlockedByHolder(GenerationsItems.DRAGON_SOUL)
         }
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.LIGHT_STONE)  {
             define('D', GenerationsItems.DRAGON_SOUL)
@@ -90,7 +91,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("DDD")
             pattern("GOG")
             pattern("DDD")
-            unlockedByItem(GenerationsItems.DRAGON_SOUL)
+            unlockedByHolder(GenerationsItems.DRAGON_SOUL)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.DRAGON_STONE) {
@@ -100,7 +101,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("DDD")
             pattern("GOG")
             pattern("DDD")
-            unlockedByItem(GenerationsItems.DRAGON_SOUL)
+            unlockedByHolder(GenerationsItems.DRAGON_SOUL)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.FADED_BLUE_ORB) {
@@ -144,24 +145,24 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.CRYSTAL_OF_EMOTION) {
             requires(GenerationsItems.SHARD_OF_EMOTION, 9)
-            unlockedByItem(GenerationsItems.SHARD_OF_EMOTION)
+            unlockedByHolder(GenerationsItems.SHARD_OF_EMOTION)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.CRYSTAL_OF_WILLPOWER) {
             requires(GenerationsItems.SHARD_OF_WILLPOWER, 9)
-            unlockedByItem(GenerationsItems.SHARD_OF_WILLPOWER)
+            unlockedByHolder(GenerationsItems.SHARD_OF_WILLPOWER)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.CRYSTAL_OF_KNOWLEDGE) {
             requires(GenerationsItems.SHARD_OF_KNOWLEDGE, 9)
-            unlockedByItem(GenerationsItems.SHARD_OF_KNOWLEDGE)
+            unlockedByHolder(GenerationsItems.SHARD_OF_KNOWLEDGE)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.RED_CHAIN) {
             requires(GenerationsItems.CRYSTAL_OF_EMOTION)
             requires(GenerationsItems.CRYSTAL_OF_KNOWLEDGE)
             requires(GenerationsItems.CRYSTAL_OF_WILLPOWER)
-            unlockedByItem(GenerationsItems.CRYSTAL_OF_KNOWLEDGE)
+            unlockedByHolder(GenerationsItems.CRYSTAL_OF_KNOWLEDGE)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.RUBY_ROD) {
@@ -219,7 +220,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("MMM")
             pattern("MMM")
             pattern("III")
-            unlockedByItem(GenerationsItems.MEGASTONE_SHARD)
+            unlockedByHolder(GenerationsItems.MEGASTONE_SHARD)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.MEGA_CUFF) {
@@ -229,7 +230,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("RRR")
             pattern("MMM")
             pattern("RBR")
-            unlockedByItem(GenerationsItems.MEGASTONE_SHARD)
+            unlockedByHolder(GenerationsItems.MEGASTONE_SHARD)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.MEGA_RING) {
@@ -239,7 +240,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("RRR")
             pattern("MMM")
             pattern("RBR")
-            unlockedByItem(GenerationsItems.MEGASTONE_SHARD)
+            unlockedByHolder(GenerationsItems.MEGASTONE_SHARD)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.MEGA_CHARM) {
@@ -249,7 +250,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("RRR")
             pattern("MMM")
             pattern("RBR")
-            unlockedByItem(GenerationsItems.MEGASTONE_SHARD)
+            unlockedByHolder(GenerationsItems.MEGASTONE_SHARD)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.Z_RING) {
@@ -259,7 +260,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("ZIZ")
             pattern("ZSZ")
             pattern("ZIZ")
-            unlockedByItem(GenerationsItems.Z_INGOT)
+            unlockedByHolder(GenerationsItems.Z_INGOT)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.Z_POWER_RING) {
@@ -269,7 +270,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("ZIZ")
             pattern("ZSZ")
             pattern("ZIZ")
-            unlockedByItem(GenerationsItems.Z_INGOT)
+            unlockedByHolder(GenerationsItems.Z_INGOT)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.DYNAMAX_BAND) {
@@ -278,7 +279,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("ZIZ")
             pattern("ZIZ")
             pattern("ZIZ")
-            unlockedByItem(GenerationsItems.DYNITE_ORE)
+            unlockedByHolder(GenerationsItems.DYNITE_ORE)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.MAX_HONEY) {
@@ -289,12 +290,12 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.MAX_MUSHROOMS) {
             requires(GenerationsItems.MAX_POWDER, 9)
-            unlockedByItem(GenerationsItems.MAX_POWDER)
+            unlockedByHolder(GenerationsItems.MAX_POWDER)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.MAX_POWDER) {
             requires(GenerationsItems.TINY_MUSHROOM, 9)
-            unlockedByItem(GenerationsItems.TINY_MUSHROOM)
+            unlockedByHolder(GenerationsItems.TINY_MUSHROOM)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.RADIANT_PETAL) {
@@ -305,7 +306,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             requires(GenerationsItems.PURPLE_PETAL)
             requires(GenerationsItems.RED_PETAL)
             requires(GenerationsItems.YELLOW_PETAL)
-            unlockedByItem(GenerationsItems.BLUE_PETAL)
+            unlockedByHolder(GenerationsItems.BLUE_PETAL)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.TIME_CAPSULE) {
@@ -326,7 +327,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("RRR")
             pattern("SGS")
             pattern("CCC")
-            unlockedByItem(GenerationsItems.MIRROR)
+            unlockedByHolder(GenerationsItems.MIRROR)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.DNA_SPLICERS) {
@@ -337,7 +338,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern(" SG")
             pattern("IIS")
             pattern("NI ")
-            unlockedByItem(GenerationsItems.SILICON)
+            unlockedByHolder(GenerationsItems.SILICON)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.MELODY_FLUTE) {
@@ -347,7 +348,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("S  ")
             pattern(" I ")
             pattern("  N")
-            unlockedByItem(GenerationsItems.SILICON)
+            unlockedByHolder(GenerationsItems.SILICON)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.RELIC_SONG) {
@@ -355,7 +356,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             requires(GenerationsItems.SHATTERED_RELIC_SONG_2)
             requires(GenerationsItems.SHATTERED_RELIC_SONG_3)
             requires(GenerationsItems.SHATTERED_RELIC_SONG_4)
-            unlockedByItem(GenerationsItems.SHATTERED_RELIC_SONG_1)
+            unlockedByHolder(GenerationsItems.SHATTERED_RELIC_SONG_1)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.ROCK_PEAK_KEY) {
@@ -363,7 +364,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             requires(GenerationsItems.CRUMBLED_ROCK_KEY_2)
             requires(GenerationsItems.CRUMBLED_ROCK_KEY_3)
             requires(GenerationsItems.CRUMBLED_ROCK_KEY_4)
-            unlockedByItem(GenerationsItems.CRUMBLED_ROCK_KEY_1)
+            unlockedByHolder(GenerationsItems.CRUMBLED_ROCK_KEY_1)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.ICEBERG_KEY) {
@@ -371,7 +372,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             requires(GenerationsItems.SHATTERED_ICE_KEY_2)
             requires(GenerationsItems.SHATTERED_ICE_KEY_3)
             requires(GenerationsItems.SHATTERED_ICE_KEY_4)
-            unlockedByItem(GenerationsItems.SHATTERED_ICE_KEY_1)
+            unlockedByHolder(GenerationsItems.SHATTERED_ICE_KEY_1)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.IRON_KEY) {
@@ -379,7 +380,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             requires(GenerationsItems.RUSTY_IRON_KEY_2)
             requires(GenerationsItems.RUSTY_IRON_KEY_3)
             requires(GenerationsItems.RUSTY_IRON_KEY_4)
-            unlockedByItem(GenerationsItems.RUSTY_IRON_KEY_1)
+            unlockedByHolder(GenerationsItems.RUSTY_IRON_KEY_1)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.ELEKI_KEY) {
@@ -387,7 +388,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             requires(GenerationsItems.DISCHARGED_ELEKI_KEY_2)
             requires(GenerationsItems.DISCHARGED_ELEKI_KEY_3)
             requires(GenerationsItems.DISCHARGED_ELEKI_KEY_4)
-            unlockedByItem(GenerationsItems.DISCHARGED_ELEKI_KEY_1)
+            unlockedByHolder(GenerationsItems.DISCHARGED_ELEKI_KEY_1)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.DRAGO_KEY) {
@@ -395,50 +396,50 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             requires(GenerationsItems.FRAGMENTED_DRAGO_KEY_2)
             requires(GenerationsItems.FRAGMENTED_DRAGO_KEY_3)
             requires(GenerationsItems.FRAGMENTED_DRAGO_KEY_4)
-            unlockedByItem(GenerationsItems.FRAGMENTED_DRAGO_KEY_1)
+            unlockedByHolder(GenerationsItems.FRAGMENTED_DRAGO_KEY_1)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsShrines.LIGHT_CRYSTAL) {
             requires(GenerationsItems.LIGHT_SOUL, 9)
-            unlockedByItem(GenerationsItems.LIGHT_SOUL)
+            unlockedByHolder(GenerationsItems.LIGHT_SOUL)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsShrines.DARK_CRYSTAL) {
             requires(GenerationsItems.DARK_SOUL, 9)
-            unlockedByItem(GenerationsItems.LIGHT_SOUL)
+            unlockedByHolder(GenerationsItems.LIGHT_SOUL)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.METEORITE) {
             requires(GenerationsItems.METEORITE_SHARD, 9)
-            unlockedByItem(GenerationsItems.METEORITE_SHARD)
+            unlockedByHolder(GenerationsItems.METEORITE_SHARD)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.SPARKLING_STONE) {
             requires(GenerationsItems.SPARKLING_SHARD, 9)
-            unlockedByItem(GenerationsItems.SPARKLING_SHARD)
+            unlockedByHolder(GenerationsItems.SPARKLING_SHARD)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.SECRET_ARMOR_SCROLL) {
             requires(GenerationsItems.SCROLL_PAGE, 9)
-            unlockedByItem(GenerationsItems.SCROLL_PAGE)
+            unlockedByHolder(GenerationsItems.SCROLL_PAGE)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.REINS_OF_UNITY) {
             requires(GenerationsItems.BLACK_MANE_HAIR)
             requires(GenerationsItems.WHITE_MANE_HAIR)
             requires(GenerationsItems.RADIANT_PETAL)
-            unlockedByItem(GenerationsItems.RADIANT_PETAL)
+            unlockedByHolder(GenerationsItems.RADIANT_PETAL)
         }
 
 //        Current break
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.MAGMA_CRYSTAL) {
             requires(GenerationsItems.LAVA_CRYSTAL, 9)
-            unlockedByItem(GenerationsItems.LAVA_CRYSTAL)
+            unlockedByHolder(GenerationsItems.LAVA_CRYSTAL)
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.KEY_STONE) {
             requires(GenerationsItems.MEGASTONE_SHARD, 9)
-            unlockedByItem(GenerationsItems.MEGASTONE_SHARD)
+            unlockedByHolder(GenerationsItems.MEGASTONE_SHARD)
         }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.ULTRITE_INGOT, GenerationsItems.ULTRITE_INGOT.id.withSuffix("_craft")) {
@@ -447,7 +448,7 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("XXX")
             pattern("XTT")
             pattern("TT ")
-            unlockedByItem(GenerationsItems.ULTRITE_REMNANT)
+            unlockedByHolder(GenerationsItems.ULTRITE_REMNANT)
         }
 
         //These are all HeldItems and Recipes are not needed rn

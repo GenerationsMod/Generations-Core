@@ -3,10 +3,10 @@ package generations.gg.generations.core.generationscore.common.world.item.armor
 import com.cobblemon.mod.common.CobblemonItems
 import com.google.common.base.Suppliers
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.Util
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -23,18 +23,18 @@ object GenerationsArmorMaterials: PlatformRegistry<ArmorMaterial>() {
     override val registry: Registry<ArmorMaterial> = BuiltInRegistries.ARMOR_MATERIAL
     override val resourceKey: ResourceKey<Registry<ArmorMaterial>> = Registries.ARMOR_MATERIAL
 
-    val AETHER = register("aether", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.SILICON })
-    val AQUA = register("saphire", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.SAPPHIRE })
-    val FLARE = register("flare", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.RUBY })
-    val GALACTIC = register("galactic", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.SILICON })
-    val MAGMA = register("ruby", 15, intArrayOf(2, 5, 6, 2), 19, { GenerationsItems.RUBY })
-    val NEO_PLASMA = register("neo_plasma", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.CRYSTAL })
-    val PLASMA = register("plasma", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.CRYSTAL })
+    val AETHER = register("aether", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.SILICON::value)
+    val AQUA = register("saphire", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.SAPPHIRE::value)
+    val FLARE = register("flare", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.RUBY::value)
+    val GALACTIC = register("galactic", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.SILICON::value)
+    val MAGMA = register("ruby", 15, intArrayOf(2, 5, 6, 2), 19, GenerationsItems.RUBY::value)
+    val NEO_PLASMA = register("neo_plasma", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.CRYSTAL::value)
+    val PLASMA = register("plasma", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.CRYSTAL::value)
     val ROCKET = register("rocket", 15, intArrayOf(2, 5, 6, 2), 9, { Items.AMETHYST_SHARD })
-    val SKULL = register("skull", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.SILICON })
-    val CRYSTAL = register("crystal", 15, intArrayOf(2, 5, 6, 2), 9, { GenerationsItems.CRYSTAL })
+    val SKULL = register("skull", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.SILICON::value)
+    val CRYSTAL = register("crystal", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.CRYSTAL::value)
 
-    val ULTRA = register("ultra", 33, intArrayOf(3, 6, 7, 3), 10, { GenerationsItems.Z_INGOT })
+    val ULTRA = register("ultra", 33, intArrayOf(3, 6, 7, 3), 10, GenerationsItems.Z_INGOT::value)
     val DAWN_STONE = register("dawn_stone", 33, intArrayOf(3, 6, 8, 3), 10, { CobblemonItems.DAWN_STONE }, 2.0f, 0.0f)
     val DUSK_STONE = register("dusk_stone", 33, intArrayOf(3, 6, 8, 3), 10, { CobblemonItems.DUSK_STONE }, 2.0f, 0.0f)
     val FIRE_STONE = register("fire_stone", 33, intArrayOf(3, 6, 8, 3), 10, { CobblemonItems.FIRE_STONE }, 2.0f, 0.0f)
@@ -45,7 +45,7 @@ object GenerationsArmorMaterials: PlatformRegistry<ArmorMaterial>() {
     val THUNDER_STONE = register("thunder_stone", 33, intArrayOf(3, 6, 8, 3), 10, { CobblemonItems.THUNDER_STONE }, 2.0f, 0.0f)
     val WATER_STONE = register("water_stone", 33, intArrayOf(3, 6, 8, 3), 10, { CobblemonItems.WATER_STONE }, 2.0f, 0.0f)
 
-    val ULTRITE = register("ultrite", 42, intArrayOf(3, 6, 8, 3), 20, { GenerationsItems.ULTRITE_INGOT }, 4.0f, 0.2f)
+    val ULTRITE = register("ultrite", 42, intArrayOf(3, 6, 8, 3), 20, GenerationsItems.ULTRITE_INGOT::value, 4.0f, 0.2f)
 
     fun register(
         name: String,
@@ -55,8 +55,9 @@ object GenerationsArmorMaterials: PlatformRegistry<ArmorMaterial>() {
         repairIngredient: () -> Item,
         toughness: Float = 0.0f,
         knockbackResistance: Float = 0.0f
-    ): ArmorMaterial {
-        return create(name.generationsResource(), ArmorMaterial(
+    ): Holder<ArmorMaterial> {
+        return create(name, {
+            ArmorMaterial(
                 Util.make(EnumMap(ArmorItem.Type::class.java)) { map: EnumMap<ArmorItem.Type?, Int?> ->
                     map[ArmorItem.Type.BOOTS] =
                         slotProtections[0]
@@ -71,6 +72,6 @@ object GenerationsArmorMaterials: PlatformRegistry<ArmorMaterial>() {
                 toughness,
                 knockbackResistance
             )
-        )
+        })
     }
 }

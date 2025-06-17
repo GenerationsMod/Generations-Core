@@ -21,7 +21,6 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.BooleanOp
@@ -30,7 +29,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.concurrent.CompletableFuture
 
-class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Block>) : DyeableBlock<VendingMachineBlockEntity, VendingMachineBlock>(
+class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map<DyeColor, Holder<Block>>) : DyeableBlock(
     properties,
     color,
     function,
@@ -39,7 +38,7 @@ class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map
     1,
     0
 ) {
-    override val blockEntityType: BlockEntityType<VendingMachineBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.VENDING_MACHINE
 
     public override fun getShape(
@@ -132,7 +131,7 @@ class VendingMachineBlock(properties: Properties, color: DyeColor, function: Map
                 instance.group(
                     propertiesCodec(),
                     DyeColor.CODEC.fieldOf("color").forGetter(VendingMachineBlock::color),
-                    Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.byNameCodec()).fieldOf("function").forGetter(VendingMachineBlock::map)
+                    Codec.unboundedMap(DyeColor.CODEC, BuiltInRegistries.BLOCK.holderByNameCodec()).fieldOf("function").forGetter(VendingMachineBlock::map)
                 ).apply(instance, ::VendingMachineBlock)
             }
     }

@@ -6,5 +6,5 @@ import net.minecraft.world.level.block.entity.SignBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 
 class GenerationsSignBlockEntity(pos: BlockPos, state: BlockState) : SignBlockEntity(pos, state) {
-    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.SIGN_BLOCK_ENTITIES
+    override fun getType(): BlockEntityType<*> = GenerationsBlockEntities.SIGN_BLOCK_ENTITIES.value()
 }

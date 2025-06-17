@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.item.berry.BerryItem
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
+import generations.gg.generations.core.generationscore.common.client.asValue
 import generations.gg.generations.core.generationscore.common.world.container.slots.CurryResultSlot
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
@@ -24,7 +25,7 @@ class CookingPotContainer @JvmOverloads constructor(
     playerInventory: Inventory,
     storage: SimpleItemStorage = SimpleItemStorage(14),
     val data: ContainerData = SimpleContainerData(4)
-) : AbstractContainerMenu(GenerationsContainers.COOKING_POT, id), Toggleable {
+) : AbstractContainerMenu(GenerationsContainers.COOKING_POT.asValue<CookingPotContainer>(), id), Toggleable {
     init {
         addSlot(MenuStorageSlot(storage, 0, 26, 8 + 11))
         addSlot(MenuStorageSlot(storage, 1, 44, 8 + 11))

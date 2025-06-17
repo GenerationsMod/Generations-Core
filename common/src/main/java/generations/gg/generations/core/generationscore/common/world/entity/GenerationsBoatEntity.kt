@@ -2,10 +2,12 @@ package generations.gg.generations.core.generationscore.common.world.entity
 
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsBoatEntity
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import net.minecraft.core.Holder
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.syncher.EntityDataAccessor
 import net.minecraft.network.syncher.EntityDataSerializers
 import net.minecraft.network.syncher.SynchedEntityData
+import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.vehicle.Boat
 import net.minecraft.world.item.Item
@@ -18,7 +20,7 @@ open class GenerationsBoatEntity(entityType: EntityType<out GenerationsBoatEntit
     }
 
     constructor(worldIn: Level, x: Double, y: Double, z: Double) : this(
-        GenerationsEntities.BOAT_ENTITY,
+        GenerationsEntities.BOAT_ENTITY.asValue(),
         worldIn
     ) {
         this.setPos(x, y, z)
@@ -42,9 +44,9 @@ open class GenerationsBoatEntity(entityType: EntityType<out GenerationsBoatEntit
 
     override fun getDropItem(): Item {
         return when (this.modBoatType) {
-            Type.GHOST -> GenerationsItems.GHOST_BOAT_ITEM
-            Type.ULTRA_DARK -> GenerationsItems.ULTRA_DARK_BOAT_ITEM
-            Type.ULTRA_JUNGLE -> GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM
+            Type.GHOST -> GenerationsItems.GHOST_BOAT_ITEM.value()
+            Type.ULTRA_DARK -> GenerationsItems.ULTRA_DARK_BOAT_ITEM.value()
+            Type.ULTRA_JUNGLE -> GenerationsItems.ULTRA_JUNGLE_BOAT_ITEM.value()
         }
     }
 
@@ -86,3 +88,5 @@ open class GenerationsBoatEntity(entityType: EntityType<out GenerationsBoatEntit
         )
     }
 }
+
+fun <T: Entity> Holder<EntityType<*>>.asValue(): EntityType<T> = this.value() as EntityType<T>

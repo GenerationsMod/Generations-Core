@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines
 
 import com.mojang.serialization.MapCodec
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
@@ -16,7 +15,7 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
 class FrozenShrineBlock(properties: Properties) : BirdShrineBlock(
-    properties = properties, model = GenerationsBlockEntityModels.ARTICUNO_SHRINE, imbuedItems = arrayOf("icy_wing".generationsResource(), "elegant_wing".generationsResource())) {
+    properties = properties, model = GenerationsBlockEntityModels.ARTICUNO_SHRINE, imbuedItems = arrayOf(GenerationsItems.ICY_WING, GenerationsItems.ELEGANT_WING)) {
     public override fun getShape(
         state: BlockState,
         level: BlockGetter,

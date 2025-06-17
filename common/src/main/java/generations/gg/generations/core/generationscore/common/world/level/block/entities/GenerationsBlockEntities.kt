@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.GREATBALL_CHEST
@@ -12,11 +11,11 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.resources.ResourceKey
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
@@ -198,17 +197,17 @@ object GenerationsBlockEntities: PlatformRegistry<BlockEntityType<*>>() {
     fun <T : BlockEntity> registerRegular(
         name: String,
         aNew: BlockEntityType.BlockEntitySupplier<T>,
-        vararg blocks: Block
-    ): BlockEntityType<T> = create(name.generationsResource(), BlockEntityType.Builder.of(aNew, *blocks).build(null))
+        vararg blocks: Holder<Block>
+    ): Holder<BlockEntityType<*>> = create(name, { BlockEntityType.Builder.of(aNew, *blocks.map { it.value() }.toTypedArray()).build(null) })
 
     fun <T : BlockEntity> registerRegularWithArray(
         name: String,
         aNew: BlockEntityType.BlockEntitySupplier<T>,
-        blocks: Array<out Block>
-    ): BlockEntityType<T> = create(name.generationsResource(), BlockEntityType.Builder.of(aNew, *blocks).build(null))
+        blocks: Array<Holder<Block>>
+    ): Holder<BlockEntityType<*>> = create(name, { BlockEntityType.Builder.of(aNew, *blocks.map { it.value() }.toTypedArray()).build(null) })
 
-    override fun init(consumer: (ResourceLocation, BlockEntityType<*>) -> Unit) {
+    override fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Block Entities")
-        super.init(consumer)
+        super.init()
     }
 }

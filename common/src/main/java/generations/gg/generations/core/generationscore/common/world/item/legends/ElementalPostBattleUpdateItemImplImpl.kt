@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.item.legend
 import com.cobblemon.mod.common.api.types.ElementalType
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
+import net.minecraft.core.Holder
 import net.minecraft.network.chat.Component
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResultHolder
@@ -12,10 +13,10 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
 open class ElementalPostBattleUpdateItemImplImpl(
-    properties: Properties?,
+    properties: Properties,
     private val lang: String = DEFAULT_LANG_KEY,
     private val key: SpeciesKey,
-    private val itemToGiveUponSpawn : Item? = null,
+    private val itemToGiveUponSpawn : Holder<Item>? = null,
     types: List<ElementalType> = listOf()
 ) : ElementalPostBattleUpdateItemImpl(properties, types) {
 
@@ -40,7 +41,7 @@ open class ElementalPostBattleUpdateItemImplImpl(
     }
 
     protected fun postSpawn(level: Level, player: Player, usedHand: InteractionHand) {
-        itemToGiveUponSpawn?.defaultInstance?.let { player.setItemInHand(usedHand, it) }
+        itemToGiveUponSpawn?.value()?.defaultInstance?.let { player.setItemInHand(usedHand, it) }
     }
 
     companion object {

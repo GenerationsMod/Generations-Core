@@ -21,7 +21,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             MEGASTONE_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.MEGASTONE_SHARD,
+            GenerationsItems.MEGASTONE_SHARD.value(),
             1.0f,
             200,
             "mega_stone_shard"
@@ -30,7 +30,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             METEORITE_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.METEORITE_SHARD,
+            GenerationsItems.METEORITE_SHARD.value(),
             1.0f,
             200,
             "meteorite_shard"
@@ -39,17 +39,17 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             Z_CRYSTAL_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.Z_INGOT,
+            GenerationsItems.Z_INGOT.value(),
             1.0f,
             200,
             "z_ingot"
         )
-        oreSmelting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY, 1.0f, 200, "ruby_gem")
+        oreSmelting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.value(), 1.0f, 200, "ruby_gem")
         oreSmelting(
             recipeOutput,
             SAPPHIRE_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.SAPPHIRE,
+            GenerationsItems.SAPPHIRE.value(),
             1.0f,
             200,
             "sapphire_gem"
@@ -58,7 +58,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             CRYSTAL_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.CRYSTAL,
+            GenerationsItems.CRYSTAL.value(),
             1.0f,
             200,
             "crystal_gem"
@@ -67,7 +67,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             SILICON_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.SILICON,
+            GenerationsItems.SILICON.value(),
             1.0f,
             200,
             "silicon"
@@ -76,17 +76,17 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             Z_CRYSTAL_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.Z_INGOT,
+            GenerationsItems.Z_INGOT.value(),
             1.0f,
             100,
             "z_ingot"
         )
-        oreBlasting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY, 1.0f, 100, "ruby_gem")
+        oreBlasting(recipeOutput, RUBY_SMELTABLES, RecipeCategory.MISC, GenerationsItems.RUBY.value(), 1.0f, 100, "ruby_gem")
         oreBlasting(
             recipeOutput,
             SAPPHIRE_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.SAPPHIRE,
+            GenerationsItems.SAPPHIRE.value(),
             1.0f,
             100,
             "sapphire_gem"
@@ -95,7 +95,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             CRYSTAL_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.CRYSTAL,
+            GenerationsItems.CRYSTAL.value(),
             1.0f,
             100,
             "crystal_gem"
@@ -104,7 +104,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             SILICON_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.SILICON,
+            GenerationsItems.SILICON.value(),
             1.0f,
             100,
             "silicon"
@@ -113,7 +113,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             MEGASTONE_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.MEGASTONE_SHARD,
+            GenerationsItems.MEGASTONE_SHARD.value(),
             1.0f,
             100,
             "mega_stone_shard"
@@ -122,7 +122,7 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
             recipeOutput,
             METEORITE_SMELTABLES,
             RecipeCategory.MISC,
-            GenerationsItems.METEORITE_SHARD,
+            GenerationsItems.METEORITE_SHARD.value(),
             1.0f,
             100,
             "meteorite_shard"
@@ -139,44 +139,44 @@ class FurnaceRecipeProvider(output: PackOutput, registries: CompletableFuture<Ho
         SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(GenerationsBlocks.CHARGE_STONE_SET.baseBlock),
             RecipeCategory.MISC,
-            GenerationsBlocks.SMOOTH_CHARGE_STONE,
+            GenerationsBlocks.SMOOTH_CHARGE_STONE.value(),
             0.1f,
             200
         ).unlockedBy("has_charge_stone", has(GenerationsBlocks.CHARGE_STONE_SET.baseBlock)).save(recipeOutput)
         SimpleCookingRecipeBuilder.smelting(
             Ingredient.of(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock),
             RecipeCategory.MISC,
-            GenerationsBlocks.VOLCANIC_STONE,
+            GenerationsBlocks.VOLCANIC_STONE.value(),
             0.1f,
             200
         ).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_COBBLESTONE_SET.baseBlock))
             .save(recipeOutput)
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(GenerationsBlocks.VOLCANIC_STONE),
+            Ingredient.of(GenerationsBlocks.VOLCANIC_STONE.value()),
             RecipeCategory.MISC,
-            GenerationsBlocks.SMOOTH_VOLCANIC_STONE,
+            GenerationsBlocks.SMOOTH_VOLCANIC_STONE.value(),
             0.1f,
             200
-        ).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_STONE)).save(recipeOutput)
+        ).unlockedBy("has_volcanic_stone", has(GenerationsBlocks.VOLCANIC_STONE.value())).save(recipeOutput)
 
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(GenerationsBlocks.ULTRA_SANDSTONE),
+            Ingredient.of(GenerationsBlocks.ULTRA_SANDSTONE.value()),
             RecipeCategory.MISC,
-            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE,
+            GenerationsBlocks.ULTRA_SMOOTH_SANDSTONE.value(),
             0.1f,
             200
         ).unlockedBy(
-            getHasName(GenerationsBlocks.ULTRA_SANDSTONE), has(GenerationsBlocks.ULTRA_SANDSTONE)
+            getHasName(GenerationsBlocks.ULTRA_SANDSTONE.value()), has(GenerationsBlocks.ULTRA_SANDSTONE.value())
         ).save(recipeOutput)
         SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE),
+            Ingredient.of(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.value()),
             RecipeCategory.MISC,
-            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE,
+            GenerationsBlocks.GOLDEN_TEMPLE_SMOOTH_SANDSTONE.value(),
             0.1f,
             200
         ).unlockedBy(
-            getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE),
-            has(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE)
+            getHasName(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.value()),
+            has(GenerationsBlocks.GOLDEN_TEMPLE_SANDSTONE.value())
         ).save(recipeOutput)
 
         //ChargeStone Ores

@@ -49,7 +49,7 @@ object RecordSongs {
 
     private fun create(name: String): ResourceKey<JukeboxSong> = ResourceKey.create(Registries.JUKEBOX_SONG, GenerationsCore.id(name))
 
-    private fun <T : Item> song(item: T, holder: SoundEvent, ticks: Int): JukeboxSong = JukeboxSong(Holder.direct(holder), Component.translatable(item.descriptionId + ".desc"), ticks.toFloat(), 0)
+    private fun <T : Item> song(item: Holder<T>, holder: Holder<SoundEvent>, ticks: Int): JukeboxSong = JukeboxSong(holder, Component.translatable(item.value().descriptionId + ".desc"), ticks.toFloat(), 0)
 
     @JvmStatic
     fun bootstrap(bootstrap: BootstrapContext<JukeboxSong>) {

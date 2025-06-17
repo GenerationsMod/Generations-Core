@@ -5,7 +5,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.util.extensions.toItemInteractionResult
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsVoxelShapes.DirectionalShapes
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.CouchBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.common.world.level.block.utilityblocks.DyeableBlock
@@ -21,7 +20,6 @@ import net.minecraft.world.item.DyeColor
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.BooleanOp
@@ -32,13 +30,13 @@ import net.minecraft.world.phys.shapes.VoxelShape
 class VariantCouchBlock(
     properties: Properties,
     color: DyeColor,
-    function: Map<DyeColor, Block>,
+    function: Map<DyeColor, Holder<Block>>,
     private val variant: Variant
-) : DyeableBlock<CouchBlockEntity, VariantCouchBlock>(
+) : DyeableBlock(
         properties, color, function,
         variant.model, 0, 0, 0
     ), SittableBlock {
-    override val blockEntityType: BlockEntityType<CouchBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.COUCH
 
     public override fun getShape(

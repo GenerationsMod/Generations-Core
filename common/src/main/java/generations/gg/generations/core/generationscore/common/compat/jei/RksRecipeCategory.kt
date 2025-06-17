@@ -17,16 +17,19 @@ import mezz.jei.api.recipe.IFocusGroup
 import mezz.jei.api.recipe.RecipeType
 import mezz.jei.api.recipe.category.AbstractRecipeCategory
 import net.minecraft.client.gui.GuiGraphics
+import net.minecraft.core.Holder
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.crafting.Recipe
 import net.minecraft.world.item.crafting.RecipeHolder
+import net.minecraft.world.level.block.Block
 import java.util.function.Supplier
 
 class RksRecipeCategory(private val helper: IGuiHelper) :
     AbstractRecipeCategory<RecipeHolder<RksRecipe>>(
         RKS_MACHINE,
         Component.translatable("gui.recipe_viewer.category.rks_machine"),
-        helper.createDrawableItemLike(GenerationsUtilityBlocks.RKS_MACHINE),
+        helper.createDrawableItemLike(GenerationsUtilityBlocks.RKS_MACHINE.value()),
         width,
         height
     ), IExtendableRksRecipeCategory {
@@ -133,6 +136,8 @@ class RksRecipeCategory(private val helper: IGuiHelper) :
         const val width: Int = 116
         const val height: Int = 54
 
-        val RKS_MACHINE: RecipeType<RecipeHolder<RksRecipe>> = RecipeType.createFromVanilla(GenerationsCoreRecipeTypes.RKS)
+        val RKS_MACHINE: RecipeType<RecipeHolder<RksRecipe>> = RecipeType.createFromVanilla(GenerationsCoreRecipeTypes.RKS.asValue())
     }
 }
+
+fun <T: Recipe<*>> Holder<net.minecraft.world.item.crafting.RecipeType<*>>.asValue(): net.minecraft.world.item.crafting.RecipeType<T> = this.value() as net.minecraft.world.item.crafting.RecipeType<T>

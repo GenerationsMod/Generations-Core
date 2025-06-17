@@ -1,9 +1,10 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.generic
 
-import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
 import net.minecraft.world.entity.LivingEntity
@@ -28,12 +29,12 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
-abstract class GenericModelBlock<T> protected constructor(
+abstract class GenericModelBlock protected constructor(
     properties: Properties,
     private val baseBlockPosFunction: (BlockPos, BlockState) -> BlockPos = DEFAULT_BLOCK_POS_FUNCTION,
     protected val modelResource: ResourceLocation?
 ) : BaseEntityBlock(properties), SimpleWaterloggedBlock,
-    VariantProvider where T : BlockEntity, T : ModelContextProviders.ModelProvider {
+    VariantProvider {
     init {
         this.registerDefaultState(createDefaultState())
     }
@@ -64,7 +65,7 @@ abstract class GenericModelBlock<T> protected constructor(
     }
 
     override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity? =
-        if (baseBlockPosFunction.invoke(pos, state) == pos) blockEntityType.create(pos, state) else null
+        if (baseBlockPosFunction.invoke(pos, state) == pos) blockEntityType.value().create(pos, state) else null
 
     public override fun getSeed(state: BlockState, pos: BlockPos): Long = Mth.getSeed(getBaseBlockPos(pos, state))
 
@@ -80,8 +81,8 @@ abstract class GenericModelBlock<T> protected constructor(
         return Shapes.empty()
     }
 
-    fun getAssoicatedBlockEntity(level: BlockGetter, pos: BlockPos): T? {
-        return blockEntityType.getBlockEntity(level, getBaseBlockPos(pos, level.getBlockState(pos)))
+    inline fun <reified V : BlockEntity> getAssoicatedBlockEntity(level: BlockGetter, pos: BlockPos): V? {
+        return blockEntityType.value().getBlockEntity(level, getBaseBlockPos(pos, level.getBlockState(pos))).instanceOrNull<V>()
 
     }
 
@@ -124,7 +125,7 @@ abstract class GenericModelBlock<T> protected constructor(
         return super.updateShape(blockState, direction, blockState2, levelAccessor, blockPos, blockPos2)
     }
 
-    abstract val blockEntityType: BlockEntityType<T>
+    abstract val blockEntityType: Holder<BlockEntityType<*>>
 
     override fun getVariant(): String? {
         return null

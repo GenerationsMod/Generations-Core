@@ -1,8 +1,8 @@
 package generations.gg.generations.core.generationscore.common.world.loot
 
 import com.mojang.serialization.MapCodec
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
+import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -14,9 +14,9 @@ object LootPoolEntryTypes: PlatformRegistry<LootPoolEntryType>() {
     override val registry: Registry<LootPoolEntryType> = BuiltInRegistries.LOOT_POOL_ENTRY_TYPE
     override val resourceKey: ResourceKey<Registry<LootPoolEntryType>> = Registries.LOOT_POOL_ENTRY_TYPE
 
-    val RESOURCE_KEY: LootPoolEntryType = register("resource_key", ResouceKeyEntry.CODEC)
+    val RESOURCE_KEY = register("resource_key", ResouceKeyEntry.CODEC)
 
-    fun <T : LootPoolEntryContainer> register(name: String, codec: MapCodec<T>): LootPoolEntryType {
-        return create(name.generationsResource(), LootPoolEntryType(codec))
+    fun <T : LootPoolEntryContainer> register(name: String, codec: MapCodec<T>): Holder<LootPoolEntryType> {
+        return create(name, { LootPoolEntryType(codec) })
     }
 }

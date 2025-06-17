@@ -9,7 +9,6 @@ import com.cobblemon.mod.common.pokemon.helditem.CobblemonHeldItemManager
 import com.cobblemon.mod.common.util.cobblemonResource
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.tab
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.GenerationsPokeBalls
@@ -21,13 +20,10 @@ import generations.gg.generations.core.generationscore.common.world.item.curry.C
 import generations.gg.generations.core.generationscore.common.world.item.curry.ItemCurry
 import generations.gg.generations.core.generationscore.common.world.item.legends.*
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
+import net.minecraft.core.Holder
 import net.minecraft.resources.ResourceKey
 import net.minecraft.world.food.FoodProperties
-import net.minecraft.world.item.CreativeModeTabs
-import net.minecraft.world.item.HangingSignItem
-import net.minecraft.world.item.Item
-import net.minecraft.world.item.JukeboxSong
-import net.minecraft.world.item.SignItem
+import net.minecraft.world.item.*
 
 /**
  * Generations Items
@@ -36,8 +32,8 @@ import net.minecraft.world.item.SignItem
  * @author WaterPicker
  */
 @SuppressWarnings("unused")
-object GenerationsItems {
-    val TMS = mutableListOf<TechnicalMachineItem>()
+object GenerationsItems: ItemPlatformRegistry() {
+    val TMS = mutableListOf<Holder<TechnicalMachineItem>>()
 
     /** Generations Items Deferred Register */
     val ITEMS = object: ItemPlatformRegistry() {}
@@ -83,6 +79,8 @@ object GenerationsItems {
 
     /** Generations Building Blocks Deferred Register */
     val BUILDING_BLOCKS = object: ItemPlatformRegistry() {}
+
+    val BLOCK_ITEMS = object : ItemPlatformRegistry() {}
 
     /**
      * Restoration Items
@@ -1512,15 +1510,15 @@ object GenerationsItems {
     val ULTRA_DARK_SIGN = registerSign("ultra_dark_sign") {
         SignItem(
             it.stacksTo(16),
-            GenerationsWood.ULTRA_DARK_SIGN,
-            GenerationsWood.ULTRA_DARK_WALL_SIGN
+            GenerationsWood.ULTRA_DARK_SIGN.value(),
+            GenerationsWood.ULTRA_DARK_WALL_SIGN.value()
         )
     }
     @JvmField
     val ULTRA_DARK_HANGING_SIGN = registerSign("ultra_dark_hanging_sign") {
         HangingSignItem(
-            GenerationsWood.ULTRA_DARK_HANGING_SIGN,
-            GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN,
+            GenerationsWood.ULTRA_DARK_HANGING_SIGN.value(),
+            GenerationsWood.ULTRA_DARK_WALL_HANGING_SIGN.value(),
             it.stacksTo(16)
         )
     }
@@ -1528,15 +1526,15 @@ object GenerationsItems {
     val ULTRA_JUNGLE_SIGN = registerSign("ultra_jungle_sign") {
         SignItem(
             it.stacksTo(16),
-            GenerationsWood.ULTRA_JUNGLE_SIGN,
-            GenerationsWood.ULTRA_JUNGLE_WALL_SIGN
+            GenerationsWood.ULTRA_JUNGLE_SIGN.value(),
+            GenerationsWood.ULTRA_JUNGLE_WALL_SIGN.value()
         )
     }
     @JvmField
     val ULTRA_JUNGLE_HANGING_SIGN = registerSign("ultra_jungle_hanging_sign") {
         HangingSignItem(
-            GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN,
-            GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN,
+            GenerationsWood.ULTRA_JUNGLE_HANGING_SIGN.value(),
+            GenerationsWood.ULTRA_JUNGLE_WALL_HANGING_SIGN.value(),
             it.stacksTo(16)
         )
     }
@@ -1544,15 +1542,15 @@ object GenerationsItems {
     val GHOST_SIGN = registerSign("ghost_sign") {
         SignItem(
             it.stacksTo(16),
-            GenerationsWood.GHOST_SIGN,
-            GenerationsWood.GHOST_WALL_SIGN
+            GenerationsWood.GHOST_SIGN.value(),
+            GenerationsWood.GHOST_WALL_SIGN.value()
         )
     }
     @JvmField
     val GHOST_HANGING_SIGN = registerSign("ghost_hanging_sign") {
         HangingSignItem(
-            GenerationsWood.GHOST_HANGING_SIGN,
-            GenerationsWood.GHOST_WALL_HANGING_SIGN,
+            GenerationsWood.GHOST_HANGING_SIGN.value(),
+            GenerationsWood.GHOST_WALL_HANGING_SIGN.value(),
             it.stacksTo(16)
         )
     }
@@ -1591,20 +1589,20 @@ object GenerationsItems {
         BUILDING_BLOCKS
     )
 
-    private fun createRelicSong(inert: Boolean): Item = register(
+    private fun createRelicSong(inert: Boolean): Holder<Item> = register(
         (if (inert) "inert_" else "") + "relic_song",
         { RelicSongItem(it.stacksTo(1), inert) },
         LEGENDARY_ITEMS
     )
 
-    private fun createTeraShard(name: String, teraType: TeraType): Item {
+    private fun createTeraShard(name: String, teraType: TeraType): Holder<Item> {
         return register(name, { TeraSharditem(it, teraType) }, PLAYER_ITEMS)
     }
 
     private fun registerHeldItem(
         name: String,
         function: (Item.Properties) -> Item = ::Item
-    ): Item = register(
+    ): Holder<Item> = register(
         name,
         { function.invoke(it).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "")) } },
         HELD_ITEMS
@@ -1616,35 +1614,34 @@ object GenerationsItems {
         name: String,
         itemSupplier: (Item.Properties) -> T,
         register: ItemPlatformRegistry = ITEMS
-    ): Item = register.create(name.generationsResource(), itemSupplier.invoke(of()))
+    ): Holder<Item> = register.create(name) { itemSupplier.invoke(of()) }
 
     fun <T : MoveTeachingItem> registerTm(
         name: String,
         itemSupplier: (Item.Properties) -> T,
         register: ItemPlatformRegistry = ITEMS
-    ): T = register.create(name.generationsResource(), itemSupplier.invoke(of()))
+    ): Holder<Item> = register.create(name) { itemSupplier.invoke(of()) }
 
-    fun registerTmRegular(name: String, move: String): TechnicalMachineItem =
-        registerTm(name, { TechnicalMachineItem(move, it) }, PLAYER_ITEMS).also(TMS::add)
+    fun registerTmRegular(name: String, move: String): Holder<Item> = registerTm(name, { TechnicalMachineItem(move, it) }, PLAYER_ITEMS).also { TMS.add(it.asType<TechnicalMachineItem>()) }
 
-    private fun registerSign(name: String, itemSupplier: (Item.Properties) -> Item): Item = register(name, itemSupplier)
+    private fun registerSign(name: String, itemSupplier: (Item.Properties) -> Item): Holder<Item> = register(name, itemSupplier)
 
-    private fun createBadge(id: String): Item = register(id + "_badge", ::BadgeItem, BADGES)
+    private fun createBadge(id: String): Holder<Item> = register(id + "_badge", ::BadgeItem, BADGES)
 
-    private fun createRibbon(id: String): Item = register(id, ::RibbonItem, RIBBONS)
+    private fun createRibbon(id: String): Holder<Item> = register(id, ::RibbonItem, RIBBONS)
 
-    private fun createMusicDisc(name: String, jukeboxSong: ResourceKey<JukeboxSong>): Item =
+    private fun createMusicDisc(name: String, jukeboxSong: ResourceKey<JukeboxSong>): Holder<Item> =
         register(
             name,
             { Item(it.jukeboxPlayable(jukeboxSong).stacksTo(1)).tab(CreativeModeTabs.TOOLS_AND_UTILITIES) },
             PLAYER_ITEMS
         )
 
-    private fun registerClosedMail(name: String, type: MailType): Item = register(name, type::createClosedMailItem, POKEMAIL)
+    private fun registerClosedMail(name: String, type: MailType): Holder<Item> = register(name, type::createClosedMailItem, POKEMAIL)
 
-    private fun registerMail(name: String, type: MailType): Item = register(name, type::createMailItem, POKEMAIL)
+    private fun registerMail(name: String, type: MailType): Holder<Item> = register(name, type::createMailItem, POKEMAIL)
 
-    private fun registerPlate(name: String, type: ElementalType): Item = register(
+    private fun registerPlate(name: String, type: ElementalType): Holder<Item> = register(
         name,
         {
             createFormChangingItem(
@@ -1657,7 +1654,7 @@ object GenerationsItems {
         FORM_ITEMS
     )
 
-    private fun registerDrive(name: String, type: String): Item = register(
+    private fun registerDrive(name: String, type: String): Holder<Item> = register(
         name,
         {
             createFormChangingItem(
@@ -1670,7 +1667,7 @@ object GenerationsItems {
         FORM_ITEMS
     )
 
-    private fun registerMemory(name: String, type: ElementalType): Item = register(
+    private fun registerMemory(name: String, type: ElementalType): Holder<Item> = register(
         name,
         {
             createFormChangingItem(
@@ -1683,28 +1680,30 @@ object GenerationsItems {
         FORM_ITEMS
     )
 
-    private fun registerCap(name: String): Item =
-        register("${name}_cap", { createFormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
+    private fun registerCap(name: String): Holder<Item> = register("${name}_cap", { createFormChangingItem(it, "pikachu_cap", name) }, FORM_ITEMS)
 
-    @JvmStatic
-    fun init(consumer: (ItemPlatformRegistry) -> Unit) {
-
+    override fun init() {
         GenerationsCore.LOGGER.info("Registering Generations Items")
-        consumer.invoke(ITEMS)
-        consumer.invoke(RIBBONS)
-        consumer.invoke(BADGES)
-        consumer.invoke(UNIMPLEMENTED)
-        consumer.invoke(CUISINE)
-        consumer.invoke(NATURAL)
-        consumer.invoke(RESTORATION)
-        consumer.invoke(PLAYER_ITEMS)
-        consumer.invoke(HELD_ITEMS)
-        consumer.invoke(POKEMAIL)
-        consumer.invoke(LEGENDARY_ITEMS)
-        consumer.invoke(UTILITY)
-        consumer.invoke(VALUABLES)
-        consumer.invoke(FORM_ITEMS)
-        consumer.invoke(BUILDING_BLOCKS)
+        ITEMS.init()
+        RIBBONS.init()
+        BADGES.init()
+        UNIMPLEMENTED.init()
+        CUISINE.init()
+        NATURAL.init()
+        RESTORATION.init()
+        PLAYER_ITEMS.init()
+        HELD_ITEMS.init()
+        POKEMAIL.init()
+        LEGENDARY_ITEMS.init()
+        UTILITY.init()
+        VALUABLES.init()
+        FORM_ITEMS.init()
+        BUILDING_BLOCKS.init()
+        BLOCK_ITEMS.init()
     }
+}
+
+private fun <T: Item> Holder<Item>.asType(): Holder<T> {
+    return this as Holder<T>
 }
 

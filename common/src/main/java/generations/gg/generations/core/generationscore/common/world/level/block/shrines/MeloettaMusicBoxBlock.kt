@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MeloettaMusicBoxBlockEntity
@@ -33,11 +34,11 @@ import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
 class MeloettaMusicBoxBlock(properties: Properties) :
-    GenericRotatableModelBlock<MeloettaMusicBoxBlockEntity>(
+    GenericRotatableModelBlock(
         properties = properties,
         model =GenerationsBlockEntityModels.MELOETTA_MUSIC_BOX
     ) {
-    override val blockEntityType: BlockEntityType<MeloettaMusicBoxBlockEntity>
+    override val blockEntityType
         get() = GenerationsBlockEntities.MELOETTA_MUSIC_BOX
 
     override fun codec(): MapCodec<MeloettaMusicBoxBlock> {
@@ -159,7 +160,7 @@ class MeloettaMusicBoxBlock(properties: Properties) :
         level: Level,
         state: BlockState,
         blockEntityType: BlockEntityType<T>
-    ): BlockEntityTicker<T>? = if (state.getValue(HAS_RECORD)) createTickerHelper(blockEntityType, GenerationsBlockEntities.MELOETTA_MUSIC_BOX, MeloettaMusicBoxBlockEntity.Companion::tick) else null
+    ): BlockEntityTicker<T>? = if (state.getValue(HAS_RECORD)) createTickerHelper(blockEntityType, GenerationsBlockEntities.MELOETTA_MUSIC_BOX.asValue<MeloettaMusicBoxBlockEntity>(), MeloettaMusicBoxBlockEntity.Companion::tick) else null
 
     companion object {
         private val SHAPE: VoxelShape = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.375, 0.75)

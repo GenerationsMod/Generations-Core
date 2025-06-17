@@ -366,7 +366,7 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
             thickness: DripstoneThickness
         ) {
             val blockState =
-                GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.defaultBlockState().setValue(TIP_DIRECTION, direction)
+                GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value().defaultBlockState().setValue(TIP_DIRECTION, direction)
                     .setValue(
                         THICKNESS, thickness
                     ).setValue(WATERLOGGED, level.getFluidState(pos).type === Fluids.WATER)

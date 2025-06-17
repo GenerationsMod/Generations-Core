@@ -4,8 +4,8 @@ import com.cobblemon.mod.common.api.events.pokemon.HeldItemEvent
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.api.types.tera.TeraTypes
-import com.cobblemon.mod.common.pokemon.Pokemon
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
+import net.minecraft.core.Holder
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.Item
 
@@ -40,7 +40,7 @@ object HeldItemFormeChange {
                 GenerationsItems.CORNERSTONE_MASK,
                 GenerationsItems.HEARTHFLAME_MASK,
                 GenerationsItems.WELLSPRING_MASK
-            ).contains(post.returned.item) -> {
+            ).map(Holder<Item>::value).contains(post.returned.item) -> {
                 StringSpeciesFeature("ogre_mask", "teal").apply(pokemon)
                 pokemon.teraType = TeraTypes.GRASS
                 player?.sendSystemMessage("Ogerpon's Tera Type has been set to Grass".text())
