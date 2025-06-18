@@ -10,9 +10,23 @@
   "license": "GNU GPL 3.0",
   "environment": "*",
   "entrypoints": {
-    "preLaunch": ["generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"],
-    "main": ["generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"],
-    "client" : ["generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"],
+    "preLaunch": [
+      {
+        "adapter": "kotlin",
+        "value": "generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"
+      }],
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric"
+      }
+    ],
+    "client" : [
+      {
+        "adapter": "kotlin",
+        "value": "generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"
+      }
+    ],
     "fabric-datagen": ["generations.gg.generations.core.generationscore.fabric.datagen.DataGen"],
     "rei_client": [
       "generations.gg.generations.core.generationscore.common.compat.rei.ReiCompatClient"
