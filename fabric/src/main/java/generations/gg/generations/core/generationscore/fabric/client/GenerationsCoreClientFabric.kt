@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.fabric.client
 
-import com.mojang.blaze3d.systems.RenderSystem
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.EntityRendererHandler
@@ -8,11 +7,6 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerBlockEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderHighlightedPath
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandySolid
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandyTransparent
-import generations.gg.generations.core.generationscore.common.client.MatrixCache
-import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
@@ -23,9 +17,6 @@ import net.fabricmc.api.Environment
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents.AfterTranslucent
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
@@ -54,31 +45,9 @@ class GenerationsCoreClientFabric : ClientModInitializer {
      * @see ClientModInitializer.onInitializeClient
      */
     override fun onInitializeClient() {
-        WorldRenderEvents.AFTER_TRANSLUCENT.register(AfterTranslucent { context: WorldRenderContext ->
-            renderHighlightedPath(
-                context.matrixStack()!!, Minecraft.getInstance().levelRenderer.ticks, context.camera()
-            )
+//        WorldRenderEvents.AFTER_TRANSLUCENT.register { secondRenderPass() }
 
-            RenderStateRecord.push()
-            RenderSystem.enableDepthTest()
-            RenderSystem.defaultBlendFunc()
-            RenderSystem.enableBlend()
-            renderRareCandyTransparent(true)
-            RenderStateRecord.pop()
-        })
-
-        WorldRenderEvents.BEFORE_DEBUG_RENDER.register {
-
-            MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
-            MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
-
-            RenderStateRecord.push()
-
-            renderRareCandySolid()
-            renderRareCandyTransparent()
-
-            RenderStateRecord.pop()
-        }
+//        WorldRenderEvents.BEFORE_DEBUG_RENDER.register { firstRenderPass() }
 
         GenerationsCoreFabric.networkManager.registerClientHandlers()
 

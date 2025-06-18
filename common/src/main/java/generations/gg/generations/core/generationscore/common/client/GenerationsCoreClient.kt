@@ -21,6 +21,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore.LO
 import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer
+import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.*
 import generations.gg.generations.core.generationscore.common.client.render.entity.*
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.MinecraftClientGameProvider
@@ -533,6 +534,31 @@ object GenerationsCoreClient {
             .get() /*&& Minecraft.getInstance().options.renderDebugCharts*/ && !Minecraft.getInstance().options.hideGui
     }
 
+    fun secondRenderPass() {
+//        renderHighlightedPath(stack, Minecraft.getInstance().levelRenderer.ticks, camera)
+
+        RenderStateRecord.push()
+        RenderSystem.enableDepthTest()
+        RenderSystem.defaultBlendFunc()
+        RenderSystem.enableBlend()
+        renderRareCandyTransparent(true)
+        RenderStateRecord.pop()
+    }
+
+    fun firstRenderPass() {
+
+        MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
+        MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
+
+        RenderStateRecord.push()
+
+        renderRareCandySolid()
+        renderRareCandyTransparent()
+
+        RenderStateRecord.pop()
+    }
+
+
     fun renderRareCandySolid() {
         renderRareCandy(RenderStage.SOLID, false)
     }
@@ -545,7 +571,6 @@ object GenerationsCoreClient {
         if (GenerationsCore.CONFIG.client.useVanilla) return
 
         var startTime = System.currentTimeMillis()
-//        level.profiler.popPush("render_models")
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
 

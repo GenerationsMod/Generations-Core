@@ -74,11 +74,11 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
 //                event
 //            )
 //        }
-        NeoForge.EVENT_BUS.addListener { event: RenderLevelStageEvent ->
-            renderHighlightedPath(
-                event
-            )
-        }
+//        NeoForge.EVENT_BUS.addListener { event: RenderLevelStageEvent ->
+//            renderHighlightedPath(
+//                event
+//            )
+//        }
     }
 
     companion object {
