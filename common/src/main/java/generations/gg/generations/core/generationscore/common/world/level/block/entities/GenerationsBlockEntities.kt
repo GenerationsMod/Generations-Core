@@ -12,19 +12,15 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity
 import net.minecraft.core.Holder
-import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceKey
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.entity.HangingSignBlockEntity
 import net.minecraft.world.level.block.entity.SignBlockEntity
 
-object GenerationsBlockEntities: PlatformRegistry<BlockEntityType<*>>() {
-    override val registry: Registry<BlockEntityType<*>> = BuiltInRegistries.BLOCK_ENTITY_TYPE
-    override val resourceKey: ResourceKey<Registry<BlockEntityType<*>>> = Registries.BLOCK_ENTITY_TYPE
+object GenerationsBlockEntities: PlatformRegistry<BlockEntityType<*>>(Registries.BLOCK_ENTITY_TYPE, BuiltInRegistries.BLOCK_ENTITY_TYPE) {
 
     val POKE_DOLL = registerRegular("pokedoll", ::PokeDollBlockEntity,
         GenerationsPokeDolls.ARCEUS_POKEDOLL, GenerationsPokeDolls.ARTICUNO_POKEDOLL, GenerationsPokeDolls.AZELF_POKEDOLL, GenerationsPokeDolls.AZURILL_POKEDOLL,

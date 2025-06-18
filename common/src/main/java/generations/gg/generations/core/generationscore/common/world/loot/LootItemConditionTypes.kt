@@ -10,10 +10,7 @@ import net.minecraft.resources.ResourceKey
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition
 import net.minecraft.world.level.storage.loot.predicates.LootItemConditionType
 
-object LootItemConditionTypes: PlatformRegistry<LootItemConditionType>() {
-    override val registry: Registry<LootItemConditionType> = BuiltInRegistries.LOOT_CONDITION_TYPE
-    override val resourceKey: ResourceKey<Registry<LootItemConditionType>> = Registries.LOOT_CONDITION_TYPE
-
+object LootItemConditionTypes: PlatformRegistry<LootItemConditionType>(Registries.LOOT_CONDITION_TYPE, BuiltInRegistries.LOOT_CONDITION_TYPE) {
     val SPECIES_KEY = register("species_key", SpeciesKeyCondition.CODEC)
 
     fun <T : LootItemCondition> register(name: String, supplier: MapCodec<T>): Holder<LootItemConditionType> = create(name, { LootItemConditionType(supplier) })

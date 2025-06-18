@@ -52,7 +52,10 @@ import net.neoforged.neoforge.event.*
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract
-import net.neoforged.neoforge.registries.*
+import net.neoforged.neoforge.registries.DeferredRegister
+import net.neoforged.neoforge.registries.NeoForgeRegistries
+import net.neoforged.neoforge.registries.NewRegistryEvent
+import net.neoforged.neoforge.registries.RegistryBuilder
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 import java.util.*
 import java.util.function.Consumer
@@ -73,7 +76,7 @@ fun generations.gg.generations.core.generationscore.common.api.events.TriState.a
  * @author Joseph T. McQuigg, WaterPicker
  */
 @Mod(GenerationsCore.MOD_ID)
-class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
+class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
     private val registries = mutableListOf<Registry<*>>()
     private val reloadableResources: MutableList<PreparableReloadListener> = ArrayList()
     private val packs: Map<PackType, List<Pair<ResourceLocation, Component>>> = EnumMap(net.minecraft.server.packs.PackType::class.java)
@@ -86,8 +89,8 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     init {
         setConfigDirectory(FMLPaths.CONFIGDIR.get())
 
-        with(MOD_BUS) {
-            ENTITY_DATA_SERIALIZER_REGISTER.register(MOD_BUS)
+        with(bus) {
+            ENTITY_DATA_SERIALIZER_REGISTER.register(bus)
             addListener(::onInitialize)
             addListener(::postInit)
             addListener<BuildCreativeModeTabContentsEvent> {
@@ -145,17 +148,17 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
     }
 
     override fun <T: Any> register(register: () -> PlatformRegistry<T>) {
-        with(MOD_BUS) {
-            this.addListener<RegisterEvent> { event ->
-                val platform = register.invoke()
-
-                if(event.registryKey.equals(platform.resourceKey)) {
-                    event.register(platform.resourceKey) { helper ->
-                        platform.init()
-                    }
-                }
-            }
-        }
+//        with(MOD_BUS) {
+//            this.addListener<RegisterEvent> { event ->
+//                val platform = register.invoke()
+//
+//                if(event.registryKey.equals(platform.resourceKey)) {
+//                    event.register(platform.resourceKey) { helper ->
+//                        platform.init()
+//                    }
+//                }
+//            }
+//        }
     }
 
     override fun registerStrippable(log: Holder<Block>, stripped: Holder<Block>) {
@@ -300,8 +303,8 @@ class GenerationsCoreForge(MOD_BUS: IEventBus) : GenerationsImplementation {
 
     override val networkManager: NetworkManager = GenerationsNeoForgeNetworkManager
 
-    override fun <T:Any> entryRegister(resourceKey: Registry<T>): EntryRegister<T> {
-        return NeoForgeEntryRegister(resourceKey, MOD_BUS)
+    override fun <T:Any> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T> {
+        return NeoForgeEntryRegister(registry, MOD_BUS)
     }
 
     class NeoForgeEntryRegister<T:Any>(resourceKey: Registry<T>, bus: IEventBus): EntryRegister<T>() {

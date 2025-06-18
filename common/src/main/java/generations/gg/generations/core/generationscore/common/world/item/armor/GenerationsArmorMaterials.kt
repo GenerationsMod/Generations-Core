@@ -7,10 +7,8 @@ import generations.gg.generations.core.generationscore.common.util.PlatformRegis
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.Util
 import net.minecraft.core.Holder
-import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceKey
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.ArmorMaterial
@@ -19,9 +17,7 @@ import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
 import java.util.*
 
-object GenerationsArmorMaterials: PlatformRegistry<ArmorMaterial>() {
-    override val registry: Registry<ArmorMaterial> = BuiltInRegistries.ARMOR_MATERIAL
-    override val resourceKey: ResourceKey<Registry<ArmorMaterial>> = Registries.ARMOR_MATERIAL
+object GenerationsArmorMaterials: PlatformRegistry<ArmorMaterial>(Registries.ARMOR_MATERIAL, BuiltInRegistries.ARMOR_MATERIAL) {
 
     val AETHER = register("aether", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.SILICON::value)
     val AQUA = register("saphire", 15, intArrayOf(2, 5, 6, 2), 9, GenerationsItems.SAPPHIRE::value)

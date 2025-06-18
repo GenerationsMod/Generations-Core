@@ -68,5 +68,5 @@ interface GenerationsImplementation {
 
     val networkManager: NetworkManager
 
-    fun <T: Any> entryRegister(resourceKey: Registry<T>): EntryRegister<T>
+    fun <T: Any> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T>
 }

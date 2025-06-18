@@ -6,19 +6,8 @@ import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 
-abstract class PlatformRegistry<T: Any> {
-
-        /**
-         * The vanilla [Registry].
-         */
-        abstract val registry: Registry<T>
-
-        /**
-         * The vanilla [ResourceKey].
-         */
-        abstract val resourceKey: ResourceKey<Registry<T>>
-
-        val register: EntryRegister<T> = GenerationsCore.implementation.entryRegister(registry)
+abstract class PlatformRegistry<T: Any>(registryKey: ResourceKey<Registry<T>>, registry: Registry<T>) {
+    val register: EntryRegister<T> = GenerationsCore.implementation.entryRegister(registry, registryKey)
 
         protected val queue = hashMapOf<ResourceLocation, Holder<T>>()
 

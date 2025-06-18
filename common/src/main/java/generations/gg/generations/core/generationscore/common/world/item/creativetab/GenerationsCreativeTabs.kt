@@ -5,10 +5,8 @@ import generations.gg.generations.core.generationscore.common.util.PlatformRegis
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import net.minecraft.core.Holder
-import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceKey
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.ItemLike
@@ -19,9 +17,7 @@ import net.minecraft.world.level.ItemLike
  * @author WaterPicker
  * @see CreativeModeTab
  */
-object GenerationsCreativeTabs: PlatformRegistry<CreativeModeTab>() {
-    override val registry: Registry<CreativeModeTab> = BuiltInRegistries.CREATIVE_MODE_TAB
-    override val resourceKey: ResourceKey<Registry<CreativeModeTab>> = Registries.CREATIVE_MODE_TAB
+object GenerationsCreativeTabs: PlatformRegistry<CreativeModeTab>(Registries.CREATIVE_MODE_TAB, BuiltInRegistries.CREATIVE_MODE_TAB) {
 
     val BUILDING_BLOCKS = createTab("building_blocks", { GenerationsBlocks.LIGHT_BLUE_POKE_BRICK_SET.baseBlock.asItem().defaultInstance }, GenerationsWood.WOOD_BLOCKS, GenerationsItems.BLOCK_ITEMS, GenerationsOres, GenerationsItems.BUILDING_BLOCKS)
     val RESTORATION = createTab("restoration", { GenerationsItems.LEMONADE.value().defaultInstance }, GenerationsItems.RESTORATION)

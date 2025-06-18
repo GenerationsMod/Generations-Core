@@ -239,7 +239,7 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
         setConfigDirectory(FabricLoader.getInstance().configDir)
     }
 
-    override fun <T: Any> entryRegister(registry: Registry<T>): EntryRegister<T> {
+    override fun <T: Any> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T> {
         return FabricEntryRegister(registry)
     }
 

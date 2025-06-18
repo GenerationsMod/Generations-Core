@@ -8,18 +8,14 @@ import generations.gg.generations.core.generationscore.common.world.item.Walkmon
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
 import generations.gg.generations.core.generationscore.common.world.item.legends.RubyRodItem
 import net.minecraft.core.Holder
-import net.minecraft.core.Registry
 import net.minecraft.core.component.DataComponentType
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
-import net.minecraft.resources.ResourceKey
 
-object GenerationsDataComponents: PlatformRegistry<DataComponentType<*>>() {
-    override val registry: Registry<DataComponentType<*>> = BuiltInRegistries.DATA_COMPONENT_TYPE
-    override val resourceKey: ResourceKey<Registry<DataComponentType<*>>> = Registries.DATA_COMPONENT_TYPE
+object GenerationsDataComponents: PlatformRegistry<DataComponentType<*>>(Registries.DATA_COMPONENT_TYPE, BuiltInRegistries.DATA_COMPONENT_TYPE) {
 
     var DISTANCE = register<Double>(
         DataKeys.DISTANCE,

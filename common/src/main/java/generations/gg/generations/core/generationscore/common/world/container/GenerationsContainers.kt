@@ -3,20 +3,16 @@ package generations.gg.generations.core.generationscore.common.world.container
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import net.minecraft.core.Holder
-import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.FriendlyByteBuf
-import net.minecraft.resources.ResourceKey
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.flag.FeatureFlags
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.MenuType
 
-object GenerationsContainers: PlatformRegistry<MenuType<*>>() {
-    override val registry: Registry<MenuType<*>> = BuiltInRegistries.MENU
-    override val resourceKey: ResourceKey<Registry<MenuType<*>>> = Registries.MENU
+object GenerationsContainers: PlatformRegistry<MenuType<*>>(Registries.MENU, BuiltInRegistries.MENU) {
 
     @JvmField
     val COOKING_POT = register("cooking_pot", ::CookingPotContainer)
