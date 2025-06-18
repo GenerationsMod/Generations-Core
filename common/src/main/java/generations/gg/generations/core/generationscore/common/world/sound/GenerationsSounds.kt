@@ -3,15 +3,11 @@ package generations.gg.generations.core.generationscore.common.world.sound
 import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import net.minecraft.core.Holder
-import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
-import net.minecraft.resources.ResourceKey
 import net.minecraft.sounds.SoundEvent
 
-object GenerationsSounds: PlatformRegistry<SoundEvent>() {
-    override val registry: Registry<SoundEvent> = BuiltInRegistries.SOUND_EVENT
-    override val resourceKey: ResourceKey<Registry<SoundEvent>> = Registries.SOUND_EVENT
+object GenerationsSounds: PlatformRegistry<SoundEvent>(Registries.SOUND_EVENT, BuiltInRegistries.SOUND_EVENT) {
 
     val LUGIA_SHRINE_SONG = registerSound("generations_core.item.lugia_shrine_song")
     val MELOETTAS_RELIC_SONG = registerSound("generations_core.item.meloettas_relic_song")
