@@ -37,7 +37,7 @@ public class MenuStorageSlot extends Slot {
     }
 
     public boolean mayPlace(ItemStack stack) {
-        return stack.isEmpty() ? false : this.storageSlot.isResourceValid(ItemResource.of(stack));
+        return !stack.isEmpty() && this.storageSlot.isResourceValid(ItemResource.of(stack));
     }
 
     public @NotNull ItemStack getItem() {

@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.CobblemonNetwork.sendPacketToPlayer
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import earth.terrarium.common_storage_lib.context.impl.PlayerContext
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.item.util.ItemStorageData
 import generations.gg.generations.core.generationscore.common.GenerationsStorage
@@ -41,7 +42,7 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
 
             if(walkmon != null) {
 
-                if (player.isShiftKeyDown) GenericContainer.openScreen(SimpleItemStorage(stack, GenerationsStorage.ITEM_CONTENTS, 9 * row), 9, row, walkmon.title.takeUnless { it == Component.EMPTY } ?: Component.translatable(defaultTranslation), player, player.inventory.selected)
+                if (player.isShiftKeyDown) GenericContainer.openScreen(SimpleItemStorage(PlayerContext.ofHand(player, usedHand), GenerationsStorage.ITEM_CONTENTS.componentType(), 9 * row), 9, row, walkmon.title.takeUnless { it == Component.EMPTY } ?: Component.translatable(defaultTranslation), player, player.inventory.selected)
                 else {
                     walkmon.toggle()
                 }

@@ -1,17 +1,24 @@
-package generations.gg.generations.core.generationscore.common.mixin.datafix;
+package generations.gg.generations.core.generationscore.common.datafixer;
 
 import com.mojang.datafixers.DataFixUtils;
+import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.util.datafix.fixes.ItemStackComponentizationFix;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.fixItemStack;
 
-class GenerationsDataFixUtils {
+public class GenerationsDataFixUtils {
     public static Dynamic<?> getDiscHolder(Dynamic<?> holder) {
-        return holder.createList(holder.asStream().filter(d -> d.get("Slot").asInt(-1) > -1).sorted(Comparator.comparingInt(value -> value.get("Slot").asInt(-1))).map(dynamic -> dynamic.remove("Slot")).map(GenerationsDataFixUtils::fixStack).map(a -> a.renameField("Count", "amount")));
+        var list = holder.asStream().map(dynamic -> Pair.of(dynamic.get("Slot").asInt(-1), dynamic.remove("Slot")))
+                .filter(pair -> pair.getFirst() <= -1).map(a -> a.getSecond()).map(a -> a.renameField("Count", "amount"));
+
+        return holder.createList(list);
     }
 
     public static Dynamic<?> fixStack(Dynamic<?> dynamic) {

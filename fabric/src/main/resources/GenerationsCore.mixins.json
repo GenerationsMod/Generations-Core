@@ -9,6 +9,7 @@
     "BaseFireBlockMixin",
     "BlockMixin",
     "ItemCombinerMenuMixin",
+    "ItemStackMixin",
     "LivingEntityMixin",
     "MagmaCubeMixin",
     "MixinPlayer",

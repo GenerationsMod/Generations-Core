@@ -24,7 +24,7 @@ object DataKeys {
     //Walkmon values
     const val DISC_HOLDER = "DiscHolder"
     const val DISCS = "Discs"
-    const val PLAYING = "Playing"
-    const val TIME_UNTIL_NEXT_SONG = "TimeUntilNextSong"
-    const val CURRENT_SLOT = "CurrentSlot"
+    const val PLAYING = "playing"
+    const val TIME_UNTIL_NEXT_SONG = "time_until_next_song"
+    const val CURRENT_SLOT = "current_slot"
 }
