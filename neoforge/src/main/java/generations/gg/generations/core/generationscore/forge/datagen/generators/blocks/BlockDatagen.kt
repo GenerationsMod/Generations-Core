@@ -859,12 +859,12 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         dropSelfList.add(block)
     }
 
-    private fun registerBlockItemParticleWithDrop(block: Holder<Block>, name: String) {
-        registerBlockItemParticle(block, name, true)
+    private fun registerBlockItemParticleWithDrop(block: Holder<out Block>, name: String) {
+        registerBlockItemParticle(block.value(), name, true)
         dropSelfList.add(block.value())
     }
 
-    private fun registerBlockItemParticle(holder: Holder<Block>, name: String, shouldGenerateItems: Boolean) {
+    private fun registerBlockItemParticle(holder: Holder<out Block>, name: String, shouldGenerateItems: Boolean) {
         registerBlockItemParticle(holder.value(), name, shouldGenerateItems)
     }
 
