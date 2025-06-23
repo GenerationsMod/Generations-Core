@@ -109,11 +109,11 @@ object GenerationsWood: BlockPlatformRegistry() {
         return block
     }
 
-    private fun <T : Block> registerBlockWithoutItem(name: String, blockSupplier: () -> T): Holder<Block> {
+    private fun <T : Block> registerBlockWithoutItem(name: String, blockSupplier: () -> T): Holder<T> {
         return WOOD_BLOCKS.create(name, blockSupplier)
     }
 
-    private fun <T : Block> registerSignWithoutItem(name: String, blockSupplier: () -> T): Holder<Block> {
+    private fun <T : Block> registerSignWithoutItem(name: String, blockSupplier: () -> T): Holder<T> {
         return WOOD_SIGN.create(name, blockSupplier)
     }
 
