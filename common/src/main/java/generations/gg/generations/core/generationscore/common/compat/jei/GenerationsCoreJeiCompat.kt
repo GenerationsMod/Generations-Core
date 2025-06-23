@@ -53,7 +53,7 @@ class GenerationsCoreJeiCompat : IModPlugin {
 
     override fun registerRecipeTransferHandlers(registration: IRecipeTransferRegistration) {
         registration.addRecipeTransferHandler(
-            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE.asValue(), RksRecipeCategory.RKS_MACHINE, 1, 9, 10, 36
+            RksMachineContainer::class.java, GenerationsContainers.RKS_MACHINE.value(), RksRecipeCategory.RKS_MACHINE, 1, 9, 10, 36
         )
     }
 

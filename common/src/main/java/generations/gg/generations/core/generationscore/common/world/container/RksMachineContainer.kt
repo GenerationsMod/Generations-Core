@@ -23,7 +23,7 @@ class RksMachineContainer @JvmOverloads constructor(
     protected var playerInventory: Inventory,
     protected var rksMachine: Container = SimpleContainer(10),
     private val data: ContainerData = SimpleContainerData(4)
-) : AbstractContainerMenu(GenerationsContainers.RKS_MACHINE.asValue<RksMachineContainer>(), id), Toggleable {
+) : AbstractContainerMenu(GenerationsContainers.RKS_MACHINE.value(), id), Toggleable {
     init {
         rksMachine.instanceOrNull<RksMachineBlockEntity>()?.addMenu(this)
 

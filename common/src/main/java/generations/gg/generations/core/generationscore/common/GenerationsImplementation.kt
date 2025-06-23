@@ -36,7 +36,7 @@ interface GenerationsImplementation {
      * @param log The log block of wood
      * @param stripped The stripped log block of wood
      */
-    fun registerStrippable(log: Holder<Block>, stripped: Holder<Block>)
+    fun registerStrippable(log: Holder<out Block>, stripped: Holder<out Block>)
 
     /**
      * Register a block as flammable.
@@ -68,5 +68,5 @@ interface GenerationsImplementation {
 
     val networkManager: NetworkManager
 
-    fun <T: Any> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T>
+    fun <T> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T>
 }

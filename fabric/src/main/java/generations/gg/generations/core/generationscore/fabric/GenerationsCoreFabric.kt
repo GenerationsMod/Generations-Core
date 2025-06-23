@@ -145,7 +145,7 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
         VanillaCompat.dispenserBehavior()
     }
 
-    override fun registerStrippable(log: Holder<Block>, stripped: Holder<Block>) {
+    override fun registerStrippable(log: Holder<out Block>, stripped: Holder<out Block>) {
         StrippableBlockRegistry.register(log.value(), stripped.value())
     }
 
@@ -239,11 +239,11 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
         setConfigDirectory(FabricLoader.getInstance().configDir)
     }
 
-    override fun <T: Any> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T> {
+    override fun <T> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T> {
         return FabricEntryRegister(registry)
     }
 
-    class FabricEntryRegister<T: Any>(val registry: Registry<T>): EntryRegister<T>() {
-        override fun holder(name: String, supplier: () -> T): Holder<T> = Registry.registerForHolder(registry, name.generationsResource(), supplier.invoke())
+    class FabricEntryRegister<T>(val registry: Registry<T>): EntryRegister<T>() {
+        override fun <V : T> holder(name: String, supplier: () -> V): Holder<V>  = Registry.registerForHolder(registry, name.generationsResource(), supplier.invoke()) as Holder<V>
     }
 }

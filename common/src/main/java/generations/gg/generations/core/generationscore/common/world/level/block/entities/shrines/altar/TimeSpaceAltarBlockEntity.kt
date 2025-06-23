@@ -8,7 +8,6 @@ import generations.gg.generations.core.generationscore.common.client.model.Model
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer
 import generations.gg.generations.core.generationscore.common.util.asResource
-import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem
@@ -40,7 +39,7 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
             return if (index == 0) {
                 resource.item is CreationTrioItem
             } else {
-                resource.isOf(GenerationsItems.RED_CHAIN.value()) && resource.get(GenerationsDataComponents.ENCHANTED.asValue<Boolean>()) == false
+                resource.isOf(GenerationsItems.RED_CHAIN.value()) && resource.get(GenerationsDataComponents.ENCHANTED.value()) == false
             }
         }
 

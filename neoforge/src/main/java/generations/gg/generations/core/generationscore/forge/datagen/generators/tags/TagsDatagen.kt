@@ -127,19 +127,19 @@ object TagsDatagen {
 
 
             tag(BlockTags.DIRT).add(
-                GenerationsBlocks.ULTRA_SAND,
-                GenerationsBlocks.RICH_SOIL_1,
-                GenerationsBlocks.RICH_SOIL_2,
-                GenerationsBlocks.RICH_SOIL_3,
-                GenerationsBlocks.RICH_SOIL_4
+                GenerationsBlocks.ULTRA_SAND.value(),
+                GenerationsBlocks.RICH_SOIL_1.value(),
+                GenerationsBlocks.RICH_SOIL_2.value(),
+                GenerationsBlocks.RICH_SOIL_3.value(),
+                GenerationsBlocks.RICH_SOIL_4.value()
             )
 
             tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
-                GenerationsBlocks.RUINS_SAND,
-                GenerationsBlocks.RICH_SOIL_1,
-                GenerationsBlocks.RICH_SOIL_2,
-                GenerationsBlocks.RICH_SOIL_3,
-                GenerationsBlocks.RICH_SOIL_4
+                GenerationsBlocks.RUINS_SAND.value(),
+                GenerationsBlocks.RICH_SOIL_1.value(),
+                GenerationsBlocks.RICH_SOIL_2.value(),
+                GenerationsBlocks.RICH_SOIL_3.value(),
+                GenerationsBlocks.RICH_SOIL_4.value()
             )
 
             GenerationsBlocks.ENCHANTED_OBSIDIAN_SET.allBlocks
@@ -148,10 +148,10 @@ object TagsDatagen {
 
             tag(GenerationsBlockTags.POKEBALL_CHESTS)
                 .add(
-                    GenerationsBlocks.POKEBALL_CHEST,
-                    GenerationsBlocks.GREATBALL_CHEST,
-                    GenerationsBlocks.ULTRABALL_CHEST,
-                    GenerationsBlocks.MASTERBALL_CHEST
+                    GenerationsBlocks.POKEBALL_CHEST.value(),
+                    GenerationsBlocks.GREATBALL_CHEST.value(),
+                    GenerationsBlocks.ULTRABALL_CHEST.value(),
+                    GenerationsBlocks.MASTERBALL_CHEST.value()
                 )
             tag(Tags.Blocks.CHESTS).addTag(GenerationsBlockTags.POKEBALL_CHESTS)
 
@@ -176,11 +176,11 @@ object TagsDatagen {
             }
 
             tag(GenerationsBlockTags.REGI_STANDS).add(
-                GenerationsBlocks.CASTLE_PILLAR,
-                GenerationsBlocks.GHOST_PILLAR,
-                GenerationsBlocks.PRISMARINE_PILLAR,
-                GenerationsBlocks.ICE_PILLAR,
-                GenerationsBlocks.DARK_PRISMARINE_PILLAR
+                GenerationsBlocks.CASTLE_PILLAR.value(),
+                GenerationsBlocks.GHOST_PILLAR.value(),
+                GenerationsBlocks.PRISMARINE_PILLAR.value(),
+                GenerationsBlocks.ICE_PILLAR.value(),
+                GenerationsBlocks.DARK_PRISMARINE_PILLAR.value()
             )
 
 
@@ -278,18 +278,18 @@ object TagsDatagen {
             }
 
             tag(GenerationsBlockTags.GHOST_LOGS).add(
-                GenerationsWood.GHOST_LOG,
-                GenerationsWood.STRIPPED_GHOST_LOG
+                GenerationsWood.GHOST_LOG.value(),
+                GenerationsWood.STRIPPED_GHOST_LOG.value()
             )
 
             tag(GenerationsBlockTags.ULTRA_DARK_LOGS).add(
-                GenerationsWood.ULTRA_DARK_LOG,
-                GenerationsWood.STRIPPED_ULTRA_DARK_LOG
+                GenerationsWood.ULTRA_DARK_LOG.value(),
+                GenerationsWood.STRIPPED_ULTRA_DARK_LOG.value()
             )
 
             tag(GenerationsBlockTags.ULTRA_JUNGLE_LOGS).add(
-                GenerationsWood.ULTRA_JUNGLE_LOG,
-                GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG
+                GenerationsWood.ULTRA_JUNGLE_LOG.value(),
+                GenerationsWood.STRIPPED_ULTRA_JUNGLE_LOG.value()
             )
 
             tag(BlockTags.LOGS).addTag(GenerationsBlockTags.GHOST_LOGS).addTag(GenerationsBlockTags.ULTRA_DARK_LOGS)
@@ -322,11 +322,11 @@ object TagsDatagen {
                 )
 
             tag(BlockTags.MINEABLE_WITH_AXE).add(
-                GenerationsBlocks.CURSED_PUMPKIN,
-                GenerationsBlocks.CURSED_JACK_O_LANTERN,
-                GenerationsBlocks.CURSED_CARVED_PUMPKIN,
-                GenerationsUtilityBlocks.SCARECROW,
-                GenerationsUtilityBlocks.BOX
+                GenerationsBlocks.CURSED_PUMPKIN.value(),
+                GenerationsBlocks.CURSED_JACK_O_LANTERN.value(),
+                GenerationsBlocks.CURSED_CARVED_PUMPKIN.value(),
+                GenerationsUtilityBlocks.SCARECROW.value(),
+                GenerationsUtilityBlocks.BOX.value()
             )
                 .add(*GenerationsDecorationBlocks.COUCH_ARM_LEFT.toArray())
                 .add(*GenerationsDecorationBlocks.COUCH_ARM_RIGHT.toArray())
@@ -335,35 +335,35 @@ object TagsDatagen {
                 .add(*GenerationsDecorationBlocks.COUCH_MIDDLE.toArray())
                 .add(*GenerationsDecorationBlocks.COUCH_OTTOMAN.toArray())
             tag(BlockTags.ENDERMAN_HOLDABLE).add(
-                GenerationsBlocks.CURSED_PUMPKIN,
-                GenerationsBlocks.CURSED_CARVED_PUMPKIN
+                GenerationsBlocks.CURSED_PUMPKIN.value(),
+                GenerationsBlocks.CURSED_CARVED_PUMPKIN.value()
             )
             tag(BlockTags.SWORD_EFFICIENT).add(
-                GenerationsBlocks.CURSED_PUMPKIN,
-                GenerationsBlocks.CURSED_JACK_O_LANTERN,
-                GenerationsBlocks.CURSED_CARVED_PUMPKIN
+                GenerationsBlocks.CURSED_PUMPKIN.value(),
+                GenerationsBlocks.CURSED_JACK_O_LANTERN.value(),
+                GenerationsBlocks.CURSED_CARVED_PUMPKIN.value()
             )
 
             tag(BlockTags.NEEDS_IRON_TOOL).addTag(GenerationsBlockTags.GENERATIONSORES)
             tag(Tags.Blocks.ORES).addTag(GenerationsBlockTags.GENERATIONSORES)
             tag(BlockTags.NEEDS_STONE_TOOL).add(
-                GenerationsBlocks.SAPPHIRE_BLOCK,
-                GenerationsBlocks.SAPPHIRE_SLAB,
-                GenerationsBlocks.SAPPHIRE_STAIRS,
-                GenerationsBlocks.SAPPHIRE_WALL,
-                GenerationsBlocks.RUBY_BLOCK,
-                GenerationsBlocks.RUBY_SLAB,
-                GenerationsBlocks.RUBY_STAIRS,
-                GenerationsBlocks.RUBY_WALL,
-                GenerationsBlocks.CRYSTAL_BLOCK,
-                GenerationsBlocks.CRYSTAL_SLAB,
-                GenerationsBlocks.CRYSTAL_STAIRS,
-                GenerationsBlocks.CRYSTAL_WALL,
-                GenerationsBlocks.SILICON_BLOCK
+                GenerationsBlocks.SAPPHIRE_BLOCK.value(),
+                GenerationsBlocks.SAPPHIRE_SLAB.value(),
+                GenerationsBlocks.SAPPHIRE_STAIRS.value(),
+                GenerationsBlocks.SAPPHIRE_WALL.value(),
+                GenerationsBlocks.RUBY_BLOCK.value(),
+                GenerationsBlocks.RUBY_SLAB.value(),
+                GenerationsBlocks.RUBY_STAIRS.value(),
+                GenerationsBlocks.RUBY_WALL.value(),
+                GenerationsBlocks.CRYSTAL_BLOCK.value(),
+                GenerationsBlocks.CRYSTAL_SLAB.value(),
+                GenerationsBlocks.CRYSTAL_STAIRS.value(),
+                GenerationsBlocks.CRYSTAL_WALL.value(),
+                GenerationsBlocks.SILICON_BLOCK.value()
             )
                 .addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS)
 
-            tag(BlockTags.SNOW_LAYER_CANNOT_SURVIVE_ON).add(GenerationsBlocks.POKECENTER_SCARLET_SIGN)
+            tag(BlockTags.SNOW_LAYER_CANNOT_SURVIVE_ON).add(GenerationsBlocks.POKECENTER_SCARLET_SIGN.value())
                 .addTag(GenerationsBlockTags.SHRINES).addTag(GenerationsBlockTags.BALL_DISPLAY_BLOCKS)
                 .addTag(GenerationsBlockTags.BALL_LOOTS).addTag(GenerationsBlockTags.POKEDOLLS)
 

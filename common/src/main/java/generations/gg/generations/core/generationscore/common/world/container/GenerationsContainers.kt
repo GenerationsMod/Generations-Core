@@ -23,7 +23,7 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>(Registries.MENU, Bui
     val GENERIC = registerExtended("generic", GenericChestContainer.Companion::fromBuffer)
 
 
-    fun <T: AbstractContainerMenu> registerExtended(name: String, constructor: (Int, Inventory, FriendlyByteBuf) -> T): Holder<MenuType<*>> = create(name, GenerationsCore.implementation.createExtendedMenu(constructor))
+    fun <T: AbstractContainerMenu> registerExtended(name: String, constructor: (Int, Inventory, FriendlyByteBuf) -> T): Holder<MenuType<T>> = create(name, GenerationsCore.implementation.createExtendedMenu<T>(constructor))
 
     override fun init() {
         super.init()
@@ -46,7 +46,7 @@ object GenerationsContainers: PlatformRegistry<MenuType<*>>(Registries.MENU, Bui
 //        if (container is RksMachineContainer) container.close()
     }
 
-    fun <T: AbstractContainerMenu> register(name: String, constructor: (Int, Inventory) -> T): Holder<MenuType<*>> = create(name) { MenuType(constructor::invoke, FeatureFlags.VANILLA_SET) }
+    fun <T: AbstractContainerMenu> register(name: String, constructor: (Int, Inventory) -> T): Holder<MenuType<T>> = create<MenuType<T>>(name) { MenuType(constructor::invoke, FeatureFlags.VANILLA_SET) }
 
 //    fun <T : AbstractContainerMenu, V : BlockEntity> register(
 //        name: String,

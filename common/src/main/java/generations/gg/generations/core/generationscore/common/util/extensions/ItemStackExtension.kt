@@ -9,9 +9,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 
-fun Item.Properties.distance(): Item.Properties = this.component(GenerationsDataComponents.DISTANCE.asValue(), 0.0)
-
-fun <T> Holder<DataComponentType<*>>.asValue(): DataComponentType<T> = this.value() as DataComponentType<T>
+fun Item.Properties.distance(): Item.Properties = this.component(GenerationsDataComponents.DISTANCE.value(), 0.0)
 
 fun Item.resourceKey(): ResourceKey<Item> = this.builtInRegistryHolder().key()
 

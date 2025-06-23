@@ -538,7 +538,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         )
     }
 
-    fun dropSelf(block: Holder<Block>) {
+    fun dropSelf(block: Holder<out Block>) {
         dropSelf(block.value())
     }
 }

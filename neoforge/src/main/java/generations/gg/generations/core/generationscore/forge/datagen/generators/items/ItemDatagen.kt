@@ -1200,7 +1200,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         generated(key.path, texPath)
     }
 
-    fun createItemBlock(block: Holder<Block>, directory: String): ItemModelBuilder {
+    fun createItemBlock(block: Holder<out Block>, directory: String): ItemModelBuilder {
         val key = block.value().getModelKey()
         return generated(key.path, GenerationsCore.id(directory + key.path))
     }

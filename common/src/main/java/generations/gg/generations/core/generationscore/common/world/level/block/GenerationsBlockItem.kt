@@ -5,7 +5,7 @@ import net.minecraft.core.Holder
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.level.block.Block
 
-open class GenerationsBlockItem(private val blockHolder: Holder<Block>, properties: Properties) : BlockItem(null, properties) {
+open class GenerationsBlockItem(private val blockHolder: Holder<out Block>, properties: Properties) : BlockItem(null, properties) {
     override fun getBlock(): Block {
         return blockHolder.value()
     }

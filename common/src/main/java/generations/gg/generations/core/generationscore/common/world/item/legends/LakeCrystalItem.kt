@@ -6,7 +6,6 @@ import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.google.common.collect.Streams
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
-import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.item.LangTooltip
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
@@ -35,7 +34,7 @@ class LakeCrystalItem(properties: Properties, private val pokemonProperties: Spe
 
             if (!isEnchanted(stack) && stack.damageValue >= stack.maxDamage) {
                 PokemonUtil.spawn(pokemonProperties.createPokemon(70), level, player.getOnPos(), player.getYRot())
-                stack.set(ENCHANTED.asValue(), true)
+                stack.set(ENCHANTED.value(), true)
                 return InteractionResultHolder.success(stack)
             }
         }

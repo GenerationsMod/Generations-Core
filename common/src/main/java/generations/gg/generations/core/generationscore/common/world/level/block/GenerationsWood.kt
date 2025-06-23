@@ -96,7 +96,7 @@ object GenerationsWood: BlockPlatformRegistry() {
 
     private fun register(name: String, itemSupplier: (Item.Properties) -> Item) { GenerationsItems.ITEMS.create(name) { itemSupplier.invoke(Item.Properties()) } }
 
-    private fun <T : Block> registerBlockItem(name: String, blockSupplier: () -> T): Holder<Block> {
+    private fun <T : Block> registerBlockItem(name: String, blockSupplier: () -> T): Holder<T> {
         val block = WOOD_BLOCKS.create(name, blockSupplier)
         register(
             name

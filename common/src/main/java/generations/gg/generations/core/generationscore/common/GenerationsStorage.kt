@@ -7,7 +7,7 @@ object GenerationsStorage {
     val registry = DataManagerRegistry(GenerationsCore.MOD_ID)
 
     val REGI_ORBS = registry.builder(ItemStorageData.DEFAULT).serialize(ItemStorageData.CODEC).networkSerializer(ItemStorageData.NETWORK_CODEC).buildAndRegister("regi_orbs")
-    val ITEM_CONTENTS = registry.builder(ItemStorageData.DEFAULT).serialize(ItemStorageData.CODEC).withDataComponent().buildAndRegister("inventory")
+    val ITEM_CONTENTS = registry.builder(ItemStorageData.DEFAULT).serialize(ItemStorageData.CODEC).networkSerializer(ItemStorageData.NETWORK_CODEC).withDataComponent().buildAndRegister("inventory")
     val IMBUED = registry.builder(ItemStorageData.DEFAULT).serialize(ItemStorageData.CODEC).withDataComponent().buildAndRegister("imbued")
 
     fun init() {

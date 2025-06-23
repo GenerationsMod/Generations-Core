@@ -1,19 +1,20 @@
 package generations.gg.generations.core.generationscore.common.world.container.slots
 
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
-import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
+import net.minecraft.world.Container
 import net.minecraft.world.entity.player.Player
+import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
 import kotlin.math.min
 
 class CurryResultSlot(
     private val player: Player,
-    handler: SimpleItemStorage,
+    handler: Container,
     slotIndex: Int,
     xPosition: Int,
     yPosition: Int
 ) :
-    MenuStorageSlot(handler, slotIndex, xPosition, yPosition) {
+    Slot(handler, slotIndex, xPosition, yPosition) {
     private var removeCount = 0
 
     /**
@@ -39,5 +40,9 @@ class CurryResultSlot(
         stack.onCraftedBy(player.level(), player, this.removeCount)
         //TODO: Curries made stat?
         this.removeCount = 0
+    }
+
+    override fun setChanged() {
+        super.setChanged()
     }
 }

@@ -59,7 +59,7 @@ object GenerationsOres: BlockPlatformRegistry() {
 	 */
     private fun register(name: String, itemSupplier: (Item.Properties) -> Item): Holder<Item> = GenerationsItems.ITEMS.create(name, { itemSupplier.invoke(Item.Properties()) })
 
-    fun <T : Block> registerOreBlockItem(name: String, blockSupplier: () -> T): Holder<Block> {
+    fun <T : Block> registerOreBlockItem(name: String, blockSupplier: () -> T): Holder<T> {
         val block =  create(name, blockSupplier)
         register(name) { properties -> GenerationsBlockItem(block, properties) }
         return block

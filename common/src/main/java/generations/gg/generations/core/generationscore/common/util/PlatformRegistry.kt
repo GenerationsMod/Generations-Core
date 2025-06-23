@@ -6,7 +6,7 @@ import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 
-abstract class PlatformRegistry<T: Any>(registryKey: ResourceKey<Registry<T>>, registry: Registry<T>) {
+abstract class PlatformRegistry<T>(registryKey: ResourceKey<Registry<T>>, registry: Registry<T>) {
     val register: EntryRegister<T> = GenerationsCore.implementation.entryRegister(registry, registryKey)
 
         protected val queue = hashMapOf<ResourceLocation, Holder<T>>()
@@ -19,7 +19,7 @@ abstract class PlatformRegistry<T: Any>(registryKey: ResourceKey<Registry<T>>, r
          * @param entry The entry being added.
          * @return The entry created.
          */
-        open fun create(name: String, entry: () -> T): Holder<T> = register.holder(name, entry)
+        open fun <V: T> create(name: String, entry: () -> V): Holder<V> = register.holder(name, entry)
 
         /**
          * Handles the registration of this registry into the platform specific one.

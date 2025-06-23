@@ -3,16 +3,16 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.cobblemon.mod.common.api.berry.Berry
 import com.cobblemon.mod.common.api.berry.Flavor
 import com.cobblemon.mod.common.item.berry.BerryItem
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemSlot
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
+import earth.terrarium.common_storage_lib.item.impl.vanilla.VanillaDelegatingSlot
+import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
 import earth.terrarium.common_storage_lib.item.util.ItemProvider
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import generations.gg.generations.core.generationscore.common.GenerationsStorage
+import generations.gg.generations.core.generationscore.common.SimpleItemSlot
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
-import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.util.shrink
 import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
@@ -25,10 +25,14 @@ import net.minecraft.core.Direction
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.RegistryAccess
 import net.minecraft.nbt.CompoundTag
+import net.minecraft.nbt.Tag
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket
+import net.minecraft.world.Container
+import net.minecraft.world.ContainerHelper
 import net.minecraft.world.MenuProvider
+import net.minecraft.world.SimpleContainer
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
@@ -37,6 +41,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import java.util.*
+import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicLong
 import java.util.stream.Stream
 
@@ -49,7 +54,23 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
     //11: bowl
     //12: log
     //13: out
-    private val handler = SimpleItemStorage(this, GenerationsStorage.ITEM_CONTENTS, 14).also {
+    private val handler = object : SimpleContainer(14) {
+        override fun canPlaceItem(slot: Int, stack: ItemStack): Boolean {
+            return when(slot) {
+                10 -> CookingPotContainer.isBowl(stack)
+                11 -> CookingPotContainer.isCurryIngredientOrMaxHoney(stack)
+                12 -> CookingPotContainer.isBowl(stack)
+                else -> CookingPotContainer.isBerryOrMaxMushrooms(stack)
+            }
+        }
+
+        override fun setChanged() {
+            super.setChanged()
+            this@CookingPotBlockEntity.sync()
+        }
+    }
+
+        /*generations.gg.generations.core.generationscore.common.SimpleItemStorage(this, GenerationsStorage.ITEM_CONTENTS, 14).also {
         it.filter(0, CookingPotContainer::isBerryOrMaxMushrooms)
         it.filter(1, CookingPotContainer::isBerryOrMaxMushrooms)
         it.filter(2, CookingPotContainer::isBerryOrMaxMushrooms)
@@ -63,8 +84,8 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         it.filter(10, CookingPotContainer::isBowl)
         it.filter(11, CookingPotContainer::isCurryIngredientOrMaxHoney)
         it.filter(12, CookingPotContainer::isLog)
-
-    }
+*/
+//    }
 
     private val data: ContainerData = object : ContainerData {
         override fun get(index: Int): Int = when(index) {
@@ -106,6 +127,11 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         nbt.putInt("cookTime", this.cookTime)
 
         if (this.hasCustomName()) nbt.putString("customName", this.customName!!)
+
+        handler.setChanged()
+
+        handler.save(nbt, provider)
+
     }
 
     override fun loadAdditional(nbt: CompoundTag, provider: HolderLookup.Provider) {
@@ -113,64 +139,64 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         this.isCooking = nbt.getBoolean("isCooking")
         this.cookTime = nbt.getInt("cookTime")
         if (nbt.contains("customName", 8)) this.setCustomName(nbt.getString("customName"))
+        handler.load(nbt, provider)
+
     }
 
     fun serverTick() {
-        val berries = (0..9).map { handler[it] }.toTypedArray()
-        val bowl = handler[10]
-        val mainIngredient = handler[11]
-        val log = handler[12]
+        val berries = (0..9).map { handler.getItem(it) }.toTypedArray()
+        val bowl = handler.getItem(10)
+        val mainIngredient = handler.getItem(11)
+        val log = handler.getItem(12)
 
-        val hasEverything = isCooking && berries.any { !it.isEmpty } && !bowl.isEmpty && !log.isEmpty && handler.getResource(13).isBlank
+        val hasEverything = isCooking && berries.any { !it.isEmpty } && !bowl.isEmpty && !log.isEmpty && handler.getItem(13).isEmpty
 
         if (hasEverything) {
             var hasInserted = false
             cookTime++
 
             if (cookTime >= 200) {
-                val hasBerry = Stream.of(*berries).anyMatch { a: SimpleItemSlot -> !a.isEmpty }
-                val hasMaxMushrooms = Stream.of<SimpleItemSlot>(*berries).anyMatch { a: SimpleItemSlot ->
-                    a.resource.asHolder().`is`(GenerationsItems.MAX_MUSHROOMS.unwrapKey().get())
+                val hasBerry = Stream.of(*berries).anyMatch { a -> !a.isEmpty }
+                val hasMaxMushrooms = berries.any { a ->
+                    a.itemHolder.`is`(GenerationsItems.MAX_MUSHROOMS.unwrapKey().get())
                 }
 
                 if (hasBerry && !hasMaxMushrooms) {
-                    val type: CurryType = mainIngredient.takeUnless { it.isEmpty }?.resource?.asHolder()?.value().instanceOrNull<CurryIngredient>()?.type
-                        ?: CurryType.None
-                    val berriesTypes = berries.filter { berry: SimpleItemSlot -> !berry.isEmpty && berry.resource.item is BerryItem }
-                        .mapNotNull { a -> (a.resource.asItem() as BerryItem).berry() }.toList()
+                    val type: CurryType = mainIngredient.takeUnless { it.isEmpty }?.itemHolder?.value().instanceOrNull<CurryIngredient>()?.type ?: CurryType.None
+                    val berriesTypes = berries.filter { berry -> !berry.isEmpty && berry.item is BerryItem }
+                        .mapNotNull { a -> a.instanceOrNull<BerryItem>()?.berry() }.toList()
 
                     CurryEvents.COOK.postThen(CurryEvents.Cook(type, berriesTypes, CurryData.create(type, berriesTypes)), ifSucceeded = {
                         event ->
-                            val curry: ItemResource = ItemResource.of(GenerationsItems.CURRY)
-                                .set(GenerationsDataComponents.CURRY_DATA.asValue(), event.output)
+                            val curry = GenerationsItems.CURRY.value().defaultInstance.also { it.set(GenerationsDataComponents.CURRY_DATA.value(), event.output) }
 
                             hasInserted = handler.insert(13, curry, 1, false) > 0
 
                     })
-                } else if (hasMaxMushrooms && !hasBerry && (mainIngredient.isEmpty || mainIngredient.resource.item === GenerationsItems.MAX_HONEY)) {
-                    val count = AtomicLong()
-                    Stream.of<SimpleItemSlot>(*berries)
-                        .filter { a: SimpleItemSlot -> a.resource.isOf(GenerationsItems.MAX_MUSHROOMS.value()) }
-                        .forEach { b: SimpleItemSlot -> count.addAndGet(b.amount) }
+                } else if (hasMaxMushrooms && !hasBerry && (mainIngredient.isEmpty || mainIngredient.item === GenerationsItems.MAX_HONEY.value())) {
+                    val count = AtomicInteger()
+                    berries
+                        .filter { a -> a.`is`(GenerationsItems.MAX_MUSHROOMS.value()) }
+                        .forEach { b -> count.addAndGet(b.count) }
                     if (count.get() > 2) {
                         var amountTaken = 0
 
                         // Take the mushrooms
                         for (itemStack in berries) {
                             val amountLeft = 3 - amountTaken
-                            if (itemStack.amount > amountLeft) {
-                                itemStack.amount = amountLeft.toLong()
+                            if (itemStack.count > amountLeft) {
+                                itemStack.count = amountLeft
                                 amountTaken = 3
                                 break
                             } else {
-                                amountTaken += itemStack.amount.toInt()
-                                itemStack.amount = 0
+                                amountTaken += itemStack.count
+                                itemStack.count = 0
                             }
                         }
 
                         val maxSoupStack: ItemStack = ItemStack(GenerationsItems.MAX_SOUP)
 
-                        if (!mainIngredient.isEmpty && mainIngredient.resource.item === GenerationsItems.MAX_HONEY) {
+                        if (!mainIngredient.isEmpty && mainIngredient.item === GenerationsItems.MAX_HONEY.value()) {
 //                            CompoundTag compound = new CompoundTag(); //TODO: Convert when we have use for it.
 //                            compound.putBoolean("MaxSoupHoney", true);
 //                            compound.putBoolean("GlowEffect", true);
@@ -181,7 +207,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                             cookTime = 0
                         }
 
-                        handler[13].insert(ItemResource.of(maxSoupStack), 1, false)
+                        handler.insert(13, maxSoupStack, 1, false)
                     } else {
                         setCooking(false)
                     }
@@ -189,11 +215,12 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
             }
 
             if (hasInserted) {
-                Arrays.stream<SimpleItemSlot>(berries).forEach { berry: SimpleItemSlot -> berry.shrink(1) }
+                berries.forEach { berry -> berry.shrink(1) }
                 log.shrink(1)
                 mainIngredient.shrink(1)
                 bowl.shrink(1)
                 cookTime = 0
+                setChanged()
             }
         } else {
             setCooking(false)
@@ -212,23 +239,25 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         return isCooking
     }
 
-    val ingredient: ItemResource
-        get() = handler.getResource(11)
+    val ingredient: ItemStack
+        get() = handler.getItem(11)
 
-    val ouput: ItemResource
-        get() = handler.getResource(13)
+    val ouput: ItemStack
+        get() = handler.getItem(13)
 
-    fun getBerry(index: Int): ItemResource {
-        return if (index in 0..9) handler.getResource(index) else ItemResource.BLANK
+    fun getBerry(index: Int): ItemStack {
+        return if (index in 0..9) handler.getItem(index) else ItemStack.EMPTY
     }
 
     override fun getUpdatePacket(): ClientboundBlockEntityDataPacket? {
         return ClientboundBlockEntityDataPacket.create(
             this
-        ) { a: BlockEntity?, b: RegistryAccess? ->
+        ) { a: BlockEntity?, b: RegistryAccess ->
             val compound = CompoundTag()
             compound.putBoolean("isCooking", isCooking)
             compound.putInt("cookTime", this.cookTime)
+            handler.save(compound, b);
+
             compound
         }
     }
@@ -246,7 +275,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
     }
 
     fun hasLogs(): Boolean {
-        return !handler.getResource(12).isBlank
+        return !handler.getItem(12).isEmpty
     }
 
     override var isToggled: Boolean
@@ -254,7 +283,7 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         set(value) { setCooking(value) }
 
     override fun getItems(direction: Direction?): CommonStorage<ItemResource> {
-        return handler
+        return WrappedVanillaContainer(handler)
     }
 
     companion object {
@@ -268,4 +297,45 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
                 ?.key
         }
     }
+
+
+}
+
+private fun SimpleContainer.save(compound: CompoundTag, b: HolderLookup.Provider) {
+    ContainerHelper.saveAllItems(compound, items, b)
+}
+
+private fun SimpleContainer.load(compound: CompoundTag, b: HolderLookup.Provider) {
+    ContainerHelper.loadAllItems(compound, items, b)
+}
+
+private fun Container.insert(slot: Int, stack: ItemStack, amount: Int, simulated: Boolean): Int {
+    require(!stack.isEmpty) { "Cannot insert an empty ItemStack." }
+    require(amount > 0) { "Amount must be positive." }
+    require(slot in 0 until this.containerSize) { "Slot index $slot out of bounds (0..${this.containerSize - 1})" }
+
+    val target = this.getItem(slot)
+
+    if (target.isEmpty) {
+        // Slot is empty; can accept up to maxStackSize
+        val insertAmount = minOf(amount, stack.maxStackSize)
+        if (!simulated) {
+            val toInsert = stack.copy()
+            toInsert.count = insertAmount
+            this.setItem(slot, toInsert)
+            this.setChanged()
+        }
+        return insertAmount
+    }
+
+    if (!ItemStack.isSameItemSameComponents(stack, target)) return 0
+    val space = target.maxStackSize - target.count
+    if (space <= 0) return 0
+
+    val insertAmount = minOf(amount, space)
+    if (!simulated) {
+        target.grow(insertAmount)
+        this.setChanged()
+    }
+    return insertAmount
 }

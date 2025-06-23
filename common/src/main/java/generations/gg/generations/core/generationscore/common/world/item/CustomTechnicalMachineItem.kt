@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.item
 
-import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.components.TmDetails
 import net.minecraft.network.chat.Component
@@ -8,7 +7,7 @@ import net.minecraft.world.item.ItemStack
 
 class CustomTechnicalMachineItem(properties: Properties) : MoveTeachingItem(properties) {
     override fun getMoveString(itemStack: ItemStack): String? {
-        val tag = itemStack.get(GenerationsDataComponents.TM_DETAILS.asValue<TmDetails>())
+        val tag = itemStack.get(GenerationsDataComponents.TM_DETAILS.value())
         if (tag != null) {
             return tag.move
         }
@@ -24,7 +23,7 @@ class CustomTechnicalMachineItem(properties: Properties) : MoveTeachingItem(prop
     }
 
     private fun getNumber(itemStack: ItemStack): String {
-        val tag = itemStack.get(GenerationsDataComponents.TM_DETAILS.asValue<TmDetails>())
+        val tag = itemStack.get(GenerationsDataComponents.TM_DETAILS.value())
         return (tag?.number ?: 0).let(::formatWithZeros)
     }
 
@@ -35,6 +34,6 @@ class CustomTechnicalMachineItem(properties: Properties) : MoveTeachingItem(prop
     }
 
     fun createTm(move: String, number: Int): ItemStack {
-        return GenerationsItems.CUSTOM_TM.value().defaultInstance.also { it.set(GenerationsDataComponents.TM_DETAILS.asValue(), TmDetails(move, number)) }
+        return GenerationsItems.CUSTOM_TM.value().defaultInstance.also { it.set(GenerationsDataComponents.TM_DETAILS.value(), TmDetails(move, number)) }
     }
 }

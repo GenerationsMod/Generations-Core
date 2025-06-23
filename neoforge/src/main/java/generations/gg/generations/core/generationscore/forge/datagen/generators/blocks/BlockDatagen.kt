@@ -1188,6 +1188,8 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
     }
 }
 
+fun <T> Holder<T>.asValue(): T = this.value()
+
 fun <T> Holder<Block>.asValue(): T {
     return this.value() as T
 }

@@ -47,6 +47,7 @@ abstract public class MixinVanillaDelegatingSlot implements ModifiableItemSlot, 
 
     public void set(ResourceStack<ItemResource> data) {
         container.setItem(slot, ResourceStack.toItemStack(data));
+        container.setChanged();
     }
 
     @Override

@@ -193,7 +193,7 @@ object GenerationsBlockEntities: PlatformRegistry<BlockEntityType<*>>(Registries
     fun <T : BlockEntity> registerRegular(
         name: String,
         aNew: BlockEntityType.BlockEntitySupplier<T>,
-        vararg blocks: Holder<Block>
+        vararg blocks: Holder<out Block>
     ): Holder<BlockEntityType<*>> = create(name, { BlockEntityType.Builder.of(aNew, *blocks.map { it.value() }.toTypedArray()).build(null) })
 
     fun <T : BlockEntity> registerRegularWithArray(

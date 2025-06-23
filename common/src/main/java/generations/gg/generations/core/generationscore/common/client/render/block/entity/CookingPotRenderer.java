@@ -32,12 +32,12 @@ public class CookingPotRenderer extends GeneralUseBlockEntityRenderer<CookingPot
         stack.pushPose();
         stack.translate(0.5f,0.5f, 0.5f);
 
-        if(pot.getOuput().isBlank()) {
+        if(pot.getOuput().isEmpty()) {
 
-            renderStack(stack, pot.getIngredient().getCachedStack(), 0.25f, bufferSource, packedLight, packedOverlay);
+            renderStack(stack, pot.getIngredient(), 0.25f, bufferSource, packedLight, packedOverlay);
 
             for (int i = 0; i < 10; i++) {
-                ItemStack berry = pot.getBerry(i).getCachedStack();
+                ItemStack berry = pot.getBerry(i);
                 stack.pushPose();
                 stack.mulPose(Axis.YP.rotationDegrees(i * 36));
                 stack.translate(0.24, 0.03 + -0.001 * i, 0);
@@ -45,7 +45,7 @@ public class CookingPotRenderer extends GeneralUseBlockEntityRenderer<CookingPot
                 stack.popPose();
             }
         } else {
-            renderStack(stack, pot.getOuput().getCachedStack(), 0.75f, bufferSource, packedLight, packedOverlay);
+            renderStack(stack, pot.getOuput(), 0.75f, bufferSource, packedLight, packedOverlay);
         }
         stack.popPose();
 

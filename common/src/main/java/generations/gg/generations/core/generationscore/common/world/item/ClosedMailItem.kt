@@ -3,7 +3,6 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.Cobblemon.implementation
 import generations.gg.generations.core.generationscore.common.network.packets.S2COpenMailPacket
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
-import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.components.MailContent
 import net.minecraft.ChatFormatting
@@ -35,7 +34,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
         tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA.asValue<MailContent>())
+        val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA.value())
 
         if (sealedMailData != null) {
             val string = sealedMailData.author
@@ -78,7 +77,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
             resolvingSource: CommandSourceStack?,
             resolvingPlayer: Player?
         ): Boolean {
-            val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA.asValue<MailContent>())
+            val sealedMailData = stack.get(GenerationsDataComponents.MAIL_DATA.value())
             if (sealedMailData == null || sealedMailData.resolved) {
                 return false
             }
@@ -90,7 +89,7 @@ class ClosedMailItem(@JvmField val type: MailType, arg: Properties) : Item(arg) 
 
             sealedMailData.content = string
 
-            stack.set(GenerationsDataComponents.MAIL_DATA.asValue(), sealedMailData)
+            stack.set(GenerationsDataComponents.MAIL_DATA.value(), sealedMailData)
 
             return true
         }

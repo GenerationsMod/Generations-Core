@@ -68,16 +68,16 @@ class WoodRecipes(output: PackOutput, registries: CompletableFuture<HolderLookup
     private fun buildAllWoodCraftingRecipes(
         consumer: RecipeOutput,
         logTag: TagKey<Item>,
-        planks: Holder<Block>,
-        wood: Holder<Block>,
-        strippedWood: Holder<Block>,
-        strippedLog: Holder<Block>,
-        logBlock: Holder<Block>,
-        chestBoatItem: Holder<Item>,
-        boat: Holder<Item>,
-        craftingTable: Holder<Block>,
+        planks: Holder<out Block>,
+        wood: Holder<out Block>,
+        strippedWood: Holder<out Block>,
+        strippedLog: Holder<out Block>,
+        logBlock: Holder<out Block>,
+        chestBoatItem: Holder<out Item>,
+        boat: Holder<out Item>,
+        craftingTable: Holder<out Block>,
         hangingSign: Holder<out ItemLike>,
-        bookshelf: Holder<Block>
+        bookshelf: Holder<out Block>
     ) {
         planksFromLog(consumer, planks.value(), logTag, 4) //planks from log
         woodFromLogs(consumer, wood.value(), logBlock.value())

@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.google.common.annotations.VisibleForTesting
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.core.Holder
 import net.minecraft.core.particles.ParticleTypes
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.tags.FluidTags
@@ -417,7 +418,7 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
             val direction = state.getValue(TIP_DIRECTION)
             val biPredicate =
                 BiPredicate { arg2: BlockPos, arg3: BlockState ->
-                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) && arg3.getValue(
+                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value()) && arg3.getValue(
                         TIP_DIRECTION
                     ) == direction
                 }
@@ -490,13 +491,13 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
             val direction = state.getValue(TIP_DIRECTION)
             val biPredicate =
                 BiPredicate { arg2: BlockPos, arg3: BlockState ->
-                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) && arg3.getValue(
+                    arg3.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value()) && arg3.getValue(
                         TIP_DIRECTION
                     ) == direction
                 }
             return findBlockVertical(
                 level, pos, direction.opposite.axisDirection, biPredicate,
-                { arg: BlockState -> !arg.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) }, maxIterations
+                { arg: BlockState -> !arg.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value()) }, maxIterations
             )
         }
 
@@ -507,7 +508,7 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
         }
 
         private fun isTip(state: BlockState, isTipMerge: Boolean): Boolean {
-            if (!state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE)) return false
+            if (!state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value())) return false
 
             val dripstoneThickness = state.getValue(THICKNESS)
             return dripstoneThickness == DripstoneThickness.TIP || isTipMerge && dripstoneThickness == DripstoneThickness.TIP_MERGE
@@ -527,11 +528,11 @@ class PointedChargeDripstoneBlock(arg: Properties) : Block(arg),
 
         private fun isStalactiteStartPos(state: BlockState, level: LevelReader, pos: BlockPos): Boolean {
             return isStalactite(state) && !level.getBlockState(pos.above())
-                .`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE)
+                .`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value())
         }
 
         private fun isPointedDripstoneWithDirection(state: BlockState, dir: Direction): Boolean {
-            return state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE) && state.getValue(TIP_DIRECTION) == dir
+            return state.`is`(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value()) && state.getValue(TIP_DIRECTION) == dir
         }
 
         private fun findFillableCauldronBelowStalactiteTip(level: Level, pos: BlockPos, fluid: Fluid): BlockPos? {

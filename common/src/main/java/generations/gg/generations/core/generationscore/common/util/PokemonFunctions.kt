@@ -10,7 +10,6 @@ import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.RenderablePokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.server
-import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.item.StatueSpawnerItem
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents
@@ -113,11 +112,11 @@ fun MutableList<Component>.add(pokemon: Pokemon) {
 }
 
 fun ItemStack.savePokemon(poke: Pokemon) {
-    set(GenerationsDataComponents.EMBEDDED_POKEMON.asValue(), poke)
+    set(GenerationsDataComponents.EMBEDDED_POKEMON.value(), poke)
 }
 
 fun ItemStack.removePokemon() {
-    remove(GenerationsDataComponents.EMBEDDED_POKEMON.asValue<Pokemon>())
+    remove(GenerationsDataComponents.EMBEDDED_POKEMON.value())
 }
 
 fun ItemStack.getRenderablePokemon(): RenderablePokemon? {
@@ -125,7 +124,7 @@ fun ItemStack.getRenderablePokemon(): RenderablePokemon? {
         return (item as StatueSpawnerItem).pokemon?.asRenderablePokemon() //TODO: See if this explodes.
     }
 
-    return get(GenerationsDataComponents.EMBEDDED_POKEMON.asValue<Pokemon>())?.asRenderablePokemon()
+    return get(GenerationsDataComponents.EMBEDDED_POKEMON.value())?.asRenderablePokemon()
 }
 
 fun ItemStack.getPokemon(): Pokemon? {
@@ -133,7 +132,7 @@ fun ItemStack.getPokemon(): Pokemon? {
         return (item as StatueSpawnerItem).pokemon
     }
 
-    return get(GenerationsDataComponents.EMBEDDED_POKEMON.asValue())
+    return get(GenerationsDataComponents.EMBEDDED_POKEMON.value())
 }
 
 

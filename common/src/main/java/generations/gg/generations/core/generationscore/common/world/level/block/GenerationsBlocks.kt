@@ -485,27 +485,27 @@ object GenerationsBlocks: BlockPlatformRegistry() {
     fun <T : Block> registerBlockItem(
         name: String,
         blockSupplier: () -> T,
-        function: (Holder<Block>, Item.Properties) -> Item = ::GenerationsBlockItem,
+        function: (Holder<T>, Item.Properties) -> Item = ::GenerationsBlockItem,
         register: ItemPlatformRegistry = BLOCK_ITEMS
-    ): Holder<Block> {
-        val block = BLOCKS.create(name, blockSupplier)
+    ): Holder<T> {
+        val block: Holder<T> = BLOCKS.create(name, blockSupplier)
         register(name, { properties -> function.invoke(block, properties) }, register)
         return block
     }
 
-    fun <T : Block> registerUltraBlock(name: String, blockSupplier: () -> T): Holder<Block> {
+    fun <T : Block> registerUltraBlock(name: String, blockSupplier: () -> T): Holder<T> {
         val block = ULTRA_BLOCKS.create(name, blockSupplier)
         register(name) { properties -> GenerationsBlockItem(block, properties) }
         return block
     }
 
-    private fun <T : GenericChestBlock> registerChestBlockItem(name: String, blockSupplier: () -> T): Holder<Block> {
+    private fun <T : GenericChestBlock> registerChestBlockItem(name: String, blockSupplier: () -> T): Holder<T> {
         val block = BLOCKS.create(name, blockSupplier)
         register(name) { properties -> GenericChestBlockItem(block, properties) }
         return block
     }
 
-    private fun <T : Block> registerStone(name: String, blockSupplier: () -> T): Holder<Block> {
+    private fun <T : Block> registerStone(name: String, blockSupplier: () -> T): Holder<T> {
         val block = STONE.create(name, blockSupplier)
         register(name) { properties -> GenerationsBlockItem(block, properties) }
         return block

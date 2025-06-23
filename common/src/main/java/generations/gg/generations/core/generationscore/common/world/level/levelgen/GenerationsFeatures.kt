@@ -67,7 +67,7 @@ object GenerationsFeatures {
     private fun registerMushroom(
         context: BootstrapContext<ConfiguredFeature<*, *>>,
         key: ResourceKey<ConfiguredFeature<*, *>>,
-        mushroom: Holder<Block>
+        mushroom: Holder<out Block>
     ) {
         FeatureUtils.register(
             context, key, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(

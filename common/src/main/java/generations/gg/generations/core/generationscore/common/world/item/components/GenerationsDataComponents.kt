@@ -47,6 +47,6 @@ object GenerationsDataComponents: PlatformRegistry<DataComponentType<*>>(Registr
         name: String,
         codec: Codec<T>,
         streamCodec: StreamCodec<RegistryFriendlyByteBuf, T>? = null,
-    ): Holder<DataComponentType<*>> = create(name, { DataComponentType.builder<T>().persistent(codec).cacheEncoding().networkSynchronized(streamCodec).build() })
+    ): Holder<DataComponentType<T>> = create(name, { DataComponentType.builder<T>().persistent(codec).cacheEncoding().networkSynchronized(streamCodec).build() })
 }
 

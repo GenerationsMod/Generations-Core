@@ -14,11 +14,11 @@ import net.minecraft.world.inventory.MenuType
 import net.minecraft.world.item.ItemStack
 
 abstract class SingleSlotContainer protected constructor(
-    type: Holder<MenuType<*>>,
+    type: MenuType<*>,
     id: Int,
     handler: CommonStorage<ItemResource> = SimpleItemStorage(1),
 ) :
-    AbstractContainerMenu(type.value(), id) {
+    AbstractContainerMenu(type, id) {
     init {
         this.addSlot(PredicateSlotItemHandler(
             handler, 0, 80, 35

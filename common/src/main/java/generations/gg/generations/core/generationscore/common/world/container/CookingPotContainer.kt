@@ -3,13 +3,15 @@ package generations.gg.generations.core.generationscore.common.world.container
 import com.cobblemon.mod.common.item.berry.BerryItem
 import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.client.asValue
 import generations.gg.generations.core.generationscore.common.world.container.slots.CurryResultSlot
+import generations.gg.generations.core.generationscore.common.world.container.slots.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.Toggleable
 import net.minecraft.tags.ItemTags
+import net.minecraft.world.Container
+import net.minecraft.world.SimpleContainer
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
@@ -23,23 +25,23 @@ import net.minecraft.world.item.Items
 class CookingPotContainer @JvmOverloads constructor(
     id: Int,
     playerInventory: Inventory,
-    storage: SimpleItemStorage = SimpleItemStorage(14),
+    storage: Container = SimpleContainer(14),
     val data: ContainerData = SimpleContainerData(4)
-) : AbstractContainerMenu(GenerationsContainers.COOKING_POT.asValue<CookingPotContainer>(), id), Toggleable {
+) : AbstractContainerMenu(GenerationsContainers.COOKING_POT.value(), id), Toggleable {
     init {
-        addSlot(MenuStorageSlot(storage, 0, 26, 8 + 11))
-        addSlot(MenuStorageSlot(storage, 1, 44, 8 + 11))
-        addSlot(MenuStorageSlot(storage, 2, 62, 8 + 11))
-        addSlot(MenuStorageSlot(storage, 3, 80, 26 + 11))
-        addSlot(MenuStorageSlot(storage, 4, 80, 44 + 11))
-        addSlot(MenuStorageSlot(storage, 5, 62, 62 + 11))
-        addSlot(MenuStorageSlot(storage, 6, 44, 62 + 11))
-        addSlot(MenuStorageSlot(storage, 7, 26, 62 + 11))
-        addSlot(MenuStorageSlot(storage, 8, 8, 44 + 11))
-        addSlot(MenuStorageSlot(storage, 9, 8, 26 + 11))
-        addSlot(MenuStorageSlot(storage, 10, 35, 35 + 11))
-        addSlot(MenuStorageSlot(storage, 11, 53, 35 + 11))
-        addSlot(MenuStorageSlot(storage, 12, 108, 57 + 11))
+        addSlot(Slot(storage, 0, 26, 8 + 11))
+        addSlot(Slot(storage, 1, 44, 8 + 11))
+        addSlot(Slot(storage, 2, 62, 8 + 11))
+        addSlot(Slot(storage, 3, 80, 26 + 11))
+        addSlot(Slot(storage, 4, 80, 44 + 11))
+        addSlot(Slot(storage, 5, 62, 62 + 11))
+        addSlot(Slot(storage, 6, 44, 62 + 11))
+        addSlot(Slot(storage, 7, 26, 62 + 11))
+        addSlot(Slot(storage, 8, 8, 44 + 11))
+        addSlot(Slot(storage, 9, 8, 26 + 11))
+        addSlot(Slot(storage, 10, 35, 35 + 11))
+        addSlot(Slot(storage, 11, 53, 35 + 11))
+        addSlot(Slot(storage, 12, 108, 57 + 11))
         addSlot(CurryResultSlot(playerInventory.player, storage, 13, 142, 35 + 11))
 
         bindPlayerInventory(playerInventory)

@@ -161,7 +161,7 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
 //        }
     }
 
-    override fun registerStrippable(log: Holder<Block>, stripped: Holder<Block>) {
+    override fun registerStrippable(log: Holder<out Block>, stripped: Holder<out Block>) {
         require(
             log.value().defaultBlockState().hasProperty(RotatedPillarBlock.AXIS)
         ) { "Input block is missing required 'AXIS' property!" }
@@ -303,13 +303,13 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
 
     override val networkManager: NetworkManager = GenerationsNeoForgeNetworkManager
 
-    override fun <T:Any> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T> {
+    override fun <T> entryRegister(registry: Registry<T>, resourceKey: ResourceKey<Registry<T>>): EntryRegister<T> {
         return NeoForgeEntryRegister(registry, MOD_BUS)
     }
 
-    class NeoForgeEntryRegister<T:Any>(resourceKey: Registry<T>, bus: IEventBus): EntryRegister<T>() {
+    class NeoForgeEntryRegister<T>(resourceKey: Registry<T>, bus: IEventBus): EntryRegister<T>() {
         val defferedRegister = DeferredRegister.create(resourceKey, GenerationsCore.MOD_ID).also { it.register(bus) }
 
-        override fun holder(name: String, supplier: () -> T): Holder<T> = defferedRegister.register(name, supplier)
+        override fun <V :T> holder(name: String, supplier: () -> V): Holder<V> = defferedRegister.register(name, supplier) as Holder<V>
     }
 }

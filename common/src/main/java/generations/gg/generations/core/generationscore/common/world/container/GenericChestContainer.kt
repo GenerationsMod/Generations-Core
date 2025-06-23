@@ -22,7 +22,7 @@ open class GenericChestContainer<T>(
     val inventoryWidth: Int,
     val inventoryHeight: Int,
     lock: Int = -1
-) : AbstractContainerMenu(GenerationsContainers.GENERIC.asValue<GenericChestContainer<*>>(), containerId) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
+) : AbstractContainerMenu(GenerationsContainers.GENERIC.value(), containerId) where T: CommonStorage<ItemResource>, T: UpdateManager<ItemStorageData> {
     @JvmField
     val guiWidth: Int =  14 + this.inventoryWidth * 18
     @JvmField

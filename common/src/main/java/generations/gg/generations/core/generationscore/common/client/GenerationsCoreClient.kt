@@ -30,13 +30,11 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.client.screen.container.*
 import generations.gg.generations.core.generationscore.common.orFalse
-import generations.gg.generations.core.generationscore.common.util.extensions.asValue
 import generations.gg.generations.core.generationscore.common.world.container.*
 import generations.gg.generations.core.generationscore.common.world.entity.*
 import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.MelodyFluteItem.Companion.isItem
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
-import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.GenericChestBlockEntity
@@ -52,6 +50,7 @@ import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.minecraft.client.Camera
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.screens.MenuScreens
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 import net.minecraft.client.model.BoatModel
 import net.minecraft.client.model.ChestBoatModel
 import net.minecraft.client.model.geom.ModelLayerLocation
@@ -71,12 +70,14 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer
 import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Holder
+import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.PackType
 import net.minecraft.util.Mth
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
+import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.MenuType
@@ -95,6 +96,7 @@ import org.joml.Matrix4f
 import org.joml.Vector4f
 import java.io.File
 import java.util.function.Function
+import kotlin.reflect.KFunction3
 
 private operator fun BlockPos.minus(pos: BlockPos): BlockPos {
     return this.subtract(pos)
@@ -209,7 +211,7 @@ object GenerationsCoreClient {
         ItemProperties.register(
             GenerationsItems.CURRY.value(),
             GenerationsCore.id("curry_type")
-        ) { itemStack, _, _, _ -> return@register itemStack.get(GenerationsDataComponents.CURRY_DATA.asValue<CurryData>())?.curryType?.ordinal?.let { it / 100f } ?: 0f }
+        ) { itemStack, _, _, _ -> return@register itemStack.get(GenerationsDataComponents.CURRY_DATA.value())?.curryType?.ordinal?.let { it / 100f } ?: 0f }
 
         ItemProperties.register(
             GenerationsItems.MELODY_FLUTE.value(),
@@ -297,14 +299,21 @@ object GenerationsCoreClient {
     }
 
     fun registerScreens() {
-        MenuScreens.register(GenerationsContainers.COOKING_POT.asValue<CookingPotContainer>(), ::CookingPotScreen)
-        MenuScreens.register(GenerationsContainers.GENERIC.asValue<GenericChestContainer<*>>(), ::GenericChestScreen)
+        registerScreen(GenerationsContainers.COOKING_POT, ::CookingPotScreen)
+        registerScreen(GenerationsContainers.GENERIC, ::GenericChestScreen)
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON, GenericChestScreen::new);
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED, GenericChestScreen::new);
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK, ::MachineBlockScreen)
-        MenuScreens.register(GenerationsContainers.MELODY_FLUTE.asValue<MelodyFluteContainer>(), ::MelodyFluteScreen)
-        MenuScreens.register(GenerationsContainers.TRASHCAN.asValue<TrashCanContainer>(), ::TrashCanScreen)
-        MenuScreens.register(GenerationsContainers.RKS_MACHINE.asValue<RksMachineContainer>(), ::RksMachineScreen)
+        registerScreen(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
+        registerScreen(GenerationsContainers.TRASHCAN, ::TrashCanScreen)
+        registerScreen(GenerationsContainers.RKS_MACHINE, ::RksMachineScreen)
+    }
+
+    private fun <T: AbstractContainerMenu> registerScreen(
+        holder: Holder<MenuType<T>>,
+        function: (T, Inventory, Component) -> AbstractContainerScreen<T>
+    ) {
+        MenuScreens.register(holder.value(), function)
     }
 
     /**
