@@ -67,50 +67,39 @@ class CookingPotContainer @JvmOverloads constructor(
 
 
     override fun quickMoveStack(playerIn: Player, index: Int): ItemStack {
+        if (index !in slots.indices) return ItemStack.EMPTY
+
         val slot = slots[index]
         if (!slot.hasItem()) return ItemStack.EMPTY
 
         val slotStack = slot.item
-        val originalStack = slotStack.copy() // Copy to retain original data
+        val originalStack = slotStack.copy()
+        val originalComponents = slotStack.components
 
-        // Store NBT for debugging before we move it
-        val originalData = slotStack.components
+        val moved = when (index) {
+            13 -> moveItemStackTo(slotStack, 14, 50, true)
 
+            in 0..13 -> moveItemStackTo(slotStack, 14, 50, false)
 
-        val moved = false
-
-        // If the slot is the crafting output (slot 13), ensure crafting logic is applied before moving
-        if (index == 13) {
-//            System.out.println("  - Crafting Slot Detected! Running `onTake()` before moving.");
-            slot.onTake(playerIn, slotStack)
-        }
-
-        if (index < 14) {
-            this.moveItemStackTo(slotStack, 14, 49, false)
-        } else if (index < 50) {
-            if (isBerryOrMaxMushrooms(originalStack)) {
-                this.moveItemStackTo(slotStack, 0, 10, false)
-            } else if (isBowl(originalStack)) {
-                this.moveItemStackTo(slotStack, 10, 11, false)
-            } else if (isCurryIngredientOrMaxHoney(originalStack)) {
-                this.moveItemStackTo(slotStack, 11, 12, false)
-            } else if (isLog(originalStack)) {
-                this.moveItemStackTo(slotStack, 12, 13, false)
+            else ->  when {
+                isBerryOrMaxMushrooms(originalStack) -> moveItemStackTo(slotStack, 0, 10, false)
+                isBowl(originalStack) -> moveItemStackTo(slotStack, 10, 11, false)
+                isCurryIngredientOrMaxHoney(originalStack) -> moveItemStackTo(slotStack, 11, 12, false)
+                isLog(originalStack) -> moveItemStackTo(slotStack, 12, 13, false)
+                else -> false
             }
         }
 
-        if (!ItemStack.matches(slotStack, originalStack)) {
-            slotStack.applyComponents(originalData)
-        }
+        if (!moved) return ItemStack.EMPTY
 
-        if (slotStack.count == 0) {
-            slot.safeInsert(ItemStack.EMPTY)
+        if (slotStack.isEmpty) {
+            slot.set(ItemStack.EMPTY)
         } else {
             slot.setChanged()
         }
 
-        if (slotStack.count == originalStack.count) {
-            return ItemStack.EMPTY
+        if (ItemStack.isSameItemSameComponents(slotStack, originalStack)) {
+            slotStack.applyComponents(originalComponents)
         }
 
         if (index == 13) {
