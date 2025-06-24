@@ -11,11 +11,13 @@ import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
 import io.netty.buffer.ByteBuf
+import net.minecraft.core.NonNullList
 import net.minecraft.core.Registry
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
+import net.minecraft.world.item.ItemStack
 import java.lang.reflect.Type
 import java.util.*
 
@@ -47,7 +49,7 @@ object Codecs {
 
     fun <A> Codec<A>.set(): Codec<Set<A>> = listOf().xmap({ it.toSet() }, { it.toList() })
 
-    fun <T1, V> codec1(
+    fun <T1, V> mapCodec1(
         name1: String, c1: Codec<T1>, g1: (V) -> T1,
         ctor: (T1) -> V
     ): MapCodec<V> =
@@ -56,7 +58,15 @@ object Codecs {
                 .apply(it, ctor)
         }
 
-    fun <T1, T2, V> codec2(
+    fun <T1, V> codec1(
+        name1: String, c1: Codec<T1>, g1: (V) -> T1,
+        ctor: (T1) -> V
+    ): Codec<V> = RecordCodecBuilder.create {
+            it.group(c1.fieldOf(name1).forGetter(g1))
+                .apply(it, ctor)
+        }
+
+    fun <T1, T2, V> mapCodec2(
         name1: String, c1: Codec<T1>, g1: (V) -> T1,
         name2: String, c2: Codec<T2>, g2: (V) -> T2,
         ctor: (T1, T2) -> V
@@ -68,13 +78,26 @@ object Codecs {
             ).apply(it, ctor)
         }
 
+    fun <T1, T2, V> codec2(
+        name1: String, c1: Codec<T1>, g1: (V) -> T1,
+        name2: String, c2: Codec<T2>, g2: (V) -> T2,
+        ctor: (T1, T2) -> V
+    ): Codec<V> =
+        RecordCodecBuilder.create {
+            it.group(
+                c1.fieldOf(name1).forGetter(g1),
+                c2.fieldOf(name2).forGetter(g2)
+            ).apply(it, ctor)
+        }
+
+
     fun <T1, T2, T3, V> codec3(
         name1: String, c1: Codec<T1>, g1: (V) -> T1,
         name2: String, c2: Codec<T2>, g2: (V) -> T2,
         name3: String, c3: Codec<T3>, g3: (V) -> T3,
         ctor: (T1, T2, T3) -> V
-    ): MapCodec<V> =
-        RecordCodecBuilder.mapCodec {
+    ): Codec<V> =
+        RecordCodecBuilder.create {
             it.group(
                 c1.fieldOf(name1).forGetter(g1),
                 c2.fieldOf(name2).forGetter(g2),
@@ -440,4 +463,10 @@ object Codecs {
 
     fun <A> mapCodec(block: RecordCodecBuilder.Instance<A>.() -> App<RecordCodecBuilder.Mu<A>, A>): MapCodec<A> = RecordCodecBuilder.mapCodec(block)
     fun <T : GenericModelBlock> modelCodec(): RecordCodecBuilder<T, ResourceLocation> = ResourceLocation.CODEC.fieldOf("model").forGetter { it.getModel()!! }
+
+    val ITEM_STACK_LIST_CODEC = ItemStack.OPTIONAL_CODEC.listOf().xmap<NonNullList<ItemStack>>({
+        val list = NonNullList.withSize(it.size, ItemStack.EMPTY)
+        list.addAll(it)
+        return@xmap list
+    }, { it })
 }

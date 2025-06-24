@@ -1190,10 +1190,6 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 
 fun <T> Holder<T>.asValue(): T = this.value()
 
-fun <T> Holder<Block>.asValue(): T {
-    return this.value() as T
-}
-
 private fun BlockModelBuilder.configure(rotX: Int = 0, rotY: Int = 0): Array<ConfiguredModel> {
     return arrayOf(ConfiguredModel(this, rotX, rotY, false))
 }

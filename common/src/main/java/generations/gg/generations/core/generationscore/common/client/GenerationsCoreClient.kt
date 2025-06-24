@@ -44,6 +44,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity
+import generations.gg.generations.core.generationscore.common.world.sound.WalkmonSoundManager
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
 import gg.generations.rarecandy.renderer.rendering.RareCandy
 import gg.generations.rarecandy.renderer.rendering.RenderStage
@@ -304,7 +305,7 @@ object GenerationsCoreClient {
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.WALKMON, GenericChestScreen::new);
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.CALYREX_STEED, GenericChestScreen::new);
 //        MenuRegistry.registerScreenFactory(GenerationsContainers.MACHINE_BLOCK, ::MachineBlockScreen)
-        registerScreen(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
+//        registerScreen(GenerationsContainers.MELODY_FLUTE, ::MelodyFluteScreen)
         registerScreen(GenerationsContainers.TRASHCAN, ::TrashCanScreen)
         registerScreen(GenerationsContainers.RKS_MACHINE, ::RksMachineScreen)
     }
@@ -393,6 +394,10 @@ object GenerationsCoreClient {
 
     fun onLogout(logout: ClientPlayerEvent.Logout) {
 //        GenerationsDataProvider.INSTANCE.canReload = true;
+    }
+
+    fun onTick() {
+        WalkmonSoundManager.tick()
     }
 
     fun renderHighlightedPath(poseStack: PoseStack, renderTick: Int, camera: Camera) {

@@ -6,7 +6,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 import net.minecraft.network.chat.Component
 import net.minecraft.world.entity.player.Inventory
 
-class GenericChestScreen(menu: GenericChestContainer<*>, inventory: Inventory, title: Component) : AbstractContainerScreen<GenericChestContainer<*>>(menu, inventory, title) {
+class GenericChestScreen(menu: GenericChestContainer, inventory: Inventory, title: Component) : AbstractContainerScreen<GenericChestContainer>(menu, inventory, title) {
     init {
         imageWidth = menu.guiWidth
         imageHeight = menu.guiHeight

@@ -27,6 +27,7 @@ import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.IEventBus
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
+import net.neoforged.neoforge.client.event.ClientTickEvent
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers
 import net.neoforged.neoforge.client.event.InputEvent
@@ -57,8 +58,11 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
             })
         })
 
-        NeoForge.EVENT_BUS.addListener<InputEvent.Key> {
-            Keybinds.pressDown(it.key, it.scanCode, it.action, it.modifiers)
+        with(NeoForge.EVENT_BUS) {
+            addListener<InputEvent.Key> { Keybinds.pressDown(it.key, it.scanCode, it.action, it.modifiers) }
+            addListener<ClientTickEvent.Post> {
+                GenerationsCoreClient.onTick()
+            }
         }
 
         eventBus.addListener({ event: RegisterLayerDefinitions ->

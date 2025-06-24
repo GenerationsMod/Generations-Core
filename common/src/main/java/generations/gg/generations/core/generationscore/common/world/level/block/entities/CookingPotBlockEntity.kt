@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.cobblemon.mod.common.api.berry.Berry
 import com.cobblemon.mod.common.api.berry.Flavor
 import com.cobblemon.mod.common.item.berry.BerryItem
+import com.mojang.serialization.Codec
 import earth.terrarium.common_storage_lib.item.impl.vanilla.VanillaDelegatingSlot
 import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
 import earth.terrarium.common_storage_lib.item.util.ItemProvider
@@ -13,6 +14,7 @@ import generations.gg.generations.core.generationscore.common.SimpleItemSlot
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
 import generations.gg.generations.core.generationscore.common.util.shrink
 import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
@@ -24,9 +26,13 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.RegistryAccess
+import net.minecraft.core.component.DataComponentMap
+import net.minecraft.core.component.DataComponents
 import net.minecraft.nbt.CompoundTag
+import net.minecraft.nbt.NbtOps
 import net.minecraft.nbt.Tag
 import net.minecraft.network.chat.Component
+import net.minecraft.network.chat.ComponentSerialization
 import net.minecraft.network.chat.MutableComponent
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket
 import net.minecraft.world.Container
@@ -38,6 +44,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.ContainerData
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.component.ItemContainerContents
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import java.util.*
@@ -70,23 +77,6 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         }
     }
 
-        /*generations.gg.generations.core.generationscore.common.SimpleItemStorage(this, GenerationsStorage.ITEM_CONTENTS, 14).also {
-        it.filter(0, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(1, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(2, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(3, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(4, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(5, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(6, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(7, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(8, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(9, CookingPotContainer::isBerryOrMaxMushrooms)
-        it.filter(10, CookingPotContainer::isBowl)
-        it.filter(11, CookingPotContainer::isCurryIngredientOrMaxHoney)
-        it.filter(12, CookingPotContainer::isLog)
-*/
-//    }
-
     private val data: ContainerData = object : ContainerData {
         override fun get(index: Int): Int = when(index) {
             0 -> this@CookingPotBlockEntity.cookTime
@@ -105,40 +95,35 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         override fun getCount(): Int = 3
     }
 
-    private var customName: String? = null
+    public var customName: Component? = null
     private var isCooking = false
     var cookTime: Int = 0
         private set
 
-    fun hasCustomName(): Boolean = this.customName?.isNotEmpty() ?: false
-
-    fun setCustomName(customName: String?) {
-        this.customName = customName
-    }
+    fun hasCustomName(): Boolean = this.customName != null
 
     override fun getDisplayName(): MutableComponent {
-        return if (this.hasCustomName()) Component.nullToEmpty(this.customName).copy() else Component.translatable("container.cooking_pot")
+        return this.customName?.copy() ?: Component.translatable("container.cooking_pot")
     }
 
     override fun saveAdditional(nbt: CompoundTag, provider: HolderLookup.Provider) {
         super.saveAdditional(nbt, provider)
 
-        nbt.putBoolean("isCooking", isCooking)
-        nbt.putInt("cookTime", this.cookTime)
+        nbt.putBoolean("IsCooking", isCooking)
+        nbt.putInt("CookTime", this.cookTime)
 
-        if (this.hasCustomName()) nbt.putString("customName", this.customName!!)
-
-        handler.setChanged()
-
+        if(customName != null) {
+            nbt.put("CustomName", ComponentSerialization.CODEC.toNbt(customName))
+        }
         handler.save(nbt, provider)
-
     }
 
     override fun loadAdditional(nbt: CompoundTag, provider: HolderLookup.Provider) {
         super.loadAdditional(nbt, provider)
-        this.isCooking = nbt.getBoolean("isCooking")
-        this.cookTime = nbt.getInt("cookTime")
-        if (nbt.contains("customName", 8)) this.setCustomName(nbt.getString("customName"))
+        this.isCooking = nbt.getBoolean("IsCooking")
+        this.cookTime = nbt.getInt("CookTime")
+
+        if(nbt.contains("CustomName")) customName = TEXT_CODEC.fromNbt(nbt.get("CustomName")!!)
         handler.load(nbt, provider)
 
     }
@@ -286,6 +271,23 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         return WrappedVanillaContainer(handler)
     }
 
+    override fun applyImplicitComponents(componentInput: DataComponentInput) {
+        super.applyImplicitComponents(componentInput)
+        componentInput.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY).copyInto(handler.items)
+        customName = componentInput.get(DataComponents.CUSTOM_NAME)
+    }
+
+    override fun collectImplicitComponents(components: DataComponentMap.Builder) {
+        components.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(handler.items))
+        if(customName != null) components.set(DataComponents.CUSTOM_NAME, customName)
+    }
+
+    override fun removeComponentsFromTag(tag: CompoundTag) {
+        tag.remove("CustomName")
+        tag.remove("Items")
+
+    }
+
     companion object {
         fun getDominantFlavor(berries: List<Berry>): Flavor? {
             val output = Flavor.entries.associateWith { flavor ->
@@ -298,18 +300,25 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         }
     }
 
-
 }
 
-private fun SimpleContainer.save(compound: CompoundTag, b: HolderLookup.Provider) {
+fun <A> Codec<A>.toNbt(value: A): Tag {
+    return this.encodeStart(NbtOps.INSTANCE, value).orThrow
+}
+
+fun <A> Codec<A>.fromNbt(value: Tag): A {
+    return this.parse(NbtOps.INSTANCE, value).orThrow
+}
+
+fun SimpleContainer.save(compound: CompoundTag, b: HolderLookup.Provider) {
     ContainerHelper.saveAllItems(compound, items, b)
 }
 
-private fun SimpleContainer.load(compound: CompoundTag, b: HolderLookup.Provider) {
+fun SimpleContainer.load(compound: CompoundTag, b: HolderLookup.Provider) {
     ContainerHelper.loadAllItems(compound, items, b)
 }
 
-private fun Container.insert(slot: Int, stack: ItemStack, amount: Int, simulated: Boolean): Int {
+fun Container.insert(slot: Int, stack: ItemStack, amount: Int, simulated: Boolean): Int {
     require(!stack.isEmpty) { "Cannot insert an empty ItemStack." }
     require(amount > 0) { "Amount must be positive." }
     require(slot in 0 until this.containerSize) { "Slot index $slot out of bounds (0..${this.containerSize - 1})" }

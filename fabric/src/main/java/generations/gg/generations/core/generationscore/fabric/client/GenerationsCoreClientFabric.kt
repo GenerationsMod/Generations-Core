@@ -15,6 +15,7 @@ import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.minecraft.client.Minecraft
@@ -60,6 +61,10 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             override fun <T : BlockEntity> register(type: BlockEntityType<T>, provider: BlockEntityRendererProvider<T>) = BlockEntityRenderers.register(type, provider)
         })
         registerLayerDefinitions({ a, b -> EntityModelLayerRegistry.registerModelLayer(a, b::invoke) })
+
+        ClientTickEvents.END_CLIENT_TICK.register {
+            GenerationsCoreClient.onTick()
+        }
     }
 
     companion object {

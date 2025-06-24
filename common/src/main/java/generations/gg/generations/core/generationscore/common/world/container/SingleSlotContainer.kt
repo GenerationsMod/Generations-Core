@@ -17,8 +17,7 @@ abstract class SingleSlotContainer protected constructor(
     type: MenuType<*>,
     id: Int,
     handler: CommonStorage<ItemResource> = SimpleItemStorage(1),
-) :
-    AbstractContainerMenu(type, id) {
+) : AbstractContainerMenu(type, id) {
     init {
         this.addSlot(PredicateSlotItemHandler(
             handler, 0, 80, 35

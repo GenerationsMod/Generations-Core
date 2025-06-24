@@ -3,12 +3,12 @@ package generations.gg.generations.core.generationscore.common.world.item
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies.getByIdentifier
 import com.cobblemon.mod.common.api.types.ElementalType
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
-import earth.terrarium.common_storage_lib.resources.ResourceStack
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import generations.gg.generations.core.generationscore.common.GenerationsStorage.IMBUED
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
-import generations.gg.generations.core.generationscore.common.world.container.MelodyFluteContainer
+import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
+import generations.gg.generations.core.generationscore.common.world.item.components.MelodFluteContainer
+import generations.gg.generations.core.generationscore.common.world.item.components.SingleItemStackContainer
 import generations.gg.generations.core.generationscore.common.world.item.legends.ElementalPostBattleUpdateItem
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
 import net.minecraft.core.Holder
@@ -18,7 +18,6 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.InteractionResultHolder
-import net.minecraft.world.SimpleMenuProvider
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.context.UseOnContext
@@ -28,7 +27,9 @@ import net.minecraft.world.level.Level
 class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(properties.durability(MAX_DAMAGE)) {
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         if (!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND && player.getItemInHand(usedHand).damageValue <= 0) {
-            player.openMenu(SimpleMenuProvider(::MelodyFluteContainer, Component.translatable("container.melody_flute")))
+            val stack = player.getItemInHand(usedHand)
+
+            MelodFluteContainer(stack.getOrDefault(GenerationsDataComponents.IMBUED.value(), ItemStack.EMPTY)).also { it.addListener { stack.set(GenerationsDataComponents.IMBUED.value(), it.getItem(0)) } }.also { imbued -> GenericContainer.openScreen(imbued, 1,1, Component.translatable("container.melody_flute"), player, lock = player.inventory.selected) }
         }
 
         return super.use(level, player, usedHand)
@@ -87,15 +88,7 @@ class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(pr
 
         @JvmStatic
         fun getImbuedItem(stack: ItemStack?): ItemStack {
-            if (stack != null) {
-                val lists = stack.get(IMBUED.componentType())?.stacks()
-
-                if (!lists.isNullOrEmpty()) {
-                    return lists[0].resource().cachedStack
-                }
-            }
-
-            return ItemStack.EMPTY
+            return stack?.get(GenerationsDataComponents.IMBUED.value()) ?: ItemStack.EMPTY
         }
 
         fun typeFromInbued(stack: ItemStack): ElementalType? {
@@ -112,7 +105,7 @@ class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(pr
         }
 
         fun getSpeciesNameFromImbued(key: SpeciesKey): String {
-            return (if (key.aspects!!.contains("galarian")) "Galarian " else "") + getByIdentifier(
+            return (if (key.aspects.contains("galarian")) "Galarian " else "") + getByIdentifier(
                 key.species
             )!!.name
         }
@@ -136,17 +129,8 @@ class MelodyFluteItem(properties: Properties) : ElementalPostBattleUpdateItem(pr
             return Language.getInstance().getOrDefault(name)
         }
 
-        fun setImbuedItem(stack: ItemStack, imbuedStack: ItemStack) {
-            val storage = stack.get(IMBUED.componentType())
-            storage!!.stacks()[0] =
-                ResourceStack(
-                    ItemResource.of(imbuedStack),
-                    1
-                )
-            stack.set(IMBUED.componentType(), storage)
-        }
     }
+
 }
 
 val <T: Any> Holder<T>.id: ResourceLocation get() = this.unwrapKey().orElseThrow().location()
-

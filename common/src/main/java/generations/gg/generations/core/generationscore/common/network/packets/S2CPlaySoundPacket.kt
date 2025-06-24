@@ -2,31 +2,37 @@ package generations.gg.generations.core.generationscore.common.network.packets
 
 import com.cobblemon.mod.common.api.net.NetworkPacket
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import net.minecraft.network.FriendlyByteBuf
+import net.minecraft.core.Holder
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.sounds.SoundEvent
-import net.minecraft.world.item.EitherHolder
-import net.minecraft.world.item.JukeboxPlayable
-import net.minecraft.world.item.JukeboxSong
+import net.minecraft.sounds.SoundEvents
 
-class S2CPlaySoundPacket(val soundEvent: SoundEvent,  val length: Int, val play: Boolean) : NetworkPacket<S2CPlaySoundPacket> {
+class S2CPlaySoundPacket(
+    val soundEvent: Holder<SoundEvent> = Holder.direct(SoundEvents.EMPTY),
+    val length: Int = 0,
+    val play: Boolean = false,
+    val trackId: Int = 0
+) : NetworkPacket<S2CPlaySoundPacket> {
+
     override val id: ResourceLocation = ID
-    constructor(event: SoundEvent) : this(event, 0, false)
 
-    constructor(record: JukeboxSong) : this(record.soundEvent.value(), record.lengthInTicks(), true)
-
-    override fun encode(buf: RegistryFriendlyByteBuf) {
-        SoundEvent.DIRECT_STREAM_CODEC.encode(buf, soundEvent)
-        buf.writeVarInt(length)
-        buf.writeBoolean(play)
+    override fun encode(buffer: RegistryFriendlyByteBuf) {
+        SoundEvent.STREAM_CODEC.encode(buffer, soundEvent)
+        buffer.writeVarInt(length)
+        buffer.writeBoolean(play)
+        buffer.writeVarInt(trackId)
     }
 
     companion object {
-        var ID: ResourceLocation = GenerationsCore.id("play_sound")
+        val ID: ResourceLocation = GenerationsCore.id("play_sound")
 
-        fun decode(buf: FriendlyByteBuf): S2CPlaySoundPacket {
-            return S2CPlaySoundPacket(SoundEvent.DIRECT_STREAM_CODEC.decode(buf), buf.readVarInt(), buf.readBoolean())
+        fun decode(buf: RegistryFriendlyByteBuf): S2CPlaySoundPacket {
+            val sound = SoundEvent.STREAM_CODEC.decode(buf)
+            val len = buf.readVarInt()
+            val play = buf.readBoolean()
+            val trackId = buf.readVarInt()
+            return S2CPlaySoundPacket(sound, len, play, trackId)
         }
     }
 }

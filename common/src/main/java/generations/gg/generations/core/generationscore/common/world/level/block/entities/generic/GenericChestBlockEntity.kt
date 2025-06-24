@@ -1,19 +1,23 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.generic
 
-import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.orFalse
 import generations.gg.generations.core.generationscore.common.world.container.GenericChestContainer
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
+import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericChestBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.NonNullList
+import net.minecraft.core.component.DataComponentMap
 import net.minecraft.core.component.DataComponents
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.network.chat.Component
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
+import net.minecraft.world.CompoundContainer
 import net.minecraft.world.ContainerHelper
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
@@ -32,8 +36,10 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     arg2: BlockState,
     private var width: Int = 9,
     private var height: Int = 1,
-    private var defaultTranslation: String = "container.chest"
+    private var defaultTranslation: String = "container.chest",
 ) : RandomizableContainerBlockEntity(GenerationsBlockEntities.GENERIC_CHEST.value(), arg, arg2), LidBlockEntity {
+    private val chestLidController = ChestLidController()
+    private var items: NonNullList<ItemStack> = NonNullList.withSize(width * height, ItemStack.EMPTY)
     private val openersCounter: ContainerOpenersCounter = object : ContainerOpenersCounter() {
         override fun onOpen(level: Level, pos: BlockPos, state: BlockState) {
             this@GenericChestBlockEntity.playSound(state, SoundEvents.CHEST_OPEN)
@@ -48,31 +54,24 @@ class GenericChestBlockEntity @JvmOverloads constructor(
         }
 
         override fun isOwnContainer(player: Player): Boolean {
-            if (player.containerMenu is GenericChestContainer<*>) {
-                val container = (player.containerMenu as GenericChestContainer<*>).getContainer()
-                return container === this@GenericChestBlockEntity.items
-            }
-            return false
+            val container = player.containerMenu.instanceOrNull<GenericChestContainer>() ?: false
+
+            return container == this@GenericChestBlockEntity || container.instanceOrNull<CompoundContainer>().orFalse { it.contains(this@GenericChestBlockEntity) }
         }
     }
-
-    private val chestLidController = ChestLidController()
-
-    private var items: NonNullList<ItemStack> = NonNullList.withSize(width * height, ItemStack.EMPTY)
 
     override fun getContainerSize(): Int {
         return width * height
     }
 
     override fun getDefaultName(): Component {
-        return Component.translatable(defaultTranslation)
+        return Component.translatable("container.chest")
     }
 
     public override fun loadAdditional(tag: CompoundTag, provider: HolderLookup.Provider) {
         super.loadAdditional(tag, provider)
         this.width = tag.getInt("width")
         this.height = tag.getInt("height")
-        this.defaultTranslation = tag.getString("defaultTranslation")
         this.items = NonNullList.withSize(this.containerSize, ItemStack.EMPTY)
         if (!this.tryLoadLootTable(tag)) ContainerHelper.loadAllItems(tag, this.items, provider)
     }
@@ -82,7 +81,6 @@ class GenericChestBlockEntity @JvmOverloads constructor(
         if (!this.trySaveLootTable(tag)) ContainerHelper.saveAllItems(tag, this.items, provider)
         tag.putInt("width", width)
         tag.putInt("height", height)
-        tag.putString("defaultTranslation", defaultTranslation)
     }
 
     fun playSound(state: BlockState, sound: SoundEvent) {
@@ -122,10 +120,6 @@ class GenericChestBlockEntity @JvmOverloads constructor(
         return items
     }
 
-//    override fun getItem(index: Int): ItemStack {
-//        return if (index in 0 until items.size) items[index] else ItemStack.EMPTY
-//    }
-
     override fun setItems(itemStacks: NonNullList<ItemStack>) {
         this.items = itemStacks
     }
@@ -135,7 +129,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     }
 
     override fun createMenu(containerId: Int, inventory: Inventory): AbstractContainerMenu {
-        return GenericChestContainer(containerId, inventory, WrappedVanillaContainer(this), width, height)
+        return GenericChestContainer(containerId, inventory, this, width, height)
     }
 
     override fun setBlockState(blockState: BlockState) {
@@ -154,17 +148,24 @@ class GenericChestBlockEntity @JvmOverloads constructor(
         level.blockEvent(pos, state.block, 1, eventParam)
     }
 
-    //    @Override
-    //    public int getHeight() {
-    //        return height;
-    //    }
-    //
-    //    @Override
-    //    public int getWidth() {
-    //        return width;
-    //    }
     fun openScreen(player: Player) {
-        GenericContainer.openScreen(WrappedVanillaContainer(this), width, height, components().get(DataComponents.CUSTOM_NAME) ?: Component.literal("Chest"), player)
+        GenericContainer.openScreen(this, width, height, components().get(DataComponents.CUSTOM_NAME) ?: Component.literal("Chest"), player)
+    }
+
+    override fun applyImplicitComponents(componentInput: DataComponentInput) {
+        super.applyImplicitComponents(componentInput)
+        componentInput.getOrDefault(GenerationsDataComponents.INVENTORY_SIZE.value(), InventorySize.DEFAULT)
+    }
+
+    override fun collectImplicitComponents(components: DataComponentMap.Builder) {
+        super.collectImplicitComponents(components)
+        components.set(GenerationsDataComponents.INVENTORY_SIZE.value(), InventorySize(width, height))
+    }
+
+    override fun removeComponentsFromTag(tag: CompoundTag) {
+        super.removeComponentsFromTag(tag)
+        tag.remove("height")
+        tag.remove("width")
     }
 
     companion object {
