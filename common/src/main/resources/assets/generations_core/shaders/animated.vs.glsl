@@ -55,13 +55,13 @@ float fog_distance(vec3 pos, int shape) {
     }
 }
 
-vec4 getVertexColor() {
+vec4 getVertexColor(vec3 normal) {
     if(legacy) return vec4(1);
 
     vec3 lightDir0 = normalize(Light0_Direction);
     vec3 lightDir1 = normalize(Light1_Direction);
-    float light0 = max(0.0, dot(Light0_Direction, inNormal));
-    float light1 = max(0.0, dot(Light1_Direction, inNormal));
+    float light0 = max(0.0, dot(Light0_Direction, normal));
+    float light1 = max(0.0, dot(Light1_Direction, normal));
     float lightAccum = min(1.0, (light0 + light1) * MINECRAFT_LIGHT_POWER + MINECRAFT_AMBIENT_LIGHT);
     return vec4(lightAccum, lightAccum, lightAccum, 1);
 }
@@ -72,7 +72,7 @@ void main() {
     vec4 worldPosition = modelTransform * vec4(positions, 1.0);
 
     gl_Position = worldSpace * worldPosition;
-    vertexColor = getVertexColor();
+    vertexColor = getVertexColor(inNormal * transpose(inverse(mat3(modelTransform))));
     vertexDistance = fog_distance(gl_Position.xyz, FogShape);
     lightMapColor = texelFetch(lightmap, light / 16, 0);
     texCoord0 = (texcoords * uvScale) + uvOffset;

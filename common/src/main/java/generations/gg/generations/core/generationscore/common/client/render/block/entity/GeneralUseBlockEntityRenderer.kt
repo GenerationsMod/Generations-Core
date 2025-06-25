@@ -114,7 +114,7 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
             }
         }
 
-        var offset = blockEntity.blockPos.toVec3d().subtract(Minecraft.getInstance().cameraEntity!!.position())
+        val offset = blockEntity.blockPos.toVec3d().subtract(Minecraft.getInstance().cameraEntity!!.position())
 
         primeInstance.transformationMatrix().set(stack.last().pose()).translate(offset.x.toFloat(),
             offset.y.toFloat(), offset.z.toFloat()
