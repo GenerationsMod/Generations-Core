@@ -129,7 +129,7 @@ object GenerationsUtils {
         deferredRegister: BlockPlatformRegistry,
         name: String,
         blockSupplier: () -> T
-    ): Holder<Block> {
+    ): Holder<T> {
         return deferredRegister.create(name, blockSupplier)
     }
 

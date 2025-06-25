@@ -306,12 +306,12 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         )
     }
 
-    private fun createSignDrops(item: Holder<Item>, standingSignBlock: Holder<Block>, wallSignBlock: Holder<Block>) {
+    private fun createSignDrops(item: Holder<out Item>, standingSignBlock: Holder<out Block>, wallSignBlock: Holder<out Block>) {
         createItemDropTable(item.value(), standingSignBlock.value())
         createItemDropTable(item.value(), wallSignBlock.value())
     }
 
-    private fun dropDisplayStandWithBall(block: Holder<Block>, item: Item) {
+    private fun dropDisplayStandWithBall(block: Holder<out Block>, item: Item) {
         add(
             block.value(), LootTable
                 .lootTable()
@@ -490,7 +490,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
     }
 
     protected fun prisonBottleStem() {
-        val block = GenerationsShrines.PRISON_BOTTLE_STEM.asValue<GenericRotatableModelBlock>()
+        val block = GenerationsShrines.PRISON_BOTTLE_STEM.value()
         val statePropertiesPredicate: () -> StatePropertiesPredicate.Builder = {
             val builder = StatePropertiesPredicate.Builder.properties()
 

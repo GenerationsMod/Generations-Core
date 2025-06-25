@@ -80,9 +80,9 @@ object GenerationsShrines: BlockPlatformRegistry() {
     val PRISON_BOTTLE = registerBlockItem("prison_bottle", { PrisonBottleBlock(BOTTLE_PROPERTIES) }, { block, properties -> PokemonInteractBlockItem(block, properties, "unbound")  }, GenerationsItems.LEGENDARY_ITEMS)
 
 
-    private fun <T : Block> registerBlockItem(name: String, blockSupplier: () -> T, function: (Holder<Block>, Item.Properties) -> Item, register: ItemPlatformRegistry): Holder<Block> {
+    private fun <T : Block> registerBlockItem(name: String, blockSupplier: () -> T, function: (Holder<Block>, Item.Properties) -> Item, register: ItemPlatformRegistry): Holder<T> {
         val block = registerBlock(this, name, blockSupplier)
-        register.create(name) { function.invoke(block, Item.Properties()) }
+        register.create(name) { function.invoke(block as Holder<Block>, Item.Properties()) }
         return block
     }
 

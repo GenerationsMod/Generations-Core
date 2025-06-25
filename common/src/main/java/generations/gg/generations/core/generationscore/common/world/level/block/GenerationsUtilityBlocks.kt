@@ -112,22 +112,22 @@ object GenerationsUtilityBlocks: BlockPlatformRegistry() {
         itemSupplier: (Item.Properties) -> T
     ): Holder<Item> = GenerationsItems.ITEMS.create(name) { itemSupplier.invoke(Item.Properties()) }
 
-    private fun <T : Block> registerBlockItem(name: String, blockSupplier: () -> T): Holder<Block> {
+    private fun <T : Block> registerBlockItem(name: String, blockSupplier: () -> T): Holder<T> {
         val block = registerBlock(name, blockSupplier)
         register(name) { properties -> GenerationsBlockItem(block, properties) }
         return block
     }
 
-private fun registerLoot(name: String, ball: PokeBall): Holder<Block> {
+private fun registerLoot(name: String, ball: PokeBall): Holder<out Block> {
     val properties = Properties.of().randomTicks().sound(SoundType.METAL).strength(-1.0f, 3600000.0f).noOcclusion().noLootTable()
 
     val block = registerBlockItem(name + "_ball_loot") { BallLootBlock(properties, name, ball) }
-    BALL_LOOTS.add(block)
+    BALL_LOOTS.add(block as Holder<Block>)
     return block
 }
 
 
-    private fun <T : Block> registerBlock(name: String, blockSupplier: () -> T): Holder<Block> {
+    private fun <T : Block> registerBlock(name: String, blockSupplier: () -> T): Holder<T> {
         return registerBlock(this, name, blockSupplier)
     }
 
@@ -137,7 +137,7 @@ private fun registerLoot(name: String, ball: PokeBall): Holder<Block> {
             val properName = dyeColor.serializedName + "_" + name
             val block = registerBlock(properName, { blockSupplier.invoke(dyeColor, dyeMap) })
             register(properName) { GenerationsBlockItem(block, it) }
-            dyeMap[dyeColor] = block
+            dyeMap[dyeColor] = block as Holder<Block>
         }
 
         return DyedGroup(dyeMap)

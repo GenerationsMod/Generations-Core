@@ -43,7 +43,7 @@ object GenerationsArchitecturyEvents {
                     GenerationsCore.CONFIG.blocks.scarecrowRadius.y,
                     GenerationsCore.CONFIG.blocks.scarecrowRadius.z,
                     1
-                ) { world, pos -> world.getBlockState(pos).`is`(SCARECROW) }
+                ) { world, pos -> world.getBlockState(pos).`is`(SCARECROW.value()) }
                 if (list.isNotEmpty()) {
                     it.cancel()
                 }

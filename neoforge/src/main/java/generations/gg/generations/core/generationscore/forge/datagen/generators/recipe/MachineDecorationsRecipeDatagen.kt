@@ -840,7 +840,7 @@ class MachineDecorationsRecipeDatagen(output: PackOutput, registries: Completabl
                     .withPath { a: String -> a + "_dyed" })
     }
 
-    private fun buildPokeBallDisplayRecipes(consumer: RecipeOutput, pokeball: Item, display: Holder<Block>) {
+    private fun buildPokeBallDisplayRecipes(consumer: RecipeOutput, pokeball: Item, display: Holder<out Block>) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, display.value())
             .requires(pokeball)
             .requires(GenerationsDecorationBlocks.EMPTY_BALL_DISPLAY)

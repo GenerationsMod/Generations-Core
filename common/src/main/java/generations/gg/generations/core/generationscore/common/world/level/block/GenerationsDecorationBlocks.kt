@@ -159,13 +159,13 @@ object GenerationsDecorationBlocks: BlockPlatformRegistry() {
     @JvmField val HEAL_BALL_DISPLAY = registerBallDisplay(DisplayState.HEAL)
     //public static final RegistrySupplier<BallDisplayBlock> GS_BALL_DISPLAY = registerBallDisplay(DisplayState.GS);
 
-    private fun registerBallDisplay(state: DisplayState): Holder<Block> = registerDecorationItem(state.name.lowercase(Locale.getDefault()) + "_ball_display", { BallDisplayBlock(state) }).also { BALL_DISPLAY_BLOCKS.add(it) }
+    private fun registerBallDisplay(state: DisplayState): Holder<BallDisplayBlock> = registerDecorationItem(state.name.lowercase(Locale.getDefault()) + "_ball_display", { BallDisplayBlock(state) }).also { BALL_DISPLAY_BLOCKS.add(it as Holder<Block>) }
 
-    private fun <T : Block> registerDecorationItem(name: String, blockSupplier: () -> T): Holder<Block> = registerBlock(name, blockSupplier).also {
+    private fun <T : Block> registerDecorationItem(name: String, blockSupplier: () -> T): Holder<T> = registerBlock(name, blockSupplier).also {
         register(name) { properties -> GenerationsBlockItem(it, properties) }
     }
 
-    private fun <T : Block> registerBlock(name: String, blockSupplier: () -> T): Holder<Block> = GenerationsUtils.registerBlock(this, name, blockSupplier)
+    private fun <T : Block> registerBlock(name: String, blockSupplier: () -> T): Holder<T> = GenerationsUtils.registerBlock(this, name, blockSupplier)
 
     private fun register(name: String, itemSupplier: (Item.Properties) -> Item): Holder<Item> = GenerationsItems.ITEMS.create(name, { itemSupplier.invoke(Item.Properties()) })
 
