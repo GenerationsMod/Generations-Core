@@ -158,6 +158,7 @@ object GenerationsCore {
             ) && !isUsed(left) && right.isEmpty
         ) {
             output.accept(setEnchanted(left.copy(), true))
+            cost.accept(left.item.instanceOrNull<EnchantableItem>()?.neededEnchantmentLevel(player)!!)
             materialCost.accept(0)
         }
     }
