@@ -250,6 +250,9 @@ class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {
         poseStack.drawString(font, "Orientation: " + String.format("%.2f", statue.yRot), x + 11, y + 24, 0x5F5F60, false)
     }
 
+    override fun renderBlurredBackground(partialTick: Float) {
+    }
+
     override fun isPauseScreen(): Boolean {
         return false
     }

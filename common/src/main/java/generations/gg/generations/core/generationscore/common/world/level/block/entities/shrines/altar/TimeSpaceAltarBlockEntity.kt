@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar
 
+import earth.terrarium.common_storage_lib.item.impl.vanilla.VanillaDelegatingSlot
+import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
 import earth.terrarium.common_storage_lib.item.util.ItemProvider
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
@@ -30,46 +32,47 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
         get() = handler
 
     val orb: CreationTrioItem?
-        get() = container.getResource(0).item.instanceOrNull<CreationTrioItem>()
+        get() = container.getItem(0).item.instanceOrNull<CreationTrioItem>()
 
 
 
-    inner class TimeSpaceAltarItemStackHandler : ExtendedsimpleItemContainer(this@TimeSpaceAltarBlockEntity, 2) {
-        override fun isResourceValid(index: Int, resource: ItemResource): Boolean {
-            return if (index == 0) {
-                resource.item is CreationTrioItem
+    inner class TimeSpaceAltarItemStackHandler : ExtendedsimpleItemContainer(2) {
+        override fun canPlaceItem(slot: Int, stack: ItemStack): Boolean {
+            return if (slot == 0) {
+                stack.item is CreationTrioItem
             } else {
-                resource.isOf(GenerationsItems.RED_CHAIN.value()) && resource.get(GenerationsDataComponents.ENCHANTED.value()) == false
+                stack.`is`(GenerationsItems.RED_CHAIN.value()) && stack.get(GenerationsDataComponents.ENCHANTED.value()) == false
             }
         }
 
-        override fun getLimit(index: Int, resource: ItemResource?): Long {
+        override fun getMaxStackSize(): Int {
             return 1
         }
 
+
         fun hasRedChain(): Boolean {
-            return !this[1].isEmpty
+            return !this.getItem(1).isEmpty
         }
 
         fun hasOrb(player: ServerPlayer?): Boolean {
-            val orb = this[0]
+            val orb = this.getItem(0)
 
             return !orb.isEmpty && GenerationsCore.CONFIG!!.caught.capped(
                 player,
-                (orb.resource.item as CreationTrioItem).speciesId
+                (orb.item as CreationTrioItem).speciesId
             )
         }
 
         fun extract(index: Int, simulate: Boolean): ItemStack { //TODO: This probably really jank and I need to change this completley.
-            val src = get(index);
-            val stack = src.toItemStack()
-            src.set(ItemStack.EMPTY)
+            val src = getItem(index);
+            val stack = src
+            setItem(index, ItemStack.EMPTY)
 
             return stack
         }
 
         fun extractItem(): ItemStack {
-            for (i in 0..1) if (!this[i].isEmpty) return extract(1, false)
+            for (i in 0..1) if (!this.getItem(i).isEmpty) return extract(1, false)
 
             return ItemStack.EMPTY
         }
@@ -79,22 +82,22 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
         }
 
         fun dumpAllIntoPlayerInventory(player: ServerPlayer) {
-            val size = size();
+            val size = containerSize;
 
-            (0..size).map(::get).forEach { slot ->
-                val stack = slot.toItemStack()
-                slot.set(ItemStack.EMPTY)
+            (0..size).forEach { slot ->
+                val stack = getItem(slot)
+                setItem(slot, ItemStack.EMPTY)
                 player.inventory.placeItemBackInInventory(stack)
             }
         }
 
         fun insertItem(index: Int, stack: ItemStack, simulate: Boolean): ItemStack {
-            this.get(index).insert(stack.asResource(), stack.count.toLong(), simulate).run { stack.shrink(this.toInt()) }
+            this.addItem(stack).run { stack.shrink(this.count) }
             return stack
         }
     }
 
     override fun getItems(p0: Direction?): CommonStorage<ItemResource> {
-        return handler;
+        return WrappedVanillaContainer(handler);
     }
 }

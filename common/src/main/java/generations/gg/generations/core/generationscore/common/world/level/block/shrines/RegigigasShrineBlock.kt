@@ -64,33 +64,25 @@ class RegigigasShrineBlock(materialIn: Properties) : InteractShrineBlock(
 
         val item = stack.item
 
-        if(!handler.has(item) && handler.insert(stack.asResouce(), 1, false) > 0) {
+        if(!handler.hasAnyMatching { it.`is`(item) } && handler.addItem(ItemStack(item, 1)).isEmpty) {
 
             stack.shrink(1)
 
             if (handler.isFull()) {
                 PokemonUtil.spawn(LegendKeys.REGIGIGAS.createProperties(70), level, pos.above())
-                handler.clear()
+                handler.clearContent()
             }
 
-            handler.update()
+            entity.sync()
 
             succeeded = true
         } else {
             for (i in 0..4) {
-                val slot = handler.get(i).takeUnless { it.isEmpty } ?: continue
-
-                var resource = slot.resource
-
-                val extracted = handler.extract(resource, 1, false)
-
-                if(extracted > 0) {
-                    player.inventory.placeItemBackInInventory(resource.toStack(extracted.toInt()))
-
-                    handler.update()
-                    succeeded = true
-                    break
-                }
+                val extracted = handler.removeItem(i, 1).takeUnless { it.isEmpty } ?: continue
+                player.inventory.placeItemBackInInventory(extracted)
+                entity.sync()
+                succeeded = true
+                break
             }
         }
 

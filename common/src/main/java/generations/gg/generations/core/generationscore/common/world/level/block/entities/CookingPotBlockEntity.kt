@@ -9,7 +9,6 @@ import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContai
 import earth.terrarium.common_storage_lib.item.util.ItemProvider
 import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import earth.terrarium.common_storage_lib.storage.base.CommonStorage
-import generations.gg.generations.core.generationscore.common.GenerationsStorage
 import generations.gg.generations.core.generationscore.common.SimpleItemSlot
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider

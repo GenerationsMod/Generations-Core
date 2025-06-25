@@ -26,7 +26,7 @@ private var ItemStack.carrotHolder: CarrotHolder
         container = ItemContainerContents.fromItems(value.items)
     }
 
-class CalyrexSteedItem(name: String, arg: Properties, private val speices: SpeciesKey) : Item(arg.component(GenerationsDataComponents.CALYREX_CARROTS.value(), CarrotHolder())) {
+class CalyrexSteedItem(name: String, arg: Properties, private val speices: SpeciesKey) : Item(arg) {
     private val defaultTranslation = "container." + name + "_carrot"
 
     //    @Override

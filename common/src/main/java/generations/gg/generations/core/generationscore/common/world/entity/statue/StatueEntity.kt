@@ -228,7 +228,7 @@ class StatueEntity(type: EntityType<StatueEntity> = GenerationsEntities.STATUE_E
                 level().addFreshEntity(entity)
                 stack.shrink(1)
                 return InteractionResult.SUCCESS
-            } else if (player.getItemInHand(hand).item == GenerationsItems.CHISEL) {
+            } else if (stack.`is`(GenerationsItems.CHISEL)) {
                 var canUse = player.isCreative
 
                 StatueEvents.CAN_USE_CHISEL.post(StatueEvents.CanUseChisel(player as ServerPlayer, player.isCreative()), then = { canUse = it.canUse })

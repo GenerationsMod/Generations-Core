@@ -408,7 +408,7 @@ object GenerationsBlocks: BlockPlatformRegistry() {
     val MIRROR_GLASS_SET = GenerationsBlockSet("mirror_glass", BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).strength(.5f))
     val NORMAL_SANDSTONE_SET = GenerationsBlockSet("normal_sandstone", BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE))
     val BRIGHT_SANDSTONE_SET = GenerationsBlockSet("bright_sandstone", BlockBehaviour.Properties.ofFullCopy(Blocks.SANDSTONE).lightLevel { 15 })
-    val MACHINE_BLOCK = registerBlockItem("machine_block", { MachineBlock(STONE_PROPERTY) })
+//    val MACHINE_BLOCK = registerBlockItem("machine_block", { MachineBlock(STONE_PROPERTY) })
     val OCEAN_BLOCK_SET = GenerationsBlockSet("ocean_block")
     val WATER_QUARTZ_SET = GenerationsBlockSet("water_quartz", BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK))
     val RUINS_SAND = registerBlockItem("ruins_sand", { ColoredFallingBlock(0xdbd3a0.rgba(), BlockBehaviour.Properties.ofFullCopy(Blocks.SAND)) })

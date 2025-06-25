@@ -103,12 +103,11 @@ class TimespaceAltarBlock(properties: Properties) : InteractShrineBlock(properti
             player: ServerPlayer
         ): Boolean {
             if (handler.shouldSpawn(player)) {
-                val id = (handler.getResource(0).item as CreationTrioItem).speciesId
+                val id = (handler.getItem(0).item as CreationTrioItem).speciesId
                 PokemonUtil.spawn(id.createPokemon(70), level, pos, state.getValue(FACING).toYRot())
                 handler.updateStack(1, RedChainItem.Companion::incrementUsage)
-                if (getUses(handler[1].toItemStack()) >= RedChainItem.MAX_USES) handler[1].resource =
-                    ItemResource.BLANK
-                handler[0].resource = ItemResource.BLANK
+                if (getUses(handler.getItem(1)) >= RedChainItem.MAX_USES) handler.setItem(1, ItemStack.EMPTY)
+                handler.setItem(0, ItemStack.EMPTY)
                 handler.dumpAllIntoPlayerInventory(player)
                 return true
             } else {

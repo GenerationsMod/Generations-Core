@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.render.block.entity
 
 import com.mojang.blaze3d.vertex.PoseStack
-import generations.gg.generations.core.generationscore.common.GenerationsStorage.REGI_ORBS
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils.rgbFromInt
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.id
@@ -43,10 +42,10 @@ class RegigigasShrineBlockEntityRenderer(ctx: BlockEntityRendererProvider.Contex
         fun processOrbs(shrineBlock: RegigigasShrineBlockEntity) {
             val colors: MutableList<Vector3f> = ArrayList()
 
-            val list = REGI_ORBS[shrineBlock]
+            val list = shrineBlock.container
 
-            for (i in list.stacks().indices) {
-                val color = map[list.stacks()[i].resource().item.builtInRegistryHolder().id]
+            for (i in list.items.indices) {
+                val color = map[list.items[i].item.builtInRegistryHolder().id]
 
                 if (color != null) colors.add(color)
             }

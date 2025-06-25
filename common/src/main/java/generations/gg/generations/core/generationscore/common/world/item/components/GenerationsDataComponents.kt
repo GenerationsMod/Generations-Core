@@ -2,8 +2,6 @@ package generations.gg.generations.core.generationscore.common.world.item.compon
 
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.mojang.serialization.Codec
-import earth.terrarium.common_storage_lib.item.util.ItemStorageData
-import generations.gg.generations.core.generationscore.common.GenerationsStorage.registry
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
@@ -53,12 +51,7 @@ object GenerationsDataComponents: PlatformRegistry<DataComponentType<*>>(Registr
     val PLAYING = register("playing", Codec.BOOL, ByteBufCodecs.BOOL.asRegistryFriendly())
     val CURRENT_SONG = register("current_song", JukeboxSong.DIRECT_CODEC, JukeboxSong.DIRECT_STREAM_CODEC)
 
-//    val WALKMON_DATA = register("walkmon_data", WalkmonData.CODEC, WalkmonData.STREAM_CODEC)
-//    val DISCS = register("discs", DiscContainer.CODEC, DiscContainer.STREAM_CODEC)
-    val CALYREX_CARROTS = register("calyrex_carrots", CarrotHolder.CODEC, CarrotHolder.STREAM_CODEC)
     val IMBUED = register("imbued", ItemStack.OPTIONAL_CODEC, ItemStack.OPTIONAL_STREAM_CODEC)
-    val REGI_ORBS = registry.builder(ItemStorageData.DEFAULT).serialize(ItemStorageData.CODEC).networkSerializer(
-        ItemStorageData.NETWORK_CODEC).buildAndRegister("regi_orbs")
 
 
     val FISHED_SHARDS = register("fished_shards", RubyRodItem.FishedShards.CODEC)

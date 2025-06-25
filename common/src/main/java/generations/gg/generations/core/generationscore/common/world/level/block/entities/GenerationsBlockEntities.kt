@@ -119,8 +119,8 @@ object GenerationsBlockEntities: PlatformRegistry<BlockEntityType<*>>(Registries
         GenerationsDecorationBlocks.COUCH_OTTOMAN.toArray()
     )
 
-    @JvmField
-    val MACHINE_BLOCK = registerRegular("machine_block", ::MachineBlockEntity, GenerationsBlocks.MACHINE_BLOCK)
+//    @JvmField
+//    val MACHINE_BLOCK = registerRegular("machine_block", ::MachineBlockEntity, GenerationsBlocks.MACHINE_BLOCK)
 
     @JvmField
     val VENDING_MACHINE = registerRegularWithArray("vending_machine", ::VendingMachineBlockEntity, GenerationsDecorationBlocks.VENDING_MACHINE.toArray())

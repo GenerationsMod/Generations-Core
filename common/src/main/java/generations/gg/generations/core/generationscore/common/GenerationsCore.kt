@@ -109,7 +109,6 @@ object GenerationsCore {
         )
 
         GenerationsCoreEntityDataSerializers.init()
-        GenerationsStorage.init()
         GenerationsResources.init()
         GenerationsIngredidents.init()
 
