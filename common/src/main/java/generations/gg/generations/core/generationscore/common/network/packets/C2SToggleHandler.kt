@@ -9,8 +9,6 @@ import net.minecraft.server.level.ServerPlayer
 object C2SToggleHandler : ServerNetworkPacketHandler<C2STogglePacket> {
     override fun handle(packet: C2STogglePacket, minecraftServer: MinecraftServer, player: ServerPlayer) {
         player.containerMenu.instanceOrNull<Toggleable>()?.run {
-            System.out.println("Hoi I'm a debugger!")
-
             isToggled = !isToggled
         }
     }

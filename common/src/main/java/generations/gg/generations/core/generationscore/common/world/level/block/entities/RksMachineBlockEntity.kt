@@ -79,7 +79,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
                 when (index) {
                     2 -> this@RksMachineBlockEntity.isProcessing = value == 1
                 }
-                this@RksMachineBlockEntity.setChanged()
+                this@RksMachineBlockEntity.sync()
             }
 
             override fun getCount(): Int {
@@ -220,8 +220,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
 
             if (lastRecipe != null) {
                 val mapRecipe = getMappedRecipe(manager, lastRecipe.id())
-                if (mapRecipe.map { obj: RecipeHolder<RksRecipe> -> obj.value() }
-                        .filter { a: RksRecipe -> a.matches(craftingInput, level) }.isPresent
+                if (mapRecipe.map { obj: RecipeHolder<RksRecipe> -> obj.value() }.filter { a: RksRecipe -> a.matches(craftingInput, level) }.isPresent
                 ) {
                     return Optional.of(lastRecipe)
                 }
