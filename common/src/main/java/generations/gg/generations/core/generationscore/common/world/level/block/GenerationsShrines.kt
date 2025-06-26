@@ -63,7 +63,7 @@ object GenerationsShrines: BlockPlatformRegistry() {
             }
         })
     @JvmField val LUNAR_SHRINE = registerBlockItem("lunar_shrine", { LunarShrineBlock(SHRINE_PROPERTIES) })
-    @JvmField val LIGHT_CRYSTAL = registerBlockItem("light_crystal", { LunarCystalBlock(BlockBehaviour.Properties.of(), GenerationsBlockEntityModels.LIGHT_CRYSTAL) })
+    @JvmField val LIGHT_CRYSTAL = registerBlockItem("light_crystal", { LunarCystalBlock(BlockBehaviour.Properties.of(), GenerationsBlockEntityModels.LIGHT_CRYSTAL) }, )
     @JvmField val DARK_CRYSTAL = registerBlockItem("dark_crystal", { LunarCystalBlock(BlockBehaviour.Properties.of(), GenerationsBlockEntityModels.DARK_CRYSTAL) }, ::DarkCrystalItem)
 
     @JvmField val MELOETTA_MUSIC_BOX = registerBlockItem("meloetta_music_box", { MeloettaMusicBoxBlock(SHRINE_PROPERTIES) })

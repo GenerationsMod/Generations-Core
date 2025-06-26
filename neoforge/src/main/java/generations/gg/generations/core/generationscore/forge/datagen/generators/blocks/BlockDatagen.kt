@@ -325,7 +325,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             GenerationsBlocks.ULTRA_CUT_SANDSTONE_SLAB.asValue()
         )
         registerBlockItem(GenerationsBlocks.GHOST_LANTERN.asValue())
-        registerBlockItem(GenerationsBlocks.MACHINE_BLOCK.asValue())
+//        registerBlockItem(GenerationsBlocks.MACHINE_BLOCK.asValue())
         registerBlockItem(GenerationsBlocks.RUINS_SAND.asValue())
         registerBlockItem(GenerationsBlocks.BURST_TURF.asValue())
 

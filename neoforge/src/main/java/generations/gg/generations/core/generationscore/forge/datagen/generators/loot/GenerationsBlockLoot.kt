@@ -25,6 +25,7 @@ import com.cobblemon.mod.common.CobblemonItems.SAFARI_BALL
 import com.cobblemon.mod.common.CobblemonItems.SPORT_BALL
 import com.cobblemon.mod.common.CobblemonItems.TIMER_BALL
 import com.cobblemon.mod.common.CobblemonItems.ULTRA_BALL
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.*
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
@@ -75,14 +76,13 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         GenerationsWood.WOOD_BLOCKS.all().forEach(::dropSelfUpdated)
 
         GenerationsBlocks.ULTRA_BLOCKS.all().forEach(::dropSelfUpdated)
-        //createDoubleDyedBlock(GenerationsUtilityBlocks.PC, PCBlock.HALF, DoubleBlockHalf.LOWER);
-        //createDyedBlock(GenerationsUtilityBlocks.CLOCK);
+        //createDoubleDTck(GenerationsUtilityBlocks.CLOCK);
         //createDyedBlock(GenerationsDecorationBlocks.UMBRELLA);
         //createDyedBlock(GenerationsDecorationBlocks.PASTEL_BEAN_BAG);
         //createDyedBlock(GenerationsDecorationBlocks.VENDING_MACHINE);
         //GenerationsDecorationBlocks.VENDING_MACHINE_BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> add(block, createSinglePropConditionTable(block, DoubleDyeableBlock.HALF, DoubleBlockHalf.LOWER)));
         GenerationsPokeDolls.all().forEach(::dropSelf)
-        BlockDatagen.dropSelfList.stream().map { block -> block as Block }.forEach(this::dropSelf)
+        BlockDatagen.dropSelfList.mapNotNull { block -> block.instanceOrNull<Holder<Block>>()?.value() ?: block.instanceOrNull<Block>() }.forEach(this::dropSelf)
         dropSelf(GenerationsShrines.DARK_CRYSTAL)
         dropSelf(GenerationsShrines.LIGHT_CRYSTAL)
         BlockDatagen.MUSHROOM_BLOCKS.forEach(Consumer { block: GenerationsMushroomBlock ->
@@ -151,7 +151,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         //Ultra Space
         dropSelf(GenerationsBlocks.ULTRA_SAND)
         dropWhenSilkTouch(GenerationsBlocks.GHOST_LANTERN.value())
-        add(GenerationsBlocks.MACHINE_BLOCK.value(), createSingleItemTable(GenerationsBlocks.MACHINE_BLOCK.value()))
+//        add(GenerationsBlocks.MACHINE_BLOCK.value(), createSingleItemTable(GenerationsBlocks.MACHINE_BLOCK.value()))
         dropSelf(GenerationsBlocks.RUINS_SAND)
         dropSelf(GenerationsBlocks.RICH_SOIL_1)
         dropSelf(GenerationsBlocks.RICH_SOIL_2)

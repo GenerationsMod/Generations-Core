@@ -737,14 +737,14 @@ class BuildingBlockRecipeDatagen(output: PackOutput, registries: CompletableFutu
         }
 
         // Machine Block
-        recipeOutput.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MACHINE_BLOCK) {
-            define('X', Blocks.SMOOTH_STONE)
-            define('Y', Items.REDSTONE)
-            pattern("XXX")
-            pattern("XYX")
-            pattern("XXX")
-            unlockedByItem(Blocks.SMOOTH_STONE)
-        }
+//        recipeOutput.shaped(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.MACHINE_BLOCK) {
+//            define('X', Blocks.SMOOTH_STONE)
+//            define('Y', Items.REDSTONE)
+//            pattern("XXX")
+//            pattern("XYX")
+//            pattern("XXX")
+//            unlockedByItem(Blocks.SMOOTH_STONE)
+//        }
 
         // Ruins Sand
         recipeOutput.shapeless(RecipeCategory.BUILDING_BLOCKS, GenerationsBlocks.RUINS_SAND, count = 4) {

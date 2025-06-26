@@ -417,6 +417,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.DRAGON_STONE, "legend_items/")
         createItem(GenerationsItems.DARK_SOUL, "legend_items/")
         createItem(GenerationsItems.DRAGON_SOUL, "legend_items/")
+        createItem(GenerationsShrines.DARK_CRYSTAL, "legend_items/")
         //        createItem(GenerationsItems.MELODY_FLUTE, "legend_items/");
         createItem(GenerationsItems.SPARKLING_SHARD, "legend_items/")
         createItem(GenerationsItems.SPARKLING_STONE, "legend_items/")

@@ -522,7 +522,6 @@
     "generations_core:bright_sandstone_slab",
     "generations_core:bright_sandstone_stairs",
     "generations_core:bright_sandstone_wall",
-    "generations_core:machine_block",
     "generations_core:ocean_block",
     "generations_core:ocean_block_slab",
     "generations_core:ocean_block_stairs",
@@ -846,7 +845,6 @@
     "generations_core:dusk_ball_display",
     "generations_core:fast_ball_display",
     "generations_core:friend_ball_display",
-    "generations_core:heal_ball_display",
     "generations_core:heavy_ball_display",
     "generations_core:level_ball_display",
     "generations_core:love_ball_display",
@@ -861,6 +859,7 @@
     "generations_core:repeat_ball_display",
     "generations_core:safari_ball_display",
     "generations_core:sport_ball_display",
-    "generations_core:timer_ball_display"
+    "generations_core:timer_ball_display",
+    "generations_core:heal_ball_display"
   ]
 }

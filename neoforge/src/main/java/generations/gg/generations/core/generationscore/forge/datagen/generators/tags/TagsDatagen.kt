@@ -45,8 +45,7 @@ object TagsDatagen {
         output: PackOutput,
         lookupProvider: CompletableFuture<HolderLookup.Provider>,
         existingFileHelper: ExistingFileHelper,
-    ) :
-        BlockTagsProvider(output, lookupProvider, GenerationsCore.MOD_ID, existingFileHelper) {
+    ) : BlockTagsProvider(output, lookupProvider, GenerationsCore.MOD_ID, existingFileHelper) {
         override fun addTags(arg: HolderLookup.Provider) {
             GenerationsBlocks.BLOCKS.all().forEach { `object` ->
                 val block = `object`
