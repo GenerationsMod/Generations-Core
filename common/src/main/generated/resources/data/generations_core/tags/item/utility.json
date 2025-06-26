@@ -1,20 +1,3 @@
 {
-  "values": [
-    "generations_core:pokemon_wand",
-    "generations_core:chisel",
-    "generations_core:gift_box",
-    "generations_core:npc_wand",
-    "generations_core:npc_path_tool",
-    "generations_core:zone_wand",
-    "generations_core:bike_frame",
-    "generations_core:bike_handlebars",
-    "generations_core:bike_seat",
-    "generations_core:bike_wheel",
-    "generations_core:hidden_iron_door",
-    "generations_core:hidden_wooden_door",
-    "generations_core:hidden_lever",
-    "generations_core:hidden_pressure_plate",
-    "generations_core:hidden_cube",
-    "generations_core:hidden_button"
-  ]
+  "values": []
 }

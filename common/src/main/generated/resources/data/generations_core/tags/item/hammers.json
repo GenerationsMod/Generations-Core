@@ -1,27 +1,3 @@
 {
-  "values": [
-    "generations_core:charge_stone_hammer",
-    "generations_core:volcanic_stone_hammer",
-    "generations_core:amethyst_hammer",
-    "generations_core:crystal_hammer",
-    "generations_core:dawn_stone_hammer",
-    "generations_core:dusk_stone_hammer",
-    "generations_core:fire_stone_hammer",
-    "generations_core:ice_stone_hammer",
-    "generations_core:leaf_stone_hammer",
-    "generations_core:moon_stone_hammer",
-    "generations_core:ruby_hammer",
-    "generations_core:sapphire_hammer",
-    "generations_core:silicon_hammer",
-    "generations_core:sun_stone_hammer",
-    "generations_core:thunder_stone_hammer",
-    "generations_core:water_stone_hammer",
-    "generations_core:ultrite_hammer",
-    "generations_core:diamond_hammer",
-    "generations_core:golden_hammer",
-    "generations_core:iron_hammer",
-    "generations_core:netherite_hammer",
-    "generations_core:stone_hammer",
-    "generations_core:wooden_hammer"
-  ]
+  "values": []
 }

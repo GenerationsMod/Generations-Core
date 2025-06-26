@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "generations.gg.generations.core.generationscore.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractHorseMixin",
+    "AnvilMenuMixin",
+    "BaseFireBlockMixin",
+    "BlockMixin",
+    "ItemCombinerMenuMixin",
+    "ItemStackMixin",
+    "LivingEntityMixin",
+    "MagmaCubeMixin",
+    "MixinPlayer",
+    "PortalShapeMixin"
+  ],
+  "client": [
+    "client.KeyboardHandlerMixin",
+    "client.MixinMultiPlayerGameMode"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

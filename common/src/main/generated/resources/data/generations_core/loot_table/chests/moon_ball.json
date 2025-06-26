@@ -14,18 +14,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:beach_glass"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:big_pearl"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:blue_scarf"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:bluk_berry"
         },
         {
@@ -35,14 +23,6 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:carbos"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:casteliacone"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:chalky_stone"
         },
         {
           "type": "minecraft:item",
@@ -78,19 +58,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:galarica_twig"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:ganlon_berry"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:ghost_gem"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:green_shard"
         },
         {
           "type": "minecraft:item",
@@ -110,10 +82,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:item_urge"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:kebia_berry"
         },
         {
@@ -127,14 +95,6 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:light_clay"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lure"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lustrous_orb"
         },
         {
           "type": "minecraft:item",
@@ -194,23 +154,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:quick_candy_l"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:reaper_cloth"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:red_scarf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:red_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:relic_vase"
         },
         {
           "type": "minecraft:item",
@@ -226,15 +170,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:shoal_shell"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:sitrus_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:small_bouquet"
         },
         {
           "type": "minecraft:item",
@@ -246,15 +182,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:star_piece"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:star_sweet"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:stardust"
         },
         {
           "type": "minecraft:item",
@@ -270,19 +198,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:tough_candy_l"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:water_stone"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:wepear_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:wishing_piece"
         },
         {
           "type": "minecraft:item",
@@ -314,143 +234,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:wishing_star"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:amethyst_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ruby"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:mewtwo_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:meteorite_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:psychic_memory_drive"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:fairy_memory_drive"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:mind_plate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pixie_plate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:psychic_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:fairy_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_4"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_16"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_41"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_54"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_59"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_63"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_74"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_75"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_85"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_92"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_98"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_109"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_120"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_128"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_129"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_138"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_161"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_2"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_19"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_37"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_79"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_127"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_139"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:hi_tech_earbuds"
         }
       ],
       "rolls": {
