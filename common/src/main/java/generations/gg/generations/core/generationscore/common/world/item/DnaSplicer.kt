@@ -65,6 +65,13 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
                 val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("kyurem_form") ?: return false
                 val feature = provider.getOrCreate(entity.pokemon)
 
+                val moveToRemove = when (feature.value) {
+                    "black" -> "fusionbolt"
+                    "white" -> "fusionflare"
+                    else -> null
+                }
+
+                moveToRemove?.let { entity.pokemon.removeMove(it)}
                 feature.value = "false"
                 feature.apply(entity)
 
@@ -84,7 +91,6 @@ class DnaSplicer(properties: Properties): PokemonStoringItem(properties) {
 
             if (!entity.pokemon.hasEmbeddedPokemon()) {
                 if (feature.value.isBlank() || feature.value == "false") {
-
                     val form = if (pokemonInStack.isSpecies("zekrom")) {
                         "black"
                     } else if (pokemonInStack.isSpecies("reshiram")) {

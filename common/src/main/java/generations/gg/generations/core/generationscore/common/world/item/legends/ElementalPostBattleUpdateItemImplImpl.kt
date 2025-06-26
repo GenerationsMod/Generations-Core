@@ -27,7 +27,6 @@ open class ElementalPostBattleUpdateItemImplImpl(
             val damage = stack.damageValue
 
             if (damage >= stack.maxDamage) {
-                stack.shrink(1)
                 PokemonUtil.spawn(key.createProperties(70), level, player.onPos)
                 postSpawn(level, player, usedHand)
             } else {

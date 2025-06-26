@@ -1,13 +1,18 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
+import com.cobblemon.mod.common.api.types.tera.TeraType
 import com.cobblemon.mod.common.client.render.VaryingRenderableResolver
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.FormData
 import com.cobblemon.mod.common.pokemon.Species
+import com.cobblemon.mod.common.util.asResource
+import com.cobblemon.mod.common.util.set
+import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
@@ -16,6 +21,8 @@ import generations.gg.generations.core.generationscore.common.client.render.Cobb
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.client.render.tera.tint
+import generations.gg.generations.core.generationscore.common.util.extensions.battleTeraType
 import net.minecraft.client.Minecraft
 import net.minecraft.client.model.geom.ModelPart
 import net.minecraft.core.Direction
@@ -78,7 +85,11 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         if (model.renderObject!!.isReady) {
             instance.light = packedLight
             instance.teraActive = context.request(RenderContext.ASPECTS)?.contains("terastal_active") ?: false
-
+            if (instance.teraActive) {
+                context.entity.instanceOrNull<PokemonEntity>()?.battleTeraType?.let {
+                    instance.teraTint.set(it.tint)
+                }
+            }
 //            instance.tint.set(r, g, b) TODO: convert color int into its float components for tint.
             val variant = getVariant(context)
             if (variant != null) {

@@ -59,7 +59,7 @@ class ReinsOfUnityItem(properties: Properties): PokemonStoringItem(properties) {
 
                 val move = getFormAndMove(dembeded)?.second?.also { entity.pokemon.removeMove(it) } ?: return false
 
-                val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("calyrex_rider") ?: return false
+                val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("king_steed") ?: return false
                 val feature = provider.getOrCreate(entity.pokemon)
 
                 feature.value = "false"
@@ -76,7 +76,7 @@ class ReinsOfUnityItem(properties: Properties): PokemonStoringItem(properties) {
             }
         } else if (pokemon.isSpecies("calyrex")) {
 
-            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("calyrex_rider") ?: return false
+            val provider = entity.pokemon.getProviderOrNull<ChoiceSpeciesFeatureProvider>("king_steed") ?: return false
             val feature = provider.getOrCreate(entity.pokemon)
 
             if (!entity.pokemon.hasEmbeddedPokemon()) {

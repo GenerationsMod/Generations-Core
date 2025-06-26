@@ -1,0 +1,428 @@
+{
+  "scale": 0.4,
+  "materials": {
+    "cherish": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "cherish_ball.png"
+      },
+      "values": {}
+    },
+    "dive": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "dive_ball.png"
+      },
+      "values": {}
+    },
+    "dusk": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "dusk_ball.png"
+      },
+      "values": {}
+    },
+    "fast": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "fast_ball.png"
+      },
+      "values": {}
+    },
+    "friend": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "friend_ball.png"
+      },
+      "values": {}
+    },
+    "great": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "great_ball.png"
+      },
+      "values": {}
+    },
+    "gs": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "gs_ball.png"
+      },
+      "values": {}
+    },
+    "heal": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "heal_ball.png"
+      },
+      "values": {}
+    },
+    "heavy": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "heavy_ball.png"
+      },
+      "values": {}
+    },
+    "level": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "level_ball.png"
+      },
+      "values": {}
+    },
+    "love": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "love_ball.png"
+      },
+      "values": {}
+    },
+    "lure": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "lure_ball.png"
+      },
+      "values": {}
+    },
+    "luxury": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "luxury_ball.png"
+      },
+      "values": {}
+    },
+    "master": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "master_ball.png"
+      },
+      "values": {}
+    },
+    "moon": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "moon_ball.png"
+      },
+      "values": {}
+    },
+    "nest": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "nest_ball.png"
+      },
+      "values": {}
+    },
+    "net": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "net_ball.png"
+      },
+      "values": {}
+    },
+    "park": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "park_ball.png"
+      },
+      "values": {}
+    },
+    "poke": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "poke_ball.png"
+      },
+      "values": {}
+    },
+    "repeat": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "repeat_ball.png"
+      },
+      "values": {}
+    },
+    "premier": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "premier_ball.png"
+      },
+      "values": {}
+    },
+    "quick": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "quick_ball.png"
+      },
+      "values": {}
+    },
+    "safari": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "safari_ball.png"
+      },
+      "values": {}
+    },
+    "sport": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "sport_ball.png"
+      },
+      "values": {}
+    },
+    "timer": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "timer_ball.png"
+      },
+      "values": {}
+    },
+    "ultra": {
+      "shader": "solid",
+      "cull": "None",
+      "blend": "None",
+      "images": {
+        "diffuse": "ultra_ball.png"
+      },
+      "values": {}
+    }
+  },
+  "defaultVariant": {
+    "cherish_displayball": {
+      "material": "cherish",
+      "hide": true
+    },
+    "displayball": {
+      "material": "poke",
+      "hide": false
+    },
+    "great_displayball": {
+      "material": "great",
+      "hide": true
+    },
+    "master_displayball": {
+      "material": "master",
+      "hide": true
+    },
+    "net_displayball": {
+      "material": "net",
+      "hide": true
+    },
+    "heavy_displayball": {
+      "material": "heavy",
+      "hide": true
+    },
+    "timer_displayball": {
+      "material": "timer",
+      "hide": true
+    },
+    "stand": {
+      "material": "poke",
+      "hide": false
+    }
+  },
+  "variants": {
+    "cherish": {
+      "cherish_displayball": {
+        "hide": false
+      },
+      "displayball": {
+        "hide": true
+      }
+    },
+    "great": {
+      "great_displayball": {
+        "hide": false
+      },
+      "displayball": {
+        "hide": true
+      }
+    },
+    "master": {
+      "master_displayball": {
+        "hide": false
+      },
+      "displayball": {
+        "hide": true
+      }
+    },
+    "net": {
+      "net_displayball": {
+        "hide": false
+      },
+      "displayball": {
+        "hide": true
+      }
+    },
+    "timer": {
+      "timer_displayball": {
+        "hide": false
+      },
+      "displayball": {
+        "hide": true
+      }
+    },
+    "heavy": {
+      "heavy_displayball": {
+        "hide": false
+      },
+      "displayball": {
+        "hide": true
+      }
+    },
+    "dive": {
+      "displayball": {
+        "material": "dive"
+      }
+    },
+    "dusk": {
+      "displayball": {
+        "material": "dusk"
+      }
+    },
+    "fast": {
+      "displayball": {
+        "material": "fast"
+      }
+    },
+    "friend": {
+      "displayball": {
+        "material": "friend"
+      }
+    },
+    "gs": {
+      "displayball": {
+        "material": "gs"
+      }
+    },
+    "heal": {
+      "displayball": {
+        "material": "heal"
+      }
+    },
+    "level": {
+      "displayball": {
+        "material": "level"
+      }
+    },
+    "lure": {
+      "displayball": {
+        "material": "lure"
+      }
+    },
+    "luxury": {
+      "displayball": {
+        "material": "luxury"
+      }
+    },
+    "moon": {
+      "displayball": {
+        "material": "moon"
+      }
+    },
+    "nest": {
+      "displayball": {
+        "material": "nest"
+      }
+    },
+    "park": {
+      "displayball": {
+        "material": "park"
+      }
+    },
+    "poke": {
+      "displayball": {
+        "material": "poke"
+      }
+    },
+    "premier": {
+      "displayball": {
+        "material": "premier"
+      }
+    },
+    "quick": {
+      "displayball": {
+        "material": "quick"
+      }
+    },
+    "repeat": {
+      "displayball": {
+        "material": "repeat"
+      }
+    },
+    "safari": {
+      "displayball": {
+        "material": "safari"
+      }
+    },
+    "sport": {
+      "displayball": {
+        "material": "sport"
+      }
+    },
+    "ultra": {
+      "displayball": {
+        "material": "ultra"
+      }
+    },
+    "love": {
+      "displayball": {
+        "material": "love"
+      }
+    },
+    "empty": {
+      "displayball": {
+        "hide": true
+      }
+    }
+  }
+}

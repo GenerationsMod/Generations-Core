@@ -7,7 +7,7 @@
             "id": "corsola-1",
             "pokemon": "corsola",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",
@@ -26,10 +26,10 @@
             "id": "corsola-galarian-1",
             "pokemon": "corsola galarian",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
-            "context": "submerged",
+            "context": "seafloor",
             "bucket": "common",
             "level": "4-33",
             "weight": 10.0,

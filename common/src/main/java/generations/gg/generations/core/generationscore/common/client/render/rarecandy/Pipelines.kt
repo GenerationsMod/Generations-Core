@@ -149,6 +149,7 @@ object Pipelines {
             val isActive = it.instance.instanceOrNull<CobblemonInstance>()?.teraActive ?: false
             return@supplyBooleanUniform isActive
         }
+        .supplyVec3("teraTint") { it.instance.instanceOrNull<CobblemonInstance>()?.teraTint?.takeIf { it != ZERO } ?: ONE }
 
         .prePostDraw({ material ->
             if (material.cullType() != CullType.None) {
@@ -167,48 +168,48 @@ object Pipelines {
             */})
         .shader(manager, "shaders/animated.vs.glsl", "shaders/animated.fs.glsl")
         .build()
-    }
+}
 
-    fun Pipeline.Builder.shader(manager: ResourceManager, vertex: String, fragment: String): Pipeline.Builder =
-        shader(read(manager, vertex.id()), read(manager, fragment.id()))
-
-
-    fun pingpong(time: Double): Double = (sin(time * Math.PI * 2) * 7 + 7).toInt().toDouble()
-
-    private fun Pipeline.Builder.supplyColorArray(name: String, function: (UniformUploadContext) -> FloatArray): Pipeline.Builder = this.supplyUniform(name) {
-        val color = function.invoke(it)
-        it.uniform.upload4f(color[0], color[1], color[2], color[3])
-    }
-
-    private fun Pipeline.Builder.supplyMat4s(name: String, function: (UniformUploadContext) -> Array<Matrix4f>): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadMat4fs(function.invoke(it)) }
-    private fun Pipeline.Builder.supplyMat4(name: String, function: (UniformUploadContext) -> Matrix4f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadMat4f(function.invoke(it)) }
-    private fun Pipeline.Builder.supplyVec2(name: String, function: (UniformUploadContext) -> Vector2f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadVec2f(function.invoke(it)) }
-    private fun Pipeline.Builder.supplyVec3(name: String, function: (UniformUploadContext) -> Vector3f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadVec3f(function.invoke(it))}
-    private fun Pipeline.Builder.supplyFloatUniform(name: String, function: (UniformUploadContext) -> Float): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadFloat(function.invoke(it)) }
-    private fun Pipeline.Builder.supplyEnumUniform(name: String, value: Enum<*>): Pipeline.Builder = this.supplyInt(name) { value.ordinal }
-    private fun Pipeline.Builder.supplyInt(name: String, function: (UniformUploadContext) -> Int): Pipeline.Builder = this.also { this.supplyUniform(name) { it.uniform.uploadInt(function.invoke(it)) } }
-    public inline fun <reified T> Any?.instanceOrNull(): T? = if(this is T) this else null
-
-    private val UniformUploadContext.isStatueMaterial: Boolean
-        get() = statueMaterial != null
-
-    private val UniformUploadContext.statueMaterial: String?
-        get() = this.instance.instanceOrNull<StatueInstance>()?.material?.takeIf { GenerationsTextureLoader.has(it) }
-
-    private val UniformUploadContext.transform: Transform
-        get() = this.instance.instanceOrNull<AnimatedObjectInstance>()?.getTransform(this.material.materialName)?.takeIf { !it.isUnit } ?: this.`object`().getTransform(this.instance.variant())
+fun Pipeline.Builder.shader(manager: ResourceManager, vertex: String, fragment: String): Pipeline.Builder =
+    shader(read(manager, vertex.id()), read(manager, fragment.id()))
 
 
-    private fun UniformUploadContext.getTextureOrOther(function: (UniformUploadContext) -> String?, supplier: () -> ITexture): ITexture = GenerationsTextureLoader.getTexture(function.invoke(this))?.takeUnless { texture -> texture === GenerationsTextureLoader.MissingTextureProxy } ?: supplier.invoke()
+fun pingpong(time: Double): Double = (sin(time * Math.PI * 2) * 7 + 7).toInt().toDouble()
 
-    private fun String.id(): ResourceLocation = GenerationsCore.id(this)
+private fun Pipeline.Builder.supplyColorArray(name: String, function: (UniformUploadContext) -> FloatArray): Pipeline.Builder = this.supplyUniform(name) {
+    val color = function.invoke(it)
+    it.uniform.upload4f(color[0], color[1], color[2], color[3])
+}
 
-    private fun Pipeline.Builder.supplyTexture(name: String, slot: Int, function: (UniformUploadContext) -> ITexture): Pipeline.Builder = this.supplyUniform(name) {
-        function.invoke(it).bind(slot)
-        it.uniform().uploadInt(slot)
-    }
+private fun Pipeline.Builder.supplyMat4s(name: String, function: (UniformUploadContext) -> Array<Matrix4f>): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadMat4fs(function.invoke(it)) }
+private fun Pipeline.Builder.supplyMat4(name: String, function: (UniformUploadContext) -> Matrix4f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadMat4f(function.invoke(it)) }
+private fun Pipeline.Builder.supplyVec2(name: String, function: (UniformUploadContext) -> Vector2f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadVec2f(function.invoke(it)) }
+private fun Pipeline.Builder.supplyVec3(name: String, function: (UniformUploadContext) -> Vector3f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadVec3f(function.invoke(it))}
+private fun Pipeline.Builder.supplyFloatUniform(name: String, function: (UniformUploadContext) -> Float): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadFloat(function.invoke(it)) }
+private fun Pipeline.Builder.supplyEnumUniform(name: String, value: Enum<*>): Pipeline.Builder = this.supplyInt(name) { value.ordinal }
+private fun Pipeline.Builder.supplyInt(name: String, function: (UniformUploadContext) -> Int): Pipeline.Builder = this.also { this.supplyUniform(name) { it.uniform.uploadInt(function.invoke(it)) } }
+public inline fun <reified T> Any?.instanceOrNull(): T? = if(this is T) this else null
 
-    private fun Pipeline.Builder.supplyBooleanUniform(name: String, function: (UniformUploadContext) -> Boolean): Pipeline.Builder { return this.supplyUniform(name) { it.uniform.uploadBoolean(function.invoke(it)) } }
+private val UniformUploadContext.isStatueMaterial: Boolean
+    get() = statueMaterial != null
+
+private val UniformUploadContext.statueMaterial: String?
+    get() = this.instance.instanceOrNull<StatueInstance>()?.material?.takeIf { GenerationsTextureLoader.has(it) }
+
+private val UniformUploadContext.transform: Transform
+    get() = this.instance.instanceOrNull<AnimatedObjectInstance>()?.getTransform(this.material.materialName)?.takeIf { !it.isUnit } ?: this.`object`().getTransform(this.instance.variant())
+
+
+private fun UniformUploadContext.getTextureOrOther(function: (UniformUploadContext) -> String?, supplier: () -> ITexture): ITexture = GenerationsTextureLoader.getTexture(function.invoke(this))?.takeUnless { texture -> texture === GenerationsTextureLoader.MissingTextureProxy } ?: supplier.invoke()
+
+private fun String.id(): ResourceLocation = GenerationsCore.id(this)
+
+private fun Pipeline.Builder.supplyTexture(name: String, slot: Int, function: (UniformUploadContext) -> ITexture): Pipeline.Builder = this.supplyUniform(name) {
+    function.invoke(it).bind(slot)
+    it.uniform().uploadInt(slot)
+}
+
+private fun Pipeline.Builder.supplyBooleanUniform(name: String, function: (UniformUploadContext) -> Boolean): Pipeline.Builder { return this.supplyUniform(name) { it.uniform.uploadBoolean(function.invoke(it)) } }
 
 fun read(manager: ResourceManager, name: ResourceLocation): String {
     try {
@@ -219,4 +220,3 @@ fun read(manager: ResourceManager, name: ResourceLocation): String {
         throw RuntimeException("Failed to read shader from resource location in shader: $name", e)
     }
 }
-

@@ -23,7 +23,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 0)",
             "action": [
               "v.pokemon = q.player.party.get(0);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
+              "v.aspect = v.pokemon.get_feature('appliance');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -33,7 +33,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 1)",
             "action": [
               "v.pokemon = q.player.party.get(1);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
+              "v.aspect = v.pokemon.get_feature('appliance');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -43,7 +43,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 2)",
             "action": [
               "v.pokemon = q.player.party.get(2);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
+              "v.aspect = v.pokemon.get_feature('appliance');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -53,7 +53,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 3)",
             "action": [
               "v.pokemon = q.player.party.get(3);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
+              "v.aspect = v.pokemon.get_feature('appliance');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -63,7 +63,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 4)",
             "action": [
               "v.pokemon = q.player.party.get(4);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
+              "v.aspect = v.pokemon.get_feature('appliance');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -73,7 +73,7 @@
             "isVisible": "q.player.has_in_party('cobblemon:rotom', 5)",
             "action": [
               "v.pokemon = q.player.party.get(5);",
-              "v.aspect = v.pokemon.get_feature('rotom_form');",
+              "v.aspect = v.pokemon.get_feature('appliance');",
               "q.dialogue.set_page('forms');"
             ]
           },
@@ -99,7 +99,8 @@
             "value": "normal",
             "isVisible": "v.aspect != 'false' && v.aspect != 0.0",
             "action": [
-              "v.pokemon.set_feature('rotom_form', 'false');",
+              "v.pokemon.set_feature('appliance', 'false');",
+              "v.pokemon.remove_rotom_move();",
               "q.dialogue.close();"
             ]
           },
@@ -108,7 +109,7 @@
             "value": "heat",
             "isVisible": "v.aspect != 'heat'",
             "action": [
-              "v.pokemon.set_feature('rotom_form', 'heat');",
+              "v.pokemon.set_feature('appliance', 'heat');",
               "q.dialogue.close();"
             ]
           },
@@ -117,7 +118,7 @@
             "value": "wash",
             "isVisible": "v.aspect != 'wash'",
             "action": [
-              "v.pokemon.set_feature('rotom_form', 'wash');",
+              "v.pokemon.set_feature('appliance', 'wash');",
               "q.dialogue.close();"
             ]
           },
@@ -126,7 +127,7 @@
             "value": "frost",
             "isVisible": "v.aspect != 'frost'",
             "action": [
-              "v.pokemon.set_feature('rotom_form', 'frost');",
+              "v.pokemon.set_feature('appliance', 'frost');",
               "q.dialogue.close();"
             ]
           },
@@ -135,7 +136,7 @@
             "value": "fan",
             "isVisible": "v.aspect != 'fan'",
             "action": [
-              "v.pokemon.set_feature('rotom_form', 'fan');",
+              "v.pokemon.set_feature('appliance', 'fan');",
               "q.dialogue.close();"
             ]
           },
@@ -144,7 +145,7 @@
             "value": "mow",
             "isVisible": "v.aspect != 'mow'",
             "action": [
-              "v.pokemon.set_feature('rotom_form', 'mow');",
+              "v.pokemon.set_feature('appliance', 'mow');",
               "q.dialogue.close();"
             ]
           }

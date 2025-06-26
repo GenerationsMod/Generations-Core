@@ -364,9 +364,16 @@ const Abilities = {
       if (source.abilityState.battleBondTriggered)
         return;
       if (source.species.id === "greninjabond" && source.hp && !source.transformed && source.side.foePokemonLeft()) {
-        source.formeChange("Greninja-Ash", this.effect, false, "[msg]");
+        source.formeChange("Greninja-Ash", this.effect, true, "[msg]");
         source.abilityState.battleBondTriggered = true;
       }
+    },
+    onModifyMovePriority: -1,
+    onModifyMove(move, attacker) {
+    	if (move.id === 'watershuriken' && attacker.species.name === 'Greninja-Ash' &&
+    		!attacker.transformed) {
+    		move.multihit = 3;
+    	}
     },
     flags: { failroleplay: 1, noreceiver: 1, noentrain: 1, notrace: 1, failskillswap: 1, cantsuppress: 1 },
     name: "Battle Bond",

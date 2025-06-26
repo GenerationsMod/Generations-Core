@@ -1,9 +1,13 @@
 package generations.gg.generations.core.generationscore.common.event
 
 import com.cobblemon.mod.common.api.events.pokemon.HeldItemEvent
+import com.cobblemon.mod.common.api.moves.BenchedMove
+import com.cobblemon.mod.common.api.moves.Moves
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.api.types.tera.TeraTypes
+import com.cobblemon.mod.common.pokemon.Pokemon
+import generations.gg.generations.core.generationscore.common.util.removeMove
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import net.minecraft.core.Holder
 import net.minecraft.server.level.ServerPlayer
