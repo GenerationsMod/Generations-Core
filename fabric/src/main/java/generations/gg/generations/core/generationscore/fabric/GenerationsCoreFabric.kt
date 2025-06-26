@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric
 
+import com.cobblemon.mod.common.item.group.CobblemonItemGroups
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.init
 import generations.gg.generations.core.generationscore.common.GenerationsCore.initBuiltinPacks
@@ -15,6 +16,7 @@ import generations.gg.generations.core.generationscore.common.util.PlatformRegis
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures
+import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
 import generations.gg.generations.core.generationscore.fabric.AnvilEvents.AnvilChange
 import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers
@@ -121,6 +123,14 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
             return@register InteractionEvents.fireRightClick(player, hand, hitResult.blockPos, hitResult.direction);
         })
 
+        GenerationsCreativeTabs.register { provider ->
+            Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, provider.key, FabricItemGroup.builder()
+                .title(provider.displayName)
+                .icon(provider.displayIconProvider)
+                .displayItems(provider.entryCollector)
+                .build())
+        }
+
         AnvilEvents.ANVIL_CHANGE.register(AnvilChange { result, left, right, name, baseCost, player ->
             onAnvilChange(
                 left, right, player,
@@ -156,8 +166,6 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
     override fun registerCompostables(block: Block, chance: Float) {
         CompostingChanceRegistry.INSTANCE.add(block, chance)
     }
-
-    override fun <T : Any> register(register: () -> PlatformRegistry<T>) = register.invoke().init()
 
     @SafeVarargs
     override fun create(

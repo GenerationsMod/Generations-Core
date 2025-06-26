@@ -61,7 +61,6 @@ interface GenerationsImplementation {
 
     fun <T: Any> registerEntityDataSerializer(name: String, dataSerializer: EntityDataSerializer<T>)
     fun <T : AbstractContainerMenu> createExtendedMenu(constructor: (Int, Inventory, FriendlyByteBuf) -> T): () -> MenuType<T>
-    fun <T: Any> register(register: () -> PlatformRegistry<T>)
     fun openExtendedMenu(serverPlayer: ServerPlayer, menuProvider: ExtendedMenuProvider)
 
     fun <T: Any> createRegistry(key: ResourceKey<Registry<T>>, sync: Boolean): Registry<T>

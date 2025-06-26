@@ -189,7 +189,7 @@ object GenerationsCore {
         GenerationsBlockEntities.init()
         GenerationsEntities.init()
         GenerationsArmorMaterials.init()
-        GenerationsCreativeTabs.init()
+//        GenerationsCreativeTabs.init()
         GenerationsContainers.init()
         GenerationsCoreRecipeTypes.init()
         GenerationsCoreRecipeSerializers.init()

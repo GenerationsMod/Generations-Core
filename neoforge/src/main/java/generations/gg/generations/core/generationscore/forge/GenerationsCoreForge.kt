@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.forge
 
 import com.cobblemon.mod.common.NetworkManager
+import com.cobblemon.mod.common.item.group.CobblemonItemGroups
 import com.google.common.collect.ImmutableMap
 import com.mojang.datafixers.util.Pair
 import generations.gg.generations.core.generationscore.common.GenerationsCore
@@ -17,10 +18,12 @@ import generations.gg.generations.core.generationscore.common.util.EntryRegister
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
+import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
 import generations.gg.generations.core.generationscore.forge.networking.GenerationsNeoForgeNetworkManager
 import net.minecraft.client.Minecraft
 import net.minecraft.core.Holder
 import net.minecraft.core.Registry
+import net.minecraft.core.registries.Registries
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
 import net.minecraft.network.syncher.EntityDataSerializer
@@ -52,10 +55,7 @@ import net.neoforged.neoforge.event.*
 import net.neoforged.neoforge.event.entity.living.LivingEvent.LivingJumpEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract
-import net.neoforged.neoforge.registries.DeferredRegister
-import net.neoforged.neoforge.registries.NeoForgeRegistries
-import net.neoforged.neoforge.registries.NewRegistryEvent
-import net.neoforged.neoforge.registries.RegistryBuilder
+import net.neoforged.neoforge.registries.*
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 import java.util.*
 import java.util.function.Consumer
@@ -101,6 +101,20 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
             addListener<NewRegistryEvent> { event ->
                 registries.forEach { event.register(it) }
             }
+
+            addListener<RegisterEvent> { event ->
+                event.register(Registries.CREATIVE_MODE_TAB) { helper ->
+                    GenerationsCreativeTabs.register { holder ->
+                        val itemGroup = CreativeModeTab.builder()
+                            .title(holder.displayName)
+                            .icon(holder.displayIconProvider)
+                            .displayItems(holder.entryCollector)
+                            .build()
+                        helper.register(holder.key, itemGroup)
+                        itemGroup
+                    }
+                }
+            }
         }
 
         init(this)
@@ -145,20 +159,6 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
             addListener(::onReload)
         }
         if (ModList.get().isLoaded("impactor")) ImpactorCompat.init()
-    }
-
-    override fun <T: Any> register(register: () -> PlatformRegistry<T>) {
-//        with(MOD_BUS) {
-//            this.addListener<RegisterEvent> { event ->
-//                val platform = register.invoke()
-//
-//                if(event.registryKey.equals(platform.resourceKey)) {
-//                    event.register(platform.resourceKey) { helper ->
-//                        platform.init()
-//                    }
-//                }
-//            }
-//        }
     }
 
     override fun registerStrippable(log: Holder<out Block>, stripped: Holder<out Block>) {
