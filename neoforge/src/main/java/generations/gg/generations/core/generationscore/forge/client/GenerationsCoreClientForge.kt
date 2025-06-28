@@ -1,26 +1,20 @@
 package generations.gg.generations.core.generationscore.forge.client
 
-import com.mojang.blaze3d.systems.RenderSystem
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.EntityRendererHandler
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.onInitialize
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerBlockEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderHighlightedPath
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandySolid
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.renderRareCandyTransparent
-import generations.gg.generations.core.generationscore.common.client.MatrixCache
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClientImplementation
 import generations.gg.generations.core.generationscore.common.client.model.Keybinds
-import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
 import generations.gg.generations.core.generationscore.common.client.screen.container.*
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.entity.EntityRendererProvider
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.PreparableReloadListener
-import net.minecraft.server.packs.resources.ReloadableResourceManager
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.level.block.entity.BlockEntity
@@ -34,7 +28,6 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDef
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers
 import net.neoforged.neoforge.client.event.InputEvent
 import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent
-import net.neoforged.neoforge.client.event.RenderLevelStageEvent
 import net.neoforged.neoforge.common.NeoForge
 import java.util.ArrayList
 
@@ -47,12 +40,17 @@ import java.util.ArrayList
  * @author Joseph T. McQuigg, WaterPicker
  */
 @Mod(value = GenerationsCore.MOD_ID, dist = [Dist.CLIENT])
-class GenerationsCoreClientForge(eventBus: IEventBus) {
+class GenerationsCoreClientForge(eventBus: IEventBus): GenerationsCoreClientImplementation {
+    private var reloadableResources: MutableList<PreparableReloadListener> = ArrayList()
+
     /**
      * Initializes the client side of the Forge mod.
      * @param eventBus The event bus to register the client side of the mod to.
      */
     init {
+
+        GenerationsCoreClient.onInitialize(this)
+
         eventBus.addListener({ event: RegisterRenderers ->
             registerBlockEntityRenderers(object : BlockEntityRendererHandler {
                 override fun <T : BlockEntity> register(type: BlockEntityType<T>, provider: BlockEntityRendererProvider<T>, ) = event.registerBlockEntityRenderer(type, provider)
@@ -79,68 +77,26 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
         eventBus.addListener({ event: RegisterLayerDefinitions ->
             registerLayerDefinitions({ layerLocation, supplier -> event.registerLayerDefinition(layerLocation, supplier) })
         })
+
         eventBus.addListener { event: FMLClientSetupEvent ->
             forgeClientSetup(
                 event
             )
         }
-//        eventBus.addListener { event: RegisterGuiLayersEvent ->
-//            registerGUILayers(
-//                event
-//            )
-//        }
-//        NeoForge.EVENT_BUS.addListener { event: RenderLevelStageEvent ->
-//            renderHighlightedPath(
-//                event
-//            )
-//        }
+    }
+
+    override fun registerResourceReloader(
+        identifier: ResourceLocation,
+        reloader: PreparableReloadListener,
+        dependencies: Collection<ResourceLocation>
+    ) {
+        System.out.println("[GenerationsTextureLoaderLoader] Loading ${reloader.name}")
+        reloadableResources.add(reloader)
     }
 
     companion object {
-        private val reloadableResources: MutableList<PreparableReloadListener> = ArrayList()
-
-        private fun renderHighlightedPath(event: RenderLevelStageEvent) {
-            when (event.stage) {
-                RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS -> {
-                    renderHighlightedPath(
-                        event.poseStack,
-                        event.partialTick.getGameTimeDeltaPartialTick(false).toInt(),
-                        event.camera
-                    )
-
-                    MatrixCache.projectionMatrix.set(RenderSystem.getProjectionMatrix())
-                    MatrixCache.viewMatrix.set(RenderSystem.getModelViewMatrix())
-
-                    RenderStateRecord.push()
-                    RenderSystem.enableDepthTest()
-                    RenderSystem.defaultBlendFunc()
-                    RenderSystem.enableBlend()
-                    renderRareCandyTransparent(true)
-                    RenderStateRecord.pop()
-                }
-
-                RenderLevelStageEvent.Stage.AFTER_LEVEL -> {
-                    RenderStateRecord.push()
-                    renderRareCandySolid()
-                    renderRareCandyTransparent()
-                    RenderStateRecord.pop()
-                }
-
-                else -> {}
-            }
-        }
-
-
         private fun forgeClientSetup(event: FMLClientSetupEvent) {
-            onInitialize(Minecraft.getInstance())
-            //        ForgeConfig.CLIENT.alwaysSetupTerrainOffThread.set(true); // Performance improvement
-//        ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline
-        }
-
-        fun registerResourceReloader(reloader: PreparableReloadListener) {
-            System.out.println("[GenerationsTextureLoaderLoader] Loading ${reloader.name}")
-
-            reloadableResources.add(reloader)
+            GenerationsCoreClient.setupClient(Minecraft.getInstance())
         }
     }
 }

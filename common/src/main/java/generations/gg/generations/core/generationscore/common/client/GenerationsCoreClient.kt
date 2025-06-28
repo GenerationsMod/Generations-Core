@@ -18,7 +18,6 @@ import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.LOGGER
-import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer
@@ -74,8 +73,6 @@ import net.minecraft.core.BlockPos
 import net.minecraft.core.Holder
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.packs.PackType
-import net.minecraft.server.packs.resources.ResourceManagerReloadListener
 import net.minecraft.util.Mth
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.entity.Entity
@@ -99,7 +96,6 @@ import org.joml.Matrix4f
 import org.joml.Vector4f
 import java.io.File
 import java.util.function.Function
-import kotlin.reflect.KFunction3
 
 private operator fun BlockPos.minus(pos: BlockPos): BlockPos {
     return this.subtract(pos)
@@ -119,30 +115,20 @@ object MatrixCache {
 }
 
 object GenerationsCoreClient {
-    fun onInitialize(minecraft: Minecraft) {
-        if (GenerationsCore.CONFIG.client.useRenderDoc) {
-            try {
-                System.loadLibrary("renderdoc")
-            } catch (e: UnsatisfiedLinkError) {
-                LOGGER.warn("Attempted to use renderdoc without renderdoc installed.")
-            }
-        }
+    fun onInitialize(implementation: GenerationsCoreClientImplementation) {
+//        if (GenerationsCore.CONFIG.client.useRenderDoc) {
+//            try {
+//                System.loadLibrary("renderdoc")
+//            } catch (e: UnsatisfiedLinkError) {
+//                LOGGER.warn("Attempted to use renderdoc without renderdoc installed.")
+//            }
+//        }
 
         ModelRegistry.init()
 
         ITextureLoader.setInstance(GenerationsTextureLoader)
 
-        val renderer = PokemonItemRenderer()
-
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE.value(), renderer)
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE.value(), renderer)
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE.value(), renderer)
-        CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE.value(), renderer)
-
-
-        GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
-
-        setupClient(minecraft)
+        implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), emptyList())
 
         GenerationsClientMolangFunctions.addAnimationFunctions()
 
@@ -161,20 +147,27 @@ object GenerationsCoreClient {
         })
 //        VaryingModelRepository.registerFactory(".pk", { resourceLocation, resource) -> new Pair<>(, b -> (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation))}));
 
-        GenerationsCore.implementation.registerResourceReloader(
-                id("texture_loader"),
-                GenerationsTextureLoader,
-                PackType.CLIENT_RESOURCES,
-                emptyList());
+//        GenerationsCore.implementation.registerResourceReloader(
+//                id("texture_loader"),
+//                GenerationsTextureLoader,
+//                PackType.CLIENT_RESOURCES,
+//                emptyList());
 
         PlatformEvents.CLIENT_PLAYER_LOGIN.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogin)
         PlatformEvents.CLIENT_PLAYER_LOGOUT.subscribe(Priority.NORMAL, GenerationsCoreClient::onLogout)
     }
 
 
-    private fun setupClient(event: Minecraft) {
+    fun setupClient(event: Minecraft) {
 
         event.tell({
+            val renderer = PokemonItemRenderer()
+
+            CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE.value(), renderer)
+            CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE.value(), renderer)
+            CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE.value(), renderer)
+            CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.ENTEI_STATUE.value(), renderer)
+
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE)
             addWoodType(GenerationsWoodTypes.ULTRA_DARK)
             addWoodType(GenerationsWoodTypes.GHOST)

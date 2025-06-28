@@ -1,4 +1,4 @@
-//package generations.gg.generations.core.generationscore.common.client
+package generations.gg.generations.core.generationscore.common.client//package generations.gg.generations.core.generationscore.common.client
 //
 //import com.cobblemon.mod.common.api.scheduling.ClientTaskTracker
 //import com.cobblemon.mod.common.api.scheduling.SchedulingTracker

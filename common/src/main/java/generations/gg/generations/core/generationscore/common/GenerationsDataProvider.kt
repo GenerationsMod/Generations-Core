@@ -38,7 +38,7 @@ class GenerationsDataProvider : DataProvider {
 //            GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), PackType.CLIENT_RESOURCES, emptyList())
 //        }
 
-        GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("data_resources"), SimpleResourceReloader(PackType.SERVER_DATA), PackType.SERVER_DATA, emptyList())
+//        GenerationsCore.implementation.registerResourceReloader(GenerationsCore.id("data_resources"), SimpleResourceReloader())
     }
 
     override fun doAfterSync(player: ServerPlayer, action: () -> Unit) {
@@ -71,41 +71,41 @@ class GenerationsDataProvider : DataProvider {
     }
 
 
-    internal inner class SimpleResourceReloader(private val type: PackType) : ResourceManagerReloadListener {
-        override fun onResourceManagerReload(manager: ResourceManager) {
-            // Check for a server running, this is due to the create a world screen triggering datapack reloads, these are fine to happen as many times as needed as players may be in the process of adding their datapacks.
-            val isInGame = server() != null
-            if (isInGame && this.type == PackType.SERVER_DATA && !INSTANCE.canReload) {
-                return
-            }
-
-            registries.stream().filter { it: DataRegistry? -> it!!.type == this.type }
-                .forEach { it: DataRegistry? -> it!!.reload(manager) }
-            if (isInGame && this.type == PackType.SERVER_DATA) {
-                canReload = false
-            }
-        }
-
-        fun type(): PackType {
-            return type
-        }
-
-        override fun equals(obj: Any?): Boolean {
-            if (obj === this) return true
-            if (obj == null || obj.javaClass != this.javaClass) return false
-            val that = obj as SimpleResourceReloader
-            return this.type == that.type
-        }
-
-        override fun hashCode(): Int {
-            return Objects.hash(type)
-        }
-
-        override fun toString(): String {
-            return "SimpleResourceReloader[" +
-                    "type=" + type + ']'
-        }
-    }
+//    internal inner class SimpleResourceReloader() : ResourceManagerReloadListener {
+//        override fun onResourceManagerReload(manager: ResourceManager) {
+//            // Check for a server running, this is due to the create a world screen triggering datapack reloads, these are fine to happen as many times as needed as players may be in the process of adding their datapacks.
+//            val isInGame = server() != null
+//            if (isInGame && !INSTANCE.canReload) {
+//                return
+//            }
+//
+//            registries.stream().filter { it: DataRegistry? -> it!!.type == this.type }
+//                .forEach { it: DataRegistry? -> it!!.reload(manager) }
+//            if (isInGame) {
+//                canReload = false
+//            }
+//        }
+//
+//        fun type(): PackType {
+//            return type
+//        }
+//
+//        override fun equals(obj: Any?): Boolean {
+//            if (obj === this) return true
+//            if (obj == null || obj.javaClass != this.javaClass) return false
+//            val that = obj as SimpleResourceReloader
+//            return this.type == that.type
+//        }
+//
+//        override fun hashCode(): Int {
+//            return Objects.hash(type)
+//        }
+//
+//        override fun toString(): String {
+//            return "SimpleResourceReloader[" +
+//                    "type=" + type + ']'
+//        }
+//    }
 
     companion object {
         @JvmField

@@ -7,22 +7,28 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerBlockEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClientImplementation
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsMushroomBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsWood
 import generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric
+import generations.gg.generations.core.generationscore.fabric.GenerationsCoreFabric.GenerationsReloadListener
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
-import net.minecraft.client.Minecraft
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
 import net.minecraft.client.renderer.entity.EntityRendererProvider
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.packs.PackType
+import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.level.block.DoorBlock
@@ -40,7 +46,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType
  * @author Joseph T. McQuigg, WaterPicker
  */
 @Environment(EnvType.CLIENT)
-class GenerationsCoreClientFabric : ClientModInitializer {
+class GenerationsCoreClientFabric : ClientModInitializer, GenerationsCoreClientImplementation {
     /**
      * Initializes the client.
      * @see ClientModInitializer.onInitializeClient
@@ -52,7 +58,10 @@ class GenerationsCoreClientFabric : ClientModInitializer {
 
         GenerationsCoreFabric.networkManager.registerClientHandlers()
 
-        onInitialize(Minecraft.getInstance())
+        onInitialize(this)
+
+        ClientLifecycleEvents.CLIENT_STARTED.register(GenerationsCoreClient::setupClient)
+
         registerRenderTypes()
         registerEntityRenderers(object : EntityRendererHandler {
             override fun <T : Entity> register(type: EntityType<T>, provider: EntityRendererProvider<T>) = EntityRendererRegistry.register(type, provider)
@@ -86,6 +95,14 @@ class GenerationsCoreClientFabric : ClientModInitializer {
             }
             renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value(), RenderType.cutout())
         }
+    }
+
+    override fun registerResourceReloader(
+        identifier: ResourceLocation,
+        reloader: PreparableReloadListener,
+        dependencies: Collection<ResourceLocation>,
+    ) {
+        ResourceManagerHelper.get(PackType.CLIENT_RESOURCES).registerReloadListener(GenerationsReloadListener(identifier, reloader, dependencies))
     }
 }
 

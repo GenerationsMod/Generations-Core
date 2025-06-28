@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.forge
 
 import com.cobblemon.mod.common.NetworkManager
-import com.cobblemon.mod.common.item.group.CobblemonItemGroups
 import com.google.common.collect.ImmutableMap
 import com.mojang.datafixers.util.Pair
 import generations.gg.generations.core.generationscore.common.GenerationsCore
@@ -10,7 +9,6 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore.on
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
 import generations.gg.generations.core.generationscore.common.api.events.general.InteractionEvents
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
@@ -19,9 +17,7 @@ import generations.gg.generations.core.generationscore.common.util.PlatformRegis
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
-import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge
 import generations.gg.generations.core.generationscore.forge.networking.GenerationsNeoForgeNetworkManager
-import net.minecraft.client.Minecraft
 import net.minecraft.core.Holder
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.Registries
@@ -33,7 +29,6 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
-import net.minecraft.server.packs.resources.ReloadableResourceManager
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.inventory.AbstractContainerMenu
@@ -295,11 +290,9 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
     override fun registerResourceReloader(
         identifier: ResourceLocation,
         reloader: PreparableReloadListener,
-        type: PackType,
         dependencies: Collection<ResourceLocation>,
     ) {
-        if (type == PackType.SERVER_DATA) reloadableResources.add(reloader)
-        else GenerationsCoreClientForge.registerResourceReloader(reloader)
+        reloadableResources.add(reloader)
     }
 
     override val networkManager: NetworkManager = GenerationsNeoForgeNetworkManager

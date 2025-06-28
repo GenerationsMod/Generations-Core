@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.fabric
 
-import com.cobblemon.mod.common.item.group.CobblemonItemGroups
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.GenerationsCore.init
 import generations.gg.generations.core.generationscore.common.GenerationsCore.initBuiltinPacks
@@ -225,14 +224,13 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
     override fun registerResourceReloader(
         identifier: ResourceLocation,
         reloader: PreparableReloadListener,
-        type: PackType,
         dependencies: Collection<ResourceLocation>,
     ) {
-        ResourceManagerHelper.get(type).registerReloadListener(GenerationsReloadListener(identifier, reloader, dependencies))
+        ResourceManagerHelper.get(PackType.SERVER_DATA).registerReloadListener(GenerationsReloadListener(identifier, reloader, dependencies))
     }
 
 
-    private class GenerationsReloadListener(private val identifier: ResourceLocation, private val reloader: PreparableReloadListener, private val dependencies: Collection<ResourceLocation>) : IdentifiableResourceReloadListener {
+    class GenerationsReloadListener(private val identifier: ResourceLocation, private val reloader: PreparableReloadListener, private val dependencies: Collection<ResourceLocation>) : IdentifiableResourceReloadListener {
 
         override fun reload(synchronizer: PreparableReloadListener.PreparationBarrier, manager: ResourceManager, prepareProfiler: ProfilerFiller, applyProfiler: ProfilerFiller, prepareExecutor: Executor, applyExecutor: Executor): CompletableFuture<Void> = this.reloader.reload(synchronizer, manager, prepareProfiler, applyProfiler, prepareExecutor, applyExecutor)
 

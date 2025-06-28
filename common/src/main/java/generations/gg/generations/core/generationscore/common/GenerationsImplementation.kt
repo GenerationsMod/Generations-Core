@@ -11,7 +11,6 @@ import net.minecraft.network.syncher.EntityDataSerializer
 import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.level.ServerPlayer
-import net.minecraft.server.packs.PackType
 import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.inventory.AbstractContainerMenu
@@ -27,7 +26,6 @@ interface GenerationsImplementation {
     fun registerResourceReloader(
         identifier: ResourceLocation,
         reloader: PreparableReloadListener,
-        type: PackType,
         dependencies: Collection<ResourceLocation>,
     )
 
