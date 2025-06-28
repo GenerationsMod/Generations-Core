@@ -161,32 +161,22 @@ val ItemStack.title: Component
     }
 
     fun ItemStack.populate(list: MutableList<Component>, context: TooltipContext) {
-        println("[populate] === ENTER ===")
-        println("[populate] Playback status: playing=$playing")
 
         if (playing) {
             val song = currentSong
-            println("[populate] Attempting to resolve current song: ${song}")
-            println("[populate] Resolved song: $song")
 
             if (song == null) {
-                println("[populate] Song resolution failed. No tooltip added.")
                 return
             }
 
             val remainingSeconds = timeUntilNextSong / 20f
-            println("[populate] Song: ${song.description.string}")
-            println("[populate] Time left: $remainingSeconds / ${song.lengthInSeconds}")
 
             list.add(Component.literal("Currently playing: ${song.description.string}"))
 
             list.add(Component.literal("${(song.lengthInSeconds - remainingSeconds).timeCode()} / ${song.lengthInSeconds.timeCode()}"))
         } else {
-            println("[populate] No song playing. Showing idle message.")
             list.add(Component.literal("Nothing is currently playing."))
         }
-
-        println("[populate] === EXIT ===")
     }
 //}
 

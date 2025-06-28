@@ -53,33 +53,24 @@ object GenerationsTextureLoader : ITextureLoader() {
     }
 
     fun initialize(manager: ResourceManager) {
-        println("[GenerationsTextureLoader] >> initialize: Starting reload")
         clear()
-        println("[GenerationsTextureLoader] >> initialize: Cleared old textures")
         try {
             RARE_CANDY.listMatchingResourceStacks(manager).forEach { name, list ->
-                println("[GenerationsTextureLoader] >> Processing resource stack: $name")
                 list.forEach { resource ->
-                    println("[GenerationsTextureLoader] >> Reading resource: ${resource}")
                     val obj = resource.openAsReader().use {
                         SpriteRegistry.GSON.fromJson(it, JsonObject::class.java)
                     }
-                    println("[GenerationsTextureLoader] >> Parsed JSON: $obj")
                     val map = GenerationsUtils.decode(CODEC, obj)
-                    println("[GenerationsTextureLoader] >> Decoded map size: ${map.size}")
 
                     if (map.isNotEmpty()) {
                         map.forEach { (key, value) ->
                             val textureLoc = "${value.namespace}:textures/${value.path}.png".asResource()
-                            println("[GenerationsTextureLoader] >> Registering texture: key=$key, location=$textureLoc")
                             register(key, SimpleTextureEnhanced(textureLoc))
                         }
                     }
                 }
             }
-            println("[GenerationsTextureLoader] >> initialize: Completed successfully")
         } catch (e: Exception) {
-            println("[GenerationsTextureLoader] >> initialize: Exception encountered!")
             e.printStackTrace()
             throw RuntimeException(e)
         }
