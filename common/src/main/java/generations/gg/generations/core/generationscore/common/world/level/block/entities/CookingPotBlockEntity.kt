@@ -4,17 +4,10 @@ import com.cobblemon.mod.common.api.berry.Berry
 import com.cobblemon.mod.common.api.berry.Flavor
 import com.cobblemon.mod.common.item.berry.BerryItem
 import com.mojang.serialization.Codec
-import earth.terrarium.common_storage_lib.item.impl.vanilla.VanillaDelegatingSlot
-import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
-import earth.terrarium.common_storage_lib.item.util.ItemProvider
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import earth.terrarium.common_storage_lib.storage.base.CommonStorage
-import generations.gg.generations.core.generationscore.common.SimpleItemSlot
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.util.TEXT_CODEC
-import generations.gg.generations.core.generationscore.common.util.shrink
 import generations.gg.generations.core.generationscore.common.world.container.CookingPotContainer
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
@@ -22,7 +15,6 @@ import generations.gg.generations.core.generationscore.common.world.item.curry.C
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import net.minecraft.core.BlockPos
-import net.minecraft.core.Direction
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.RegistryAccess
 import net.minecraft.core.component.DataComponentMap
@@ -54,7 +46,7 @@ import java.util.stream.Stream
 
 class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBlockEntity(GenerationsBlockEntities.COOKING_POT, pos, state),
     MenuProvider,
-    ItemProvider.BlockEntity, VariantProvider, Toggleable {
+    /*ItemProvider.BlockEntity,*/ VariantProvider, Toggleable {
     //0-9: berries
     //10: main ingredient
     //11: bowl
@@ -266,9 +258,9 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         get() = isCooking()
         set(value) { setCooking(value) }
 
-    override fun getItems(direction: Direction?): CommonStorage<ItemResource> {
-        return WrappedVanillaContainer(handler)
-    }
+//    override fun getItems(direction: Direction?): CommonStorage<ItemResource> {
+//        return WrappedVanillaContainer(handler)
+//    }
 
     override fun applyImplicitComponents(componentInput: DataComponentInput) {
         super.applyImplicitComponents(componentInput)
@@ -285,6 +277,10 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
         tag.remove("CustomName")
         tag.remove("Items")
 
+    }
+
+    fun getItems(): Container {
+        return handler
     }
 
     companion object {

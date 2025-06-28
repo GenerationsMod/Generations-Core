@@ -1,22 +1,19 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
-import earth.terrarium.common_storage_lib.item.impl.vanilla.PlayerContainer
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import earth.terrarium.common_storage_lib.storage.base.CommonStorage
-import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.world.container.slots.PredicateSlotItemHandler
-import net.minecraft.core.Holder
+import net.minecraft.world.Container
+import net.minecraft.world.SimpleContainer
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.MenuType
+import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
 
 abstract class SingleSlotContainer protected constructor(
     type: MenuType<*>,
     id: Int,
-    handler: CommonStorage<ItemResource> = SimpleItemStorage(1),
+    handler: Container = SimpleContainer(1),
 ) : AbstractContainerMenu(type, id) {
     init {
         this.addSlot(PredicateSlotItemHandler(
@@ -26,16 +23,14 @@ abstract class SingleSlotContainer protected constructor(
 
     //Needs to be applied after constructor
     fun applyPlayerInventory(playerInventory: Inventory) {
-        var container = PlayerContainer(playerInventory);
-
         for (y in 0..2) {
             for (x in 0..8) {
-                this.addSlot(container.toSlot( x + y * 9 + 9, 8 + x * 18, 84 + y * 18))
+                this.addSlot(Slot(playerInventory, x + y * 9 + 9, 8 + x * 18, 84 + y * 18))
             }
         }
 
         for (x in 0..8) {
-            this.addSlot(container.toSlot( x, 8 + x * 18, 142) /*else Slot(playerInventory, x, 8 + x * 18, 142)*/)
+            this.addSlot(Slot(playerInventory, x, 8 + x * 18, 142))
         }
     }
 
@@ -78,9 +73,4 @@ abstract class SingleSlotContainer protected constructor(
     override fun stillValid(player: Player): Boolean {
         return true
     }
-
-}
-
-private fun CommonStorage<ItemResource>.toSlot(slot: Int, x: Int, y: Int): MenuStorageSlot {
-    return MenuStorageSlot(this, slot, x, y)
 }

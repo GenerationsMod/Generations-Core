@@ -49,7 +49,6 @@ public class ItemStackComponentizationFixMixin {
         }
 
         if (itemStackData.item.startsWith("generations_core:") && itemStackData.item.endsWith("walkmon")) {
-            System.out.println("Walkmon detected! " + itemStackData.item + " " + itemStackData.tag);
 
             itemStackData.removeTag("DiscHolder").result().ifPresent(holder -> {
                 holder.get("Discs").map(GenerationsDataFixUtils::getDiscHolder).result().ifPresent(new Consumer<Dynamic<?>>() {
@@ -65,7 +64,6 @@ public class ItemStackComponentizationFixMixin {
                 newHolder = newHolder.set("time_until_next_song", holder.createInt(holder.get("TimeUntilNextSong").asInt(0)));
                 newHolder = newHolder.set("title", holder.createString("Walkmon"));
                 itemStackData.setComponent("generations_core:walkmon_data", newHolder);
-                System.out.println("Holder: " + newHolder);
             });
         }
 

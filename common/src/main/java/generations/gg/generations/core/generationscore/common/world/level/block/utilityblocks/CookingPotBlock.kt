@@ -67,14 +67,14 @@ class CookingPotBlock(materialIn: Properties) : GenericRotatableModelBlock(
         if (!oldState.`is`(newState.block)) {
             val tileEntity = worldIn.getBlockEntity(pos)
             if (tileEntity is CookingPotBlockEntity) {
-                val inventory = tileEntity.getItems(null)
+                val inventory = tileEntity.getItems()
 
                 val x = pos.x + 0.5
                 val y = pos.y + 0.5
                 val z = pos.z + 0.5
 
-                for (i in 0 until inventory.size()) {
-                    val stack = inventory.getResource(i).cachedStack
+                for (i in 0 until inventory.containerSize) {
+                    val stack = inventory.getItem(i)
                     Containers.dropItemStack(worldIn, x, y, z, stack)
                 }
 

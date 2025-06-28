@@ -1,11 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
-import earth.terrarium.common_storage_lib.item.util.ItemStorageData
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import earth.terrarium.common_storage_lib.storage.base.CommonStorage
-import earth.terrarium.common_storage_lib.storage.base.UpdateManager
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
@@ -15,7 +10,6 @@ import net.minecraft.world.SimpleContainer
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
-import net.minecraft.world.inventory.ContainerListener
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.component.ItemContainerContents
 

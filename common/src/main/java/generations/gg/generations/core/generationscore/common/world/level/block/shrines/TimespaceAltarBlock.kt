@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
 import com.mojang.serialization.MapCodec
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem
 import generations.gg.generations.core.generationscore.common.world.item.legends.RedChainItem

@@ -40,8 +40,4 @@ class Generationsv1Schema(versionKey: Int, parent: Schema) : Schema(versionKey, 
             DSL.optionalFields("id", References.ITEM_NAME.`in`(schema), "components", References.DATA_COMPONENTS.`in`(schema), "amount", DSL.longType().template())
         })
     }
-
-    override fun registerBlockEntities(schema: Schema?): MutableMap<String, Supplier<TypeTemplate>> {
-        return super.registerBlockEntities(schema)
-    }
 }

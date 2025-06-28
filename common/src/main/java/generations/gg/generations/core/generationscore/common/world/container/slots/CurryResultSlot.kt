@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.container.slots
 
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import net.minecraft.world.Container
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.Slot

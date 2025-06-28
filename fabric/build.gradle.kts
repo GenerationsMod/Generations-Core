@@ -55,7 +55,7 @@ dependencies {
 
     implementation("shadowBundle"("com.github.Chocohead:Fabric-ASM:v2.3")!!)
 
-    modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-fabric-1.21.1", version = "0.0.7")
+//    modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-fabric-1.21.1", version = "0.0.7")
 
     modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")

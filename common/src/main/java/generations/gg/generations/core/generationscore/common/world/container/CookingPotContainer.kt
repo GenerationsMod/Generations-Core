@@ -1,11 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.container
 
 import com.cobblemon.mod.common.item.berry.BerryItem
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import generations.gg.generations.core.generationscore.common.client.asValue
 import generations.gg.generations.core.generationscore.common.world.container.slots.CurryResultSlot
-import generations.gg.generations.core.generationscore.common.world.container.slots.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryIngredient
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.Toggleable
@@ -130,8 +126,7 @@ class CookingPotContainer @JvmOverloads constructor(
         }
 
         private fun getItem(obj: Any): Item? {
-            return if (obj is ItemResource) obj.item
-            else if (obj is ItemStack) obj.item
+            return if (obj is ItemStack) obj.item
             else null
         }
 

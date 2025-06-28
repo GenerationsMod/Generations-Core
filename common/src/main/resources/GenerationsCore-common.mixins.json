@@ -9,7 +9,6 @@
     "AbstractFurnaceBlockEntityMixin",
     "BestSpawnConfigMixin",
     "FishingHookMixin",
-    "MixinVanillaDelegatingSlot",
     "MoveTypeMixin",
     "NbtUtilsMixin",
     "PokemonBattleMixin",

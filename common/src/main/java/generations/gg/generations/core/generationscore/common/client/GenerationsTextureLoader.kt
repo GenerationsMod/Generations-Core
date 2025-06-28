@@ -17,10 +17,14 @@ import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
 import net.minecraft.client.renderer.texture.SimpleTexture
 import net.minecraft.resources.FileToIdConverter
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.packs.resources.PreparableReloadListener
 import net.minecraft.server.packs.resources.ResourceManager
+import net.minecraft.util.profiling.ProfilerFiller
 import org.lwjgl.opengl.GL13C
 import java.io.ByteArrayInputStream
 import java.io.IOException
+import java.util.concurrent.CompletableFuture
+import java.util.concurrent.Executor
 import kotlin.random.Random
 
 object GenerationsTextureLoader : ITextureLoader() {
@@ -28,6 +32,7 @@ object GenerationsTextureLoader : ITextureLoader() {
     val CODEC = Codec.unboundedMap(Codec.STRING, ResourceLocation.CODEC)
     val RARE_CANDY = FileToIdConverter("textures", "rare_candy_texture.json")
     val gson = Gson()
+
 
 
     object MissingTextureProxy : ITexture {
@@ -48,29 +53,38 @@ object GenerationsTextureLoader : ITextureLoader() {
     }
 
     fun initialize(manager: ResourceManager) {
+        println("[GenerationsTextureLoader] >> initialize: Starting reload")
         clear()
+        println("[GenerationsTextureLoader] >> initialize: Cleared old textures")
         try {
             RARE_CANDY.listMatchingResourceStacks(manager).forEach { name, list ->
+                println("[GenerationsTextureLoader] >> Processing resource stack: $name")
                 list.forEach { resource ->
-                    val obj = resource.openAsReader().use { SpriteRegistry.GSON.fromJson(it, JsonObject::class.java) }
+                    println("[GenerationsTextureLoader] >> Reading resource: ${resource}")
+                    val obj = resource.openAsReader().use {
+                        SpriteRegistry.GSON.fromJson(it, JsonObject::class.java)
+                    }
+                    println("[GenerationsTextureLoader] >> Parsed JSON: $obj")
                     val map = GenerationsUtils.decode(CODEC, obj)
+                    println("[GenerationsTextureLoader] >> Decoded map size: ${map.size}")
 
-                    if(map.isNotEmpty()) {
+                    if (map.isNotEmpty()) {
                         map.forEach { (key, value) ->
-                            register(key, SimpleTextureEnhanced(value.let { "${it.namespace}:textures/${it.path}.png" }.asResource()))
+                            val textureLoc = "${value.namespace}:textures/${value.path}.png".asResource()
+                            println("[GenerationsTextureLoader] >> Registering texture: key=$key, location=$textureLoc")
+                            register(key, SimpleTextureEnhanced(textureLoc))
                         }
                     }
                 }
             }
-
-//            RARE_CANDY.listMatchingResources(manager).values.forEach { resouce ->
-//                resouce.openAsReader().use { GsonHelper.fromJson(gson, it, RARE_CANDY_TYPE) }.forEach { (key, value) ->
-//                    register(key, SimpleTextureEnhanced(value.asResource().let { "${it.namespace}:textures/${it.path}.png" }.asResource()))
-//                }
-//            }
-        } catch (e: Exception) { throw RuntimeException(e)
+            println("[GenerationsTextureLoader] >> initialize: Completed successfully")
+        } catch (e: Exception) {
+            println("[GenerationsTextureLoader] >> initialize: Exception encountered!")
+            e.printStackTrace()
+            throw RuntimeException(e)
         }
     }
+
 
     override fun getTexture(s: String?): ITexture? {
         val texture = REGULAR.getOrDefault(s, null)?.let { Minecraft.getInstance().textureManager.getTexture(it, null) }.takeIf { it is ITextureWithResourceLocation } ?: return MissingTextureProxy

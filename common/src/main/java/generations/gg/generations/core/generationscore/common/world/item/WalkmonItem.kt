@@ -17,47 +17,34 @@ import net.minecraft.world.item.component.ItemContainerContents
 import net.minecraft.world.level.Level
 
 class WalkmonItem(properties: Properties, private val row: Int, type: String) : Item(properties.component(GenerationsDataComponents.ROWS.value(), row)) {
-    private val defaultTranslation: String = "container.$type"
 
-    override fun appendHoverText(
-        stack: ItemStack,
-        context: TooltipContext,
-        tooltipComponents: MutableList<Component>,
-        tooltipFlag: TooltipFlag
-    ) {
+    override fun appendHoverText(stack: ItemStack, context: TooltipContext, tooltipComponents: MutableList<Component>, tooltipFlag: TooltipFlag) {
         stack.populate(tooltipComponents, context)
     }
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         if (!level.isClientSide() && usedHand == InteractionHand.MAIN_HAND) {
             val stack = player.getItemInHand(usedHand);
-//
-//            val walkmon = stack.walkmonData
 
-//            if (walkmon != null) {
+            if (player.isShiftKeyDown) {
+                val discContainer = DiscContainer(9 * stack.rows)
 
-        if (player.isShiftKeyDown) {
-                    val discContainer = DiscContainer(9 * stack.rows)
+                stack.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY)
+                    .copyInto(discContainer.items)
 
-                    stack.getOrDefault(DataComponents.CONTAINER, ItemContainerContents.EMPTY)
-                        .copyInto(discContainer.items)
-
-                    GenericContainer.openScreen(
-                        discContainer,
-                        9,
-                        stack.rows,
-                        stack.title,
-                        player,
-                        player.inventory.selected
-                    ) {
-                        stack.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(discContainer.items))
-                    }
-                } else {
-                    stack.toggle(player as ServerPlayer)
-
-//                    stack.set(GenerationsDataComponents.WALKMON_DATA.value(), walkmon);
+                GenericContainer.openScreen(
+                    discContainer,
+                    9,
+                    stack.rows,
+                    stack.title,
+                    player,
+                    player.inventory.selected
+                ) {
+                    stack.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(discContainer.items))
                 }
-//            }
+            } else {
+                stack.toggle(player as ServerPlayer)
+            }
 
         }
 
@@ -70,9 +57,3 @@ class WalkmonItem(properties: Properties, private val row: Int, type: String) : 
         }
     }
 }
-
-//private var ItemStack.walkmonData: WalkmonData?
-//    get() = this.get(GenerationsDataComponents.WALKMON_DATA.value())
-//    set(value) {
-//        this.set(GenerationsDataComponents.WALKMON_DATA.value(), value)
-//    }

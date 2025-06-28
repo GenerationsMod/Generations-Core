@@ -42,8 +42,7 @@
   "depends": {
     "fabricloader": ">=0.15.3",
     "minecraft": ">=1.21.1",
-    "cobblemon": "=1.6.1+1.21.1",
-    "common_storage_lib": ">=0.0.7"
+    "cobblemon": "=1.6.1+1.21.1"
   },
   "suggests": {
     "wthit": ">=8.15.0"

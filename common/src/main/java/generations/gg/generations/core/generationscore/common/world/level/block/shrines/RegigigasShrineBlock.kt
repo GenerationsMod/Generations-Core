@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
 import com.mojang.serialization.MapCodec
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
 import generations.gg.generations.core.generationscore.common.world.item.legends.RegiOrbItem
@@ -114,13 +112,3 @@ class RegigigasShrineBlock(materialIn: Properties) : InteractShrineBlock(
         }
     }
 }
-
-private fun SimpleItemStorage.clear() {
-    (0..< size()).map(this::get).forEach { it.resource =  ItemResource.BLANK }
-}
-
-private fun SimpleItemStorage.isFull(): Boolean = (0..< size()).map(this::getResource).none { it.isBlank }
-
-private fun ItemStack.asResouce(): ItemResource = ItemResource.of(this)
-
-private fun SimpleItemStorage.has(item: Item): Boolean = (0..< size()).map(this::getResource).any { it.isOf(item) }

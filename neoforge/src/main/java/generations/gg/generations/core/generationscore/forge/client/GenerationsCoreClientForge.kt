@@ -33,8 +33,10 @@ import net.neoforged.neoforge.client.event.ClientTickEvent
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers
 import net.neoforged.neoforge.client.event.InputEvent
+import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent
 import net.neoforged.neoforge.client.event.RenderLevelStageEvent
 import net.neoforged.neoforge.common.NeoForge
+import java.util.ArrayList
 
 /**
  * This class is used to initialize the Forge client side of the mod.
@@ -59,6 +61,13 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
                 override fun <T : Entity> register(type: EntityType<T>, provider: EntityRendererProvider<T>) = event.registerEntityRenderer(type, provider)
             })
         })
+
+        eventBus.addListener<RegisterClientReloadListenersEvent> {
+            for(loader in reloadableResources) {
+                System.out.println("[GenerationsTextureLoaderLoader] Actually ${loader.name}")
+                it.registerReloadListener(loader)
+            }
+        }
 
         with(NeoForge.EVENT_BUS) {
             addListener<InputEvent.Key> { Keybinds.pressDown(it.key, it.scanCode, it.action, it.modifiers) }
@@ -88,6 +97,8 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
     }
 
     companion object {
+        private val reloadableResources: MutableList<PreparableReloadListener> = ArrayList()
+
         private fun renderHighlightedPath(event: RenderLevelStageEvent) {
             when (event.stage) {
                 RenderLevelStageEvent.Stage.AFTER_TRANSLUCENT_BLOCKS -> {
@@ -127,17 +138,9 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
         }
 
         fun registerResourceReloader(reloader: PreparableReloadListener) {
-            (Minecraft.getInstance().resourceManager as ReloadableResourceManager).registerReloadListener(reloader)
-        }
+            System.out.println("[GenerationsTextureLoaderLoader] Loading ${reloader.name}")
 
-//        private fun registerGUILayers(event: RegisterGuiLayersEvent) {
-//            event.registerAbove(
-//                VanillaGuiLayers.CAMERA_OVERLAYS, id("overlays")
-//            ) { obj: GuiGraphics, guiGraphics: DeltaTracker? ->
-//                GuiO.render(
-//                    guiGraphics
-//                )
-//            }
-//        }
+            reloadableResources.add(reloader)
+        }
     }
 }

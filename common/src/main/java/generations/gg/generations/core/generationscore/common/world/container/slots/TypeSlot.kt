@@ -1,18 +1,18 @@
 package generations.gg.generations.core.generationscore.common.world.container.slots
 
 import com.mojang.datafixers.util.Pair
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import earth.terrarium.common_storage_lib.storage.base.CommonStorage
-import earth.terrarium.common_storage_lib.storage.util.MenuStorageSlot
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.Container
 import net.minecraft.world.inventory.InventoryMenu
+import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
 import java.util.function.DoubleSupplier
 
+//Keeping around even with the defunct machine block because you never know when a type themeed slot would be useful
 class TypeSlot(
-    itemHandler: CommonStorage<ItemResource?>,
+    itemHandler: Container,
     index: Int,
     xPosition: Int,
     yPosition: Int,
@@ -20,7 +20,7 @@ class TypeSlot(
     elementName: String,
     private val supplier: DoubleSupplier
 ) :
-    MenuStorageSlot(itemHandler, index, xPosition, yPosition) {
+    Slot(itemHandler, index, xPosition, yPosition) {
     private val pair =
         Pair(
             InventoryMenu.BLOCK_ATLAS, id(

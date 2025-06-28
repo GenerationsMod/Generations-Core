@@ -7,12 +7,8 @@ import com.google.gson.JsonObject
 import com.mojang.serialization.Codec
 import com.mojang.serialization.JsonOps
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
-import generations.gg.generations.core.generationscore.common.api.events.CurryEvents.AddEntry
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils
-import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
-import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryData
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryTasteRating
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType

@@ -1,12 +1,9 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines
 
-import earth.terrarium.common_storage_lib.item.impl.SimpleItemStorage
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.components.SimpleContainer
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
-import generations.gg.generations.core.generationscore.common.world.level.block.shrines.RegigigasShrineBlock
 import net.minecraft.core.BlockPos
-import net.minecraft.core.NonNullList
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.state.BlockState
 

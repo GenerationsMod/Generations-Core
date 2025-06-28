@@ -1,27 +1,20 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar
 
-import earth.terrarium.common_storage_lib.item.impl.vanilla.VanillaDelegatingSlot
-import earth.terrarium.common_storage_lib.item.impl.vanilla.WrappedVanillaContainer
-import earth.terrarium.common_storage_lib.item.util.ItemProvider
-import earth.terrarium.common_storage_lib.resources.item.ItemResource
-import earth.terrarium.common_storage_lib.storage.base.CommonStorage
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.util.ExtendedsimpleItemContainer
-import generations.gg.generations.core.generationscore.common.util.asResource
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import generations.gg.generations.core.generationscore.common.world.item.legends.CreationTrioItem
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity
 import net.minecraft.core.BlockPos
-import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.state.BlockState
 
-class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShrineBlockEntity(GenerationsBlockEntities.TIMESPACE_ALTAR, pos, state), ItemProvider.BlockEntity, ModelContextProviders.VariantProvider {
+class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShrineBlockEntity(GenerationsBlockEntities.TIMESPACE_ALTAR, pos, state), ModelContextProviders.VariantProvider {
     private var handler: TimeSpaceAltarItemStackHandler = TimeSpaceAltarItemStackHandler()
 
     override fun getVariant(): String {
@@ -95,9 +88,5 @@ class TimeSpaceAltarBlockEntity(pos: BlockPos, state: BlockState) : InteractShri
             this.addItem(stack).run { stack.shrink(this.count) }
             return stack
         }
-    }
-
-    override fun getItems(p0: Direction?): CommonStorage<ItemResource> {
-        return WrappedVanillaContainer(handler);
     }
 }

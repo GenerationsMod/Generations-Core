@@ -79,7 +79,7 @@ class GenerationsRootSchema(versionKey: Int, parent: Schema?) : Schema(versionKe
     override fun registerBlockEntities(schema: Schema): MutableMap<String, Supplier<TypeTemplate>> = mutableMapOf<String, Supplier<TypeTemplate>>().apply {
         val botarium = when(Cobblemon.implementation.modAPI) {
             ModAPI.FABRIC -> GenerationsReferences.TERRAIUM_FABRIC_INVENTORY
-            ModAPI.FORGE -> GenerationsReferences.TERRAIUM_FORGE_INVENTORY
+            ModAPI.NEOFORGE -> GenerationsReferences.TERRAIUM_FORGE_INVENTORY
             else -> throw RuntimeException("Forge isn't supported by Generations Core")
         }
 

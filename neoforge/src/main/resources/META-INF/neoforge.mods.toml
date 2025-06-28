@@ -44,13 +44,6 @@ config="GenerationsCore-common.mixins.json"
    side="BOTH"
 
 [[dependencies.generations_core]]
-   modId="common_storage_lib"
-   mandatory=true
-   versionRange="[0.0.7,)"
-   ordering="AFTER"
-   side="BOTH"
-
-[[dependencies.generations_core]]
    modId="wthit"
    mandatory=false
    versionRange="[8.15.0,)"
