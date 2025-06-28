@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "generations_core:chests/dusk_ball"
+          "value": "generations_core:chests/dusk_ball"
         }
       ]
     }

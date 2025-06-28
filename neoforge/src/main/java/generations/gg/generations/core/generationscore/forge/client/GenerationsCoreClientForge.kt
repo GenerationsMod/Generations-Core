@@ -49,7 +49,7 @@ class GenerationsCoreClientForge(eventBus: IEventBus): GenerationsCoreClientImpl
      */
     init {
 
-        GenerationsCoreClient.onInitialize(this)
+        GenerationsCoreClient.onInitialize(this) //COmment this out when doing datagen. Datagen mod doens't like it for some reason.
 
         eventBus.addListener({ event: RegisterRenderers ->
             registerBlockEntityRenderers(object : BlockEntityRendererHandler {

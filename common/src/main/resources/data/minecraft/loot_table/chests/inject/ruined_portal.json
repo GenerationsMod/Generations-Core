@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "generations_core:chests/cherish_ball"
+          "value": "generations_core:chests/cherish_ball"
         }
       ]
     }

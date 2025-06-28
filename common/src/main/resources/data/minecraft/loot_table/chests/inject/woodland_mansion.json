@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "name": "generations_core:chests/jet_ball"
+          "value": "generations_core:chests/jet_ball"
         }
       ]
     }

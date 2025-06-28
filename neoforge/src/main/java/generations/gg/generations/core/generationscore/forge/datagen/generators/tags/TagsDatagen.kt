@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags
+import generations.gg.generations.core.generationscore.common.tags.GenerationsBlockTags.INCORRECT_FOR_SILICON_TOOL
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
@@ -212,6 +213,24 @@ object TagsDatagen {
                 GenerationsOres.METEORITE_ORE_SET.ore,
                 GenerationsOres.METEORITE_ORE_SET.deepslateOre
             )
+
+            tag(GenerationsBlockTags.INCORRECT_FOR_CHARGE_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_VOLCANIC_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_AMETHYST_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_CRYSTAL_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_SAPPHIRE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_SILICON_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_RUBY_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_DAWN_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_DUSK_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_FIRE_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_ICE_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_LEAF_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_MOON_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_SUN_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_THUNDER_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_WATER_STONE_TOOL)
+            tag(GenerationsBlockTags.INCORRECT_FOR_ULTRITE_TOOL)
 
             //Vanilla Ores
             /*
@@ -434,6 +453,20 @@ object TagsDatagen {
             copy(GenerationsBlockTags.ULTRA, GenerationsItemTags.ULTRA)
             //PokeDolls
             copy(GenerationsBlockTags.POKEDOLLS, GenerationsItemTags.POKEDOLLS)
+
+            tag(GenerationsItemTags.VENDING_MACHINE).run {
+                GenerationsDecorationBlocks.VENDING_MACHINE.toArray().forEach {
+                    this.add(it.value().asItem())
+                }
+            }
+
+            tag(GenerationsItemTags.PASTEL_BEAN_BAG).run {
+                GenerationsDecorationBlocks.PASTEL_BEAN_BAG.toArray().forEach {
+                    this.add(it.value().asItem())
+                }
+            }
+
+
 
             //Ore Specific tags like Vanilla
             copy(GenerationsBlockTags.GENERATIONSORES, GenerationsItemTags.GENERATIONSORES)
