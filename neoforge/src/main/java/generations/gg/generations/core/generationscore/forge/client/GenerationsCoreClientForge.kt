@@ -19,6 +19,8 @@ import generations.gg.generations.core.generationscore.common.client.screen.cont
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.entity.EntityRendererProvider
+import net.minecraft.server.packs.resources.PreparableReloadListener
+import net.minecraft.server.packs.resources.ReloadableResourceManager
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.level.block.entity.BlockEntity
@@ -122,6 +124,10 @@ class GenerationsCoreClientForge(eventBus: IEventBus) {
             onInitialize(Minecraft.getInstance())
             //        ForgeConfig.CLIENT.alwaysSetupTerrainOffThread.set(true); // Performance improvement
 //        ForgeConfig.CLIENT.experimentalForgeLightPipelineEnabled.set(true); // Use Experimental Forge Light Pipeline
+        }
+
+        fun registerResourceReloader(reloader: PreparableReloadListener) {
+            (Minecraft.getInstance().resourceManager as ReloadableResourceManager).registerReloadListener(reloader)
         }
 
 //        private fun registerGUILayers(event: RegisterGuiLayersEvent) {

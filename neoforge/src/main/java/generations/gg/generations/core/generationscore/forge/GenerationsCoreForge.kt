@@ -19,6 +19,7 @@ import generations.gg.generations.core.generationscore.common.util.PlatformRegis
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
+import generations.gg.generations.core.generationscore.forge.client.GenerationsCoreClientForge
 import generations.gg.generations.core.generationscore.forge.networking.GenerationsNeoForgeNetworkManager
 import net.minecraft.client.Minecraft
 import net.minecraft.core.Holder
@@ -298,7 +299,7 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
         dependencies: Collection<ResourceLocation>,
     ) {
         if (type == PackType.SERVER_DATA) reloadableResources.add(reloader)
-        else Minecraft.getInstance().resourceManager.instanceOrNull<ReloadableResourceManager>()?.registerReloadListener(reloader)
+        else GenerationsCoreClientForge.registerResourceReloader(reloader)
     }
 
     override val networkManager: NetworkManager = GenerationsNeoForgeNetworkManager
