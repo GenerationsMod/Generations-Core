@@ -7,7 +7,7 @@
             "id": "feebas-1",
             "pokemon": "feebas",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",

@@ -7,7 +7,7 @@
             "id": "clamperl-1",
             "pokemon": "clamperl",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "seafloor",
