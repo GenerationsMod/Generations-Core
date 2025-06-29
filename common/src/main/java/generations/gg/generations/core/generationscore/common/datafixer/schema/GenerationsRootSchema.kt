@@ -17,13 +17,6 @@ class GenerationsRootSchema(versionKey: Int, parent: Schema?) : Schema(versionKe
         entityTypes: MutableMap<String, Supplier<TypeTemplate>>,
         blockEntityTypes: MutableMap<String, Supplier<TypeTemplate>>
     ) {
-        schema.registerType(true, GenerationsReferences.TERRAIUM_FORGE_INVENTORY) {
-            DSL.optionalFields("ForgeCaps", DSL.optionalFields("botarium:item", DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) ))
-        }
-
-        schema.registerType(true, GenerationsReferences.TERRAIUM_FABRIC_INVENTORY) {
-            DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema)))
-        }
 
         //I'm not 100% sure what a recursive type is, but at least one is required
         //Maybe a type that can contain itself?
@@ -31,7 +24,8 @@ class GenerationsRootSchema(versionKey: Int, parent: Schema?) : Schema(versionKe
             DSL.taggedChoiceLazy("id", NamespacedSchema.namespacedString(), entityTypes)
         }
         schema.registerType(true, References.BLOCK_ENTITY) {
-            //Tagged choice makes it so that the type is determined by a key of some other type
+            //Tagged choice mak
+            // es it so that the type is determined by a key of some other type
             //So the "id" of a block entity determines what type the actual block entity is
             DSL.taggedChoiceLazy(
                 "id",
@@ -77,33 +71,32 @@ class GenerationsRootSchema(versionKey: Int, parent: Schema?) : Schema(versionKe
     }
 
     override fun registerBlockEntities(schema: Schema): MutableMap<String, Supplier<TypeTemplate>> = mutableMapOf<String, Supplier<TypeTemplate>>().apply {
-        val botarium = when(Cobblemon.implementation.modAPI) {
-            ModAPI.FABRIC -> GenerationsReferences.TERRAIUM_FABRIC_INVENTORY
-            ModAPI.NEOFORGE -> GenerationsReferences.TERRAIUM_FORGE_INVENTORY
+        val botarium: () -> TypeTemplate  = when(Cobblemon.implementation.modAPI) {
+            ModAPI.FABRIC -> { { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) } }
+            ModAPI.NEOFORGE -> { { DSL.optionalFields("ForgeCaps", DSL.optionalFields("botarium:item", DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) )) } }
             else -> throw RuntimeException("Forge isn't supported by Generations Core")
         }
+
+        val inventory: () -> TypeTemplate = { GenerationsReferences.INVENTORY.`in`(schema) }
 
         simple("pokedoll")
         simple("generic_shrine")
         simple("abundant_shrne")
         simple("celestial_altar")
         simple("lunar_shrine")
-        putGens("meloetta_music_box") {
-            DSL.optionalFields("RecordItem", References.ITEM_STACK.`in`(schema))
-        }
-
-        putGens("regigigas_shrine") { botarium.`in`(schema) }
+        putGens("meloetta_music_box") { DSL.optionalFields("RecordItem", References.ITEM_STACK.`in`(schema)) }
+        putGens("regigigas_shrine", botarium)
+        putGens("cooking_pot", botarium)
         simple("tao_trio_shrine")
         simple("tapu_shrine")
         simple("interact_shrine")
-        putGens("cooking_pot") { botarium.`in`(schema) }
-        putGens("generic_chest") { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
+        putGens("generic_chest", inventory)
         simple("sign_block_entity")
         simple("hanging_sign_block_entity")
         simple("breeder")
-        putGens("generic_furnace") { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
-        putGens("generic_blast_furnace") { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
-        putGens("generic_smoker") { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
+        putGens("generic_furnace", inventory)
+        putGens("generic_blast_furnace", inventory)
+        putGens("generic_smoker", inventory)
         simple("generic_dyed_variant")
         simple("generic_model_providing")
         simple("vending_machine")
@@ -114,12 +107,12 @@ class GenerationsRootSchema(versionKey: Int, parent: Schema?) : Schema(versionKe
         putGens("rks_machine") {
             DSL.optionalFields("Inventory", DSL.optionalFields(
                 "Output", References.ITEM_STACK.`in`(schema),
-                DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema)))
-            ))
+                inventory.invoke())
+            )
         }
 
         simple("street_lamp")
-        putGens("box") { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
+        putGens("box", inventory)
     }
 
     override fun registerEntities(schema: Schema): MutableMap<String, Supplier<TypeTemplate>> = mutableMapOf<String, Supplier<TypeTemplate>>().apply {
@@ -132,7 +125,7 @@ class GenerationsRootSchema(versionKey: Int, parent: Schema?) : Schema(versionKe
         simple("zygarde_cell")
     }
 
-    private fun MutableMap<String, Supplier<TypeTemplate>>.simple(name: String) = registerSimple(this, "generations_core:$name")
+    fun MutableMap<String, Supplier<TypeTemplate>>.simple(name: String) = registerSimple(this, "generations_core:$name")
 
-    private fun MutableMap<String, Supplier<TypeTemplate>>.putGens(k: String, function: () -> TypeTemplate) = put("generations_core:$k", function)
+    fun MutableMap<String, Supplier<TypeTemplate>>.putGens(k: String, function: () -> TypeTemplate) = put("generations_core:$k", function)
 }

@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.mixin;
 
 import generations.gg.generations.core.generationscore.common.datafixer.GenerationsSchemas;
-import generations.gg.generations.core.generationscore.common.datafixer.schema.GenerationsRootSchema;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import org.spongepowered.asm.mixin.Mixin;

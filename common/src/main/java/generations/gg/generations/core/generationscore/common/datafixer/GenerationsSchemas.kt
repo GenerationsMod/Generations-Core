@@ -67,6 +67,7 @@ object GenerationsSchemas {
     private fun appendSchemas(builder: DataFixerBuilder) {
         builder.addSchema(0, ::GenerationsRootSchema)
         val v1 = builder.addSchema(1, ::Generationsv1Schema)
+        builder.addFixer(BotariumFix(v1))
 //        builder.addFixer(ItemRenameFix.create(v1, "Remove items from generations added in 1.6 cobblemon") { name ->
 //            print("Converted $name to ")
 //
@@ -76,6 +77,5 @@ object GenerationsSchemas {
 //            return@create newName
 //        })
         builder.addFixer(ItemStackComponentizationFix(v1))
-        builder.addFixer(BotariumFix(v1))
     }
 }
