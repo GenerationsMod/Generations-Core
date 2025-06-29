@@ -27,7 +27,6 @@ data class RareCandyAnimation(private val model: ResourceLocation, private val n
         val instance = context.request(RenderContext.POSABLE_STATE)?.takeIf { it is CobblemonInstanceProvider }?.let { it as CobblemonInstanceProvider }?.instance ?: return false
 
         val anim = animation ?: let {
-            System.out.println("Warning! Animation $name is current not loaded or null")
             return false
         }
 

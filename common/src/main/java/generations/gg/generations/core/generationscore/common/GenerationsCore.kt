@@ -198,7 +198,7 @@ object GenerationsCore {
     }
 
     fun processLootTable(lootId: ResourceLocation, lootTable: (LootPool.Builder) -> Unit) {
-        if (lootId.namespace == "minecraft" && lootId.path.contains("chests") && !lootId.path.contains("inject")) {
+        if (lootId.namespace == "minecraft" && lootId.path.contains("chests") && !lootId.path.contains("trial") && !lootId.path.contains("inject")) {
             val inject =
                 ResourceLocation.fromNamespaceAndPath(lootId.namespace, lootId.path.replace("chests", "chests/inject"))
             lootTable.invoke(
