@@ -7,7 +7,7 @@
             "id": "veluza-1",
             "pokemon": "veluza",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",

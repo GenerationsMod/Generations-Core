@@ -7,7 +7,7 @@
             "id": "palafin-1",
             "pokemon": "palafin",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",
