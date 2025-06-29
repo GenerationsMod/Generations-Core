@@ -15,8 +15,8 @@ import static net.minecraft.util.datafix.fixes.ItemStackComponentizationFix.fixI
 
 public class GenerationsDataFixUtils {
     public static Dynamic<?> getDiscHolder(Dynamic<?> holder) {
-        var list = holder.asStream().map(dynamic -> Pair.of(dynamic.get("Slot").asInt(-1), dynamic.remove("Slot")))
-                .filter(pair -> pair.getFirst() <= -1).map(a -> a.getSecond()).map(a -> a.renameField("Count", "amount"));
+        var list = holder.asStream().map(dynamic -> Pair.of(dynamic.get("Slot").asInt(-1), dynamic.remove("slot")))
+                .filter(pair -> pair.getFirst() <= -1).map(a -> a.getSecond()).map(a -> a.renameField("Count", "count"));
 
         return holder.createList(list);
     }
