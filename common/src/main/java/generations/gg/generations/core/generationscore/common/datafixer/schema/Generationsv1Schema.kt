@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.datafixer.schema
 
+import com.google.common.collect.Maps
 import com.mojang.datafixers.DSL
 import com.mojang.datafixers.schemas.Schema
 import com.mojang.datafixers.types.templates.TypeTemplate
@@ -24,7 +25,7 @@ class Generationsv1Schema(versionKey: Int, parent: Schema) : Schema(versionKey, 
     }
 
     override fun registerBlockEntities(schema: Schema): MutableMap<String, Supplier<TypeTemplate>> {
-        return schema.registerBlockEntities(schema).apply {
+        return mutableMapOf<String, Supplier<TypeTemplate>>().apply {
             putGens("regigigas_shrine") { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
             putGens("cooking_pot") { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
         }

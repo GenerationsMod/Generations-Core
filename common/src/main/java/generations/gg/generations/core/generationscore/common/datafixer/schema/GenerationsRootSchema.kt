@@ -77,7 +77,7 @@ class GenerationsRootSchema(versionKey: Int, parent: Schema?) : Schema(versionKe
             else -> throw RuntimeException("Forge isn't supported by Generations Core")
         }
 
-        val inventory: () -> TypeTemplate = { GenerationsReferences.INVENTORY.`in`(schema) }
+        val inventory: () -> TypeTemplate = { DSL.optionalFields("Items", DSL.list(References.ITEM_STACK.`in`(schema))) }
 
         simple("pokedoll")
         simple("generic_shrine")

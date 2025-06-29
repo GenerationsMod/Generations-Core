@@ -45,9 +45,7 @@ object GenerationsSchemas {
         val builder = DataFixerBuilder(DATA_VERSION)
         this.appendSchemas(builder)
         val types = hashSetOf<DSL.TypeReference>(
-            References.ENTITY ,
-            GenerationsReferences.TERRAIUM_FORGE_INVENTORY,
-            GenerationsReferences.TERRAIUM_FABRIC_INVENTORY)
+            References.ENTITY)
 
         val result = builder.build()
         if (types.isEmpty()) {
