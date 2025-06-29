@@ -7,7 +7,7 @@
             "id": "toxapex-1",
             "pokemon": "toxapex",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",

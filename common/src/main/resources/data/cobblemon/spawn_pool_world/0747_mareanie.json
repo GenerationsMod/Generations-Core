@@ -7,7 +7,7 @@
             "id": "mareanie-1",
             "pokemon": "mareanie",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",

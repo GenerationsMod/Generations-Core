@@ -7,7 +7,7 @@
             "id": "milotic-1",
             "pokemon": "milotic",
             "presets": [
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",

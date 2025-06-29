@@ -8,7 +8,7 @@
             "pokemon": "eelektross",
             "presets": [
                 "river",
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",

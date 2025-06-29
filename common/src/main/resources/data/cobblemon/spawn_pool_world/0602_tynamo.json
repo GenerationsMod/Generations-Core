@@ -8,7 +8,7 @@
             "pokemon": "tynamo",
             "presets": [
                 "river",
-                "underwater"
+                "water"
             ],
             "type": "pokemon",
             "context": "submerged",
