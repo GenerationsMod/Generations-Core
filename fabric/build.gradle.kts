@@ -147,26 +147,18 @@ private fun getPublishingCredentials(): Pair<String?, String?> {
     return Pair(curseForgeToken, modrinthToken)
 }
 
-tasks.register("runMoveModels") {
+tasks.register("runMoveDataGenResourcesToCommon") {
     group = "loom"
     doLast {
         var root = projectDir.toPath().absolute().parent
 
-        val fabricModels = root.resolve("fabric/src/main/generated/assets/generations_core/models").toFile()
-        val commonModels = root.resolve("common/src/main//generated/resources/assets/generations_core/models").toFile()
+        val fabricModels = root.resolve("fabric/src/main/generated/").toFile()
+        val commonModels = root.resolve("common/src/main/generated/resources/").toFile()
 
-        if (fabricModels.exists()) {
+        commonModels.mkdirs()
 
-            // Ensure the common models directory exists
-            commonModels.mkdirs()
-
-            // Move the folder (delete original after copying)
-            fabricModels.copyRecursively(commonModels, overwrite = true)
-            fabricModels.deleteRecursively() // Remove the old models folder
-
-            println("✅ Successfully moved models to common!")
-        } else {
-            println("⚠️ No models found in Fabric-generated resources! RunDatagen might have failed.")
-        }
+        fabricModels.copyRecursively(commonModels, overwrite = true)
+        fabricModels.deleteRecursively() // Remove the old models folder
+        println("Fabric DataGen resources to common.")
     }
 }

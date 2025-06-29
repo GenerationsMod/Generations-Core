@@ -1,0 +1,8 @@
+{
+  "comparator_output": 0,
+  "description": {
+    "translate": "item.generations_core.meloettas_relic_song_disc.desc"
+  },
+  "length_in_seconds": 30.0,
+  "sound_event": "generations_core:generations_core.item.meloettas_relic_song"
+}

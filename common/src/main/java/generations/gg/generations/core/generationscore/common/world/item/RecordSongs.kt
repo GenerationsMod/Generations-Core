@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.world.item
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
+import net.minecraft.Util
 import net.minecraft.core.Holder
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.worldgen.BootstrapContext
@@ -51,42 +52,58 @@ object RecordSongs {
 
     private fun <T : Item> song(item: Holder<T>, holder: Holder<SoundEvent>, ticks: Int): JukeboxSong = JukeboxSong(holder, Component.translatable(item.value().descriptionId + ".desc"), ticks.toFloat(), 0)
 
+    private fun BootstrapContext<JukeboxSong>.register(
+        key: ResourceKey<JukeboxSong>,
+        soundEvent: Holder<SoundEvent>,
+        lengthInSeconds: Int,
+        comparatorOutput: Int = 0,
+    ) = this.register(
+            key,
+            JukeboxSong(
+                soundEvent,
+                Component.translatable("item.${key.location().namespace}.${key.location().path}_disc.desc"),
+                lengthInSeconds.toFloat(),
+                comparatorOutput
+            )
+        )
+
+
     @JvmStatic
     fun bootstrap(bootstrap: BootstrapContext<JukeboxSong>) {
-        bootstrap.register(MELOETTAS_RELIC_SONG, song(GenerationsItems.INERT_RELIC_SONG, GenerationsSounds.MELOETTAS_RELIC_SONG, 30))
+        bootstrap.register(MELOETTAS_RELIC_SONG, GenerationsSounds.MELOETTAS_RELIC_SONG, 30)
 
-        bootstrap.register(AZALEA_TOWN, song(GenerationsItems.AZALEA_TOWN_DISC, GenerationsSounds.AZALEA_TOWN, 200))
-        bootstrap.register(CASCARRAFA_CITY, song(GenerationsItems.CASCARRAFA_CITY_DISC, GenerationsSounds.CASCARRAFA_CITY, 169))
-        bootstrap.register(CERULEAN_CITY, song(GenerationsItems.CERULEAN_CITY_DISC, GenerationsSounds.CERULEAN_CITY, 184))
-        bootstrap.register(ETERNA_CITY, song(GenerationsItems.ETERNA_CITY_DISC, GenerationsSounds.ETERNA_CITY, 136))
-        bootstrap.register(GOLDENROD_CITY, song(GenerationsItems.GOLDENROD_CITY_DISC, GenerationsSounds.GOLDENROD_CITY, 182))
-        bootstrap.register(ICIRRUS_CITY, song(GenerationsItems.ICIRRUS_CITY_DISC, GenerationsSounds.ICIRRUS_CITY, 148))
-        bootstrap.register(JUBILIFE_VILLAGE, song(GenerationsItems.JUBILIFE_VILLAGE_DISC, GenerationsSounds.JUBILIFE_VILLAGE, 202))
-        bootstrap.register(LAKE_OF_RAGE, song(GenerationsItems.LAKE_OF_RAGE_DISC, GenerationsSounds.LAKE_OF_RAGE, 139))
-        bootstrap.register(LAVERRE_CITY, song(GenerationsItems.LAVERRE_CITY_DISC, GenerationsSounds.LAVERRE_CITY, 281))
-        bootstrap.register(LILLIE, song(GenerationsItems.LILLIE_DISC, GenerationsSounds.LILLIE, 312))
-        bootstrap.register(POKEMON_CENTER, song(GenerationsItems.POKEMON_CENTER_DISC, GenerationsSounds.POKEMON_CENTER, 240))
-        bootstrap.register(ROUTE_228, song(GenerationsItems.ROUTE_228_DISC, GenerationsSounds.ROUTE_228, 418))
-        bootstrap.register(SLUMBERING_WEALD, song(GenerationsItems.SLUMBERING_WEALD_DISC, GenerationsSounds.SLUMBERING_WEALD, 262))
-        bootstrap.register(SURF, song(GenerationsItems.SURF_DISC, GenerationsSounds.SURF, 261))
-        bootstrap.register(VERMILION_CITY, song(GenerationsItems.VERMILION_CITY_DISC, GenerationsSounds.VERMILION_CITY, 216))
-        bootstrap.register(CYNTHIA, song(GenerationsItems.CYNTHIA_DISC, GenerationsSounds.CYNTHIA, 385))
-        bootstrap.register(DEOXYS, song(GenerationsItems.DEOXYS_DISC, GenerationsSounds.DEOXYS, 414))
-        bootstrap.register(IRIS, song(GenerationsItems.IRIS_DISC, GenerationsSounds.IRIS, 291))
-        bootstrap.register(KANTO, song(GenerationsItems.KANTO_DISC, GenerationsSounds.KANTO, 337))
-        bootstrap.register(LUSAMINE, song(GenerationsItems.LUSAMINE_DISC, GenerationsSounds.LUSAMINE, 337))
-        bootstrap.register(NEMONA, song(GenerationsItems.NEMONA_DISC, GenerationsSounds.NEMONA, 158))
-        bootstrap.register(NESSA, song(GenerationsItems.NESSA_DISC, GenerationsSounds.NESSA, 263))
-        bootstrap.register(PENNY, song(GenerationsItems.PENNY_DISC, GenerationsSounds.PENNY, 267))
-        bootstrap.register(RIVAL, song(GenerationsItems.RIVAL_DISC, GenerationsSounds.RIVAL, 221))
-        bootstrap.register(SADA_AND_TURO, song(GenerationsItems.SADA_AND_TURO_DISC, GenerationsSounds.SADA_AND_TURO, 349))
-        bootstrap.register(SOUTH_PROVINCE, song(GenerationsItems.SOUTH_PROVINCE_DISC, GenerationsSounds.SOUTH_PROVINCE, 214))
-        bootstrap.register(TEAM_ROCKET, song(GenerationsItems.TEAM_ROCKET_DISC, GenerationsSounds.TEAM_ROCKET, 186))
-        bootstrap.register(ULTRA_NECROZMA, song(GenerationsItems.ULTRA_NECROZMA_DISC, GenerationsSounds.ULTRA_NECROZMA, 296))
-        bootstrap.register(XY_LEGENDARY, song(GenerationsItems.XY_LEGENDARY_DISC, GenerationsSounds.XY_LEGENDARY, 261))
-        bootstrap.register(ZINNIA, song(GenerationsItems.ZINNIA_DISC, GenerationsSounds.ZINNIA, 320))
-        bootstrap.register(LAVENDER_TOWN, song(GenerationsItems.LAVENDER_TOWN_DISC, GenerationsSounds.LAVENDER_TOWN, 369))
-        bootstrap.register(LUGIA, song(GenerationsItems.LUGIA_DISC, GenerationsSounds.LUGIA, 341))
-        bootstrap.register(MT_PYRE, song(GenerationsItems.MT_PYRE_DISC, GenerationsSounds.MT_PYRE, 219))
+        bootstrap.register(AZALEA_TOWN, GenerationsSounds.AZALEA_TOWN, 200)
+        bootstrap.register(CASCARRAFA_CITY, GenerationsSounds.CASCARRAFA_CITY, 169)
+        bootstrap.register(CERULEAN_CITY, GenerationsSounds.CERULEAN_CITY, 184)
+        bootstrap.register(ETERNA_CITY, GenerationsSounds.ETERNA_CITY, 136)
+        bootstrap.register(GOLDENROD_CITY, GenerationsSounds.GOLDENROD_CITY, 182)
+        bootstrap.register(ICIRRUS_CITY, GenerationsSounds.ICIRRUS_CITY, 148)
+        bootstrap.register(JUBILIFE_VILLAGE, GenerationsSounds.JUBILIFE_VILLAGE, 202)
+        bootstrap.register(LAKE_OF_RAGE, GenerationsSounds.LAKE_OF_RAGE, 139)
+        bootstrap.register(LAVERRE_CITY, GenerationsSounds.LAVERRE_CITY, 281)
+        bootstrap.register(LILLIE, GenerationsSounds.LILLIE, 312)
+        bootstrap.register(POKEMON_CENTER, GenerationsSounds.POKEMON_CENTER, 240)
+        bootstrap.register(ROUTE_228, GenerationsSounds.ROUTE_228, 418)
+        bootstrap.register(SLUMBERING_WEALD, GenerationsSounds.SLUMBERING_WEALD, 262)
+        bootstrap.register(SURF, GenerationsSounds.SURF, 261)
+        bootstrap.register(VERMILION_CITY, GenerationsSounds.VERMILION_CITY, 216)
+        bootstrap.register(CYNTHIA, GenerationsSounds.CYNTHIA, 385)
+        bootstrap.register(DEOXYS, GenerationsSounds.DEOXYS, 414)
+        bootstrap.register(IRIS, GenerationsSounds.IRIS, 291)
+        bootstrap.register(KANTO, GenerationsSounds.KANTO, 337)
+        bootstrap.register(LUSAMINE, GenerationsSounds.LUSAMINE, 337)
+        bootstrap.register(NEMONA, GenerationsSounds.NEMONA, 158)
+        bootstrap.register(NESSA, GenerationsSounds.NESSA, 263)
+        bootstrap.register(PENNY, GenerationsSounds.PENNY, 267)
+        bootstrap.register(RIVAL, GenerationsSounds.RIVAL, 221)
+        bootstrap.register(SADA_AND_TURO, GenerationsSounds.SADA_AND_TURO, 349)
+        bootstrap.register(SOUTH_PROVINCE, GenerationsSounds.SOUTH_PROVINCE, 214)
+        bootstrap.register(TEAM_ROCKET, GenerationsSounds.TEAM_ROCKET, 186)
+        bootstrap.register(ULTRA_NECROZMA, GenerationsSounds.ULTRA_NECROZMA, 296)
+        bootstrap.register(XY_LEGENDARY, GenerationsSounds.XY_LEGENDARY, 261)
+        bootstrap.register(ZINNIA, GenerationsSounds.ZINNIA, 320)
+        bootstrap.register(LAVENDER_TOWN, GenerationsSounds.LAVENDER_TOWN, 369)
+        bootstrap.register(LUGIA, GenerationsSounds.LUGIA, 341)
+        bootstrap.register(MT_PYRE, GenerationsSounds.MT_PYRE, 219)
     }
 }

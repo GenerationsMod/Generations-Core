@@ -6,6 +6,8 @@ import generations.gg.generations.core.generationscore.fabric.datagen.lang.Gener
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider
+import net.minecraft.core.HolderLookup
 import net.minecraft.core.RegistrySetBuilder
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.worldgen.BootstrapContext
@@ -17,6 +19,7 @@ class DataGen : DataGeneratorEntrypoint {
         FabricTagsDataGen.init(pack)
 
         pack.addProvider { fabricDataOutput, _ -> ArmorModelProvider(fabricDataOutput) }
+        pack.addProvider { output, provider -> GenerationsDynamicRegistryProvider(output, provider) }
 //        pack.addProvider { output, lookup -> GeneralLang(output, lookup) }
         //        System.out.println("Outputting: " + Path.of("../../common/src/generated/resources").toAbsolutePath());
     }

@@ -1,0 +1,8 @@
+{
+  "comparator_output": 0,
+  "description": {
+    "translate": "item.generations_core.lake_of_rage_disc.desc"
+  },
+  "length_in_seconds": 139.0,
+  "sound_event": "generations_core:generations_core.music.ambient.lake_of_rage"
+}

@@ -1,14 +1,17 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.lang
 
 import com.cobblemon.mod.common.api.berry.Flavor
+import com.cobblemon.mod.common.util.asResource
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.item.*
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryType
 import generations.gg.generations.core.generationscore.common.world.level.block.*
+import net.minecraft.Util
 import net.minecraft.core.Holder
 import net.minecraft.data.PackOutput
 import net.minecraft.world.item.Item
@@ -617,9 +620,10 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
     }
 
     private fun glitchCityRecordDescription(item: Holder<Item>) {
+        var name = item.id.toString().replace("_disc", "").asResource()
         add(
-            item.value().descriptionId + ".desc",
-            "GlitchxCity - " + getNameGens(item.value(), item.id.toString().replace("_disc", ""))
+            Util.makeDescriptionId("jukebox_song", name),
+            "GlitchxCity - " + getNameGens(item.value(), name.toString())
         )
     }
 
