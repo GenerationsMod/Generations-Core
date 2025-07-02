@@ -4,6 +4,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.EntityRendererHandler
+import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.onInitialize
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerBlockEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerEntityRenderers
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.registerLayerDefinitions
@@ -50,6 +51,8 @@ class GenerationsCoreClientForge(eventBus: IEventBus): GenerationsCoreClientImpl
     init {
 
 //        GenerationsCoreClient.onInitialize(this) //COmment this out when doing datagen. Datagen mod doens't like it for some reason.
+
+        onInitialize(this)
 
         eventBus.addListener({ event: RegisterRenderers ->
             registerBlockEntityRenderers(object : BlockEntityRendererHandler {
