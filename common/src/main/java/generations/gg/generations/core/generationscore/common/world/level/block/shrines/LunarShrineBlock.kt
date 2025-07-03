@@ -12,6 +12,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.InteractShrineBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.LunarShrineBlockEntity
+import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.ShrineBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.ItemInteractionResult
@@ -73,8 +74,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
         if (!level.isClientSide()) {
             val key = getSpecies(state)
 
-            val block =
-                (if (key === LegendKeys.CRESSELIA) GenerationsShrines.LIGHT_CRYSTAL else GenerationsShrines.DARK_CRYSTAL)
+            val block = (if (key === LegendKeys.CRESSELIA) GenerationsShrines.LIGHT_CRYSTAL else GenerationsShrines.DARK_CRYSTAL)
 
             val list = RegiShrineBlock.searchForBlock(
                 level, pos, 15, 5
@@ -82,7 +82,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
                 level1.getBlockState(blockPos).`is`(block)
             }
 
-            val shrine = level.getBlockEntity(pos).instanceOrNull<InteractShrineBlockEntity>()
+            val shrine = level.getBlockEntity(pos).instanceOrNull<ShrineBlockEntity>()
             
             if (list.isNotEmpty() && shrine != null) {
                 if (list.size == 5) {
