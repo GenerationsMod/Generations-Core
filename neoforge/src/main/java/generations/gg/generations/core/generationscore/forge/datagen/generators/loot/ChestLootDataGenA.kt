@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.forge.datagen.generators
 
 
 import com.cobblemon.mod.common.CobblemonItems
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.CHERISH_BALL
 import generations.gg.generations.core.generationscore.forge.datagen.generators.loot.GenerationsChestLoot.Companion.DIVE_BALL
@@ -203,6 +204,7 @@ object ChestLootDataGenA {
             GenerationsItems.FRAGMENTED_DRAGO_KEY_1,
             GenerationsItems.DISCHARGED_ELEKI_KEY_1,
             GenerationsItems.SHATTERED_RELIC_SONG_1,
+            GenerationsItems.CHILL_DRIVE,
             CobblemonItems.SERIOUS_MINT,
             CobblemonItems.LONELY_MINT,
             CobblemonItems.BRAVE_MINT,
@@ -272,10 +274,11 @@ object ChestLootDataGenA {
             GenerationsItems.POKEMAIL_BRICK, GenerationsItems.POKEMAIL_BRIDGE_D, GenerationsItems.POKEMAIL_BRIDGE_M,
             GenerationsItems.POKEMAIL_BRIDGE_S, GenerationsItems.POKEMAIL_BRIDGE_T, GenerationsItems.POKEMAIL_BRIDGE_V,
             GenerationsItems.WATER_CANDY, GenerationsItems.SHATTERED_ICE_KEY_1, GenerationsItems.SHATTERED_ICE_KEY_2,
-            GenerationsItems.SHATTERED_ICE_KEY_3, GenerationsItems.SHATTERED_ICE_KEY_4, GenerationsItems.TM_11,
-            GenerationsItems.TM_22, GenerationsItems.TM_50, GenerationsItems.TM_77, GenerationsItems.TM_110,
-            GenerationsItems.TM_123, GenerationsItems.TM_142, GenerationsItems.TM_145, GenerationsItems.TM_154,
-            GenerationsItems.TM_188, GenerationsItems.TM_196, GenerationsItems.TM_208, GenerationsItems.TM_209
+            GenerationsItems.SHATTERED_ICE_KEY_3, GenerationsItems.SHATTERED_ICE_KEY_4, GenerationsItems.WELLSPRING_MASK,
+            GenerationsItems.TM_11, GenerationsItems.TM_22, GenerationsItems.TM_50, GenerationsItems.TM_77,
+            GenerationsItems.TM_110, GenerationsItems.TM_123, GenerationsItems.TM_142, GenerationsItems.TM_145,
+            GenerationsItems.TM_154, GenerationsItems.TM_188, GenerationsItems.TM_196, GenerationsItems.TM_208,
+            GenerationsItems.TM_209
         )
 
         registerBallLootPoolUniform(
@@ -361,6 +364,8 @@ object ChestLootDataGenA {
             GenerationsItems.DISCHARGED_ELEKI_KEY_2,
             GenerationsItems.SHATTERED_RELIC_SONG_2,
             GenerationsItems.LAVA_CRYSTAL,
+            GenerationsItems.HEARTHFLAME_MASK,
+            GenerationsItems.BURN_DRIVE,
             CobblemonItems.RELAXED_MINT,
             CobblemonItems.IMPISH_MINT,
             CobblemonItems.GENTLE_MINT,

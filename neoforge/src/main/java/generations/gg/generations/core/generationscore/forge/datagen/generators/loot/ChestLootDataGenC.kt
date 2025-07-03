@@ -247,6 +247,7 @@ object ChestLootDataGenC {
             Items.RABBIT_FOOT,
             Items.MUSIC_DISC_STAL,
             GenerationsItems.DRAGON_SOUL,
+            GenerationsItems.SHOCK_DRIVE,
             CobblemonItems.SASSY_MINT,
             CobblemonItems.CAREFUL_MINT,
             GenerationsItems.DARK_MEMORY_DRIVE,
