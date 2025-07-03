@@ -1,7 +1,7 @@
 {
   "comparator_output": 0,
   "description": {
-    "translate": "item.generations_core.penny_disc.desc"
+    "translate": "jukebox_song.generations_core.penny"
   },
   "length_in_seconds": 267.0,
   "sound_event": "generations_core:generations_core.music.battle.penny"

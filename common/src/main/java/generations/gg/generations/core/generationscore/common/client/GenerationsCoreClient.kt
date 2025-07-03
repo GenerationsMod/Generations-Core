@@ -124,8 +124,6 @@ object GenerationsCoreClient {
 //            }
 //        }
 
-        ModelRegistry.init()
-
         ITextureLoader.setInstance(GenerationsTextureLoader)
 
         implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), emptyList())
@@ -162,6 +160,8 @@ object GenerationsCoreClient {
 
         event.tell({
             val renderer = PokemonItemRenderer()
+
+            ModelRegistry.init()
 
             CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE.value(), renderer)
             CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE.value(), renderer)

@@ -392,7 +392,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         )
         addTooltip(GenerationsItems.RELIC_SONG, "§7HINT: A special music box may play this melody differently.")
         addTooltip(GenerationsItems.INERT_RELIC_SONG, "Relic Song - Shota Kageyama.")
-        add("item.generations_core.inert_relic_song.desc", "Relic Song - Shota Kageyama")
+        add("jukebox_song.generations_core.meloettas_relic_song", "Relic Song - Shota Kageyama")
 
         this.add("item.minecraft.smithing_template.ultrite_upgrade.ingredients", "Ultrite Ingot")
         addTooltip(
@@ -620,7 +620,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
     }
 
     private fun glitchCityRecordDescription(item: Holder<Item>) {
-        var name = item.id.toString().replace("_disc", "").asResource()
+        val name = item.id.toString().replace("_disc", "").asResource()
         add(
             Util.makeDescriptionId("jukebox_song", name),
             "GlitchxCity - " + getNameGens(item.value(), name.toString())

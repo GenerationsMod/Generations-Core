@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities
 
+import generations.gg.generations.core.generationscore.common.client.model.InstanceProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockAnimatedObjectInstance
@@ -20,8 +21,15 @@ abstract class ModelProvidingBlockEntity(
     type: Holder<BlockEntityType<*>>,
     pos: BlockPos,
     state: BlockState
-) : SimpleBlockEntity(type, pos, state), ModelContextProviders.ModelProvider, VariantProvider {
-    var objectInstance: Array<ObjectInstance?>? = null
+) : SimpleBlockEntity(type, pos, state), ModelContextProviders.ModelProvider, VariantProvider, InstanceProvider {
+    private var objectInstance: Array<ObjectInstance?>? = null
+
+    override var instanceArray: Array<ObjectInstance?>?
+        get() = objectInstance
+        set(value) {
+            this.objectInstance = value
+        }
+
     private var boundingBox: AABB? = null
 
     override fun getModel(): ResourceLocation = blockState.block.instanceOrNull<GenericModelBlock>()?.model ?: GenerationsBlockEntityModels.DEFAULT
@@ -39,7 +47,7 @@ abstract class ModelProvidingBlockEntity(
 
     override fun getVariant(): String? = blockState.block.instanceOrNull<VariantProvider>()?.variant
 
-    fun generateInstance(): ObjectInstance {
+    override fun generateInstance(): ObjectInstance {
         return if (isAnimated) BlockAnimatedObjectInstance(Matrix4f(), null, null) else BlockObjectInstance(
             Matrix4f(), null
         )

@@ -9,6 +9,7 @@
     "AbstractFurnaceBlockEntityMixin",
     "BestSpawnConfigMixin",
     "FishingHookMixin",
+    "JukeboxSongPlayerMixin",
     "MoveTypeMixin",
     "NbtUtilsMixin",
     "PokemonBattleMixin",

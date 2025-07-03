@@ -1,7 +1,7 @@
 {
   "comparator_output": 0,
   "description": {
-    "translate": "item.generations_core.surf_disc.desc"
+    "translate": "jukebox_song.generations_core.surf"
   },
   "length_in_seconds": 261.0,
   "sound_event": "generations_core:generations_core.music.ambient.surf"

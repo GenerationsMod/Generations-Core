@@ -2,8 +2,12 @@ package generations.gg.generations.core.generationscore.common.client.render.blo
 
 import com.cobblemon.mod.common.util.toVec3d
 import com.mojang.blaze3d.vertex.PoseStack
+import generations.gg.generations.core.generationscore.common.client.model.InstanceProvider
+import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.AngleProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.FrameProvider
+import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.ModelProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.TintProvider
+import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.*
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry.prepForBER
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.animation.FixedFrameAnimationInstance
@@ -17,9 +21,11 @@ import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.entity.BlockEntity
 
-open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: BlockEntityRendererProvider.Context) :
-    BlockEntityRenderer<T> {
+open class GeneralUseBlockEntityRenderer<T>(ctx: BlockEntityRendererProvider.Context) : BlockEntityRenderer<T> where T : BlockEntity, T: VariantProvider, T: ModelProvider, T: InstanceProvider {
+
+
     override fun render(
         blockEntity: T,
         partialTick: Float,
@@ -28,17 +34,18 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
         packedLight: Int,
         packedOverlay: Int
     ) {
+
         blockEntity.blockState.block.instanceOrNull<GenericModelBlock>()?.takeIf { it.canRender(blockEntity) } ?: return
 
-        if (blockEntity.objectInstance == null) {
+        if (blockEntity.instanceArray == null) {
             val amount = instanceAmount()
-            blockEntity.objectInstance = arrayOfNulls(amount)
+            blockEntity.instanceArray = arrayOfNulls(amount)
 
-            for (i in 0 until amount) blockEntity.objectInstance!![i] = blockEntity.generateInstance()
+            for (i in 0 until amount) blockEntity.instanceArray!![i] = blockEntity.generateInstance()
         }
 
         stack.pushPose()
-        prepForBER(stack, blockEntity)
+        if(blockEntity is AngleProvider) prepForBER(stack, blockEntity)
         renderModels(stack, bufferSource, blockEntity, packedLight)
         stack.popPose()
     }
@@ -56,7 +63,7 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
     protected fun renderModelProvider(
         stack: PoseStack,
         buffersource: MultiBufferSource,
-        blockEntity: ModelProvidingBlockEntity,
+        blockEntity: T,
         packedLight: Int
     ) {
         val model = ModelRegistry[blockEntity]
@@ -67,7 +74,7 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
 
         val variant = blockEntity.variant
 
-        blockEntity.objectInstance!!.requireNoNulls().forEach { instance ->
+        blockEntity.instanceArray!!.requireNoNulls().forEach { instance ->
             if (instance.materialId() != variant) {
                 instance.setVariant(variant)
             }
@@ -87,7 +94,7 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
     protected fun renderModelFrameProvider(
         stack: PoseStack,
         buffersource: MultiBufferSource,
-        blockEntity: ModelProvidingBlockEntity,
+        blockEntity: T,
         packedLight: Int
     ) {
         //TODO: Get this operational
@@ -97,9 +104,9 @@ open class GeneralUseBlockEntityRenderer<T : ModelProvidingBlockEntity>(ctx: Blo
 
         stack.scale(model.renderObject!!.scale, model.renderObject!!.scale, model.renderObject!!.scale)
 
-        val primeInstance = blockEntity.objectInstance!![0]!!
+        val primeInstance = blockEntity.instanceArray!![0]!!
 
-        if (model.renderObject!!.isReady && primeInstance != null) {
+        if (model.renderObject!!.isReady) {
             primeInstance.link(model.renderObject)
 
             val animationInstance = (primeInstance as AnimatedObjectInstance)

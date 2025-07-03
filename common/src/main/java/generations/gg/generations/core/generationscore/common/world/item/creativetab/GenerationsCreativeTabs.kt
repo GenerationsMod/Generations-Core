@@ -35,7 +35,7 @@ object GenerationsCreativeTabs {
     val RESTORATION = createTab("restoration", { GenerationsItems.LEMONADE.value().defaultInstance }, GenerationsItems.RESTORATION)
     val AWARDS = createTab("awards", { GenerationsItems.RAINBOW_BADGE.value().defaultInstance }, GenerationsItems.BADGES, GenerationsItems.RIBBONS)
     val HELD_ITEMS = createTab("held_items", { GenerationsItems.AMULET_COIN.value().defaultInstance }, GenerationsItems.HELD_ITEMS)
-    val PLAYER_ITEMS = createTab("player_items", { GenerationsItems.POKEDEX.value().defaultInstance }, GenerationsItems.PLAYER_ITEMS, GenerationsItems.NATURAL)
+    val PLAYER_ITEMS = createTab("player_items", { GenerationsItems.SNAP_CAMERA.value().defaultInstance }, GenerationsItems.PLAYER_ITEMS, GenerationsItems.NATURAL)
     val LEGENDARY_ITEMS = createTab("legendary_items",{ GenerationsItems.DNA_SPLICERS.value().defaultInstance }, GenerationsItems.LEGENDARY_ITEMS)
     val DECORATIONS = createTab("decorations", { GenerationsDecorationBlocks.SWITCH.value().asItem().defaultInstance }, GenerationsDecorationBlocks)
     val UTILITY = createTab("utility", { GenerationsUtilityBlocks.RKS_MACHINE.value().asItem().defaultInstance }, GenerationsItems.UTILITY, GenerationsUtilityBlocks)

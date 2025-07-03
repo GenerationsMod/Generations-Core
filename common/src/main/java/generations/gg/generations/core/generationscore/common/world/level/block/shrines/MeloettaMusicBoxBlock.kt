@@ -1,14 +1,16 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.shrines
 
 import com.mojang.serialization.MapCodec
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.asValue
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntities
-import generations.gg.generations.core.generationscore.common.world.level.block.entities.GenerationsBlockEntityModels
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.MeloettaMusicBoxBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.component.DataComponents
+import net.minecraft.stats.Stats
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
 import net.minecraft.world.ItemInteractionResult
@@ -20,24 +22,25 @@ import net.minecraft.world.item.component.CustomData
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.JukeboxBlock
 import net.minecraft.world.level.block.RenderShape
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.entity.BlockEntityType
+import net.minecraft.world.level.block.entity.JukeboxBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.BooleanProperty
+import net.minecraft.world.level.gameevent.GameEvent
 import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.phys.shapes.VoxelShape
 
-class MeloettaMusicBoxBlock(properties: Properties) :
-    GenericRotatableModelBlock(
-        properties = properties,
-        model =GenerationsBlockEntityModels.MELOETTA_MUSIC_BOX
-    ) {
+class MeloettaMusicBoxBlock(properties: Properties) : GenericRotatableModelBlock(properties = properties,) {
+
     override val blockEntityType
         get() = GenerationsBlockEntities.MELOETTA_MUSIC_BOX
 
@@ -53,7 +56,7 @@ class MeloettaMusicBoxBlock(properties: Properties) :
         state: BlockState,
         level: BlockGetter,
         pos: BlockPos,
-        context: CollisionContext
+        context: CollisionContext,
     ): VoxelShape {
         return SHAPE
     }
@@ -71,7 +74,7 @@ class MeloettaMusicBoxBlock(properties: Properties) :
         level: Level,
         pos: BlockPos,
         player: Player,
-        hitResult: BlockHitResult
+        hitResult: BlockHitResult,
     ): InteractionResult {
         if (state.getValue(HAS_RECORD)) {
             val var8 = level.getBlockEntity(pos)
@@ -91,14 +94,38 @@ class MeloettaMusicBoxBlock(properties: Properties) :
         pos: BlockPos,
         player: Player,
         hand: InteractionHand,
-        hitResult: BlockHitResult
+        hitResult: BlockHitResult,
     ): ItemInteractionResult {
         if (state.getValue(HAS_RECORD)) {
-            return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
         } else {
             val itemStack = player.getItemInHand(hand)
-            val result = JukeboxPlayable.tryInsertIntoJukebox(level, pos, itemStack, player)
+            val result = tryInsertIntoJukebox(level, pos, itemStack, player)
             return if (!result.consumesAction()) ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION else result
+        }
+    }
+
+    fun tryInsertIntoJukebox(level: Level, pos: BlockPos, stack: ItemStack, player: Player): ItemInteractionResult {
+        if (stack.get(DataComponents.JUKEBOX_PLAYABLE) == null) {
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
+        } else {
+            val blockState = level.getBlockState(pos)
+            if (blockState.`is`(GenerationsShrines.MELOETTA_MUSIC_BOX) && !blockState.getValue(JukeboxBlock.HAS_RECORD)) {
+                if (!level.isClientSide) {
+                    val itemStack = stack.consumeAndReturn(1, player)
+                    val var8 = level.getBlockEntity(pos)
+                    if (var8 is JukeboxBlockEntity) {
+                        var8.theItem = itemStack
+                        level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockState))
+                    }
+
+                    player.awardStat(Stats.PLAY_RECORD)
+                }
+
+                return ItemInteractionResult.sidedSuccess(level.isClientSide)
+            } else {
+                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
+            }
         }
     }
 
@@ -107,7 +134,7 @@ class MeloettaMusicBoxBlock(properties: Properties) :
         level: Level,
         pos: BlockPos,
         newState: BlockState,
-        movedByPiston: Boolean
+        movedByPiston: Boolean,
     ) {
         if (!state.`is`(newState.block)) {
             val blockEntity = level.getBlockEntity(pos)
@@ -159,8 +186,8 @@ class MeloettaMusicBoxBlock(properties: Properties) :
     override fun <T : BlockEntity> getTicker(
         level: Level,
         state: BlockState,
-        blockEntityType: BlockEntityType<T>
-    ): BlockEntityTicker<T>? = if (state.getValue(HAS_RECORD)) createTickerHelper(blockEntityType, GenerationsBlockEntities.MELOETTA_MUSIC_BOX.asValue<MeloettaMusicBoxBlockEntity>(), MeloettaMusicBoxBlockEntity.Companion::tick) else null
+        blockEntityType: BlockEntityType<T>,
+    ): BlockEntityTicker<T>? = if (state.getValue(HAS_RECORD)) createTickerHelper(blockEntityType, GenerationsBlockEntities.MELOETTA_MUSIC_BOX.asValue<MeloettaMusicBoxBlockEntity>(), JukeboxBlockEntity::tick) else null
 
     companion object {
         private val SHAPE: VoxelShape = Shapes.box(0.25, 0.0, 0.25, 0.75, 0.375, 0.75)

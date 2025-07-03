@@ -1,7 +1,7 @@
 {
   "comparator_output": 0,
   "description": {
-    "translate": "item.generations_core.azalea_town_disc.desc"
+    "translate": "jukebox_song.generations_core.azalea_town"
   },
   "length_in_seconds": 200.0,
   "sound_event": "generations_core:generations_core.music.ambient.azalea_town"

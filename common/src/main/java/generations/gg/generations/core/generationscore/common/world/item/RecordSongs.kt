@@ -61,7 +61,7 @@ object RecordSongs {
             key,
             JukeboxSong(
                 soundEvent,
-                Component.translatable("item.${key.location().namespace}.${key.location().path}_disc.desc"),
+                Component.translatable(Util.makeDescriptionId("jukebox_song", key.location())),
                 lengthInSeconds.toFloat(),
                 comparatorOutput
             )

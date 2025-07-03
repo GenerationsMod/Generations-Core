@@ -1,7 +1,7 @@
 {
   "comparator_output": 0,
   "description": {
-    "translate": "item.generations_core.goldenrod_city_disc.desc"
+    "translate": "jukebox_song.generations_core.goldenrod_city"
   },
   "length_in_seconds": 182.0,
   "sound_event": "generations_core:generations_core.music.ambient.goldenrod_city"

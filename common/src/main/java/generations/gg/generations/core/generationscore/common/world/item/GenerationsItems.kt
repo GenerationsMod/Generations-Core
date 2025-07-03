@@ -812,7 +812,6 @@ object GenerationsItems: ItemPlatformRegistry() {
     public static final RegistrySupplier<Item> PURPLE_BIKE = register("purple_bike", Item::new, PLAYER_ITEMS);
     */
     val ROTOM_CATALOG = register("rotom_catalog", ::RotomCatalog, PLAYER_ITEMS)
-    val POKEDEX = register("pokedex", ::Item, PLAYER_ITEMS)
     val LURE_MODULE = register("lure_module", ::Item, PLAYER_ITEMS)
     val BOTTLE_CAP = register("bottle_cap", ::Item, PLAYER_ITEMS)
     val GOLD_BOTTLE_CAP = register("gold_bottle_cap", ::Item, PLAYER_ITEMS)

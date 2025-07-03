@@ -358,7 +358,6 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
 
          */
         createItem(GenerationsItems.ROTOM_CATALOG, "player_items/")
-        createItem(GenerationsItems.POKEDEX, "player_items/")
         createItem(GenerationsItems.LURE_MODULE, "player_items/")
         createItem(GenerationsItems.BOTTLE_CAP, "player_items/")
         createItem(GenerationsItems.GOLD_BOTTLE_CAP, "player_items/")

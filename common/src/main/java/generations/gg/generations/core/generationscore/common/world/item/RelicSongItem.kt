@@ -21,6 +21,6 @@ class RelicSongItem(properties: Properties, private val notInert: Boolean) : Ite
         level: TooltipContext, tooltipComponents: MutableList<Component>,
         isAdvanced: TooltipFlag
     ) {
-        addText(stack, level, tooltipComponents, isAdvanced)
+        if(!notInert) addText(stack, level, tooltipComponents, isAdvanced)
     }
 }

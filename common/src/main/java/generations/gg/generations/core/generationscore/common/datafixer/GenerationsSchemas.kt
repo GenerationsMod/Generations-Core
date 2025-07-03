@@ -34,6 +34,7 @@ object GenerationsSchemas {
         put("generations_core:utility_umbrella", "cobblemon:utility_umbrella")
         put("generations_core:wide_lens", "cobblemon:wide_lens")
         put("generations_core:zoom_lens", "cobblemon:zoom_lens")
+        put("generations_core:pokedex", "cobblemon:pokedex_red")
     }
 
     private val SAME: (Int, Schema) -> Schema = ::Schema
