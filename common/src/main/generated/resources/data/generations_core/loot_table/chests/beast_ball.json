@@ -26,10 +26,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:big_nugget"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:black_sludge"
         },
         {
@@ -38,15 +34,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:brittle_bones"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:cell_battery"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:chalky_stone"
         },
         {
           "type": "minecraft:item",
@@ -74,23 +62,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:comet_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:courage_candy_xl"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:dna_splicers"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:dragon_gem"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:dynamax_candy"
         },
         {
           "type": "minecraft:item",
@@ -122,23 +94,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:gigantamix"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:heal_powder"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:jaboca_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lava_cookie"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:permit"
         },
         {
           "type": "minecraft:item",
@@ -154,26 +114,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:rock_incense"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:sea_incense"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:smart_candy_l"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:soda_pop"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:strange_souvenir"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:weakness_policy"
         },
         {
@@ -186,31 +126,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_special_defense_2"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:x_speed"
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:x_speed_6"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:yache_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:yellow_nectar"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:dragon_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:yellow_shard"
         },
         {
           "type": "minecraft:item",
@@ -254,47 +174,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:z_ingot"
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:amethyst_shard"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ruby"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lava_crystal"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:belligerent_wing"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_44"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_78"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_100"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_115"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_156"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_169"
         },
         {
           "type": "minecraft:item",
@@ -311,38 +191,6 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:rich_mulch"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:dynite_ore"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_181"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_199"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_221"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lugia_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lavender_town_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:mt_pyre_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ultrite_upgrade_smithing_template"
         }
       ],
       "rolls": {

@@ -859,6 +859,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.YELLOW_SCARF, "unimplemented/")
         createItem(GenerationsItems.STRANGE_BALL, "unimplemented/")
 
+
         createItem(GenerationsItems.TERA_BUG_SHARD, "tera_shards/")
         createItem(GenerationsItems.TERA_DARK_SHARD, "tera_shards/")
         createItem(GenerationsItems.TERA_DRAGON_SHARD, "tera_shards/")

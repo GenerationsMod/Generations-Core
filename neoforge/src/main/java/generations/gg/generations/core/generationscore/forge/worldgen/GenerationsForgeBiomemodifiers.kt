@@ -98,6 +98,12 @@ object GenerationsForgeBiomemodifiers {
             )
         )
 
+        registerUnderGroundOres(
+            context, "add_ore_terashard_overworld", HolderSet.direct(
+                placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.ORE_TERASHARD)
+            )
+        )
+
         registerSurfaceFeatures(
             context, "add_poke_ball_loot",
             HolderSet.direct(placedFeaturesLookup.getOrThrow(GenerationsPlacedFeatures.POKE_BALL_LOOT))

@@ -9,10 +9,14 @@ import com.cobblemon.mod.common.CobblemonItems.FLYING_GEM
 import com.cobblemon.mod.common.CobblemonItems.SHINY_STONE
 import com.cobblemon.mod.common.CobblemonItems.WATER_GEM
 import com.cobblemon.mod.common.CobblemonItems.WATER_STONE
+import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.id
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsShrines
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
+import net.minecraft.advancements.critereon.InventoryChangeTrigger
+import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.RecipeCategory
@@ -280,6 +284,22 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             pattern("ZIZ")
             pattern("ZIZ")
             unlockedByHolder(GenerationsItems.DYNITE_ORE)
+        }
+
+        recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.TERA_ORB) {
+            define('S', GenerationsItemTags.TERA_SHARDS)
+            define('B', CobblemonItems.DUSK_STONE)
+            pattern("SSS")
+            pattern("SBS")
+            pattern ("SSS")
+            unlockedBy(
+                "has_tera_shard",
+                InventoryChangeTrigger.TriggerInstance.hasItems(
+                    ItemPredicate.Builder.item()
+                        .of(GenerationsItemTags.TERA_SHARDS)
+                        .build()
+                )
+            )
         }
 
         recipeOutput.shapeless(RecipeCategory.MISC, GenerationsItems.MAX_HONEY) {

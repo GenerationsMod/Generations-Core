@@ -24,6 +24,12 @@ public class PokemonEntityMixin {
                 boolean canMount = self.canSitOnShoulder();
                 boolean canChangeForm = PokemonEntityFunctionsKt.canChangeForm(self).getFirst();
                 String aspect = PokemonEntityFunctionsKt.canChangeForm(self).getSecond();
+
+                System.out.println(self.getAspects());
+                if (!aspect.isEmpty() && self.getAspects().contains(aspect) || self.getAspects().contains("primal") || self.getAspects().contains("ultra-fusion")) {
+                    aspect = "revert";
+                }
+
                 Pair<Boolean, String> changeFormData = new Pair<>(canChangeForm, aspect);
 
                 new GensInteractPokemonUIPacket(self.getUUID(), canMount, changeFormData).sendToPlayer(serverPlayer);

@@ -213,6 +213,10 @@ object TagsDatagen {
                 GenerationsOres.METEORITE_ORE_SET.ore,
                 GenerationsOres.METEORITE_ORE_SET.deepslateOre
             )
+            tag(GenerationsBlockTags.TERASHARD_ORES).add(
+                GenerationsOres.TERASHARD_ORE_SET.ore,
+                GenerationsOres.TERASHARD_ORE_SET.deepslateOre
+            )
 
             tag(GenerationsBlockTags.INCORRECT_FOR_CHARGE_STONE_TOOL)
             tag(GenerationsBlockTags.INCORRECT_FOR_VOLCANIC_STONE_TOOL)
@@ -260,6 +264,7 @@ object TagsDatagen {
                 .addTag(GenerationsBlockTags.Z_CRYSTAL_ORES)
                 .addTag(GenerationsBlockTags.MEGASTONE_ORES)
                 .addTag(GenerationsBlockTags.METEORITE_ORES)
+                .addTag(GenerationsBlockTags.TERASHARD_ORES)
 
 
             /*
@@ -478,6 +483,7 @@ object TagsDatagen {
             copy(GenerationsBlockTags.Z_CRYSTAL_ORES, GenerationsItemTags.Z_CRYSTAL_ORES)
             copy(GenerationsBlockTags.MEGASTONE_ORES, GenerationsItemTags.MEGASTONE_ORES)
             copy(GenerationsBlockTags.METEORITE_ORES, GenerationsItemTags.METEORITE_ORES)
+            copy(GenerationsBlockTags.TERASHARD_ORES, GenerationsItemTags.TERASHARD_ORES)
 
             /*
             tag(ItemTags.COAL_ORES).add(GenerationsOres.CHARGE_STONE_COAL_ORE_SET.ore.asItem());
@@ -711,6 +717,28 @@ object TagsDatagen {
             tag(GenerationsItemTags.DYNAMAX_BANDS).add(GenerationsItems.DYNAMAX_BAND)
             tag(GenerationsItemTags.Z_RINGS).add(GenerationsItems.Z_RING).add(GenerationsItems.Z_POWER_RING)
             tag(GenerationsItemTags.TERA_ORBS).add(GenerationsItems.TERA_ORB);
+
+            tag(GenerationsItemTags.TERA_SHARDS).add(
+                GenerationsItems.TERA_BUG_SHARD,
+                GenerationsItems.TERA_DARK_SHARD,
+                GenerationsItems.TERA_DRAGON_SHARD,
+                GenerationsItems.TERA_ELECTRIC_SHARD,
+                GenerationsItems.TERA_FAIRY_SHARD,
+                GenerationsItems.TERA_FIGHTING_SHARD,
+                GenerationsItems.TERA_FIRE_SHARD,
+                GenerationsItems.TERA_FLYING_SHARD,
+                GenerationsItems.TERA_GHOST_SHARD,
+                GenerationsItems.TERA_GRASS_SHARD,
+                GenerationsItems.TERA_GROUND_SHARD,
+                GenerationsItems.TERA_ICE_SHARD,
+                GenerationsItems.TERA_POISON_SHARD,
+                GenerationsItems.TERA_PSYCHIC_SHARD,
+                GenerationsItems.TERA_ROCK_SHARD,
+                GenerationsItems.TERA_STEEL_SHARD,
+                GenerationsItems.TERA_STELLAR_SHARD,
+                GenerationsItems.TERA_WATER_SHARD
+            )
+
             tag(GenerationsItemTags.MEMORY_DRIVES).add(
                 GenerationsItems.BUG_MEMORY_DRIVE,
                 GenerationsItems.DARK_MEMORY_DRIVE,

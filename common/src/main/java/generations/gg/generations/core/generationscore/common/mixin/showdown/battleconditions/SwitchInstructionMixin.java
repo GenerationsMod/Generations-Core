@@ -3,7 +3,9 @@ package generations.gg.generations.core.generationscore.common.mixin.showdown.ba
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage;
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
 import com.cobblemon.mod.common.battles.interpreter.instructions.SwitchInstruction;
+import com.cobblemon.mod.common.pokemon.Pokemon;
 import generations.gg.generations.core.generationscore.common.battle.BattleConditionsProcessor;
+import generations.gg.generations.core.generationscore.common.battle.GenerationsInstructionProcessor;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

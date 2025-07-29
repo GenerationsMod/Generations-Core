@@ -229,11 +229,7 @@ class StatueEntity(type: EntityType<StatueEntity> = GenerationsEntities.STATUE_E
                 stack.shrink(1)
                 return InteractionResult.SUCCESS
             } else if (stack.`is`(GenerationsItems.CHISEL)) {
-                var canUse = player.isCreative
-
-                StatueEvents.CAN_USE_CHISEL.post(StatueEvents.CanUseChisel(player as ServerPlayer, player.isCreative()), then = { canUse = it.canUse })
-
-                if (!canUse) return InteractionResult.PASS
+                StatueEvents.CAN_USE_CHISEL.post(StatueEvents.CanUseChisel(player as ServerPlayer, true))
 
                 if (player.isShiftKeyDown) {
                     this.remove(RemovalReason.KILLED)

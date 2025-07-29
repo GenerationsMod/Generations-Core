@@ -19,6 +19,7 @@ public final class GenerationsBlockTags {
     public static final TagKey<Block> Z_CRYSTAL_ORES = create("ores/z_crystal_ores");
     public static final TagKey<Block> MEGASTONE_ORES = create("ores/megastone_ores");
     public static final TagKey<Block> METEORITE_ORES = create("ores/meteorite_ores");
+    public static final TagKey<Block> TERASHARD_ORES = create("ores/terashard_ores");
     public static final TagKey<Block> ULTRA_DARK_LOGS = create("ultra_dark_logs");
     public static final TagKey<Block> ULTRA_JUNGLE_LOGS = create("ultra_jungle_logs");
     public static final TagKey<Block> GHOST_LOGS = create("ghost_logs");

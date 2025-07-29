@@ -1,9 +1,11 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet
 import net.minecraft.core.Holder
+import net.minecraft.util.valueproviders.ConstantInt
 import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
@@ -42,6 +44,13 @@ object GenerationsOres: BlockPlatformRegistry() {
         GenerationsOreSet("sapphire_ore", GenerationsItems.SAPPHIRE, UniformInt.of(2, 5))
     @JvmField
 	val SILICON_ORE_SET: GenerationsOreSet = GenerationsOreSet("silicon_ore", GenerationsItems.SILICON)
+    @JvmField
+    val TERASHARD_ORE_SET: GenerationsOreSet = GenerationsOreSet("tera_shard_ore") {
+        RandomShardOreBlock(
+            xpRange = ConstantInt.of(20),
+            shardTag = GenerationsItemTags.TERA_SHARDS
+        )
+    }
     @JvmField
 	val Z_CRYSTAL_ORE_SET: GenerationsOreSet = GenerationsOreSet("z_crystal_ore")
 

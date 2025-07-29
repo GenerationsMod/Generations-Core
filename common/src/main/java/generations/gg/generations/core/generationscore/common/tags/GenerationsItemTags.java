@@ -45,6 +45,7 @@ public final class GenerationsItemTags {
     public static final TagKey<Item> Z_CRYSTAL_ORES = create("ores/z_crystal_ores");
     public static final TagKey<Item> MEGASTONE_ORES = create("ores/megastone_ores");
     public static final TagKey<Item> METEORITE_ORES = create("ores/meteorite_ores");
+    public static final TagKey<Item> TERASHARD_ORES = create("ores/terashard_ores");
     
     public static final TagKey<Item> MARBLE = create("marble");
     public static final TagKey<Item> POKEBRICKS = create("pokebricks");
@@ -57,6 +58,8 @@ public final class GenerationsItemTags {
     public static final TagKey<Item> DYNAMAX_BANDS = create("dynamax_bands");
     public static final TagKey<Item> TERA_ORBS = create("tera_orbs");
     public static final TagKey<Item> Z_RINGS = create("z_rings");
+
+    public static final TagKey<Item> TERA_SHARDS = create("tera_shards");
 
     public static final TagKey<Item> MEMORY_DRIVES = create("memory_drives");
 

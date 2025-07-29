@@ -1,6 +1,0 @@
-{
-  "type": "flag",
-  "keys": ["meteor"],
-  "default": true,
-  "isAspect": true
-}

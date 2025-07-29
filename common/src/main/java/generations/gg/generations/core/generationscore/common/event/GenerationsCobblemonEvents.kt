@@ -5,13 +5,18 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
+import com.cobblemon.mod.common.api.tags.CobblemonItemTags
 import com.cobblemon.mod.common.api.text.text
+import com.cobblemon.mod.common.api.types.tera.TeraTypes
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
+import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
+import com.cobblemon.mod.common.util.getPlayer
 import com.cobblemon.mod.common.util.giveOrDropItemStack
+import com.cobblemon.mod.common.util.isInBattle
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.api.player.Caught
 import generations.gg.generations.core.generationscore.common.battle.BattleConditionsProcessor
@@ -19,7 +24,10 @@ import generations.gg.generations.core.generationscore.common.battle.BattleCondi
 import generations.gg.generations.core.generationscore.common.battle.BattleConditionsProcessor.sendToPlayersAndSpectators
 import generations.gg.generations.core.generationscore.common.battle.BattleSideData
 import generations.gg.generations.core.generationscore.common.battle.ConditionsData
+import generations.gg.generations.core.generationscore.common.battle.ExpAllCalculator.calculateMultiplier
+import generations.gg.generations.core.generationscore.common.battle.ExpAllCalculator.hasExpAll
 import generations.gg.generations.core.generationscore.common.battle.GenerationsInstructionProcessor
+import generations.gg.generations.core.generationscore.common.battle.grantExpAll
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -27,6 +35,7 @@ import generations.gg.generations.core.generationscore.common.network.packets.He
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.util.DataKeys
 import generations.gg.generations.core.generationscore.common.util.fixIVS
+import generations.gg.generations.core.generationscore.common.util.removeCosmeticFeature
 import generations.gg.generations.core.generationscore.common.world.item.FormChanging
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.PostBattleUpdatingItem
@@ -34,6 +43,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 import org.joml.Vector3f
+import kotlin.math.PI
 
 class GenerationsCobblemonEvents {
 
@@ -98,6 +108,24 @@ class GenerationsCobblemonEvents {
                 val pokemon = event.pokemon
                 pokemon.fixIVS()
 
+                if (pokemon.species.name == "Terapagos" && pokemon.teraType != TeraTypes.STELLAR) {
+                    pokemon.teraType = TeraTypes.STELLAR
+                }
+
+                if (event.player.isInBattle()) {
+                    val battle = Cobblemon.battleRegistry.getBattleByParticipatingPlayer(event.player)
+                    if (battle != null) {
+                        if (!GenerationsInstructionProcessor.capturedList.contains(battle.battleId)) {
+                            println("added to map")
+                            GenerationsInstructionProcessor.capturedList.add(battle.battleId)
+                        } else {
+                            println("in map")
+                        }
+                    } else {
+                        println("battle null")
+                    }
+                }
+
                 //Loot
 
                 var table = event.pokemon.form.drops
@@ -156,7 +184,6 @@ class GenerationsCobblemonEvents {
             }
 
             CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION.subscribe {
-
                 it.addOption(
                     Orientation.BOTTOM_LEFT, InteractWheelOption(
                         iconResource = GenerationsCore.id("textures/ui/interact/head_pat.png"),
@@ -168,6 +195,10 @@ class GenerationsCobblemonEvents {
                         })
                 )
 
+            }
+
+            CobblemonEvents.POKEMON_RECALLED.subscribe {
+                it.pokemon.removeCosmeticFeature()
             }
 
             CobblemonEvents.HELD_ITEM_POST.subscribe {

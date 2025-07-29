@@ -6,6 +6,7 @@
     "#generations_core:ores/silicon_ores",
     "#generations_core:ores/z_crystal_ores",
     "#generations_core:ores/megastone_ores",
-    "#generations_core:ores/meteorite_ores"
+    "#generations_core:ores/meteorite_ores",
+    "#generations_core:ores/terashard_ores"
   ]
 }

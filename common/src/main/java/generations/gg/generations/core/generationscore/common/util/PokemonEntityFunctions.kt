@@ -33,14 +33,18 @@ fun PokemonEntity.canChangeForm(): Pair<Boolean, String> {
             }
         } else if ((itemName == "blue_orb" && pokeName == "kyogre") || (itemName == "red_orb" && pokeName == "groudon")) {
             canFormChange = true
-            aspect = "primal"
+            if (pokeName == "kyogre") {
+                aspect = "primalkyogre"
+            } else {
+                aspect = "primalgroudon"
+            }
         }
     }
     return Pair(canFormChange, aspect)
 }
 
 fun canItMega(pokemon: Pokemon, itemName: String): Boolean {
-    if (pokemon.species.name == "Necrozma" && (pokemon.form.name == "Dusk-Mane" || pokemon.form.name == "Dawn-Wings") && itemName == "ultranecrozium_z") return true
+    if (pokemon.species.name == "Necrozma" && (pokemon.form.name == "Dusk-Mane" || pokemon.form.name == "Dawn-Wings" || pokemon.form.name == "Ultra") && itemName == "ultranecrozium_z") return true
     pokemon.moveSet.forEach { move ->
         if (pokemon.species.name == "Rayquaza" && move.template.name == "dragonascent") return true
     }

@@ -50,8 +50,10 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Rende
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.entity.pokeball.EmptyPokeBallEntity
 import com.cobblemon.mod.common.pokemon.Gender
+import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.pokemon.status.PersistentStatus
+import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.lang
 import com.mojang.blaze3d.platform.Lighting
@@ -122,8 +124,9 @@ object BattleOverlayProxy {
             partialTicks = tickDelta,
             reversed = !left,
             species = battlePokemon.species,
+            pokemon = truePokemon,
             level = battlePokemon.level,
-            displayName = battlePokemon.displayName,
+            displayName = truePokemon?.nickname ?: battlePokemon.displayName,
             gender = battlePokemon.gender,
             teraType = resolveTeraType(battlePokemon.state.currentAspects),
             status = battlePokemon.status,
@@ -145,7 +148,9 @@ object BattleOverlayProxy {
             passedSeconds = passedSeconds
         )
 
-        BattleConditionsOverlay.renderConditionsOverlay(context)
+        if (GenerationsCoreClient.toggleConditions) {
+            BattleConditionsOverlay.renderConditionsOverlay(context)
+        }
     }
 
     fun drawBattleTile(
@@ -154,6 +159,7 @@ object BattleOverlayProxy {
         y: Float,
         partialTicks: Float,
         reversed: Boolean,
+        pokemon: Pokemon?,
         species: Species,
         level: Int,
         displayName: MutableComponent,
@@ -260,6 +266,8 @@ object BattleOverlayProxy {
                 partialTicks = partialTicks
             )
         }
+
+
         matrixStack.popPose()
         context.disableScissor()
 
@@ -417,7 +425,6 @@ object BattleOverlayProxy {
         TeraTypeIcon(
             teraStartX, teraYOffset, teraType, small = true, opacity = opacity
         ).render(context)
-        println("Tera Type: $teraType for $species")
     }
 
     private fun drawPokeBall(
