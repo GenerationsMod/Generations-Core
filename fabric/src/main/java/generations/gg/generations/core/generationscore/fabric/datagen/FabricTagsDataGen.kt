@@ -20,6 +20,7 @@ import net.minecraft.core.HolderLookup
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.tags.PaintingVariantTagsProvider
 import net.minecraft.data.tags.TagsProvider
+import net.minecraft.tags.ItemTags
 import net.minecraft.tags.PaintingVariantTags
 import net.minecraft.world.entity.decoration.PaintingVariant
 import java.util.concurrent.CompletableFuture

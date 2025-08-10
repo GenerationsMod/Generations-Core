@@ -18,7 +18,7 @@ object GenerationsTools: ItemPlatformRegistry() {
      */
     val CHARGE_STONE: ToolSet = ToolSet.create("charge_stone", GenerationsTiers.CHARGE_STONE)
 
-    val VOLCANIC_STONE: ToolSet = ToolSet.create("volcanic_stone", GenerationsTiers.CHARGE_STONE)
+    val VOLCANIC_STONE: ToolSet = ToolSet.create("volcanic_stone", GenerationsTiers.VOLCANIC_STONE)
 
     val AMETHYST: ToolSet = ToolSet.create("amethyst", GenerationsTiers.AMETHYST)
 
