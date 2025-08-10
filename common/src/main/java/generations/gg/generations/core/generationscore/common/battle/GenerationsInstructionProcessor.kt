@@ -14,7 +14,12 @@ import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
 import com.cobblemon.mod.common.api.scheduling.afterOnServer
+import com.cobblemon.mod.common.api.tags.CobblemonItemTags
+import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
+import com.cobblemon.mod.common.battles.actor.PokemonBattleActor
 import com.cobblemon.mod.common.battles.pokemon.BattlePokemon
+import com.cobblemon.mod.common.entity.npc.NPCBattleActor
+import com.cobblemon.mod.common.net.messages.client.battle.BattleHealthChangePacket
 import com.cobblemon.mod.common.net.messages.client.battle.BattleInitializePacket
 import com.cobblemon.mod.common.net.messages.client.battle.BattleTransformPokemonPacket
 import com.cobblemon.mod.common.net.messages.client.pokemon.update.BenchedMovesUpdatePacket
@@ -28,8 +33,11 @@ import generations.gg.generations.core.generationscore.common.util.replaceMove
 import java.util.UUID
 
 import net.minecraft.server.level.ServerPlayer
+import kotlin.compareTo
+import kotlin.math.PI
 
 object GenerationsInstructionProcessor {
+    val capturedList = mutableListOf<UUID>()
 
     @JvmStatic
     fun processFormeChangeInstruction(battle: PokemonBattle, message: BattleMessage) {
@@ -66,7 +74,6 @@ object GenerationsInstructionProcessor {
             "wellspring-tera", "hearthflame-tera", "cornerstone-tera", "teal-tera" -> "embody_aspect" to true
             else -> name to true
         } ?: let {
-            battlePokemon.originalPokemon.removeBattleFeature()
             battlePokemon.effectedPokemon.removeBattleFeature()
             return
         }
@@ -79,8 +86,22 @@ object GenerationsInstructionProcessor {
         }?.let {
             battle.dispatchGo {
                 battlePokemon.entity
-                battlePokemon.originalPokemon.applyBattleFeature(it)
                 battlePokemon.effectedPokemon.applyBattleFeature(it)
+                val active = battle.activePokemon.find {
+                    it.battlePokemon?.uuid == battlePokemon.uuid || it.battlePokemon?.effectedPokemon?.uuid == battlePokemon.uuid
+                }
+
+                val updated = battlePokemon
+                val pnx = active?.getPNX()
+                if (pnx != null) {
+                    (battle.playerUUIDs + battle.spectators).forEach { viewer ->
+                        val isAlly = battle.isAllied(viewer, battlePokemon.actor)
+                        val packet = BattleTransformPokemonPacket(pnx, updated, isAlly)
+
+                        getPlayerFromUUID(viewer)
+                            ?.let { CobblemonNetwork.sendPacketToPlayer(it, packet) }
+                    }
+                }
             }
         }
     }
@@ -124,14 +145,25 @@ object GenerationsInstructionProcessor {
     @JvmStatic
     fun preBattleChanges(battleStartedPreEvent: BattleStartedPreEvent) {
         val battle = battleStartedPreEvent.battle
-        for (actors in battle.actors) {
-            for (battlePokemon in actors.pokemonList) {
+        for (actor in battle.actors) {
+            for (battlePokemon in actor.pokemonList) {
                 battlePokemon.originalPokemon.removeCosmeticFeature()
                 if (battlePokemon.originalPokemon.species.name == "Zacian" || battlePokemon.originalPokemon.species.name == "Zamazenta") {
                     val hasBehemoth = battlePokemon.moveSet.any { it.template.name.contains("behemoth") }
                     if (!hasBehemoth) {
                         doggoMoveChanger(battlePokemon)
                     }
+                }
+                if (battlePokemon.originalPokemon.species.name == "Xerneas") {
+                    val feature = FlagSpeciesFeature("active", true)
+                    battlePokemon.originalPokemon.applyBattleFeature(feature)
+                }
+            }
+
+            if (actor is NPCBattleActor) {
+                actor.pokemonList.forEach { battlePokemon ->
+                    battlePokemon.originalPokemon.heal()
+                    battlePokemon.effectedPokemon.heal()
                 }
             }
         }
@@ -140,24 +172,8 @@ object GenerationsInstructionProcessor {
     @JvmStatic
     fun processBattleEnd(battle: PokemonBattle) {
         battle.actors.forEach { actor ->
-            val faintedPokemonList = actor.pokemonList.filter { it.health <= 0}
 
-            actor.getSide().getOppositeSide().actors.forEach { opponent ->
-                val hasExpAll = opponent.uuid.getPlayer()?.hasExpAll()
-                if (hasExpAll == true) {
-                    val opponentNonFaintedPokemonList = opponent.pokemonList.filter {it.health > 0}
-                    faintedPokemonList.forEach { faintedPokemon ->
-                        for (opponentPokemon in opponentNonFaintedPokemonList) {
-                            val multiplier = opponentPokemon.calculateMultiplier()
-                            val experience = Cobblemon.experienceCalculator.calculate(opponentPokemon, faintedPokemon, multiplier)
-                            if (experience > 0 && actor.pokemonList.all { it.health <= 0}) {
-                                opponent.awardExperience(opponentPokemon, experience)
-                            }
-                        }
-                    }
-                }
-
-            }
+            grantExp(battle, actor)
 
             if (!actor.getPlayerUUIDs().iterator().hasNext()) return@forEach
             actor.pokemonList.forEach { battlePokemon ->
@@ -168,23 +184,23 @@ object GenerationsInstructionProcessor {
                 battlePokemon.effectedPokemon.features.removeIf { it.name == "terastal_active"}
 
                 val name = if(data.contains("form_name")) data.getString("form_name") else ""
-                battlePokemon.originalPokemon.removeBattleFeature()
                 battlePokemon.effectedPokemon.removeBattleFeature()
 
                 if (battlePokemon.effectedPokemon.species.name.equals("Terapagos")) {
+                    val pokemon = battlePokemon.effectedPokemon
                     StringSpeciesFeature("tera_form", "normal").apply(battlePokemon.effectedPokemon)
-                    StringSpeciesFeature("tera_form", "normal").apply(battlePokemon.originalPokemon)
-                    battlePokemon.originalPokemon.updateAspects()
+                    pokemon.updateAspects()
                 }
+
                 if (battlePokemon.effectedPokemon.species.name.equals("Necrozma")) {
                     val necroForm = battlePokemon.originalPokemon.persistentData.getString("necro_fusion")
                     if (!necroForm.isNullOrBlank()) {
                         val necroFeature = StringSpeciesFeature("prism_fusion", necroForm)
-                        necroFeature.apply(battlePokemon.originalPokemon)
                         necroFeature.apply(battlePokemon.effectedPokemon)
                         battlePokemon.originalPokemon.updateAspects()
                     }
                 }
+
                 doggoMoveChanger(battlePokemon)
                 battlePokemon.originalPokemon.restoreAbility(tempAbility)
             }
@@ -192,7 +208,7 @@ object GenerationsInstructionProcessor {
     }
 }
 
-private fun Pokemon.removeBattleFeature() {
+fun Pokemon.removeBattleFeature() {
     val data = this.persistentData
 
     if (data.contains("terastal")) {
@@ -217,6 +233,87 @@ private fun Pokemon.removeBattleFeature() {
     }
 
     updateAspects()
+}
+
+fun grantExp(battle: PokemonBattle, actor: BattleActor) {
+    val targetPokemon = actor.pokemonList
+    val faintedOnly = targetPokemon.filter { it.health <= 0 }
+    val oppositeSide = if (battle.side1.actors.contains(actor)) battle.side2 else battle.side1
+
+    if (GenerationsInstructionProcessor.capturedList.contains(battle.battleId)) {
+        if (actor is PlayerBattleActor) return
+
+        oppositeSide.actors.forEach { opponent ->
+            val player = opponent.uuid.getPlayer()
+
+            if (player != null) {
+                if (player.hasExpAll()) {
+                    grantExpAll(opponent, targetPokemon, true)
+                } else {
+                    grantExpCapture(opponent, targetPokemon, true)
+                }
+            }
+        }
+
+        GenerationsInstructionProcessor.capturedList.remove(battle.battleId)
+        return
+    }
+
+    if (faintedOnly.isEmpty()) return
+
+    oppositeSide.actors.forEach { opponent ->
+        val player = opponent.uuid.getPlayer()
+
+        if (player != null && player.hasExpAll()) {
+            grantExpAll(opponent, faintedOnly, true)
+        }
+    }
+}
+
+
+
+fun grantExpAll(opponent: BattleActor, faintedPokemonList: List<BattlePokemon>, conditionsMet: Boolean) {
+    val opponentNonFaintedPokemonList = opponent.pokemonList.filter {it.health > 0}
+
+    faintedPokemonList.forEach { faintedPokemon ->
+        for (opponentPokemon in opponentNonFaintedPokemonList) {
+            val multiplier = opponentPokemon.calculateMultiplier()
+            val facedFainted = opponentPokemon.facedOpponents.contains(faintedPokemon)
+            val experience = Cobblemon.experienceCalculator.calculate(opponentPokemon, faintedPokemon, multiplier)
+            val grantedEvs = Cobblemon.evYieldCalculator.calculate(opponentPokemon, faintedPokemon)
+
+            if (experience > 0 && conditionsMet) {
+                opponent.awardExperience(opponentPokemon, experience)
+                if (!facedFainted) {
+                    grantedEvs.forEach(opponentPokemon.effectedPokemon.evs::add)
+                }
+            }
+        }
+    }
+}
+
+fun grantExpCapture(opponent: BattleActor, caughtPokemon: List<BattlePokemon>, conditionsMet: Boolean) {
+    val opponentNonFaintedPokemonList = opponent.pokemonList.filter {it.health > 0}
+
+    for (opponentPokemon in opponentNonFaintedPokemonList) {
+        val facedFainted = opponentPokemon.facedOpponents.contains(caughtPokemon.first())
+        val pokemon = opponentPokemon.effectedPokemon
+        val multiplier = when {
+            !facedFainted && pokemon.heldItem().`is`(CobblemonItemTags.EXPERIENCE_SHARE) -> Cobblemon.config.experienceShareMultiplier
+            facedFainted -> 1.0
+            else -> continue
+        }
+
+        val experience = Cobblemon.experienceCalculator.calculate(opponentPokemon, caughtPokemon.first(), multiplier)
+
+        if (experience > 0 && conditionsMet) {
+            opponent.awardExperience(opponentPokemon, experience)
+        }
+
+        Cobblemon.evYieldCalculator.calculate(opponentPokemon, caughtPokemon.first()).forEach { (stat, amount) ->
+            pokemon.evs.add(stat, amount)
+        }
+    }
 }
 
 private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {

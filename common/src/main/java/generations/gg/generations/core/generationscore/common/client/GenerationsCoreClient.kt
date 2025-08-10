@@ -49,6 +49,7 @@ import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
 import gg.generations.rarecandy.renderer.rendering.RareCandy
 import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.minecraft.client.Camera
+import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.screens.MenuScreens
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
@@ -115,6 +116,9 @@ object MatrixCache {
 }
 
 object GenerationsCoreClient {
+    lateinit var TOGGLE_CONDITIONS_KEY: KeyMapping
+    var toggleConditions: Boolean = true
+
     fun onInitialize(implementation: GenerationsCoreClientImplementation) {
 //        if (GenerationsCore.CONFIG.client.useRenderDoc) {
 //            try {
@@ -392,6 +396,10 @@ object GenerationsCoreClient {
     }
 
     fun onTick() {
+        if (::TOGGLE_CONDITIONS_KEY.isInitialized && TOGGLE_CONDITIONS_KEY.consumeClick()) {
+            toggleConditions = !toggleConditions
+        }
+
         WalkmonSoundManager.tick()
     }
 

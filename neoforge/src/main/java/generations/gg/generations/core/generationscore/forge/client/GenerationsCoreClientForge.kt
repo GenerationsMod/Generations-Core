@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.client
 
+import com.mojang.blaze3d.platform.InputConstants
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
@@ -11,6 +12,7 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClientImplementation
 import generations.gg.generations.core.generationscore.common.client.model.Keybinds
 import generations.gg.generations.core.generationscore.common.client.screen.container.*
+import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.entity.EntityRendererProvider
@@ -29,7 +31,9 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDef
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers
 import net.neoforged.neoforge.client.event.InputEvent
 import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent
+import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent
 import net.neoforged.neoforge.common.NeoForge
+import org.lwjgl.glfw.GLFW
 import java.util.ArrayList
 
 /**
@@ -53,6 +57,17 @@ class GenerationsCoreClientForge(eventBus: IEventBus): GenerationsCoreClientImpl
 //        GenerationsCoreClient.onInitialize(this) //COmment this out when doing datagen. Datagen mod doens't like it for some reason.
 
         onInitialize(this)
+
+        eventBus.addListener { event: RegisterKeyMappingsEvent ->
+            GenerationsCoreClient.TOGGLE_CONDITIONS_KEY = KeyMapping(
+                "Toggle Battle Conditions",
+                InputConstants.Type.KEYSYM,
+                GLFW.GLFW_KEY_V,
+                "Generations"
+            )
+            // TODO: replace name/category with lang i'm lazy
+            event.register(GenerationsCoreClient.TOGGLE_CONDITIONS_KEY)
+        }
 
         eventBus.addListener({ event: RegisterRenderers ->
             registerBlockEntityRenderers(object : BlockEntityRendererHandler {

@@ -91,7 +91,19 @@ fun Pokemon.removeCosmeticFeature() {
 
     if (data.contains("cosmetic_name")) {
         val name = data.getString("cosmetic_name").also { data.remove("cosmetic_name") }
-        features.removeIf { it.name == name }
+        if (this.species.name == "Necrozma") {
+            val feature: StringSpeciesFeature
+
+            if (this.persistentData.getString("prism_fusion") == "dusk") {
+                feature = StringSpeciesFeature("prism_fusion", "dusk")
+                feature.apply(this)
+            } else if (this.persistentData.getString("prism_fusion") == "dawn") {
+                feature = StringSpeciesFeature("prism_fusion", "dawn")
+                feature.apply(this)
+            }
+        } else {
+            features.removeIf { it.name == name }
+        }
     }
 
     updateAspects()

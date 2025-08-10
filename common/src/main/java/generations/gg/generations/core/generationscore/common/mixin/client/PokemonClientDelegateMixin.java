@@ -16,6 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.UUID;
 
+import static com.cobblemon.mod.common.api.scheduling.SchedulingFunctionsKt.afterOnClient;
+
 @Mixin(value = PokemonClientDelegate.class, remap = false)
 public class PokemonClientDelegateMixin {
     @Shadow
@@ -45,20 +47,14 @@ public class PokemonClientDelegateMixin {
             if (isTera && !TeraStateTracker.hasPlayed(uuid)) {
                 TeraVisualEffectHandler.playTeraAmbient(currentEntity);
 
-                Minecraft.getInstance().execute(() -> {
-                    new Thread(() -> {
-                        try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException ignored) {}
-                        Minecraft.getInstance().execute(() -> {
-                            TeraStateTracker.markPlayed(uuid);
-                            pokemon.setForcedAspects(currentAspects);
-                            pokemon.updateForm();
-                            currentEntity.refreshDimensions();
-                            TeraVisualEffectHandler.spawnTeraParticles(currentEntity, pokemon.getTeraType().getId().getPath());
-                            TeraVisualEffectHandler.playTeraSounds(currentEntity);
-                        });
-                    }).start();
+                afterOnClient(2.0f, () -> {
+                    TeraStateTracker.markPlayed(uuid);
+                    pokemon.setForcedAspects(currentAspects);
+                    pokemon.updateForm();
+                    currentEntity.refreshDimensions();
+                    TeraVisualEffectHandler.spawnTeraParticles(currentEntity, pokemon.getTeraType().getId().getPath());
+                    TeraVisualEffectHandler.playTeraSounds(currentEntity);
+                    return null;
                 });
 
             } else {

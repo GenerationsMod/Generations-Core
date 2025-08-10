@@ -24,6 +24,7 @@ import com.cobblemon.mod.common.net.messages.server.trade.OfferTradePacket
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.google.common.collect.ArrayListMultimap
 import com.google.common.collect.Multimap
+import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.network.GenerationsNetwork
 import generations.gg.generations.core.generationscore.common.network.packets.GensInteractPokemonPacket
 import net.minecraft.client.Minecraft
@@ -32,6 +33,38 @@ import java.util.*
 import org.joml.Vector3f
 
 fun createPokemonInteractGui(pokemonID: UUID, canMountShoulder: Boolean, changeFormData: Pair<Boolean, String>): InteractWheelGUI {
+    var path = ""
+    var aspect = changeFormData.second
+    var ttt = "Transform Pokemon"
+
+    if (changeFormData.first) {
+        aspect = when {
+            "mega" in aspect -> {
+                path = "textures/ui/interact/icon_mega.png"
+                aspect
+            }
+            "kyogre" in aspect -> {
+                path = "textures/ui/interact/icon_primal_kyogre.png"
+                "primal"
+            }
+            "groudon" in aspect -> {
+                path = "textures/ui/interact/icon_primal_groudon.png"
+                "primal"
+            }
+            aspect == "revert" -> {
+                path = "textures/ui/interact/icon_revert.png"
+                ttt = "Revert Form"
+                aspect
+            }
+            aspect == "ultra" -> {
+                path = "textures/ui/interact/icon_ultraburst.png"
+                aspect
+            }
+            else -> aspect
+        }
+    }
+
+    val fixedFormData = changeFormData.first to aspect
     val mountShoulder = InteractWheelOption(
         iconResource = cobblemonResource("textures/gui/interact/icon_shoulder.png"),
         tooltipText = "cobblemon.ui.interact.mount.shoulder",
@@ -52,13 +85,11 @@ fun createPokemonInteractGui(pokemonID: UUID, canMountShoulder: Boolean, changeF
     )
 
     val changeForm = InteractWheelOption(
-        iconResource = cobblemonResource("textures/gui/interact/icon_exclamation.png"),
-        secondaryIconResource = null,
-        tooltipText = "Transform Pokemon",
-        colour = { Vector3f(1.0f, 0.5f, 0.5f) },
+        iconResource = GenerationsCore.id(path),
+        tooltipText = ttt,
         onPress = {
             GenerationsNetwork.sendToServer(
-                GensInteractPokemonPacket(pokemonID, false, changeFormData)
+                GensInteractPokemonPacket(pokemonID, false, fixedFormData)
             )
             closeGUI()
         }

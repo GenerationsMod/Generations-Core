@@ -29,7 +29,7 @@ public abstract class PokemonBattleMixin {
 
     @Inject(method = "<init>", at = @At("TAIL"), remap = false)
     private void onConstruct(BattleFormat format, BattleSide side1, BattleSide side2, CallbackInfo ci) {
-        this.setMute(false);
+//        this.setMute(false);
     }
 
     @Inject(method = "end", at = @At("TAIL"), remap = false)
@@ -59,8 +59,7 @@ public abstract class PokemonBattleMixin {
         }
 
         boolean hasExpShare = opponent.getEffectedPokemon().heldItemNoCopy$common().is(CobblemonItemTags.EXPERIENCE_SHARE);
-        System.out.println("hasExpShare: " + hasExpShare);
-        System.out.println("hasExpAll: " + hasExpAll);
+
         if (hasExpAll && hasExpShare) {
             args.set(2, -1.0D);
             System.out.println("neutralized xp gain from xp share");

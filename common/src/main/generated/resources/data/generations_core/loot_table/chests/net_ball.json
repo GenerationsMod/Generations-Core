@@ -14,10 +14,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:big_pearl"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:chilan_berry"
         },
         {
@@ -27,10 +23,6 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:clover_sweet"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:courage_candy_xl"
         },
         {
           "type": "minecraft:item",
@@ -62,15 +54,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:leaf_letter"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:leaf_stone"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:luck_incense"
         },
         {
           "type": "minecraft:item",
@@ -110,14 +94,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:plasma_card"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:red_nectar"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:revival_herb"
         },
         {
@@ -126,27 +102,11 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:rose_incense"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:sea_incense"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:shoal_shell"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:silver_powder"
         },
         {
           "type": "minecraft:item",
           "name": "cobblemon:sport_ball"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:super_lure"
         },
         {
           "type": "minecraft:item",
@@ -159,22 +119,6 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:wepear_berry"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:water_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:bug_candy"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:x_accuracy_2"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:x_attack_3"
         },
         {
           "type": "minecraft:item",
@@ -198,10 +142,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:yellow_flute"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:zoom_lens"
         },
         {
@@ -222,22 +162,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "generations_core:old_rod"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:good_rod"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:super_rod"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:wailmer_pail"
-        },
-        {
-          "type": "minecraft:item",
           "name": "cobblemon:jolly_mint"
         },
         {
@@ -247,170 +171,6 @@
         {
           "type": "minecraft:item",
           "name": "cobblemon:modest_mint"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:ground_memory_drive"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:bug_memory_drive"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:earth_plate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:insect_plate"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_11"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_22"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_50"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_77"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_110"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_123"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_142"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_145"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_154"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_15"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_21"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_60"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_95"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_105"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_131"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_162"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_188"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_196"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_208"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_209"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_190"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_194"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_206"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_233"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_182"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_185"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:tm_219"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:cascarrafa_city_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:slumbering_weald_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:pokemon_center_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:azalea_town_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:lillie_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:route_228_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:jubilife_village_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:goldenrod_city_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:eterna_city_disc"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "generations_core:vermilion_city_disc"
         }
       ],
       "rolls": {

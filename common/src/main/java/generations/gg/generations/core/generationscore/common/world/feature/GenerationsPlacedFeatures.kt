@@ -58,6 +58,8 @@ object GenerationsPlacedFeatures {
     val ORE_Z_CRYSTAL: ResourceKey<PlacedFeature> = registerKey("ore_z_crystal")
     @JvmField
     val ORE_METEORITE: ResourceKey<PlacedFeature> = registerKey("ore_meteorite")
+    @JvmField
+    val ORE_TERASHARD: ResourceKey<PlacedFeature> = registerKey("ore_terashard")
 
     @JvmField
     val POKE_BALL_LOOT: ResourceKey<PlacedFeature> = registerKey("poke_ball_loot")
@@ -337,6 +339,16 @@ object GenerationsPlacedFeatures {
             context,
             ORE_METEORITE,
             configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_METEORITE),
+            GenerationsOrePlacements.rareOrePlacement(
+                20, HeightRangePlacement.triangle(
+                    VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0)
+                )
+            )
+        )
+        register(
+            context,
+            ORE_TERASHARD,
+            configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.ORE_TERASHARD),
             GenerationsOrePlacements.rareOrePlacement(
                 20, HeightRangePlacement.triangle(
                     VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0)

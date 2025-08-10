@@ -129,6 +129,8 @@ object GenerationsConfiguredFeatures {
     val ORE_Z_CRYSTAL: ResourceKey<ConfiguredFeature<*, *>> = registerKey("ore_z_crystal")
     @JvmField
     val ORE_METEORITE: ResourceKey<ConfiguredFeature<*, *>> = registerKey("ore_meteorite")
+    @JvmField
+    val ORE_TERASHARD: ResourceKey<ConfiguredFeature<*, *>> = registerKey("ore_terashard")
 
     fun bootStrap(context: BootstrapContext<ConfiguredFeature<*, *>>) {
         val stoneReplaceables: RuleTest = TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES)
@@ -169,6 +171,10 @@ object GenerationsConfiguredFeatures {
         val meteoriteOres =
             targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.METEORITE_ORE_SET)
         register(context, ORE_METEORITE, Feature.ORE, OreConfiguration(meteoriteOres, 3, 0.0f))
+
+        val terashardOres =
+            targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.TERASHARD_ORE_SET)
+        register(context, ORE_TERASHARD, Feature.ORE, OreConfiguration(terashardOres, 3, 0.0f))
 
         register(context, POKE_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.POKE_BALL_LOOT.value())))
         register(context, BEAST_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.BEAST_BALL_LOOT.value())))

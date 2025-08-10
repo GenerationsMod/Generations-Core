@@ -241,6 +241,8 @@
     "generations_core:deepslate_sapphire_ore",
     "generations_core:silicon_ore",
     "generations_core:deepslate_silicon_ore",
+    "generations_core:tera_shard_ore",
+    "generations_core:deepslate_tera_shard_ore",
     "generations_core:z_crystal_ore",
     "generations_core:deepslate_z_crystal_ore",
     "generations_core:house_lamp",

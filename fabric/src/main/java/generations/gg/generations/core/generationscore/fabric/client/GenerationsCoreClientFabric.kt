@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.fabric.client
 
+import com.mojang.blaze3d.platform.InputConstants
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.BlockEntityRendererHandler
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient.EntityRendererHandler
@@ -19,9 +20,11 @@ import net.fabricmc.api.Environment
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
+import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
+import net.minecraft.client.KeyMapping
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers
@@ -36,6 +39,7 @@ import net.minecraft.world.level.block.TransparentBlock
 import net.minecraft.world.level.block.TrapDoorBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
+import org.lwjgl.glfw.GLFW
 
 /**
  * The client initializer for the fabric client portion of the mod.
@@ -59,6 +63,17 @@ class GenerationsCoreClientFabric : ClientModInitializer, GenerationsCoreClientI
         GenerationsCoreFabric.networkManager.registerClientHandlers()
 
         onInitialize(this)
+
+        GenerationsCoreClient.TOGGLE_CONDITIONS_KEY =
+            KeyBindingHelper.registerKeyBinding(
+                KeyMapping(
+                    "Toggle Battle Conditions",
+                    InputConstants.Type.KEYSYM,
+                    GLFW.GLFW_KEY_V,
+                    "Generations"
+                )
+                // TODO: replace name/category with lang i'm lazy
+            )
 
         ClientLifecycleEvents.CLIENT_STARTED.register(GenerationsCoreClient::setupClient)
 

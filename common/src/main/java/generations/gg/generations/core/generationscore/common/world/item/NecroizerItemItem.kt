@@ -31,6 +31,7 @@ class NecroizerItemItem(private val properties: Properties, private val species:
 
                     feature.value = form
                     feature.apply(entity)
+                    entity.pokemon.persistentData.putString("prism_fusion", form)
 
                     Moves.getByName(move)?.run { entity.pokemon.benchedMoves.add(BenchedMove(this, 0)) }
 
@@ -40,6 +41,7 @@ class NecroizerItemItem(private val properties: Properties, private val species:
                 form -> {
                     feature.value = ""
                     feature.apply(entity)
+                    entity.pokemon.persistentData.remove("prism_fusion")
                     player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
 
 

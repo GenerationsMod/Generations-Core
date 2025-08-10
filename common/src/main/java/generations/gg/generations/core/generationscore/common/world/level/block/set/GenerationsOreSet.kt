@@ -101,6 +101,14 @@ class GenerationsOreSet {
         //chargeStoneOre = GenerationsOres.registerOreBlockItem("charge_stone_" + name, () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).dropsLike(ore.get())));
     }
 
+    constructor(name: String, blockSupplier: () -> Block) {
+        this.name = name
+        this.dropHolder = null
+
+        oreHolder = GenerationsOres.registerOreBlockItem(name, blockSupplier)
+        deepslateOreHolder = GenerationsOres.registerOreBlockItem("deepslate_$name", blockSupplier)
+    }
+
     /*
     public RegistrySupplier<DropExperienceBlock> getChargeStoneOre() {
         return chargeStoneOre;
