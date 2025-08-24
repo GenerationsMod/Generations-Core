@@ -12,11 +12,12 @@
             "type": "pokemon",
             "context": "grounded",
             "bucket": "ultra-rare",
-            "level": "70-75",
+            "level": "70",
             "weight": 0.01,
             "condition": {
+                "canSeeSky": false,
                 "biomes": [
-                    "#minecraft:is_end"
+                    "generations_core:terastal_caves"
                 ]
             }
         }

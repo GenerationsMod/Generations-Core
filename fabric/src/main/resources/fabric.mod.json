@@ -27,6 +27,9 @@
         "value": "generations.gg.generations.core.generationscore.fabric.client.GenerationsCoreClientFabric"
       }
     ],
+    "terrablender": [
+      "generations.gg.generations.core.generationscore.fabric.GenerationsTerrablenderEntry"
+    ],
     "fabric-datagen": ["generations.gg.generations.core.generationscore.fabric.datagen.DataGen"],
     "rei_client": [
       "generations.gg.generations.core.generationscore.common.compat.rei.ReiCompatClient"

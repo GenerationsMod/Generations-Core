@@ -60,6 +60,10 @@ object TagsDatagen {
                 }
             }
 
+            tag(BlockTags.BASE_STONE_OVERWORLD)
+                .add(GenerationsBlocks.TERA_INFUSED_STONE_SET.baseBlock)
+                .add(GenerationsBlocks.TERA_INFUSED_DEEPSLATE_SET.baseBlock)
+
             GenerationsBlocks.ULTRA_BLOCKS.all().forEach { block ->
                 tag(GenerationsBlockTags.ULTRA).add(block)
                 EasyBlockTags(block)
@@ -470,8 +474,6 @@ object TagsDatagen {
                     this.add(it.value().asItem())
                 }
             }
-
-
 
             //Ore Specific tags like Vanilla
             copy(GenerationsBlockTags.GENERATIONSORES, GenerationsItemTags.GENERATIONSORES)

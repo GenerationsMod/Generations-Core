@@ -56,9 +56,9 @@ object GenerationsInstructionProcessor {
         val ability = battlePokemon.originalPokemon.ability.name
         battlePokemon.originalPokemon.persistentData.putString("original_ability", ability)
 
-        if (effectedPokemon.form.name.equals("Dusk-Mane")) {
+        if (effectedPokemon.form.name == "Dusk-Mane") {
             battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dusk")
-        } else if (effectedPokemon.form.name.equals("Dawn-Wings")) {
+        } else if (effectedPokemon.form.name == "Dawn-Wings") {
             battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dawn")
         }
 
@@ -85,7 +85,6 @@ object GenerationsInstructionProcessor {
             }
         }?.let {
             battle.dispatchGo {
-                battlePokemon.entity
                 battlePokemon.effectedPokemon.applyBattleFeature(it)
                 val active = battle.activePokemon.find {
                     it.battlePokemon?.uuid == battlePokemon.uuid || it.battlePokemon?.effectedPokemon?.uuid == battlePokemon.uuid
@@ -316,9 +315,9 @@ fun grantExpCapture(opponent: BattleActor, caughtPokemon: List<BattlePokemon>, c
     }
 }
 
-private fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
+fun Pokemon.applyBattleFeature(feature: SpeciesFeature) {
     if (feature.name.equals("terastal_active")) {
-        this.persistentData.putString("terastal_active", feature.name)
+        this.persistentData.putBoolean("terastal_active", true)
     } else {
         this.persistentData.putString("form_name", feature.name)
     }
@@ -392,5 +391,3 @@ private fun doggoMoveChanger(battlePokemon: BattlePokemon) {
         }
     }
 }
-
-

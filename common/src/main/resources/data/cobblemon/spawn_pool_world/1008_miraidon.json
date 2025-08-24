@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "miraidon-1",
+      "pokemon": "miraidon",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 0.01,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "generations_core:terastal_caves"
+        ]
+      }
+    }
+  ]
+}

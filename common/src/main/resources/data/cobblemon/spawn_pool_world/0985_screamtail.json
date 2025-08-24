@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "screamtail-1",
+      "pokemon": "screamtail",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "uncommon",
+      "level": "52-60",
+      "weight": 5.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "generations_core:terastal_caves"
+        ]
+      }
+    }
+  ]
+}

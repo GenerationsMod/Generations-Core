@@ -32,6 +32,7 @@
     "showdown.battleconditions.SwitchInstructionMixin",
     "showdown.battleconditions.TurnInstructionMixin",
     "showdown.battleconditions.WeatherInstructionMixin",
+    "showdown.AIBattleActorMixin",
     "showdown.FormeChangeInstructionMixin",
     "showdown.ShowdownActionRequestMixin",
     "showdown.TerastallizeInstructionMixin"

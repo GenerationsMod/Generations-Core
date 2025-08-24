@@ -16,11 +16,15 @@ import generations.gg.generations.core.generationscore.common.event.PlayerJoinHa
 import generations.gg.generations.core.generationscore.common.util.EntryRegister
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.supplier
+import generations.gg.generations.core.generationscore.common.world.biome.GenerationsTerrablender
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
 import generations.gg.generations.core.generationscore.forge.networking.GenerationsNeoForgeNetworkManager
+import generations.gg.generations.core.generationscore.common.world.biome.surface.GenerationsSurfaceRules
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsFeatures
 import net.minecraft.core.Holder
 import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.FriendlyByteBuf
 import net.minecraft.network.chat.Component
@@ -54,6 +58,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract
 import net.neoforged.neoforge.registries.*
+import terrablender.api.SurfaceRuleManager
 import thedarkcolour.kotlinforforge.neoforge.forge.MOD_BUS
 import java.util.*
 import java.util.function.Consumer
@@ -89,6 +94,7 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
 
         with(bus) {
             ENTITY_DATA_SERIALIZER_REGISTER.register(bus)
+            NeoForgePlatformFeatureRegistry.registerAll(bus)
             addListener(::onInitialize)
             addListener(::postInit)
             addListener<BuildCreativeModeTabContentsEvent> {
@@ -274,7 +280,11 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
      * Should initialize everything where a specific event does not cover it.
      */
     private fun onInitialize(event: FMLCommonSetupEvent) {
-        event.enqueueWork { VanillaCompat.setup() }
+        event.enqueueWork {
+            VanillaCompat.setup()
+            GenerationsTerrablender().registerBiomes()
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, GenerationsCore.MOD_ID, GenerationsSurfaceRules.makeRules())
+        }
     }
 
     private fun postInit(event: FMLLoadCompleteEvent) {

@@ -12,8 +12,11 @@ import generations.gg.generations.core.generationscore.common.client.Generations
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClientImplementation
 import generations.gg.generations.core.generationscore.common.client.model.Keybinds
 import generations.gg.generations.core.generationscore.common.client.screen.container.*
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import net.minecraft.client.KeyMapping
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.ItemBlockRenderTypes
+import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider
 import net.minecraft.client.renderer.entity.EntityRendererProvider
 import net.minecraft.resources.ResourceLocation
@@ -26,15 +29,11 @@ import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.IEventBus
 import net.neoforged.fml.common.Mod
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
-import net.neoforged.neoforge.client.event.ClientTickEvent
+import net.neoforged.neoforge.client.event.*
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions
 import net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterRenderers
-import net.neoforged.neoforge.client.event.InputEvent
-import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent
 import net.neoforged.neoforge.common.NeoForge
 import org.lwjgl.glfw.GLFW
-import java.util.ArrayList
 
 /**
  * This class is used to initialize the Forge client side of the mod.
@@ -58,6 +57,15 @@ class GenerationsCoreClientForge(eventBus: IEventBus): GenerationsCoreClientImpl
 
         onInitialize(this)
 
+        eventBus.addListener({ event: RegisterParticleProvidersEvent? ->
+            GenerationsCoreClient.registerParticles({ type, spriteProviderFactory ->
+                event!!.registerSpriteSet(
+                    type,
+                    spriteProviderFactory::apply
+                )
+            })
+        })
+
         eventBus.addListener { event: RegisterKeyMappingsEvent ->
             GenerationsCoreClient.TOGGLE_CONDITIONS_KEY = KeyMapping(
                 "Toggle Battle Conditions",
@@ -71,7 +79,10 @@ class GenerationsCoreClientForge(eventBus: IEventBus): GenerationsCoreClientImpl
 
         eventBus.addListener({ event: RegisterRenderers ->
             registerBlockEntityRenderers(object : BlockEntityRendererHandler {
-                override fun <T : BlockEntity> register(type: BlockEntityType<T>, provider: BlockEntityRendererProvider<T>, ) = event.registerBlockEntityRenderer(type, provider)
+                override fun <T : BlockEntity> register(
+                    type: BlockEntityType<T>,
+                    provider: BlockEntityRendererProvider<T>
+                ) = event.registerBlockEntityRenderer(type, provider)
             })
             registerEntityRenderers(object : EntityRendererHandler {
                 override fun <T : Entity> register(type: EntityType<T>, provider: EntityRendererProvider<T>) = event.registerEntityRenderer(type, provider)
@@ -100,6 +111,9 @@ class GenerationsCoreClientForge(eventBus: IEventBus): GenerationsCoreClientImpl
             forgeClientSetup(
                 event
             )
+            event.enqueueWork {
+//                ItemBlockRenderTypes.setRenderLayer(GenerationsBlocks.TERA_CRYSTAL_CLUSTER.value(), RenderType.cutout())
+            }
         }
     }
 

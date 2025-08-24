@@ -243,6 +243,10 @@ object BattleOverlayProxy {
             0.0
         )
 
+        if (reversed) {
+            matrixStack.scale(-1F, 1F, 1F)
+        }
+
         if (ballState != null && ballState.currentPose != "shut")  {
             ballState.currentPose = "shut"
         }
@@ -255,6 +259,10 @@ object BattleOverlayProxy {
                 partialTicks = partialTicks
             )
         } else {
+            if (reversed) {
+                RenderSystem.disableCull()
+            }
+
             drawPosablePortrait(
                 identifier = species.resourceIdentifier,
                 matrixStack = matrixStack,
@@ -265,6 +273,10 @@ object BattleOverlayProxy {
                 state = state,
                 partialTicks = partialTicks
             )
+
+            if (reversed) {
+                RenderSystem.enableCull()
+            }
         }
 
 

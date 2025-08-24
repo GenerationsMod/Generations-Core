@@ -19,6 +19,7 @@ dependencies {
 
     implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
 
+    modCompileOnly("com.github.glitchfiend:TerraBlender-common:$minecraftVersion-${project.properties["terrablender_version"]}")
     modCompileOnly("mcp.mobius.waila:wthit-api:fabric-${project.properties["WTHIT"]}")
     modCompileOnly(fileTree(mapOf("dir" to "libs", "include" to "*.jar")))
 

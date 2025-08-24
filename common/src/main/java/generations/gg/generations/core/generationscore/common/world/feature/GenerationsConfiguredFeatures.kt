@@ -1,19 +1,29 @@
 package generations.gg.generations.core.generationscore.common.world.feature
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
+import generations.gg.generations.core.generationscore.common.world.feature.configurations.LargeTeraCrystalConfiguration
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsOres
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
+import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsFullBlockSet
 import generations.gg.generations.core.generationscore.common.world.level.block.set.GenerationsOreSet
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.worldgen.BootstrapContext
+import net.minecraft.data.worldgen.placement.PlacementUtils
 import net.minecraft.resources.ResourceKey
 import net.minecraft.tags.BlockTags
+import net.minecraft.util.valueproviders.ConstantFloat
+import net.minecraft.util.valueproviders.ConstantInt
+import net.minecraft.util.valueproviders.UniformFloat
+import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature
 import net.minecraft.world.level.levelgen.feature.Feature
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider
+import net.minecraft.world.level.levelgen.placement.PlacedFeature
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest
 
@@ -131,6 +141,14 @@ object GenerationsConfiguredFeatures {
     val ORE_METEORITE: ResourceKey<ConfiguredFeature<*, *>> = registerKey("ore_meteorite")
     @JvmField
     val ORE_TERASHARD: ResourceKey<ConfiguredFeature<*, *>> = registerKey("ore_terashard")
+    @JvmField
+    val BLOCK_TERA_INFUSED_STONE: ResourceKey<ConfiguredFeature<*, *>> = registerKey("block_tera_infused_stone")
+
+    @JvmField
+    val LARGE_TERA_CRYSTAL: ResourceKey<ConfiguredFeature<*, *>> = registerKey("large_tera_crystal")
+    @JvmField
+    val TERA_CRYSTAL_CLUSTER: ResourceKey<ConfiguredFeature<*, *>> = registerKey("tera_crystal_cluster")
+
 
     fun bootStrap(context: BootstrapContext<ConfiguredFeature<*, *>>) {
         val stoneReplaceables: RuleTest = TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES)
@@ -176,6 +194,10 @@ object GenerationsConfiguredFeatures {
             targetBlockState(stoneReplaceables, deepslateReplaceables, GenerationsOres.TERASHARD_ORE_SET)
         register(context, ORE_TERASHARD, Feature.ORE, OreConfiguration(terashardOres, 3, 0.0f))
 
+        val terainfusedstoneBlocks =
+            targetBlockStateBlock(stoneReplaceables, deepslateReplaceables, GenerationsBlocks.TERA_INFUSED_STONE_SET)
+        register(context, BLOCK_TERA_INFUSED_STONE, Feature.ORE, OreConfiguration(terainfusedstoneBlocks, 64, 0.0f))
+
         register(context, POKE_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.POKE_BALL_LOOT.value())))
         register(context, BEAST_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.BEAST_BALL_LOOT.value())))
         register(context, CHERISH_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.CHERISH_BALL_LOOT.value())))
@@ -209,6 +231,23 @@ object GenerationsConfiguredFeatures {
         register(context, TIMER_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.TIMER_BALL_LOOT.value())))
         register(context, ULTRA_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.ULTRA_BALL_LOOT.value())))
         register(context, WING_BALL_LOOT, Feature.SIMPLE_BLOCK, SimpleBlockConfiguration(BlockStateProvider.simple(GenerationsUtilityBlocks.WING_BALL_LOOT.value())))
+
+        val config = LargeTeraCrystalConfiguration(
+            40,
+            UniformInt.of(3, 4),
+            ConstantFloat.of(2.0f),
+            0.9f,
+            ConstantFloat.of(0.8f),
+            ConstantFloat.of(0.8f),
+            UniformFloat.of(0.2f, 0.3f),
+            3,
+            0.25f
+        )
+
+        val configured = ConfiguredFeature(GenerationsFeatures.LARGE_TERA_CRYSTAL.get(), config)
+        context.register(LARGE_TERA_CRYSTAL, configured)
+
+        context.register(TERA_CRYSTAL_CLUSTER, ConfiguredFeature(GenerationsFeatures.TERA_CRYSTAL_CLUSTER.get(), NoneFeatureConfiguration.INSTANCE))
     }
 
     private fun registerKey(name: String): ResourceKey<ConfiguredFeature<*, *>> {
@@ -232,6 +271,17 @@ object GenerationsConfiguredFeatures {
         return java.util.List.of(
             OreConfiguration.target(ruleTest, oreSet.ore.defaultBlockState()),
             OreConfiguration.target(ruleTest2, oreSet.deepslateOre.defaultBlockState())
+        )
+    }
+
+    private fun targetBlockStateBlock(
+        ruleTest: RuleTest,
+        ruleTest2: RuleTest,
+        blockSet: GenerationsFullBlockSet
+    ): List<OreConfiguration.TargetBlockState> {
+        return java.util.List.of(
+            OreConfiguration.target(ruleTest, blockSet.baseBlock.defaultBlockState()),
+            OreConfiguration.target(ruleTest2, blockSet.baseBlock.defaultBlockState())
         )
     }
 }

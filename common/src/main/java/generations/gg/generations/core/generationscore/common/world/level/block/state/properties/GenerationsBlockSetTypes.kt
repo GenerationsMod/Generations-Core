@@ -33,6 +33,7 @@ object GenerationsBlockSetTypes {
             SoundEvents.STONE_BUTTON_CLICK_ON
         )
     )
+
     val MARBLE: BlockSetType = BlockSetType.register(
         BlockSetType(
             "marble",
@@ -51,6 +52,7 @@ object GenerationsBlockSetTypes {
             SoundEvents.STONE_BUTTON_CLICK_ON
         )
     )
+
     val CHARGE_STONE: BlockSetType = BlockSetType.register(
         BlockSetType(
             "charge_stone",
@@ -69,6 +71,44 @@ object GenerationsBlockSetTypes {
             SoundEvents.STONE_BUTTON_CLICK_ON
         )
     )
+    val TERA_INFUSED_STONE: BlockSetType = BlockSetType.register(
+        BlockSetType(
+            "tera_infused_stone",
+            true,
+            true,
+            true,
+            BlockSetType.PressurePlateSensitivity.EVERYTHING,
+            SoundType.STONE,
+            SoundEvents.IRON_DOOR_CLOSE,
+            SoundEvents.IRON_DOOR_OPEN,
+            SoundEvents.IRON_TRAPDOOR_CLOSE,
+            SoundEvents.IRON_TRAPDOOR_OPEN,
+            SoundEvents.STONE_PRESSURE_PLATE_CLICK_OFF,
+            SoundEvents.STONE_PRESSURE_PLATE_CLICK_ON,
+            SoundEvents.STONE_BUTTON_CLICK_OFF,
+            SoundEvents.STONE_BUTTON_CLICK_ON
+        )
+    )
+
+    val TERA_INFUSED_DEEPSLATE: BlockSetType = BlockSetType.register(
+        BlockSetType(
+            "tera_infused_deepslate",
+            true,
+            true,
+            true,
+            BlockSetType.PressurePlateSensitivity.EVERYTHING,
+            SoundType.DEEPSLATE,
+            SoundEvents.IRON_DOOR_CLOSE,
+            SoundEvents.IRON_DOOR_OPEN,
+            SoundEvents.IRON_TRAPDOOR_CLOSE,
+            SoundEvents.IRON_TRAPDOOR_OPEN,
+            SoundEvents.STONE_PRESSURE_PLATE_CLICK_OFF,
+            SoundEvents.STONE_PRESSURE_PLATE_CLICK_ON,
+            SoundEvents.STONE_BUTTON_CLICK_OFF,
+            SoundEvents.STONE_BUTTON_CLICK_ON
+        )
+    )
+
     val VOLCANIC_STONE: BlockSetType = BlockSetType.register(
         BlockSetType(
             "volcanic_stone",

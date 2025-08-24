@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "tera_infused_stone_button",
+  "ingredients": [
+    {
+      "item": "generations_core:tera_infused_stone"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:tera_infused_stone_button"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ironvaliant-1",
+      "pokemon": "ironvaliant",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "rare",
+      "level": "52-60",
+      "weight": 5.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "generations_core:terastal_caves"
+        ]
+      }
+    }
+  ]
+}

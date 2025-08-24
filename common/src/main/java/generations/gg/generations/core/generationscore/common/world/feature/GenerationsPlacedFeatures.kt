@@ -1,11 +1,15 @@
 package generations.gg.generations.core.generationscore.common.world.feature
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
+import generations.gg.generations.core.generationscore.common.world.feature.configurations.LargeTeraCrystalConfiguration
 import net.minecraft.core.Holder
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.worldgen.BootstrapContext
 import net.minecraft.data.worldgen.placement.PlacementUtils
 import net.minecraft.resources.ResourceKey
+import net.minecraft.util.valueproviders.ConstantFloat
+import net.minecraft.util.valueproviders.ConstantInt
+import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.level.levelgen.VerticalAnchor
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature
 import net.minecraft.world.level.levelgen.placement.*
@@ -60,6 +64,13 @@ object GenerationsPlacedFeatures {
     val ORE_METEORITE: ResourceKey<PlacedFeature> = registerKey("ore_meteorite")
     @JvmField
     val ORE_TERASHARD: ResourceKey<PlacedFeature> = registerKey("ore_terashard")
+    @JvmField
+    val BLOCK_TERA_INFUSED_STONE: ResourceKey<PlacedFeature> = registerKey("block_tera_infused_stone")
+
+    @JvmField
+    val LARGE_TERA_CRYSTAL: ResourceKey<PlacedFeature> = registerKey("large_tera_crystal")
+    @JvmField
+    val TERA_CRYSTAL_CLUSTER: ResourceKey<PlacedFeature> = registerKey("tera_crystal_cluster")
 
     @JvmField
     val POKE_BALL_LOOT: ResourceKey<PlacedFeature> = registerKey("poke_ball_loot")
@@ -360,6 +371,17 @@ object GenerationsPlacedFeatures {
 
         register(
             context,
+            BLOCK_TERA_INFUSED_STONE,
+            configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.BLOCK_TERA_INFUSED_STONE),
+            GenerationsOrePlacements.commonOrePlacement(
+                20, HeightRangePlacement.uniform(
+                    VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0)
+                )
+            ) + BiomeFilter.biome()
+        )
+
+        register(
+            context,
             POKE_BALL_LOOT,
             configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.POKE_BALL_LOOT),
             oceanFloorSquaredWithChance(250)
@@ -555,6 +577,29 @@ object GenerationsPlacedFeatures {
             WING_BALL_LOOT,
             configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.WING_BALL_LOOT),
             oceanFloorSquaredWithChance(200)
+        )
+
+        val placementModifiers = listOf(
+            CountPlacement.of(UniformInt.of(8, 16)),
+            InSquarePlacement.spread(),
+            PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT,
+            BiomeFilter.biome()
+        )
+
+        val placed = PlacedFeature(configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.LARGE_TERA_CRYSTAL), placementModifiers)
+        context.register(LARGE_TERA_CRYSTAL, placed)
+
+        context.register(TERA_CRYSTAL_CLUSTER, PlacedFeature(configuredFeatureRegistryEntryLookup.getOrThrow(GenerationsConfiguredFeatures.TERA_CRYSTAL_CLUSTER),
+                listOf(
+                    CountPlacement.of(20),
+                    InSquarePlacement.spread(),
+                    HeightRangePlacement.triangle(
+                        VerticalAnchor.absolute(-64),
+                        VerticalAnchor.absolute(0)
+                    ),
+                    BiomeFilter.biome()
+                )
+            )
         )
     }
 
