@@ -55,6 +55,7 @@ public interface IRksCategoryExtension<T extends RksRecipe> extends IRecipeCateg
             forRemoval = true
     )
     default void setRecipe(IRecipeLayoutBuilder builder, ICraftingGridHelper craftingGridHelper, IFocusGroup focuses) {
+
     }
 
     /** @deprecated */
