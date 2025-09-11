@@ -8,10 +8,13 @@ import com.cobblemon.mod.common.api.pokemon.stats.Stats
 import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
 import com.cobblemon.mod.common.api.scheduling.afterOnServer
 import com.cobblemon.mod.common.api.text.text
+import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.RenderablePokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.server
+import generations.gg.generations.core.generationscore.common.client.PokemonItemRendererProxy
+import generations.gg.generations.core.generationscore.common.world.item.PokemonProvidingItem
 import generations.gg.generations.core.generationscore.common.world.item.StatueSpawnerItem
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
 import net.minecraft.core.component.DataComponents
@@ -168,8 +171,8 @@ fun ItemStack.removePokemon() {
 }
 
 fun ItemStack.getRenderablePokemon(): RenderablePokemon? {
-    if(item is StatueSpawnerItem) {
-        return (item as StatueSpawnerItem).pokemon?.asRenderablePokemon() //TODO: See if this explodes.
+    if(item is PokemonProvidingItem) {
+        return (item as PokemonProvidingItem).getSpeciesAndAspectsPair(this)?.let { RenderablePokemon(it.first, it.second) }
     }
 
     return get(GenerationsDataComponents.EMBEDDED_POKEMON.value())?.asRenderablePokemon()

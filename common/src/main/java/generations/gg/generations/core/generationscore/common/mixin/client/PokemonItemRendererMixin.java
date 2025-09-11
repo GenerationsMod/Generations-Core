@@ -18,9 +18,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(PokemonItemRenderer.class)
 public class PokemonItemRendererMixin {
 
-    @Inject(method = "render", at = @At("HEAD"), cancellable = true)
-    public void renderProxy(ItemStack stack, ItemDisplayContext mode, PoseStack matrices, MultiBufferSource vertexConsumers, int light, int overlay, CallbackInfo ci) {
-        PokemonItemRendererProxy.render(stack, mode, matrices, vertexConsumers, light, overlay);
-        ci.cancel();
-    }
+//    @Inject(method = "render", at = @At("HEAD"), cancellable = true)
+//    public void renderProxy(ItemStack stack, ItemDisplayContext mode, PoseStack matrices, MultiBufferSource vertexConsumers, int light, int overlay, CallbackInfo ci) {
+//        PokemonItemRendererProxy.render(stack, mode, matrices, vertexConsumers, light, overlay);
+//        ci.cancel();
+//    }
 }

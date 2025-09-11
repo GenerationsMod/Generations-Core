@@ -1,10 +1,10 @@
 package generations.gg.generations.core.generationscore.common.client
 
+import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.spawning.TimeRange
 import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry
-import com.cobblemon.mod.common.client.render.item.PokemonItemRenderer
 import com.cobblemon.mod.common.client.render.models.blockbench.pokeball.PokeBallModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokeBallModelRepository
@@ -22,6 +22,7 @@ import generations.gg.generations.core.generationscore.common.client.model.Gener
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer
 import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
+import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRender
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.*
 import generations.gg.generations.core.generationscore.common.client.render.entity.*
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.MinecraftClientGameProvider
@@ -163,10 +164,10 @@ object GenerationsCoreClient {
     fun setupClient(event: Minecraft) {
 
         event.tell({
-            val renderer = PokemonItemRenderer()
+            val renderer = TimeCapsuleItemRender()
 
             ModelRegistry.init()
-
+            CobblemonBuiltinItemRendererRegistry.register(CobblemonItems.POKEMON_MODEL, renderer)
             CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.TIME_CAPSULE.value(), renderer)
             CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.SUICUNE_STATUE.value(), renderer)
             CobblemonBuiltinItemRendererRegistry.register(GenerationsItems.RAIKOU_STATUE.value(), renderer)
