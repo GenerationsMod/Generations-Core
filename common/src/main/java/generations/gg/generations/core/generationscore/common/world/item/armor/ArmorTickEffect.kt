@@ -20,18 +20,20 @@ interface ArmorTickEffect : ArmorEffect {
 
     companion object {
         fun isWearingFullSet(player: LivingEntity, material: Holder<ArmorMaterial>): Boolean {
-            for (equipmentSlot in EquipmentSlot.entries) {
-                if (equipmentSlot.type == EquipmentSlot.Type.HAND) continue
+            val requiredSlots = listOf(
+                EquipmentSlot.HEAD,
+                EquipmentSlot.CHEST,
+                EquipmentSlot.LEGS,
+                EquipmentSlot.FEET
+            )
 
-                val equippedItemStack = player.getItemBySlot(equipmentSlot)
-                if (equippedItemStack.item !is ArmorItem) return false
-                if ((equippedItemStack.item as ArmorItem).material.`is`(material::`is`)) return false
+            for (slot in requiredSlots) {
+                val stack = player.getItemBySlot(slot)
+                val item = stack.item as? ArmorItem ?: return false
+                if (!item.material.`is`(material)) return false
             }
 
             return true
-            //        var event = new ItemEvents.EquipFullArmorSet(player, material); TODO: EIther find or PR equivalent event to arch
-//        MinecraftForge.EVENT_BUS.post(event);
-//        return event.isCanceled();
         }
     }
 }
