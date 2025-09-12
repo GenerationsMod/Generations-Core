@@ -58,7 +58,6 @@ public abstract class DefaultRksMachineRecipeDisplay<C extends RecipeHolder<? ex
         return null;
     }
 
-
     @Override
     public CategoryIdentifier<?> getCategoryIdentifier() {
         return ReiCompatClient.RKS_MACHINE;

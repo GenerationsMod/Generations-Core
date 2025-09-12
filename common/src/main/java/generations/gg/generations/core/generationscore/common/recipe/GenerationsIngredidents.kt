@@ -21,6 +21,7 @@ object GenerationsIngredidents {
 
     val DAMAGE = register(DamageIngredient.ID, DamageIngredient.CODEC, DamageIngredient.STREAM_CODEC)
     val ITEM = register(ItemIngredient.ID, ItemIngredient.MAP_CODEC, ItemIngredient.STREAM_CODEC)
+    val DATA_COMPONENT = register(DataComponentIngredient.ID, DataComponentIngredient.MAP_CODEC, DataComponentIngredient.STREAM_CODEC)
     val ITEM_TAG = register(ItemTagIngredient.ID, ItemTagIngredient.CODEC, ItemTagIngredient.STREAM_CODEC)
     val POKEMON_ITEM = register(PokemonItemIngredient.ID, PokemonItemIngredient.CODEC, PokemonItemIngredient.STREAM_CODEC)
     val TIME_CAPSULE = register(TimeCapsuleIngredient.ID, TimeCapsuleIngredient.CODEC, TimeCapsuleIngredient.STREAM_CODEC)

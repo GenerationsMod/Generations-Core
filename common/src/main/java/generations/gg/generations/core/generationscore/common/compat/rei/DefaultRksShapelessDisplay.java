@@ -11,7 +11,7 @@ import java.util.Optional;
 public class DefaultRksShapelessDisplay extends DefaultRksMachineRecipeDisplay<RecipeHolder<ShapelessRksRecipe>> {
     public DefaultRksShapelessDisplay(RecipeHolder<ShapelessRksRecipe> rksRecipe) {
         super(
-                rksRecipe.value().getRksIngredients().stream().map(a -> EntryIngredients.ofItemStacks(a.matchingStacks())).toList(),
+                rksRecipe.value().getRksIngredients().stream().map(a -> EntryIngredients.of().ofItemStacks(a.matchingStacks())).toList(),
                 Collections.singletonList(EntryIngredients.of(rksRecipe.value().getResultItem(BasicDisplay.registryAccess()))),
                 Optional.of(rksRecipe),
                 rksRecipe.value().getProcessingTime()

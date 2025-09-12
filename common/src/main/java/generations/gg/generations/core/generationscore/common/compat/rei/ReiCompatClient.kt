@@ -13,7 +13,9 @@ import me.shedaniel.rei.api.client.registry.display.DisplayRegistry
 import me.shedaniel.rei.api.client.registry.screen.ScreenRegistry
 import me.shedaniel.rei.api.client.registry.transfer.TransferHandlerRegistry
 import me.shedaniel.rei.api.client.registry.transfer.simple.SimpleTransferHandler
+import me.shedaniel.rei.api.client.search.method.InputMethodRegistry
 import me.shedaniel.rei.api.common.category.CategoryIdentifier
+import me.shedaniel.rei.api.common.transfer.info.stack.SlotAccessorRegistry
 import me.shedaniel.rei.api.common.util.EntryStacks
 import net.minecraft.world.item.crafting.RecipeHolder
 
@@ -37,7 +39,6 @@ open class ReiCompatClient : REIClientPlugin {
             )
         }
     }
-
 
     override fun registerScreens(registry: ScreenRegistry) {
         registry.registerContainerClickArea(

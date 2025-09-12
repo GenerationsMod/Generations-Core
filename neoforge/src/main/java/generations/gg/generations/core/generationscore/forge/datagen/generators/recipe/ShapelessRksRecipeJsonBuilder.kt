@@ -5,8 +5,8 @@ import generations.gg.generations.core.generationscore.common.world.recipe.*
 import generations.gg.generations.core.generationscore.forge.datagen.nullableOptional
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.Holder
+import net.minecraft.core.HolderSet
 import net.minecraft.core.NonNullList
-import net.minecraft.resources.ResourceKey
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
@@ -24,12 +24,10 @@ class ShapelessRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder
     }
 
     fun requires(item: ItemLike, quantity: Int): ShapelessRksRecipeJsonBuilder {
-        val ingredient = item.predicate()
+        val ingredient = ItemIngredient(item.asItem())
         for (i in 0 until quantity) {
             this.requires(
-                ItemIngredient(
-                    ingredient
-                )
+                ingredient
             )
         }
 

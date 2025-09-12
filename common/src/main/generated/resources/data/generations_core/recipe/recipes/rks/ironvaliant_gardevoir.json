@@ -11,9 +11,7 @@
     },
     {
       "type": "generations_core:item",
-      "predicate": {
-        "items": "minecraft:redstone"
-      }
+      "items": "minecraft:redstone"
     }
   ],
   "processingTime": 240,

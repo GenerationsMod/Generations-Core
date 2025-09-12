@@ -6,23 +6,15 @@
   "pattern": [
     {
       "type": "generations_core:item",
-      "predicate": {
-        "items": "generations_core:temple_block"
-      }
+      "items": "generations_core:temple_block"
     },
     {
-      "type": "generations_core:item",
-      "predicate": {
-        "components": {
-          "cobblemon:pokemon_item": {
-            "aspects": [
-              "r"
-            ],
-            "species": "cobblemon:unown"
-          }
-        },
-        "items": "cobblemon:pokemon_model"
-      }
+      "type": "generations_core:pokemon_item",
+      "aspects": [
+        "r"
+      ],
+      "species": "cobblemon:unown",
+      "strict": false
     }
   ],
   "processingTime": 240,

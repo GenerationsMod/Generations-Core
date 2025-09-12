@@ -4,8 +4,10 @@ import com.cobblemon.mod.common.CobblemonItemComponents
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.CobblemonItems.MYSTIC_WATER
 import com.cobblemon.mod.common.CobblemonItems.WATER_GEM
-import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.item.components.PokemonItemComponent
+import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
+import com.cobblemon.mod.common.util.asResource
+import com.cobblemon.mod.common.util.cobblemonResource
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -17,6 +19,7 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import generations.gg.generations.core.generationscore.common.world.item.id
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.recipe.DamageIngredient
+import generations.gg.generations.core.generationscore.common.world.recipe.DataComponentIngredient
 import generations.gg.generations.core.generationscore.common.world.recipe.ItemIngredient
 import generations.gg.generations.core.generationscore.common.world.recipe.PokemonItemIngredient
 import generations.gg.generations.core.generationscore.common.world.recipe.TimeCapsuleIngredient
@@ -28,8 +31,8 @@ import net.minecraft.advancements.critereon.InventoryChangeTrigger
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.HolderSet
 import net.minecraft.core.component.DataComponentPredicate
-import net.minecraft.core.component.TypedDataComponent
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.RecipeOutput
@@ -358,11 +361,8 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
     private fun <T: ItemLike> unownBlock(consumer: RecipeOutput, createdBlock: Holder<T>, form: String) {
         create(createdBlock)
             .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.baseBlock)
-            .requires(ItemPredicate.Builder.item().of(CobblemonItems.POKEMON_MODEL).hasComponents(DataComponentPredicate.builder().expect(
-                CobblemonItemComponents.POKEMON_ITEM,
-                PokemonItemComponent(
-                    ResourceLocation.fromNamespaceAndPath("cobblemon", "unown"),
-                    setOf(form), null)).build()).generationsIngredident())
+            .requires(PokemonItemIngredient(
+                cobblemonResource("unown").optional(), setOf(form).optional()))
             .criterion(
                 getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.value()),
                 has(GenerationsBlocks.UNOWN_BLOCK_BLANK.value())
@@ -420,7 +420,7 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
     }
 
     private fun createParadox(suffix: String, name: String, toBeConverted: String, exporter: RecipeOutput, item: Item) {
-        ShapelessRksRecipeJsonBuilder.create(name, false, true)
+        create(name, false, true)
             .requires(TimeCapsuleIngredient(toBeConverted, false))
             .requires(item)
             .criterion(BuiltInRegistries.ITEM.getKey(item).path, InventoryChangeTrigger.TriggerInstance.hasItems(item))
@@ -448,10 +448,6 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .criterion(item.id.path, InventoryChangeTrigger.TriggerInstance.hasItems(item))
             .save(exporter, id(name))
     }
-}
-
-private fun ItemPredicate.Builder.generationsIngredident(): ItemIngredient {
-    return ItemIngredient(this.build())
 }
 
 fun <T: Any> T.optional(): Optional<T> = Optional.of(this)

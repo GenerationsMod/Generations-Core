@@ -8,33 +8,23 @@
     "key": {
       "A": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:egg"
-        }
+        "items": "minecraft:egg"
       },
       "B": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "generations_core:orb"
-        }
+        "items": "generations_core:orb"
       },
       "C": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:heart_of_the_sea"
-        }
+        "items": "minecraft:heart_of_the_sea"
       },
       "X": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "cobblemon:water_gem"
-        }
+        "items": "cobblemon:water_gem"
       },
       "Z": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "cobblemon:mystic_water"
-        }
+        "items": "cobblemon:mystic_water"
       }
     },
     "pattern": [

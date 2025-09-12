@@ -8,9 +8,7 @@
     "key": {
       "A": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:netherite_ingot"
-        }
+        "items": "minecraft:netherite_ingot"
       },
       "B": {
         "type": "generations_core:damage",
@@ -19,9 +17,7 @@
       },
       "C": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:iron_ingot"
-        }
+        "items": "minecraft:iron_ingot"
       }
     },
     "pattern": [

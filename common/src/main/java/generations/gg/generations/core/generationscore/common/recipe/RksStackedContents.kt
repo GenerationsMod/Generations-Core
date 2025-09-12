@@ -63,7 +63,9 @@ class RksStackedContents {
      */
     fun countMatching(ingredient: GenerationsIngredient): Int {
         return contents.entries
-            .filter { ingredient.matches(it.key) }
+            .filter {
+                ingredient.matches(it.key)
+            }
             .sumOf { it.value }
     }
 

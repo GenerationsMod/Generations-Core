@@ -7,9 +7,7 @@
     "key": {
       "A": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "generations_core:key_stone"
-        }
+        "items": "generations_core:key_stone"
       },
       "B": {
         "type": "generations_core:time_capsule",
@@ -18,15 +16,11 @@
       },
       "C": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:netherite_scrap"
-        }
+        "items": "minecraft:netherite_scrap"
       },
       "D": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:coal"
-        }
+        "items": "minecraft:coal"
       }
     },
     "pattern": [

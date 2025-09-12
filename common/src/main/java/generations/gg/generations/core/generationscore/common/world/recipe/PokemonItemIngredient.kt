@@ -20,7 +20,7 @@ import net.minecraft.world.item.ItemStack
 import java.util.*
 import kotlin.jvm.optionals.getOrNull
 
-class PokemonItemIngredient(val species: Optional<ResourceLocation>, val aspects: Optional<Set<String>>, val strict: Boolean = true) : GenerationsIngredient {
+class PokemonItemIngredient(val species: Optional<ResourceLocation>, val aspects: Optional<Set<String>>, val strict: Boolean = false) : GenerationsIngredient {
     override val id = ID
 
     override val type: GenerationsIngredientType<*>
@@ -28,7 +28,12 @@ class PokemonItemIngredient(val species: Optional<ResourceLocation>, val aspects
 
     override fun matches(stack: ItemStack): Boolean =
         if (stack.`is`(CobblemonItems.POKEMON_MODEL)) {
-            (stack.item as PokemonItem).getSpeciesAndAspects(stack)?.let { ((species.isEmpty || it.first.resourceIdentifier == species.get()) && (aspects.isEmpty || it.second.containsAllOrSome(true, aspects.get()))) } ?: false
+            val data = (stack.item as PokemonItem).getSpeciesAndAspects(stack) ?: return false
+
+            when {
+                species.isEmpty || data.first.resourceIdentifier == species.get() -> aspects.isEmpty || data.second.containsAllOrSome(strict, aspects.get())
+                else -> false
+            }
         } else false
 
     override fun matchingStacks(): List<ItemStack> = listOf(species.getOrNull()?.let { PokemonSpecies.getByIdentifier(it) }?.let {

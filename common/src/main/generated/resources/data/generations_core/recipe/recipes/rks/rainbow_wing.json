@@ -7,21 +7,15 @@
     "key": {
       "A": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:totem_of_undying"
-        }
+        "items": "minecraft:totem_of_undying"
       },
       "B": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "minecraft:coal"
-        }
+        "items": "minecraft:coal"
       },
       "C": {
         "type": "generations_core:item",
-        "predicate": {
-          "items": "generations_core:rainbow_wing"
-        }
+        "items": "generations_core:rainbow_wing"
       }
     },
     "pattern": [

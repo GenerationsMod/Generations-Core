@@ -9,7 +9,6 @@ import generations.gg.generations.core.generationscore.common.world.recipe.*
 import generations.gg.generations.core.generationscore.forge.datagen.nullableOptional
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.Holder
-import net.minecraft.core.component.DataComponentPredicate
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.TagKey
 import net.minecraft.world.item.Item
@@ -25,11 +24,11 @@ class ShapedRksRecipeJsonBuilder(result: RksResult<*>) : RksRecipeJsonBuilder<Sh
     }
 
     fun input(c: Char, itemProvider: ItemLike): ShapedRksRecipeJsonBuilder {
-        return this.input(c, ItemPredicate.Builder.item().of(itemProvider).build())
+        return this.input(c, ItemIngredient(itemProvider))
     }
 
-    fun input(c: Char, predicate: ItemPredicate): ShapedRksRecipeJsonBuilder {
-        return this.input(c, ItemIngredient(predicate))
+    fun input(c: Char, predicate: DataComponentIngredient): ShapedRksRecipeJsonBuilder {
+        return this.input(c, predicate)
     }
 
     //TODO: Verify this doens't mess me up.
