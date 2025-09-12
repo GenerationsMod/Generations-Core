@@ -8,27 +8,39 @@
     "key": {
       "A": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_chestplate"
+        "predicate": {
+          "items": "minecraft:netherite_chestplate"
+        }
       },
       "B": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_leggings"
+        "predicate": {
+          "items": "minecraft:netherite_leggings"
+        }
       },
       "C": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_boots"
+        "predicate": {
+          "items": "minecraft:netherite_boots"
+        }
       },
       "D": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_axe"
+        "predicate": {
+          "items": "minecraft:netherite_axe"
+        }
       },
       "E": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_helmet"
+        "predicate": {
+          "items": "minecraft:netherite_helmet"
+        }
       },
       "F": {
         "type": "generations_core:item",
-        "key": "minecraft:totem_of_undying"
+        "predicate": {
+          "items": "minecraft:totem_of_undying"
+        }
       },
       "G": {
         "type": "generations_core:item_tag",
@@ -36,7 +48,9 @@
       },
       "Z": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_block"
+        "predicate": {
+          "items": "minecraft:netherite_block"
+        }
       }
     },
     "pattern": [

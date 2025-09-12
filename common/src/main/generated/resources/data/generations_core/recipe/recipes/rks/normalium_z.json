@@ -7,15 +7,21 @@
     "key": {
       "A": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_scrap"
+        "predicate": {
+          "items": "minecraft:netherite_scrap"
+        }
       },
       "B": {
         "type": "generations_core:item",
-        "key": "cobblemon:normal_gem"
+        "predicate": {
+          "items": "cobblemon:normal_gem"
+        }
       },
       "X": {
         "type": "generations_core:item",
-        "key": "generations_core:z_ingot"
+        "predicate": {
+          "items": "generations_core:z_ingot"
+        }
       }
     },
     "pattern": [

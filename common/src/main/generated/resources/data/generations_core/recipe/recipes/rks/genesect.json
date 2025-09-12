@@ -8,31 +8,45 @@
     "key": {
       "B": {
         "type": "generations_core:item",
-        "key": "generations_core:burn_drive"
+        "predicate": {
+          "items": "generations_core:burn_drive"
+        }
       },
       "C": {
         "type": "generations_core:item",
-        "key": "generations_core:chill_drive"
+        "predicate": {
+          "items": "generations_core:chill_drive"
+        }
       },
       "D": {
         "type": "generations_core:item",
-        "key": "generations_core:douse_drive"
+        "predicate": {
+          "items": "generations_core:douse_drive"
+        }
       },
       "N": {
         "type": "generations_core:item",
-        "key": "minecraft:netherite_helmet"
+        "predicate": {
+          "items": "minecraft:netherite_helmet"
+        }
       },
       "O": {
         "type": "generations_core:item",
-        "key": "generations_core:orb"
+        "predicate": {
+          "items": "generations_core:orb"
+        }
       },
       "R": {
         "type": "generations_core:item",
-        "key": "minecraft:redstone"
+        "predicate": {
+          "items": "minecraft:redstone"
+        }
       },
       "S": {
         "type": "generations_core:item",
-        "key": "generations_core:shock_drive"
+        "predicate": {
+          "items": "generations_core:shock_drive"
+        }
       }
     },
     "pattern": [

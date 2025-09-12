@@ -8,19 +8,27 @@
     "key": {
       "A": {
         "type": "generations_core:item",
-        "key": "generations_core:dna_splicers"
+        "predicate": {
+          "items": "generations_core:dna_splicers"
+        }
       },
       "B": {
         "type": "generations_core:item",
-        "key": "generations_core:orb"
+        "predicate": {
+          "items": "generations_core:orb"
+        }
       },
       "C": {
         "type": "generations_core:item",
-        "key": "generations_core:mew_dna_fiber"
+        "predicate": {
+          "items": "generations_core:mew_dna_fiber"
+        }
       },
       "X": {
         "type": "generations_core:item",
-        "key": "generations_core:mew_fossil"
+        "predicate": {
+          "items": "generations_core:mew_fossil"
+        }
       }
     },
     "pattern": [

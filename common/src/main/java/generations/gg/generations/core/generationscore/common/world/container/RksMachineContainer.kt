@@ -57,46 +57,34 @@ class RksMachineContainer @JvmOverloads constructor(
         val slot = slots.getOrNull(index) ?: return ItemStack.EMPTY
         if (!slot.hasItem()) return ItemStack.EMPTY
 
-        val slotStack = slot.item
-        val returnStack = slotStack.copy()
+        val stack = slot.item
+        val original = stack.copy()
 
-        // slot index layout
         val machineFirst = 0
-        val machineLast = 9           // 0 result, 1-9 inputs
+        val machineLast = 9
         val playerFirst = 10
         val playerLast = slots.lastIndex
 
-        if (index == 0 && isPokemonPresent) {
-            // special Pokémon output handling
-            slot.onTake(player, returnStack)
-            slot.set(ItemStack.EMPTY)
-            return ItemStack.EMPTY
-        }
-
-        if (index in machineFirst..machineLast) {
-            // machine -> player inventory
-            if (!moveItemStackTo(slotStack, playerFirst, playerLast + 1, true)) {
+        if (index == 0) {
+            if (isPokemonPresent) {
+                slot.onTake(player, stack)
+                slot.set(ItemStack.EMPTY)
                 return ItemStack.EMPTY
-            }
-        } else {
-            // player inventory -> machine inputs only (skip result slot)
-            if (!moveItemStackTo(slotStack, 1, machineLast + 1, false)) {
-                return ItemStack.EMPTY
+            } else {
+                if (!moveItemStackTo(stack, playerFirst, playerLast + 1, true)) return ItemStack.EMPTY
+                slot.onTake(player, stack)
+                if (stack.isEmpty) slot.set(ItemStack.EMPTY) else slot.setChanged()
+                return original
             }
         }
 
-        if (slotStack.isEmpty) {
-            slot.set(ItemStack.EMPTY)
-        } else {
-            slot.setChanged()
-        }
+        val (dstStart, dstEnd, reverse) =
+            if (index in machineFirst..machineLast) Triple(playerFirst, playerLast + 1, true)
+            else Triple(1, machineLast + 1, false)
 
-        if (slotStack.count == returnStack.count) {
-            return ItemStack.EMPTY
-        }
-
-        slot.onTake(player, slotStack)
-        return returnStack
+        if (!moveItemStackTo(stack, dstStart, dstEnd, reverse)) return ItemStack.EMPTY
+        if (stack.isEmpty) slot.set(ItemStack.EMPTY) else slot.setChanged()
+        return original
     }
 
 
@@ -168,17 +156,4 @@ class RksMachineContainer @JvmOverloads constructor(
             )
         }
     }
-
-    companion object {
-        const val INPUT1_SLOT: Int = 0
-        const val INPUT2_SLOT: Int = 1
-        const val INPUT3_SLOT: Int = 2
-        const val OUTPUT_SLOT: Int = 3
-
-        const val DATA_WEAVE_TIME: Int = 0
-        const val DATA_WEAVE_TIME_TOAL: Int = 1
-        const val NUM_DATA_VALUES: Int = 2
-    }
-
-
 }

@@ -1,8 +1,11 @@
 package generations.gg.generations.core.generationscore.forge.datagen
 
+import com.cobblemon.mod.common.CobblemonItemComponents
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.CobblemonItems.MYSTIC_WATER
 import com.cobblemon.mod.common.CobblemonItems.WATER_GEM
+import com.cobblemon.mod.common.item.PokemonItem
+import com.cobblemon.mod.common.item.components.PokemonItemComponent
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -14,6 +17,7 @@ import generations.gg.generations.core.generationscore.common.world.item.Generat
 import generations.gg.generations.core.generationscore.common.world.item.id
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks
 import generations.gg.generations.core.generationscore.common.world.recipe.DamageIngredient
+import generations.gg.generations.core.generationscore.common.world.recipe.ItemIngredient
 import generations.gg.generations.core.generationscore.common.world.recipe.PokemonItemIngredient
 import generations.gg.generations.core.generationscore.common.world.recipe.TimeCapsuleIngredient
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.GenerationsRecipeProvider
@@ -21,8 +25,11 @@ import generations.gg.generations.core.generationscore.forge.datagen.generators.
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.ShapelessRksRecipeJsonBuilder
 import generations.gg.generations.core.generationscore.forge.datagen.generators.recipe.ShapelessRksRecipeJsonBuilder.Companion.create
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
+import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.component.DataComponentPredicate
+import net.minecraft.core.component.TypedDataComponent
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.RecipeOutput
@@ -130,6 +137,36 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .input('C', GenerationsItems.RAINBOW_WING)
             .criterion("rainbow_wing", InventoryChangeTrigger.TriggerInstance.hasItems(GenerationsItems.RAINBOW_WING.value()))
             .save(exporter, id("rainbow_wing"))
+
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_A, "a")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_B, "b")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_C, "c")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_D, "d")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_E, "e")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_F, "f")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_G, "g")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_H, "h")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_I, "i")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_J, "j")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_K, "k")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_L, "l")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_M, "m")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_N, "n")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_O, "o")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_P, "p")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Q, "q")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_R, "r")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_S, "s")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_T, "t")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_U, "u")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_V, "v")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_W, "w")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_X, "x")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Y, "y")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Z, "z")
+
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK, "exclamation")
+        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK, "questionmark")
 
         createParadoxPast("walkingwake", "suicune", exporter)
         createParadoxPast("greattusk", "donphan", exporter)
@@ -249,36 +286,6 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
         createZCyrstal(GenerationsItems.TAPUNIUM_Z, "tapubulu", true, exporter)
         createZCyrstal(GenerationsItems.TAPUNIUM_Z, "tapufini", true, exporter)
         createZCyrstal(GenerationsItems.ULTRANECROZIUM_Z, "necrozma", exporter)
-
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_A, "a")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_B, "b")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_C, "c")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_D, "d")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_E, "e")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_F, "f")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_G, "g")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_H, "h")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_I, "i")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_J, "j")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_K, "k")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_L, "l")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_M, "m")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_N, "n")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_O, "o")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_P, "p")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Q, "q")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_R, "r")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_S, "s")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_T, "t")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_U, "u")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_V, "v")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_W, "w")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_X, "x")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Y, "y")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_Z, "z")
-
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_EXCLAMATION_MARK, "exclamation")
-        unownBlock(exporter, GenerationsBlocks.UNOWN_BLOCK_QUESTION_MARK, "questionmark")
     }
 
     private fun createZCyrstal(
@@ -351,7 +358,11 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
     private fun <T: ItemLike> unownBlock(consumer: RecipeOutput, createdBlock: Holder<T>, form: String) {
         create(createdBlock)
             .requires(GenerationsBlocks.TEMPLE_BLOCK_SET.baseBlock)
-            .requires(PokemonItemIngredient(ResourceLocation.fromNamespaceAndPath("cobblemon", "unown").optional(), Set.of(form).optional()))
+            .requires(ItemPredicate.Builder.item().of(CobblemonItems.POKEMON_MODEL).hasComponents(DataComponentPredicate.builder().expect(
+                CobblemonItemComponents.POKEMON_ITEM,
+                PokemonItemComponent(
+                    ResourceLocation.fromNamespaceAndPath("cobblemon", "unown"),
+                    setOf(form), null)).build()).generationsIngredident())
             .criterion(
                 getHasName(GenerationsBlocks.UNOWN_BLOCK_BLANK.value()),
                 has(GenerationsBlocks.UNOWN_BLOCK_BLANK.value())
@@ -437,6 +448,10 @@ class RksRecipeProvider(arg: PackOutput, registries: CompletableFuture<HolderLoo
             .criterion(item.id.path, InventoryChangeTrigger.TriggerInstance.hasItems(item))
             .save(exporter, id(name))
     }
+}
+
+private fun ItemPredicate.Builder.generationsIngredident(): ItemIngredient {
+    return ItemIngredient(this.build())
 }
 
 fun <T: Any> T.optional(): Optional<T> = Optional.of(this)

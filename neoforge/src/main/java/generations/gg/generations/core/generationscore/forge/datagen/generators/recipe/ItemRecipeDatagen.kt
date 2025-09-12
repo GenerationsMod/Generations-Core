@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.recipe
 
+import com.cobblemon.mod.common.CobblemonItemComponents
 import com.cobblemon.mod.common.CobblemonItems
 import com.cobblemon.mod.common.CobblemonItems.CELL_BATTERY
 import com.cobblemon.mod.common.CobblemonItems.DRAGON_GEM
@@ -9,6 +10,11 @@ import com.cobblemon.mod.common.CobblemonItems.FLYING_GEM
 import com.cobblemon.mod.common.CobblemonItems.SHINY_STONE
 import com.cobblemon.mod.common.CobblemonItems.WATER_GEM
 import com.cobblemon.mod.common.CobblemonItems.WATER_STONE
+import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
+import com.cobblemon.mod.common.item.PokemonItem
+import com.cobblemon.mod.common.item.components.PokemonItemComponent
+import com.cobblemon.mod.common.pokemon.Species
+import com.cobblemon.mod.common.util.asResource
 import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.id
@@ -17,11 +23,15 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsUtilityBlocks
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
 import net.minecraft.advancements.critereon.ItemPredicate
+import net.minecraft.core.Holder
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.RecipeOutput
+import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.Items
+import net.minecraft.world.item.crafting.Ingredient
+import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.common.conditions.IConditionBuilder
 import java.util.concurrent.CompletableFuture
 
@@ -1046,5 +1056,16 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
                 .unlockedBy(getHasName(Items.WATER_BUCKET), has(Items.WATER_BUCKET))
                 .save(consumer);
         */
+    }
+
+    private fun RecipeOutput.unownBlock(block: Holder<Block>, vararg aspects: String) {
+        shapeless(RecipeCategory.MISC, block) {
+            val stack = ItemStack(CobblemonItems.POKEMON_MODEL)
+            stack.set(CobblemonItemComponents.POKEMON_ITEM, PokemonItemComponent("unown".asResource(), setOf(*aspects), null))
+
+            requires(Ingredient.of(stack))
+            requires(GenerationsBlocks.TEMPLE_BLOCK_SET.baseBlock);
+            unlockedByItem(GenerationsBlocks.TEMPLE_BLOCK_SET.baseBlock)
+        }
     }
 }
