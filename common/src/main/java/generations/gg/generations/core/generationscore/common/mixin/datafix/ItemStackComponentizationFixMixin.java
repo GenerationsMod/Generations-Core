@@ -41,8 +41,6 @@ public class ItemStackComponentizationFixMixin {
         if (itemStackData.is("generations_core:melody_flute")) {
             itemStackData.removeTag("imbued")
                     .map(GenerationsDataFixUtils::fixStack)
-                    .map(a -> a.renameField("Count", "amount"))
-                    .map(a -> a.createList(a.asStream()))
                     .ifSuccess(dynamic1 -> {
                         itemStackData.setComponent("generations_core:imbued", dynamic1);
                     });
