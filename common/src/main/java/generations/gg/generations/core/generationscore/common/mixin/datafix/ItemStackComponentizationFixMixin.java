@@ -30,6 +30,8 @@ public class ItemStackComponentizationFixMixin {
             method = {"fixItemStack(Lnet/minecraft/util/datafix/fixes/ItemStackComponentizationFix$ItemStackData;Lcom/mojang/serialization/Dynamic;)V"},
             at = {@At("TAIL")})
     private static void fixItemStackAddition(ItemStackComponentizationFix.ItemStackData itemStackData, Dynamic<?> dynamic, CallbackInfo ci) {
+        itemStackData.removeTag("ClientPokemonData");
+
         if (itemStackData.item.startsWith("generationscore:pokemail_")) {
             fixMail(itemStackData, dynamic);
         }

@@ -20,7 +20,7 @@ class TimeCapsule(properties: Properties) : PokemonStoringItem(properties), Poke
         return if (pokemon.tradeable && stack.getPokemon() == null && pokemon.removeIfBelongs(player)) {
             stack.savePokemon(pokemon)
 
-            var list = mutableListOf<Component>()
+            val list = mutableListOf<Component>()
             list.add(pokemon)
             stack.setLore(list)
             stack.set(DataComponents.ITEM_NAME, super.getName(stack).copy().append(getPokemonText(stack)))
