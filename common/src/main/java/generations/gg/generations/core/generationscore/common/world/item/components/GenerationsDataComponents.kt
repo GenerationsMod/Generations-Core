@@ -40,7 +40,7 @@ object GenerationsDataComponents: PlatformRegistry<DataComponentType<*>>(Registr
 
     val CURRY_DATA = register("curry_data", CurryData.CODEC, CurryData.STREAM_CODEC)
     val TM_DETAILS = register("tm_details", TmDetails.CODEC, TmDetails.STREAM_CODEC)
-    val EMBEDDED_POKEMON = register("embedded_pokemon", Pokemon.CODEC, Pokemon.S2C_CODEC)
+    val EMBEDDED_POKEMON = register("embedded_pokemon", Pokemon.CODEC, ByteBufCodecs.fromCodecWithRegistries(Pokemon.CODEC))
 
     val MAIL_DATA = register("mail_data", MailContent.CODEC, MailContent.STREAM_CODEC)
 
