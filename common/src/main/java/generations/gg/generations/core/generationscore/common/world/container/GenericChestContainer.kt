@@ -10,12 +10,11 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.inventory.Slot
 import net.minecraft.world.item.ItemStack
-import java.io.Closeable
 
 open class GenericChestContainer(
     containerId: Int,
     val playerInventory: Inventory,
-    private val container: Container,
+    val container: Container,
     val inventoryWidth: Int,
     val inventoryHeight: Int,
     lock: (Int) -> Boolean = { false }, val onClosed: () -> Unit = {}
@@ -30,6 +29,7 @@ open class GenericChestContainer(
     val playerInventoryX: Int
 
     init {
+        container.startOpen(playerInventory.player)
         populate(container, 8, 16, 0, inventoryHeight, inventoryWidth)
         this.playerInventoryX = guiWidth / 2 - 80
         populatePlayer(playerInventory, playerInventoryX, guiHeight - 82, 1, 3, 9, lock)
@@ -60,9 +60,9 @@ open class GenericChestContainer(
         }
     }
 
-//    fun close() {
-//        container.instanceOrNull<CloseableContainer>()
-//    }
+    fun close() {
+        container.instanceOrNull<CloseableContainer>()?.close()
+    }
 
     private fun addSlot(container: Container, slot: Int, x: Int, y: Int) {
         this.addSlot(Slot(container, slot, x, y))
@@ -102,7 +102,7 @@ open class GenericChestContainer(
     override fun removed(player: Player) {
         super.removed(player)
         onClosed.invoke()
-//        container.stopOpen(player)
+        container.stopOpen(player)
     }
 
     open fun save(player: Player?) {}
@@ -116,7 +116,7 @@ open class GenericChestContainer(
             val row = buffer.readVarInt()
             val column = buffer.readVarInt()
 
-            return GenericChestContainer(containerId, playerInventory, SimpleContainer(row * column), row, column)
+            return GenericChestContainer(containerId, playerInventory, SimpleContainer(row * column), row, column,)
         }
     }
 }

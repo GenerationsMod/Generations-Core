@@ -44,7 +44,15 @@ object GenericContainer {
             object : ExtendedMenuProvider {
 
                 override fun createMenu(id: Int, inventory: Inventory, player: Player): AbstractContainerMenu {
-                    return GenericChestContainer(id, inventory, storage, width, height, if(lock != -1) { slot -> slot == lock } else { _ -> false }, onClose)
+                    return GenericChestContainer(
+                        id,
+                        inventory,
+                        storage,
+                        width,
+                        height,
+                        if(lock != -1) { slot -> slot == lock } else { _ -> false },
+                        onClose,
+                    )
                 }
 
                 override fun getDisplayName(): Component {

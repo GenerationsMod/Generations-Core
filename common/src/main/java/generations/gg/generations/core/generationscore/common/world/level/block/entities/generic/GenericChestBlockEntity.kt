@@ -1,7 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities.generic
 
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
-import generations.gg.generations.core.generationscore.common.orFalse
 import generations.gg.generations.core.generationscore.common.world.container.GenericChestContainer
 import generations.gg.generations.core.generationscore.common.world.container.GenericContainer
 import generations.gg.generations.core.generationscore.common.world.item.components.GenerationsDataComponents
@@ -17,7 +16,6 @@ import net.minecraft.network.chat.Component
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
-import net.minecraft.world.CompoundContainer
 import net.minecraft.world.ContainerHelper
 import net.minecraft.world.entity.player.Inventory
 import net.minecraft.world.entity.player.Player
@@ -31,7 +29,7 @@ import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 
 @Suppress("deprecation")
-class GenericChestBlockEntity @JvmOverloads constructor(
+open class GenericChestBlockEntity @JvmOverloads constructor(
     arg: BlockPos,
     arg2: BlockState,
     private var width: Int = 9,
@@ -54,9 +52,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
         }
 
         override fun isOwnContainer(player: Player): Boolean {
-            val container = player.containerMenu.instanceOrNull<GenericChestContainer>() ?: false
-
-            return container == this@GenericChestBlockEntity || container.instanceOrNull<CompoundContainer>().orFalse { it.contains(this@GenericChestBlockEntity) }
+            return player.containerMenu.instanceOrNull<GenericChestContainer>()?.container == this@GenericChestBlockEntity
         }
     }
 
@@ -129,11 +125,7 @@ class GenericChestBlockEntity @JvmOverloads constructor(
     }
 
     override fun createMenu(containerId: Int, inventory: Inventory): AbstractContainerMenu {
-        return GenericChestContainer(containerId, inventory, this, width, height)
-    }
-
-    override fun setBlockState(blockState: BlockState) {
-        super.setBlockState(blockState)
+        return GenericChestContainer(containerId, inventory, this, width, height,)
     }
 
     fun recheckOpen() {
