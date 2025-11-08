@@ -22,7 +22,7 @@ class RksMachineContainer @JvmOverloads constructor(
     id: Int,
     protected var playerInventory: Inventory,
     protected var rksMachine: Container = SimpleContainer(10),
-    private val data: ContainerData = SimpleContainerData(4)
+    private val data: ContainerData = SimpleContainerData(3)
 ) : AbstractContainerMenu(GenerationsContainers.RKS_MACHINE.value(), id), Toggleable {
     init {
         rksMachine.instanceOrNull<RksMachineBlockEntity>()?.addMenu(this)
@@ -66,7 +66,7 @@ class RksMachineContainer @JvmOverloads constructor(
         val playerLast = slots.lastIndex
 
         if (index == 0) {
-            if (isPokemonPresent) {
+            if (rksMachine.instanceOrNull<RksMachineBlockEntity>()?.lastRecipe?.value?.result?.isPokemon == true) {
                 slot.onTake(player, stack)
                 slot.set(ItemStack.EMPTY)
                 return ItemStack.EMPTY
@@ -104,11 +104,7 @@ class RksMachineContainer @JvmOverloads constructor(
     override var isToggled: Boolean
         get() = data[2] == 1
         set(value) { setData(2, if (value) 1 else 0) }
-
-    val isPokemonPresent: Boolean
-        get() = data[3] == 1
-
-
+    
     override fun removed(player: Player) {
         super.removed(player)
 

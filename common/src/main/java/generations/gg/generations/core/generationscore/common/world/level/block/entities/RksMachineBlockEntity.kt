@@ -3,10 +3,12 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.server
 import com.google.common.collect.Lists
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.compat.jei.asValue
 import generations.gg.generations.core.generationscore.common.recipe.RksInput
 import generations.gg.generations.core.generationscore.common.world.container.RksMachineContainer
 import generations.gg.generations.core.generationscore.common.world.recipe.GenerationsCoreRecipeTypes
+import generations.gg.generations.core.generationscore.common.world.recipe.PokemonResult
 import generations.gg.generations.core.generationscore.common.world.recipe.RksRecipe
 import generations.gg.generations.core.generationscore.common.world.sound.GenerationsSounds
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap
@@ -40,6 +42,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
 import java.util.*
+import kotlin.jvm.optionals.getOrNull
 
 open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
     ModelProvidingBlockEntity(GenerationsBlockEntities.RKS_MACHINE, pos, state), MenuProvider,
@@ -70,7 +73,6 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
                     0 -> this@RksMachineBlockEntity.processingTime
                     1 -> this@RksMachineBlockEntity.processTimeTotal
                     2 -> if (this@RksMachineBlockEntity.isProcessing) 1 else 0
-                    3 -> if (pokemon.isPresent) 1 else 0
                     else -> 0
                 }
             }
@@ -83,7 +85,7 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
             }
 
             override fun getCount(): Int {
-                return 4
+                return 3
             }
         }
     }
@@ -119,20 +121,6 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
         return RksMachineContainer(syncId, inv, this, dataAccess)
     }
 
-    //    @Override
-    //    public int[] getSlotsForFace(Direction dir) {
-    //        return (dir == Direction.DOWN && (!output.isEmpty() || getCurrentRecipe().isPresent())) ? OUTPUT_SLOTS : INPUT_SLOTS;
-    //    }
-    //
-    //    @Override
-    //    public boolean canPlaceItemThroughFace(int slot, ItemStack stack, Direction dir) {
-    //        return slot > 0 && getItem(slot).isEmpty();
-    //    }
-    //
-    //    @Override
-    //    public boolean canTakeItemThroughFace(int slot, ItemStack stack, Direction dir) {
-    //        return slot != 0 || !output.isEmpty() || getCurrentRecipe().isPresent();
-    //    }
     override fun canPlaceItem(slot: Int, stack: ItemStack): Boolean {
         return slot != 0 && slot <= containerSize
     }
