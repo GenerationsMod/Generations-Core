@@ -17,7 +17,8 @@
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_river"
+                    "#cobblemon:is_river",
+                    "#cobblemon:is_ocean"
                 ]
             }
         }
