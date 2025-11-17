@@ -1,10 +1,26 @@
 {
-  "name": "Ting-Lu",
+  "implemented": true,
   "nationalPokedexNumber": 1003,
+  "name": "Ting-Lu",
   "primaryType": "dark",
   "secondaryType": "ground",
+  "maleRatio": -1,
+  "height": 27,
+  "weight": 6997,
+  "pokedex": [
+    "cobblemon.species.tinglu.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
-    "vesselofruin"
+    "vesselofruin",
+    "h:vesselofruin"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 155,
@@ -14,10 +30,6 @@
     "special_defence": 80,
     "speed": 45
   },
-  "catchRate": 6,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,11 +38,11 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 6,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
     "1:meanlook",
     "1:sandtomb",
@@ -67,6 +79,7 @@
     "tm:lashout",
     "tm:mudshot",
     "tm:mudslap",
+    "tm:payback",
     "tm:protect",
     "tm:rest",
     "tm:rockslide",
@@ -87,19 +100,25 @@
     "tm:taunt",
     "tm:terablast",
     "tm:throatchop",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:bulldoze",
+    "tutor:darkpulse",
+    "tutor:earthpower",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:lashout",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:spikes",
+    "tutor:spite",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:throatchop",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 27,
-  "weight": 6997,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.tinglu.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

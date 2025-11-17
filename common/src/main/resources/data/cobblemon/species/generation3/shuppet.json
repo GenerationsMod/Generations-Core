@@ -1,11 +1,25 @@
 {
-  "name": "Shuppet",
+  "implemented": true,
   "nationalPokedexNumber": 353,
+  "name": "Shuppet",
   "primaryType": "ghost",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 23,
+  "pokedex": [
+    "cobblemon.species.shuppet.desc"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
   "abilities": [
     "insomnia",
     "frisk",
     "h:cursedbody"
+  ],
+  "eggGroups": [
+    "amorphous"
   ],
   "baseStats": {
     "hp": 44,
@@ -15,33 +29,51 @@
     "special_defence": 33,
     "speed": 45
   },
-  "catchRate": 225,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 59,
   "experienceGroup": "fast",
+  "catchRate": 225,
   "eggCycles": 25,
-  "eggGroups": [
-    "amorphous"
-  ],
+  "baseFriendship": 35,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:phantom_membrane",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:spell_tag",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:astonish",
-    "1:knockoff",
     "4:screech",
     "7:nightshade",
     "10:spite",
     "16:willowisp",
     "19:feintattack",
-    "19:shadowsneak",
     "22:hex",
     "26:curse",
     "30:shadowball",
-    "34:embargo",
     "34:roleplay",
     "38:suckerpunch",
-    "42:snatch",
     "42:trick",
-    "46:grudge",
     "48:phantomforce",
     "egg:astonish",
     "egg:confuseray",
@@ -50,21 +82,15 @@
     "egg:foresight",
     "egg:gunkshot",
     "egg:imprison",
-    "egg:ominouswind",
-    "egg:payback",
-    "egg:phantomforce",
     "egg:pursuit",
     "egg:shadowsneak",
-    "tm:attract",
+    "tm:allyswitch",
     "tm:calmmind",
-    "tm:captivate",
     "tm:chargebeam",
-    "tm:confide",
     "tm:confuseray",
     "tm:curse",
     "tm:darkpulse",
     "tm:dazzlinggleam",
-    "tm:doubleteam",
     "tm:dreameater",
     "tm:embargo",
     "tm:encore",
@@ -72,18 +98,20 @@
     "tm:facade",
     "tm:flash",
     "tm:foulplay",
-    "tm:frustration",
+    "tm:grudge",
     "tm:gunkshot",
+    "tm:headbutt",
     "tm:helpinghand",
     "tm:hex",
-    "tm:hiddenpower",
     "tm:icywind",
     "tm:imprison",
     "tm:lashout",
+    "tm:magiccoat",
+    "tm:magicroom",
     "tm:metronome",
     "tm:nastyplot",
-    "tm:naturalgift",
     "tm:nightshade",
+    "tm:ominouswind",
     "tm:painsplit",
     "tm:payback",
     "tm:phantomforce",
@@ -95,10 +123,9 @@
     "tm:psychup",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:round",
+    "tm:roleplay",
     "tm:scaryface",
-    "tm:secretpower",
+    "tm:screech",
     "tm:shadowball",
     "tm:shockwave",
     "tm:skillswap",
@@ -107,8 +134,8 @@
     "tm:snatch",
     "tm:spite",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:taunt",
     "tm:telekinesis",
     "tm:terablast",
@@ -117,52 +144,38 @@
     "tm:thunderbolt",
     "tm:thunderwave",
     "tm:torment",
-    "tm:toxic",
     "tm:trick",
     "tm:trickroom",
     "tm:willowisp",
     "tutor:allyswitch",
-    "tutor:bodyslam",
+    "tutor:calmmind",
+    "tutor:chargebeam",
     "tutor:darkpulse",
-    "tutor:destinybond",
-    "tutor:doubleedge",
-    "tutor:dreameater",
-    "tutor:endure",
-    "tutor:feintattack",
+    "tutor:dazzlinggleam",
     "tutor:foulplay",
     "tutor:gunkshot",
-    "tutor:headbutt",
+    "tutor:helpinghand",
     "tutor:icywind",
-    "tutor:knockoff",
+    "tutor:lashout",
     "tutor:magiccoat",
     "tutor:magicroom",
-    "tutor:mimic",
-    "tutor:nightmare",
-    "tutor:nightshade",
     "tutor:ominouswind",
     "tutor:painsplit",
-    "tutor:psychup",
+    "tutor:poltergeist",
+    "tutor:psychic",
+    "tutor:rest",
     "tutor:roleplay",
     "tutor:shadowball",
     "tutor:shockwave",
     "tutor:skillswap",
+    "tutor:skittersmack",
     "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:spite",
-    "tutor:substitute",
     "tutor:suckerpunch",
-    "tutor:swagger",
     "tutor:telekinesis",
-    "tutor:thunderwave",
-    "tutor:trick",
-    "tutor:willowisp"
-  ],
-  "labels": [
-    "gen3"
-  ],
-  "pokedex": [
-    "cobblemon.species.shuppet.desc"
+    "tutor:thunderbolt",
+    "tutor:trick"
   ],
   "evolutions": [
     {
@@ -180,38 +193,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 35,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 6,
-  "weight": 23,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:phantom_membrane",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:spell_tag",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

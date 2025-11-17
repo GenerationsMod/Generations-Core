@@ -1,11 +1,25 @@
 {
-  "name": "Dolliv",
+  "implemented": true,
   "nationalPokedexNumber": 929,
+  "name": "Dolliv",
   "primaryType": "grass",
   "secondaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 119,
+  "pokedex": [
+    "cobblemon.species.dolliv.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "earlybird",
     "h:harvest"
+  ],
+  "eggGroups": [
+    "grass"
   ],
   "baseStats": {
     "hp": 52,
@@ -15,10 +29,6 @@
     "special_defence": 78,
     "speed": 33
   },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 124,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,14 +37,27 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 124,
   "experienceGroup": "medium_slow",
+  "catchRate": 120,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:sweetscent",
     "1:tackle",
+    "1:sweetscent",
     "5:absorb",
     "7:growth",
     "10:razorleaf",
@@ -46,6 +69,10 @@
     "34:energyball",
     "37:leechseed",
     "42:terrainpulse",
+    "egg:memento",
+    "egg:strengthsap",
+    "egg:synthesis",
+    "egg:weatherball",
     "tm:bulletseed",
     "tm:charm",
     "tm:earthpower",
@@ -67,16 +94,23 @@
     "tm:substitute",
     "tm:sunnyday",
     "tm:swift",
+    "tm:synthesis",
     "tm:terablast",
+    "tm:terrainpulse",
     "tm:trailblaze",
-    "tm:weatherball"
+    "tm:weatherball",
+    "tutor:earthpower",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:helpinghand",
+    "tutor:magicalleaf",
+    "tutor:rest",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:synthesis",
+    "tutor:terrainpulse"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 6,
-  "weight": 119,
   "preEvolution": "smoliv",
   "evolutions": [
     {
@@ -92,23 +126,5 @@
         }
       ]
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.dolliv.desc"
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:big_root",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:kebia_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

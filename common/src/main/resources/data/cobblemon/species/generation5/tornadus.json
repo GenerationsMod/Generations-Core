@@ -1,10 +1,27 @@
 {
-  "name": "Tornadus",
+  "implemented": true,
   "nationalPokedexNumber": 641,
+  "name": "Tornadus",
   "primaryType": "flying",
+  "maleRatio": 1,
+  "height": 15,
+  "weight": 630,
+  "pokedex": [
+    "cobblemon.species.tornadus.desc"
+  ],
+  "labels": [
+    "gen5",
+    "legendary"
+  ],
+  "aspects": [
+    "incarnate-forme"
+  ],
   "abilities": [
     "prankster",
     "h:defiant"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 79,
@@ -14,11 +31,6 @@
     "special_defence": 80,
     "speed": 111
   },
-  "catchRate": 3,
-  "maleRatio": 1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 290,
-  "baseFriendship": 90,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -27,17 +39,16 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 90,
   "moves": [
     "1:astonish",
     "1:gust",
     "5:leer",
     "10:swagger",
-    "13:revenge",
     "15:bite",
     "20:aircutter",
     "25:agility",
@@ -49,25 +60,21 @@
     "55:hammerarm",
     "60:raindance",
     "65:hurricane",
-    "67:darkpulse",
     "70:thrash",
     "77:bleakwindstorm",
     "tm:acrobatics",
-    "tm:aerialace",
     "tm:agility",
     "tm:aircutter",
     "tm:airslash",
     "tm:assurance",
-    "tm:attract",
     "tm:bodyslam",
     "tm:brickbreak",
     "tm:brutalswing",
     "tm:bulkup",
     "tm:chillingwater",
-    "tm:confide",
     "tm:crunch",
     "tm:darkpulse",
-    "tm:doubleteam",
+    "tm:defog",
     "tm:embargo",
     "tm:endure",
     "tm:facade",
@@ -75,11 +82,9 @@
     "tm:fly",
     "tm:focusblast",
     "tm:foulplay",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:heatwave",
-    "tm:hiddenpower",
     "tm:hurricane",
     "tm:hyperbeam",
     "tm:icywind",
@@ -94,20 +99,17 @@
     "tm:psychic",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:revenge",
     "tm:reversal",
     "tm:rocksmash",
-    "tm:round",
+    "tm:roleplay",
     "tm:sandstorm",
     "tm:scaryface",
-    "tm:secretpower",
     "tm:skydrop",
     "tm:sleeptalk",
     "tm:sludgebomb",
     "tm:sludgewave",
     "tm:smackdown",
-    "tm:snore",
     "tm:snowscape",
     "tm:strength",
     "tm:substitute",
@@ -120,54 +122,52 @@
     "tm:terablast",
     "tm:thief",
     "tm:torment",
-    "tm:toxic",
     "tm:uproar",
     "tm:uturn",
     "tm:weatherball",
-    "tutor:agility",
     "tutor:aircutter",
-    "tutor:airslash",
-    "tutor:astonish",
-    "tutor:crunch",
+    "tutor:bulkup",
     "tutor:darkpulse",
     "tutor:defog",
-    "tutor:extrasensory",
     "tutor:foulplay",
-    "tutor:grassknot",
-    "tutor:gust",
-    "tutor:hammerarm",
+    "tutor:gigaimpact",
     "tutor:heatwave",
-    "tutor:hiddenpower",
-    "tutor:hurricane",
+    "tutor:hyperbeam",
     "tutor:icywind",
     "tutor:irontail",
     "tutor:knockoff",
     "tutor:lashout",
-    "tutor:raindance",
-    "tutor:revenge",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:roleplay",
     "tutor:sleeptalk",
-    "tutor:snore",
+    "tutor:sludgebomb",
     "tutor:superpower",
     "tutor:tailwind",
     "tutor:uproar"
   ],
-  "labels": [
-    "gen5",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.tornadus.desc"
-  ],
-  "height": 15,
-  "weight": 630,
   "evolutions": [],
   "forms": [
     {
       "name": "Therian",
       "primaryType": "flying",
+      "maleRatio": 1,
+      "height": 14,
+      "weight": 630,
+      "pokedex": [
+        "cobblemon.species.tornadus-therian.desc"
+      ],
+      "labels": [
+        "gen5",
+        "legendary"
+      ],
+      "aspects": [
+        "therian-forme"
+      ],
       "abilities": [
-        "regenerator"
+        "regenerator",
+        "h:regenerator"
       ],
       "baseStats": {
         "hp": 79,
@@ -177,10 +177,6 @@
         "special_defence": 90,
         "speed": 121
       },
-      "catchRate": 3,
-      "maleRatio": 1,
-      "baseExperienceYield": 290,
-      "baseFriendship": 90,
       "evYield": {
         "hp": 0,
         "attack": 0,
@@ -189,25 +185,8 @@
         "special_defence": 0,
         "speed": 3
       },
-      "experienceGroup": "slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen5",
-        "legendary"
-      ],
-      "aspects": [
-        "therian"
-      ],
-      "height": 14,
-      "weight": 630,
-      "cannotDynamax": false,
+      "evolutions": [],
       "battleOnly": false
     }
-  ],
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

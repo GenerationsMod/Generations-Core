@@ -1,12 +1,27 @@
 {
-  "name": "Archaludon",
+  "implemented": true,
   "nationalPokedexNumber": 1018,
+  "name": "Archaludon",
   "primaryType": "steel",
   "secondaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 20,
+  "weight": 600,
+  "pokedex": [
+    "cobblemon.species.archaludon.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "stamina",
     "sturdy",
     "h:stalwart"
+  ],
+  "eggGroups": [
+    "mineral",
+    "dragon"
   ],
   "baseStats": {
     "hp": 90,
@@ -16,10 +31,6 @@
     "special_defence": 65,
     "speed": 85
   },
-  "catchRate": 10,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 0,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -28,13 +39,13 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "medium_fast",
+  "catchRate": 10,
   "eggCycles": 30,
-  "eggGroups": [
-    "mineral",
-    "dragon"
-  ],
+  "baseFriendship": 50,
   "moves": [
+    "1:electroshot",
     "1:leer",
     "1:metalclaw",
     "6:rocksmash",
@@ -48,6 +59,9 @@
     "54:flashcannon",
     "60:metalburst",
     "66:hyperbeam",
+    "egg:mirrorcoat",
+    "egg:nightslash",
+    "egg:slash",
     "tm:aurasphere",
     "tm:bodypress",
     "tm:bodyslam",
@@ -64,11 +78,13 @@
     "tm:endure",
     "tm:facade",
     "tm:flashcannon",
+    "tm:focusenergy",
     "tm:foulplay",
     "tm:gigaimpact",
     "tm:gyroball",
     "tm:hardpress",
     "tm:heavyslam",
+    "tm:honeclaws",
     "tm:hyperbeam",
     "tm:irondefense",
     "tm:ironhead",
@@ -82,6 +98,7 @@
     "tm:rest",
     "tm:roar",
     "tm:rockslide",
+    "tm:rocksmash",
     "tm:rocktomb",
     "tm:scaryface",
     "tm:sleeptalk",
@@ -97,16 +114,29 @@
     "tm:terablast",
     "tm:thunder",
     "tm:thunderbolt",
-    "tm:thunderwave"
+    "tm:thunderwave",
+    "tutor:darkpulse",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:flashcannon",
+    "tutor:focusenergy",
+    "tutor:foulplay",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:meteorbeam",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rocksmash",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stealthrock",
+    "tutor:steelbeam",
+    "tutor:stoneedge",
+    "tutor:thunderbolt"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 20,
-  "weight": 600,
   "preEvolution": "duraludon",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }

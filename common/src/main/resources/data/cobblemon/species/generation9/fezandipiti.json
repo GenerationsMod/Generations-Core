@@ -1,11 +1,26 @@
 {
-  "name": "Fezandipiti",
+  "implemented": true,
   "nationalPokedexNumber": 1016,
+  "name": "Fezandipiti",
   "primaryType": "poison",
   "secondaryType": "fairy",
+  "maleRatio": 1,
+  "height": 14,
+  "weight": 301,
+  "pokedex": [
+    "cobblemon.species.fezandipiti.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
     "toxicchain",
     "h:technician"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 88,
@@ -15,10 +30,6 @@
     "special_defence": 125,
     "speed": 99
   },
-  "catchRate": 3,
-  "maleRatio": 1,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,24 +38,32 @@
     "special_defence": 3,
     "speed": 0
   },
+  "baseExperienceYield": 278,
   "experienceGroup": "slow",
-  "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "catchRate": 3,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:fairy_feather"
+      }
+    ]
+  },
   "moves": [
-    "1:disarmingvoice",
     "1:doublekick",
     "1:peck",
     "1:poisongas",
+    "1:disarmingvoice",
     "8:quickattack",
     "16:attract",
     "24:wingattack",
     "32:crosspoison",
     "40:tailslap",
     "48:beatup",
-    "56:flatter",
     "56:swagger",
+    "56:flatter",
     "64:roost",
     "72:moonblast",
     "tm:acidspray",
@@ -54,9 +73,12 @@
     "tm:aircutter",
     "tm:airslash",
     "tm:alluringvoice",
+    "tm:attract",
+    "tm:beatup",
     "tm:bravebird",
     "tm:calmmind",
     "tm:charm",
+    "tm:crosspoison",
     "tm:darkpulse",
     "tm:dazzlinggleam",
     "tm:disarmingvoice",
@@ -80,14 +102,17 @@
     "tm:protect",
     "tm:psychup",
     "tm:rest",
+    "tm:roost",
     "tm:shadowball",
     "tm:shadowclaw",
     "tm:sleeptalk",
     "tm:sludgebomb",
     "tm:spite",
     "tm:substitute",
+    "tm:swagger",
     "tm:swift",
     "tm:swordsdance",
+    "tm:tailslap",
     "tm:tailwind",
     "tm:takedown",
     "tm:taunt",
@@ -96,24 +121,31 @@
     "tm:toxic",
     "tm:uproar",
     "tm:uturn",
-    "tm:venoshock"
+    "tm:venoshock",
+    "tutor:aerialace",
+    "tutor:aircutter",
+    "tutor:calmmind",
+    "tutor:darkpulse",
+    "tutor:dazzlinggleam",
+    "tutor:dualwingbeat",
+    "tutor:gigaimpact",
+    "tutor:gunkshot",
+    "tutor:heatwave",
+    "tutor:hyperbeam",
+    "tutor:icywind",
+    "tutor:lashout",
+    "tutor:playrough",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:roost",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
+    "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:spite",
+    "tutor:swift",
+    "tutor:tailwind",
+    "tutor:uproar"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 14,
-  "weight": 301,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:fairy_feather"
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

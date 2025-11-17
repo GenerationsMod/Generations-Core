@@ -1,11 +1,25 @@
 {
-  "name": "Cyclizar",
+  "implemented": true,
   "nationalPokedexNumber": 967,
+  "name": "Cyclizar",
   "primaryType": "dragon",
   "secondaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 16,
+  "weight": 630,
+  "pokedex": [
+    "cobblemon.species.cyclizar.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "shedskin",
     "h:regenerator"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 70,
@@ -15,10 +29,6 @@
     "special_defence": 65,
     "speed": 121
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 175,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,14 +37,23 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 175,
   "experienceGroup": "medium_slow",
+  "catchRate": 190,
   "eggCycles": 30,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:growl",
     "1:tackle",
+    "1:growl",
     "7:rapidspin",
     "11:taunt",
     "14:breakingswipe",
@@ -54,6 +73,7 @@
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
+    "tm:aquatail",
     "tm:bodyslam",
     "tm:breakingswipe",
     "tm:crunch",
@@ -72,11 +92,13 @@
     "tm:hypervoice",
     "tm:icespinner",
     "tm:ironhead",
+    "tm:irontail",
     "tm:knockoff",
     "tm:mudshot",
     "tm:mudslap",
     "tm:outrage",
     "tm:overheat",
+    "tm:powerwhip",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
@@ -95,27 +117,28 @@
     "tm:trailblaze",
     "tm:uproar",
     "tm:uturn",
-    "tm:wildcharge"
+    "tm:wildcharge",
+    "tutor:aerialace",
+    "tutor:aquatail",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:ironhead",
+    "tutor:irontail",
+    "tutor:knockoff",
+    "tutor:mudslap",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:scaleshot",
+    "tutor:sleeptalk",
+    "tutor:thunderbolt",
+    "tutor:thunderfang",
+    "tutor:uproar",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 16,
-  "weight": 630,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.cyclizar.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:haban_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

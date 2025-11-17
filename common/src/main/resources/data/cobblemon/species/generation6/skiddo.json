@@ -1,10 +1,24 @@
 {
-  "name": "Skiddo",
+  "implemented": true,
   "nationalPokedexNumber": 672,
+  "name": "Skiddo",
   "primaryType": "grass",
+  "maleRatio": 0.5,
+  "height": 9,
+  "weight": 310,
+  "pokedex": [
+    "cobblemon.species.skiddo.desc"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
   "abilities": [
     "sapsipper",
     "h:grasspelt"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 66,
@@ -14,18 +28,41 @@
     "special_defence": 57,
     "speed": 52
   },
-  "catchRate": 200,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 70,
   "experienceGroup": "medium_fast",
+  "catchRate": 200,
   "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:mutton",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:growth",
     "1:tackle",
+    "1:growth",
     "7:vinewhip",
     "9:tailwhip",
     "12:leechseed",
@@ -39,32 +76,28 @@
     "38:doubleedge",
     "42:hornleech",
     "45:leafblade",
-    "50:milkdrink",
     "egg:defensecurl",
     "egg:grassyterrain",
     "egg:milkdrink",
     "egg:rollout",
-    "tm:attract",
     "tm:bodyslam",
     "tm:brickbreak",
     "tm:bulkup",
     "tm:bulldoze",
     "tm:bulletseed",
-    "tm:confide",
     "tm:dig",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:endeavor",
     "tm:endure",
     "tm:energyball",
     "tm:facade",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:grassknot",
     "tm:grassyglide",
     "tm:grassyterrain",
     "tm:helpinghand",
-    "tm:hiddenpower",
+    "tm:irontail",
+    "tm:leafblade",
     "tm:leafstorm",
     "tm:magicalleaf",
     "tm:mudshot",
@@ -76,12 +109,10 @@
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:roar",
     "tm:rockslide",
     "tm:rocksmash",
-    "tm:round",
-    "tm:secretpower",
+    "tm:rollout",
     "tm:seedbomb",
     "tm:sleeptalk",
     "tm:solarbeam",
@@ -90,27 +121,36 @@
     "tm:substitute",
     "tm:sunnyday",
     "tm:surf",
-    "tm:swagger",
+    "tm:synthesis",
     "tm:takedown",
     "tm:terablast",
-    "tm:toxic",
     "tm:trailblaze",
     "tm:wildcharge",
     "tm:workup",
+    "tm:worryseed",
     "tm:zenheadbutt",
+    "tutor:bulkup",
+    "tutor:bulldoze",
+    "tutor:endeavor",
+    "tutor:energyball",
     "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:helpinghand",
     "tutor:irontail",
+    "tutor:magicalleaf",
+    "tutor:mudslap",
+    "tutor:playrough",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rocksmash",
+    "tutor:rollout",
     "tutor:seedbomb",
-    "tutor:snore",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
     "tutor:synthesis",
+    "tutor:wildcharge",
     "tutor:worryseed",
     "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen6"
-  ],
-  "pokedex": [
-    "cobblemon.species.skiddo.desc"
   ],
   "evolutions": [
     {
@@ -128,38 +168,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 1,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 9,
-  "weight": 310,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:mutton",
-        "quantityRange": "1-2"
-      },
-      {
-        "item": "cobblemon:oran_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

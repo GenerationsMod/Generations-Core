@@ -1,10 +1,26 @@
 {
-  "name": "Scream Tail",
+  "implemented": true,
   "nationalPokedexNumber": 985,
+  "name": "Scream Tail",
   "primaryType": "fairy",
   "secondaryType": "psychic",
+  "maleRatio": -1,
+  "height": 12,
+  "weight": 80,
+  "pokedex": [
+    "cobblemon.species.screamtail.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "protosynthesis"
+    "protosynthesis",
+    "h:protosynthesis"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 115,
@@ -14,10 +30,6 @@
     "special_defence": 115,
     "speed": 111
   },
-  "catchRate": 50,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 3,
     "attack": 0,
@@ -26,15 +38,15 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 50,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:disable",
     "1:pound",
     "1:sing",
+    "1:disable",
     "1:sunnyday",
     "7:howl",
     "14:nobleroar",
@@ -119,19 +131,36 @@
     "tm:trickroom",
     "tm:uproar",
     "tm:waterpulse",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:bulkup",
+    "tutor:calmmind",
+    "tutor:dazzlinggleam",
+    "tutor:drainpunch",
+    "tutor:expandingforce",
+    "tutor:firefang",
+    "tutor:firepunch",
+    "tutor:flamethrower",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:icebeam",
+    "tutor:icefang",
+    "tutor:icepunch",
+    "tutor:mistyexplosion",
+    "tutor:playrough",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:thunderbolt",
+    "tutor:thunderfang",
+    "tutor:thunderpunch",
+    "tutor:trick",
+    "tutor:uproar",
+    "tutor:waterpulse",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 12,
-  "weight": 80,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.screamtail.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

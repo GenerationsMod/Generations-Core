@@ -1,10 +1,24 @@
 {
-  "name": "Spidops",
+  "implemented": true,
   "nationalPokedexNumber": 918,
+  "name": "Spidops",
   "primaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 10,
+  "weight": 165,
+  "pokedex": [
+    "cobblemon.species.spidops.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "insomnia",
     "h:stakeout"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 60,
@@ -14,10 +28,6 @@
     "special_defence": 86,
     "speed": 35
   },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 141,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,15 +36,28 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 141,
   "experienceGroup": "erratic",
+  "catchRate": 120,
   "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:spider_eye",
+        "quantityRange": "0-2"
+      }
+    ]
+  },
   "moves": [
-    "1:stringshot",
-    "1:tackle",
     "1:silktrap",
+    "1:tackle",
+    "1:stringshot",
     "5:strugglebug",
     "8:assurance",
     "11:feint",
@@ -47,7 +70,13 @@
     "41:circlethrow",
     "45:throatchop",
     "49:skittersmack",
+    "egg:firstimpression",
+    "egg:lunge",
+    "egg:memento",
+    "egg:suckerpunch",
     "tm:aerialace",
+    "tm:assurance",
+    "tm:block",
     "tm:bodyslam",
     "tm:brickbreak",
     "tm:bugbite",
@@ -58,9 +87,11 @@
     "tm:facade",
     "tm:falseswipe",
     "tm:fling",
+    "tm:gastroacid",
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:grassknot",
+    "tm:headbutt",
     "tm:knockoff",
     "tm:leechlife",
     "tm:lowkick",
@@ -78,8 +109,10 @@
     "tm:skittersmack",
     "tm:sleeptalk",
     "tm:spikes",
+    "tm:stringshot",
     "tm:strugglebug",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:takedown",
     "tm:taunt",
@@ -90,32 +123,30 @@
     "tm:trailblaze",
     "tm:upperhand",
     "tm:uturn",
-    "tm:xscissor"
+    "tm:xscissor",
+    "tutor:aerialace",
+    "tutor:block",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:falseswipe",
+    "tutor:gastroacid",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:knockoff",
+    "tutor:leechlife",
+    "tutor:lowkick",
+    "tutor:painsplit",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:shadowclaw",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:spikes",
+    "tutor:stringshot",
+    "tutor:suckerpunch",
+    "tutor:throatchop",
+    "tutor:xscissor"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 10,
-  "weight": 165,
   "preEvolution": "tarountula",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.spidops.desc"
-  ],
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "minecraft:spider_eye",
-        "quantityRange": "0-2"
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

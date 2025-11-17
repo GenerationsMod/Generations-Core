@@ -1,12 +1,26 @@
 {
-  "name": "Dottler",
+  "implemented": true,
   "nationalPokedexNumber": 825,
+  "name": "Dottler",
   "primaryType": "bug",
   "secondaryType": "psychic",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 195,
+  "pokedex": [
+    "cobblemon.species.dottler.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "swarm",
     "compoundeyes",
     "h:telepathy"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 50,
@@ -16,29 +30,56 @@
     "special_defence": 90,
     "speed": 30
   },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 2,
+    "speed": 0
+  },
   "baseExperienceYield": 117,
   "experienceGroup": "medium_fast",
+  "catchRate": 120,
   "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
+    "1:reflect",
+    "1:lightscreen",
+    "1:confusion",
     "1:strugglebug",
+    "egg:infestation",
+    "egg:recover",
+    "egg:stickyweb",
+    "egg:supersonic",
     "tm:allyswitch",
-    "tm:attract",
     "tm:bodypress",
     "tm:bugbuzz",
     "tm:calmmind",
     "tm:endure",
     "tm:energyball",
+    "tm:expandingforce",
     "tm:facade",
     "tm:futuresight",
     "tm:guardswap",
     "tm:helpinghand",
     "tm:imprison",
+    "tm:infestation",
     "tm:irondefense",
     "tm:leechlife",
     "tm:lightscreen",
@@ -51,26 +92,35 @@
     "tm:psyshock",
     "tm:reflect",
     "tm:rest",
-    "tm:round",
     "tm:safeguard",
     "tm:shadowball",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:solarbeam",
     "tm:storedpower",
+    "tm:strugglebug",
     "tm:substitute",
+    "tm:terablast",
     "tm:trick",
     "tm:trickroom",
     "tm:wonderroom",
     "tm:zenheadbutt",
-    "tutor:expandingforce"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.dottler.desc"
+    "tutor:allyswitch",
+    "tutor:calmmind",
+    "tutor:energyball",
+    "tutor:expandingforce",
+    "tutor:helpinghand",
+    "tutor:irondefense",
+    "tutor:leechlife",
+    "tutor:magicroom",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:trick",
+    "tutor:wonderroom",
+    "tutor:zenheadbutt"
   ],
   "preEvolution": "blipbug",
   "evolutions": [
@@ -87,34 +137,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 2,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 195,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:razz_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

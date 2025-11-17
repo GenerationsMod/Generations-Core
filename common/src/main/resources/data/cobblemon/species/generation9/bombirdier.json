@@ -1,12 +1,26 @@
 {
-  "name": "Bombirdier",
+  "implemented": true,
   "nationalPokedexNumber": 962,
+  "name": "Bombirdier",
   "primaryType": "flying",
   "secondaryType": "dark",
+  "maleRatio": 0.5,
+  "height": 15,
+  "weight": 429,
+  "pokedex": [
+    "cobblemon.species.bombirdier.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "bigpecks",
     "keeneye",
     "h:rockypayload"
+  ],
+  "eggGroups": [
+    "flying"
   ],
   "baseStats": {
     "hp": 70,
@@ -16,10 +30,6 @@
     "special_defence": 85,
     "speed": 82
   },
-  "catchRate": 25,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 243,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 2,
@@ -28,17 +38,33 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 243,
   "experienceGroup": "slow",
+  "catchRate": 25,
   "eggCycles": 35,
-  "eggGroups": [
-    "flying"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:feather",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "minecraft:chicken"
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:honeclaws",
-    "1:leer",
-    "1:memento",
-    "1:peck",
     "1:wingattack",
+    "1:leer",
+    "1:peck",
+    "1:memento",
+    "1:honeclaws",
     "7:thief",
     "11:rockthrow",
     "16:whirlwind",
@@ -72,6 +98,7 @@
     "tm:foulplay",
     "tm:gigaimpact",
     "tm:heatwave",
+    "tm:honeclaws",
     "tm:hurricane",
     "tm:hyperbeam",
     "tm:hypervoice",
@@ -79,6 +106,8 @@
     "tm:knockoff",
     "tm:lashout",
     "tm:nastyplot",
+    "tm:payback",
+    "tm:pluck",
     "tm:powergem",
     "tm:protect",
     "tm:psychup",
@@ -87,47 +116,48 @@
     "tm:rockblast",
     "tm:rockslide",
     "tm:rocktomb",
+    "tm:roost",
     "tm:sandstorm",
     "tm:scaryface",
+    "tm:skyattack",
     "tm:sleeptalk",
     "tm:snarl",
     "tm:stealthrock",
     "tm:stoneedge",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:tailwind",
     "tm:takedown",
     "tm:taunt",
     "tm:terablast",
     "tm:thief",
-    "tm:uturn"
+    "tm:torment",
+    "tm:uturn",
+    "tutor:aerialace",
+    "tutor:aircutter",
+    "tutor:darkpulse",
+    "tutor:drillrun",
+    "tutor:dualwingbeat",
+    "tutor:endeavor",
+    "tutor:foulplay",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:knockoff",
+    "tutor:lashout",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:roost",
+    "tutor:skyattack",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stealthrock",
+    "tutor:stoneedge",
+    "tutor:suckerpunch",
+    "tutor:tailwind"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 15,
-  "weight": 429,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.bombirdier.desc"
-  ],
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:feather",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "minecraft:chicken"
-      },
-      {
-        "item": "cobblemon:razz_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

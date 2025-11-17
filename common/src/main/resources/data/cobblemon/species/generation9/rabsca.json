@@ -1,11 +1,25 @@
 {
-  "name": "Rabsca",
+  "implemented": true,
   "nationalPokedexNumber": 954,
+  "name": "Rabsca",
   "primaryType": "bug",
   "secondaryType": "psychic",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 35,
+  "pokedex": [
+    "cobblemon.species.rabsca.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "synchronize",
     "h:telepathy"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 75,
@@ -15,10 +29,6 @@
     "special_defence": 100,
     "speed": 45
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 165,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,18 +37,26 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 165,
   "experienceGroup": "fast",
+  "catchRate": 45,
   "eggCycles": 20,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:ender_pearl"
+      }
+    ]
+  },
   "moves": [
-    "1:confusion",
-    "1:defensecurl",
-    "1:psychup",
-    "1:safeguard",
-    "1:tackle",
     "1:revivalblessing",
+    "1:tackle",
+    "1:defensecurl",
+    "1:confusion",
+    "1:safeguard",
+    "1:psychup",
     "4:sandattack",
     "7:strugglebug",
     "11:rollout",
@@ -47,15 +65,20 @@
     "24:takedown",
     "29:extrasensory",
     "35:lunge",
-    "40:guardswap",
-    "40:powerswap",
     "40:speedswap",
+    "40:powerswap",
+    "40:guardswap",
     "45:bugbuzz",
     "50:psychic",
+    "egg:cosmicpower",
+    "egg:memento",
+    "egg:recover",
+    "egg:weatherball",
     "tm:bugbite",
     "tm:bugbuzz",
     "tm:calmmind",
     "tm:confuseray",
+    "tm:cosmicpower",
     "tm:dazzlinggleam",
     "tm:dig",
     "tm:earthpower",
@@ -68,6 +91,7 @@
     "tm:futuresight",
     "tm:gigaimpact",
     "tm:gravity",
+    "tm:guardswap",
     "tm:gunkshot",
     "tm:hyperbeam",
     "tm:imprison",
@@ -80,6 +104,7 @@
     "tm:poltergeist",
     "tm:pounce",
     "tm:powergem",
+    "tm:powerswap",
     "tm:protect",
     "tm:psybeam",
     "tm:psychic",
@@ -91,12 +116,15 @@
     "tm:reflect",
     "tm:rest",
     "tm:rocktomb",
+    "tm:rollout",
+    "tm:safeguard",
     "tm:sandstorm",
     "tm:shadowball",
     "tm:skillswap",
     "tm:skittersmack",
     "tm:sleeptalk",
     "tm:sludgebomb",
+    "tm:speedswap",
     "tm:storedpower",
     "tm:strugglebug",
     "tm:substitute",
@@ -108,27 +136,33 @@
     "tm:trickroom",
     "tm:weatherball",
     "tm:xscissor",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:bugbite",
+    "tutor:calmmind",
+    "tutor:dazzlinggleam",
+    "tutor:earthpower",
+    "tutor:energyball",
+    "tutor:expandingforce",
+    "tutor:gigaimpact",
+    "tutor:gravity",
+    "tutor:gunkshot",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:leechlife",
+    "tutor:mudslap",
+    "tutor:poltergeist",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:shadowball",
+    "tutor:skillswap",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:trick",
+    "tutor:xscissor",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 3,
-  "weight": 35,
   "preEvolution": "rellor",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.rabsca.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "minecraft:ender_pearl"
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

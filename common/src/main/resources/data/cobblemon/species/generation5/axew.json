@@ -1,12 +1,61 @@
 {
-  "name": "Axew",
+  "implemented": true,
   "nationalPokedexNumber": 610,
+  "name": "Axew",
   "primaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 180,
+  "pokedex": [
+    "cobblemon.species.axew.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "rivalry",
     "moldbreaker",
     "h:unnerve"
   ],
+  "eggGroups": [
+    "monster",
+    "dragon"
+  ],
+  "baseStats": {
+    "hp": 46,
+    "attack": 87,
+    "defence": 60,
+    "special_attack": 30,
+    "special_defence": 40,
+    "speed": 57
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 64,
+  "experienceGroup": "slow",
+  "catchRate": 75,
+  "eggCycles": 40,
+  "baseFriendship": 35,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInLava": true
+      }
+    }
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -20,31 +69,13 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 46,
-    "attack": 87,
-    "defence": 60,
-    "special_attack": 30,
-    "special_defence": 40,
-    "speed": 57
-  },
-  "catchRate": 75,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 64,
-  "experienceGroup": "slow",
-  "eggCycles": 40,
-  "eggGroups": [
-    "monster",
-    "dragon"
-  ],
   "moves": [
-    "1:leer",
     "1:scratch",
+    "1:leer",
+    "1:dragonrage",
     "3:bite",
     "6:falseswipe",
     "9:assurance",
-    "10:dragonrage",
     "12:taunt",
     "15:slash",
     "18:dragonclaw",
@@ -52,9 +83,7 @@
     "24:crunch",
     "27:dragondance",
     "30:breakingswipe",
-    "30:dualchop",
     "33:focusenergy",
-    "33:laserfocus",
     "36:dragonpulse",
     "39:swordsdance",
     "42:outrage",
@@ -62,107 +91,96 @@
     "48:gigaimpact",
     "egg:aquatail",
     "egg:counter",
-    "egg:dragonpulse",
     "egg:endeavor",
-    "egg:endure",
     "egg:firstimpression",
-    "egg:focusenergy",
     "egg:harden",
     "egg:irontail",
     "egg:nightslash",
     "egg:razorwind",
-    "egg:reversal",
     "tm:aerialace",
+    "tm:aquatail",
     "tm:assurance",
-    "tm:attract",
     "tm:breakingswipe",
     "tm:brickbreak",
     "tm:bulldoze",
-    "tm:confide",
     "tm:crunch",
     "tm:cut",
     "tm:dig",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:dracometeor",
     "tm:dragoncheer",
     "tm:dragonclaw",
     "tm:dragondance",
     "tm:dragonpulse",
     "tm:dragontail",
+    "tm:dualchop",
     "tm:endeavor",
     "tm:endure",
     "tm:facade",
     "tm:falseswipe",
     "tm:fling",
     "tm:focusenergy",
-    "tm:frustration",
     "tm:gigaimpact",
-    "tm:hiddenpower",
     "tm:honeclaws",
     "tm:incinerate",
     "tm:ironhead",
     "tm:irontail",
+    "tm:laserfocus",
     "tm:outrage",
     "tm:payback",
     "tm:poisonjab",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:reversal",
     "tm:roar",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
     "tm:scaleshot",
     "tm:scaryface",
-    "tm:secretpower",
     "tm:shadowclaw",
+    "tm:shockwave",
     "tm:sleeptalk",
     "tm:snarl",
-    "tm:snore",
     "tm:stompingtantrum",
     "tm:strength",
     "tm:substitute",
     "tm:sunnyday",
     "tm:superpower",
     "tm:surf",
-    "tm:swagger",
     "tm:swift",
     "tm:swordsdance",
     "tm:takedown",
     "tm:taunt",
     "tm:terablast",
-    "tm:toxic",
     "tm:trailblaze",
     "tm:xscissor",
+    "tutor:aerialace",
     "tutor:aquatail",
-    "tutor:counter",
+    "tutor:bulldoze",
     "tutor:dracometeor",
-    "tutor:dragonclaw",
     "tutor:dragonpulse",
-    "tutor:dragonrage",
     "tutor:dualchop",
     "tutor:endeavor",
-    "tutor:endure",
+    "tutor:falseswipe",
+    "tutor:focusenergy",
     "tutor:gigaimpact",
+    "tutor:ironhead",
     "tutor:irontail",
-    "tutor:nightslash",
+    "tutor:laserfocus",
     "tutor:outrage",
-    "tutor:return",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:scaleshot",
-    "tutor:scratch",
+    "tutor:shadowclaw",
     "tutor:shockwave",
     "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:superpower"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.axew.desc"
+    "tutor:snarl",
+    "tutor:stompingtantrum",
+    "tutor:superpower",
+    "tutor:swift",
+    "tutor:xscissor"
   ],
   "evolutions": [
     {
@@ -178,25 +196,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 35,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 6,
-  "weight": 180,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

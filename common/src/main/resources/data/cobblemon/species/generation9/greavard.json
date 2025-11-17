@@ -1,10 +1,24 @@
 {
-  "name": "Greavard",
+  "implemented": true,
   "nationalPokedexNumber": 971,
+  "name": "Greavard",
   "primaryType": "ghost",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 350,
+  "pokedex": [
+    "cobblemon.species.greavard.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "pickup",
     "h:fluffy"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 50,
@@ -14,10 +28,6 @@
     "special_defence": 55,
     "speed": 34
   },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 58,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 1,
@@ -26,17 +36,38 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 58,
   "experienceGroup": "medium_slow",
+  "catchRate": 120,
   "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 5,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "1-2"
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "minecraft:candle",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:growl",
     "1:tackle",
+    "1:growl",
     "3:lick",
-    "6:bite",
     "6:tailwhip",
+    "6:bite",
     "9:roar",
     "12:headbutt",
     "16:dig",
@@ -54,6 +85,7 @@
     "egg:memento",
     "egg:shadowsneak",
     "egg:yawn",
+    "tm:allyswitch",
     "tm:bulldoze",
     "tm:charm",
     "tm:confuseray",
@@ -64,6 +96,7 @@
     "tm:endure",
     "tm:facade",
     "tm:firefang",
+    "tm:headbutt",
     "tm:helpinghand",
     "tm:hex",
     "tm:icefang",
@@ -92,14 +125,27 @@
     "tm:thief",
     "tm:thunderfang",
     "tm:trick",
-    "tm:uproar"
+    "tm:uproar",
+    "tutor:allyswitch",
+    "tutor:bulldoze",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:helpinghand",
+    "tutor:icefang",
+    "tutor:mudslap",
+    "tutor:painsplit",
+    "tutor:playrough",
+    "tutor:poltergeist",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stompingtantrum",
+    "tutor:thunderfang",
+    "tutor:trick",
+    "tutor:uproar"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 6,
-  "weight": 350,
   "evolutions": [
     {
       "id": "greavard_houndstone",
@@ -120,31 +166,5 @@
         }
       ]
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.greavard.desc"
-  ],
-  "drops": {
-    "amount": 5,
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "quantityRange": "1-2"
-      },
-      {
-        "item": "minecraft:rotten_flesh",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "minecraft:candle",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:kasib_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

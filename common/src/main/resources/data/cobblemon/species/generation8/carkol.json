@@ -1,12 +1,26 @@
 {
-  "name": "Carkol",
+  "implemented": true,
   "nationalPokedexNumber": 838,
+  "name": "Carkol",
   "primaryType": "rock",
   "secondaryType": "fire",
+  "maleRatio": 0.5,
+  "height": 11,
+  "weight": 780,
+  "pokedex": [
+    "cobblemon.species.carkol.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "steamengine",
     "flamebody",
     "h:flashfire"
+  ],
+  "eggGroups": [
+    "mineral"
   ],
   "baseStats": {
     "hp": 80,
@@ -16,35 +30,76 @@
     "special_defence": 70,
     "speed": 50
   },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 144,
   "experienceGroup": "medium_slow",
+  "catchRate": 120,
   "eggCycles": 15,
-  "eggGroups": [
-    "mineral"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInWater": false
+      }
+    }
+  },
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:coal",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:black_augurite",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:passho_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
+    "1:flamecharge",
+    "1:tackle",
+    "1:smokescreen",
     "1:rapidspin",
     "1:smackdown",
-    "1:smokescreen",
-    "1:tackle",
+    "1:burnup",
     "15:rockpolish",
     "20:ancientpower",
     "27:incinerate",
     "35:stealthrock",
     "41:heatcrash",
     "48:rockblast",
-    "55:burnup",
     "55:stoneedge",
-    "tm:attract",
+    "egg:block",
+    "egg:explosion",
+    "egg:mudslap",
+    "tm:ancientpower",
+    "tm:block",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:bulldoze",
     "tm:curse",
     "tm:dig",
     "tm:endure",
+    "tm:explosion",
     "tm:facade",
     "tm:fireblast",
     "tm:firespin",
@@ -55,7 +110,7 @@
     "tm:heatcrash",
     "tm:heatwave",
     "tm:heavyslam",
-    "tm:highhorsepower",
+    "tm:incinerate",
     "tm:irondefense",
     "tm:ironhead",
     "tm:meteorbeam",
@@ -66,9 +121,9 @@
     "tm:reflect",
     "tm:rest",
     "tm:rockblast",
+    "tm:rockpolish",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
     "tm:sandstorm",
     "tm:sandtomb",
     "tm:scald",
@@ -76,7 +131,6 @@
     "tm:selfdestruct",
     "tm:sleeptalk",
     "tm:smackdown",
-    "tm:snore",
     "tm:spikes",
     "tm:stealthrock",
     "tm:stoneedge",
@@ -86,14 +140,22 @@
     "tm:temperflare",
     "tm:terablast",
     "tm:willowisp",
+    "tutor:ancientpower",
+    "tutor:block",
+    "tutor:bulldoze",
+    "tutor:flamethrower",
+    "tutor:heatwave",
+    "tutor:irondefense",
+    "tutor:ironhead",
     "tutor:meteorbeam",
-    "tutor:scorchingsands"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.carkol.desc"
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:scorchingsands",
+    "tutor:sleeptalk",
+    "tutor:spikes",
+    "tutor:stealthrock",
+    "tutor:stoneedge"
   ],
   "preEvolution": "rolycoly",
   "evolutions": [
@@ -112,42 +174,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 2,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 11,
-  "weight": 780,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:coal",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:black_augurite",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:passho_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

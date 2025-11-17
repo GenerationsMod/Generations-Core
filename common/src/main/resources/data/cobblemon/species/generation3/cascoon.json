@@ -1,9 +1,26 @@
 {
-  "name": "Cascoon",
+  "implemented": true,
   "nationalPokedexNumber": 268,
+  "name": "Cascoon",
   "primaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 7,
+  "weight": 115,
+  "pokedex": [
+    "cobblemon.species.cascoon.desc"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [
+    "cascoon-cocoon"
+  ],
   "abilities": [
-    "shedskin"
+    "shedskin",
+    "h:shedskin"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 50,
@@ -12,6 +29,25 @@
     "special_attack": 25,
     "special_defence": 25,
     "speed": 15
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 72,
+  "experienceGroup": "medium_fast",
+  "catchRate": 120,
+  "eggCycles": 15,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
   },
   "behaviour": {
     "moving": {
@@ -25,63 +61,6 @@
       "canLook": false
     }
   },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 72,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
-  "moves": [
-    "1:harden",
-    "tutor:bugbite",
-    "tutor:electroweb",
-    "tutor:irondefense",
-    "tutor:stringshot"
-  ],
-  "labels": [
-    "gen3"
-  ],
-  "pokedex": [
-    "cobblemon.species.cascoon.desc"
-  ],
-  "preEvolution": "wurmple",
-  "evolutions": [
-    {
-      "id": "cascoon_dustox",
-      "variant": "level_up",
-      "result": "dustox",
-      "consumeHeldItem": false,
-      "learnableMoves": [],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 10
-        }
-      ]
-    }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 2,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 7,
-  "weight": 115,
-  "aspects": [],
-  "cannotDynamax": false,
   "drops": {
     "amount": 3,
     "entries": [
@@ -95,5 +74,38 @@
       }
     ]
   },
-  "implemented": true
+  "moves": [
+    "1:harden",
+    "1:tackle",
+    "1:poisonsting",
+    "tm:bugbite",
+    "tm:electroweb",
+    "tm:irondefense",
+    "tm:skittersmack",
+    "tm:stringshot",
+    "tm:terablast",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:irondefense",
+    "tutor:skittersmack",
+    "tutor:stringshot"
+  ],
+  "preEvolution": "wurmple",
+  "evolutions": [
+    {
+      "id": "cascoon_dustox",
+      "variant": "level_up",
+      "result": "dustox",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "gust"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 10
+        }
+      ]
+    }
+  ]
 }

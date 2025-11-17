@@ -1,10 +1,26 @@
 {
-  "name": "Iron Crown",
+  "implemented": true,
   "nationalPokedexNumber": 1023,
+  "name": "Iron Crown",
   "primaryType": "steel",
   "secondaryType": "psychic",
+  "maleRatio": -1,
+  "height": 16,
+  "weight": 1560,
+  "pokedex": [
+    "cobblemon.species.ironcrown.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 90,
@@ -14,10 +30,6 @@
     "special_defence": 108,
     "speed": 98
   },
-  "catchRate": 10,
-  "maleRatio": -1,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,15 +38,15 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 295,
   "experienceGroup": "slow",
+  "catchRate": 10,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:confusion",
-    "1:electricterrain",
     "1:leer",
+    "1:electricterrain",
+    "1:confusion",
     "1:metalclaw",
     "7:smartstrike",
     "14:slash",
@@ -74,6 +86,7 @@
     "tm:protect",
     "tm:psychic",
     "tm:psychicnoise",
+    "tm:psychocut",
     "tm:psyshock",
     "tm:rest",
     "tm:scaryface",
@@ -89,16 +102,23 @@
     "tm:terablast",
     "tm:voltswitch",
     "tm:xscissor",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:bulldoze",
+    "tutor:calmmind",
+    "tutor:expandingforce",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:gravity",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:psychic",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:steelbeam",
+    "tutor:xscissor",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 16,
-  "weight": 1560,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }

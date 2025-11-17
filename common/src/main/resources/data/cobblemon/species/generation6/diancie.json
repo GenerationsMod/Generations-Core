@@ -1,10 +1,26 @@
 {
-  "name": "Diancie",
+  "implemented": true,
   "nationalPokedexNumber": 719,
+  "name": "Diancie",
   "primaryType": "rock",
   "secondaryType": "fairy",
+  "maleRatio": -1,
+  "height": 7,
+  "weight": 88,
+  "pokedex": [
+    "cobblemon.species.diancie.desc"
+  ],
+  "labels": [
+    "gen6",
+    "mythical"
+  ],
+  "aspects": [],
   "abilities": [
-    "clearbody"
+    "clearbody",
+    "h:clearbody"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 50,
@@ -14,95 +30,55 @@
     "special_defence": 150,
     "speed": 50
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "rock",
-      "secondaryType": "fairy",
-      "abilities": [
-        "magicbounce"
-      ],
-      "baseStats": {
-        "hp": 50,
-        "attack": 160,
-        "defence": 110,
-        "special_attack": 160,
-        "special_defence": 110,
-        "speed": 110
-      },
-      "catchRate": 3,
-      "maleRatio": -1,
-      "baseExperienceYield": 300,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 1,
-        "special_attack": 0,
-        "special_defence": 2,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 25,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen6",
-        "mega",
-        "mythical",
-        "legendary"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 11,
-      "weight": 278,
-      "cannotDynamax": false,
-      "battleOnly": true
-    }
-  ],
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 2,
+    "speed": 0
+  },
   "baseExperienceYield": 300,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 25,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "moves": [
-    "1:diamondstorm",
+    "1:tackle",
     "1:harden",
     "1:rockthrow",
-    "1:tackle",
-    "5:sharpen",
+    "1:sharpen",
+    "1:diamondstorm",
     "7:guardsplit",
-    "12:reflect",
     "14:smackdown",
     "21:flail",
     "28:ancientpower",
     "35:rockpolish",
     "42:lightscreen",
-    "46:trickroom",
     "49:rockslide",
     "56:skillswap",
     "63:powergem",
-    "70:safeguard",
     "70:stealthrock",
     "77:moonblast",
     "84:stoneedge",
+    "tm:afteryou",
     "tm:allyswitch",
     "tm:amnesia",
+    "tm:ancientpower",
     "tm:batonpass",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:bulldoze",
     "tm:calmmind",
     "tm:charm",
-    "tm:confide",
+    "tm:covet",
     "tm:dazzlinggleam",
-    "tm:doubleteam",
     "tm:drainingkiss",
     "tm:earthpower",
     "tm:encore",
@@ -113,17 +89,18 @@
     "tm:faketears",
     "tm:flash",
     "tm:flashcannon",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:gravity",
     "tm:guardswap",
     "tm:gyroball",
     "tm:hail",
+    "tm:healbell",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:irondefense",
+    "tm:lastresort",
     "tm:lightscreen",
+    "tm:magnetrise",
     "tm:meteorbeam",
     "tm:metronome",
     "tm:mistyexplosion",
@@ -138,20 +115,16 @@
     "tm:raindance",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
     "tm:rockpolish",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
     "tm:safeguard",
     "tm:sandstorm",
     "tm:sandtomb",
     "tm:scorchingsands",
-    "tm:secretpower",
     "tm:skillswap",
     "tm:sleeptalk",
     "tm:smackdown",
-    "tm:snore",
     "tm:snowscape",
     "tm:spikes",
     "tm:stealthrock",
@@ -159,63 +132,86 @@
     "tm:storedpower",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:takedown",
+    "tm:telekinesis",
     "tm:terablast",
-    "tm:toxic",
+    "tm:terrainpulse",
     "tm:trickroom",
     "tm:wonderroom",
     "tutor:afteryou",
+    "tutor:allyswitch",
+    "tutor:ancientpower",
+    "tutor:bulldoze",
+    "tutor:calmmind",
     "tutor:covet",
-    "tutor:diamondstorm",
+    "tutor:dazzlinggleam",
     "tutor:earthpower",
     "tutor:endeavor",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
     "tutor:gravity",
     "tutor:healbell",
     "tutor:helpinghand",
+    "tutor:hyperbeam",
     "tutor:irondefense",
     "tutor:lastresort",
     "tutor:magnetrise",
     "tutor:meteorbeam",
     "tutor:mistyexplosion",
-    "tutor:moonblast",
-    "tutor:reflect",
-    "tutor:return",
+    "tutor:mysticalfire",
+    "tutor:playrough",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:scorchingsands",
     "tutor:skillswap",
-    "tutor:snore",
+    "tutor:sleeptalk",
+    "tutor:spikes",
     "tutor:stealthrock",
+    "tutor:stoneedge",
+    "tutor:swift",
     "tutor:telekinesis",
     "tutor:terrainpulse",
+    "tutor:trick",
     "tutor:wonderroom"
   ],
-  "labels": [
-    "gen6",
-    "mythical",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.diancie.desc"
-  ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 1,
-    "special_attack": 0,
-    "special_defence": 2,
-    "speed": 0
-  },
-  "height": 7,
-  "weight": 88,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "rock",
+      "secondaryType": "fairy",
+      "maleRatio": -1,
+      "height": 11,
+      "weight": 278,
+      "pokedex": [
+        "cobblemon.species.diancie-mega.desc"
+      ],
+      "labels": [
+        "gen6",
+        "mythical",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "abilities": [
+        "magicbounce",
+        "h:magicbounce"
+      ],
+      "baseStats": {
+        "hp": 50,
+        "attack": 160,
+        "defence": 110,
+        "special_attack": 160,
+        "special_defence": 110,
+        "speed": 110
+      },
+      "baseExperienceYield": 350,
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true
+    }
+  ]
 }

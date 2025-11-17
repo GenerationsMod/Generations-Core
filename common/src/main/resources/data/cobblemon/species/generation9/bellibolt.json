@@ -1,11 +1,25 @@
 {
-  "name": "Bellibolt",
+  "implemented": true,
   "nationalPokedexNumber": 939,
+  "name": "Bellibolt",
   "primaryType": "electric",
+  "maleRatio": 0.5,
+  "height": 12,
+  "weight": 1130,
+  "pokedex": [
+    "cobblemon.species.bellibolt.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "electromorphosis",
     "static",
     "h:damp"
+  ],
+  "eggGroups": [
+    "water_1"
   ],
   "baseStats": {
     "hp": 109,
@@ -15,10 +29,6 @@
     "special_defence": 83,
     "speed": 45
   },
-  "catchRate": 50,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 173,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 2,
     "attack": 0,
@@ -27,15 +37,38 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 173,
   "experienceGroup": "medium_fast",
+  "catchRate": 50,
   "eggCycles": 20,
-  "eggGroups": [
-    "water_1"
-  ],
+  "baseFriendship": 50,
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:ochre_froglight",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
+    "1:tackle",
     "1:mudslap",
     "1:slackoff",
-    "1:tackle",
     "7:thundershock",
     "11:watergun",
     "17:charge",
@@ -47,6 +80,9 @@
     "40:electricterrain",
     "45:suckerpunch",
     "50:zapcannon",
+    "egg:muddywater",
+    "egg:paraboliccharge",
+    "egg:soak",
     "tm:acidspray",
     "tm:charge",
     "tm:chargebeam",
@@ -70,6 +106,7 @@
     "tm:rest",
     "tm:sleeptalk",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:supercellslam",
     "tm:swift",
     "tm:terablast",
@@ -80,32 +117,21 @@
     "tm:voltswitch",
     "tm:waterpulse",
     "tm:weatherball",
-    "tm:wildcharge"
+    "tm:wildcharge",
+    "tutor:chargebeam",
+    "tutor:electroweb",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:suckerpunch",
+    "tutor:swift",
+    "tutor:thunderbolt",
+    "tutor:waterpulse",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 12,
-  "weight": 1130,
   "preEvolution": "tadbulb",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.bellibolt.desc"
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:ochre_froglight",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:wepear_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

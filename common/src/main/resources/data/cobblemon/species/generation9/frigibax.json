@@ -1,11 +1,26 @@
 {
-  "name": "Frigibax",
+  "implemented": true,
   "nationalPokedexNumber": 996,
+  "name": "Frigibax",
   "primaryType": "dragon",
   "secondaryType": "ice",
+  "maleRatio": 0.5,
+  "height": 5,
+  "weight": 170,
+  "pokedex": [
+    "cobblemon.species.frigibax.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "thermalexchange",
     "h:icebody"
+  ],
+  "eggGroups": [
+    "dragon",
+    "mineral"
   ],
   "baseStats": {
     "hp": 65,
@@ -15,10 +30,6 @@
     "special_defence": 45,
     "speed": 55
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 64,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 1,
@@ -27,16 +38,24 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 64,
   "experienceGroup": "slow",
+  "catchRate": 45,
   "eggCycles": 40,
-  "eggGroups": [
-    "dragon",
-    "mineral"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:dragontail",
-    "1:leer",
     "1:tackle",
+    "1:leer",
+    "1:dragontail",
     "6:icywind",
     "12:dragonbreath",
     "18:focusenergy",
@@ -51,6 +70,7 @@
     "egg:dragonrush",
     "egg:freezedry",
     "egg:iciclespear",
+    "tm:aquatail",
     "tm:avalanche",
     "tm:blizzard",
     "tm:bodyslam",
@@ -62,6 +82,7 @@
     "tm:dragontail",
     "tm:endure",
     "tm:facade",
+    "tm:focusenergy",
     "tm:helpinghand",
     "tm:icebeam",
     "tm:icefang",
@@ -76,14 +97,19 @@
     "tm:substitute",
     "tm:swordsdance",
     "tm:takedown",
-    "tm:terablast"
+    "tm:terablast",
+    "tutor:aquatail",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:focusenergy",
+    "tutor:helpinghand",
+    "tutor:icebeam",
+    "tutor:icefang",
+    "tutor:icywind",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:sleeptalk"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 5,
-  "weight": 170,
   "evolutions": [
     {
       "id": "frigibax_arctibax",
@@ -98,19 +124,5 @@
         }
       ]
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.frigibax.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:haban_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

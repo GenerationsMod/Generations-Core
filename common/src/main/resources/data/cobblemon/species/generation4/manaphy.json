@@ -1,9 +1,26 @@
 {
-  "name": "Manaphy",
+  "implemented": true,
   "nationalPokedexNumber": 490,
+  "name": "Manaphy",
   "primaryType": "water",
+  "maleRatio": -1,
+  "height": 3,
+  "weight": 14,
+  "pokedex": [
+    "cobblemon.species.manaphy.desc"
+  ],
+  "labels": [
+    "gen4",
+    "mythical"
+  ],
+  "aspects": [],
   "abilities": [
-    "hydration"
+    "hydration",
+    "h:hydration"
+  ],
+  "eggGroups": [
+    "water_1",
+    "fairy"
   ],
   "baseStats": {
     "hp": 100,
@@ -13,22 +30,49 @@
     "special_defence": 100,
     "speed": 100
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 270,
+  "evYield": {
+    "hp": 3,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 300,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 10,
-  "eggGroups": [
-    "water_1",
-    "fairy"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:heart_of_the_sea"
+      }
+    ]
+  },
   "moves": [
-    "1:bubble",
-    "1:heartswap",
     "1:tailglow",
-    "1:watergun",
+    "1:bubble",
     "1:watersport",
+    "1:heartswap",
+    "1:watergun",
     "9:charm",
     "16:supersonic",
     "24:bubblebeam",
@@ -38,20 +82,20 @@
     "54:aquaring",
     "61:dive",
     "69:raindance",
-    "76:heartswap",
     "76:takeheart",
     "tm:alluringvoice",
+    "tm:ancientpower",
     "tm:batonpass",
     "tm:blizzard",
+    "tm:bounce",
     "tm:brine",
     "tm:calmmind",
     "tm:charm",
     "tm:chillingwater",
-    "tm:confide",
+    "tm:covet",
     "tm:dazzlinggleam",
     "tm:disarmingvoice",
     "tm:dive",
-    "tm:doubleteam",
     "tm:endure",
     "tm:energyball",
     "tm:facade",
@@ -59,22 +103,21 @@
     "tm:flash",
     "tm:fling",
     "tm:flipturn",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:hail",
     "tm:haze",
+    "tm:healbell",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hydropump",
     "tm:hyperbeam",
     "tm:icebeam",
     "tm:icywind",
     "tm:knockoff",
+    "tm:lastresort",
     "tm:lightscreen",
     "tm:liquidation",
     "tm:mudslap",
-    "tm:naturalgift",
     "tm:protect",
     "tm:psybeam",
     "tm:psychic",
@@ -82,88 +125,50 @@
     "tm:raindance",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
-    "tm:round",
     "tm:safeguard",
     "tm:scald",
-    "tm:secretpower",
     "tm:shadowball",
+    "tm:signalbeam",
     "tm:skillswap",
     "tm:sleeptalk",
     "tm:storedpower",
     "tm:substitute",
     "tm:surf",
-    "tm:swagger",
     "tm:swift",
     "tm:terablast",
-    "tm:toxic",
     "tm:uturn",
     "tm:waterfall",
     "tm:waterpulse",
     "tm:weatherball",
     "tm:whirlpool",
     "tm:zenheadbutt",
-    "tutor:acidarmor",
     "tutor:ancientpower",
-    "tutor:aquaring",
     "tutor:bounce",
-    "tutor:bubble",
+    "tutor:calmmind",
     "tutor:covet",
+    "tutor:dazzlinggleam",
     "tutor:dive",
+    "tutor:energyball",
+    "tutor:flipturn",
+    "tutor:gigaimpact",
     "tutor:healbell",
-    "tutor:heartswap",
     "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
     "tutor:icywind",
     "tutor:knockoff",
     "tutor:lastresort",
     "tutor:liquidation",
     "tutor:mudslap",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:shadowball",
     "tutor:signalbeam",
     "tutor:skillswap",
     "tutor:sleeptalk",
-    "tutor:snore",
     "tutor:swift",
-    "tutor:tailglow",
-    "tutor:uproar",
     "tutor:waterpulse",
-    "tutor:watersport",
-    "tutor:whirlpool"
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen4",
-    "mythical",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.manaphy.desc"
-  ],
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 3,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 3,
-  "weight": 14,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "minecraft:heart_of_the_sea"
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

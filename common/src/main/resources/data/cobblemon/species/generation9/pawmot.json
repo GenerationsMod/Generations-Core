@@ -1,12 +1,26 @@
 {
-  "name": "Pawmot",
+  "implemented": true,
   "nationalPokedexNumber": 923,
+  "name": "Pawmot",
   "primaryType": "electric",
   "secondaryType": "fighting",
+  "maleRatio": 0.5,
+  "height": 9,
+  "weight": 410,
+  "pokedex": [
+    "cobblemon.species.pawmot.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "voltabsorb",
     "naturalcure",
     "h:ironfist"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 70,
@@ -16,10 +30,6 @@
     "special_defence": 60,
     "speed": 105
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 245,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -28,17 +38,25 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 245,
   "experienceGroup": "medium_fast",
+  "catchRate": 45,
   "eggCycles": 15,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
   "moves": [
-    "1:growl",
-    "1:scratch",
-    "1:wildcharge",
-    "1:armthrust",
     "1:revivalblessing",
+    "1:scratch",
+    "1:growl",
+    "1:wildcharge",
     "3:thundershock",
     "6:quickattack",
     "8:charge",
@@ -54,6 +72,10 @@
     "49:discharge",
     "54:agility",
     "60:doubleshock",
+    "egg:fakeout",
+    "egg:machpunch",
+    "egg:sweetkiss",
+    "egg:wish",
     "tm:agility",
     "tm:batonpass",
     "tm:bodypress",
@@ -111,28 +133,31 @@
     "tm:thunderwave",
     "tm:upperhand",
     "tm:voltswitch",
-    "tm:wildcharge"
+    "tm:wildcharge",
+    "tutor:bulkup",
+    "tutor:chargebeam",
+    "tutor:coaching",
+    "tutor:electroweb",
+    "tutor:firepunch",
+    "tutor:focuspunch",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icepunch",
+    "tutor:knockoff",
+    "tutor:lowkick",
+    "tutor:playrough",
+    "tutor:rest",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:superfang",
+    "tutor:swift",
+    "tutor:throatchop",
+    "tutor:thunderbolt",
+    "tutor:thunderfang",
+    "tutor:thunderpunch",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 9,
-  "weight": 410,
   "preEvolution": "pawmo",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.pawmot.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:cheri_berry",
-        "percentage": 10.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

@@ -1,10 +1,24 @@
 {
-  "name": "Skwovet",
+  "implemented": true,
   "nationalPokedexNumber": 819,
+  "name": "Skwovet",
   "primaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 25,
+  "pokedex": [
+    "cobblemon.species.skwovet.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "cheekpouch",
     "h:gluttony"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 70,
@@ -14,23 +28,42 @@
     "special_defence": 35,
     "speed": 25
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 55,
   "experienceGroup": "medium_fast",
+  "catchRate": 255,
   "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "quantityRange": "0-1"
+      }
+    ]
+  },
   "moves": [
     "1:tackle",
     "1:tailwhip",
     "5:bite",
     "10:stuffcheeks",
-    "15:spitup",
     "15:stockpile",
     "15:swallow",
+    "15:spitup",
     "20:bodyslam",
     "25:rest",
     "30:counter",
@@ -43,7 +76,6 @@
     "egg:rollout",
     "tm:amnesia",
     "tm:assurance",
-    "tm:attract",
     "tm:bodyslam",
     "tm:brutalswing",
     "tm:bulletseed",
@@ -58,15 +90,15 @@
     "tm:gyroball",
     "tm:hypervoice",
     "tm:irontail",
+    "tm:lastresort",
     "tm:mudshot",
     "tm:mudslap",
     "tm:payback",
     "tm:protect",
     "tm:rest",
-    "tm:round",
+    "tm:rollout",
     "tm:seedbomb",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:substitute",
     "tm:superfang",
     "tm:tailslap",
@@ -74,13 +106,16 @@
     "tm:terablast",
     "tm:thief",
     "tm:trailblaze",
-    "tm:uproar"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.skwovet.desc"
+    "tutor:endeavor",
+    "tutor:hypervoice",
+    "tutor:irontail",
+    "tutor:lastresort",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:superfang"
   ],
   "evolutions": [
     {
@@ -98,34 +133,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 1,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 3,
-  "weight": 25,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:oran_berry",
-        "quantityRange": "0-1"
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

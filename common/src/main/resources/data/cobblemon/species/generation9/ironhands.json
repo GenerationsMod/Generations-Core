@@ -1,10 +1,26 @@
 {
-  "name": "Iron Hands",
+  "implemented": true,
   "nationalPokedexNumber": 992,
+  "name": "Iron Hands",
   "primaryType": "fighting",
   "secondaryType": "electric",
+  "maleRatio": -1,
+  "height": 18,
+  "weight": 3807,
+  "pokedex": [
+    "cobblemon.species.ironhands.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 154,
@@ -14,10 +30,6 @@
     "special_defence": 68,
     "speed": 50
   },
-  "catchRate": 50,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -26,17 +38,17 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 50,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:armthrust",
-    "1:electricterrain",
-    "1:focusenergy",
     "1:sandattack",
     "1:tackle",
+    "1:focusenergy",
+    "1:armthrust",
+    "1:electricterrain",
     "7:fakeout",
     "14:whirlwind",
     "21:thunderpunch",
@@ -65,6 +77,7 @@
     "tm:firepunch",
     "tm:fling",
     "tm:focusblast",
+    "tm:focusenergy",
     "tm:focuspunch",
     "tm:gigaimpact",
     "tm:hardpress",
@@ -94,19 +107,26 @@
     "tm:thunderbolt",
     "tm:thunderpunch",
     "tm:voltswitch",
-    "tm:wildcharge"
+    "tm:wildcharge",
+    "tutor:bulldoze",
+    "tutor:drainpunch",
+    "tutor:firepunch",
+    "tutor:focusenergy",
+    "tutor:focuspunch",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:icepunch",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:lowkick",
+    "tutor:playrough",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:thunderbolt",
+    "tutor:thunderpunch",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 18,
-  "weight": 3807,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.ironhands.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

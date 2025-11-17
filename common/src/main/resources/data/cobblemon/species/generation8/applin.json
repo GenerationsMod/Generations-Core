@@ -1,12 +1,27 @@
 {
-  "name": "Applin",
+  "implemented": true,
   "nationalPokedexNumber": 840,
+  "name": "Applin",
   "primaryType": "grass",
   "secondaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 2,
+  "weight": 5,
+  "pokedex": [
+    "cobblemon.species.applin.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "ripen",
     "gluttony",
     "h:bulletproof"
+  ],
+  "eggGroups": [
+    "grass",
+    "dragon"
   ],
   "baseStats": {
     "hp": 40,
@@ -16,77 +31,6 @@
     "special_defence": 40,
     "speed": 20
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 52,
-  "experienceGroup": "erratic",
-  "eggCycles": 20,
-  "eggGroups": [
-    "grass",
-    "dragon"
-  ],
-  "moves": [
-    "1:astonish",
-    "1:withdraw",
-    "egg:defensecurl",
-    "egg:recycle",
-    "egg:rollout",
-    "egg:suckerpunch",
-    "tm:attract",
-    "tm:pounce",
-    "tm:terablast",
-    "tutor:dracometeor",
-    "tutor:grassyglide"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.applin.desc"
-  ],
-  "evolutions": [
-    {
-      "id": "applin_flapple",
-      "variant": "item_interact",
-      "result": "flapple",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "wingattack"
-      ],
-      "requirements": [],
-      "requiredContext": "cobblemon:tart_apple"
-    },
-    {
-      "id": "applin_appletun",
-      "variant": "item_interact",
-      "result": "appletun",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "headbutt"
-      ],
-      "requirements": [],
-      "requiredContext": "cobblemon:sweet_apple"
-    },
-    {
-      "id": "applin_dipplin",
-      "variant": "item_interact",
-      "result": "dipplin",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "doublehit"
-      ],
-      "requirements": [],
-      "requiredContext": "generations_core:syrupy_apple"
-    }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -95,10 +39,24 @@
     "special_defence": 0,
     "speed": 0
   },
-  "height": 2,
-  "weight": 5,
-  "aspects": [],
-  "cannotDynamax": false,
+  "baseExperienceYield": 52,
+  "experienceGroup": "erratic",
+  "catchRate": 255,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canBreatheUnderwater": true
+      }
+    }
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -111,5 +69,55 @@
       }
     ]
   },
-  "implemented": true
+  "moves": [
+    "1:withdraw",
+    "1:astonish",
+    "egg:defensecurl",
+    "egg:recycle",
+    "egg:rollout",
+    "egg:suckerpunch",
+    "tm:pounce",
+    "tm:recycle",
+    "tm:rollout",
+    "tm:suckerpunch",
+    "tm:terablast",
+    "tutor:recycle",
+    "tutor:rollout",
+    "tutor:suckerpunch"
+  ],
+  "evolutions": [
+    {
+      "id": "applin_flapple",
+      "variant": "item_interact",
+      "result": "flapple",
+      "consumeHeldItem": true,
+      "learnableMoves": [
+        "wingattack"
+      ],
+      "requirements": [],
+      "requiredContext": "cobblemon:tart_apple"
+    },
+    {
+      "id": "applin_appletun",
+      "variant": "item_interact",
+      "result": "appletun",
+      "consumeHeldItem": true,
+      "learnableMoves": [
+        "headbutt"
+      ],
+      "requirements": [],
+      "requiredContext": "cobblemon:sweet_apple"
+    },
+    {
+      "id": "applin_dipplin",
+      "variant": "item_interact",
+      "result": "dipplin",
+      "consumeHeldItem": true,
+      "learnableMoves": [
+        "doublehit"
+      ],
+      "requirements": [],
+      "requiredContext": "cobblemon:syrupy_apple"
+    }
+  ]
 }

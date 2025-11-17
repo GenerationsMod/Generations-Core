@@ -1,12 +1,28 @@
 {
-  "name": "Mr. Rime",
+  "implemented": true,
   "nationalPokedexNumber": 866,
+  "name": "Mr. Rime",
   "primaryType": "ice",
   "secondaryType": "psychic",
+  "maleRatio": 0.5,
+  "height": 15,
+  "weight": 582,
+  "pokedex": [
+    "cobblemon.species.mrrime.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [
+    "galarian"
+  ],
   "abilities": [
     "tangledfeet",
     "screencleaner",
     "h:icebody"
+  ],
+  "eggGroups": [
+    "human_like"
   ],
   "baseStats": {
     "hp": 80,
@@ -16,35 +32,58 @@
     "special_defence": 100,
     "speed": 70
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 182,
   "experienceGroup": "medium_fast",
+  "catchRate": 45,
   "eggCycles": 25,
-  "eggGroups": [
-    "human_like"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:aspear_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
   "moves": [
+    "1:faketears",
+    "1:slackoff",
     "1:afteryou",
-    "1:batonpass",
     "1:block",
     "1:copycat",
-    "1:dazzlinggleam",
     "1:encore",
-    "1:faketears",
-    "1:iceshard",
-    "1:lightscreen",
+    "1:roleplay",
+    "1:protect",
+    "1:recycle",
     "1:mimic",
+    "1:lightscreen",
+    "1:reflect",
+    "1:safeguard",
+    "1:dazzlinggleam",
     "1:mistyterrain",
     "1:pound",
-    "1:protect",
     "1:rapidspin",
-    "1:recycle",
-    "1:reflect",
-    "1:roleplay",
-    "1:safeguard",
-    "1:slackoff",
+    "1:batonpass",
+    "1:iceshard",
+    "1:tickle",
+    "1:barrier",
+    "1:meditate",
+    "1:doubleslap",
     "12:confusion",
     "16:allyswitch",
     "20:icywind",
@@ -56,20 +95,30 @@
     "44:freezedry",
     "48:psychic",
     "52:teeterdance",
+    "egg:confuseray",
+    "egg:fakeout",
+    "egg:healingwish",
+    "egg:hypnosis",
+    "egg:powersplit",
+    "egg:tickle",
+    "egg:wakeupslap",
+    "tm:afteryou",
     "tm:allyswitch",
-    "tm:attract",
     "tm:avalanche",
     "tm:batonpass",
     "tm:blizzard",
+    "tm:block",
     "tm:bodyslam",
     "tm:brickbreak",
     "tm:calmmind",
     "tm:charm",
+    "tm:confuseray",
     "tm:dazzlinggleam",
     "tm:drainpunch",
     "tm:encore",
     "tm:endure",
     "tm:energyball",
+    "tm:expandingforce",
     "tm:facade",
     "tm:faketears",
     "tm:fling",
@@ -97,72 +146,71 @@
     "tm:payback",
     "tm:powerswap",
     "tm:protect",
+    "tm:psybeam",
     "tm:psychic",
     "tm:psychicterrain",
     "tm:psyshock",
     "tm:raindance",
+    "tm:recycle",
     "tm:reflect",
     "tm:rest",
-    "tm:round",
+    "tm:roleplay",
     "tm:safeguard",
     "tm:screech",
     "tm:shadowball",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:solarbeam",
     "tm:stompingtantrum",
     "tm:storedpower",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:taunt",
+    "tm:terablast",
     "tm:thief",
     "tm:thunder",
     "tm:thunderbolt",
     "tm:thunderwave",
     "tm:trick",
     "tm:trickroom",
+    "tm:tripleaxel",
     "tm:uproar",
     "tm:wonderroom",
     "tm:zenheadbutt",
+    "tutor:afteryou",
+    "tutor:allyswitch",
+    "tutor:block",
+    "tutor:calmmind",
+    "tutor:dazzlinggleam",
+    "tutor:drainpunch",
+    "tutor:energyball",
     "tutor:expandingforce",
-    "tutor:tripleaxel"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.mrrime.desc"
+    "tutor:foulplay",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:irondefense",
+    "tutor:magicroom",
+    "tutor:psychic",
+    "tutor:recycle",
+    "tutor:rest",
+    "tutor:roleplay",
+    "tutor:shadowball",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:suckerpunch",
+    "tutor:thunderbolt",
+    "tutor:trick",
+    "tutor:tripleaxel",
+    "tutor:uproar",
+    "tutor:wonderroom",
+    "tutor:zenheadbutt"
   ],
   "preEvolution": "mrmime galarian",
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 3,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 15,
-  "weight": 582,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:aspear_berry",
-        "percentage": 10.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

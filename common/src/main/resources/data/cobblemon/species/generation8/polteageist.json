@@ -1,10 +1,27 @@
 {
-  "name": "Polteageist",
+  "implemented": true,
   "nationalPokedexNumber": 855,
+  "name": "Polteageist",
   "primaryType": "ghost",
+  "maleRatio": -1,
+  "height": 2,
+  "weight": 4,
+  "pokedex": [
+    "cobblemon.species.polteageist.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [
+    "phony"
+  ],
   "abilities": [
     "weakarmor",
     "h:cursedbody"
+  ],
+  "eggGroups": [
+    "mineral",
+    "amorphous"
   ],
   "baseStats": {
     "hp": 60,
@@ -14,71 +31,44 @@
     "special_defence": 114,
     "speed": 70
   },
-  "catchRate": 60,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Antique",
-      "primaryType": "ghost",
-      "abilities": [
-        "weakarmor",
-        "h:cursedbody"
-      ],
-      "baseStats": {
-        "hp": 60,
-        "attack": 65,
-        "defence": 65,
-        "special_attack": 134,
-        "special_defence": 114,
-        "speed": 70
-      },
-      "catchRate": 60,
-      "maleRatio": -1,
-      "baseExperienceYield": 178,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 2,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 20,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen8"
-      ],
-      "aspects": [
-        "antique"
-      ],
-      "height": 2,
-      "weight": 4,
-      "preEvolution": "sinistea antique",
-      "cannotDynamax": false,
-      "battleOnly": false
-    }
-  ],
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 178,
   "experienceGroup": "medium_fast",
+  "catchRate": 60,
   "eggCycles": 20,
-  "eggGroups": [
-    "mineral",
-    "amorphous"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:spell_tag",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:aromaticmist",
-    "1:astonish",
-    "1:megadrain",
+    "1:teatime",
     "1:strengthsap",
+    "1:astonish",
     "1:withdraw",
+    "1:aromaticmist",
+    "1:megadrain",
+    "1:aromatherapy",
     "18:protect",
     "24:suckerpunch",
-    "30:aromatherapy",
     "30:sweetscent",
     "36:gigadrain",
     "42:nastyplot",
@@ -86,6 +76,7 @@
     "54:memento",
     "60:shellsmash",
     "66:curse",
+    "egg:allyswitch",
     "tm:allyswitch",
     "tm:batonpass",
     "tm:calmmind",
@@ -115,57 +106,60 @@
     "tm:psyshock",
     "tm:reflect",
     "tm:rest",
-    "tm:round",
     "tm:selfdestruct",
     "tm:shadowball",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:spite",
     "tm:storedpower",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:terablast",
     "tm:trick",
     "tm:trickroom",
     "tm:willowisp",
     "tm:wonderroom",
-    "tutor:poltergeist"
+    "tutor:allyswitch",
+    "tutor:calmmind",
+    "tutor:darkpulse",
+    "tutor:foulplay",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:magicalleaf",
+    "tutor:painsplit",
+    "tutor:poltergeist",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:spite",
+    "tutor:suckerpunch",
+    "tutor:trick",
+    "tutor:wonderroom"
   ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.polteageist.desc"
-  ],
-  "preEvolution": "sinistea",
+  "preEvolution": "sinistea tea_authenticity=phony",
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 2,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 2,
-  "weight": 4,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:spell_tag",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "forms": [
+    {
+      "name": "Antique",
+      "primaryType": "ghost",
+      "maleRatio": -1,
+      "height": 2,
+      "weight": 4,
+      "pokedex": [
+        "cobblemon.species.polteageist-antique.desc"
+      ],
+      "labels": [
+        "gen8"
+      ],
+      "aspects": [
+        "antique"
+      ],
+      "preEvolution": "sinistea tea_authenticity=antique",
+      "evolutions": [],
+      "battleOnly": false
+    }
+  ]
 }

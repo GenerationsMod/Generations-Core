@@ -1,10 +1,26 @@
 {
-  "name": "Iron Valiant",
+  "implemented": true,
   "nationalPokedexNumber": 1006,
+  "name": "Iron Valiant",
   "primaryType": "fairy",
   "secondaryType": "fighting",
+  "maleRatio": -1,
+  "height": 14,
+  "weight": 350,
+  "pokedex": [
+    "cobblemon.species.ironvaliant.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 74,
@@ -14,10 +30,6 @@
     "special_defence": 60,
     "speed": 116
   },
-  "catchRate": 10,
-  "maleRatio": -1,
-  "baseExperienceYield": 295,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -26,17 +38,17 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 295,
   "experienceGroup": "slow",
+  "catchRate": 10,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
     "1:disable",
     "1:doubleteam",
-    "1:electricterrain",
-    "1:furycutter",
     "1:shadowsneak",
+    "1:furycutter",
+    "1:electricterrain",
     "7:hypnosis",
     "14:feint",
     "21:futuresight",
@@ -48,8 +60,8 @@
     "63:closecombat",
     "70:knockoff",
     "77:destinybond",
-    "84:quickguard",
     "84:wideguard",
+    "84:quickguard",
     "91:spiritbreak",
     "tm:aerialace",
     "tm:agility",
@@ -61,6 +73,7 @@
     "tm:coaching",
     "tm:confuseray",
     "tm:dazzlinggleam",
+    "tm:doubleteam",
     "tm:drainpunch",
     "tm:electricterrain",
     "tm:encore",
@@ -71,6 +84,7 @@
     "tm:firepunch",
     "tm:fling",
     "tm:focusblast",
+    "tm:furycutter",
     "tm:futuresight",
     "tm:gigaimpact",
     "tm:grassknot",
@@ -82,6 +96,7 @@
     "tm:icywind",
     "tm:imprison",
     "tm:knockoff",
+    "tm:leafblade",
     "tm:lightscreen",
     "tm:liquidation",
     "tm:lowkick",
@@ -93,6 +108,7 @@
     "tm:psybeam",
     "tm:psychic",
     "tm:psychicterrain",
+    "tm:psychocut",
     "tm:psychup",
     "tm:psyshock",
     "tm:reflect",
@@ -116,19 +132,44 @@
     "tm:trickroom",
     "tm:vacuumwave",
     "tm:xscissor",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:aerialace",
+    "tutor:calmmind",
+    "tutor:chargebeam",
+    "tutor:coaching",
+    "tutor:dazzlinggleam",
+    "tutor:drainpunch",
+    "tutor:energyball",
+    "tutor:expandingforce",
+    "tutor:falseswipe",
+    "tutor:firepunch",
+    "tutor:furycutter",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:knockoff",
+    "tutor:liquidation",
+    "tutor:lowkick",
+    "tutor:magicalleaf",
+    "tutor:poisonjab",
+    "tutor:psychic",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:throatchop",
+    "tutor:thunderbolt",
+    "tutor:thunderpunch",
+    "tutor:trick",
+    "tutor:vacuumwave",
+    "tutor:xscissor",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 14,
-  "weight": 350,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.ironvaliant.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

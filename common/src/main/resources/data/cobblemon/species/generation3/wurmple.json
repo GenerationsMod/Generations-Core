@@ -1,10 +1,24 @@
 {
-  "name": "Wurmple",
+  "implemented": true,
   "nationalPokedexNumber": 265,
+  "name": "Wurmple",
   "primaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 36,
+  "pokedex": [
+    "cobblemon.species.wurmple.desc"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
   "abilities": [
     "shielddust",
     "h:runaway"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 45,
@@ -14,67 +28,6 @@
     "special_defence": 30,
     "speed": 20
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 56,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
-  "moves": [
-    "1:stringshot",
-    "1:tackle",
-    "5:poisonsting",
-    "15:bugbite",
-    "tutor:bugbite",
-    "tutor:electroweb",
-    "tutor:poisonsting",
-    "tutor:snore",
-    "tutor:stringshot"
-  ],
-  "labels": [
-    "gen3"
-  ],
-  "pokedex": [
-    "cobblemon.species.wurmple.desc"
-  ],
-  "evolutions": [
-    {
-      "id": "wurmple_silcoon",
-      "variant": "level_up",
-      "result": "silcoon",
-      "consumeHeldItem": false,
-      "learnableMoves": [],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 7
-        }
-      ]
-    },
-    {
-      "id": "wurmple_cascoon",
-      "variant": "level_up",
-      "result": "cascoon",
-      "consumeHeldItem": false,
-      "learnableMoves": [],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 7
-        }
-      ]
-    }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
   "evYield": {
     "hp": 1,
     "attack": 0,
@@ -83,10 +36,17 @@
     "special_defence": 0,
     "speed": 0
   },
-  "height": 3,
-  "weight": 36,
-  "aspects": [],
-  "cannotDynamax": false,
+  "baseExperienceYield": 56,
+  "experienceGroup": "medium_fast",
+  "catchRate": 255,
+  "eggCycles": 15,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -100,5 +60,59 @@
       }
     ]
   },
-  "implemented": true
+  "moves": [
+    "1:tackle",
+    "1:stringshot",
+    "5:poisonsting",
+    "15:bugbite",
+    "tm:bugbite",
+    "tm:electroweb",
+    "tm:skittersmack",
+    "tm:stringshot",
+    "tm:terablast",
+    "tutor:bugbite",
+    "tutor:electroweb",
+    "tutor:skittersmack",
+    "tutor:stringshot"
+  ],
+  "evolutions": [
+    {
+      "id": "wurmple_silcoon",
+      "variant": "level_up",
+      "result": "silcoon",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "harden"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 7
+        },
+        {
+          "variant": "properties",
+          "target": "wurmple cocoon_species=silcoon"
+        }
+      ]
+    },
+    {
+      "id": "wurmple_cascoon",
+      "variant": "level_up",
+      "result": "cascoon",
+      "consumeHeldItem": false,
+      "learnableMoves": [
+        "harden"
+      ],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 7
+        },
+        {
+          "variant": "properties",
+          "target": "wurmple cocoon_species=cascoon"
+        }
+      ]
+    }
+  ]
 }

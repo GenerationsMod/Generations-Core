@@ -1,12 +1,27 @@
 {
-  "name": "Drednaw",
+  "implemented": true,
   "nationalPokedexNumber": 834,
+  "name": "Drednaw",
   "primaryType": "water",
   "secondaryType": "rock",
+  "maleRatio": 0.5,
+  "height": 10,
+  "weight": 1155,
+  "pokedex": [
+    "cobblemon.species.drednaw.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "strongjaw",
     "shellarmor",
     "h:swiftswim"
+  ],
+  "eggGroups": [
+    "monster",
+    "water_1"
   ],
   "baseStats": {
     "hp": 90,
@@ -16,81 +31,68 @@
     "special_defence": 68,
     "speed": 74
   },
-  "catchRate": 75,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "water",
-      "secondaryType": "rock",
-      "abilities": [
-        "strongjaw",
-        "shellarmor",
-        "h:swiftswim"
-      ],
-      "baseStats": {
-        "hp": 90,
-        "attack": 115,
-        "defence": 90,
-        "special_attack": 48,
-        "special_defence": 68,
-        "speed": 74
-      },
-      "catchRate": 75,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 170,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 2,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "water_1"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 240,
-      "weight": 0,
-      "cannotDynamax": false,
-      "battleOnly": false
-    }
-  ],
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 170,
   "experienceGroup": "medium_fast",
+  "catchRate": 75,
   "eggCycles": 20,
-  "eggGroups": [
-    "monster",
-    "water_1"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:turtle_scute",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:bite",
-    "1:crunch",
-    "1:protect",
+    "1:rocktomb",
     "1:razorshell",
+    "1:crunch",
     "1:rockpolish",
     "1:tackle",
     "1:watergun",
+    "1:bite",
+    "1:protect",
     "21:headbutt",
     "30:counter",
     "39:jawlock",
     "48:liquidation",
     "57:bodyslam",
     "66:headsmash",
+    "egg:dragontail",
+    "egg:gastroacid",
+    "egg:shellsmash",
+    "egg:skullbash",
     "tm:assurance",
-    "tm:attract",
     "tm:blizzard",
     "tm:bodypress",
     "tm:bodyslam",
@@ -106,7 +108,9 @@
     "tm:endure",
     "tm:facade",
     "tm:falseswipe",
+    "tm:gastroacid",
     "tm:gigaimpact",
+    "tm:headbutt",
     "tm:highhorsepower",
     "tm:hydropump",
     "tm:hyperbeam",
@@ -128,17 +132,15 @@
     "tm:rest",
     "tm:revenge",
     "tm:rockblast",
+    "tm:rockpolish",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
     "tm:sandstorm",
     "tm:sandtomb",
-    "tm:scald",
     "tm:scaryface",
     "tm:skittersmack",
     "tm:sleeptalk",
     "tm:smartstrike",
-    "tm:snore",
     "tm:stealthrock",
     "tm:stompingtantrum",
     "tm:stoneedge",
@@ -153,49 +155,57 @@
     "tm:waterfall",
     "tm:waterpulse",
     "tm:whirlpool",
+    "tutor:bulldoze",
+    "tutor:dive",
+    "tutor:earthpower",
+    "tutor:falseswipe",
+    "tutor:gastroacid",
+    "tutor:gigaimpact",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icefang",
+    "tutor:irondefense",
+    "tutor:irontail",
+    "tutor:liquidation",
+    "tutor:megahorn",
     "tutor:meteorbeam",
-    "tutor:scaleshot",
-    "tutor:skittersmack"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.drednaw.desc"
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:superfang",
+    "tutor:superpower",
+    "tutor:throatchop",
+    "tutor:waterpulse"
   ],
   "preEvolution": "chewtle",
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 2,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 10,
-  "weight": 1155,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:rindo_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "water",
+      "secondaryType": "rock",
+      "maleRatio": 0.5,
+      "height": 240,
+      "weight": 0,
+      "pokedex": [
+        "cobblemon.species.drednaw-gmax.desc"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true
+    }
+  ]
 }

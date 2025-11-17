@@ -1,12 +1,27 @@
 {
-  "name": "Skiploom",
+  "implemented": true,
   "nationalPokedexNumber": 188,
+  "name": "Skiploom",
   "primaryType": "grass",
   "secondaryType": "flying",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 10,
+  "pokedex": [
+    "cobblemon.species.skiploom.desc"
+  ],
+  "labels": [
+    "gen2"
+  ],
+  "aspects": [],
   "abilities": [
     "chlorophyll",
     "leafguard",
     "h:infiltrator"
+  ],
+  "eggGroups": [
+    "fairy",
+    "grass"
   ],
   "baseStats": {
     "hp": 55,
@@ -16,48 +31,74 @@
     "special_defence": 65,
     "speed": 80
   },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
   "baseExperienceYield": 119,
   "experienceGroup": "medium_slow",
+  "catchRate": 120,
   "eggCycles": 20,
-  "eggGroups": [
-    "fairy",
-    "grass"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:sunflower"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:absorb",
     "1:splash",
     "1:synthesis",
     "1:tailwhip",
+    "1:absorb",
     "8:tackle",
     "10:fairywind",
     "12:poisonpowder",
-    "12:sleeppowder",
     "12:stunspore",
+    "12:sleeppowder",
     "15:bulletseed",
     "20:leechseed",
     "24:megadrain",
     "28:acrobatics",
     "31:cottonspore",
     "34:uturn",
-    "36:ragepowder",
     "37:gigadrain",
     "41:bounce",
     "44:memento",
-    "48:worryseed",
+    "egg:aromatherapy",
+    "egg:confusion",
+    "egg:cottonguard",
+    "egg:encore",
+    "egg:grassyterrain",
+    "egg:ragepowder",
+    "egg:seedbomb",
+    "egg:strengthsap",
+    "egg:switcheroo",
+    "egg:worryseed",
     "tm:acrobatics",
     "tm:aerialace",
-    "tm:attract",
     "tm:batonpass",
+    "tm:bounce",
     "tm:bulletseed",
-    "tm:captivate",
     "tm:charm",
-    "tm:confide",
     "tm:dazzlinggleam",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:encore",
     "tm:endeavor",
     "tm:endure",
@@ -65,86 +106,51 @@
     "tm:facade",
     "tm:flash",
     "tm:fling",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:grassknot",
     "tm:grassyterrain",
+    "tm:headbutt",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:infestation",
     "tm:leafstorm",
     "tm:lightscreen",
     "tm:lunge",
     "tm:magicalleaf",
-    "tm:naturalgift",
+    "tm:payday",
     "tm:pollenpuff",
     "tm:protect",
-    "tm:psychup",
     "tm:raindance",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
-    "tm:round",
-    "tm:secretpower",
     "tm:seedbomb",
     "tm:silverwind",
     "tm:sleeptalk",
     "tm:solarbeam",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swordsdance",
+    "tm:synthesis",
     "tm:tailwind",
     "tm:takedown",
     "tm:terablast",
     "tm:thief",
-    "tm:toxic",
     "tm:trailblaze",
     "tm:uturn",
-    "tutor:attract",
+    "tm:worryseed",
+    "tutor:aerialace",
     "tutor:bounce",
-    "tutor:cottonspore",
-    "tutor:curse",
-    "tutor:defensecurl",
-    "tutor:doubleedge",
-    "tutor:doubleteam",
-    "tutor:endure",
-    "tutor:flash",
-    "tutor:frustration",
+    "tutor:dazzlinggleam",
+    "tutor:endeavor",
+    "tutor:energyball",
     "tutor:gigadrain",
-    "tutor:headbutt",
     "tutor:helpinghand",
-    "tutor:hiddenpower",
-    "tutor:leechseed",
-    "tutor:megadrain",
-    "tutor:mimic",
-    "tutor:poisonpowder",
-    "tutor:protect",
+    "tutor:magicalleaf",
     "tutor:rest",
-    "tutor:return",
     "tutor:seedbomb",
-    "tutor:sleeppowder",
     "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:solarbeam",
-    "tutor:splash",
-    "tutor:stunspore",
-    "tutor:substitute",
-    "tutor:sunnyday",
-    "tutor:swagger",
-    "tutor:sweetscent",
-    "tutor:swordsdance",
     "tutor:synthesis",
-    "tutor:tackle",
-    "tutor:tailwhip",
-    "tutor:toxic",
+    "tutor:tailwind",
     "tutor:worryseed"
-  ],
-  "labels": [
-    "gen2"
-  ],
-  "pokedex": [
-    "cobblemon.species.skiploom.desc"
   ],
   "preEvolution": "hoppip",
   "evolutions": [
@@ -161,37 +167,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 2
-  },
-  "height": 6,
-  "weight": 10,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:sunflower"
-      },
-      {
-        "item": "cobblemon:yache_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

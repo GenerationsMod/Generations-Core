@@ -1,10 +1,24 @@
 {
-  "name": "Rellor",
+  "implemented": true,
   "nationalPokedexNumber": 953,
+  "name": "Rellor",
   "primaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 2,
+  "weight": 10,
+  "pokedex": [
+    "cobblemon.species.rellor.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "compoundeyes",
     "h:shedskin"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 41,
@@ -14,10 +28,6 @@
     "special_defence": 58,
     "speed": 30
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 54,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,14 +36,22 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 54,
   "experienceGroup": "fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "minecraft:mud"
+      }
+    ]
+  },
   "moves": [
-    "1:defensecurl",
     "1:tackle",
+    "1:defensecurl",
     "4:sandattack",
     "7:strugglebug",
     "11:rollout",
@@ -48,6 +66,7 @@
     "egg:weatherball",
     "tm:bugbite",
     "tm:bugbuzz",
+    "tm:cosmicpower",
     "tm:dig",
     "tm:endure",
     "tm:facade",
@@ -62,6 +81,7 @@
     "tm:protect",
     "tm:rest",
     "tm:rocktomb",
+    "tm:rollout",
     "tm:skittersmack",
     "tm:sleeptalk",
     "tm:sludgebomb",
@@ -71,14 +91,19 @@
     "tm:terablast",
     "tm:thief",
     "tm:weatherball",
-    "tm:xscissor"
+    "tm:xscissor",
+    "tutor:bugbite",
+    "tutor:gunkshot",
+    "tutor:irondefense",
+    "tutor:leechlife",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:xscissor"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 2,
-  "weight": 10,
   "evolutions": [
     {
       "id": "rellor_rabsca",
@@ -95,18 +120,5 @@
         }
       ]
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.rellor.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "minecraft:mud"
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }
