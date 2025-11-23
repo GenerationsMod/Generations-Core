@@ -57,7 +57,7 @@ dependencies {
 
 //    modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-fabric-1.21.1", version = "0.0.7")
 
-    modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}")
+    modRuntimeOnly("mcp.mobius.waila:wthit:fabric-${project.properties["WTHIT"]}+")
     modRuntimeOnly("lol.bai:badpackets:fabric-${project.properties["badPackets"]}")
 
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:${project.properties["rei"]}")
@@ -81,7 +81,14 @@ tasks {
         inputs.property("version", project.version)
 
         filesMatching("fabric.mod.json") {
-            expand(mapOf("version" to project.version))
+            expand(mapOf(
+                "version" to project.version,
+                "fabricloader" to project.properties["fabric_loader_version"],
+                "minecraft" to project.properties["minecraft_version"],
+                "cobblemon" to project.properties["cobblemon_version"],
+                "wthit" to project.properties["WTHIT"],
+                "description" to project.properties["description"]
+            ))
         }
 
         from(rootProject.file("common/src/main/resources")) {

@@ -74,7 +74,7 @@ configurations {
             ) { isTransitive = false })!!
 
         modCompileOnly("mcp.mobius.waila:wthit-api:neo-${project.properties["WTHIT"]}")
-        modRuntimeOnly("mcp.mobius.waila:wthit:neo-${project.properties["WTHIT"]}")
+        modRuntimeOnly("mcp.mobius.waila:wthit:neo-${project.properties["WTHIT"]}+")
         modRuntimeOnly("lol.bai:badpackets:neo-${project.properties["badPackets"]}")
 
 //        modLocalRuntime("curse.maven:spit-it-out-857141:4888754")
@@ -105,7 +105,14 @@ tasks {
         inputs.property("version", project.version)
 
         filesMatching("META-INF/neoforge.mods.toml") {
-            expand(mapOf("version" to project.version))
+            expand(mutableMapOf(
+                "version" to project.version,
+                "neoforge" to project.properties["neoforge_version"],
+                "minecraft" to project.properties["minecraft_version"],
+                "cobblemon" to project.properties["cobblemon_version"],
+                "wthit" to project.properties["WTHIT"],
+                "description" to project.properties["description"]
+            ))
         }
     }
 

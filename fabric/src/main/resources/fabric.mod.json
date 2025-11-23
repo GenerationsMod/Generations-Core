@@ -3,7 +3,7 @@
   "id": "generations_core",
   "version": "${version}",
   "name": "Generations-Core",
-  "description": "",
+  "description": "${description}",
   "authors": ["Joseph T. McQuigg (JT122406)", "Waterpicker"],
   "contributors": ["Greg_lor, Hydos, Dysthymic"],
   "icon": "generations.png",
@@ -40,12 +40,12 @@
     "GenerationsCore-common.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.15.3",
-    "minecraft": ">=1.21.1",
-    "cobblemon": "=1.6.1+1.21.1"
+    "fabricloader": ">=${fabricloader}",
+    "minecraft": ">=${minecraft}",
+    "cobblemon": "=${cobblemon}"
   },
   "suggests": {
-    "wthit": ">=8.15.0"
+    "wthit": ">=${wthit}"
   },
   "custom": {
     "catalogue": {
