@@ -34,7 +34,7 @@ object GenerationsArchitecturyEvents {
 
         CobblemonEvents.ENTITY_SPAWN.subscribe { //TODO: add exceptions and maybe a scarcrow tag
             val entity = it.entity
-            val level = it.ctx.world
+            val level = it.spawnablePosition.world
             if(entity.type == CobblemonEntities.POKEMON || entity.type == GenerationsEntities.ZYGARDE_CELL) {
 
                 val list = RegiShrineBlock.Companion.searchForBlock(

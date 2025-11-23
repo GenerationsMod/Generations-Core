@@ -14,6 +14,7 @@ import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -23,10 +24,10 @@ public class PixelmonSelectionWidget extends AbstractButton {
 
     private static final Minecraft minecraft = Minecraft.getInstance();
     private static final ResourceLocation TEXTURE = GenerationsCore.id("textures/gui/npc/customization.png");
-    private final List<PixelmonWidgetData> registeredPixelmon = PokemonSpecies.INSTANCE.getImplemented().stream()
+    private final List<PixelmonWidgetData> registeredPixelmon = PokemonSpecies.getImplemented().stream()
             .map(Species::getForms)
             .flatMap(Collection::stream)
-            .map(a -> new RenderablePokemon(a.species, new HashSet<>(a.getAspects())))
+            .map(a -> new RenderablePokemon(a.species, new HashSet<>(a.getAspects()), ItemStack.EMPTY))
             .map(PixelmonWidgetData::new)
             .sorted(Comparator.comparing(PixelmonWidgetData::getName)).toList();
 

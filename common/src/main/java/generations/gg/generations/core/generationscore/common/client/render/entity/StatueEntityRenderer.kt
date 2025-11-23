@@ -5,8 +5,8 @@ import com.cobblemon.mod.common.client.render.ModelLayer
 import com.cobblemon.mod.common.client.render.ModelTextureSupplier
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableEntityModel
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
@@ -44,7 +44,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
     ) {
         val renderable = entity.renderablePokemon() ?: return
         val state = entity.delegate as StatueClientDelegate
-        val model = PokemonModelRepository.getPoser(renderable.species.resourceIdentifier, state)
+        val model = VaryingModelRepository.getPoser(renderable.species.resourceIdentifier, state)
         this.model.posableModel = model
         model.context = this.model.context
         this.model.setupEntityTypeContext(entity)
@@ -64,7 +64,8 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
                 ?: model.getLayer(
                     getTextureLocation(entity),
                     emissive = false,
-                    translucent = false
+                    translucent = false,
+                    translucentCull = false
                 )
         )
 
@@ -73,7 +74,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         model.setLayerContext(
             buffer,
             state,
-            if (material == null) PokemonModelRepository.getLayers(
+            if (material == null) VaryingModelRepository.getLayers(
                 renderable.species.resourceIdentifier,
                 state
             ) else layerList
@@ -110,7 +111,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
 
         val renderable = entity.renderablePokemon() ?: return MissingTextureAtlasSprite.getLocation()
 
-        return PokemonModelRepository.getTexture(renderable.species.resourceIdentifier, entity.delegate as StatueClientDelegate)
+        return VaryingModelRepository.getTexture(renderable.species.resourceIdentifier, entity.delegate as StatueClientDelegate)
     }
 
     override fun shouldShowName(entity: StatueEntity): Boolean {

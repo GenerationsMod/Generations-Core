@@ -49,7 +49,7 @@ class GenerationsDataProvider : DataProvider {
         }
     }
 
-    override fun <T : DataRegistry> register(registry: T): T {
+    override fun <T : DataRegistry> register(registry: T, reloadable: Boolean /* TODO: Look up hwo cobblemon does this and if we need thsi still.*/): T {
         registries.add(registry)
         GenerationsCore.LOGGER.info("Registered the {} registry", registry.id)
         GenerationsCore.LOGGER.debug("Registered the {} registry of class {}", registry.id, registry.javaClass.canonicalName)

@@ -1,10 +1,9 @@
 package generations.gg.generations.core.generationscore.forge.datagen.generators.lang
 
-import com.cobblemon.mod.common.api.berry.Flavor
+import com.cobblemon.mod.common.api.cooking.Flavour
 import com.cobblemon.mod.common.util.asResource
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
-import generations.gg.generations.core.generationscore.common.generationsResource
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.util.extensions.id
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
@@ -552,7 +551,7 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
             "Maximum amount of DNA fibers have been extracted from %s."
         )
 
-        for (flavor in Flavor.entries) {
+        for (flavor in Flavour.entries) {
             add(
                 "enum.flavor." + flavor.name.lowercase(Locale.getDefault()), this.getNameGens(
                     null, flavor.name.lowercase(

@@ -1,17 +1,9 @@
 package generations.gg.generations.core.generationscore.common.client.screen.statue
 
-import com.cobblemon.mod.common.api.pokemon.PokemonProperties.Companion.parse
-import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
-import com.cobblemon.mod.common.client.gui.summary.widgets.ModelWidget
-import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
 //import com.cobblemon.mod.common.client.render.models.blockbench.PoseableEntityState
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.api.pokemon.PokemonProperties.Companion.parse
+import com.cobblemon.mod.common.client.gui.summary.widgets.ModelWidget
 import com.cobblemon.mod.common.entity.PoseType
-import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
-import com.mojang.blaze3d.platform.Lighting
-import com.mojang.blaze3d.systems.RenderSystem
-import com.mojang.blaze3d.vertex.PoseStack
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.entity.StatueClientDelegate
 import generations.gg.generations.core.generationscore.common.client.screen.ScreenUtils
@@ -19,19 +11,13 @@ import generations.gg.generations.core.generationscore.common.client.screen.widg
 import generations.gg.generations.core.generationscore.common.client.screen.widget.ImageCheckbox
 import generations.gg.generations.core.generationscore.common.network.packets.statue.UpdateStatuePacket
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
-import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.AbstractWidget
 import net.minecraft.client.gui.components.Button
 import net.minecraft.client.gui.components.EditBox
 import net.minecraft.client.gui.screens.Screen
-import net.minecraft.client.renderer.LightTexture
-import net.minecraft.client.renderer.texture.OverlayTexture
 import net.minecraft.network.chat.Component
-import net.minecraft.resources.ResourceLocation
 import org.joml.Math
-import org.joml.Quaternionf
-import org.joml.Vector3f
 import java.util.*
 
 class StatueEditorScreen(val statue: StatueEntity) : Screen(Component.empty()) {

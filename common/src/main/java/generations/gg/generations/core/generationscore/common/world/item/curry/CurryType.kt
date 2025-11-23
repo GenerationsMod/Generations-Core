@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.world.item.curry
 
-import com.cobblemon.mod.common.api.berry.Flavor
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
-import generations.gg.generations.core.generationscore.common.util.StreamCodecs
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
 import net.minecraft.locale.Language
 import net.minecraft.network.RegistryFriendlyByteBuf
@@ -10,8 +8,6 @@ import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.StringRepresentable
-import java.util.*
-import java.util.function.Function
 import java.util.stream.Stream
 
 enum class CurryType(private val type: String, ingredient: String, haze: String, private val rarity: Int) :

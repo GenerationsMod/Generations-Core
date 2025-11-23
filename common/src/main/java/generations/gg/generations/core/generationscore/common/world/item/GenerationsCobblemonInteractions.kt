@@ -31,10 +31,6 @@ object GenerationsCobblemonInteractions {
 
         val isConsumed: Boolean
             get() = true
-
-        override fun consumeItem(player: ServerPlayer, stack: ItemStack, amount: Int) {
-            if(isConsumed) super.consumeItem(player, stack, amount)
-        }
     }
 
     fun process(entity: Entity, player: Player, stack: ItemStack): Boolean {

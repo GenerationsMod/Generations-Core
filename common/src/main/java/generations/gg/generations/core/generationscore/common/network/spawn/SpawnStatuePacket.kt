@@ -9,6 +9,7 @@ import generations.gg.generations.core.generationscore.common.util.readPokemonPr
 import generations.gg.generations.core.generationscore.common.util.writeNullableString
 import generations.gg.generations.core.generationscore.common.util.writePokemonProperties
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
+import net.minecraft.client.multiplayer.ClientLevel
 import net.minecraft.network.RegistryFriendlyByteBuf
 import net.minecraft.network.protocol.game.ClientboundAddEntityPacket
 import net.minecraft.world.entity.Entity
@@ -40,7 +41,10 @@ class SpawnStatuePacket(
         buffer.writeFloat(orientation)
     }
 
-    override fun applyData(entity: StatueEntity) {
+    override fun applyData(
+        entity: StatueEntity,
+        level: ClientLevel
+    ) {
         entity.properties = this.properties
         entity.label = label
         entity.scale = this.scale

@@ -1,10 +1,6 @@
 package generations.gg.generations.core.generationscore.common.mixin.datafix;
 
-import com.cobblemon.mod.common.api.berry.Flavor;
-import com.cobblemon.mod.common.pokemon.Pokemon;
-import com.mojang.datafixers.DataFixUtils;
-import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.DataResult;
+import com.cobblemon.mod.common.api.cooking.Flavour;
 import com.mojang.serialization.Dynamic;
 import generations.gg.generations.core.generationscore.common.datafixer.GenerationsDataFixUtils;
 import generations.gg.generations.core.generationscore.common.world.item.curry.CurryTasteRating;
@@ -15,13 +11,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 @Mixin({ItemStackComponentizationFix.class})
 public class ItemStackComponentizationFixMixin {
@@ -95,7 +86,7 @@ public class ItemStackComponentizationFixMixin {
     private static void fixCurry(ItemStackComponentizationFix.ItemStackData itemStackData, Dynamic<?> dynamic) {
         var curryData = dynamic.emptyMap();
         var flavorInt = itemStackData.removeTag("flavor").asInt(-1);
-        if(flavorInt > -1) curryData = curryData.set("flavor", dynamic.createString(Flavor.values()[flavorInt].name().toLowerCase()));
+        if(flavorInt > -1) curryData = curryData.set("flavor", dynamic.createString(Flavour.values()[flavorInt].name().toLowerCase()));
         curryData = curryData.set("type", dynamic.createString(CurryType.getEntries().get(itemStackData.removeTag("type").asInt(0)).getSerializedName()));
         curryData = curryData.set("experience", dynamic.createInt(itemStackData.removeTag("experience").asInt(0)));
         curryData = curryData.set("health_percentage", dynamic.createDouble(itemStackData.removeTag("healthPercentage").asDouble(0.0)));

@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.common.api.player
 
 import com.cobblemon.mod.common.Cobblemon
-import com.cobblemon.mod.common.api.berry.Flavor
+import com.cobblemon.mod.common.api.cooking.Flavour
 import com.cobblemon.mod.common.util.party
 import com.google.gson.JsonObject
 import com.mojang.serialization.Codec
@@ -71,7 +71,7 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
             }
         }
 
-    data class CurryDexEntry(var instant: Long, var pokemonName: String, var biome: ResourceKey<Biome>, var pos: BlockPos, var newEntry: Boolean = true, var type: CurryType= CurryType.None, var flavor: Flavor?, var rating: CurryTasteRating) {
+    data class CurryDexEntry(var instant: Long, var pokemonName: String, var biome: ResourceKey<Biome>, var pos: BlockPos, var newEntry: Boolean = true, var type: CurryType= CurryType.None, var flavor: Flavour?, var rating: CurryTasteRating) {
 
         companion object {
             @JvmField val CODEC: Codec<CurryDexEntry> = RecordCodecBuilder.create { instance ->
@@ -82,7 +82,7 @@ class CurryDex @JvmOverloads constructor(var entries: MutableList<CurryDexEntry>
                     BlockPos.CODEC.fieldOf("pos").forGetter { it.pos },
                     Codec.BOOL.fieldOf("newEntry").forGetter { it.newEntry },
                     StringRepresentable.fromEnum(CurryType::values).fieldOf("type").forGetter { it.type },
-                    Codec.STRING.xmap({it.uppercase()}, {it.lowercase()}).xmap({ Flavor.valueOf(it) }, { it.name }).nullableCodec().fieldOf("flavor").forGetter { it.flavor },
+                    Codec.STRING.xmap({it.uppercase()}, {it.lowercase()}).xmap({ Flavour.valueOf(it) }, { it.name }).nullableCodec().fieldOf("flavor").forGetter { it.flavor },
                     StringRepresentable.fromEnum(CurryTasteRating::values).fieldOf("rating").forGetter { it.rating },
                 ).apply(instance) { instant, pokemonName, biome, pos, newEntry, type, flavor, rating -> CurryDexEntry(instant, pokemonName, biome, pos, newEntry, type, flavor, rating) }
             }

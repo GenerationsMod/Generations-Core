@@ -3,13 +3,10 @@ package generations.gg.generations.core.generationscore.common.client.entity
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
-import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.PokemonPosableModel
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.entity.PosableEntity
 import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import generations.gg.generations.core.generationscore.common.client.render.CobblemonInstanceProvider
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.StatueInstance
 import generations.gg.generations.core.generationscore.common.world.entity.StatueSideDelegate
 import generations.gg.generations.core.generationscore.common.world.entity.statue.StatueEntity
@@ -42,7 +39,7 @@ class StatueClientDelegate(entity: StatueEntity) : StatueSideDelegate, PosableSt
 
         var species = properties.species?.asIdentifierDefaultingNamespace() ?: return
 
-        this.currentModel = PokemonModelRepository.getPoser(species, this)
+        this.currentModel = VaryingModelRepository.getPoser(species, this)
         currentModel!!.updateLocators(entity, this)
 
         val currentPoseType = entity.getCurrentPoseType()
@@ -55,7 +52,7 @@ class StatueClientDelegate(entity: StatueEntity) : StatueSideDelegate, PosableSt
 
         var species = properties.species?.asIdentifierDefaultingNamespace()
 
-        currentModel = species?.let { PokemonModelRepository.getPoser(it, this) }
+        currentModel = species?.let { VaryingModelRepository.getPoser(it, this) }
 
         if(currentModel != null) {
             this.currentAspects = properties.aspects

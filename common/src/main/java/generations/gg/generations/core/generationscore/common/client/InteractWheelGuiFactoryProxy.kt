@@ -13,6 +13,7 @@ import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.pokemon.interaction.PokemonInteractionGUICreationEvent
 import com.cobblemon.mod.common.client.CobblemonClient
 import com.cobblemon.mod.common.client.gui.interact.battleRequest.BattleConfigureGUI
+import com.cobblemon.mod.common.client.gui.interact.wheel.InteractTypePokemon
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelGUI
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
@@ -70,7 +71,7 @@ fun createPokemonInteractGui(pokemonID: UUID, canMountShoulder: Boolean, changeF
         tooltipText = "cobblemon.ui.interact.mount.shoulder",
         onPress = {
             if (canMountShoulder) {
-                InteractPokemonPacket(pokemonID, true).sendToServer()
+                InteractPokemonPacket(pokemonID, InteractTypePokemon.SHOULDER).sendToServer()
                 closeGUI()
             }
         }
@@ -79,7 +80,7 @@ fun createPokemonInteractGui(pokemonID: UUID, canMountShoulder: Boolean, changeF
         iconResource = cobblemonResource("textures/gui/interact/icon_held_item.png"),
         tooltipText = "cobblemon.ui.interact.give.item",
         onPress = {
-            InteractPokemonPacket(pokemonID, false).sendToServer()
+            InteractPokemonPacket(pokemonID, InteractTypePokemon.HELD_ITEM).sendToServer()
             closeGUI()
         }
     )
@@ -95,14 +96,14 @@ fun createPokemonInteractGui(pokemonID: UUID, canMountShoulder: Boolean, changeF
         }
     )
     val options: Multimap<Orientation, InteractWheelOption> = ArrayListMultimap.create()
-    options.put(Orientation.TOP_RIGHT, giveItem)
+    options.put(Orientation.NORTHWEST, giveItem)
     if (canMountShoulder) {
-        options.put(Orientation.TOP_LEFT, mountShoulder)
+        options.put(Orientation.NORTHEAST, mountShoulder)
     }
     if (changeFormData.first) {
-        options.put(Orientation.BOTTOM_RIGHT, changeForm)
+        options.put(Orientation.SOUTHEAST, changeForm)
     }
-    CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION.post(PokemonInteractionGUICreationEvent(pokemonID, canMountShoulder, options))
+    CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION.post(PokemonInteractionGUICreationEvent(pokemonID, canMountShoulder, true, false /* TOODO: is the items given cosmetic in thsi context? */, false /* TODO: I'm not even sure about this part. */, options))
     return InteractWheelGUI(options, Component.translatable("cobblemon.ui.interact.pokemon"))
 }
 

@@ -29,7 +29,7 @@ class DarkCrystalItem(block: Holder<Block>, properties: Properties) : BlockItemW
                         "generations_core.special.shadow.success".asTranslated(entity.name.string),
                         false
                     )
-                    consumeItem(player, stack)
+                    stack.consume(1, player)
                 } else {
                     player.displayClientMessage(
                         "generations_core.special.shadow.failure".asTranslated(entity.name.string),

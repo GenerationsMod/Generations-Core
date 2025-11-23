@@ -44,16 +44,14 @@ import com.cobblemon.mod.common.client.render.drawScaledText
 import com.cobblemon.mod.common.client.render.drawScaledTextJustifiedRight
 import com.cobblemon.mod.common.client.render.getDepletableRedGreen
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableState
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokeBallModelRepository
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.entity.pokeball.EmptyPokeBallEntity
 import com.cobblemon.mod.common.pokemon.Gender
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.pokemon.status.PersistentStatus
-import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.lang
 import com.mojang.blaze3d.platform.Lighting
@@ -260,7 +258,6 @@ object BattleOverlayProxy {
                 matrixStack = matrixStack,
                 scale = 18F * (ballState?.scale ?: 1F) * if (isCompact) 0.65F else 1.0f,
                 contextScale = species.getForm(state.currentAspects).baseScale,
-                repository = PokemonModelRepository,
                 reversed = reversed,
                 state = state,
                 partialTicks = partialTicks
@@ -435,8 +432,8 @@ object BattleOverlayProxy {
         reversed: Boolean = false
     ) {
         val context = RenderContext()
-        val model = PokeBallModelRepository.getPoser(state.pokeBall.name, state)
-        val texture = PokeBallModelRepository.getTexture(state.pokeBall.name, state)
+        val model = VaryingModelRepository.getPoser(state.pokeBall.name, state)
+        val texture = VaryingModelRepository.getTexture(state.pokeBall.name, state)
         val renderType = RenderType.entityCutout(texture)//model.getLayer(texture)
 
         RenderSystem.applyModelViewMatrix()

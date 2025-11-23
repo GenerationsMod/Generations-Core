@@ -27,15 +27,6 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
         return stack.getPokemon()?.getDisplayName()?.let { " (".text() + it + ")".text() } ?: Component.empty()
     }
 
-    override fun appendHoverText(
-        stack: ItemStack,
-        context: TooltipContext,
-        tooltipComponents: MutableList<Component>,
-        tooltipFlag: TooltipFlag
-    ) {
-        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
-    }
-
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         if (!level.isClientSide && !player.cooldowns.isOnCooldown(this)) {
             val item = player.getItemInHand(usedHand)

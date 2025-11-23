@@ -36,7 +36,8 @@ private val statColorMap = mapOf(
 fun Pokemon.dembedPokemon(): Pokemon? = if(hasEmbeddedPokemon()) {
     persistentData.getCompound(DataKeys.EMBEDDED_POKEMON).let { Pokemon.loadFromNBT(server()!!.registryAccess(), it) }.also {
         persistentData.remove(DataKeys.EMBEDDED_POKEMON)
-        this.anyChangeObservable.emit(this)
+
+//        this.anyChangeObservable.emit(this) TODO: Find replacment if any issues occured
     }
 } else {
     null
@@ -47,7 +48,7 @@ fun Pokemon.embedPokemon(pokemon: Pokemon, needsToBeInWorld: Boolean = true): Bo
 
     return if (!needsToBeInWorld || removedFromWorld) {
         this.persistentData.put(DataKeys.EMBEDDED_POKEMON, pokemon.saveToNBT(server()!!.registryAccess()))
-        this.anyChangeObservable.emit(this)
+//        this.anyChangeObservable.emit(this) TODO: Find out if we need this still
         true
     } else {
         false

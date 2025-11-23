@@ -104,7 +104,7 @@ class RksMachineContainer @JvmOverloads constructor(
     override var isToggled: Boolean
         get() = data[2] == 1
         set(value) { setData(2, if (value) 1 else 0) }
-    
+
     override fun removed(player: Player) {
         super.removed(player)
 

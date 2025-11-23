@@ -79,7 +79,8 @@ class ItemCurry(properties: Properties) : Item(properties.stacksTo(64)), Pokemon
             }
         }
 
-        this.consumeItem(player, stack)
+        stack.consume(1, player)
+
         return true
     }
 

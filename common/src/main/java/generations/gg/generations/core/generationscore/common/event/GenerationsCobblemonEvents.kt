@@ -185,7 +185,7 @@ class GenerationsCobblemonEvents {
 
             CobblemonEvents.POKEMON_INTERACTION_GUI_CREATION.subscribe {
                 it.addOption(
-                    Orientation.BOTTOM_LEFT, InteractWheelOption(
+                    Orientation.SOUTHEAST, InteractWheelOption(
                         iconResource = GenerationsCore.id("textures/ui/interact/head_pat.png"),
                         tooltipText = "generations_core.ui.interact.head_pat",
                         colour = { Vector3f(1F, 0F, 0F) },
@@ -197,7 +197,7 @@ class GenerationsCobblemonEvents {
 
             }
 
-            CobblemonEvents.POKEMON_RECALLED.subscribe {
+            CobblemonEvents.POKEMON_RECALL_PRE.subscribe {
                 it.pokemon.removeCosmeticFeature()
             }
 

@@ -1,6 +1,6 @@
 package generations.gg.generations.core.generationscore.common.util
 
-import com.cobblemon.mod.common.api.berry.Flavor
+import com.cobblemon.mod.common.api.cooking.Flavour
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties.Companion.parse
 import com.google.gson.*
@@ -51,7 +51,7 @@ object GenerationsUtils {
             .findFirst()
     }
 
-    fun getFlavorLocalizedName(flavor: Flavor?): String {
+    fun getFlavorLocalizedName(flavor: Flavour?): String {
         return if (flavor != null) Language.getInstance()
             .getOrDefault("enum.flavor." + flavor.toString().lowercase()) else ""
     }

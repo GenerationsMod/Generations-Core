@@ -3,8 +3,8 @@ package generations.gg.generations.core.generationscore.common.client.render
 import com.cobblemon.mod.common.client.render.SpriteType
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRenderer
 import com.cobblemon.mod.common.client.render.models.blockbench.FloatingState
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.util.math.fromEulerXYZDegrees
 import com.mojang.blaze3d.platform.Lighting
@@ -46,7 +46,7 @@ class TimeCapsuleItemRender : CobblemonBuiltinItemRenderer {
             Lighting.setupForFlatItems()
         }
 
-        val sprite = PokemonModelRepository.getSprite(species.resourceIdentifier, state, SpriteType.PROFILE)
+        val sprite = VaryingModelRepository.getSprite(species.resourceIdentifier, state, SpriteType.PROFILE)
 
         val packedLight = if (mode == ItemDisplayContext.GUI) {
             LightTexture.pack(13, 13)
@@ -66,8 +66,8 @@ class TimeCapsuleItemRender : CobblemonBuiltinItemRenderer {
 
         if(sprite == null) {
 
-            val renderLayer = RenderType.entityCutout(PokemonModelRepository.getTexture(species.resourceIdentifier, state))
-            val model = PokemonModelRepository.getPoser(species.resourceIdentifier, state)
+            val renderLayer = RenderType.entityCutout(VaryingModelRepository.getTexture(species.resourceIdentifier, state))
+            val model = VaryingModelRepository.getPoser(species.resourceIdentifier, state)
             model.context = context
             context.put(RenderContext.RENDER_STATE, RenderContext.RenderState.PROFILE)
             context.put(RenderContext.SPECIES, species.resourceIdentifier)
@@ -98,7 +98,7 @@ class TimeCapsuleItemRender : CobblemonBuiltinItemRenderer {
             model.withLayerContext(
                 vertexConsumers,
                 state,
-                PokemonModelRepository.getLayers(species.resourceIdentifier, state)
+                VaryingModelRepository.getLayers(species.resourceIdentifier, state)
             ) {
                 val tintRed = (tint.x * 255).toInt()
                 val tintGreen = (tint.y * 255).toInt()

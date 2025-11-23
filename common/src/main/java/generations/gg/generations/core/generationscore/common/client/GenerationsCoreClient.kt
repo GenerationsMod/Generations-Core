@@ -7,7 +7,6 @@ import com.cobblemon.mod.common.api.types.ElementalTypes
 import com.cobblemon.mod.common.client.render.item.CobblemonBuiltinItemRendererRegistry
 import com.cobblemon.mod.common.client.render.models.blockbench.pokeball.PokeBallModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokeBallModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.platform.events.ClientPlayerEvent
 import com.cobblemon.mod.common.platform.events.PlatformEvents
@@ -137,16 +136,15 @@ object GenerationsCoreClient {
 
         RareCandy.DEBUG_THREADS = true
 
-        PokeBallModelRepository.inbuilt("strange_ball", ::PokeBallModel)
+        VaryingModelRepository.inbuilt("strange_ball", ::PokeBallModel)
 
         VaryingModelRepository.registerFactory(".pk", { resourceLocation, resource ->
             ResourceLocation.fromNamespaceAndPath(resourceLocation.namespace, File(resourceLocation.path).getName()) to
-                    Function<Boolean, Bone> { bool ->
-                        (ModelPart(
-                            RareCandyBone.CUBE_LIST,
-                            mapOf("root" to RareCandyBone(resourceLocation))
-                        )) as Bone
-                    }
+                    (ModelPart(
+                        RareCandyBone.CUBE_LIST,
+                        mapOf("root" to RareCandyBone(resourceLocation))
+                    )) as Bone
+
         })
 //        VaryingModelRepository.registerFactory(".pk", { resourceLocation, resource) -> new Pair<>(, b -> (Bone) new ModelPart(RareCandyBone.Companion.getCUBE_LIST(), Map.of("root", new RareCandyBone(resourceLocation))}));
 

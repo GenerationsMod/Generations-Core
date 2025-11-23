@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block.entities
 
 import com.cobblemon.mod.common.api.berry.Berry
-import com.cobblemon.mod.common.api.berry.Flavor
+import com.cobblemon.mod.common.api.cooking.Flavour
 import com.cobblemon.mod.common.item.berry.BerryItem
 import com.mojang.serialization.Codec
 import generations.gg.generations.core.generationscore.common.api.events.CurryEvents
@@ -284,8 +284,8 @@ class CookingPotBlockEntity(pos: BlockPos, state: BlockState) : ModelProvidingBl
     }
 
     companion object {
-        fun getDominantFlavor(berries: List<Berry>): Flavor? {
-            val output = Flavor.entries.associateWith { flavor ->
+        fun getDominantFlavor(berries: List<Berry>): Flavour? {
+            val output = Flavour.entries.associateWith { flavor ->
                 berries.sumOf { it.flavor(flavor) }
             }
 

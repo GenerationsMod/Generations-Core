@@ -4,8 +4,8 @@ import com.cobblemon.mod.common.client.render.SpriteType
 import com.cobblemon.mod.common.client.render.item.PokemonItemRenderer
 import com.cobblemon.mod.common.client.render.item.PokemonItemRenderer.Companion.positions
 import com.cobblemon.mod.common.client.render.models.blockbench.FloatingState
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.item.PokemonItem
 import com.cobblemon.mod.common.util.math.fromEulerXYZDegrees
@@ -45,9 +45,10 @@ object PokemonItemRendererProxy {
         val state = FloatingState()
         state.currentAspects = aspects
         matrices.pushPose()
-        val model = PokemonModelRepository.getPoser(species.resourceIdentifier, state)
+        val model = VaryingModelRepository.getPoser(species.resourceIdentifier, state)
 
-        val sprite  = model.rootPart.instanceOrNull<RareCandyBone>()?.let { RenderType.entityCutoutNoCull(PokemonModelRepository.getSprite(species.resourceIdentifier, state, SpriteType.PROFILE) ?: MissingTextureAtlasSprite.getLocation()) }
+        val sprite  = model.rootPart.instanceOrNull<RareCandyBone>()?.let { RenderType.entityCutoutNoCull(
+            VaryingModelRepository.getSprite(species.resourceIdentifier, state, SpriteType.PROFILE) ?: MissingTextureAtlasSprite.getLocation()) }
 
         if(sprite == null) {
 
@@ -59,7 +60,7 @@ object PokemonItemRendererProxy {
             state.currentModel = model
         }
 
-        val renderLayer = if(sprite == null) RenderType.entityCutout(PokemonModelRepository.getTexture(species.resourceIdentifier, state)) else sprite
+        val renderLayer = if(sprite == null) RenderType.entityCutout(VaryingModelRepository.getTexture(species.resourceIdentifier, state)) else sprite
 
         val transformations = if(sprite == null) positions[mode]!! else positionsSprite[mode]!!
 
@@ -103,7 +104,7 @@ object PokemonItemRendererProxy {
             model.withLayerContext(
                 vertexConsumers,
                 state,
-                PokemonModelRepository.getLayers(species.resourceIdentifier, state)
+                VaryingModelRepository.getLayers(species.resourceIdentifier, state)
             ) {
                 model.render(context, matrices, buffer, packedLight, OverlayTexture.NO_OVERLAY, color)
             }

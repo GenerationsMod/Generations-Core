@@ -1,17 +1,13 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
-import com.cobblemon.mod.common.api.types.tera.TeraType
 import com.cobblemon.mod.common.client.render.VaryingRenderableResolver
-import com.cobblemon.mod.common.client.render.models.blockbench.PosableModel
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.FormData
 import com.cobblemon.mod.common.pokemon.Species
-import com.cobblemon.mod.common.util.asResource
-import com.cobblemon.mod.common.util.set
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
@@ -111,7 +107,7 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
         return try {
             val aspects = context.request<Set<String>>(RenderContext.Companion.ASPECTS)
             val species = context.request<ResourceLocation>(RenderContext.Companion.SPECIES)!!
-            return PokemonModelRepository.variations[species]?.getResolvedVariant(aspects ?: emptySet<String>())
+            return VaryingModelRepository.variations[species]?.getResolvedVariant(aspects ?: emptySet())
         } catch (e: Exception) {
             null
         }
@@ -129,6 +125,6 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     }
 }
 
-private fun <T : PosableModel> VaryingRenderableResolver<T>.getResolvedVariant(aspects: Set<String>): String? {
+private fun VaryingRenderableResolver.getResolvedVariant(aspects: Set<String>): String? {
     return variations.lastOrNull { it.aspects.all { it in aspects } && (it as IVariant).variant != null }?.let { (it as IVariant).variant }
 }

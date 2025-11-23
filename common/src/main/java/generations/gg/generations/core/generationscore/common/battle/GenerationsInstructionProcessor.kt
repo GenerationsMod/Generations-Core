@@ -7,12 +7,12 @@ import com.cobblemon.mod.common.api.abilities.Ability
 import com.cobblemon.mod.common.api.battles.interpreter.BattleMessage
 import com.cobblemon.mod.common.api.battles.model.PokemonBattle
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor
-import com.cobblemon.mod.common.api.events.battles.BattleStartedPreEvent
+import com.cobblemon.mod.common.api.events.battles.BattleStartedEvent
 import com.cobblemon.mod.common.api.events.battles.instruction.TerastallizationEvent
-import com.cobblemon.mod.common.api.moves.Moves
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
+import com.cobblemon.mod.common.api.pokemon.stats.BattleEvSource
 import com.cobblemon.mod.common.api.scheduling.afterOnServer
 import com.cobblemon.mod.common.api.tags.CobblemonItemTags
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
@@ -143,7 +143,7 @@ object GenerationsInstructionProcessor {
     }
 
     @JvmStatic
-    fun preBattleChanges(battleStartedPreEvent: BattleStartedPreEvent) {
+    fun preBattleChanges(battleStartedPreEvent: BattleStartedEvent.Pre) {
         val battle = battleStartedPreEvent.battle
         for (actor in battle.actors) {
             for (battlePokemon in actor.pokemonList) {
@@ -248,9 +248,9 @@ fun grantExp(battle: PokemonBattle, actor: BattleActor) {
 
             if (player != null) {
                 if (player.hasExpAll()) {
-                    grantExpAll(opponent, targetPokemon, true)
+                    grantExpAll(battle, opponent, targetPokemon)
                 } else {
-                    grantExpCapture(opponent, targetPokemon, true)
+                    grantExpCapture(battle, opponent, targetPokemon)
                 }
             }
         }
@@ -265,14 +265,14 @@ fun grantExp(battle: PokemonBattle, actor: BattleActor) {
         val player = opponent.uuid.getPlayer()
 
         if (player != null && player.hasExpAll()) {
-            grantExpAll(opponent, faintedOnly, true)
+            grantExpAll(battle, opponent, faintedOnly)
         }
     }
 }
 
 
 
-fun grantExpAll(opponent: BattleActor, faintedPokemonList: List<BattlePokemon>, conditionsMet: Boolean) {
+fun grantExpAll(battle: PokemonBattle, opponent: BattleActor, faintedPokemonList: List<BattlePokemon>) {
     val opponentNonFaintedPokemonList = opponent.pokemonList.filter {it.health > 0}
 
     faintedPokemonList.forEach { faintedPokemon ->
@@ -282,17 +282,19 @@ fun grantExpAll(opponent: BattleActor, faintedPokemonList: List<BattlePokemon>, 
             val experience = Cobblemon.experienceCalculator.calculate(opponentPokemon, faintedPokemon, multiplier)
             val grantedEvs = Cobblemon.evYieldCalculator.calculate(opponentPokemon, faintedPokemon)
 
-            if (experience > 0 && conditionsMet) {
+            if (experience > 0) {
                 opponent.awardExperience(opponentPokemon, experience)
                 if (!facedFainted) {
-                    grantedEvs.forEach(opponentPokemon.effectedPokemon.evs::add)
+                    grantedEvs.forEach { stat, value -> opponentPokemon.effectedPokemon.evs.add(stat, value,
+                        BattleEvSource(battle, listOf(faintedPokemon), opponentPokemon.effectedPokemon))
+                    } //TODO: Decide how to handle
                 }
             }
         }
     }
 }
 
-fun grantExpCapture(opponent: BattleActor, caughtPokemon: List<BattlePokemon>, conditionsMet: Boolean) {
+fun grantExpCapture(battle: PokemonBattle, opponent: BattleActor, caughtPokemon: List<BattlePokemon>) {
     val opponentNonFaintedPokemonList = opponent.pokemonList.filter {it.health > 0}
 
     for (opponentPokemon in opponentNonFaintedPokemonList) {
@@ -306,12 +308,14 @@ fun grantExpCapture(opponent: BattleActor, caughtPokemon: List<BattlePokemon>, c
 
         val experience = Cobblemon.experienceCalculator.calculate(opponentPokemon, caughtPokemon.first(), multiplier)
 
-        if (experience > 0 && conditionsMet) {
+        if (experience > 0) {
             opponent.awardExperience(opponentPokemon, experience)
         }
 
         Cobblemon.evYieldCalculator.calculate(opponentPokemon, caughtPokemon.first()).forEach { (stat, amount) ->
-            pokemon.evs.add(stat, amount)
+            pokemon.evs.add(stat, amount, BattleEvSource(battle,
+                listOf(caughtPokemon.first()), opponentPokemon.effectedPokemon)
+            )
         }
     }
 }

@@ -1,27 +1,20 @@
 package generations.gg.generations.core.generationscore.common.world.item.curry
 
 import com.cobblemon.mod.common.api.berry.Berry
-import com.cobblemon.mod.common.api.berry.Flavor
+import com.cobblemon.mod.common.api.cooking.Flavour
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import generations.gg.generations.core.generationscore.common.util.Codecs
-import generations.gg.generations.core.generationscore.common.util.StreamCodecs
 import generations.gg.generations.core.generationscore.common.util.StreamCodecs.asRegistryFriendly
-import generations.gg.generations.core.generationscore.common.util.StreamCodecs.optional
 import generations.gg.generations.core.generationscore.common.world.item.berry.BerryType
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.CookingPotBlockEntity.Companion.getDominantFlavor
-import net.minecraft.nbt.CompoundTag
-import net.minecraft.nbt.Tag
 import net.minecraft.network.codec.ByteBufCodecs
-import net.minecraft.network.codec.StreamCodec
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.util.StringRepresentable
 import java.util.*
-import java.util.stream.Stream
 import kotlin.jvm.optionals.getOrNull
 
 data class CurryData(
-    var flavor: Flavor? = null,
+    var flavor: Flavour? = null,
     var curryType: CurryType = CurryType.None,
     var experience: Int = 0,
     var healthPercentage: Double = 0.0,
@@ -31,7 +24,7 @@ data class CurryData(
     var rating: CurryTasteRating = CurryTasteRating.Unknown) {
 
     constructor(
-        flavor: Optional<Flavor>,
+        flavor: Optional<Flavour>,
         curryType: CurryType,
         experience: Int,
         healthPercentage: Double,
@@ -59,7 +52,7 @@ data class CurryData(
         return canHealStatus
     }
 
-    fun setFlavor(flavor: Flavor?): CurryData {
+    fun setFlavor(flavor: Flavour?): CurryData {
         this.flavor = flavor
         return this
     }
@@ -105,7 +98,7 @@ data class CurryData(
     companion object {
         val CODEC: Codec<CurryData> = RecordCodecBuilder.create {
             it.group(
-                Codecs.enumCodec(Flavor::class.java).optionalFieldOf("flavor").forGetter { Optional.ofNullable(it.flavor) },
+                Codecs.enumCodec(Flavour::class.java).optionalFieldOf("flavor").forGetter { Optional.ofNullable(it.flavor) },
                 CurryType.CODEC.fieldOf("type").forGetter { it.curryType },
                 Codec.INT.fieldOf("experience").forGetter { it.experience },
                 Codec.DOUBLE.fieldOf("health_percentage").forGetter { it.healthPercentage },

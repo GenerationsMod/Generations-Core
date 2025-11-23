@@ -29,7 +29,7 @@ class TeraSharditem(properties: Item.Properties, val teraType: TeraType) : Item(
             return false
         }
         entity.pokemon.teraType = teraType
-        stack.shrink(requiredAmount)
+        stack.consume(requiredAmount, player)
         player.sendSystemMessage(("${entity.pokemon.getDisplayName().string}'s Tera Type was changed to ${teraType.showdownId()}.".text()))
         return true
     }

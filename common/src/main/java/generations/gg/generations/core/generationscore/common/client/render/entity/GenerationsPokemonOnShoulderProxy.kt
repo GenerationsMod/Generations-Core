@@ -3,9 +3,8 @@ package generations.gg.generations.core.generationscore.common.client.render.ent
 import com.cobblemon.mod.common.client.render.layer.PokemonOnShoulderRenderer.ShoulderData
 import com.cobblemon.mod.common.client.render.models.blockbench.FloatingState
 import com.cobblemon.mod.common.client.render.models.blockbench.PosableModel
-//import com.cobblemon.mod.common.client.render.models.blockbench.pokemon.PokemonFloatingState
-import com.cobblemon.mod.common.client.render.models.blockbench.repository.PokemonModelRepository
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
+import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
 import com.cobblemon.mod.common.entity.PoseType
 import com.cobblemon.mod.common.util.isPokemonEntity
 import com.mojang.blaze3d.vertex.PoseStack
@@ -76,7 +75,7 @@ object GenerationsPokemonOnShoulderProxy {
 
             var state = FloatingState()
             state.currentAspects = shoulderData.aspects
-            val model = PokemonModelRepository.getPoser(shoulderData.species.resourceIdentifier, state)
+            val model = VaryingModelRepository.getPoser(shoulderData.species.resourceIdentifier, state)
             model.context = context
             context.put(RenderContext.SPECIES, shoulderData.species.resourceIdentifier)
             context.put(RenderContext.ASPECTS, shoulderData.aspects)
@@ -121,7 +120,7 @@ object GenerationsPokemonOnShoulderProxy {
             state.updatePartialTicks(partialTicks)
             context.put(RenderContext.POSABLE_STATE, state)
             state.currentModel = model
-            val vertexConsumer = buffer.getBuffer(RenderType.entityCutout(PokemonModelRepository.getTexture(shoulderData.species.resourceIdentifier, state)))
+            val vertexConsumer = buffer.getBuffer(RenderType.entityCutout(VaryingModelRepository.getTexture(shoulderData.species.resourceIdentifier, state)))
             val i = LivingEntityRenderer.getOverlayCoords(livingEntity, 0.0f)
 
             model.applyAnimations(
@@ -134,7 +133,7 @@ object GenerationsPokemonOnShoulderProxy {
                 ageInTicks = livingEntity.tickCount.toFloat()
             )
             model.render(context, matrixStack, vertexConsumer, packedLight, i, -0x1)
-            model.withLayerContext(buffer, state, PokemonModelRepository.getLayers(shoulderData.species.resourceIdentifier, state)) {
+            model.withLayerContext(buffer, state, VaryingModelRepository.getLayers(shoulderData.species.resourceIdentifier, state)) {
                 model.render(context, matrixStack, vertexConsumer, packedLight, OverlayTexture.NO_OVERLAY, -0x1)
             }
             model.setDefault()
