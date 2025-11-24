@@ -50,7 +50,6 @@
     "client.PokemonClientDelegateMixin",
     "client.PokemonEntityMixin",
     "client.PokemonItemRendererMixin",
-    "client.PokemonOnShoulderRendererCompanionAccessorMixin",
     "client.PokemonOnShoulderRenderMixin",
     "client.PosableStateMixin",
     "client.RenderSystemMixin",
