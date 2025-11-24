@@ -95,7 +95,6 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             stack.pushPose()
             stack.mulPose(ROTATION_CORRECTION)
             stack.scale(-scale, -scale, scale)
-            stack.translate(0.0, -1.501 / scale, 0.0)
             instance.transformationMatrix().set(stack.last().pose())
             stack.popPose()
 

@@ -52,7 +52,7 @@ class StatueEntityRenderer(arg: EntityRendererProvider.Context) : EntityRenderer
         stack.pushPose()
         stack.scale(-1f, -1f, 1f)
         val scale: Float = entity.scale
-        stack.translate(0.0, -1.501 * scale, 0.0)
+//        stack.translate(0.0, -1.501 * scale, 0.0)
         stack.scale(scale, scale, scale)
         stack.mulPose(Axis.YP.rotationDegrees(entity.orientation))
 
