@@ -16,19 +16,19 @@ open class ElementalPostBattleUpdateItemImplImpl(
     properties: Properties,
     private val lang: String = DEFAULT_LANG_KEY,
     private val key: SpeciesKey,
-    private val itemToGiveUponSpawn : Holder<Item>? = null,
     types: List<ElementalType> = listOf()
 ) : ElementalPostBattleUpdateItemImpl(properties, types) {
 
     override fun use(level: Level, player: Player, usedHand: InteractionHand): InteractionResultHolder<ItemStack> {
         val stack = player.getItemInHand(usedHand)
 
-        if (!level.isClientSide()) {
+        if (!level.isClientSide() && player.y >= 240.0) {
+
             val damage = stack.damageValue
 
             if (damage >= stack.maxDamage) {
                 PokemonUtil.spawn(key.createProperties(70), level, player.onPos)
-                postSpawn(level, player, usedHand)
+                stack.consume(1, player)
             } else {
                 player.displayClientMessage(Component.translatable(lang, stack.maxDamage - damage), true)
             }
@@ -37,10 +37,6 @@ open class ElementalPostBattleUpdateItemImplImpl(
         }
 
         return InteractionResultHolder.pass(stack)
-    }
-
-    protected fun postSpawn(level: Level, player: Player, usedHand: InteractionHand) {
-        itemToGiveUponSpawn?.value()?.defaultInstance?.let { player.setItemInHand(usedHand, it) }
     }
 
     companion object {
