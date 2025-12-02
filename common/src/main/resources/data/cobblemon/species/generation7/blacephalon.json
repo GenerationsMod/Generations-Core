@@ -1,11 +1,54 @@
 {
-  "name": "Blacephalon",
+  "implemented": true,
   "nationalPokedexNumber": 806,
+  "name": "Blacephalon",
   "primaryType": "fire",
   "secondaryType": "ghost",
-  "abilities": [
-    "beastboost"
+  "maleRatio": -1,
+  "height": 18,
+  "weight": 130,
+  "pokedex": [
+    "cobblemon.species.blacephalon.desc"
   ],
+  "labels": [
+    "gen7",
+    "ultra_beast"
+  ],
+  "aspects": [],
+  "abilities": [
+    "beastboost",
+    "h:beastboost"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "baseStats": {
+    "hp": 53,
+    "attack": 127,
+    "defence": 53,
+    "special_attack": 151,
+    "special_defence": 79,
+    "speed": 107
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 285,
+  "experienceGroup": "slow",
+  "catchRate": 30,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -15,31 +58,13 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 53,
-    "attack": 127,
-    "defence": 53,
-    "special_attack": 151,
-    "special_defence": 79,
-    "speed": 107
-  },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 285,
-  "experienceGroup": "slow",
-  "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
   "moves": [
     "1:astonish",
+    "1:flameburst",
     "1:firespin",
     "5:lightscreen",
     "10:ember",
-    "13:storedpower",
     "15:nightshade",
-    "17:flameburst",
     "20:confuseray",
     "25:magiccoat",
     "30:incinerate",
@@ -51,12 +76,13 @@
     "60:trick",
     "65:fireblast",
     "70:mindblown",
+    "tm:afteryou",
     "tm:calmmind",
-    "tm:confide",
+    "tm:confuseray",
     "tm:darkpulse",
-    "tm:doubleteam",
     "tm:encore",
     "tm:endure",
+    "tm:expandingforce",
     "tm:explosion",
     "tm:facade",
     "tm:fireblast",
@@ -66,86 +92,97 @@
     "tm:flamethrower",
     "tm:fling",
     "tm:foulplay",
-    "tm:frustration",
     "tm:heatwave",
-    "tm:hiddenpower",
     "tm:hyperbeam",
+    "tm:incinerate",
+    "tm:knockoff",
+    "tm:lastresort",
     "tm:lightscreen",
+    "tm:magiccoat",
     "tm:mysticalfire",
+    "tm:nightshade",
     "tm:overheat",
+    "tm:painsplit",
     "tm:payback",
     "tm:protect",
     "tm:psychic",
     "tm:psyshock",
     "tm:quash",
+    "tm:recycle",
     "tm:rest",
-    "tm:return",
     "tm:rockblast",
-    "tm:round",
     "tm:selfdestruct",
     "tm:shadowball",
     "tm:shadowclaw",
     "tm:sleeptalk",
     "tm:smackdown",
-    "tm:snore",
     "tm:solarbeam",
+    "tm:spite",
     "tm:storedpower",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:taunt",
+    "tm:terablast",
     "tm:thief",
     "tm:torment",
-    "tm:toxic",
     "tm:trick",
     "tm:uproar",
     "tm:willowisp",
     "tm:zenheadbutt",
     "tutor:afteryou",
+    "tutor:calmmind",
+    "tutor:darkpulse",
     "tutor:expandingforce",
-    "tutor:fireblast",
+    "tutor:firepunch",
+    "tutor:flamethrower",
     "tutor:foulplay",
     "tutor:heatwave",
+    "tutor:hyperbeam",
     "tutor:knockoff",
     "tutor:lastresort",
-    "tutor:mindblown",
+    "tutor:magiccoat",
+    "tutor:mysticalfire",
     "tutor:painsplit",
+    "tutor:psychic",
     "tutor:recycle",
+    "tutor:rest",
     "tutor:shadowball",
     "tutor:shadowclaw",
-    "tutor:snore",
+    "tutor:sleeptalk",
     "tutor:spite",
-    "tutor:taunt",
     "tutor:trick",
     "tutor:uproar",
-    "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen7",
-    "ultra_beast"
-  ],
-  "pokedex": [
-    "cobblemon.species.blacephalon.desc"
+    "tutor:zenheadbutt",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 0,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 3,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 18,
-  "weight": 130,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInLava": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "fireImmune": true
+  }
 }

@@ -1,10 +1,26 @@
 {
-  "name": "Gouging Fire",
+  "implemented": true,
   "nationalPokedexNumber": 1020,
+  "name": "Gouging Fire",
   "primaryType": "fire",
   "secondaryType": "dragon",
+  "maleRatio": -1,
+  "height": 35,
+  "weight": 5900,
+  "pokedex": [
+    "cobblemon.species.gougingfire.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "protosynthesis"
+    "protosynthesis",
+    "h:protosynthesis"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 105,
@@ -14,10 +30,6 @@
     "special_defence": 93,
     "speed": 91
   },
-  "catchRate": 10,
-  "maleRatio": -1,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,19 +38,19 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 295,
   "experienceGroup": "slow",
+  "catchRate": 10,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:ancientpower",
-    "1:doublekick",
-    "1:incinerate",
-    "1:leer",
-    "1:nobleroar",
     "1:stomp",
+    "1:leer",
+    "1:incinerate",
     "1:sunnyday",
+    "1:doublekick",
+    "1:ancientpower",
+    "1:nobleroar",
     "7:firefang",
     "14:howl",
     "21:bite",
@@ -52,6 +64,7 @@
     "77:outrage",
     "84:flareblitz",
     "91:ragingfury",
+    "tm:ancientpower",
     "tm:bodyslam",
     "tm:breakingswipe",
     "tm:bulldoze",
@@ -76,6 +89,7 @@
     "tm:heatcrash",
     "tm:heatwave",
     "tm:hyperbeam",
+    "tm:incinerate",
     "tm:ironhead",
     "tm:outrage",
     "tm:overheat",
@@ -98,16 +112,53 @@
     "tm:temperflare",
     "tm:terablast",
     "tm:thunderfang",
-    "tm:weatherball"
+    "tm:weatherball",
+    "tutor:ancientpower",
+    "tutor:bulldoze",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:firefang",
+    "tutor:flamethrower",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:hyperbeam",
+    "tutor:ironhead",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:scaleshot",
+    "tutor:scorchingsands",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:thunderfang"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 35,
-  "weight": 5900,
   "evolutions": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4",
+      "toleratedLeaders": [
+        {
+          "pokemon": "gougingfire",
+          "tier": 1
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInLava": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "fireImmune": true
+  }
 }

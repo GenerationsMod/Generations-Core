@@ -1,11 +1,25 @@
 {
-  "name": "Blipbug",
+  "implemented": true,
   "nationalPokedexNumber": 824,
+  "name": "Blipbug",
   "primaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 80,
+  "pokedex": [
+    "cobblemon.species.blipbug.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "swarm",
     "compoundeyes",
     "h:telepathy"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 25,
@@ -15,27 +29,47 @@
     "special_defence": 45,
     "speed": 45
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
   "baseExperienceYield": 36,
   "experienceGroup": "medium_fast",
+  "catchRate": 255,
   "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:psychic_seed",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:strugglebug",
     "egg:infestation",
     "egg:recover",
     "egg:stickyweb",
-    "egg:supersonic"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.blipbug.desc"
+    "egg:supersonic",
+    "tm:infestation",
+    "tm:strugglebug",
+    "tm:terablast"
   ],
   "evolutions": [
     {
@@ -44,9 +78,9 @@
       "result": "dottler",
       "consumeHeldItem": false,
       "learnableMoves": [
-        "confusion",
+        "reflect",
         "lightscreen",
-        "reflect"
+        "confusion"
       ],
       "requirements": [
         {
@@ -56,33 +90,19 @@
       ]
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 1,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 80,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:razz_berry",
-        "percentage": 2.5
+  "behaviour": {
+    "resting": {
+      "willSleepOnBed": true,
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
       }
-    ]
-  },
-  "implemented": true
+    }
+  }
 }

@@ -1,12 +1,27 @@
 {
-  "name": "Hydrapple",
+  "implemented": true,
   "nationalPokedexNumber": 1019,
+  "name": "Hydrapple",
   "primaryType": "grass",
   "secondaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 18,
+  "weight": 930,
+  "pokedex": [
+    "cobblemon.species.hydrapple.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "supersweetsyrup",
     "regenerator",
     "h:stickyhold"
+  ],
+  "eggGroups": [
+    "grass",
+    "dragon"
   ],
   "baseStats": {
     "hp": 106,
@@ -16,10 +31,6 @@
     "special_defence": 80,
     "speed": 44
   },
-  "catchRate": 10,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 0,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -28,20 +39,20 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 270,
   "experienceGroup": "erratic",
+  "catchRate": 10,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass",
-    "dragon"
-  ],
+  "baseFriendship": 50,
   "moves": [
+    "1:ficklebeam",
+    "1:withdraw",
+    "1:sweetscent",
+    "1:recycle",
     "1:astonish",
+    "1:yawn",
     "1:doublehit",
     "1:infestation",
-    "1:recycle",
-    "1:sweetscent",
-    "1:withdraw",
-    "1:yawn",
     "4:dragontail",
     "8:growth",
     "12:dragonbreath",
@@ -53,6 +64,10 @@
     "40:energyball",
     "44:substitute",
     "54:powerwhip",
+    "egg:defensecurl",
+    "egg:recycle",
+    "egg:rollout",
+    "egg:suckerpunch",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:breakingswipe",
@@ -78,33 +93,63 @@
     "tm:heavyslam",
     "tm:hydropump",
     "tm:hyperbeam",
+    "tm:infestation",
     "tm:leafstorm",
     "tm:magicalleaf",
     "tm:nastyplot",
     "tm:outrage",
     "tm:pollenpuff",
     "tm:pounce",
+    "tm:powerwhip",
     "tm:protect",
     "tm:raindance",
+    "tm:recycle",
     "tm:reflect",
     "tm:rest",
+    "tm:rollout",
     "tm:seedbomb",
     "tm:sleeptalk",
     "tm:solarbeam",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:takedown",
     "tm:terablast",
-    "tm:uproar"
+    "tm:uproar",
+    "tutor:bugbite",
+    "tutor:dragonpulse",
+    "tutor:earthpower",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:magicalleaf",
+    "tutor:outrage",
+    "tutor:recycle",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:suckerpunch",
+    "tutor:uproar",
+    "legacy:attract"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 18,
-  "weight": 930,
   "preEvolution": "dipplin",
   "evolutions": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

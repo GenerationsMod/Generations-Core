@@ -1,9 +1,27 @@
 {
-  "name": "Shaymin",
+  "implemented": true,
   "nationalPokedexNumber": 492,
+  "name": "Shaymin",
   "primaryType": "grass",
+  "maleRatio": -1,
+  "height": 2,
+  "weight": 21,
+  "pokedex": [
+    "cobblemon.species.shaymin.desc"
+  ],
+  "labels": [
+    "gen4",
+    "mythical"
+  ],
+  "aspects": [
+    "land-forme"
+  ],
   "abilities": [
-    "naturalcure"
+    "naturalcure",
+    "h:naturalcure"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 100,
@@ -13,11 +31,6 @@
     "special_defence": 100,
     "speed": 100
   },
-  "catchRate": 45,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 270,
-  "baseFriendship": 100,
   "evYield": {
     "hp": 3,
     "attack": 0,
@@ -26,131 +39,139 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "medium_slow",
+  "catchRate": 45,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 100,
   "moves": [
-    "1:defensecurl",
     "1:growth",
     "10:magicalleaf",
     "19:leechseed",
-    "28:quickattack",
     "28:synthesis",
     "37:sweetscent",
     "46:naturalgift",
-    "46:playrough",
     "55:worryseed",
-    "64:airslash",
-    "64:aromatherapy",
     "64:grassyterrain",
     "73:energyball",
-    "82:grasswhistle",
     "82:sweetkiss",
     "91:healingwish",
-    "91:leafstorm",
-    "91:luckychant",
     "100:seedflare",
     "tm:aircutter",
     "tm:airslash",
+    "tm:aromatherapy",
+    "tm:babydolleyes",
     "tm:batonpass",
     "tm:bulletseed",
-    "tm:confide",
+    "tm:covet",
     "tm:dazzlinggleam",
     "tm:disarmingvoice",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:earthpower",
     "tm:endeavor",
     "tm:endure",
     "tm:energyball",
     "tm:facade",
     "tm:flash",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:grassyglide",
     "tm:grassyterrain",
-    "tm:hiddenpower",
+    "tm:headbutt",
     "tm:hyperbeam",
+    "tm:laserfocus",
+    "tm:lastresort",
     "tm:leafstorm",
     "tm:magicalleaf",
     "tm:naturalgift",
     "tm:naturepower",
+    "tm:ominouswind",
     "tm:petalblizzard",
     "tm:playrough",
     "tm:protect",
     "tm:psychic",
     "tm:psychup",
     "tm:rest",
-    "tm:return",
-    "tm:round",
     "tm:safeguard",
-    "tm:secretpower",
     "tm:seedbomb",
     "tm:sleeptalk",
     "tm:solarbeam",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:swordsdance",
+    "tm:synthesis",
     "tm:tailwind",
     "tm:takedown",
     "tm:terablast",
-    "tm:toxic",
     "tm:trailblaze",
+    "tm:worryseed",
     "tm:zenheadbutt",
     "tutor:aircutter",
-    "tutor:airslash",
-    "tutor:aromatherapy",
-    "tutor:celebrate",
+    "tutor:babydolleyes",
     "tutor:covet",
+    "tutor:dazzlinggleam",
     "tutor:earthpower",
     "tutor:endeavor",
     "tutor:energyball",
     "tutor:gigadrain",
-    "tutor:growth",
-    "tutor:headbutt",
+    "tutor:gigaimpact",
+    "tutor:grassyglide",
+    "tutor:hyperbeam",
     "tutor:laserfocus",
     "tutor:lastresort",
-    "tutor:leechseed",
     "tutor:magicalleaf",
-    "tutor:mudslap",
     "tutor:ominouswind",
-    "tutor:return",
+    "tutor:playrough",
+    "tutor:psychic",
+    "tutor:rest",
     "tutor:seedbomb",
-    "tutor:seedflare",
     "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:substitute",
-    "tutor:sweetscent",
     "tutor:swift",
     "tutor:synthesis",
     "tutor:tailwind",
     "tutor:worryseed",
-    "tutor:zenheadbutt"
+    "tutor:zenheadbutt",
+    "legacy:confide",
+    "legacy:defensecurl",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:grasswhistle",
+    "legacy:hiddenpower",
+    "legacy:luckychant",
+    "legacy:mudslap",
+    "legacy:quickattack",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic",
+    "special:celebrate"
   ],
-  "labels": [
-    "gen4",
-    "mythical",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.shaymin.desc"
-  ],
-  "height": 2,
-  "weight": 21,
   "evolutions": [],
   "forms": [
     {
       "name": "Sky",
       "primaryType": "grass",
       "secondaryType": "flying",
+      "maleRatio": -1,
+      "height": 4,
+      "weight": 52,
+      "pokedex": [
+        "cobblemon.species.shaymin-sky.desc"
+      ],
+      "labels": [
+        "gen4",
+        "mythical"
+      ],
+      "aspects": [
+        "sky-forme"
+      ],
       "abilities": [
-        "serenegrace"
+        "serenegrace",
+        "h:serenegrace"
       ],
       "baseStats": {
         "hp": 100,
@@ -160,10 +181,6 @@
         "special_defence": 75,
         "speed": 127
       },
-      "catchRate": 45,
-      "maleRatio": -1,
-      "baseExperienceYield": 270,
-      "baseFriendship": 100,
       "evYield": {
         "hp": 0,
         "attack": 0,
@@ -172,26 +189,159 @@
         "special_defence": 0,
         "speed": 3
       },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
+      "moves": [
+        "1:growth",
+        "10:magicalleaf",
+        "19:leechseed",
+        "28:quickattack",
+        "37:sweetscent",
+        "46:naturalgift",
+        "55:worryseed",
+        "64:airslash",
+        "73:energyball",
+        "82:sweetkiss",
+        "91:leafstorm",
+        "100:seedflare",
+        "tm:aircutter",
+        "tm:airslash",
+        "tm:babydolleyes",
+        "tm:batonpass",
+        "tm:bulletseed",
+        "tm:covet",
+        "tm:dazzlinggleam",
+        "tm:disarmingvoice",
+        "tm:doubleedge",
+        "tm:earthpower",
+        "tm:endeavor",
+        "tm:endure",
+        "tm:energyball",
+        "tm:facade",
+        "tm:flash",
+        "tm:gigadrain",
+        "tm:gigaimpact",
+        "tm:grassknot",
+        "tm:grassyglide",
+        "tm:grassyterrain",
+        "tm:headbutt",
+        "tm:healingwish",
+        "tm:hyperbeam",
+        "tm:laserfocus",
+        "tm:lastresort",
+        "tm:leafstorm",
+        "tm:magicalleaf",
+        "tm:naturalgift",
+        "tm:naturepower",
+        "tm:ominouswind",
+        "tm:petalblizzard",
+        "tm:playrough",
+        "tm:protect",
+        "tm:psychic",
+        "tm:psychup",
+        "tm:rest",
+        "tm:safeguard",
+        "tm:seedbomb",
+        "tm:sleeptalk",
+        "tm:solarbeam",
+        "tm:substitute",
+        "tm:sunnyday",
+        "tm:swift",
+        "tm:swordsdance",
+        "tm:synthesis",
+        "tm:tailwind",
+        "tm:takedown",
+        "tm:terablast",
+        "tm:trailblaze",
+        "tm:worryseed",
+        "tm:zenheadbutt",
+        "tutor:aircutter",
+        "tutor:babydolleyes",
+        "tutor:covet",
+        "tutor:dazzlinggleam",
+        "tutor:earthpower",
+        "tutor:endeavor",
+        "tutor:energyball",
+        "tutor:gigadrain",
+        "tutor:gigaimpact",
+        "tutor:grassyglide",
+        "tutor:hyperbeam",
+        "tutor:laserfocus",
+        "tutor:lastresort",
+        "tutor:magicalleaf",
+        "tutor:ominouswind",
+        "tutor:playrough",
+        "tutor:psychic",
+        "tutor:rest",
+        "tutor:seedbomb",
+        "tutor:sleeptalk",
+        "tutor:swift",
+        "tutor:synthesis",
+        "tutor:tailwind",
+        "tutor:worryseed",
+        "tutor:zenheadbutt"
       ],
-      "labels": [
-        "gen4",
-        "mythical",
-        "legendary"
-      ],
-      "aspects": [
-        "sky"
-      ],
-      "height": 4,
-      "weight": 52,
-      "cannotDynamax": false,
-      "battleOnly": false
+      "evolutions": [],
+      "battleOnly": false,
+      "behaviour": {
+        "herd": {
+          "maxSize": "6",
+          "toleratedLeaders": [
+            {
+              "pokemon": "shaymin sky=false",
+              "tier": 1
+            },
+            {
+              "pokemon": "shaymin sky",
+              "tier": 2
+            }
+          ]
+        },
+        "resting": {
+          "willSleepOnBed": true,
+          "drowsyChance": 0.0333,
+          "rouseChance": 0.0042
+        },
+        "moving": {
+          "swim": {
+            "avoidsWater": true
+          },
+          "fly": {
+            "canFly": true
+          }
+        },
+        "combat": {
+          "willDefendSelf": true,
+          "willDefendOwner": true,
+          "willFlee": false
+        }
+      }
     }
   ],
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "6",
+      "toleratedLeaders": [
+        {
+          "pokemon": "shaymin sky",
+          "tier": 1
+        },
+        {
+          "pokemon": "shaymin sky=false",
+          "tier": 2
+        }
+      ]
+    },
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  }
 }

@@ -1,13 +1,89 @@
 {
-  "name": "Palpitoad",
+  "implemented": true,
   "nationalPokedexNumber": 536,
+  "name": "Palpitoad",
   "primaryType": "water",
   "secondaryType": "ground",
+  "maleRatio": 0.5,
+  "height": 8,
+  "weight": 170,
+  "pokedex": [
+    "cobblemon.species.palpitoad.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "swiftswim",
     "hydration",
     "h:waterabsorb"
   ],
+  "eggGroups": [
+    "water_1"
+  ],
+  "baseStats": {
+    "hp": 75,
+    "attack": 65,
+    "defence": 55,
+    "special_attack": 65,
+    "special_defence": 55,
+    "speed": 69
+  },
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 134,
+  "experienceGroup": "medium_slow",
+  "catchRate": 120,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    },
+    "herd": {
+      "maxSize": "7",
+      "toleratedLeaders": [
+        {
+          "pokemon": "poliwrath",
+          "tier": 1
+        },
+        {
+          "pokemon": "politoed",
+          "tier": 2
+        },
+        {
+          "pokemon": "seismitoad",
+          "tier": 3
+        }
+      ]
+    },
+    "resting": {
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -21,29 +97,12 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 75,
-    "attack": 65,
-    "defence": 55,
-    "special_attack": 65,
-    "special_defence": 55,
-    "speed": 69
-  },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 134,
-  "experienceGroup": "medium_slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "water_1"
-  ],
   "moves": [
-    "1:acid",
     "1:bubble",
-    "1:echoedvoice",
     "1:growl",
     "1:supersonic",
+    "1:echoedvoice",
+    "1:acid",
     "12:mudshot",
     "16:round",
     "20:bubblebeam",
@@ -54,34 +113,40 @@
     "48:muddywater",
     "54:raindance",
     "60:hydropump",
-    "tm:attract",
+    "egg:mist",
+    "egg:mudbomb",
+    "egg:mudslap",
+    "egg:mudsport",
+    "egg:refresh",
+    "egg:snore",
+    "egg:toxic",
+    "egg:waterpulse",
+    "tm:afteryou",
     "tm:bounce",
     "tm:bulldoze",
-    "tm:confide",
-    "tm:doubleteam",
     "tm:earthpower",
     "tm:echoedvoice",
+    "tm:endeavor",
     "tm:endure",
     "tm:facade",
-    "tm:frustration",
+    "tm:focuspunch",
+    "tm:gastroacid",
     "tm:hail",
-    "tm:hiddenpower",
     "tm:hydropump",
     "tm:hypervoice",
     "tm:icywind",
     "tm:infestation",
     "tm:muddywater",
     "tm:mudshot",
+    "tm:mudslap",
     "tm:powerwhip",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:rocksmash",
     "tm:round",
     "tm:scald",
     "tm:screech",
-    "tm:secretpower",
     "tm:sleeptalk",
     "tm:sludgebomb",
     "tm:sludgewave",
@@ -89,30 +154,38 @@
     "tm:stealthrock",
     "tm:substitute",
     "tm:surf",
-    "tm:swagger",
+    "tm:terablast",
     "tm:toxic",
     "tm:uproar",
     "tm:venomdrench",
+    "tm:waterpulse",
     "tm:weatherball",
     "tutor:afteryou",
     "tutor:bounce",
+    "tutor:bulldoze",
     "tutor:earthpower",
     "tutor:endeavor",
     "tutor:focuspunch",
     "tutor:gastroacid",
     "tutor:hypervoice",
     "tutor:icywind",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:sleeptalk",
+    "tutor:sludgebomb",
     "tutor:snore",
     "tutor:stealthrock",
     "tutor:uproar",
-    "tutor:waterpulse"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.palpitoad.desc"
+    "tutor:waterpulse",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:secretpower",
+    "legacy:swagger"
   ],
   "preEvolution": "tympole",
   "evolutions": [
@@ -122,6 +195,7 @@
       "result": "seismitoad",
       "consumeHeldItem": false,
       "learnableMoves": [
+        "acid",
         "drainpunch"
       ],
       "requirements": [
@@ -131,25 +205,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 2,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 8,
-  "weight": 170,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

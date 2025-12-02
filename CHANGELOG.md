@@ -1,4 +1,204 @@
-# 5.0.0
+# 1.2.0
+
+Additions
+- Added Cobblemon 1.7 compatibility
+
+# 1.1.0
+
+Additions
+- Added Cobblemon 1.6 compatibility
+   - Please be sure to update your Generations 1-9 Resource Packs to avoid any model issues!
+- Added Terastallization!
+
+   - ---Explaination---
+   - Comes with a Tera battle overlay effect, Tera sound, and visual effect
+- Legendary Pokemon will now be guaranteed 3 Perfect IVs
+- Added Pokemon icons for profiles and portraits
+- Added Exp All functionality
+- Added world and Time Capsule conversions for all Generations items
+- Added external transformations to the shift right click wheel
+   - Perfect for Mega Evolving your favorites outside of battle!
+- Added Statue functionality for non-OP players
+   - Up to 2 statues can be placed per chunk
+- Added a Brazilian Portuguese translation— thanks ednzinho!
+- Rewrote a majority of the codebase from Java to Kotlin
+
+Changes
+- Updated to Cobblemon species and spawn files for all new Cobblemon
+- Moved Ruby Rod to use Cobblemon 1.6's fishing loot table
+- Improved Pokemon shoulder rendering
+
+Bug Fixes
+- Fixed shift clicking RKS Machine output items disappearing
+- Fixed Aqua armor set having no texture on armor stands
+- Fixed Zygarde Cubes disappearing when used in offhand
+- Fixed Dusk Ball Displays showing as Dive Ball
+- Fixed Calyrex Rider form not receiving typing, ability, or stats
+- Fixed Kyurem retaining Fusion Bolt/Flare after fusing and unfusing
+- Fixed Rotom being unable to learn certain moves in certain forms
+- Fixed Rusty Shield not transforming into Crowned Shield upon summoning of Doggo
+- Add movepool to Crowned forms of Doggos
+   - Zacian/Zamazenta: Iron Head should transform into Behemoth Blade/Bash in battle
+- Fixed Abundant Shrine lang
+- Fixed Special textures not working for statues on servers
+- Fixed High Plains Vivillon texture
+- Fixed Shiny Entei Doll appearing as a regular Entei
+
+# 1.0.2
+
+Changelog
+- Fixed an invisibility, rendering, and crashing bug with 1.0.1— please update if you're experiencing issues!
+- Fixed Megas causing HA to not revert properly
+- Fixed Megas not reverting if not active in battle
+- Tweaked Ogerpon details to support future Tera implementation
+
+Next up: 1.21.1!
+
+# 1.0.1
+
+Changelog
+- Added Ore Generation for Mega Stone, Z-Crystals, and Meteorite.
+- Mega Shards are now stackable.
+- Raised legend spawn rates across the board based on player feedback, and moved Diancie to spawn in mountains.
+- Adjusted spawns for Ditto, Unown, Rotom, Togepi, Marill, Solosis, Gothita, and Bagon evo lines based on player feedback.
+- Fixed spawns for Bronzor, Corphish, Drilbur, and Noibat evo lines.
+- Added about a dozen Pokemon to ocean land spawns
+- Added config option 'enableZygardeCubeOverflow' to allow Zygarde Cubes to continue collecting cells when full.
+- Fixed Zygarde Cell spawn rate with the addition of the collectibles spawn bucket.
+- Zygarde's abilities are no longer affected by ability changing items.
+- Added Zygarde to default Caught section of the config.
+- Zygarde cell spawning is now prevented by scarecrows.
+- Scarecrow is now based on a configurable radius on the x, y, and z axis vs per chunk. Default is 32 in every direction.
+- Fixed an issue with Lake Trio Crystals causing crashes.
+- Ruby Rod should now break after getting enough Lake Trio Shards.
+- Fixed an issue with Bird Shrine interaction.
+- Fixed Cooking Pots not dropping their inventory.
+- Fixed Pokemon changed by the RKS machine lacking moves when the new species shares no moves with the old one.
+- Fixed errors in a few RKS recipes.
+- Chisel statues now have upper/lower scale bounds of 5x and 0.5x, respectively.
+- Fixed statues of Pokemon with aspects displaying incorrectly.
+- Added Ultrite Smithing Template to Ancient Cities, End Cities, Beast Ball loot.
+- Added TMs 230-237 to the loot ball pool.
+- Added Ogerpon masks and Genesect drives to loot ball pool.
+- Fixed X and Y Mega evolutions not working correctly in battle.
+- Fixed full-set bonus buffs for armor being applied incorrectly.
+
+Known Issues
+- Client-side invisibility and log spam at times, fixed in 1.0.2.
+
+# 1.0
+Haven't been following the BETA's? Here's a quick recap:
+- We are a Cobblemon sidemod that hooks in and adds extra features, including gamelike Pokémon models you're familiar with
+- You can disable our models if you wish, they are just resourcepacks and use Cobblemon's blocky models instead.
+- We highly recommend our modpack- there's several mods/resourcepacks you need for the full Generations experience
+- Check out our wiki for a general guide on things- most mechanics have received overhauls. Our wiki is at generations.gg. You can also create an account, and edit pages to fix any issues you spot
+- We said we were keeping it simple, but turns out we ended up with most of our previous features. Some missing mechanics such as Ultra Space are being worked on now. Others, such as outbreaks can often be found as Cobblemon sidemods- we're compatible with most! We'll add our own toggleable features for missing mechanics over time as well, for things such as Outbreaks in this example
+- You must download the new resourcepacks if you have old ones, the ones from the previous BETA's are no longer compatible
+- Yes, we have the full dex
+
+From our last beta, here's the changes/fixes:
+- Added 6,875 Special Pokémon using shaders, rather than textures for zero bloat
+ - All Pokémon now have the following specials:
+ - Galaxy: Darkens Pokémon and adds dark, heavy purples/blacks, while also applying an animated star-y mask
+ - Sketch: Shifts Pokémon mostly black, while adding a sketch-like white outline effect
+ - Shadow: Converts Pokemon to a grayscale, then Darkens Pokémon towards mostly deep, dark blues
+ - Vintage: Applies a nice soft grayscale texture that looks good on pretty much everyone
+ - Pastel: A brightened effect with pink & blue pastel shading. This will mostly only look good on Pokémon that are brighter to begin with
+ - These won't be perfect for every Pokémon, experiment! We'll still add normal nice specials with textures over time such as cosplay's and whatnot we had before- that'll take some time
+ - Creators: These are not a global configuration, they are individually configured in each of their config.jsons, so you can turn off any of these on anyone in favor of a custom one (ie if you want to have a custom textures Shadow Pikachu instead of using the Shadow shader)
+- Added Mew DNA Fiber extraction using DNA Splicers
+- Added DNA Extraction information on Mew Summary screen
+- Added Ultrite tier of tools and armors, end game content which can also have trimming on
+- Added tooltips to moves in battle when you hover over them to display their description
+- Added Syrupy Apple
+- Added Ball Loot messages to inform you what you've received
+- Added Timed PokeBall Loots
+- Added Silver Knowledge Symbol
+- Added JEI/REI compatibility support for RKS Machine
+- Added JourneyMap and Xaero's compatibility support for entity icons
+- Added some support for Mr Crayfish's catalogue
+- Changed Curry to be a bit more basic for now, due to the constant issues, we'll tackle this in a future update
+- Reworked RKS recipes to allow for shapeless recipes instead of specific placements
+- Reworked Iceroot/Shaderoot so they vanish on use instead of enchanted/unenchanted versions
+- Fixed crash with mail
+- Fixed statue bounding box
+- Fixed Chisel menu not updating
+- Fixed crash when flavor is null on Curry
+- Fixed Compressed Stone recipe due to conflict with Deeplsate Tiles
+- Fixed Elevator sound being too loud
+- Fixed Tao and Regigigas Shrine not rendering
+- Fixed sprite shading in GUI's
+- Fixed MultiBlocks replacing other blocks when placed nearby
+- Fixed some misc blocks missing tags, such as being breakable
+- Fixed Time Capsules ignoring untradeable tag
+- Fixed Scarecrows being per chunk, now 32 block radius
+- Fixed Lighting Lantern missing data
+- Fixed Megas losing their abilities
+- Fixed Shaderoot and Iceroot not dropping from carrots
+- Fixed Rotom Catalog not working
+- Fixed Psychic TMs displaying as Bug type
+- Fixed Reveal Glass not toggling Therian Forms
+- Fixed Iron Valiant unable to be made from Gallade
+- Fixed Krabby PokeDoll texture
+- Fixed Shadow Lugia's eyes
+- Fixed HDTV's lang entry
+- Fixed Ditto being stretchy in animations
+- Fixed Terapagos Stellar being a bit wonky
+- Fixed Vivillon being a bit wonky
+- Fixed Zubat glowing
+- Fixed Shoulder Mounts being invisible
+- Fixed an error with Heartflame Mask
+- Fixed couch sitting positions and heights
+- Fixed Pastel Bean Bags
+- Fixed Box's sprite being too basic
+- Fixed Female Pikachu missing sprite
+- Fixed Park Ball texture being wrong color
+- Fixed a handful of blocks not dropping when broken such as Double Street Lamps
+- Fixed Defog, Mystical Fire, Roost showing as Blank TMs
+- Fixed Pokémon able to have moves they aren't supposed to when converted to another species in an RSK Machine
+- Fixed Plasma Armor textures missing
+- Fixed RKS Machine giving you a blank Pokémon sprite item if you click the Time Capsule before it is finished the process of making a Pokemon
+- Fixed BiomesOPlenty Dryland, Wasteland, Wasteland Steppe having no spawns
+- Fixed Corsola, Clauncher, Clawitzer, Mareanie, Toxapex, Bruxish, Pincurchin not spawning due to invalid is_reef spawn set, now spawn in is_warm_ocean
+- Fixed Silicon tools being better than Netherite
+- Fixed Solgaleo's face
+- Fixed Hisuian Electrode missing its mouth
+- Fixed Genesect form change to match the drive it holds
+- Changed Curry to be a bit more basic curry-ntly, due to the constant issues. Curry will default to Milcery Rating for now until Curry Dex is implemented in full. We'll tackle this in a future update.
+- Fixed Yet Another Chance Booster in the modpack conflicting with shiny rate config edits
+- Fixed armors not having armor values
+- Fixed Zygarde Cell spawnrates
+- Fixed Zygarde 50% being able to be created from only 10 Cells
+- Fixed Zygarde Cube opening menus when collecting
+- Decreased Zygarde Cell collection noise
+- Fixed Zygarde Cell collection text firing off twice
+- Fixed lang typos
+- Fixed and added new lang to Chinese and French
+- Fixed Arceus's eyes
+- Fixed RKS Machine causing multiplayer networking issues
+- Fixed recipe for crafting Unown Block letters
+- Fixed Dacite Shore no spawns
+- Fixed a few dozen Pokemon spawns
+- Fixed Swift, Substitute, Grassy Terrain, Supercell Slam showing as Blank TMs
+- Fixed Supercell Slam lang
+- Fixed an error with Heartflame Mask
+- Fixed Tentacool/Tentacruel having gray instead of red orbs
+- Fixed Kyruem fusion and defusion with DNA Splicer
+- Fixed Shaderoot and Iceroot not dropping from carrots
+- Reworked Iceroots and Shaderoots so they vanish on use instead of enchanted and unenchanted versions
+- Pillars should now connect properly
+- Fixed Pokeball chests being 1 pixel up
+- Fixed overwriting Time Capsule Pokemon
+- Fixed Ruby, Sapphire, Silicon, Crystal, Evolution Stone Blocks un-craft recipe
+- Fixed and reogranized symbol loading order
+- Fixed Kantoian Pikachu not being able to evolve
+- Fixed Arceus/Silvally type changes when holding their respective item
+- Fixed Silvally/Arceus being able to have any type without having to hold the respective plate
+- Fixed Pokémon able to have moves they aren't supposed to when converted to another species in an RKS Machine
+- Fixed Chisel menu not updating. Statue GUI picture should now update when you change things
+- Fixed Time Capsules ignoring untradeable tags
+
+# BETA 5.0.0
 Our FINAL BETA is here!
 Please report bugs- new and old in case we missed something important. We hope to have our official release in a couple weeks, we just want some time to collect new bug report and have some time to fix any that arise.
 
@@ -41,13 +241,13 @@ Note: This is BETA 5.0. When we release, we're going back down to 1.0 and adjust
 
 
 
-# 4.1.1
+# BETA 4.1.1
 - Fix Server Load Crash
 - Fix Wooden Fence Gates missing from Forge fence_gates/wooden tag
 - Fix Gates ItemTag missing
 - Make Snow Layer not survival on Ball Loots, Display Blocks and Pokedolls
 
-# 4.1.0
+# BETA 4.1.0
 Model Loading: 
 - Adjusted model loading to ensure proper unloading over time; added config triggered logging for loading/unloading processes.
 Spawns: 
@@ -67,9 +267,9 @@ Shrines:
 Overlays: 
 - Revised overlay code to support hotbar display in the camera and accommodate pumpkin overlays.
 
-# 4.0.2
+# BETA 4.0.2
 - Fix Crash when trying to render the Celestial Altar
 
-# 4.0.1
+# BETA 4.0.1
 - Fix Rendering not displaying on MacOS and Linux
 - Update Glowing Charge Cobblestone texture

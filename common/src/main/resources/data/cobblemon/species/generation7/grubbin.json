@@ -1,9 +1,24 @@
 {
-  "name": "Grubbin",
+  "implemented": true,
   "nationalPokedexNumber": 736,
+  "name": "Grubbin",
   "primaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 44,
+  "pokedex": [
+    "cobblemon.species.grubbin.desc"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "aspects": [],
   "abilities": [
-    "swarm"
+    "swarm",
+    "h:swarm"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 47,
@@ -13,50 +28,68 @@
     "special_defence": 45,
     "speed": 46
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 60,
   "experienceGroup": "medium_fast",
+  "catchRate": 255,
   "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:string",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:cell_battery",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:mudslap",
     "1:visegrip",
+    "1:mudslap",
     "5:stringshot",
     "10:bugbite",
     "15:bite",
-    "19:acrobatics",
     "21:spark",
     "25:stickyweb",
     "30:xscissor",
     "35:crunch",
     "40:dig",
     "egg:discharge",
-    "egg:electroweb",
-    "egg:endure",
     "egg:harden",
-    "egg:mudshot",
-    "tm:acrobatics",
-    "tm:attract",
     "tm:batonpass",
     "tm:bugbite",
     "tm:charge",
     "tm:chargebeam",
-    "tm:confide",
     "tm:crunch",
     "tm:dig",
-    "tm:doubleteam",
     "tm:electricterrain",
     "tm:electroweb",
     "tm:endure",
     "tm:facade",
-    "tm:frustration",
-    "tm:hiddenpower",
     "tm:lightscreen",
     "tm:lunge",
+    "tm:magnetrise",
     "tm:mudshot",
     "tm:mudslap",
     "tm:poisonjab",
@@ -64,36 +97,47 @@
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:round",
+    "tm:risingvoltage",
     "tm:screech",
+    "tm:shockwave",
     "tm:skittersmack",
     "tm:sleeptalk",
-    "tm:snore",
+    "tm:stringshot",
     "tm:strugglebug",
     "tm:substitute",
-    "tm:swagger",
     "tm:takedown",
     "tm:terablast",
     "tm:thunderbolt",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:voltswitch",
     "tm:wildcharge",
     "tm:xscissor",
     "tutor:bugbite",
+    "tutor:chargebeam",
     "tutor:electroweb",
     "tutor:magnetrise",
+    "tutor:mudslap",
+    "tutor:poisonjab",
+    "tutor:rest",
     "tutor:risingvoltage",
     "tutor:shockwave",
     "tutor:skittersmack",
-    "tutor:snore"
-  ],
-  "labels": [
-    "gen7"
-  ],
-  "pokedex": [
-    "cobblemon.species.grubbin.desc"
+    "tutor:sleeptalk",
+    "tutor:stringshot",
+    "tutor:thunderbolt",
+    "tutor:wildcharge",
+    "tutor:xscissor",
+    "legacy:acrobatics",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [
     {
@@ -112,41 +156,22 @@
       ]
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 44,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:string",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:wepear_berry",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:cell_battery",
-        "percentage": 2.5
+  "behaviour": {
+    "resting": {
+      "willSleepOnBed": true,
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
       }
-    ]
-  },
-  "implemented": true
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  }
 }

@@ -1,10 +1,26 @@
 {
-  "name": "Chi-Yu",
+  "implemented": true,
   "nationalPokedexNumber": 1004,
+  "name": "Chi-Yu",
   "primaryType": "dark",
   "secondaryType": "fire",
+  "maleRatio": -1,
+  "height": 4,
+  "weight": 49,
+  "pokedex": [
+    "cobblemon.species.chiyu.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
-    "beadsofruin"
+    "beadsofruin",
+    "h:beadsofruin"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 55,
@@ -14,10 +30,6 @@
     "special_defence": 120,
     "speed": 100
   },
-  "catchRate": 6,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,15 +38,15 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 6,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
     "1:ember",
-    "1:meanlook",
     "1:spite",
+    "1:meanlook",
     "5:flamewheel",
     "10:payback",
     "15:willowisp",
@@ -50,6 +62,7 @@
     "65:inferno",
     "70:memento",
     "75:overheat",
+    "tm:bounce",
     "tm:burningjealousy",
     "tm:confuseray",
     "tm:crunch",
@@ -65,10 +78,12 @@
     "tm:heatwave",
     "tm:hex",
     "tm:hyperbeam",
+    "tm:incinerate",
     "tm:lashout",
     "tm:lightscreen",
     "tm:nastyplot",
     "tm:overheat",
+    "tm:payback",
     "tm:protect",
     "tm:psychic",
     "tm:reflect",
@@ -79,24 +94,67 @@
     "tm:spite",
     "tm:substitute",
     "tm:sunnyday",
+    "tm:swagger",
     "tm:takedown",
     "tm:taunt",
     "tm:temperflare",
     "tm:terablast",
     "tm:willowisp",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:bounce",
+    "tutor:burningjealousy",
+    "tutor:darkpulse",
+    "tutor:flamethrower",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:hyperbeam",
+    "tutor:lashout",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:spite",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 4,
-  "weight": 49,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.chiyu.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "9",
+      "toleratedLeaders": [
+        {
+          "pokemon": "chiyu",
+          "tier": 1
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "canBreatheUnderwater": true,
+        "canSwimInLava": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "fireImmune": true
+  },
+  "lightingData": {
+    "lightLevel": 8,
+    "liquidGlowMode": "BOTH"
+  }
 }

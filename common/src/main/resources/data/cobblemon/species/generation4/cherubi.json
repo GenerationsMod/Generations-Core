@@ -1,13 +1,60 @@
 {
-  "name": "Cherubi",
+  "implemented": true,
   "nationalPokedexNumber": 420,
+  "name": "Cherubi",
   "primaryType": "grass",
-  "abilities": [
-    "chlorophyll"
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 33,
+  "pokedex": [
+    "cobblemon.species.cherubi.desc"
   ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
+  "abilities": [
+    "chlorophyll",
+    "h:chlorophyll"
+  ],
+  "eggGroups": [
+    "fairy",
+    "grass"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 35,
+    "defence": 45,
+    "special_attack": 62,
+    "special_defence": 53,
+    "speed": 35
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 55,
+  "experienceGroup": "medium_fast",
+  "catchRate": 190,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
-    "amount": 2,
+    "amount": 5,
     "entries": [
+      {
+        "item": "minecraft:sweet_berries",
+        "quantityRange": "1-3"
+      },
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 2.5
@@ -18,124 +65,95 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 45,
-    "attack": 35,
-    "defence": 45,
-    "special_attack": 62,
-    "special_defence": 53,
-    "speed": 35
-  },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 55,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "fairy",
-    "grass"
-  ],
   "moves": [
-    "1:morningsun",
     "1:tackle",
+    "1:morningsun",
     "5:leafage",
-    "7:growth",
     "10:growth",
-    "10:leechseed",
-    "13:helpinghand",
     "15:helpinghand",
-    "19:magicalleaf",
     "20:magicalleaf",
-    "22:sunnyday",
     "26:leechseed",
-    "28:worryseed",
     "30:takedown",
-    "31:takedown",
     "35:petalblizzard",
-    "37:solarbeam",
     "40:luckychant",
-    "40:worryseed",
     "45:solarbeam",
-    "47:petalblizzard",
     "egg:aromatherapy",
     "egg:defensecurl",
     "egg:flowershield",
     "egg:grasswhistle",
-    "egg:grassyterrain",
     "egg:healingwish",
     "egg:healpulse",
     "egg:naturalgift",
     "egg:naturepower",
     "egg:razorleaf",
     "egg:rollout",
-    "egg:seedbomb",
     "egg:sweetscent",
     "egg:tickle",
-    "egg:weatherball",
-    "tm:attract",
     "tm:bulletseed",
-    "tm:captivate",
-    "tm:confide",
     "tm:dazzlinggleam",
-    "tm:doubleteam",
     "tm:drainingkiss",
     "tm:endure",
     "tm:energyball",
     "tm:facade",
     "tm:flash",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:grassknot",
+    "tm:grassyglide",
     "tm:grassyterrain",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:magicalleaf",
     "tm:naturalgift",
     "tm:naturepower",
+    "tm:petalblizzard",
     "tm:pollenpuff",
     "tm:protect",
     "tm:rest",
-    "tm:return",
-    "tm:round",
+    "tm:rollout",
     "tm:safeguard",
-    "tm:secretpower",
     "tm:seedbomb",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:solarbeam",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swordsdance",
-    "tm:toxic",
+    "tm:synthesis",
+    "tm:takedown",
+    "tm:terablast",
     "tm:weatherball",
-    "tutor:bulletseed",
+    "tm:worryseed",
+    "tutor:dazzlinggleam",
+    "tutor:energyball",
     "tutor:gigadrain",
     "tutor:grassyglide",
-    "tutor:healpulse",
     "tutor:helpinghand",
-    "tutor:leechseed",
+    "tutor:magicalleaf",
+    "tutor:rest",
     "tutor:rollout",
     "tutor:seedbomb",
     "tutor:sleeptalk",
-    "tutor:snore",
     "tutor:synthesis",
-    "tutor:worryseed"
-  ],
-  "labels": [
-    "gen4"
-  ],
-  "pokedex": [
-    "cobblemon.species.cherubi.desc"
+    "tutor:worryseed",
+    "legacy:attract",
+    "legacy:captivate",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [
     {
       "id": "cherubi_cherrim",
       "variant": "level_up",
-      "result": "cherrim",
+      "result": "cherrim blossom_form=overcast",
       "consumeHeldItem": false,
       "learnableMoves": [
+        "petaldance",
         "sunnyday"
       ],
       "requirements": [
@@ -146,24 +164,28 @@
       ]
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 1,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 33,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4",
+      "toleratedLeaders": [
+        {
+          "pokemon": "cherubi",
+          "tier": 1
+        }
+      ]
+    },
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  }
 }

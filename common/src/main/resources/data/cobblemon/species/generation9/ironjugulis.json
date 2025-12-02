@@ -1,10 +1,26 @@
 {
-  "name": "Iron Jugulis",
+  "implemented": true,
   "nationalPokedexNumber": 993,
+  "name": "Iron Jugulis",
   "primaryType": "dark",
   "secondaryType": "flying",
+  "maleRatio": -1,
+  "height": 13,
+  "weight": 1110,
+  "pokedex": [
+    "cobblemon.species.ironjugulis.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 94,
@@ -14,10 +30,6 @@
     "special_defence": 80,
     "speed": 108
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,17 +38,17 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:aircutter",
     "1:electricterrain",
+    "1:workup",
     "1:focusenergy",
     "1:triattack",
-    "1:workup",
+    "1:aircutter",
     "7:roar",
     "14:assurance",
     "21:dragonbreath",
@@ -52,6 +64,7 @@
     "tm:acrobatics",
     "tm:aircutter",
     "tm:airslash",
+    "tm:assurance",
     "tm:bodyslam",
     "tm:chargebeam",
     "tm:crunch",
@@ -71,6 +84,7 @@
     "tm:flashcannon",
     "tm:fly",
     "tm:focusblast",
+    "tm:focusenergy",
     "tm:gigaimpact",
     "tm:heatwave",
     "tm:hurricane",
@@ -98,20 +112,68 @@
     "tm:taunt",
     "tm:terablast",
     "tm:throatchop",
+    "tm:triattack",
     "tm:uturn",
-    "tm:zenheadbutt"
+    "tm:workup",
+    "tm:zenheadbutt",
+    "tutor:aircutter",
+    "tutor:chargebeam",
+    "tutor:darkpulse",
+    "tutor:dragonpulse",
+    "tutor:dualwingbeat",
+    "tutor:earthpower",
+    "tutor:firefang",
+    "tutor:flamethrower",
+    "tutor:flashcannon",
+    "tutor:focusenergy",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:ironhead",
+    "tutor:knockoff",
+    "tutor:lashout",
+    "tutor:meteorbeam",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:tailwind",
+    "tutor:throatchop",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 13,
-  "weight": 1110,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.ironjugulis.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4"
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canBreatheUnderwater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  },
+  "lightingData": {
+    "lightLevel": 7,
+    "liquidGlowMode": "BOTH"
+  }
 }

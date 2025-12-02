@@ -1,11 +1,26 @@
 {
-  "name": "Munkidori",
+  "implemented": true,
   "nationalPokedexNumber": 1015,
+  "name": "Munkidori",
   "primaryType": "poison",
   "secondaryType": "psychic",
+  "maleRatio": 1,
+  "height": 10,
+  "weight": 122,
+  "pokedex": [
+    "cobblemon.species.munkidori.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
     "toxicchain",
     "h:frisk"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 88,
@@ -15,10 +30,6 @@
     "special_defence": 90,
     "speed": 106
   },
-  "catchRate": 3,
-  "maleRatio": 1,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,16 +38,16 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 278,
   "experienceGroup": "slow",
-  "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "catchRate": 3,
+  "eggCycles": 120,
+  "baseFriendship": 0,
   "moves": [
+    "1:scratch",
     "1:confusion",
     "1:fakeout",
     "1:flatter",
-    "1:scratch",
     "8:helpinghand",
     "16:psybeam",
     "24:clearsmog",
@@ -95,16 +106,63 @@
     "tm:trick",
     "tm:uproar",
     "tm:uturn",
-    "tm:venoshock"
+    "tm:venoshock",
+    "tutor:calmmind",
+    "tutor:gigaimpact",
+    "tutor:gunkshot",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:lashout",
+    "tutor:mudslap",
+    "tutor:poisonjab",
+    "tutor:poltergeist",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
+    "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:spite",
+    "tutor:swift",
+    "tutor:trick",
+    "tutor:uproar"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 10,
-  "weight": 122,
   "evolutions": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4",
+      "toleratedLeaders": [
+        {
+          "pokemon": "okidogi",
+          "tier": 1
+        },
+        {
+          "pokemon": "fezandipiti",
+          "tier": 1
+        },
+        {
+          "pokemon": "munkidori",
+          "tier": 2
+        },
+        {
+          "pokemon": "pecharunt",
+          "tier": 3
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

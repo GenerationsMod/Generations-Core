@@ -1,13 +1,54 @@
 {
-  "name": "Stunky",
+  "implemented": true,
   "nationalPokedexNumber": 434,
+  "name": "Stunky",
   "primaryType": "poison",
   "secondaryType": "dark",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 192,
+  "pokedex": [
+    "cobblemon.species.stunky.desc"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
   "abilities": [
     "stench",
     "aftermath",
     "h:keeneye"
   ],
+  "eggGroups": [
+    "field"
+  ],
+  "baseStats": {
+    "hp": 63,
+    "attack": 63,
+    "defence": 47,
+    "special_attack": 41,
+    "special_defence": 41,
+    "speed": 74
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "baseExperienceYield": 66,
+  "experienceGroup": "medium_fast",
+  "catchRate": 225,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 1,
     "entries": [
@@ -17,95 +58,42 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 63,
-    "attack": 63,
-    "defence": 47,
-    "special_attack": 41,
-    "special_defence": 41,
-    "speed": 74
-  },
-  "catchRate": 225,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 66,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
   "moves": [
-    "1:focusenergy",
-    "1:poisongas",
     "1:scratch",
+    "1:poisongas",
     "3:feint",
-    "3:poisongas",
-    "4:poisongas",
     "6:smokescreen",
-    "7:screech",
     "9:acidspray",
-    "9:furyswipes",
-    "10:furyswipes",
     "12:furyswipes",
-    "13:smokescreen",
-    "14:smokescreen",
-    "15:feint",
     "15:focusenergy",
     "18:bite",
-    "18:feint",
-    "19:acidspray",
-    "20:toxic",
-    "21:bite",
     "21:venoshock",
-    "22:slash",
     "24:screech",
-    "25:slash",
     "27:toxic",
     "30:suckerpunch",
-    "31:nightslash",
-    "32:acidspray",
     "33:memento",
     "36:nightslash",
-    "37:memento",
-    "37:nightslash",
-    "37:venomdrench",
     "39:belch",
-    "39:suckerpunch",
     "42:explosion",
-    "42:venomdrench",
-    "43:belch",
-    "43:memento",
-    "44:explosion",
-    "45:explosion",
-    "46:belch",
-    "49:explosion",
     "egg:astonish",
-    "egg:crunch",
     "egg:doubleedge",
     "egg:flameburst",
-    "egg:foulplay",
     "egg:haze",
-    "egg:irontail",
     "egg:leer",
-    "egg:playrough",
     "egg:punishment",
     "egg:pursuit",
-    "egg:scaryface",
     "egg:slash",
     "egg:smog",
     "tm:acidspray",
     "tm:assurance",
-    "tm:attract",
     "tm:bodyslam",
-    "tm:captivate",
-    "tm:confide",
+    "tm:corrosivegas",
     "tm:crunch",
     "tm:cut",
     "tm:darkpulse",
     "tm:defog",
     "tm:dig",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:endure",
     "tm:explosion",
     "tm:facade",
@@ -113,19 +101,18 @@
     "tm:flamethrower",
     "tm:focusenergy",
     "tm:foulplay",
-    "tm:frustration",
+    "tm:furycutter",
     "tm:gunkshot",
     "tm:haze",
+    "tm:headbutt",
     "tm:helpinghand",
     "tm:hex",
-    "tm:hiddenpower",
     "tm:honeclaws",
     "tm:incinerate",
     "tm:irontail",
     "tm:knockoff",
     "tm:lashout",
     "tm:nastyplot",
-    "tm:naturalgift",
     "tm:payback",
     "tm:playrough",
     "tm:poisonjab",
@@ -133,13 +120,10 @@
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:roar",
     "tm:rocksmash",
-    "tm:round",
     "tm:scaryface",
     "tm:screech",
-    "tm:secretpower",
     "tm:shadowball",
     "tm:shadowclaw",
     "tm:sleeptalk",
@@ -147,10 +131,9 @@
     "tm:sludgewave",
     "tm:snarl",
     "tm:snatch",
-    "tm:snore",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:tailslap",
     "tm:takedown",
@@ -168,25 +151,41 @@
     "tutor:corrosivegas",
     "tutor:darkpulse",
     "tutor:defog",
+    "tutor:flamethrower",
+    "tutor:focusenergy",
     "tutor:foulplay",
     "tutor:furycutter",
-    "tutor:headbutt",
+    "tutor:gunkshot",
+    "tutor:helpinghand",
     "tutor:irontail",
+    "tutor:knockoff",
     "tutor:lashout",
-    "tutor:mudslap",
-    "tutor:screech",
+    "tutor:playrough",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rocksmash",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
     "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:snarl",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:suckerpunch",
     "tutor:swift",
-    "tutor:throatchop"
-  ],
-  "labels": [
-    "gen4"
-  ],
-  "pokedex": [
-    "cobblemon.species.stunky.desc"
+    "tutor:throatchop",
+    "legacy:attract",
+    "legacy:captivate",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:mudslap",
+    "legacy:naturalgift",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger"
   ],
   "evolutions": [
     {
@@ -205,24 +204,27 @@
       ]
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 4,
-  "weight": 192,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "2",
+      "toleratedLeaders": [
+        {
+          "pokemon": "skuntank",
+          "tier": 1
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendOwner": true
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }
