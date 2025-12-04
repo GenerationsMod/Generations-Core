@@ -880,7 +880,7 @@ object GenerationsItems: ItemPlatformRegistry() {
     val HOOPA_RING = register("hoopa_ring", ::ItemWithLangTooltipImpl, LEGENDARY_ITEMS)
     val FADED_RED_ORB = register("faded_red_orb", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(250), ElementalTypes.FIRE) }, LEGENDARY_ITEMS)
     val FADED_BLUE_ORB = register("faded_blue_orb", { ElementalPostBattleUpdateItemImpl(it.stacksTo(1).durability(250), ElementalTypes.WATER) }, LEGENDARY_ITEMS)
-    val FADED_JADE_ORB = register("faded_jade_orb", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(250), key = LegendKeys.RAYQUAZA, types = listOf(ElementalTypes.FLYING)) }, LEGENDARY_ITEMS)
+    val FADED_JADE_ORB = register("faded_jade_orb", { ElementalPostBattleUpdateItemImplImpl(it.stacksTo(1).durability(250), key = LegendKeys.RAYQUAZA, types = listOf(ElementalTypes.FLYING), predicate = { it.y >= 240.0 }) }, LEGENDARY_ITEMS)
     val RED_ORB = registerHeldItem("red_orb", ::Item)
     val BLUE_ORB = registerHeldItem("blue_orb", ::Item)
     val JADE_ORB = register("jade_orb", { JadeOrb(it.stacksTo(1)) }, LEGENDARY_ITEMS)
