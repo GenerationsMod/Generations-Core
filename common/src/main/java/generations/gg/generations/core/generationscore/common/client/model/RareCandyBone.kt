@@ -2,6 +2,7 @@ package generations.gg.generations.core.generationscore.common.client.model
 
 import com.cobblemon.mod.common.api.pokemon.PokemonSpecies
 import com.cobblemon.mod.common.client.render.VaryingRenderableResolver
+import com.cobblemon.mod.common.client.render.models.blockbench.LocatorAccess.Companion.PREFIX
 import com.cobblemon.mod.common.client.render.models.blockbench.pose.Bone
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.RenderContext
 import com.cobblemon.mod.common.client.render.models.blockbench.repository.VaryingModelRepository
@@ -36,11 +37,11 @@ private val RenderContext.species: Species?
     get() = this.request(RenderContext.SPECIES)?.let { PokemonSpecies.getByIdentifier(it) }
 
 class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assumes Bone will always be a ModelPart */(
-    location: ResourceLocation): ModelPart(CUBE_LIST, BLANK_MAP), Supplier<Bone>, Bone {
+    location: ResourceLocation): ModelPart(mutableListOf(), MAP), Supplier<Bone>, Bone {
     private val objectSupplier: () -> CompiledModel? = { ModelRegistry[location] }
 
     override fun getChildren(): Map<String, Bone> {
-        return DUMMY
+        return MAP as Map<String, Bone>
     }
 
     override fun render(
@@ -116,11 +117,8 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     override fun get(): Bone = this
 
     companion object {
-        val CUBE_LIST = listOf(Cube(0, 0, 0f, 0f, 0f, 1f, 1f, 1f, 0f, 0f, 0f, false, 1.0f, 1.0f, java.util.Set.of(Direction.NORTH))) //TODO: Remove when assumpt of Bone is always ModelPart is gone.
-        private val BLANK_MAP = mapOf("root" to ModelPart(CUBE_LIST, mapOf()))
-        private val temp = Vector3f()
+        private val MAP = mapOf(PREFIX + "seat_1" to ModelPart(mutableListOf(), mapOf()))
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)
-        private val DUMMY = emptyMap<String, Bone>()
     }
 }
 
