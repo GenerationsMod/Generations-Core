@@ -1,11 +1,52 @@
 {
-  "name": "Pansear",
+  "implemented": true,
   "nationalPokedexNumber": 513,
+  "name": "Pansear",
   "primaryType": "fire",
+  "maleRatio": 0.875,
+  "height": 6,
+  "weight": 110,
+  "pokedex": [
+    "cobblemon.species.pansear.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "gluttony",
     "h:blaze"
   ],
+  "eggGroups": [
+    "field"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 53,
+    "defence": 48,
+    "special_attack": 53,
+    "special_defence": 48,
+    "speed": 64
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "baseExperienceYield": 63,
+  "experienceGroup": "medium_fast",
+  "catchRate": 190,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -23,26 +64,9 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 50,
-    "attack": 53,
-    "defence": 48,
-    "special_attack": 53,
-    "special_defence": 48,
-    "speed": 64
-  },
-  "catchRate": 190,
-  "maleRatio": 0.875,
-  "shoulderMountable": false,
-  "baseExperienceYield": 63,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
   "moves": [
-    "1:playnice",
     "1:scratch",
+    "1:playnice",
     "4:leer",
     "7:lick",
     "10:incinerate",
@@ -71,99 +95,91 @@
     "egg:sleeptalk",
     "egg:tickle",
     "tm:acrobatics",
-    "tm:attract",
-    "tm:confide",
+    "tm:amnesia",
+    "tm:burningjealousy",
+    "tm:covet",
+    "tm:crunch",
     "tm:cut",
     "tm:dig",
-    "tm:doubleteam",
+    "tm:disarmingvoice",
+    "tm:endeavor",
+    "tm:endure",
     "tm:facade",
     "tm:fireblast",
+    "tm:firepledge",
+    "tm:firepunch",
+    "tm:firespin",
     "tm:flamecharge",
     "tm:flamethrower",
+    "tm:flareblitz",
     "tm:fling",
-    "tm:frustration",
+    "tm:focuspunch",
+    "tm:gastroacid",
     "tm:grassknot",
-    "tm:hiddenpower",
+    "tm:gunkshot",
+    "tm:heatwave",
+    "tm:helpinghand",
     "tm:honeclaws",
     "tm:incinerate",
+    "tm:irontail",
+    "tm:knockoff",
+    "tm:lowkick",
     "tm:lowsweep",
+    "tm:nastyplot",
+    "tm:naturalgift",
     "tm:overheat",
     "tm:payback",
     "tm:protect",
+    "tm:recycle",
     "tm:rest",
-    "tm:return",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
-    "tm:secretpower",
+    "tm:roleplay",
     "tm:shadowclaw",
     "tm:sleeptalk",
     "tm:solarbeam",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
+    "tm:swift",
     "tm:taunt",
+    "tm:terablast",
     "tm:thief",
     "tm:torment",
-    "tm:toxic",
+    "tm:uproar",
     "tm:willowisp",
     "tm:workup",
+    "tutor:burningjealousy",
     "tutor:covet",
     "tutor:endeavor",
     "tutor:firepledge",
     "tutor:firepunch",
+    "tutor:flamethrower",
     "tutor:focuspunch",
     "tutor:gastroacid",
     "tutor:gunkshot",
     "tutor:heatwave",
     "tutor:helpinghand",
-    "tutor:incinerate",
     "tutor:irontail",
     "tutor:knockoff",
-    "tutor:leer",
-    "tutor:lick",
     "tutor:lowkick",
     "tutor:recycle",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:roleplay",
+    "tutor:shadowclaw",
     "tutor:sleeptalk",
-    "tutor:snore",
+    "tutor:swift",
     "tutor:uproar"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.pansear.desc"
   ],
   "evolutions": [
     {
       "id": "pansear_simisear",
       "variant": "item_interact",
       "result": "simisear",
-      "consumeHeldItem": false,
+      "consumeHeldItem": true,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:fire_stone"
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 6,
-  "weight": 110,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

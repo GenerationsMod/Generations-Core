@@ -1,12 +1,27 @@
 {
-  "name": "Dedenne",
+  "implemented": true,
   "nationalPokedexNumber": 702,
+  "name": "Dedenne",
   "primaryType": "electric",
   "secondaryType": "fairy",
+  "maleRatio": 0.5,
+  "height": 2,
+  "weight": 22,
+  "pokedex": [
+    "cobblemon.species.dedenne.desc"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
   "abilities": [
     "cheekpouch",
     "pickup",
     "h:plus"
+  ],
+  "eggGroups": [
+    "field",
+    "fairy"
   ],
   "baseStats": {
     "hp": 67,
@@ -16,27 +31,43 @@
     "special_defence": 67,
     "speed": 101
   },
-  "catchRate": 180,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
   "baseExperienceYield": 151,
   "experienceGroup": "medium_fast",
+  "catchRate": 180,
   "eggCycles": 20,
-  "eggGroups": [
-    "field",
-    "fairy"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:nuzzle",
     "1:tailwhip",
+    "1:nuzzle",
     "5:tackle",
     "10:charge",
     "15:thundershock",
     "20:charm",
-    "23:thunderwave",
     "25:paraboliccharge",
     "30:voltswitch",
-    "34:chargebeam",
     "35:rest",
     "35:snore",
     "40:discharge",
@@ -45,23 +76,18 @@
     "55:entrainment",
     "60:thunder",
     "egg:covet",
-    "egg:eerieimpulse",
-    "egg:helpinghand",
     "egg:magnetrise",
     "egg:naturalgift",
     "egg:tearfullook",
-    "tm:aerialace",
     "tm:agility",
     "tm:allyswitch",
-    "tm:attract",
     "tm:charge",
     "tm:chargebeam",
     "tm:charm",
-    "tm:confide",
+    "tm:covet",
     "tm:cut",
     "tm:dazzlinggleam",
     "tm:dig",
-    "tm:doubleteam",
     "tm:drainingkiss",
     "tm:eerieimpulse",
     "tm:electricterrain",
@@ -72,30 +98,31 @@
     "tm:facade",
     "tm:flash",
     "tm:fling",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:irontail",
+    "tm:lastresort",
     "tm:lightscreen",
+    "tm:magnetrise",
     "tm:mistyterrain",
+    "tm:naturalgift",
     "tm:playrough",
     "tm:protect",
     "tm:raindance",
+    "tm:recycle",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
-    "tm:round",
-    "tm:secretpower",
+    "tm:risingvoltage",
     "tm:seedbomb",
+    "tm:shockwave",
+    "tm:signalbeam",
     "tm:sleeptalk",
     "tm:snore",
     "tm:substitute",
     "tm:sunnyday",
     "tm:superfang",
-    "tm:swagger",
     "tm:swift",
     "tm:takedown",
     "tm:terablast",
@@ -104,60 +131,36 @@
     "tm:thunderbolt",
     "tm:thunderpunch",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:trailblaze",
     "tm:uturn",
     "tm:voltswitch",
     "tm:wildcharge",
     "tutor:allyswitch",
+    "tutor:chargebeam",
     "tutor:covet",
+    "tutor:dazzlinggleam",
     "tutor:electroweb",
+    "tutor:endeavor",
+    "tutor:gigaimpact",
     "tutor:helpinghand",
+    "tutor:hyperbeam",
     "tutor:irontail",
     "tutor:lastresort",
     "tutor:magnetrise",
+    "tutor:playrough",
     "tutor:recycle",
+    "tutor:rest",
     "tutor:risingvoltage",
+    "tutor:seedbomb",
     "tutor:shockwave",
     "tutor:signalbeam",
+    "tutor:sleeptalk",
     "tutor:snore",
     "tutor:superfang",
-    "tutor:thunderpunch"
+    "tutor:swift",
+    "tutor:thunderbolt",
+    "tutor:thunderpunch",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen6"
-  ],
-  "pokedex": [
-    "cobblemon.species.dedenne.desc"
-  ],
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 2
-  },
-  "height": 2,
-  "weight": 22,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:cheri_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

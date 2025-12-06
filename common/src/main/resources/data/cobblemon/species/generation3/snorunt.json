@@ -1,11 +1,26 @@
 {
-  "name": "Snorunt",
+  "implemented": true,
   "nationalPokedexNumber": 361,
+  "name": "Snorunt",
   "primaryType": "ice",
+  "maleRatio": 0.5,
+  "height": 7,
+  "weight": 168,
+  "pokedex": [
+    "cobblemon.species.snorunt.desc"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
   "abilities": [
     "innerfocus",
     "icebody",
     "h:moody"
+  ],
+  "eggGroups": [
+    "fairy",
+    "mineral"
   ],
   "baseStats": {
     "hp": 50,
@@ -15,52 +30,73 @@
     "special_defence": 50,
     "speed": 50
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 60,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "fairy",
-    "mineral"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:snowball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:dawn_stone",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:never_melt_ice",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:babiri_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:astonish",
-    "1:headbutt",
     "1:powdersnow",
+    "1:headbutt",
+    "1:astonish",
     "5:leer",
     "10:doubleteam",
     "15:iceshard",
     "20:protect",
     "25:icywind",
     "30:frostbreath",
-    "34:icebeam",
     "35:bite",
     "40:icefang",
-    "45:hail",
     "45:snowscape",
     "50:weatherball",
     "55:crunch",
     "60:blizzard",
-    "egg:avalanche",
     "egg:bide",
     "egg:block",
     "egg:disable",
-    "egg:faketears",
-    "egg:hex",
     "egg:iciclecrash",
     "egg:rollout",
-    "egg:spikes",
     "egg:switcheroo",
-    "egg:weatherball",
-    "tm:attract",
     "tm:avalanche",
     "tm:blizzard",
+    "tm:block",
     "tm:bodyslam",
-    "tm:captivate",
     "tm:chillingwater",
-    "tm:confide",
     "tm:crunch",
     "tm:doubleteam",
     "tm:endure",
@@ -68,63 +104,44 @@
     "tm:faketears",
     "tm:flash",
     "tm:frostbreath",
-    "tm:frustration",
     "tm:hail",
+    "tm:headbutt",
     "tm:helpinghand",
     "tm:hex",
-    "tm:hiddenpower",
     "tm:icebeam",
     "tm:icefang",
     "tm:icespinner",
     "tm:iciclespear",
     "tm:icywind",
     "tm:lightscreen",
-    "tm:naturalgift",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:round",
+    "tm:rollout",
     "tm:safeguard",
-    "tm:secretpower",
     "tm:shadowball",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:snowscape",
     "tm:spikes",
     "tm:spite",
     "tm:substitute",
-    "tm:swagger",
     "tm:takedown",
     "tm:terablast",
-    "tm:toxic",
     "tm:trailblaze",
     "tm:waterpulse",
     "tm:weatherball",
-    "tutor:bite",
     "tutor:block",
-    "tutor:bodyslam",
-    "tutor:doubleedge",
-    "tutor:endure",
-    "tutor:headbutt",
+    "tutor:helpinghand",
+    "tutor:icebeam",
+    "tutor:icefang",
     "tutor:icywind",
-    "tutor:mimic",
-    "tutor:powdersnow",
+    "tutor:rest",
     "tutor:rollout",
-    "tutor:sing",
+    "tutor:shadowball",
     "tutor:sleeptalk",
-    "tutor:snore",
+    "tutor:spikes",
     "tutor:spite",
-    "tutor:substitute",
-    "tutor:swagger",
-    "tutor:waterpulse",
-    "tutor:weatherball"
-  ],
-  "labels": [
-    "gen3"
-  ],
-  "pokedex": [
-    "cobblemon.species.snorunt.desc"
+    "tutor:waterpulse"
   ],
   "evolutions": [
     {
@@ -147,7 +164,10 @@
       "variant": "item_interact",
       "result": "froslass",
       "consumeHeldItem": false,
-      "learnableMoves": [],
+      "learnableMoves": [
+        "ominouswind",
+        "hex"
+      ],
       "requirements": [
         {
           "variant": "properties",
@@ -156,46 +176,5 @@
       ],
       "requiredContext": "cobblemon:dawn_stone"
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 1,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 7,
-  "weight": 168,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:snowball",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:dawn_stone",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:never_melt_ice",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:babiri_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

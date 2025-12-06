@@ -1,11 +1,26 @@
 {
-  "name": "Chewtle",
+  "implemented": true,
   "nationalPokedexNumber": 833,
+  "name": "Chewtle",
   "primaryType": "water",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 85,
+  "pokedex": [
+    "cobblemon.species.chewtle.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "strongjaw",
     "shellarmor",
     "h:swiftswim"
+  ],
+  "eggGroups": [
+    "monster",
+    "water_1"
   ],
   "baseStats": {
     "hp": 50,
@@ -15,16 +30,48 @@
     "special_defence": 38,
     "speed": 44
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 57,
   "experienceGroup": "medium_fast",
+  "catchRate": 255,
   "eggCycles": 20,
-  "eggGroups": [
-    "monster",
-    "water_1"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:turtle_scute",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:rindo_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:tackle",
     "1:watergun",
@@ -40,7 +87,6 @@
     "egg:shellsmash",
     "egg:skullbash",
     "tm:assurance",
-    "tm:attract",
     "tm:bodyslam",
     "tm:chillingwater",
     "tm:crunch",
@@ -49,6 +95,8 @@
     "tm:endure",
     "tm:facade",
     "tm:falseswipe",
+    "tm:gastroacid",
+    "tm:headbutt",
     "tm:hydropump",
     "tm:icefang",
     "tm:liquidation",
@@ -59,11 +107,9 @@
     "tm:raindance",
     "tm:rest",
     "tm:revenge",
-    "tm:round",
     "tm:scaryface",
     "tm:skittersmack",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:surf",
@@ -72,14 +118,17 @@
     "tm:waterfall",
     "tm:waterpulse",
     "tm:whirlpool",
-    "tutor:scaleshot",
-    "tutor:skittersmack"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.chewtle.desc"
+    "tutor:dive",
+    "tutor:falseswipe",
+    "tutor:gastroacid",
+    "tutor:icefang",
+    "tutor:liquidation",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:waterpulse"
   ],
   "evolutions": [
     {
@@ -97,38 +146,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 3,
-  "weight": 85,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:scute",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:rindo_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

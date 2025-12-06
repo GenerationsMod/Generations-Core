@@ -1,12 +1,26 @@
 {
-  "name": "Scovillain",
+  "implemented": true,
   "nationalPokedexNumber": 952,
+  "name": "Scovillain",
   "primaryType": "grass",
   "secondaryType": "fire",
+  "maleRatio": 0.5,
+  "height": 9,
+  "weight": 150,
+  "pokedex": [
+    "cobblemon.species.scovillain.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "chlorophyll",
     "insomnia",
     "h:moody"
+  ],
+  "eggGroups": [
+    "grass"
   ],
   "baseStats": {
     "hp": 65,
@@ -16,10 +30,6 @@
     "special_defence": 65,
     "speed": 75
   },
-  "catchRate": 75,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 170,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 2,
@@ -28,17 +38,30 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 170,
   "experienceGroup": "medium_fast",
+  "catchRate": 75,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "cobblemon:roasted_leek",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:firefang",
-    "1:leafage",
-    "1:leer",
     "1:spicyextract",
     "1:flamethrower",
+    "1:leer",
+    "1:firefang",
+    "1:leafage",
     "4:bite",
     "10:growth",
     "13:razorleaf",
@@ -49,8 +72,13 @@
     "33:worryseed",
     "38:crunch",
     "44:seedbomb",
-    "48:overheat",
     "48:solarbeam",
+    "48:overheat",
+    "egg:ingrain",
+    "egg:leechseed",
+    "egg:ragepowder",
+    "egg:rollout",
+    "egg:worryseed",
     "tm:bulletseed",
     "tm:burningjealousy",
     "tm:crunch",
@@ -66,6 +94,7 @@
     "tm:grassknot",
     "tm:grassyglide",
     "tm:grassyterrain",
+    "tm:headbutt",
     "tm:helpinghand",
     "tm:hyperbeam",
     "tm:lashout",
@@ -74,6 +103,7 @@
     "tm:overheat",
     "tm:protect",
     "tm:rest",
+    "tm:rollout",
     "tm:sandstorm",
     "tm:scaryface",
     "tm:seedbomb",
@@ -89,32 +119,29 @@
     "tm:thief",
     "tm:trailblaze",
     "tm:willowisp",
-    "tm:zenheadbutt"
+    "tm:worryseed",
+    "tm:zenheadbutt",
+    "tutor:burningjealousy",
+    "tutor:endeavor",
+    "tutor:energyball",
+    "tutor:firefang",
+    "tutor:flamethrower",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:grassyglide",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:lashout",
+    "tutor:magicalleaf",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:superfang",
+    "tutor:worryseed",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 9,
-  "weight": 150,
   "preEvolution": "capsakid",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.scovillain.desc"
-  ],
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "cobblemon:roasted_leek",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:rawst_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

@@ -1,10 +1,26 @@
 {
-  "name": "Iron Bundle",
+  "implemented": true,
   "nationalPokedexNumber": 991,
+  "name": "Iron Bundle",
   "primaryType": "ice",
   "secondaryType": "water",
+  "maleRatio": -1,
+  "height": 6,
+  "weight": 110,
+  "pokedex": [
+    "cobblemon.species.ironbundle.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 56,
@@ -14,10 +30,6 @@
     "special_defence": 60,
     "speed": 136
   },
-  "catchRate": 50,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,14 +38,14 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 50,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:electricterrain",
     "1:present",
+    "1:electricterrain",
     "7:powdersnow",
     "14:whirlpool",
     "21:takedown",
@@ -50,6 +62,7 @@
     "tm:acrobatics",
     "tm:agility",
     "tm:aircutter",
+    "tm:auroraveil",
     "tm:avalanche",
     "tm:blizzard",
     "tm:bodyslam",
@@ -82,19 +95,20 @@
     "tm:thief",
     "tm:uturn",
     "tm:waterpulse",
-    "tm:whirlpool"
+    "tm:whirlpool",
+    "tutor:aircutter",
+    "tutor:flipturn",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icepunch",
+    "tutor:icywind",
+    "tutor:playrough",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:waterpulse"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 6,
-  "weight": 110,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.ironbundle.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

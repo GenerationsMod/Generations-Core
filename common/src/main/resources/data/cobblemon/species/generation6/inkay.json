@@ -1,12 +1,27 @@
 {
-  "name": "Inkay",
+  "implemented": true,
   "nationalPokedexNumber": 686,
+  "name": "Inkay",
   "primaryType": "dark",
   "secondaryType": "psychic",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 35,
+  "pokedex": [
+    "cobblemon.species.inkay.desc"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
   "abilities": [
     "contrary",
     "suctioncups",
     "h:infiltrator"
+  ],
+  "eggGroups": [
+    "water_1",
+    "water_2"
   ],
   "baseStats": {
     "hp": 53,
@@ -16,32 +31,62 @@
     "special_defence": 46,
     "speed": 45
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 58,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "water_1",
-    "water_2"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:ink_sac",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:tanga_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:constrict",
-    "1:peck",
     "1:tackle",
+    "1:peck",
+    "1:constrict",
+    "1:psywave",
     "3:hypnosis",
-    "4:reflect",
     "6:wrap",
     "9:payback",
     "12:pluck",
-    "13:psywave",
     "15:psybeam",
     "18:swagger",
     "21:slash",
     "24:nightslash",
     "27:psychocut",
-    "31:lightscreen",
     "31:switcheroo",
     "33:foulplay",
     "36:topsyturvy",
@@ -51,18 +96,15 @@
     "egg:destinybond",
     "egg:disable",
     "egg:flatter",
-    "egg:guardswap",
     "egg:powersplit",
     "egg:simplebeam",
     "tm:aerialace",
     "tm:allyswitch",
-    "tm:attract",
     "tm:batonpass",
+    "tm:bind",
     "tm:calmmind",
-    "tm:confide",
     "tm:cut",
     "tm:darkpulse",
-    "tm:doubleteam",
     "tm:embargo",
     "tm:endure",
     "tm:expandingforce",
@@ -72,12 +114,10 @@
     "tm:flash",
     "tm:fling",
     "tm:foulplay",
-    "tm:frustration",
     "tm:futuresight",
     "tm:gravity",
     "tm:guardswap",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:knockoff",
     "tm:lashout",
     "tm:lightscreen",
@@ -85,6 +125,7 @@
     "tm:lunge",
     "tm:nastyplot",
     "tm:payback",
+    "tm:pluck",
     "tm:protect",
     "tm:psybeam",
     "tm:psychic",
@@ -95,13 +136,11 @@
     "tm:reflect",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:rockslide",
-    "tm:round",
-    "tm:secretpower",
+    "tm:roleplay",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
+    "tm:snatch",
     "tm:spite",
     "tm:storedpower",
     "tm:substitute",
@@ -110,36 +149,59 @@
     "tm:swagger",
     "tm:swift",
     "tm:taunt",
+    "tm:telekinesis",
     "tm:terablast",
     "tm:thief",
     "tm:thunderbolt",
     "tm:torment",
-    "tm:toxic",
     "tm:trick",
     "tm:trickroom",
+    "tutor:aerialace",
     "tutor:allyswitch",
     "tutor:bind",
+    "tutor:calmmind",
+    "tutor:darkpulse",
     "tutor:expandingforce",
+    "tutor:flamethrower",
     "tutor:foulplay",
-    "tutor:happyhour",
-    "tutor:hypnosis",
+    "tutor:gravity",
+    "tutor:helpinghand",
     "tutor:knockoff",
     "tutor:lashout",
+    "tutor:liquidation",
+    "tutor:psychic",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:rockslide",
     "tutor:roleplay",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:spite",
     "tutor:superpower",
+    "tutor:swift",
     "tutor:telekinesis",
-    "tutor:topsyturvy"
-  ],
-  "labels": [
-    "gen6"
-  ],
-  "pokedex": [
-    "cobblemon.species.inkay.desc"
+    "tutor:thunderbolt",
+    "tutor:trick"
   ],
   "evolutions": [
+    {
+      "id": "inkay_malamar",
+      "variant": "level_up",
+      "result": "malamar",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 30
+        },
+        {
+          "variant": "has_move",
+          "move": "topsyturvy"
+        }
+      ]
+    },
     {
       "id": "inkay_malamar_dinnerbone",
       "variant": "level_up",
@@ -174,38 +236,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 35,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:ink_sac",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:tanga_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

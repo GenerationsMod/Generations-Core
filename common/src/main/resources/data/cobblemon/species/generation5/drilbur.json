@@ -1,15 +1,60 @@
 {
-  "name": "Drilbur",
+  "implemented": true,
   "nationalPokedexNumber": 529,
+  "name": "Drilbur",
   "primaryType": "ground",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 85,
+  "pokedex": [
+    "cobblemon.species.drilbur.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "sandrush",
     "sandforce",
     "h:moldbreaker"
   ],
+  "eggGroups": [
+    "field"
+  ],
+  "baseStats": {
+    "hp": 60,
+    "attack": 85,
+    "defence": 40,
+    "special_attack": 30,
+    "special_defence": 45,
+    "speed": 68
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 66,
+  "experienceGroup": "medium_fast",
+  "catchRate": 120,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
+      {
+        "item": "minecraft:dirt",
+        "quantityRange": "0-1"
+      },
       {
         "item": "cobblemon:soft_sand",
         "percentage": 2.5
@@ -20,68 +65,40 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 60,
-    "attack": 85,
-    "defence": 40,
-    "special_attack": 30,
-    "special_defence": 45,
-    "speed": 68
-  },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 66,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
   "moves": [
-    "1:mudslap",
     "1:mudsport",
     "1:rapidspin",
+    "1:mudslap",
     "4:scratch",
     "8:honeclaws",
     "12:furyswipes",
     "16:metalclaw",
     "20:sandstorm",
     "24:crushclaw",
-    "26:slash",
     "28:rockslide",
     "32:dig",
     "36:swordsdance",
     "40:drillrun",
     "44:earthquake",
     "48:fissure",
-    "egg:crushclaw",
-    "egg:earthpower",
-    "egg:irondefense",
     "egg:metalsound",
-    "egg:rapidspin",
-    "egg:rockclimb",
     "egg:skullbash",
     "egg:slash",
     "egg:submission",
     "tm:aerialace",
-    "tm:attract",
     "tm:brickbreak",
     "tm:bulldoze",
-    "tm:confide",
     "tm:curse",
     "tm:cut",
     "tm:dig",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:drillrun",
     "tm:earthpower",
     "tm:earthquake",
     "tm:endure",
     "tm:facade",
     "tm:fling",
-    "tm:frustration",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:highhorsepower",
     "tm:honeclaws",
     "tm:irondefense",
@@ -92,46 +109,42 @@
     "tm:poisonjab",
     "tm:protect",
     "tm:rest",
-    "tm:return",
+    "tm:rockclimb",
     "tm:rockslide",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
     "tm:sandstorm",
     "tm:sandtomb",
     "tm:scorchingsands",
-    "tm:secretpower",
     "tm:shadowclaw",
     "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:snore",
     "tm:stealthrock",
     "tm:stompingtantrum",
     "tm:strength",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swordsdance",
     "tm:takedown",
     "tm:terablast",
-    "tm:toxic",
     "tm:xscissor",
+    "tutor:aerialace",
+    "tutor:bulldoze",
     "tutor:drillrun",
     "tutor:earthpower",
+    "tutor:helpinghand",
+    "tutor:highhorsepower",
     "tutor:irondefense",
-    "tutor:metalsound",
-    "tutor:rapidspin",
-    "tutor:rockclimb",
+    "tutor:mudslap",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rocksmash",
     "tutor:scorchingsands",
+    "tutor:shadowclaw",
     "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:stealthrock"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.drilbur.desc"
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:xscissor"
   ],
   "evolutions": [
     {
@@ -149,25 +162,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 3,
-  "weight": 85,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

@@ -1,10 +1,26 @@
 {
-  "name": "Iron Boulder",
+  "implemented": true,
   "nationalPokedexNumber": 1022,
+  "name": "Iron Boulder",
   "primaryType": "rock",
   "secondaryType": "psychic",
+  "maleRatio": -1,
+  "height": 15,
+  "weight": 1625,
+  "pokedex": [
+    "cobblemon.species.ironboulder.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 90,
@@ -14,10 +30,6 @@
     "special_defence": 108,
     "speed": 124
   },
-  "catchRate": 10,
-  "maleRatio": -1,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,16 +38,16 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 295,
   "experienceGroup": "slow",
+  "catchRate": 10,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:electricterrain",
     "1:hornattack",
     "1:leer",
     "1:rockthrow",
+    "1:electricterrain",
     "7:quickattack",
     "14:slash",
     "21:agility",
@@ -65,10 +77,12 @@
     "tm:hyperbeam",
     "tm:irondefense",
     "tm:ironhead",
+    "tm:megahorn",
     "tm:meteorbeam",
     "tm:poisonjab",
     "tm:protect",
     "tm:psychic",
+    "tm:psychocut",
     "tm:psyshock",
     "tm:rest",
     "tm:rockblast",
@@ -86,16 +100,25 @@
     "tm:throatchop",
     "tm:wildcharge",
     "tm:xscissor",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:aerialace",
+    "tutor:bulldoze",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:megahorn",
+    "tutor:meteorbeam",
+    "tutor:poisonjab",
+    "tutor:psychic",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:stoneedge",
+    "tutor:throatchop",
+    "tutor:wildcharge",
+    "tutor:xscissor",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 15,
-  "weight": 1625,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }

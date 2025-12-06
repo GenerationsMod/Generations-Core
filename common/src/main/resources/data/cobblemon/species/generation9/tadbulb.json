@@ -1,11 +1,25 @@
 {
-  "name": "Tadbulb",
+  "implemented": true,
   "nationalPokedexNumber": 938,
+  "name": "Tadbulb",
   "primaryType": "electric",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 4,
+  "pokedex": [
+    "cobblemon.species.tadbulb.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "owntempo",
     "static",
     "h:damp"
+  ],
+  "eggGroups": [
+    "water_1"
   ],
   "baseStats": {
     "hp": 61,
@@ -15,10 +29,6 @@
     "special_defence": 35,
     "speed": 45
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 54,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 1,
     "attack": 0,
@@ -27,14 +37,37 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 54,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "water_1"
-  ],
+  "baseFriendship": 50,
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:ochre_froglight",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:wepear_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:mudslap",
     "1:tackle",
+    "1:mudslap",
     "7:thundershock",
     "11:watergun",
     "17:charge",
@@ -70,6 +103,7 @@
     "tm:rest",
     "tm:sleeptalk",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:swift",
     "tm:terablast",
     "tm:thunder",
@@ -78,41 +112,28 @@
     "tm:voltswitch",
     "tm:waterpulse",
     "tm:weatherball",
-    "tm:wildcharge"
+    "tm:wildcharge",
+    "tutor:chargebeam",
+    "tutor:electroweb",
+    "tutor:hypervoice",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:suckerpunch",
+    "tutor:swift",
+    "tutor:thunderbolt",
+    "tutor:waterpulse",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 3,
-  "weight": 4,
   "evolutions": [
     {
       "id": "tadbulb_bellibolt",
       "variant": "item_interact",
       "result": "bellibolt",
-      "consumeHeldItem": false,
+      "consumeHeldItem": true,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:thunder_stone"
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.tadbulb.desc"
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:ochre_froglight",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:wepear_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

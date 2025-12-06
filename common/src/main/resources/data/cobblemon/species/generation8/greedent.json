@@ -1,10 +1,24 @@
 {
-  "name": "Greedent",
+  "implemented": true,
   "nationalPokedexNumber": 820,
+  "name": "Greedent",
   "primaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 60,
+  "pokedex": [
+    "cobblemon.species.greedent.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "cheekpouch",
     "h:gluttony"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 120,
@@ -14,37 +28,61 @@
     "special_defence": 75,
     "speed": 20
   },
-  "catchRate": 90,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 161,
   "experienceGroup": "medium_fast",
+  "catchRate": 90,
   "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "quantityRange": "0-2"
+      }
+    ]
+  },
   "moves": [
-    "1:bite",
-    "1:stuffcheeks",
+    "1:covet",
     "1:tackle",
     "1:tailwhip",
-    "15:spitup",
+    "1:bite",
+    "1:stuffcheeks",
     "15:stockpile",
     "15:swallow",
+    "15:spitup",
     "20:bodyslam",
     "27:rest",
     "34:counter",
     "41:bulletseed",
     "48:superfang",
     "55:belch",
+    "egg:bellydrum",
+    "egg:defensecurl",
+    "egg:lastresort",
+    "egg:rollout",
     "tm:amnesia",
     "tm:assurance",
-    "tm:attract",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:brutalswing",
     "tm:bulldoze",
     "tm:bulletseed",
+    "tm:covet",
     "tm:crunch",
     "tm:curse",
     "tm:dig",
@@ -63,6 +101,7 @@
     "tm:icefang",
     "tm:irontail",
     "tm:knockoff",
+    "tm:lastresort",
     "tm:mudshot",
     "tm:mudslap",
     "tm:payback",
@@ -70,10 +109,9 @@
     "tm:psychicfangs",
     "tm:raindance",
     "tm:rest",
-    "tm:round",
+    "tm:rollout",
     "tm:seedbomb",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:sunnyday",
@@ -86,44 +124,31 @@
     "tm:thief",
     "tm:thunderfang",
     "tm:trailblaze",
-    "tm:uproar",
-    "tm:wildcharge"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.greedent.desc"
+    "tm:wildcharge",
+    "tutor:bulldoze",
+    "tutor:covet",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:gigaimpact",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:icefang",
+    "tutor:irontail",
+    "tutor:knockoff",
+    "tutor:lastresort",
+    "tutor:mudslap",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:superfang",
+    "tutor:superpower",
+    "tutor:thunderfang",
+    "tutor:wildcharge"
   ],
   "preEvolution": "skwovet",
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 2,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 6,
-  "weight": 60,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:oran_berry",
-        "quantityRange": "0-2"
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

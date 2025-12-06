@@ -1,10 +1,62 @@
 {
-  "name": "Eelektrik",
+  "implemented": true,
   "nationalPokedexNumber": 603,
+  "name": "Eelektrik",
   "primaryType": "electric",
-  "abilities": [
-    "levitate"
+  "maleRatio": 0.5,
+  "height": 12,
+  "weight": 220,
+  "pokedex": [
+    "cobblemon.species.eelektrik.desc"
   ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
+  "abilities": [
+    "levitate",
+    "h:levitate"
+  ],
+  "eggGroups": [
+    "amorphous"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 85,
+    "defence": 70,
+    "special_attack": 75,
+    "special_defence": 70,
+    "speed": 40
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 142,
+  "experienceGroup": "slow",
+  "catchRate": 60,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -14,29 +66,13 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 65,
-    "attack": 85,
-    "defence": 70,
-    "special_attack": 75,
-    "special_defence": 70,
-    "speed": 40
-  },
-  "catchRate": 60,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 142,
-  "experienceGroup": "slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "amorphous"
-  ],
   "moves": [
+    "1:headbutt",
+    "1:thunderwave",
+    "1:spark",
     "1:chargebeam",
     "1:crunch",
-    "1:headbutt",
-    "1:spark",
-    "1:thunderwave",
+    "1:tackle",
     "9:bind",
     "19:acid",
     "29:discharge",
@@ -49,13 +85,13 @@
     "74:thrash",
     "tm:acidspray",
     "tm:acrobatics",
-    "tm:attract",
+    "tm:aquatail",
+    "tm:bind",
     "tm:bodyslam",
+    "tm:bounce",
     "tm:charge",
     "tm:chargebeam",
-    "tm:confide",
     "tm:crunch",
-    "tm:doubleteam",
     "tm:eerieimpulse",
     "tm:electricterrain",
     "tm:electroball",
@@ -64,23 +100,24 @@
     "tm:facade",
     "tm:flash",
     "tm:flashcannon",
-    "tm:frustration",
+    "tm:gastroacid",
     "tm:gigadrain",
-    "tm:hiddenpower",
+    "tm:headbutt",
+    "tm:irontail",
     "tm:knockoff",
     "tm:lightscreen",
     "tm:lunge",
+    "tm:magnetrise",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:round",
+    "tm:risingvoltage",
     "tm:scaryface",
-    "tm:secretpower",
+    "tm:shockwave",
+    "tm:signalbeam",
     "tm:sleeptalk",
     "tm:substitute",
     "tm:superfang",
-    "tm:swagger",
     "tm:takedown",
     "tm:terablast",
     "tm:throatchop",
@@ -88,30 +125,30 @@
     "tm:thunderbolt",
     "tm:thunderfang",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:uturn",
     "tm:voltswitch",
     "tm:wildcharge",
     "tutor:aquatail",
     "tutor:bind",
     "tutor:bounce",
+    "tutor:chargebeam",
+    "tutor:electroweb",
+    "tutor:flashcannon",
     "tutor:gastroacid",
     "tutor:gigadrain",
     "tutor:irontail",
     "tutor:knockoff",
     "tutor:magnetrise",
+    "tutor:rest",
+    "tutor:risingvoltage",
     "tutor:shockwave",
     "tutor:signalbeam",
     "tutor:sleeptalk",
-    "tutor:snore",
     "tutor:superfang",
-    "tutor:throatchop"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.eelektrik.desc"
+    "tutor:throatchop",
+    "tutor:thunderbolt",
+    "tutor:thunderfang",
+    "tutor:wildcharge"
   ],
   "preEvolution": "tynamo",
   "evolutions": [
@@ -119,30 +156,10 @@
       "id": "eelektrik_eelektross",
       "variant": "item_interact",
       "result": "eelektross",
-      "consumeHeldItem": false,
+      "consumeHeldItem": true,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:thunder_stone"
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 2,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 12,
-  "weight": 220,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

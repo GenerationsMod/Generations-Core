@@ -1,12 +1,26 @@
 {
-  "name": "Orbeetle",
+  "implemented": true,
   "nationalPokedexNumber": 826,
+  "name": "Orbeetle",
   "primaryType": "bug",
   "secondaryType": "psychic",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 408,
+  "pokedex": [
+    "cobblemon.species.orbeetle.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "swarm",
     "frisk",
     "h:telepathy"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 60,
@@ -16,67 +30,38 @@
     "special_defence": 120,
     "speed": 90
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "bug",
-      "secondaryType": "psychic",
-      "abilities": [
-        "swarm",
-        "frisk",
-        "h:telepathy"
-      ],
-      "baseStats": {
-        "hp": 60,
-        "attack": 45,
-        "defence": 110,
-        "special_attack": 80,
-        "special_defence": 120,
-        "speed": 90
-      },
-      "catchRate": 45,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 253,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 3,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 15,
-      "eggGroups": [
-        "bug"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 140,
-      "weight": 0,
-      "cannotDynamax": false,
-      "battleOnly": false
-    }
-  ],
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 3,
+    "speed": 0
+  },
   "baseExperienceYield": 253,
   "experienceGroup": "medium_fast",
+  "catchRate": 45,
   "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:razz_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
   "moves": [
-    "1:confusion",
-    "1:lightscreen",
     "1:reflect",
+    "1:lightscreen",
+    "1:confusion",
     "1:strugglebug",
     "4:confuseray",
     "8:magiccoat",
@@ -90,15 +75,21 @@
     "40:afteryou",
     "44:calmmind",
     "48:psychicterrain",
+    "egg:infestation",
+    "egg:recover",
+    "egg:stickyweb",
+    "egg:supersonic",
+    "tm:afteryou",
     "tm:agility",
     "tm:allyswitch",
-    "tm:attract",
     "tm:batonpass",
     "tm:bodypress",
     "tm:bugbuzz",
     "tm:calmmind",
+    "tm:confuseray",
     "tm:endure",
     "tm:energyball",
+    "tm:expandingforce",
     "tm:facade",
     "tm:futuresight",
     "tm:gigadrain",
@@ -107,70 +98,82 @@
     "tm:helpinghand",
     "tm:hyperbeam",
     "tm:imprison",
+    "tm:infestation",
     "tm:irondefense",
     "tm:leechlife",
     "tm:lightscreen",
+    "tm:magiccoat",
     "tm:magicroom",
     "tm:payback",
     "tm:powerswap",
     "tm:protect",
+    "tm:psybeam",
     "tm:psychic",
     "tm:psychicterrain",
     "tm:psychocut",
     "tm:psyshock",
     "tm:reflect",
     "tm:rest",
-    "tm:round",
     "tm:safeguard",
     "tm:shadowball",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:solarbeam",
     "tm:storedpower",
+    "tm:strugglebug",
     "tm:substitute",
+    "tm:terablast",
     "tm:trick",
     "tm:trickroom",
     "tm:uturn",
     "tm:wonderroom",
     "tm:zenheadbutt",
-    "tutor:expandingforce"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.orbeetle.desc"
+    "tutor:afteryou",
+    "tutor:allyswitch",
+    "tutor:calmmind",
+    "tutor:energyball",
+    "tutor:expandingforce",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:leechlife",
+    "tutor:magiccoat",
+    "tutor:magicroom",
+    "tutor:psychic",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:skillswap",
+    "tutor:sleeptalk",
+    "tutor:trick",
+    "tutor:wonderroom",
+    "tutor:zenheadbutt"
   ],
   "preEvolution": "dottler",
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 3,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 408,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:razz_berry",
-        "percentage": 10.0
-      }
-    ]
-  },
-  "implemented": true
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "bug",
+      "secondaryType": "psychic",
+      "maleRatio": 0.5,
+      "height": 140,
+      "weight": 0,
+      "pokedex": [
+        "cobblemon.species.orbeetle-gmax.desc"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true
+    }
+  ]
 }

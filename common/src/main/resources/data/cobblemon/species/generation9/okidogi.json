@@ -1,11 +1,26 @@
 {
-  "name": "Okidogi",
+  "implemented": true,
   "nationalPokedexNumber": 1014,
+  "name": "Okidogi",
   "primaryType": "poison",
   "secondaryType": "fighting",
+  "maleRatio": 1,
+  "height": 18,
+  "weight": 922,
+  "pokedex": [
+    "cobblemon.species.okidogi.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
     "toxicchain",
     "h:guarddog"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 88,
@@ -15,10 +30,6 @@
     "special_defence": 86,
     "speed": 80
   },
-  "catchRate": 3,
-  "maleRatio": 1,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -27,15 +38,15 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 278,
   "experienceGroup": "slow",
-  "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "catchRate": 3,
+  "eggCycles": 120,
+  "baseFriendship": 0,
   "moves": [
     "1:bite",
-    "1:bulkup",
     "1:lowkick",
+    "1:bulkup",
     "8:howl",
     "16:poisonfang",
     "24:forcepalm",
@@ -48,6 +59,7 @@
     "tm:bodypress",
     "tm:bodyslam",
     "tm:brickbreak",
+    "tm:brutalswing",
     "tm:bulkup",
     "tm:closecombat",
     "tm:crunch",
@@ -93,6 +105,7 @@
     "tm:spite",
     "tm:stompingtantrum",
     "tm:substitute",
+    "tm:superpower",
     "tm:takedown",
     "tm:taunt",
     "tm:terablast",
@@ -102,16 +115,37 @@
     "tm:thunderpunch",
     "tm:toxic",
     "tm:upperhand",
-    "tm:uproar"
+    "tm:uproar",
+    "tutor:bulkup",
+    "tutor:drainpunch",
+    "tutor:firefang",
+    "tutor:firepunch",
+    "tutor:focuspunch",
+    "tutor:gigaimpact",
+    "tutor:gunkshot",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:icefang",
+    "tutor:icepunch",
+    "tutor:ironhead",
+    "tutor:knockoff",
+    "tutor:lashout",
+    "tutor:lowkick",
+    "tutor:outrage",
+    "tutor:poisonjab",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:shadowclaw",
+    "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:snarl",
+    "tutor:spite",
+    "tutor:stompingtantrum",
+    "tutor:superpower",
+    "tutor:throatchop",
+    "tutor:thunderfang",
+    "tutor:thunderpunch",
+    "tutor:uproar"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 18,
-  "weight": 920,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }

@@ -1,10 +1,27 @@
 {
-  "name": "Cursola",
+  "implemented": true,
   "nationalPokedexNumber": 864,
+  "name": "Cursola",
   "primaryType": "ghost",
+  "maleRatio": 0.25,
+  "height": 10,
+  "weight": 4,
+  "pokedex": [
+    "cobblemon.species.cursola.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [
+    "galarian"
+  ],
   "abilities": [
     "weakarmor",
     "h:perishbody"
+  ],
+  "eggGroups": [
+    "water_1",
+    "water_3"
   ],
   "baseStats": {
     "hp": 60,
@@ -14,22 +31,50 @@
     "special_defence": 130,
     "speed": 30
   },
-  "catchRate": 30,
-  "maleRatio": 0.25,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 179,
   "experienceGroup": "fast",
+  "catchRate": 30,
   "eggCycles": 20,
-  "eggGroups": [
-    "water_1",
-    "water_3"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:astonish",
-    "1:disable",
-    "1:harden",
     "1:perishsong",
     "1:tackle",
+    "1:harden",
+    "1:astonish",
+    "1:disable",
     "15:spite",
     "20:ancientpower",
     "25:hex",
@@ -39,13 +84,22 @@
     "45:nightshade",
     "50:grudge",
     "55:mirrorcoat",
+    "egg:confuseray",
+    "egg:destinybond",
+    "egg:haze",
+    "egg:headsmash",
+    "egg:naturepower",
+    "egg:waterpulse",
     "tm:amnesia",
-    "tm:attract",
+    "tm:ancientpower",
     "tm:blizzard",
     "tm:bodyslam",
     "tm:brine",
     "tm:bulldoze",
+    "tm:burningjealousy",
     "tm:calmmind",
+    "tm:confuseray",
+    "tm:curse",
     "tm:dig",
     "tm:earthpower",
     "tm:earthquake",
@@ -54,6 +108,7 @@
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:hail",
+    "tm:haze",
     "tm:hex",
     "tm:hydropump",
     "tm:hyperbeam",
@@ -64,7 +119,11 @@
     "tm:leechlife",
     "tm:lightscreen",
     "tm:liquidation",
+    "tm:meteorbeam",
+    "tm:naturepower",
+    "tm:nightshade",
     "tm:pinmissile",
+    "tm:poltergeist",
     "tm:powergem",
     "tm:protect",
     "tm:psychic",
@@ -75,7 +134,6 @@
     "tm:rockblast",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
     "tm:safeguard",
     "tm:sandstorm",
     "tm:scald",
@@ -83,55 +141,45 @@
     "tm:selfdestruct",
     "tm:shadowball",
     "tm:sleeptalk",
-    "tm:snore",
+    "tm:spite",
     "tm:stealthrock",
     "tm:stompingtantrum",
     "tm:stoneedge",
     "tm:substitute",
     "tm:sunnyday",
     "tm:surf",
+    "tm:terablast",
     "tm:throatchop",
+    "tm:waterpulse",
     "tm:whirlpool",
     "tm:willowisp",
+    "tutor:ancientpower",
+    "tutor:bulldoze",
     "tutor:burningjealousy",
+    "tutor:calmmind",
+    "tutor:earthpower",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icywind",
+    "tutor:irondefense",
+    "tutor:leechlife",
+    "tutor:liquidation",
     "tutor:meteorbeam",
-    "tutor:poltergeist"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.cursola.desc"
+    "tutor:poltergeist",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:shadowball",
+    "tutor:sleeptalk",
+    "tutor:spite",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:throatchop",
+    "tutor:waterpulse"
   ],
   "preEvolution": "corsola galarian",
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 2,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 10,
-  "weight": 4,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:kasib_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

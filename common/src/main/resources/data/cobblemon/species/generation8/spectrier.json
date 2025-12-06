@@ -1,9 +1,25 @@
 {
-  "name": "Spectrier",
+  "implemented": true,
   "nationalPokedexNumber": 897,
+  "name": "Spectrier",
   "primaryType": "ghost",
+  "maleRatio": -1,
+  "height": 20,
+  "weight": 445,
+  "pokedex": [
+    "cobblemon.species.spectrier.desc"
+  ],
+  "labels": [
+    "gen8",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
-    "grimneigh"
+    "grimneigh",
+    "h:grimneigh"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 100,
@@ -13,15 +29,25 @@
     "special_defence": 80,
     "speed": 130
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 290,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 35,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "moves": [
     "1:tackle",
     "1:tailwhip",
@@ -67,49 +93,34 @@
     "tm:psychic",
     "tm:psychocut",
     "tm:rest",
-    "tm:round",
     "tm:scaryface",
     "tm:shadowball",
     "tm:sleeptalk",
     "tm:snarl",
-    "tm:snore",
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:swift",
     "tm:takedown",
     "tm:taunt",
     "tm:terablast",
-    "tm:uproar",
     "tm:willowisp",
+    "tutor:bulldoze",
+    "tutor:calmmind",
+    "tutor:darkpulse",
+    "tutor:foulplay",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
     "tutor:lashout",
-    "tutor:nastyplot"
+    "tutor:painsplit",
+    "tutor:poltergeist",
+    "tutor:psychic",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stompingtantrum",
+    "tutor:swift"
   ],
-  "labels": [
-    "gen8",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.spectrier.desc"
-  ],
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 35,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 3,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 20,
-  "weight": 445,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }

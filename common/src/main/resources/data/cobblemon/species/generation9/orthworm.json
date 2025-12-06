@@ -1,10 +1,24 @@
 {
-  "name": "Orthworm",
+  "implemented": true,
   "nationalPokedexNumber": 968,
+  "name": "Orthworm",
   "primaryType": "steel",
+  "maleRatio": 0.5,
+  "height": 25,
+  "weight": 3100,
+  "pokedex": [
+    "cobblemon.species.orthworm.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "eartheater",
     "h:sandveil"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 70,
@@ -14,10 +28,6 @@
     "special_defence": 55,
     "speed": 65
   },
-  "catchRate": 25,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 240,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,15 +36,28 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 240,
   "experienceGroup": "slow",
+  "catchRate": 25,
   "eggCycles": 35,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:iron_nugget",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:shuca_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:harden",
     "1:tackle",
     "1:wrap",
+    "1:harden",
     "7:mudslap",
     "12:smackdown",
     "16:bulldoze",
@@ -67,6 +90,7 @@
     "tm:hyperbeam",
     "tm:irondefense",
     "tm:ironhead",
+    "tm:irontail",
     "tm:metalsound",
     "tm:mudshot",
     "tm:mudslap",
@@ -85,31 +109,25 @@
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:takedown",
-    "tm:terablast"
+    "tm:terablast",
+    "tutor:bulldoze",
+    "tutor:earthpower",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:irontail",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:sleeptalk",
+    "tutor:spikes",
+    "tutor:stealthrock",
+    "tutor:steelbeam",
+    "tutor:stompingtantrum"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 25,
-  "weight": 3100,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.orthworm.desc"
-  ],
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:iron_nugget",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:shuca_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

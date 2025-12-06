@@ -1,12 +1,27 @@
 {
-  "name": "Appletun",
+  "implemented": true,
   "nationalPokedexNumber": 842,
+  "name": "Appletun",
   "primaryType": "grass",
   "secondaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 130,
+  "pokedex": [
+    "cobblemon.species.appletun.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "ripen",
     "gluttony",
     "h:thickfat"
+  ],
+  "eggGroups": [
+    "grass",
+    "dragon"
   ],
   "baseStats": {
     "hp": 110,
@@ -16,71 +31,44 @@
     "special_defence": 80,
     "speed": 30
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "grass",
-      "secondaryType": "dragon",
-      "abilities": [
-        "ripen",
-        "gluttony",
-        "h:thickfat"
-      ],
-      "baseStats": {
-        "hp": 110,
-        "attack": 85,
-        "defence": 80,
-        "special_attack": 100,
-        "special_defence": 80,
-        "speed": 30
-      },
-      "catchRate": 45,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 170,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 2,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "erratic",
-      "eggCycles": 20,
-      "eggGroups": [
-        "grass",
-        "dragon"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 240,
-      "weight": 0,
-      "cannotDynamax": false,
-      "battleOnly": false
-    }
-  ],
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 170,
   "experienceGroup": "erratic",
+  "catchRate": 45,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass",
-    "dragon"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
   "moves": [
+    "1:headbutt",
+    "1:recycle",
+    "1:withdraw",
     "1:astonish",
     "1:growth",
-    "1:recycle",
     "1:sweetscent",
-    "1:withdraw",
     "4:curse",
     "8:stomp",
     "12:leechseed",
@@ -92,8 +80,11 @@
     "36:irondefense",
     "40:dragonpulse",
     "44:energyball",
+    "egg:defensecurl",
+    "egg:recycle",
+    "egg:rollout",
+    "egg:suckerpunch",
     "tm:amnesia",
-    "tm:attract",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:bulldoze",
@@ -112,6 +103,7 @@
     "tm:grassyglide",
     "tm:grassyterrain",
     "tm:gyroball",
+    "tm:headbutt",
     "tm:heavyslam",
     "tm:helpinghand",
     "tm:highhorsepower",
@@ -126,63 +118,70 @@
     "tm:pounce",
     "tm:protect",
     "tm:raindance",
+    "tm:recycle",
     "tm:reflect",
     "tm:rest",
-    "tm:round",
+    "tm:rollout",
     "tm:safeguard",
     "tm:seedbomb",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:solarbeam",
     "tm:stompingtantrum",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:superpower",
     "tm:takedown",
     "tm:terablast",
     "tm:trailblaze",
     "tm:zenheadbutt",
+    "tutor:bulldoze",
     "tutor:dracometeor",
-    "tutor:grassyglide"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.appletun.desc"
+    "tutor:dragonpulse",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:grassyglide",
+    "tutor:helpinghand",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:magicalleaf",
+    "tutor:outrage",
+    "tutor:recycle",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:suckerpunch",
+    "tutor:superpower",
+    "tutor:zenheadbutt"
   ],
   "preEvolution": "applin",
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 2,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 130,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:apple"
-      },
-      {
-        "item": "cobblemon:yache_berry",
-        "percentage": 10.0
-      }
-    ]
-  },
-  "implemented": true
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "grass",
+      "secondaryType": "dragon",
+      "maleRatio": 0.5,
+      "height": 240,
+      "weight": 0,
+      "pokedex": [
+        "cobblemon.species.appletun-gmax.desc"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true
+    }
+  ]
 }

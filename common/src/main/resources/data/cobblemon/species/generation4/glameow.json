@@ -1,12 +1,53 @@
 {
-  "name": "Glameow",
+  "implemented": true,
   "nationalPokedexNumber": 431,
+  "name": "Glameow",
   "primaryType": "normal",
+  "maleRatio": 0.25,
+  "height": 5,
+  "weight": 39,
+  "pokedex": [
+    "cobblemon.species.glameow.desc"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
   "abilities": [
     "limber",
     "owntempo",
     "h:keeneye"
   ],
+  "eggGroups": [
+    "field"
+  ],
+  "baseStats": {
+    "hp": 49,
+    "attack": 55,
+    "defence": 42,
+    "special_attack": 42,
+    "special_defence": 37,
+    "speed": 85
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "baseExperienceYield": 62,
+  "experienceGroup": "fast",
+  "catchRate": 190,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 1,
     "entries": [
@@ -16,23 +57,6 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 49,
-    "attack": 55,
-    "defence": 42,
-    "special_attack": 42,
-    "special_defence": 37,
-    "speed": 85
-  },
-  "catchRate": 190,
-  "maleRatio": 0.25,
-  "shoulderMountable": false,
-  "baseExperienceYield": 62,
-  "experienceGroup": "fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
   "moves": [
     "1:fakeout",
     "5:scratch",
@@ -46,88 +70,82 @@
     "37:slash",
     "41:suckerpunch",
     "44:attract",
-    "45:attract",
     "48:honeclaws",
     "50:playrough",
-    "egg:assurance",
     "egg:bite",
-    "egg:faketears",
     "egg:flail",
-    "egg:lastresort",
     "egg:quickattack",
     "egg:sandattack",
-    "egg:snatch",
     "egg:tailwhip",
     "egg:wakeupslap",
     "tm:aerialace",
+    "tm:assurance",
     "tm:attract",
     "tm:captivate",
-    "tm:confide",
+    "tm:charm",
+    "tm:covet",
     "tm:cut",
     "tm:dig",
-    "tm:doubleteam",
     "tm:dreameater",
     "tm:echoedvoice",
     "tm:endure",
     "tm:facade",
+    "tm:faketears",
     "tm:flash",
-    "tm:frustration",
-    "tm:hiddenpower",
+    "tm:foulplay",
+    "tm:furycutter",
+    "tm:headbutt",
     "tm:honeclaws",
+    "tm:hypervoice",
     "tm:irontail",
-    "tm:naturalgift",
+    "tm:knockoff",
+    "tm:lastresort",
+    "tm:mudslap",
     "tm:payback",
+    "tm:playrough",
     "tm:protect",
     "tm:psychup",
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
-    "tm:round",
-    "tm:secretpower",
     "tm:shadowball",
     "tm:shadowclaw",
     "tm:shockwave",
     "tm:sleeptalk",
     "tm:snatch",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
-    "tm:swagger",
+    "tm:superfang",
     "tm:taunt",
+    "tm:terablast",
     "tm:thief",
     "tm:thunder",
     "tm:thunderbolt",
     "tm:torment",
-    "tm:toxic",
     "tm:uturn",
     "tm:waterpulse",
     "tm:workup",
-    "tutor:assurance",
+    "tutor:aerialace",
     "tutor:covet",
-    "tutor:fakeout",
     "tutor:foulplay",
     "tutor:furycutter",
-    "tutor:headbutt",
     "tutor:hypervoice",
     "tutor:irontail",
     "tutor:knockoff",
     "tutor:lastresort",
     "tutor:mudslap",
-    "tutor:secretpower",
+    "tutor:playrough",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
     "tutor:shockwave",
     "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:suckerpunch",
     "tutor:superfang",
-    "tutor:swift",
+    "tutor:thunderbolt",
     "tutor:waterpulse"
-  ],
-  "labels": [
-    "gen4"
-  ],
-  "pokedex": [
-    "cobblemon.species.glameow.desc"
   ],
   "evolutions": [
     {
@@ -135,7 +153,9 @@
       "variant": "level_up",
       "result": "purugly",
       "consumeHeldItem": false,
-      "learnableMoves": [],
+      "learnableMoves": [
+        "swagger"
+      ],
       "requirements": [
         {
           "variant": "level",
@@ -143,25 +163,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 5,
-  "weight": 39,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

@@ -1,12 +1,27 @@
 {
-  "name": "Dipplin",
+  "implemented": true,
   "nationalPokedexNumber": 1011,
+  "name": "Dipplin",
   "primaryType": "grass",
   "secondaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 44,
+  "pokedex": [
+    "cobblemon.species.dipplin.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "supersweetsyrup",
     "gluttony",
     "h:stickyhold"
+  ],
+  "eggGroups": [
+    "grass",
+    "dragon"
   ],
   "baseStats": {
     "hp": 80,
@@ -16,10 +31,6 @@
     "special_defence": 80,
     "speed": 40
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -28,18 +39,18 @@
     "special_defence": 0,
     "speed": 0
   },
-  "experienceGroup": "slow",
+  "baseExperienceYield": 170,
+  "experienceGroup": "erratic",
+  "catchRate": 45,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass",
-    "dragon"
-  ],
+  "baseFriendship": 50,
   "moves": [
+    "1:doublehit",
+    "1:withdraw",
+    "1:sweetscent",
+    "1:recycle",
     "1:astonish",
     "1:infestation",
-    "1:recycle",
-    "1:sweetscent",
-    "1:withdraw",
     "4:dragontail",
     "8:growth",
     "12:dragonbreath",
@@ -50,6 +61,10 @@
     "36:recover",
     "40:energyball",
     "44:substitute",
+    "egg:defensecurl",
+    "egg:recycle",
+    "egg:rollout",
+    "egg:suckerpunch",
     "tm:bodyslam",
     "tm:bugbite",
     "tm:bulletseed",
@@ -67,27 +82,40 @@
     "tm:grassyterrain",
     "tm:gyroball",
     "tm:hyperbeam",
+    "tm:infestation",
     "tm:leafstorm",
     "tm:outrage",
     "tm:pollenpuff",
     "tm:pounce",
     "tm:protect",
+    "tm:recycle",
     "tm:reflect",
     "tm:rest",
+    "tm:rollout",
     "tm:seedbomb",
     "tm:sleeptalk",
     "tm:solarbeam",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:takedown",
-    "tm:terablast"
+    "tm:terablast",
+    "tutor:bugbite",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:grassyglide",
+    "tutor:hyperbeam",
+    "tutor:outrage",
+    "tutor:recycle",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:suckerpunch"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 4,
-  "weight": 44,
   "preEvolution": "applin",
   "evolutions": [
     {
@@ -105,7 +133,5 @@
         }
       ]
     }
-  ],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

@@ -1,24 +1,34 @@
 {
-  "name": "Capsakid",
+  "implemented": true,
   "nationalPokedexNumber": 951,
+  "name": "Capsakid",
   "primaryType": "grass",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 30,
+  "pokedex": [
+    "cobblemon.species.capsakid.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "chlorophyll",
     "insomnia",
     "h:klutz"
   ],
+  "eggGroups": [
+    "grass"
+  ],
   "baseStats": {
-    "hp": 52,
+    "hp": 50,
     "attack": 62,
     "defence": 40,
     "special_attack": 62,
     "special_defence": 40,
     "speed": 50
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 61,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 1,
@@ -27,14 +37,27 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:roasted_leek",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:leafage",
     "1:leer",
+    "1:leafage",
     "4:bite",
     "10:growth",
     "13:razorleaf",
@@ -60,11 +83,13 @@
     "tm:grassknot",
     "tm:grassyglide",
     "tm:grassyterrain",
+    "tm:headbutt",
     "tm:helpinghand",
     "tm:leafstorm",
     "tm:magicalleaf",
     "tm:protect",
     "tm:rest",
+    "tm:rollout",
     "tm:sandstorm",
     "tm:seedbomb",
     "tm:sleeptalk",
@@ -77,44 +102,35 @@
     "tm:terablast",
     "tm:thief",
     "tm:trailblaze",
-    "tm:zenheadbutt"
+    "tm:worryseed",
+    "tm:zenheadbutt",
+    "tutor:endeavor",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:grassyglide",
+    "tutor:helpinghand",
+    "tutor:magicalleaf",
+    "tutor:rest",
+    "tutor:rollout",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:superfang",
+    "tutor:worryseed",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 3,
-  "weight": 30,
   "evolutions": [
     {
       "id": "capsakid_scovillain",
       "variant": "item_interact",
       "result": "scovillain",
-      "consumeHeldItem": false,
+      "consumeHeldItem": true,
       "learnableMoves": [
-        "flamethrower",
-        "spicyextract"
+        "spicyextract",
+        "flamethrower"
       ],
       "requirements": [],
       "requiredContext": "cobblemon:fire_stone"
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.capsakid.desc"
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:roasted_leek",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:rawst_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

@@ -1,0 +1,145 @@
+{
+  "implemented": true,
+  "nationalPokedexNumber": 809,
+  "name": "Melmetal",
+  "primaryType": "steel",
+  "maleRatio": -1,
+  "height": 25,
+  "weight": 8000,
+  "pokedex": [
+    "cobblemon.species.melmetal.desc"
+  ],
+  "labels": [
+    "gen7b",
+    "mythical"
+  ],
+  "aspects": [],
+  "abilities": [
+    "ironfist",
+    "h:ironfist"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "baseStats": {
+    "hp": 135,
+    "attack": 143,
+    "defence": 143,
+    "special_attack": 80,
+    "special_defence": 65,
+    "speed": 34
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 300,
+  "experienceGroup": "slow",
+  "catchRate": 3,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "moves": [
+    "1:thunderpunch",
+    "1:thundershock",
+    "1:harden",
+    "1:tailwhip",
+    "1:headbutt",
+    "24:thunderwave",
+    "32:acidarmor",
+    "40:flashcannon",
+    "48:megapunch",
+    "56:protect",
+    "64:discharge",
+    "72:dynamicpunch",
+    "80:superpower",
+    "88:doubleironbash",
+    "96:hyperbeam",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:brickbreak",
+    "tm:brutalswing",
+    "tm:darkestlariat",
+    "tm:earthquake",
+    "tm:electricterrain",
+    "tm:endure",
+    "tm:facade",
+    "tm:flashcannon",
+    "tm:gigaimpact",
+    "tm:gyroball",
+    "tm:headbutt",
+    "tm:heavyslam",
+    "tm:highhorsepower",
+    "tm:hyperbeam",
+    "tm:icebeam",
+    "tm:icepunch",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:protect",
+    "tm:rest",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:solarbeam",
+    "tm:steelbeam",
+    "tm:steelroller",
+    "tm:substitute",
+    "tm:superpower",
+    "tm:terablast",
+    "tm:thunder",
+    "tm:thunderbolt",
+    "tm:thunderpunch",
+    "tm:thunderwave",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icepunch",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:sleeptalk",
+    "tutor:steelbeam",
+    "tutor:steelroller",
+    "tutor:superpower",
+    "tutor:thunderbolt",
+    "tutor:thunderpunch"
+  ],
+  "evolutions": [],
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "steel",
+      "maleRatio": -1,
+      "height": 250,
+      "weight": 0,
+      "pokedex": [
+        "cobblemon.species.melmetal-gmax.desc"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true
+    }
+  ]
+}

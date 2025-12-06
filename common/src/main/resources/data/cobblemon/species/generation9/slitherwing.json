@@ -1,10 +1,26 @@
 {
-  "name": "Slither Wing",
+  "implemented": true,
   "nationalPokedexNumber": 988,
+  "name": "Slither Wing",
   "primaryType": "bug",
   "secondaryType": "fighting",
+  "maleRatio": -1,
+  "height": 32,
+  "weight": 920,
+  "pokedex": [
+    "cobblemon.species.slitherwing.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "protosynthesis"
+    "protosynthesis",
+    "h:protosynthesis"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 85,
@@ -14,10 +30,6 @@
     "special_defence": 105,
     "speed": 81
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -26,15 +38,15 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:bugbite",
-    "1:ember",
     "1:gust",
+    "1:ember",
+    "1:bugbite",
     "1:sunnyday",
     "7:poisonpowder",
     "7:stunspore",
@@ -89,6 +101,7 @@
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:sunnyday",
+    "tm:superpower",
     "tm:takedown",
     "tm:temperflare",
     "tm:terablast",
@@ -96,19 +109,25 @@
     "tm:uturn",
     "tm:wildcharge",
     "tm:willowisp",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:aerialace",
+    "tutor:bugbite",
+    "tutor:bulkup",
+    "tutor:dualwingbeat",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:leechlife",
+    "tutor:lowkick",
+    "tutor:rest",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:superpower",
+    "tutor:wildcharge",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 32,
-  "weight": 920,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.slitherwing.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

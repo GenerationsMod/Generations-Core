@@ -1,11 +1,25 @@
 {
-  "name": "Snom",
+  "implemented": true,
   "nationalPokedexNumber": 872,
+  "name": "Snom",
   "primaryType": "ice",
   "secondaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 38,
+  "pokedex": [
+    "cobblemon.species.snom.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "shielddust",
     "h:icescales"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 30,
@@ -15,75 +29,6 @@
     "special_defence": 30,
     "speed": 20
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 37,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "bug"
-  ],
-  "moves": [
-    "1:powdersnow",
-    "1:strugglebug",
-    "egg:bugbite",
-    "egg:fairywind",
-    "egg:mirrorcoat",
-    "tm:attract",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:endure",
-    "tm:facade",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:lunge",
-    "tm:pounce",
-    "tm:protect",
-    "tm:rest",
-    "tm:round",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:snore",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:terablast",
-    "tutor:skittersmack"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.snom.desc"
-  ],
-  "evolutions": [
-    {
-      "id": "snom_frosmoth",
-      "variant": "level_up",
-      "result": "frosmoth",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "icywind"
-      ],
-      "requirements": [
-        {
-          "variant": "friendship",
-          "amount": 160
-        },
-        {
-          "variant": "time_range",
-          "range": "night"
-        }
-      ]
-    }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -92,10 +37,24 @@
     "special_defence": 0,
     "speed": 0
   },
-  "height": 3,
-  "weight": 38,
-  "aspects": [],
-  "cannotDynamax": false,
+  "baseExperienceYield": 37,
+  "experienceGroup": "medium_fast",
+  "catchRate": 190,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canBreatheUnderwater": true
+      }
+    }
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -113,5 +72,51 @@
       }
     ]
   },
-  "implemented": true
+  "moves": [
+    "1:powdersnow",
+    "1:strugglebug",
+    "egg:bugbite",
+    "egg:fairywind",
+    "egg:mirrorcoat",
+    "tm:bugbite",
+    "tm:bugbuzz",
+    "tm:facade",
+    "tm:iciclespear",
+    "tm:icywind",
+    "tm:lunge",
+    "tm:pounce",
+    "tm:protect",
+    "tm:rest",
+    "tm:skittersmack",
+    "tm:sleeptalk",
+    "tm:strugglebug",
+    "tm:substitute",
+    "tm:terablast",
+    "tutor:bugbite",
+    "tutor:icywind",
+    "tutor:rest",
+    "tutor:skittersmack",
+    "tutor:sleeptalk"
+  ],
+  "evolutions": [
+    {
+      "id": "snom_frosmoth",
+      "variant": "level_up",
+      "result": "frosmoth",
+      "consumeHeldItem": true,
+      "learnableMoves": [
+        "icywind"
+      ],
+      "requirements": [
+        {
+          "variant": "friendship",
+          "amount": 160
+        },
+        {
+          "variant": "time_range",
+          "range": "night"
+        }
+      ]
+    }
+  ]
 }

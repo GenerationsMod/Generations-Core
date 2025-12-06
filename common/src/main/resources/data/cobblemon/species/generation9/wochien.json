@@ -1,10 +1,26 @@
 {
-  "name": "Wo-Chien",
+  "implemented": true,
   "nationalPokedexNumber": 1001,
+  "name": "Wo-Chien",
   "primaryType": "dark",
   "secondaryType": "grass",
+  "maleRatio": -1,
+  "height": 15,
+  "weight": 742,
+  "pokedex": [
+    "cobblemon.species.wochien.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
-    "tabletsofruin"
+    "tabletsofruin",
+    "h:tabletsofruin"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 85,
@@ -14,10 +30,6 @@
     "special_defence": 135,
     "speed": 70
   },
-  "catchRate": 6,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,15 +38,15 @@
     "special_defence": 3,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 6,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
     "1:absorb",
-    "1:meanlook",
     "1:spite",
+    "1:meanlook",
     "5:tickle",
     "10:payback",
     "15:poisonpowder",
@@ -72,7 +84,9 @@
     "tm:magicalleaf",
     "tm:mudshot",
     "tm:mudslap",
+    "tm:payback",
     "tm:pollenpuff",
+    "tm:powerwhip",
     "tm:protect",
     "tm:raindance",
     "tm:reflect",
@@ -90,19 +104,23 @@
     "tm:taunt",
     "tm:terablast",
     "tm:trailblaze",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:darkpulse",
+    "tutor:energyball",
+    "tutor:foulplay",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:knockoff",
+    "tutor:lashout",
+    "tutor:magicalleaf",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:spite",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 15,
-  "weight": 742,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.wochien.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

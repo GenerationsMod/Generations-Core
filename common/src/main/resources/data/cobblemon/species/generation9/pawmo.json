@@ -1,12 +1,26 @@
 {
-  "name": "Pawmo",
+  "implemented": true,
   "nationalPokedexNumber": 922,
+  "name": "Pawmo",
   "primaryType": "electric",
   "secondaryType": "fighting",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 65,
+  "pokedex": [
+    "cobblemon.species.pawmo.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "voltabsorb",
     "naturalcure",
     "h:ironfist"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 60,
@@ -16,10 +30,6 @@
     "special_defence": 40,
     "speed": 85
   },
-  "catchRate": 80,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 123,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -28,15 +38,24 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 123,
   "experienceGroup": "medium_fast",
+  "catchRate": 80,
   "eggCycles": 15,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:growl",
-    "1:scratch",
     "1:armthrust",
+    "1:scratch",
+    "1:growl",
     "3:thundershock",
     "6:quickattack",
     "8:charge",
@@ -50,6 +69,10 @@
     "42:discharge",
     "46:agility",
     "52:wildcharge",
+    "egg:fakeout",
+    "egg:machpunch",
+    "egg:sweetkiss",
+    "egg:wish",
     "tm:agility",
     "tm:batonpass",
     "tm:charge",
@@ -91,14 +114,24 @@
     "tm:thunderwave",
     "tm:upperhand",
     "tm:voltswitch",
-    "tm:wildcharge"
+    "tm:wildcharge",
+    "tutor:chargebeam",
+    "tutor:coaching",
+    "tutor:electroweb",
+    "tutor:focuspunch",
+    "tutor:helpinghand",
+    "tutor:knockoff",
+    "tutor:lowkick",
+    "tutor:playrough",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:superfang",
+    "tutor:swift",
+    "tutor:thunderbolt",
+    "tutor:thunderfang",
+    "tutor:thunderpunch",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 4,
-  "weight": 65,
   "preEvolution": "pawmi",
   "evolutions": [
     {
@@ -116,19 +149,5 @@
         }
       ]
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.pawmo.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:cheri_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

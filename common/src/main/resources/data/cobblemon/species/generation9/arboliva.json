@@ -1,11 +1,25 @@
 {
-  "name": "Arboliva",
+  "implemented": true,
   "nationalPokedexNumber": 930,
+  "name": "Arboliva",
   "primaryType": "grass",
   "secondaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 14,
+  "weight": 482,
+  "pokedex": [
+    "cobblemon.species.arboliva.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "seedsower",
     "h:harvest"
+  ],
+  "eggGroups": [
+    "grass"
   ],
   "baseStats": {
     "hp": 78,
@@ -15,10 +29,6 @@
     "special_defence": 109,
     "speed": 39
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 255,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,15 +37,28 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 255,
   "experienceGroup": "medium_slow",
+  "catchRate": 45,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 10.0
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
   "moves": [
+    "1:sweetscent",
     "1:mirrorcoat",
     "1:safeguard",
-    "1:sweetscent",
     "1:tackle",
     "5:absorb",
     "7:growth",
@@ -50,6 +73,10 @@
     "46:terrainpulse",
     "52:petalblizzard",
     "58:petaldance",
+    "egg:memento",
+    "egg:strengthsap",
+    "egg:synthesis",
+    "egg:weatherball",
     "tm:alluringvoice",
     "tm:bulletseed",
     "tm:charm",
@@ -77,6 +104,7 @@
     "tm:psychup",
     "tm:reflect",
     "tm:rest",
+    "tm:safeguard",
     "tm:seedbomb",
     "tm:sleeptalk",
     "tm:solarbeam",
@@ -84,34 +112,27 @@
     "tm:substitute",
     "tm:sunnyday",
     "tm:swift",
+    "tm:synthesis",
     "tm:terablast",
+    "tm:terrainpulse",
     "tm:trailblaze",
-    "tm:weatherball"
+    "tm:weatherball",
+    "tutor:dazzlinggleam",
+    "tutor:earthpower",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:magicalleaf",
+    "tutor:rest",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:synthesis",
+    "tutor:terrainpulse"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 14,
-  "weight": 482,
   "preEvolution": "dolliv",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.arboliva.desc"
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:big_root",
-        "percentage": 10.0
-      },
-      {
-        "item": "cobblemon:kebia_berry",
-        "percentage": 10.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

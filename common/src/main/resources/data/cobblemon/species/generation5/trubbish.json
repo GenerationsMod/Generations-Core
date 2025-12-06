@@ -1,12 +1,61 @@
 {
-  "name": "Trubbish",
+  "implemented": true,
   "nationalPokedexNumber": 568,
+  "name": "Trubbish",
   "primaryType": "poison",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 310,
+  "pokedex": [
+    "cobblemon.species.trubbish.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "stench",
     "stickyhold",
     "h:aftermath"
   ],
+  "eggGroups": [
+    "mineral"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 50,
+    "defence": 62,
+    "special_attack": 40,
+    "special_defence": 62,
+    "speed": 65
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "baseExperienceYield": 66,
+  "experienceGroup": "medium_fast",
+  "catchRate": 190,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInWater": false
+      }
+    }
+  },
   "drops": {
     "amount": 4,
     "entries": [
@@ -28,31 +77,14 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 50,
-    "attack": 50,
-    "defence": 62,
-    "special_attack": 40,
-    "special_defence": 62,
-    "speed": 65
-  },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 66,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "mineral"
-  ],
   "moves": [
-    "1:poisongas",
     "1:pound",
+    "1:poisongas",
+    "1:doubleslap",
     "3:recycle",
     "6:acidspray",
     "9:amnesia",
     "12:clearsmog",
-    "14:doubleslap",
     "15:toxicspikes",
     "18:sludge",
     "21:stockpile",
@@ -68,43 +100,40 @@
     "egg:curse",
     "egg:haze",
     "egg:mudsport",
-    "egg:rockblast",
     "egg:rollout",
     "egg:sandattack",
-    "egg:selfdestruct",
-    "egg:spikes",
+    "tm:acidspray",
     "tm:amnesia",
-    "tm:attract",
-    "tm:confide",
+    "tm:corrosivegas",
+    "tm:curse",
     "tm:darkpulse",
-    "tm:doubleteam",
     "tm:drainpunch",
     "tm:endure",
     "tm:explosion",
     "tm:facade",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:gunkshot",
-    "tm:hiddenpower",
+    "tm:haze",
     "tm:infestation",
+    "tm:painsplit",
     "tm:payback",
     "tm:protect",
     "tm:raindance",
+    "tm:recycle",
     "tm:rest",
-    "tm:return",
     "tm:rockblast",
-    "tm:round",
-    "tm:secretpower",
+    "tm:rollout",
     "tm:seedbomb",
     "tm:selfdestruct",
     "tm:sleeptalk",
     "tm:sludgebomb",
     "tm:sludgewave",
-    "tm:snore",
     "tm:spikes",
+    "tm:spite",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
+    "tm:takedown",
+    "tm:terablast",
     "tm:thief",
     "tm:toxic",
     "tm:toxicspikes",
@@ -117,16 +146,13 @@
     "tutor:gunkshot",
     "tutor:painsplit",
     "tutor:recycle",
+    "tutor:rest",
+    "tutor:rollout",
     "tutor:seedbomb",
     "tutor:sleeptalk",
-    "tutor:snore",
+    "tutor:sludgebomb",
+    "tutor:spikes",
     "tutor:spite"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.trubbish.desc"
   ],
   "evolutions": [
     {
@@ -142,25 +168,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 6,
-  "weight": 310,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

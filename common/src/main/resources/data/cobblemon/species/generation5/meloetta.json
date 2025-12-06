@@ -1,10 +1,28 @@
 {
-  "name": "Meloetta",
+  "implemented": true,
   "nationalPokedexNumber": 648,
+  "name": "Meloetta",
   "primaryType": "normal",
   "secondaryType": "psychic",
+  "maleRatio": -1,
+  "height": 6,
+  "weight": 65,
+  "pokedex": [
+    "cobblemon.species.meloetta.desc"
+  ],
+  "labels": [
+    "gen5",
+    "mythical"
+  ],
+  "aspects": [
+    "aria-forme"
+  ],
   "abilities": [
-    "serenegrace"
+    "serenegrace",
+    "h:serenegrace"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 100,
@@ -14,11 +32,6 @@
     "special_defence": 128,
     "speed": 90
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 270,
-  "baseFriendship": 100,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,43 +40,44 @@
     "special_defence": 1,
     "speed": 1
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 100,
   "moves": [
-    "1:confusion",
-    "1:quickattack",
     "1:round",
+    "1:quickattack",
+    "1:confusion",
     "1:sing",
+    "1:wakeupslap",
     "21:teeterdance",
     "26:acrobatics",
     "31:psybeam",
     "36:echoedvoice",
     "43:uturn",
     "50:relicsong",
-    "50:wakeupslap",
     "57:psychic",
     "64:hypervoice",
     "71:roleplay",
     "78:closecombat",
     "85:perishsong",
+    "form_change:relicsong",
     "tm:acrobatics",
     "tm:alluringvoice",
+    "tm:allyswitch",
     "tm:batonpass",
     "tm:brickbreak",
     "tm:calmmind",
-    "tm:chargebeam",
     "tm:charm",
     "tm:closecombat",
     "tm:coaching",
-    "tm:confide",
+    "tm:covet",
     "tm:dazzlinggleam",
     "tm:disarmingvoice",
-    "tm:doubleteam",
     "tm:drainpunch",
     "tm:dreameater",
+    "tm:dualchop",
     "tm:echoedvoice",
     "tm:embargo",
     "tm:endure",
@@ -75,20 +89,23 @@
     "tm:fling",
     "tm:focusblast",
     "tm:focuspunch",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:gravity",
+    "tm:healbell",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:honeclaws",
     "tm:hyperbeam",
     "tm:hypervoice",
     "tm:icepunch",
     "tm:knockoff",
+    "tm:laserfocus",
+    "tm:lastresort",
     "tm:lightscreen",
     "tm:lowkick",
     "tm:lowsweep",
+    "tm:magiccoat",
+    "tm:magicroom",
     "tm:metronome",
     "tm:payback",
     "tm:playrough",
@@ -99,23 +116,25 @@
     "tm:psychup",
     "tm:psyshock",
     "tm:raindance",
+    "tm:recycle",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:reversal",
     "tm:rocksmash",
+    "tm:roleplay",
     "tm:round",
     "tm:safeguard",
-    "tm:secretpower",
     "tm:shadowball",
     "tm:shadowclaw",
+    "tm:shockwave",
+    "tm:signalbeam",
     "tm:skillswap",
     "tm:sleeptalk",
+    "tm:snatch",
     "tm:stoneedge",
     "tm:strength",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:swordsdance",
     "tm:telekinesis",
@@ -124,25 +143,29 @@
     "tm:thunderbolt",
     "tm:thunderpunch",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:trick",
     "tm:trickroom",
     "tm:tripleaxel",
     "tm:uturn",
+    "tm:wonderroom",
     "tm:workup",
     "tm:zenheadbutt",
     "tutor:allyswitch",
-    "tutor:celebrate",
-    "tutor:closecombat",
-    "tutor:confusion",
+    "tutor:calmmind",
+    "tutor:coaching",
     "tutor:covet",
+    "tutor:dazzlinggleam",
     "tutor:drainpunch",
     "tutor:dualchop",
+    "tutor:energyball",
     "tutor:firepunch",
     "tutor:focuspunch",
+    "tutor:gigaimpact",
     "tutor:gravity",
     "tutor:healbell",
     "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
     "tutor:icepunch",
     "tutor:knockoff",
     "tutor:laserfocus",
@@ -150,42 +173,48 @@
     "tutor:lowkick",
     "tutor:magiccoat",
     "tutor:magicroom",
-    "tutor:quickattack",
+    "tutor:playrough",
+    "tutor:psychic",
     "tutor:recycle",
+    "tutor:relicsong",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:roleplay",
-    "tutor:round",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
     "tutor:shockwave",
     "tutor:signalbeam",
     "tutor:skillswap",
     "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
-    "tutor:teeterdance",
+    "tutor:stoneedge",
+    "tutor:swift",
     "tutor:telekinesis",
+    "tutor:thunderbolt",
     "tutor:thunderpunch",
     "tutor:trick",
-    "tutor:uproar",
+    "tutor:tripleaxel",
     "tutor:wonderroom",
     "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen5",
-    "mythical",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.meloetta.desc"
-  ],
-  "height": 6,
-  "weight": 65,
   "evolutions": [],
   "forms": [
     {
       "name": "Pirouette",
       "primaryType": "normal",
       "secondaryType": "fighting",
-      "abilities": [
-        "serenegrace"
+      "maleRatio": -1,
+      "height": 6,
+      "weight": 65,
+      "pokedex": [
+        "cobblemon.species.meloetta-pirouette.desc"
+      ],
+      "labels": [
+        "gen5",
+        "mythical"
+      ],
+      "aspects": [
+        "pirouette-forme"
       ],
       "baseStats": {
         "hp": 100,
@@ -195,10 +224,6 @@
         "special_defence": 77,
         "speed": 128
       },
-      "catchRate": 3,
-      "maleRatio": -1,
-      "baseExperienceYield": 270,
-      "baseFriendship": 100,
       "evYield": {
         "hp": 0,
         "attack": 1,
@@ -207,26 +232,8 @@
         "special_defence": 0,
         "speed": 1
       },
-      "experienceGroup": "slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen5",
-        "mythical",
-        "legendary"
-      ],
-      "aspects": [
-        "pirouette"
-      ],
-      "height": 6,
-      "weight": 65,
-      "cannotDynamax": false,
-      "battleOnly": true
+      "evolutions": [],
+      "battleOnly": false
     }
-  ],
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

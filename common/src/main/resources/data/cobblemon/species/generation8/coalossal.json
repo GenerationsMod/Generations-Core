@@ -1,12 +1,26 @@
 {
-  "name": "Coalossal",
+  "implemented": true,
   "nationalPokedexNumber": 839,
+  "name": "Coalossal",
   "primaryType": "rock",
   "secondaryType": "fire",
+  "maleRatio": 0.5,
+  "height": 28,
+  "weight": 3105,
+  "pokedex": [
+    "cobblemon.species.coalossal.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "steamengine",
     "flamebody",
     "h:flashfire"
+  ],
+  "eggGroups": [
+    "mineral"
   ],
   "baseStats": {
     "hp": 110,
@@ -16,151 +30,6 @@
     "special_defence": 90,
     "speed": 30
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Gmax",
-      "primaryType": "rock",
-      "secondaryType": "fire",
-      "abilities": [
-        "steamengine",
-        "flamebody",
-        "h:flashfire"
-      ],
-      "baseStats": {
-        "hp": 110,
-        "attack": 80,
-        "defence": 120,
-        "special_attack": 80,
-        "special_defence": 90,
-        "speed": 30
-      },
-      "catchRate": 45,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 255,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 3,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_slow",
-      "eggCycles": 15,
-      "eggGroups": [
-        "mineral"
-      ],
-      "labels": [
-        "gen8",
-        "gmax"
-      ],
-      "aspects": [
-        "gmax"
-      ],
-      "height": 420,
-      "weight": 0,
-      "cannotDynamax": false,
-      "battleOnly": false
-    }
-  ],
-  "baseExperienceYield": 255,
-  "experienceGroup": "medium_slow",
-  "eggCycles": 15,
-  "eggGroups": [
-    "mineral"
-  ],
-  "moves": [
-    "1:flamecharge",
-    "1:rapidspin",
-    "1:smackdown",
-    "1:smokescreen",
-    "1:tackle",
-    "15:rockpolish",
-    "20:ancientpower",
-    "27:incinerate",
-    "37:stealthrock",
-    "45:heatcrash",
-    "54:rockblast",
-    "63:burnup",
-    "63:stoneedge",
-    "tm:attract",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:dig",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firepunch",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:gigaimpact",
-    "tm:gyroball",
-    "tm:heatcrash",
-    "tm:heatwave",
-    "tm:heavyslam",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:meteorbeam",
-    "tm:mudslap",
-    "tm:overheat",
-    "tm:powergem",
-    "tm:protect",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:round",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:scald",
-    "tm:scorchingsands",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:snore",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:willowisp",
-    "tutor:meteorbeam",
-    "tutor:scorchingsands"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.coalossal.desc"
-  ],
-  "preEvolution": "carkol",
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -169,10 +38,25 @@
     "special_defence": 0,
     "speed": 0
   },
-  "height": 28,
-  "weight": 3105,
-  "aspects": [],
-  "cannotDynamax": false,
+  "baseExperienceYield": 255,
+  "experienceGroup": "medium_slow",
+  "catchRate": 45,
+  "eggCycles": 15,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInWater": false
+      }
+    }
+  },
   "drops": {
     "amount": 5,
     "entries": [
@@ -190,5 +74,127 @@
       }
     ]
   },
-  "implemented": true
+  "moves": [
+    "1:tarshot",
+    "1:flamecharge",
+    "1:tackle",
+    "1:smokescreen",
+    "1:rapidspin",
+    "1:smackdown",
+    "1:burnup",
+    "15:rockpolish",
+    "20:ancientpower",
+    "27:incinerate",
+    "37:stealthrock",
+    "45:heatcrash",
+    "54:rockblast",
+    "63:stoneedge",
+    "egg:block",
+    "egg:explosion",
+    "egg:mudslap",
+    "tm:ancientpower",
+    "tm:block",
+    "tm:bodypress",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:curse",
+    "tm:dig",
+    "tm:earthpower",
+    "tm:earthquake",
+    "tm:endure",
+    "tm:explosion",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firepunch",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:gigaimpact",
+    "tm:gyroball",
+    "tm:heatcrash",
+    "tm:heatwave",
+    "tm:heavyslam",
+    "tm:highhorsepower",
+    "tm:hyperbeam",
+    "tm:incinerate",
+    "tm:irondefense",
+    "tm:ironhead",
+    "tm:megakick",
+    "tm:megapunch",
+    "tm:meteorbeam",
+    "tm:mudslap",
+    "tm:overheat",
+    "tm:powergem",
+    "tm:protect",
+    "tm:reflect",
+    "tm:rest",
+    "tm:rockblast",
+    "tm:rockpolish",
+    "tm:rockslide",
+    "tm:rocktomb",
+    "tm:sandstorm",
+    "tm:sandtomb",
+    "tm:scald",
+    "tm:scorchingsands",
+    "tm:selfdestruct",
+    "tm:sleeptalk",
+    "tm:smackdown",
+    "tm:solarbeam",
+    "tm:spikes",
+    "tm:stealthrock",
+    "tm:stoneedge",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:takedown",
+    "tm:temperflare",
+    "tm:terablast",
+    "tm:willowisp",
+    "tutor:ancientpower",
+    "tutor:block",
+    "tutor:bulldoze",
+    "tutor:earthpower",
+    "tutor:firepunch",
+    "tutor:flamethrower",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:meteorbeam",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:scorchingsands",
+    "tutor:sleeptalk",
+    "tutor:spikes",
+    "tutor:stealthrock",
+    "tutor:stoneedge"
+  ],
+  "preEvolution": "carkol",
+  "evolutions": [],
+  "forms": [
+    {
+      "name": "Gmax",
+      "primaryType": "rock",
+      "secondaryType": "fire",
+      "maleRatio": 0.5,
+      "height": 420,
+      "weight": 0,
+      "pokedex": [
+        "cobblemon.species.coalossal-gmax.desc"
+      ],
+      "labels": [
+        "gen8",
+        "gmax"
+      ],
+      "aspects": [
+        "gmax"
+      ],
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true
+    }
+  ]
 }

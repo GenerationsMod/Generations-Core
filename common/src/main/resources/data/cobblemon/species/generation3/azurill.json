@@ -1,12 +1,27 @@
 {
-  "name": "Azurill",
+  "implemented": true,
   "nationalPokedexNumber": 298,
+  "name": "Azurill",
   "primaryType": "normal",
   "secondaryType": "fairy",
+  "maleRatio": 0.25,
+  "height": 2,
+  "weight": 20,
+  "pokedex": [
+    "cobblemon.species.azurill.desc"
+  ],
+  "labels": [
+    "gen3",
+    "baby"
+  ],
+  "aspects": [],
   "abilities": [
     "thickfat",
     "hugepower",
     "h:sapsipper"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 50,
@@ -16,120 +31,101 @@
     "special_defence": 40,
     "speed": 20
   },
-  "catchRate": 150,
-  "maleRatio": 0.25,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 38,
   "experienceGroup": "fast",
+  "catchRate": 150,
   "eggCycles": 10,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:splash",
     "1:tailwhip",
+    "1:bubble",
     "1:watergun",
+    "1:watersport",
     "3:helpinghand",
-    "5:watersport",
     "6:bubblebeam",
-    "7:bubble",
     "9:charm",
     "12:slam",
     "15:bounce",
     "egg:aquajet",
     "egg:bellydrum",
-    "egg:bodyslam",
     "egg:camouflage",
     "egg:copycat",
-    "egg:encore",
-    "egg:faketears",
-    "egg:muddywater",
     "egg:perishsong",
     "egg:present",
     "egg:refresh",
     "egg:sing",
-    "egg:slam",
     "egg:soak",
     "egg:supersonic",
     "egg:tickle",
     "egg:watersport",
     "tm:alluringvoice",
-    "tm:attract",
     "tm:blizzard",
     "tm:bodyslam",
     "tm:bounce",
     "tm:brutalswing",
-    "tm:captivate",
     "tm:charm",
-    "tm:confide",
-    "tm:doubleteam",
+    "tm:covet",
     "tm:drainingkiss",
     "tm:encore",
     "tm:endure",
     "tm:facade",
     "tm:faketears",
-    "tm:frustration",
     "tm:hail",
+    "tm:headbutt",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hypervoice",
     "tm:icebeam",
     "tm:icywind",
     "tm:irontail",
     "tm:lightscreen",
-    "tm:muddywater",
     "tm:mudshot",
     "tm:mudslap",
-    "tm:naturalgift",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:round",
-    "tm:scald",
-    "tm:secretpower",
+    "tm:rollout",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:substitute",
     "tm:surf",
-    "tm:swagger",
     "tm:takedown",
     "tm:terablast",
-    "tm:toxic",
-    "tm:uproar",
     "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
     "tm:workup",
-    "tutor:bodyslam",
     "tutor:bounce",
     "tutor:covet",
-    "tutor:defensecurl",
-    "tutor:doubleedge",
-    "tutor:endure",
-    "tutor:headbutt",
     "tutor:helpinghand",
     "tutor:hypervoice",
+    "tutor:icebeam",
     "tutor:icywind",
     "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:mimic",
     "tutor:mudslap",
+    "tutor:rest",
     "tutor:rollout",
-    "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:substitute",
-    "tutor:swagger",
-    "tutor:swift",
-    "tutor:uproar",
-    "tutor:waterpulse"
-  ],
-  "labels": [
-    "gen3",
-    "baby"
-  ],
-  "pokedex": [
-    "cobblemon.species.azurill.desc"
+    "tutor:sleeptalk"
   ],
   "evolutions": [
     {
@@ -145,34 +141,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 1,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 2,
-  "weight": 20,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:kebia_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

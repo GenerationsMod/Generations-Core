@@ -1,12 +1,61 @@
 {
-  "name": "Vanilluxe",
+  "implemented": true,
   "nationalPokedexNumber": 584,
+  "name": "Vanilluxe",
   "primaryType": "ice",
+  "maleRatio": 0.5,
+  "height": 13,
+  "weight": 575,
+  "pokedex": [
+    "cobblemon.species.vanilluxe.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "icebody",
     "snowwarning",
     "h:weakarmor"
   ],
+  "eggGroups": [
+    "mineral"
+  ],
+  "baseStats": {
+    "hp": 71,
+    "attack": 95,
+    "defence": 85,
+    "special_attack": 110,
+    "special_defence": 95,
+    "speed": 79
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 268,
+  "experienceGroup": "slow",
+  "catchRate": 45,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInWater": false
+      }
+    }
+  },
   "drops": {
     "amount": 5,
     "entries": [
@@ -24,58 +73,46 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 71,
-    "attack": 95,
-    "defence": 85,
-    "special_attack": 110,
-    "special_defence": 95,
-    "speed": 79
-  },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 268,
-  "experienceGroup": "slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "mineral"
-  ],
   "moves": [
-    "1:astonish",
-    "1:freezedry",
+    "1:weatherball",
     "1:harden",
-    "1:iciclecrash",
+    "1:astonish",
     "1:mist",
     "1:taunt",
-    "1:weatherball",
+    "1:mirrorshot",
+    "1:freezedry",
+    "1:iciclecrash",
     "12:icywind",
     "16:avalanche",
     "20:hail",
     "24:iciclespear",
-    "26:mirrorshot",
     "28:uproar",
     "32:acidarmor",
     "38:mirrorcoat",
     "44:icebeam",
     "52:blizzard",
     "60:sheercold",
+    "egg:auroraveil",
+    "egg:autotomize",
+    "egg:explosion",
+    "egg:iceshard",
+    "egg:iciclecrash",
+    "egg:magnetrise",
+    "egg:mirrorshot",
+    "egg:naturalgift",
+    "egg:powdersnow",
     "tm:allyswitch",
-    "tm:attract",
+    "tm:auroraveil",
     "tm:avalanche",
     "tm:beatup",
     "tm:blizzard",
-    "tm:confide",
-    "tm:doubleteam",
     "tm:endure",
     "tm:explosion",
     "tm:facade",
     "tm:flashcannon",
     "tm:frostbreath",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:hail",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:hypervoice",
     "tm:icebeam",
@@ -84,58 +121,37 @@
     "tm:imprison",
     "tm:irondefense",
     "tm:lightscreen",
+    "tm:magiccoat",
+    "tm:magnetrise",
+    "tm:naturalgift",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:round",
-    "tm:secretpower",
     "tm:selfdestruct",
+    "tm:signalbeam",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:substitute",
-    "tm:swagger",
     "tm:taunt",
-    "tm:toxic",
+    "tm:terablast",
     "tm:uproar",
+    "tm:waterpulse",
     "tm:weatherball",
     "tutor:allyswitch",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:icebeam",
     "tutor:icywind",
     "tutor:irondefense",
     "tutor:magiccoat",
     "tutor:magnetrise",
+    "tutor:rest",
     "tutor:signalbeam",
     "tutor:sleeptalk",
-    "tutor:snore",
     "tutor:uproar",
     "tutor:waterpulse"
   ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.vanilluxe.desc"
-  ],
   "preEvolution": "vanillish",
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 3,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 13,
-  "weight": 575,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }

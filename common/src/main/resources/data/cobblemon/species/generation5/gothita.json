@@ -1,12 +1,53 @@
 {
-  "name": "Gothita",
+  "implemented": true,
   "nationalPokedexNumber": 574,
+  "name": "Gothita",
   "primaryType": "psychic",
+  "maleRatio": 0.25,
+  "height": 4,
+  "weight": 58,
+  "pokedex": [
+    "cobblemon.species.gothita.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "frisk",
     "competitive",
     "h:shadowtag"
   ],
+  "eggGroups": [
+    "human_like"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 30,
+    "defence": 50,
+    "special_attack": 55,
+    "special_defence": 65,
+    "speed": 45
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 1,
+    "speed": 0
+  },
+  "baseExperienceYield": 58,
+  "experienceGroup": "medium_slow",
+  "catchRate": 200,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -24,60 +65,36 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 45,
-    "attack": 30,
-    "defence": 50,
-    "special_attack": 55,
-    "special_defence": 65,
-    "speed": 45
-  },
-  "catchRate": 200,
-  "maleRatio": 0.25,
-  "shoulderMountable": false,
-  "baseExperienceYield": 58,
-  "experienceGroup": "medium_slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "human_like"
-  ],
   "moves": [
-    "1:confusion",
     "1:pound",
+    "1:confusion",
+    "1:doubleslap",
     "4:playnice",
     "8:tickle",
     "12:psybeam",
-    "14:doubleslap",
     "16:charm",
-    "19:embargo",
     "20:psyshock",
     "24:feintattack",
-    "24:hypnosis",
     "28:faketears",
     "33:healblock",
-    "33:psychup",
     "36:psychic",
     "40:flatter",
-    "40:telekinesis",
     "44:futuresight",
     "48:magicroom",
     "egg:captivate",
-    "egg:darkpulse",
     "egg:fakeout",
     "egg:healpulse",
+    "egg:hypnosis",
     "egg:meanlook",
     "egg:miracleeye",
     "egg:mirrorcoat",
     "egg:torment",
-    "egg:uproar",
     "tm:allyswitch",
-    "tm:attract",
     "tm:calmmind",
-    "tm:chargebeam",
+    "tm:captivate",
     "tm:charm",
-    "tm:confide",
+    "tm:covet",
     "tm:darkpulse",
-    "tm:doubleteam",
     "tm:dreameater",
     "tm:embargo",
     "tm:endure",
@@ -88,15 +105,15 @@
     "tm:flash",
     "tm:fling",
     "tm:foulplay",
-    "tm:frustration",
     "tm:futuresight",
     "tm:grassknot",
     "tm:gravity",
     "tm:guardswap",
+    "tm:healbell",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:imprison",
     "tm:lightscreen",
+    "tm:magiccoat",
     "tm:magicroom",
     "tm:nastyplot",
     "tm:payback",
@@ -108,21 +125,21 @@
     "tm:psychup",
     "tm:psyshock",
     "tm:raindance",
+    "tm:recycle",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
+    "tm:roleplay",
     "tm:safeguard",
-    "tm:secretpower",
     "tm:shadowball",
+    "tm:shockwave",
+    "tm:signalbeam",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
+    "tm:snatch",
     "tm:storedpower",
     "tm:substitute",
-    "tm:swagger",
     "tm:swift",
     "tm:taunt",
     "tm:telekinesis",
@@ -131,13 +148,15 @@
     "tm:thunderbolt",
     "tm:thunderwave",
     "tm:torment",
-    "tm:toxic",
     "tm:trick",
     "tm:trickroom",
-    "tm:uproar",
     "tm:zenheadbutt",
     "tutor:allyswitch",
+    "tutor:block",
+    "tutor:calmmind",
     "tutor:covet",
+    "tutor:darkpulse",
+    "tutor:energyball",
     "tutor:expandingforce",
     "tutor:foulplay",
     "tutor:gravity",
@@ -145,24 +164,22 @@
     "tutor:helpinghand",
     "tutor:magiccoat",
     "tutor:magicroom",
+    "tutor:psychic",
     "tutor:recycle",
+    "tutor:rest",
+    "tutor:rockslide",
     "tutor:roleplay",
+    "tutor:shadowball",
     "tutor:shockwave",
     "tutor:signalbeam",
     "tutor:skillswap",
     "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
+    "tutor:swift",
     "tutor:telekinesis",
+    "tutor:thunderbolt",
     "tutor:trick",
-    "tutor:uproar",
     "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.gothita.desc"
   ],
   "evolutions": [
     {
@@ -178,25 +195,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 1,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 58,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

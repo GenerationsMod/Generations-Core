@@ -1,11 +1,25 @@
 {
-  "name": "Gulpin",
+  "implemented": true,
   "nationalPokedexNumber": 316,
+  "name": "Gulpin",
   "primaryType": "poison",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 103,
+  "pokedex": [
+    "cobblemon.species.gulpin.desc"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
   "abilities": [
     "liquidooze",
     "stickyhold",
     "h:gluttony"
+  ],
+  "eggGroups": [
+    "amorphous"
   ],
   "baseStats": {
     "hp": 70,
@@ -15,15 +29,45 @@
     "special_defence": 53,
     "speed": 40
   },
-  "catchRate": 225,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 60,
   "experienceGroup": "fluctuating",
+  "catchRate": 225,
   "eggCycles": 20,
-  "eggGroups": [
-    "amorphous"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canBreatheUnderwater": true
+      }
+    }
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:black_sludge",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:pound",
     "5:yawn",
@@ -33,35 +77,27 @@
     "17:acidspray",
     "20:encore",
     "25:toxic",
-    "28:spitup",
     "28:stockpile",
+    "28:spitup",
     "28:swallow",
     "33:sludgebomb",
     "36:gastroacid",
     "41:belch",
-    "44:painsplit",
     "44:wringout",
     "49:gunkshot",
     "egg:acidarmor",
     "egg:clearsmog",
     "egg:curse",
     "egg:destinybond",
-    "egg:dreameater",
-    "egg:gunkshot",
     "egg:mudslap",
-    "egg:painsplit",
     "egg:smog",
     "egg:stuffcheeks",
-    "egg:venomdrench",
     "tm:acidspray",
     "tm:amnesia",
-    "tm:attract",
     "tm:bodyslam",
     "tm:bulletseed",
-    "tm:captivate",
-    "tm:confide",
+    "tm:corrosivegas",
     "tm:curse",
-    "tm:doubleteam",
     "tm:dreameater",
     "tm:encore",
     "tm:endure",
@@ -69,28 +105,26 @@
     "tm:facade",
     "tm:firepunch",
     "tm:fling",
-    "tm:frustration",
+    "tm:gastroacid",
     "tm:gigadrain",
     "tm:gunkshot",
+    "tm:headbutt",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:icebeam",
     "tm:icepunch",
     "tm:infestation",
     "tm:mudshot",
     "tm:mudslap",
-    "tm:naturalgift",
     "tm:painsplit",
     "tm:poisonjab",
     "tm:poweruppunch",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:rocksmash",
-    "tm:round",
-    "tm:secretpower",
+    "tm:rollout",
     "tm:seedbomb",
+    "tm:selfdestruct",
     "tm:shadowball",
     "tm:shockwave",
     "tm:sleeptalk",
@@ -101,7 +135,6 @@
     "tm:strength",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swordsdance",
     "tm:takedown",
     "tm:terablast",
@@ -110,48 +143,32 @@
     "tm:thunderwave",
     "tm:toxic",
     "tm:toxicspikes",
+    "tm:venomdrench",
     "tm:venoshock",
     "tm:waterpulse",
-    "tutor:acidarmor",
-    "tutor:bodyslam",
-    "tutor:counter",
-    "tutor:defensecurl",
-    "tutor:doubleedge",
-    "tutor:dreameater",
-    "tutor:dynamicpunch",
-    "tutor:endure",
-    "tutor:explosion",
+    "tutor:corrosivegas",
     "tutor:firepunch",
     "tutor:gastroacid",
     "tutor:gigadrain",
     "tutor:gunkshot",
-    "tutor:headbutt",
+    "tutor:helpinghand",
+    "tutor:icebeam",
     "tutor:icepunch",
-    "tutor:mimic",
     "tutor:mudslap",
-    "tutor:nightmare",
     "tutor:painsplit",
-    "tutor:poisongas",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:rollout",
     "tutor:seedbomb",
-    "tutor:selfdestruct",
+    "tutor:shadowball",
     "tutor:shockwave",
-    "tutor:sing",
     "tutor:sleeptalk",
-    "tutor:sludge",
+    "tutor:sludgebomb",
     "tutor:snatch",
-    "tutor:snore",
-    "tutor:substitute",
-    "tutor:swagger",
+    "tutor:spikes",
     "tutor:thunderpunch",
-    "tutor:toxic",
     "tutor:waterpulse"
-  ],
-  "labels": [
-    "gen3"
-  ],
-  "pokedex": [
-    "cobblemon.species.gulpin.desc"
   ],
   "evolutions": [
     {
@@ -169,38 +186,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 1,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 103,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:black_sludge",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:oran_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

@@ -1,12 +1,53 @@
 {
-  "name": "Duosion",
+  "implemented": true,
   "nationalPokedexNumber": 578,
+  "name": "Duosion",
   "primaryType": "psychic",
+  "maleRatio": 0.5,
+  "height": 6,
+  "weight": 80,
+  "pokedex": [
+    "cobblemon.species.duosion.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "overcoat",
     "magicguard",
     "h:regenerator"
   ],
+  "eggGroups": [
+    "amorphous"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 40,
+    "defence": 50,
+    "special_attack": 125,
+    "special_defence": 60,
+    "speed": 30
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 130,
+  "experienceGroup": "medium_slow",
+  "catchRate": 100,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -20,51 +61,35 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 65,
-    "attack": 40,
-    "defence": 50,
-    "special_attack": 125,
-    "special_defence": 60,
-    "speed": 30
-  },
-  "catchRate": 100,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 130,
-  "experienceGroup": "medium_slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "amorphous"
-  ],
   "moves": [
-    "1:confusion",
-    "1:endeavor",
-    "1:protect",
     "1:psywave",
-    "1:recover",
-    "1:rollout",
     "1:snatch",
+    "1:recover",
+    "1:endeavor",
+    "1:healblock",
+    "1:protect",
+    "1:confusion",
     "12:psybeam",
-    "14:hiddenpower",
     "16:charm",
     "20:psyshock",
-    "24:lightscreen",
     "24:reflect",
+    "24:lightscreen",
     "28:allyswitch",
     "35:painsplit",
     "40:psychic",
     "46:skillswap",
-    "50:healblock",
     "52:futuresight",
     "58:wonderroom",
+    "egg:acidarmor",
+    "egg:astonish",
+    "egg:confuseray",
+    "egg:healblock",
+    "egg:secretpower",
+    "tm:afteryou",
     "tm:allyswitch",
-    "tm:attract",
     "tm:calmmind",
     "tm:charm",
-    "tm:confide",
     "tm:confuseray",
-    "tm:doubleteam",
     "tm:dreameater",
     "tm:embargo",
     "tm:encore",
@@ -76,17 +101,16 @@
     "tm:facade",
     "tm:flash",
     "tm:flashcannon",
-    "tm:frustration",
     "tm:futuresight",
     "tm:gravity",
     "tm:guardswap",
     "tm:gyroball",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:imprison",
     "tm:infestation",
     "tm:irondefense",
     "tm:lightscreen",
+    "tm:magiccoat",
     "tm:nightshade",
     "tm:painsplit",
     "tm:powerswap",
@@ -99,59 +123,61 @@
     "tm:raindance",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
+    "tm:roleplay",
+    "tm:rollout",
     "tm:safeguard",
     "tm:secretpower",
     "tm:shadowball",
+    "tm:shockwave",
+    "tm:signalbeam",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
+    "tm:snatch",
+    "tm:steelroller",
     "tm:storedpower",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:telekinesis",
     "tm:terablast",
     "tm:thunder",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:trick",
     "tm:trickroom",
     "tm:wonderroom",
     "tm:zenheadbutt",
     "tutor:afteryou",
     "tutor:allyswitch",
+    "tutor:block",
+    "tutor:calmmind",
     "tutor:endeavor",
+    "tutor:energyball",
     "tutor:expandingforce",
+    "tutor:flashcannon",
     "tutor:gravity",
     "tutor:helpinghand",
-    "tutor:imprison",
     "tutor:irondefense",
     "tutor:magiccoat",
     "tutor:painsplit",
-    "tutor:recover",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rockslide",
     "tutor:roleplay",
+    "tutor:rollout",
+    "tutor:shadowball",
     "tutor:shockwave",
     "tutor:signalbeam",
     "tutor:skillswap",
     "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:steelroller",
+    "tutor:swift",
     "tutor:telekinesis",
     "tutor:trick",
     "tutor:wonderroom",
     "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.duosion.desc"
   ],
   "preEvolution": "solosis",
   "evolutions": [
@@ -161,6 +187,7 @@
       "result": "reuniclus",
       "consumeHeldItem": false,
       "learnableMoves": [
+        "dizzypunch",
         "hammerarm"
       ],
       "requirements": [
@@ -170,25 +197,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 2,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 6,
-  "weight": 80,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

@@ -1,11 +1,25 @@
 {
-  "name": "Lokix",
+  "implemented": true,
   "nationalPokedexNumber": 920,
+  "name": "Lokix",
   "primaryType": "bug",
   "secondaryType": "dark",
+  "maleRatio": 0.5,
+  "height": 10,
+  "weight": 175,
+  "pokedex": [
+    "cobblemon.species.lokix.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "swarm",
     "h:tintedlens"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 71,
@@ -15,10 +29,6 @@
     "special_defence": 55,
     "speed": 92
   },
-  "catchRate": 30,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 158,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 2,
@@ -27,17 +37,26 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 158,
   "experienceGroup": "medium_fast",
+  "catchRate": 30,
   "eggCycles": 20,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 0,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:detect",
+    "1:lunge",
+    "1:tackle",
     "1:leer",
     "1:lowkick",
-    "1:tackle",
-    "1:lunge",
+    "1:detect",
     "4:strugglebug",
     "6:astonish",
     "9:assurance",
@@ -52,8 +71,12 @@
     "44:firstimpression",
     "48:bounce",
     "53:axekick",
+    "egg:counter",
+    "egg:skittersmack",
     "tm:aerialace",
     "tm:agility",
+    "tm:assurance",
+    "tm:bounce",
     "tm:brickbreak",
     "tm:bugbite",
     "tm:bugbuzz",
@@ -75,11 +98,13 @@
     "tm:rest",
     "tm:reversal",
     "tm:scaryface",
+    "tm:screech",
     "tm:skittersmack",
     "tm:sleeptalk",
     "tm:spite",
     "tm:strugglebug",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:swordsdance",
     "tm:takedown",
@@ -89,28 +114,24 @@
     "tm:throatchop",
     "tm:trailblaze",
     "tm:uturn",
-    "tm:xscissor"
+    "tm:xscissor",
+    "tutor:aerialace",
+    "tutor:bounce",
+    "tutor:bugbite",
+    "tutor:darkpulse",
+    "tutor:gigaimpact",
+    "tutor:knockoff",
+    "tutor:lashout",
+    "tutor:leechlife",
+    "tutor:lowkick",
+    "tutor:rest",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:spite",
+    "tutor:suckerpunch",
+    "tutor:throatchop",
+    "tutor:xscissor"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 10,
-  "weight": 175,
   "preEvolution": "nymble",
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.lokix.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:coba_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

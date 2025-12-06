@@ -1,12 +1,27 @@
 {
-  "name": "Noibat",
+  "implemented": true,
   "nationalPokedexNumber": 714,
+  "name": "Noibat",
   "primaryType": "flying",
   "secondaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 5,
+  "weight": 80,
+  "pokedex": [
+    "cobblemon.species.noibat.desc"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
   "abilities": [
     "frisk",
     "infiltrator",
     "h:telepathy"
+  ],
+  "eggGroups": [
+    "flying",
+    "dragon"
   ],
   "baseStats": {
     "hp": 40,
@@ -16,29 +31,55 @@
     "special_defence": 40,
     "speed": 55
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
   "baseExperienceYield": 49,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "flying",
-    "dragon"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:phantom_membrane",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:absorb",
     "1:tackle",
+    "1:absorb",
     "4:gust",
-    "5:leechlife",
     "8:supersonic",
     "12:doubleteam",
     "16:wingattack",
-    "18:agility",
     "20:bite",
     "24:aircutter",
     "28:whirlwind",
-    "31:razorwind",
     "32:superfang",
     "36:airslash",
     "40:screech",
@@ -47,20 +88,17 @@
     "52:hurricane",
     "egg:defog",
     "egg:dragonrush",
-    "egg:outrage",
-    "egg:snatch",
+    "egg:razorwind",
     "egg:switcheroo",
-    "egg:tailwind",
     "tm:acrobatics",
     "tm:aerialace",
     "tm:agility",
     "tm:aircutter",
     "tm:airslash",
-    "tm:attract",
     "tm:brickbreak",
-    "tm:confide",
     "tm:cut",
     "tm:darkpulse",
+    "tm:defog",
     "tm:doubleteam",
     "tm:dracometeor",
     "tm:dragonclaw",
@@ -71,9 +109,7 @@
     "tm:endure",
     "tm:facade",
     "tm:fly",
-    "tm:frustration",
     "tm:heatwave",
-    "tm:hiddenpower",
     "tm:hurricane",
     "tm:hypervoice",
     "tm:irontail",
@@ -82,21 +118,18 @@
     "tm:protect",
     "tm:psychic",
     "tm:rest",
-    "tm:return",
     "tm:roost",
-    "tm:round",
     "tm:screech",
-    "tm:secretpower",
     "tm:shadowball",
     "tm:shadowclaw",
+    "tm:skyattack",
     "tm:sleeptalk",
-    "tm:snore",
+    "tm:snatch",
     "tm:solarbeam",
     "tm:steelwing",
     "tm:substitute",
     "tm:sunnyday",
     "tm:superfang",
-    "tm:swagger",
     "tm:swift",
     "tm:tailwind",
     "tm:takedown",
@@ -104,11 +137,13 @@
     "tm:terablast",
     "tm:thief",
     "tm:torment",
-    "tm:toxic",
     "tm:uproar",
     "tm:uturn",
     "tm:wildcharge",
     "tm:xscissor",
+    "tutor:aerialace",
+    "tutor:aircutter",
+    "tutor:darkpulse",
     "tutor:defog",
     "tutor:dracometeor",
     "tutor:dragonpulse",
@@ -116,20 +151,22 @@
     "tutor:heatwave",
     "tutor:hypervoice",
     "tutor:irontail",
+    "tutor:leechlife",
     "tutor:outrage",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:roost",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
     "tutor:skyattack",
+    "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:superfang",
+    "tutor:swift",
     "tutor:tailwind",
     "tutor:uproar",
-    "tutor:waterpulse"
-  ],
-  "labels": [
-    "gen6"
-  ],
-  "pokedex": [
-    "cobblemon.species.noibat.desc"
+    "tutor:wildcharge",
+    "tutor:xscissor"
   ],
   "evolutions": [
     {
@@ -147,38 +184,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 5,
-  "weight": 80,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:phantom_membrane",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:yache_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

@@ -1,12 +1,63 @@
 {
-  "name": "Tympole",
+  "implemented": true,
   "nationalPokedexNumber": 535,
+  "name": "Tympole",
   "primaryType": "water",
+  "maleRatio": 0.5,
+  "height": 5,
+  "weight": 45,
+  "pokedex": [
+    "cobblemon.species.tympole.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "swiftswim",
     "hydration",
     "h:waterabsorb"
   ],
+  "eggGroups": [
+    "water_1"
+  ],
+  "baseStats": {
+    "hp": 50,
+    "attack": 50,
+    "defence": 40,
+    "special_attack": 50,
+    "special_defence": 40,
+    "speed": 64
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "baseExperienceYield": 59,
+  "experienceGroup": "medium_slow",
+  "catchRate": 255,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true,
+        "canSwimInLava": false,
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      }
+    }
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -20,27 +71,10 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 50,
-    "attack": 50,
-    "defence": 40,
-    "special_attack": 50,
-    "special_defence": 40,
-    "speed": 64
-  },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 59,
-  "experienceGroup": "medium_slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "water_1"
-  ],
   "moves": [
     "1:bubble",
-    "1:echoedvoice",
     "1:growl",
+    "1:echoedvoice",
     "4:acid",
     "8:supersonic",
     "12:mudshot",
@@ -53,53 +87,46 @@
     "40:muddywater",
     "44:raindance",
     "48:hydropump",
-    "egg:afteryou",
-    "egg:earthpower",
     "egg:mist",
     "egg:mudbomb",
     "egg:mudslap",
     "egg:mudsport",
     "egg:refresh",
-    "egg:sleeptalk",
     "egg:snore",
     "egg:toxic",
-    "egg:venomdrench",
     "egg:waterpulse",
-    "tm:attract",
+    "tm:afteryou",
     "tm:bounce",
-    "tm:confide",
-    "tm:doubleteam",
     "tm:earthpower",
     "tm:echoedvoice",
+    "tm:endeavor",
     "tm:endure",
     "tm:facade",
-    "tm:frustration",
     "tm:hail",
-    "tm:hiddenpower",
     "tm:hydropump",
     "tm:hypervoice",
     "tm:icywind",
     "tm:infestation",
     "tm:muddywater",
     "tm:mudshot",
+    "tm:mudslap",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:round",
     "tm:scald",
     "tm:screech",
-    "tm:secretpower",
     "tm:sleeptalk",
     "tm:sludgebomb",
     "tm:sludgewave",
     "tm:snore",
     "tm:substitute",
     "tm:surf",
-    "tm:swagger",
+    "tm:terablast",
     "tm:toxic",
     "tm:uproar",
     "tm:venomdrench",
+    "tm:waterpulse",
     "tm:weatherball",
     "tutor:afteryou",
     "tutor:bounce",
@@ -107,17 +134,13 @@
     "tutor:endeavor",
     "tutor:hypervoice",
     "tutor:icywind",
-    "tutor:round",
+    "tutor:mudslap",
+    "tutor:rest",
     "tutor:sleeptalk",
+    "tutor:sludgebomb",
     "tutor:snore",
     "tutor:uproar",
     "tutor:waterpulse"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.tympole.desc"
   ],
   "evolutions": [
     {
@@ -133,25 +156,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 5,
-  "weight": 45,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

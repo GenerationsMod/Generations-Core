@@ -1,11 +1,27 @@
 {
-  "name": "Dudunsparce",
+  "implemented": true,
   "nationalPokedexNumber": 982,
+  "name": "Dudunsparce",
   "primaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 36,
+  "weight": 392,
+  "pokedex": [
+    "cobblemon.species.dudunsparce.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [
+    "two-segment-form"
+  ],
   "abilities": [
     "serenegrace",
     "runaway",
     "h:rattled"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 125,
@@ -15,10 +31,6 @@
     "special_defence": 75,
     "speed": 55
   },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 182,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 2,
     "attack": 0,
@@ -27,14 +39,29 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 182,
   "experienceGroup": "medium_fast",
+  "catchRate": 45,
   "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:rocky_helmet",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:cheri_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
     "1:defensecurl",
     "1:flail",
+    "1:rage",
+    "1:pursuit",
     "4:mudslap",
     "8:rollout",
     "12:glare",
@@ -50,9 +77,21 @@
     "52:endeavor",
     "56:hurricane",
     "62:boomburst",
+    "egg:aquatail",
+    "egg:astonish",
+    "egg:bide",
+    "egg:bite",
+    "egg:curse",
+    "egg:headbutt",
+    "egg:lastresort",
+    "egg:secretpower",
+    "egg:snore",
+    "egg:trumpcard",
     "tm:agility",
     "tm:airslash",
     "tm:amnesia",
+    "tm:ancientpower",
+    "tm:aquatail",
     "tm:batonpass",
     "tm:blizzard",
     "tm:bodypress",
@@ -76,6 +115,7 @@
     "tm:flamethrower",
     "tm:gigaimpact",
     "tm:gyroball",
+    "tm:headbutt",
     "tm:heavyslam",
     "tm:helpinghand",
     "tm:hex",
@@ -84,6 +124,7 @@
     "tm:hypervoice",
     "tm:icebeam",
     "tm:icespinner",
+    "tm:lastresort",
     "tm:lunge",
     "tm:mudshot",
     "tm:mudslap",
@@ -98,13 +139,18 @@
     "tm:rest",
     "tm:rockslide",
     "tm:rocktomb",
+    "tm:rollout",
+    "tm:roost",
     "tm:sandstorm",
     "tm:scaleshot",
     "tm:scaryface",
+    "tm:screech",
+    "tm:secretpower",
     "tm:shadowball",
     "tm:skittersmack",
     "tm:sleeptalk",
     "tm:smartstrike",
+    "tm:snore",
     "tm:solarbeam",
     "tm:spite",
     "tm:stealthrock",
@@ -123,80 +169,67 @@
     "tm:toxic",
     "tm:uproar",
     "tm:wildcharge",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:ancientpower",
+    "tutor:aquatail",
+    "tutor:bulldoze",
+    "tutor:calmmind",
+    "tutor:drillrun",
+    "tutor:dualwingbeat",
+    "tutor:earthpower",
+    "tutor:endeavor",
+    "tutor:flamethrower",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:icebeam",
+    "tutor:lastresort",
+    "tutor:mudslap",
+    "tutor:outrage",
+    "tutor:painsplit",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rollout",
+    "tutor:roost",
+    "tutor:scaleshot",
+    "tutor:shadowball",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:snore",
+    "tutor:spite",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:tailwind",
+    "tutor:throatchop",
+    "tutor:thunderbolt",
+    "tutor:uproar",
+    "tutor:wildcharge",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 36,
-  "weight": 392,
   "preEvolution": "dunsparce",
   "evolutions": [],
-  "cannotDynamax": false,
   "forms": [
     {
       "name": "Three-Segment",
       "primaryType": "normal",
-      "abilities": [
-        "serenegrace",
-        "runaway",
-        "h:rattled"
-      ],
-      "baseStats": {
-        "hp": 125,
-        "attack": 100,
-        "defence": 80,
-        "special_attack": 85,
-        "special_defence": 75,
-        "speed": 55
-      },
-      "catchRate": 45,
       "maleRatio": 0.5,
-      "baseExperienceYield": 0,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 2,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 20,
-      "eggGroups": [
-        "field"
+      "height": 45,
+      "weight": 474,
+      "pokedex": [
+        "cobblemon.species.dudunsparce-threesegment.desc"
       ],
-      "moves": [],
       "labels": [
         "gen9"
       ],
       "aspects": [
-        "three-segment"
+        "three-segment-form"
       ],
-      "height": 45,
-      "weight": 474,
       "preEvolution": "dunsparce",
-      "cannotDynamax": false,
+      "evolutions": [],
       "battleOnly": false
     }
-  ],
-  "pokedex": [
-    "cobblemon.species.dudunsparce.desc"
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:rocky_helmet",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:cheri_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

@@ -1,10 +1,28 @@
 {
-  "name": "Morpeko",
+  "implemented": true,
   "nationalPokedexNumber": 877,
+  "name": "Morpeko",
   "primaryType": "electric",
   "secondaryType": "dark",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 30,
+  "pokedex": [
+    "cobblemon.species.morpeko.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [
+    "full_belly-mode"
+  ],
   "abilities": [
-    "hungerswitch"
+    "hungerswitch",
+    "h:hungerswitch"
+  ],
+  "eggGroups": [
+    "field",
+    "fairy"
   ],
   "baseStats": {
     "hp": 58,
@@ -14,19 +32,37 @@
     "special_defence": 58,
     "speed": 97
   },
-  "catchRate": 180,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 2
+  },
   "baseExperienceYield": 153,
   "experienceGroup": "medium_fast",
+  "catchRate": 180,
   "eggCycles": 10,
-  "eggGroups": [
-    "field",
-    "fairy"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:roseli_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:tailwhip",
     "1:thundershock",
+    "1:tailwhip",
     "5:leer",
     "10:powertrip",
     "15:quickattack",
@@ -49,7 +85,6 @@
     "egg:tickle",
     "tm:agility",
     "tm:assurance",
-    "tm:attract",
     "tm:batonpass",
     "tm:brickbreak",
     "tm:bulletseed",
@@ -77,19 +112,20 @@
     "tm:payback",
     "tm:protect",
     "tm:psychicfangs",
+    "tm:quash",
     "tm:rest",
     "tm:revenge",
     "tm:reversal",
-    "tm:round",
+    "tm:risingvoltage",
     "tm:scaryface",
     "tm:seedbomb",
     "tm:sleeptalk",
     "tm:snarl",
-    "tm:snore",
     "tm:spite",
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:superfang",
+    "tm:swagger",
     "tm:swift",
     "tm:takedown",
     "tm:taunt",
@@ -100,92 +136,56 @@
     "tm:thunderfang",
     "tm:thunderpunch",
     "tm:thunderwave",
+    "tm:torment",
     "tm:uproar",
     "tm:voltswitch",
     "tm:wildcharge",
+    "tutor:chargebeam",
+    "tutor:darkpulse",
+    "tutor:electroweb",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:foulplay",
+    "tutor:icefang",
+    "tutor:knockoff",
     "tutor:lashout",
-    "tutor:risingvoltage"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.morpeko.desc"
+    "tutor:outrage",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:risingvoltage",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:spite",
+    "tutor:stompingtantrum",
+    "tutor:superfang",
+    "tutor:swift",
+    "tutor:thunderbolt",
+    "tutor:thunderfang",
+    "tutor:thunderpunch",
+    "tutor:uproar",
+    "tutor:wildcharge"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 2
-  },
-  "height": 3,
-  "weight": 30,
   "forms": [
     {
       "name": "Hangry",
       "primaryType": "electric",
       "secondaryType": "dark",
-      "abilities": [
-        "hungerswitch"
-      ],
-      "baseStats": {
-        "hp": 58,
-        "attack": 95,
-        "defence": 58,
-        "special_attack": 70,
-        "special_defence": 58,
-        "speed": 97
-      },
-      "catchRate": 180,
       "maleRatio": 0.5,
-      "baseExperienceYield": 153,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 2
-      },
-      "experienceGroup": "medium_fast",
-      "eggCycles": 10,
-      "eggGroups": [
-        "field",
-        "fairy"
+      "height": 3,
+      "weight": 30,
+      "pokedex": [
+        "cobblemon.species.morpeko-hangry.desc"
       ],
       "labels": [
         "gen8"
       ],
       "aspects": [
-        "hangry"
+        "hangry-mode"
       ],
-      "height": 3,
-      "weight": 30,
-      "cannotDynamax": false,
+      "evolutions": [],
       "battleOnly": true
     }
-  ],
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:roseli_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

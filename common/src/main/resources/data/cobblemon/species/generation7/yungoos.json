@@ -1,11 +1,25 @@
 {
-  "name": "Yungoos",
+  "implemented": true,
   "nationalPokedexNumber": 734,
+  "name": "Yungoos",
   "primaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 4,
+  "weight": 60,
+  "pokedex": [
+    "cobblemon.species.yungoos.desc"
+  ],
+  "labels": [
+    "gen7"
+  ],
+  "aspects": [],
   "abilities": [
     "stakeout",
     "strongjaw",
     "h:adaptability"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 48,
@@ -15,24 +29,42 @@
     "special_defence": 30,
     "speed": 45
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 51,
   "experienceGroup": "medium_fast",
+  "catchRate": 255,
   "eggCycles": 15,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:pecha_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:tackle",
+    "1:pursuit",
+    "1:odorsleuth",
     "3:leer",
     "7:payback",
-    "7:pursuit",
     "10:sandattack",
-    "13:odorsleuth",
     "13:workup",
-    "16:bide",
     "19:bite",
     "22:mudslap",
     "25:superfang",
@@ -40,33 +72,29 @@
     "31:scaryface",
     "34:crunch",
     "37:hyperfang",
-    "37:yawn",
     "40:thrash",
     "43:rest",
+    "egg:bide",
     "egg:endeavor",
     "egg:firefang",
     "egg:icefang",
     "egg:lastresort",
-    "egg:revenge",
     "egg:thunderfang",
-    "tm:attract",
+    "egg:yawn",
     "tm:bulldoze",
     "tm:chillingwater",
-    "tm:confide",
     "tm:crunch",
     "tm:dig",
     "tm:doubleedge",
-    "tm:doubleteam",
-    "tm:earthquake",
     "tm:echoedvoice",
     "tm:endeavor",
     "tm:endure",
     "tm:facade",
     "tm:firefang",
-    "tm:frustration",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:icefang",
+    "tm:irontail",
+    "tm:lastresort",
     "tm:mudshot",
     "tm:mudslap",
     "tm:payback",
@@ -74,45 +102,47 @@
     "tm:psychicfangs",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
+    "tm:revenge",
     "tm:reversal",
     "tm:rocktomb",
-    "tm:round",
     "tm:sandstorm",
     "tm:scaryface",
     "tm:seedbomb",
+    "tm:shockwave",
     "tm:sleeptalk",
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:sunnyday",
     "tm:superfang",
-    "tm:swagger",
     "tm:takedown",
     "tm:taunt",
     "tm:terablast",
     "tm:thief",
     "tm:thunderfang",
     "tm:torment",
-    "tm:toxic",
     "tm:trailblaze",
     "tm:uturn",
     "tm:wildcharge",
     "tm:workup",
     "tm:zenheadbutt",
+    "tutor:bulldoze",
     "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:helpinghand",
+    "tutor:icefang",
     "tutor:irontail",
     "tutor:lastresort",
+    "tutor:mudslap",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:seedbomb",
     "tutor:shockwave",
-    "tutor:snore",
+    "tutor:sleeptalk",
     "tutor:stompingtantrum",
     "tutor:superfang",
-    "tutor:uproar"
-  ],
-  "labels": [
-    "gen7"
-  ],
-  "pokedex": [
-    "cobblemon.species.yungoos.desc"
+    "tutor:thunderfang",
+    "tutor:wildcharge",
+    "tutor:zenheadbutt"
   ],
   "evolutions": [
     {
@@ -132,34 +162,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 60,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:pecha_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

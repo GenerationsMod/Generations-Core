@@ -1,13 +1,54 @@
 {
-  "name": "Vullaby",
+  "implemented": true,
   "nationalPokedexNumber": 629,
+  "name": "Vullaby",
   "primaryType": "dark",
   "secondaryType": "flying",
+  "maleRatio": 0,
+  "height": 5,
+  "weight": 90,
+  "pokedex": [
+    "cobblemon.species.vullaby.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "bigpecks",
     "overcoat",
     "h:weakarmor"
   ],
+  "eggGroups": [
+    "flying"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 55,
+    "defence": 75,
+    "special_attack": 45,
+    "special_defence": 65,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 74,
+  "experienceGroup": "slow",
+  "catchRate": 190,
+  "eggCycles": 20,
+  "baseFriendship": 35,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 4,
     "entries": [
@@ -28,62 +69,38 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 70,
-    "attack": 55,
-    "defence": 75,
-    "special_attack": 45,
-    "special_defence": 65,
-    "speed": 60
-  },
-  "catchRate": 190,
-  "maleRatio": 0,
-  "shoulderMountable": false,
-  "baseExperienceYield": 74,
-  "experienceGroup": "slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "flying"
-  ],
   "moves": [
     "1:gust",
     "1:leer",
-    "5:furyattack",
+    "1:furyattack",
     "6:flatter",
     "12:pluck",
     "18:tailwind",
-    "23:feintattack",
     "24:knockoff",
-    "28:punishment",
     "30:irondefense",
     "36:whirlwind",
     "42:airslash",
     "48:darkpulse",
-    "50:embargo",
     "54:nastyplot",
     "60:defog",
-    "64:mirrormove",
     "66:attract",
     "72:bravebird",
-    "egg:faketears",
-    "egg:foulplay",
-    "egg:knockoff",
+    "egg:feintattack",
     "egg:meanlook",
+    "egg:mirrormove",
+    "egg:punishment",
     "egg:roost",
-    "egg:scaryface",
-    "egg:steelwing",
     "egg:toxic",
-    "tm:aerialace",
     "tm:aircutter",
     "tm:airslash",
     "tm:assurance",
     "tm:attract",
+    "tm:block",
     "tm:bravebird",
-    "tm:confide",
     "tm:cut",
     "tm:darkpulse",
+    "tm:defog",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:dualwingbeat",
     "tm:embargo",
     "tm:endure",
@@ -92,9 +109,7 @@
     "tm:featherdance",
     "tm:fly",
     "tm:foulplay",
-    "tm:frustration",
     "tm:heatwave",
-    "tm:hiddenpower",
     "tm:incinerate",
     "tm:irondefense",
     "tm:knockoff",
@@ -107,22 +122,18 @@
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:rocksmash",
     "tm:rocktomb",
     "tm:roost",
-    "tm:round",
     "tm:scaryface",
-    "tm:secretpower",
     "tm:shadowball",
     "tm:sleeptalk",
     "tm:snarl",
-    "tm:snore",
+    "tm:snatch",
     "tm:spite",
     "tm:steelwing",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:tailwind",
     "tm:takedown",
@@ -134,6 +145,7 @@
     "tm:toxic",
     "tm:uproar",
     "tm:uturn",
+    "tutor:aircutter",
     "tutor:block",
     "tutor:darkpulse",
     "tutor:defog",
@@ -143,17 +155,18 @@
     "tutor:irondefense",
     "tutor:knockoff",
     "tutor:lashout",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:roost",
+    "tutor:shadowball",
     "tutor:sleeptalk",
+    "tutor:snarl",
     "tutor:snatch",
-    "tutor:snore",
-    "tutor:tailwind"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.vullaby.desc"
+    "tutor:spite",
+    "tutor:swift",
+    "tutor:tailwind",
+    "tutor:throatchop",
+    "tutor:uproar"
   ],
   "evolutions": [
     {
@@ -171,25 +184,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 35,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 1,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 5,
-  "weight": 90,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  ]
 }

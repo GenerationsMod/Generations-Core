@@ -1,11 +1,28 @@
 {
-  "name": "Poltchageist",
+  "implemented": true,
   "nationalPokedexNumber": 1012,
+  "name": "Poltchageist",
   "primaryType": "grass",
   "secondaryType": "ghost",
+  "maleRatio": -1,
+  "height": 1,
+  "weight": 11,
+  "pokedex": [
+    "cobblemon.species.poltchageist.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [
+    "counterfeit"
+  ],
   "abilities": [
     "hospitality",
     "h:heatproof"
+  ],
+  "eggGroups": [
+    "mineral",
+    "amorphous"
   ],
   "baseStats": {
     "hp": 40,
@@ -15,10 +32,6 @@
     "special_defence": 54,
     "speed": 50
   },
-  "catchRate": 120,
-  "maleRatio": -1,
-  "baseExperienceYield": 0,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,16 +40,24 @@
     "special_defence": 0,
     "speed": 0
   },
-  "experienceGroup": "slow",
-  "eggCycles": 50,
-  "eggGroups": [
-    "mineral",
-    "amorphous"
-  ],
+  "baseExperienceYield": 62,
+  "experienceGroup": "medium_fast",
+  "catchRate": 120,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:rawst_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:astonish",
     "1:stunspore",
     "1:withdraw",
+    "1:astonish",
     "6:absorb",
     "12:lifedew",
     "18:foulplay",
@@ -76,20 +97,28 @@
     "tm:substitute",
     "tm:terablast",
     "tm:trickroom",
-    "tm:uproar"
+    "tm:uproar",
+    "tutor:calmmind",
+    "tutor:energyball",
+    "tutor:foulplay",
+    "tutor:gigadrain",
+    "tutor:irondefense",
+    "tutor:magicalleaf",
+    "tutor:painsplit",
+    "tutor:poltergeist",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:sleeptalk",
+    "tutor:spite",
+    "tutor:trick",
+    "tutor:uproar"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 1,
-  "weight": 11,
   "evolutions": [
     {
       "id": "poltchageist_sinistcha",
       "variant": "item_interact",
-      "result": "sinistcha",
-      "consumeHeldItem": false,
+      "result": "sinistcha matcha_authenticity=unremarkable",
+      "consumeHeldItem": true,
       "learnableMoves": [
         "matchagotcha"
       ],
@@ -97,85 +126,16 @@
       "requiredContext": "cobblemon:unremarkable_teacup"
     }
   ],
-  "cannotDynamax": false,
   "forms": [
     {
       "name": "Artisan",
       "primaryType": "grass",
       "secondaryType": "ghost",
-      "abilities": [
-        "hospitality",
-        "h:heatproof"
-      ],
-      "baseStats": {
-        "hp": 40,
-        "attack": 45,
-        "defence": 45,
-        "special_attack": 74,
-        "special_defence": 54,
-        "speed": 50
-      },
-      "catchRate": 120,
       "maleRatio": -1,
-      "baseExperienceYield": 0,
-      "baseFriendship": 0,
-      "evYield": {
-        "hp": 0,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 1,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 50,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "moves": [
-        "1:astonish",
-        "1:stunspore",
-        "1:withdraw",
-        "6:absorb",
-        "12:lifedew",
-        "18:foulplay",
-        "24:megadrain",
-        "30:hex",
-        "36:ragepowder",
-        "42:gigadrain",
-        "48:shadowball",
-        "54:memento",
-        "60:leafstorm",
-        "tm:calmmind",
-        "tm:curse",
-        "tm:endure",
-        "tm:energyball",
-        "tm:foulplay",
-        "tm:gigadrain",
-        "tm:grassyterrain",
-        "tm:hex",
-        "tm:imprison",
-        "tm:irondefense",
-        "tm:leafstorm",
-        "tm:magicalleaf",
-        "tm:nastyplot",
-        "tm:nightshade",
-        "tm:painsplit",
-        "tm:phantomforce",
-        "tm:poltergeist",
-        "tm:protect",
-        "tm:psychup",
-        "tm:reflect",
-        "tm:rest",
-        "tm:scald",
-        "tm:shadowball",
-        "tm:sleeptalk",
-        "tm:solarbeam",
-        "tm:spite",
-        "tm:substitute",
-        "tm:terablast",
-        "tm:trickroom",
-        "tm:uproar"
+      "height": 1,
+      "weight": 11,
+      "pokedex": [
+        "cobblemon.species.poltchageist-artisan.desc"
       ],
       "labels": [
         "gen9"
@@ -183,14 +143,12 @@
       "aspects": [
         "artisan"
       ],
-      "height": 1,
-      "weight": 11,
       "evolutions": [
         {
-          "id": "poltchageist_sinistcha",
+          "id": "poltchageist_sinistchamasterpiece",
           "variant": "item_interact",
-          "result": "sinistcha masterpiece",
-          "consumeHeldItem": false,
+          "result": "sinistcha matcha_authenticity=masterpiece",
+          "consumeHeldItem": true,
           "learnableMoves": [
             "matchagotcha"
           ],
@@ -198,18 +156,7 @@
           "requiredContext": "cobblemon:masterpiece_teacup"
         }
       ],
-      "cannotDynamax": false,
       "battleOnly": false
     }
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:rawst_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

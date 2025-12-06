@@ -1,10 +1,62 @@
 {
-  "name": "Eelektross",
+  "implemented": true,
   "nationalPokedexNumber": 604,
+  "name": "Eelektross",
   "primaryType": "electric",
-  "abilities": [
-    "levitate"
+  "maleRatio": 0.5,
+  "height": 21,
+  "weight": 805,
+  "pokedex": [
+    "cobblemon.species.eelektross.desc"
   ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
+  "abilities": [
+    "levitate",
+    "h:levitate"
+  ],
+  "eggGroups": [
+    "amorphous"
+  ],
+  "baseStats": {
+    "hp": 85,
+    "attack": 115,
+    "defence": 80,
+    "special_attack": 105,
+    "special_defence": 80,
+    "speed": 50
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 258,
+  "experienceGroup": "slow",
+  "catchRate": 30,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canSwimInWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    }
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -14,51 +66,36 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 85,
-    "attack": 115,
-    "defence": 80,
-    "special_attack": 105,
-    "special_defence": 80,
-    "speed": 50
-  },
-  "catchRate": 30,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 232,
-  "experienceGroup": "slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "amorphous"
-  ],
   "moves": [
-    "1:acid",
-    "1:coil",
-    "1:crunch",
     "1:crushclaw",
-    "1:discharge",
-    "1:gastroacid",
     "1:headbutt",
-    "1:iondeluge",
+    "1:acid",
+    "1:discharge",
+    "1:crunch",
+    "1:gastroacid",
     "1:thrash",
     "1:zapcannon",
+    "1:coil",
+    "1:iondeluge",
+    "1:tackle",
+    "1:spark",
     "5:wildcharge",
     "tm:acidspray",
     "tm:acrobatics",
-    "tm:attract",
+    "tm:aquatail",
+    "tm:bind",
     "tm:bodypress",
     "tm:bodyslam",
+    "tm:bounce",
     "tm:brickbreak",
     "tm:bulkup",
     "tm:bulldoze",
     "tm:charge",
     "tm:chargebeam",
     "tm:closecombat",
-    "tm:confide",
     "tm:confuseray",
     "tm:crunch",
     "tm:cut",
-    "tm:doubleteam",
     "tm:dragonclaw",
     "tm:dragonpulse",
     "tm:dragontail",
@@ -74,32 +111,33 @@
     "tm:flash",
     "tm:flashcannon",
     "tm:focuspunch",
-    "tm:frustration",
+    "tm:gastroacid",
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:grassknot",
+    "tm:headbutt",
     "tm:heavyslam",
     "tm:hex",
-    "tm:hiddenpower",
     "tm:honeclaws",
     "tm:hyperbeam",
+    "tm:irontail",
     "tm:knockoff",
     "tm:lightscreen",
     "tm:liquidation",
     "tm:lunge",
+    "tm:magnetrise",
     "tm:outrage",
     "tm:poweruppunch",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:roar",
+    "tm:risingvoltage",
     "tm:rockslide",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
     "tm:scaryface",
-    "tm:secretpower",
+    "tm:shockwave",
+    "tm:signalbeam",
     "tm:sleeptalk",
     "tm:stompingtantrum",
     "tm:strength",
@@ -107,7 +145,7 @@
     "tm:sunnyday",
     "tm:supercellslam",
     "tm:superfang",
-    "tm:swagger",
+    "tm:superpower",
     "tm:swift",
     "tm:takedown",
     "tm:terablast",
@@ -117,7 +155,6 @@
     "tm:thunderfang",
     "tm:thunderpunch",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:uturn",
     "tm:voltswitch",
     "tm:wildcharge",
@@ -125,51 +162,43 @@
     "tutor:aquatail",
     "tutor:bind",
     "tutor:bounce",
+    "tutor:bulkup",
+    "tutor:bulldoze",
+    "tutor:chargebeam",
     "tutor:dragonpulse",
     "tutor:drainpunch",
+    "tutor:electroweb",
     "tutor:firepunch",
+    "tutor:flamethrower",
+    "tutor:flashcannon",
     "tutor:focuspunch",
     "tutor:gastroacid",
     "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
     "tutor:irontail",
     "tutor:knockoff",
+    "tutor:liquidation",
     "tutor:magnetrise",
     "tutor:outrage",
+    "tutor:rest",
+    "tutor:risingvoltage",
+    "tutor:rockslide",
+    "tutor:rocksmash",
     "tutor:shockwave",
     "tutor:signalbeam",
     "tutor:sleeptalk",
-    "tutor:snore",
+    "tutor:stompingtantrum",
     "tutor:superfang",
     "tutor:superpower",
+    "tutor:swift",
     "tutor:throatchop",
-    "tutor:thunderpunch"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.eelektross.desc"
+    "tutor:thunderbolt",
+    "tutor:thunderfang",
+    "tutor:thunderpunch",
+    "tutor:wildcharge",
+    "tutor:zenheadbutt"
   ],
   "preEvolution": "eelektrik",
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 3,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 21,
-  "weight": 805,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }

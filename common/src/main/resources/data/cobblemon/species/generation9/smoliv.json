@@ -1,11 +1,25 @@
 {
-  "name": "Smoliv",
+  "implemented": true,
   "nationalPokedexNumber": 928,
+  "name": "Smoliv",
   "primaryType": "grass",
   "secondaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 65,
+  "pokedex": [
+    "cobblemon.species.smoliv.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "earlybird",
     "h:harvest"
+  ],
+  "eggGroups": [
+    "grass"
   ],
   "baseStats": {
     "hp": 41,
@@ -15,10 +29,6 @@
     "special_defence": 51,
     "speed": 30
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 52,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -27,14 +37,27 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 52,
   "experienceGroup": "medium_slow",
+  "catchRate": 255,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:big_root",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:kebia_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:sweetscent",
     "1:tackle",
+    "1:sweetscent",
     "5:absorb",
     "7:growth",
     "10:razorleaf",
@@ -71,16 +94,23 @@
     "tm:substitute",
     "tm:sunnyday",
     "tm:swift",
+    "tm:synthesis",
     "tm:terablast",
+    "tm:terrainpulse",
     "tm:trailblaze",
-    "tm:weatherball"
+    "tm:weatherball",
+    "tutor:earthpower",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:helpinghand",
+    "tutor:magicalleaf",
+    "tutor:rest",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:synthesis",
+    "tutor:terrainpulse"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 3,
-  "weight": 65,
   "evolutions": [
     {
       "id": "smoliv_dolliv",
@@ -95,23 +125,5 @@
         }
       ]
     }
-  ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.smoliv.desc"
-  ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:big_root",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:kebia_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

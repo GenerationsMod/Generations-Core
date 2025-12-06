@@ -1,12 +1,54 @@
 {
-  "name": "Abomasnow",
+  "implemented": true,
   "nationalPokedexNumber": 460,
+  "name": "Abomasnow",
   "primaryType": "grass",
   "secondaryType": "ice",
+  "maleRatio": 0.5,
+  "height": 22,
+  "weight": 1355,
+  "pokedex": [
+    "cobblemon.species.abomasnow.desc"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
   "abilities": [
     "snowwarning",
     "h:soundproof"
   ],
+  "eggGroups": [
+    "monster",
+    "grass"
+  ],
+  "baseStats": {
+    "hp": 90,
+    "attack": 92,
+    "defence": 75,
+    "special_attack": 92,
+    "special_defence": 85,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 173,
+  "experienceGroup": "slow",
+  "catchRate": 60,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 4,
     "entries": [
@@ -24,110 +66,41 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 90,
-    "attack": 92,
-    "defence": 75,
-    "special_attack": 92,
-    "special_defence": 85,
-    "speed": 60
-  },
-  "catchRate": 60,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "grass",
-      "secondaryType": "ice",
-      "abilities": [
-        "snowwarning"
-      ],
-      "baseStats": {
-        "hp": 90,
-        "attack": 132,
-        "defence": 105,
-        "special_attack": 132,
-        "special_defence": 105,
-        "speed": 30
-      },
-      "catchRate": 60,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 173,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 0,
-        "attack": 1,
-        "defence": 0,
-        "special_attack": 1,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "slow",
-      "eggCycles": 20,
-      "eggGroups": [
-        "monster",
-        "grass"
-      ],
-      "labels": [
-        "gen6",
-        "mega"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 27,
-      "weight": 1850,
-      "cannotDynamax": false,
-      "battleOnly": true
-    }
-  ],
-  "baseExperienceYield": 173,
-  "experienceGroup": "slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "monster",
-    "grass"
-  ],
   "moves": [
-    "1:auroraveil",
     "1:icepunch",
-    "1:icywind",
-    "1:leafage",
-    "1:leer",
-    "1:mist",
     "1:powdersnow",
-    "1:razorleaf",
-    "13:grasswhistle",
+    "1:leer",
+    "1:grasswhistle",
+    "1:mist",
+    "1:auroraveil",
+    "1:leafage",
     "15:iceshard",
-    "17:swagger",
     "20:razorleaf",
-    "21:mist",
     "25:icywind",
-    "26:iceshard",
     "30:swagger",
-    "31:ingrain",
     "35:ingrain",
-    "36:woodhammer",
     "43:woodhammer",
-    "47:blizzard",
     "49:blizzard",
     "56:sheercold",
-    "58:sheercold",
-    "tm:attract",
+    "egg:doubleedge",
+    "egg:growth",
+    "egg:leechseed",
+    "egg:naturalgift",
+    "egg:skullbash",
+    "egg:stomp",
+    "egg:weatherball",
+    "tm:auroraveil",
     "tm:avalanche",
     "tm:blizzard",
+    "tm:block",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:brickbreak",
     "tm:bulldoze",
     "tm:bulletseed",
-    "tm:captivate",
     "tm:chillingwater",
-    "tm:confide",
     "tm:curse",
     "tm:doubleedge",
-    "tm:doubleteam",
     "tm:earthpower",
     "tm:earthquake",
     "tm:endure",
@@ -138,15 +111,14 @@
     "tm:focusblast",
     "tm:focuspunch",
     "tm:frostbreath",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:grassyglide",
     "tm:hail",
     "tm:hardpress",
+    "tm:headbutt",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:icebeam",
     "tm:icepunch",
@@ -155,7 +127,6 @@
     "tm:icywind",
     "tm:irontail",
     "tm:leafstorm",
-    "tm:lightscreen",
     "tm:lowkick",
     "tm:magicalleaf",
     "tm:megakick",
@@ -166,19 +137,15 @@
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:rockclimb",
     "tm:rockslide",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
+    "tm:roleplay",
     "tm:safeguard",
     "tm:scaryface",
-    "tm:secretpower",
     "tm:seedbomb",
-    "tm:shadowball",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:snowscape",
     "tm:solarbeam",
     "tm:stompingtantrum",
@@ -186,57 +153,78 @@
     "tm:substitute",
     "tm:swagger",
     "tm:swordsdance",
+    "tm:synthesis",
     "tm:takedown",
     "tm:terablast",
-    "tm:toxic",
     "tm:trailblaze",
     "tm:waterpulse",
     "tm:weatherball",
+    "tm:worryseed",
     "tutor:block",
+    "tutor:bulldoze",
+    "tutor:earthpower",
+    "tutor:energyball",
     "tutor:focuspunch",
     "tutor:gigadrain",
+    "tutor:gigaimpact",
     "tutor:grassyglide",
-    "tutor:headbutt",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
     "tutor:icepunch",
     "tutor:icywind",
     "tutor:irontail",
+    "tutor:lowkick",
+    "tutor:magicalleaf",
     "tutor:mudslap",
     "tutor:outrage",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rocksmash",
     "tutor:roleplay",
     "tutor:seedbomb",
     "tutor:sleeptalk",
-    "tutor:snore",
     "tutor:stompingtantrum",
     "tutor:synthesis",
     "tutor:waterpulse",
     "tutor:worryseed"
   ],
-  "labels": [
-    "gen4"
-  ],
-  "pokedex": [
-    "cobblemon.species.abomasnow.desc"
-  ],
   "preEvolution": "snover",
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 1,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 22,
-  "weight": 1355,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "grass",
+      "secondaryType": "ice",
+      "maleRatio": 0.5,
+      "height": 27,
+      "weight": 1850,
+      "pokedex": [
+        "cobblemon.species.abomasnow-mega.desc"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "abilities": [
+        "snowwarning",
+        "h:snowwarning"
+      ],
+      "baseStats": {
+        "hp": 90,
+        "attack": 132,
+        "defence": 105,
+        "special_attack": 132,
+        "special_defence": 105,
+        "speed": 30
+      },
+      "baseExperienceYield": 208,
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true
+    }
+  ]
 }

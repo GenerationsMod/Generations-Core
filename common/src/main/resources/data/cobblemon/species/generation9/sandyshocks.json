@@ -1,10 +1,26 @@
 {
-  "name": "Sandy Shocks",
+  "implemented": true,
   "nationalPokedexNumber": 989,
+  "name": "Sandy Shocks",
   "primaryType": "electric",
   "secondaryType": "ground",
+  "maleRatio": -1,
+  "height": 23,
+  "weight": 600,
+  "pokedex": [
+    "cobblemon.species.sandyshocks.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "protosynthesis"
+    "protosynthesis",
+    "h:protosynthesis"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 85,
@@ -14,10 +30,6 @@
     "special_defence": 85,
     "speed": 101
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,17 +38,17 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
+    "1:thunderwave",
     "1:electricterrain",
-    "1:sunnyday",
     "1:supersonic",
     "1:thundershock",
-    "1:thunderwave",
+    "1:sunnyday",
     "7:spark",
     "14:bulldoze",
     "21:chargebeam",
@@ -80,6 +92,7 @@
     "tm:sandstorm",
     "tm:sandtomb",
     "tm:scorchingsands",
+    "tm:screech",
     "tm:sleeptalk",
     "tm:spikes",
     "tm:stealthrock",
@@ -93,20 +106,28 @@
     "tm:thunder",
     "tm:thunderbolt",
     "tm:thunderwave",
+    "tm:triattack",
     "tm:voltswitch",
-    "tm:wildcharge"
+    "tm:wildcharge",
+    "tutor:bulldoze",
+    "tutor:chargebeam",
+    "tutor:earthpower",
+    "tutor:electroweb",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:gravity",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:rest",
+    "tutor:scorchingsands",
+    "tutor:sleeptalk",
+    "tutor:spikes",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:swift",
+    "tutor:thunderbolt",
+    "tutor:wildcharge"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 23,
-  "weight": 600,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.sandyshocks.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }
