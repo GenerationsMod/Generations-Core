@@ -1,10 +1,27 @@
 {
-  "name": "Miraidon",
+  "implemented": true,
   "nationalPokedexNumber": 1008,
+  "name": "Miraidon",
   "primaryType": "electric",
   "secondaryType": "dragon",
+  "maleRatio": -1,
+  "height": 35,
+  "weight": 2400,
+  "pokedex": [
+    "cobblemon.species.miraidon.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary",
+    "restricted"
+  ],
+  "aspects": [],
   "abilities": [
-    "hadronengine"
+    "hadronengine",
+    "h:hadronengine"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 100,
@@ -14,10 +31,6 @@
     "special_defence": 115,
     "speed": 135
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "baseExperienceYield": 335,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,15 +39,15 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 335,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
+    "1:thundershock",
     "1:dragonbreath",
     "1:electricterrain",
-    "1:thundershock",
     "7:shockwave",
     "14:charge",
     "21:paraboliccharge",
@@ -81,6 +94,7 @@
     "tm:reflect",
     "tm:rest",
     "tm:scaryface",
+    "tm:shockwave",
     "tm:sleeptalk",
     "tm:snarl",
     "tm:solarbeam",
@@ -96,19 +110,54 @@
     "tm:uturn",
     "tm:voltswitch",
     "tm:wildcharge",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:calmmind",
+    "tutor:chargebeam",
+    "tutor:dazzlinggleam",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:shockwave",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:thunderbolt",
+    "tutor:wildcharge",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 35,
-  "weight": 2400,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.miraidon.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4"
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canBreatheUnderwater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  },
+  "lightingData": {
+    "lightLevel": 10,
+    "liquidGlowMode": "BOTH"
+  }
 }

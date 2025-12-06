@@ -1,13 +1,54 @@
 {
-  "name": "Bisharp",
+  "implemented": true,
   "nationalPokedexNumber": 625,
+  "name": "Bisharp",
   "primaryType": "dark",
   "secondaryType": "steel",
+  "maleRatio": 0.5,
+  "height": 16,
+  "weight": 700,
+  "pokedex": [
+    "cobblemon.species.bisharp.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "defiant",
     "innerfocus",
     "h:pressure"
   ],
+  "eggGroups": [
+    "human_like"
+  ],
+  "baseStats": {
+    "hp": 65,
+    "attack": 125,
+    "defence": 100,
+    "special_attack": 60,
+    "special_defence": 70,
+    "speed": 70
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 172,
+  "experienceGroup": "medium_fast",
+  "catchRate": 45,
+  "eggCycles": 20,
+  "baseFriendship": 35,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -21,54 +62,39 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 65,
-    "attack": 125,
-    "defence": 100,
-    "special_attack": 60,
-    "special_defence": 70,
-    "speed": 70
-  },
-  "catchRate": 45,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 172,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "human_like"
-  ],
   "moves": [
-    "1:furycutter",
-    "1:leer",
     "1:metalburst",
-    "1:metalclaw",
     "1:scratch",
+    "1:leer",
+    "1:furycutter",
+    "1:feintattack",
+    "1:metalclaw",
     "15:torment",
-    "17:feintattack",
     "20:scaryface",
     "25:assurance",
     "30:metalsound",
     "35:slash",
     "40:nightslash",
-    "41:embargo",
     "45:irondefense",
-    "50:laserfocus",
     "50:retaliate",
     "57:ironhead",
     "64:swordsdance",
     "71:guillotine",
+    "egg:feintattack",
+    "egg:headbutt",
+    "egg:meanlook",
+    "egg:pursuit",
+    "egg:quickguard",
+    "egg:suckerpunch",
     "tm:aerialace",
     "tm:airslash",
     "tm:assurance",
-    "tm:attract",
     "tm:beatup",
     "tm:brickbreak",
-    "tm:confide",
     "tm:cut",
     "tm:darkpulse",
     "tm:dig",
-    "tm:doubleteam",
+    "tm:dualchop",
     "tm:embargo",
     "tm:endure",
     "tm:facade",
@@ -77,17 +103,19 @@
     "tm:fling",
     "tm:focusblast",
     "tm:foulplay",
-    "tm:frustration",
+    "tm:furycutter",
     "tm:gigaimpact",
     "tm:grassknot",
-    "tm:hiddenpower",
+    "tm:headbutt",
     "tm:honeclaws",
     "tm:hyperbeam",
     "tm:irondefense",
     "tm:ironhead",
+    "tm:laserfocus",
     "tm:lashout",
     "tm:lowkick",
     "tm:lowsweep",
+    "tm:magnetrise",
     "tm:metalclaw",
     "tm:metalsound",
     "tm:payback",
@@ -98,27 +126,25 @@
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:revenge",
     "tm:reversal",
     "tm:rockpolish",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
+    "tm:roleplay",
     "tm:sandstorm",
     "tm:scaryface",
     "tm:screech",
-    "tm:secretpower",
     "tm:shadowclaw",
     "tm:sleeptalk",
     "tm:snarl",
-    "tm:snore",
+    "tm:snatch",
     "tm:spite",
     "tm:stealthrock",
     "tm:steelbeam",
     "tm:stoneedge",
     "tm:substitute",
-    "tm:swagger",
+    "tm:suckerpunch",
     "tm:swordsdance",
     "tm:takedown",
     "tm:taunt",
@@ -127,32 +153,50 @@
     "tm:throatchop",
     "tm:thunderwave",
     "tm:torment",
-    "tm:toxic",
     "tm:xscissor",
+    "tutor:aerialace",
     "tutor:darkpulse",
     "tutor:dualchop",
+    "tutor:falseswipe",
+    "tutor:flashcannon",
     "tutor:foulplay",
+    "tutor:furycutter",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
     "tutor:irondefense",
     "tutor:ironhead",
-    "tutor:knockoff",
     "tutor:laserfocus",
     "tutor:lashout",
     "tutor:lowkick",
     "tutor:magnetrise",
+    "tutor:poisonjab",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:roleplay",
+    "tutor:shadowclaw",
     "tutor:sleeptalk",
+    "tutor:snarl",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:spite",
     "tutor:stealthrock",
     "tutor:steelbeam",
-    "tutor:throatchop"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.bisharp.desc"
+    "tutor:stoneedge",
+    "tutor:suckerpunch",
+    "tutor:throatchop",
+    "tutor:xscissor",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:knockoff",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "preEvolution": "pawniard",
   "evolutions": [
@@ -167,30 +211,39 @@
       "requirements": [
         {
           "variant": "defeat",
-          "target": "bisharp held_item=cobblemon:leaders_crest",
+          "target": "bisharp held_item=cobblemon:kings_rock",
           "amount": 3
         }
       ]
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 35,
-  "evYield": {
-    "hp": 0,
-    "attack": 2,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 16,
-  "weight": 700,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "7",
+      "toleratedLeaders": [
+        {
+          "pokemon": "bisharp",
+          "tier": 1
+        },
+        {
+          "pokemon": "kingambit",
+          "tier": 2
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

@@ -1,10 +1,26 @@
 {
-  "name": "Great Tusk",
+  "implemented": true,
   "nationalPokedexNumber": 984,
+  "name": "Great Tusk",
   "primaryType": "ground",
   "secondaryType": "fighting",
+  "maleRatio": -1,
+  "height": 22,
+  "weight": 3200,
+  "pokedex": [
+    "cobblemon.species.greattusk.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "protosynthesis"
+    "protosynthesis",
+    "h:protosynthesis"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 115,
@@ -14,10 +30,6 @@
     "special_defence": 53,
     "speed": 87
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -26,14 +38,14 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:defensecurl",
     "1:hornattack",
+    "1:defensecurl",
     "1:rollout",
     "1:sunnyday",
     "7:bulldoze",
@@ -72,6 +84,7 @@
     "tm:icespinner",
     "tm:ironhead",
     "tm:knockoff",
+    "tm:megahorn",
     "tm:mudshot",
     "tm:mudslap",
     "tm:playrough",
@@ -82,6 +95,7 @@
     "tm:roar",
     "tm:rockslide",
     "tm:rocktomb",
+    "tm:rollout",
     "tm:sandstorm",
     "tm:scaryface",
     "tm:sleeptalk",
@@ -99,19 +113,57 @@
     "tm:terablast",
     "tm:throatchop",
     "tm:thunderfang",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:bulkup",
+    "tutor:bulldoze",
+    "tutor:earthpower",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:icefang",
+    "tutor:ironhead",
+    "tutor:knockoff",
+    "tutor:megahorn",
+    "tutor:mudslap",
+    "tutor:playrough",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rollout",
+    "tutor:sleeptalk",
+    "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:throatchop",
+    "tutor:thunderfang",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 22,
-  "weight": 3200,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.greattusk.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "9",
+      "toleratedLeaders": [
+        {
+          "pokemon": "greattusk",
+          "tier": 1
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

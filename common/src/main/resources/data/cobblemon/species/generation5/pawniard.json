@@ -1,13 +1,54 @@
 {
-  "name": "Pawniard",
+  "implemented": true,
   "nationalPokedexNumber": 624,
+  "name": "Pawniard",
   "primaryType": "dark",
   "secondaryType": "steel",
+  "maleRatio": 0.5,
+  "height": 5,
+  "weight": 102,
+  "pokedex": [
+    "cobblemon.species.pawniard.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "defiant",
     "innerfocus",
     "h:pressure"
   ],
+  "eggGroups": [
+    "human_like"
+  ],
+  "baseStats": {
+    "hp": 45,
+    "attack": 85,
+    "defence": 70,
+    "special_attack": 40,
+    "special_defence": 40,
+    "speed": 60
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 68,
+  "experienceGroup": "medium_fast",
+  "catchRate": 120,
+  "eggCycles": 20,
+  "baseFriendship": 35,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -21,61 +62,37 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 45,
-    "attack": 85,
-    "defence": 70,
-    "special_attack": 40,
-    "special_defence": 40,
-    "speed": 60
-  },
-  "catchRate": 120,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "baseExperienceYield": 68,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "human_like"
-  ],
   "moves": [
-    "1:leer",
     "1:scratch",
+    "1:leer",
     "5:furycutter",
     "10:metalclaw",
     "15:torment",
-    "17:feintattack",
     "20:scaryface",
     "25:assurance",
     "30:metalsound",
     "35:slash",
     "40:nightslash",
-    "41:embargo",
     "45:irondefense",
-    "50:laserfocus",
     "50:retaliate",
     "55:ironhead",
     "60:swordsdance",
     "65:guillotine",
+    "egg:feintattack",
     "egg:headbutt",
     "egg:meanlook",
-    "egg:psychocut",
     "egg:pursuit",
     "egg:quickguard",
-    "egg:revenge",
-    "egg:stealthrock",
     "egg:suckerpunch",
     "tm:aerialace",
     "tm:airslash",
     "tm:assurance",
-    "tm:attract",
     "tm:beatup",
     "tm:brickbreak",
-    "tm:confide",
     "tm:cut",
     "tm:darkpulse",
     "tm:dig",
-    "tm:doubleteam",
+    "tm:dualchop",
     "tm:embargo",
     "tm:endure",
     "tm:facade",
@@ -83,15 +100,17 @@
     "tm:flashcannon",
     "tm:fling",
     "tm:foulplay",
-    "tm:frustration",
+    "tm:furycutter",
     "tm:grassknot",
-    "tm:hiddenpower",
+    "tm:headbutt",
     "tm:honeclaws",
     "tm:irondefense",
     "tm:ironhead",
+    "tm:laserfocus",
     "tm:lashout",
     "tm:lowkick",
     "tm:lowsweep",
+    "tm:magnetrise",
     "tm:metalclaw",
     "tm:metalsound",
     "tm:payback",
@@ -102,26 +121,24 @@
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:revenge",
     "tm:rockpolish",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
+    "tm:roleplay",
     "tm:sandstorm",
     "tm:scaryface",
     "tm:screech",
-    "tm:secretpower",
     "tm:shadowclaw",
     "tm:sleeptalk",
     "tm:snarl",
-    "tm:snore",
+    "tm:snatch",
     "tm:spite",
     "tm:stealthrock",
     "tm:steelbeam",
     "tm:stoneedge",
     "tm:substitute",
-    "tm:swagger",
+    "tm:suckerpunch",
     "tm:swordsdance",
     "tm:takedown",
     "tm:taunt",
@@ -129,33 +146,47 @@
     "tm:thief",
     "tm:thunderwave",
     "tm:torment",
-    "tm:toxic",
     "tm:xscissor",
+    "tutor:aerialace",
     "tutor:darkpulse",
     "tutor:dualchop",
+    "tutor:falseswipe",
+    "tutor:flashcannon",
     "tutor:foulplay",
     "tutor:furycutter",
     "tutor:irondefense",
     "tutor:ironhead",
-    "tutor:knockoff",
+    "tutor:laserfocus",
     "tutor:lashout",
     "tutor:lowkick",
     "tutor:magnetrise",
+    "tutor:poisonjab",
     "tutor:psychocut",
+    "tutor:rest",
+    "tutor:rocksmash",
     "tutor:roleplay",
+    "tutor:shadowclaw",
     "tutor:sleeptalk",
+    "tutor:snarl",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:spite",
     "tutor:stealthrock",
     "tutor:steelbeam",
-    "tutor:suckerpunch"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.pawniard.desc"
+    "tutor:stoneedge",
+    "tutor:suckerpunch",
+    "tutor:xscissor",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:knockoff",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [
     {
@@ -172,24 +203,38 @@
       ]
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 35,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 5,
-  "weight": 102,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "6",
+      "toleratedLeaders": [
+        {
+          "pokemon": "pawniard",
+          "tier": 1
+        },
+        {
+          "pokemon": "bisharp",
+          "tier": 2
+        },
+        {
+          "pokemon": "kingambit",
+          "tier": 3
+        }
+      ]
+    },
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  }
 }

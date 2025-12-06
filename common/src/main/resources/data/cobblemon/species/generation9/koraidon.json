@@ -1,10 +1,27 @@
 {
-  "name": "Koraidon",
+  "implemented": true,
   "nationalPokedexNumber": 1007,
+  "name": "Koraidon",
   "primaryType": "fighting",
   "secondaryType": "dragon",
+  "maleRatio": -1,
+  "height": 25,
+  "weight": 3030,
+  "pokedex": [
+    "cobblemon.species.koraidon.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary",
+    "restricted"
+  ],
+  "aspects": [],
   "abilities": [
-    "orichalcumpulse"
+    "orichalcumpulse",
+    "h:orichalcumpulse"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 100,
@@ -14,10 +31,6 @@
     "special_defence": 100,
     "speed": 135
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "baseExperienceYield": 335,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -26,14 +39,14 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 335,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:breakingswipe",
     "1:sunnyday",
+    "1:breakingswipe",
     "7:rocksmash",
     "14:ancientpower",
     "21:drainpunch",
@@ -50,6 +63,7 @@
     "98:gigaimpact",
     "tm:acrobatics",
     "tm:agility",
+    "tm:ancientpower",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:breakingswipe",
@@ -96,8 +110,10 @@
     "tm:rest",
     "tm:reversal",
     "tm:roar",
+    "tm:rocksmash",
     "tm:scaleshot",
     "tm:scaryface",
+    "tm:screech",
     "tm:shadowclaw",
     "tm:sleeptalk",
     "tm:snarl",
@@ -114,19 +130,60 @@
     "tm:uproar",
     "tm:uturn",
     "tm:wildcharge",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:ancientpower",
+    "tutor:bulkup",
+    "tutor:bulldoze",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:drainpunch",
+    "tutor:dualwingbeat",
+    "tutor:firefang",
+    "tutor:flamethrower",
+    "tutor:focuspunch",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icefang",
+    "tutor:ironhead",
+    "tutor:lowkick",
+    "tutor:meteorbeam",
+    "tutor:mudslap",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:rocksmash",
+    "tutor:scaleshot",
+    "tutor:shadowclaw",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stompingtantrum",
+    "tutor:thunderfang",
+    "tutor:uproar",
+    "tutor:wildcharge",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 25,
-  "weight": 3030,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.koraidon.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4"
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

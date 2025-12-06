@@ -1,10 +1,26 @@
 {
-  "name": "Brute Bonnet",
+  "implemented": true,
   "nationalPokedexNumber": 986,
+  "name": "Brute Bonnet",
   "primaryType": "grass",
   "secondaryType": "dark",
+  "maleRatio": -1,
+  "height": 12,
+  "weight": 210,
+  "pokedex": [
+    "cobblemon.species.brutebonnet.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "protosynthesis"
+    "protosynthesis",
+    "h:protosynthesis"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 111,
@@ -14,10 +30,6 @@
     "special_defence": 99,
     "speed": 55
   },
-  "catchRate": 50,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -26,15 +38,15 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 50,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
     "1:absorb",
-    "1:astonish",
     "1:growth",
+    "1:astonish",
     "1:sunnyday",
     "7:stunspore",
     "14:megadrain",
@@ -70,6 +82,7 @@
     "tm:leafstorm",
     "tm:magicalleaf",
     "tm:outrage",
+    "tm:payback",
     "tm:pollenpuff",
     "tm:protect",
     "tm:rest",
@@ -79,25 +92,56 @@
     "tm:solarbeam",
     "tm:stompingtantrum",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
+    "tm:synthesis",
     "tm:taunt",
     "tm:terablast",
     "tm:thief",
     "tm:trailblaze",
     "tm:venoshock",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:darkpulse",
+    "tutor:earthpower",
+    "tutor:energyball",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:lashout",
+    "tutor:magicalleaf",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:seedbomb",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:suckerpunch",
+    "tutor:synthesis",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 12,
-  "weight": 210,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.brutebonnet.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "6",
+      "toleratedLeaders": [
+        {
+          "pokemon": "brutebonnet",
+          "tier": 1
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

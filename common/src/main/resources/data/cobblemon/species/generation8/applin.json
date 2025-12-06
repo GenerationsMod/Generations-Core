@@ -1,12 +1,27 @@
 {
-  "name": "Applin",
+  "implemented": true,
   "nationalPokedexNumber": 840,
+  "name": "Applin",
   "primaryType": "grass",
   "secondaryType": "dragon",
+  "maleRatio": 0.5,
+  "height": 2,
+  "weight": 5,
+  "pokedex": [
+    "cobblemon.species.applin.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "ripen",
     "gluttony",
     "h:bulletproof"
+  ],
+  "eggGroups": [
+    "grass",
+    "dragon"
   ],
   "baseStats": {
     "hp": 40,
@@ -16,34 +31,70 @@
     "special_defence": 40,
     "speed": 20
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 1,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 52,
   "experienceGroup": "erratic",
+  "catchRate": 255,
   "eggCycles": 20,
-  "eggGroups": [
-    "grass",
-    "dragon"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "cobblemon:yache_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:astonish",
     "1:withdraw",
+    "1:astonish",
     "egg:defensecurl",
     "egg:recycle",
     "egg:rollout",
     "egg:suckerpunch",
-    "tm:attract",
     "tm:pounce",
+    "tm:recycle",
+    "tm:rollout",
+    "tm:suckerpunch",
     "tm:terablast",
-    "tutor:dracometeor",
-    "tutor:grassyglide"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.applin.desc"
+    "tutor:recycle",
+    "tutor:rollout",
+    "tutor:suckerpunch",
+    "legacy:attract",
+    "legacy:dracometeor",
+    "legacy:grassyglide"
   ],
   "evolutions": [
     {
@@ -77,39 +128,7 @@
         "doublehit"
       ],
       "requirements": [],
-      "requiredContext": "generations_core:syrupy_apple"
+      "requiredContext": "cobblemon:syrupy_apple"
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 1,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 2,
-  "weight": 5,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "minecraft:apple"
-      },
-      {
-        "item": "cobblemon:yache_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

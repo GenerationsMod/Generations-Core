@@ -1,10 +1,26 @@
 {
-  "name": "Kartana",
+  "implemented": true,
   "nationalPokedexNumber": 798,
+  "name": "Kartana",
   "primaryType": "grass",
   "secondaryType": "steel",
+  "maleRatio": -1,
+  "height": 3,
+  "weight": 1,
+  "pokedex": [
+    "cobblemon.species.kartana.desc"
+  ],
+  "labels": [
+    "gen7",
+    "ultra_beast"
+  ],
+  "aspects": [],
   "abilities": [
-    "beastboost"
+    "beastboost",
+    "h:beastboost"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 59,
@@ -14,97 +30,6 @@
     "special_defence": 31,
     "speed": 109
   },
-  "catchRate": 45,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 285,
-  "experienceGroup": "slow",
-  "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
-  "moves": [
-    "1:furycutter",
-    "1:vacuumwave",
-    "5:razorleaf",
-    "10:falseswipe",
-    "15:cut",
-    "20:aircutter",
-    "25:aerialace",
-    "30:detect",
-    "35:nightslash",
-    "40:synthesis",
-    "45:laserfocus",
-    "47:xscissor",
-    "50:defog",
-    "55:leafblade",
-    "59:airslash",
-    "60:sacredsword",
-    "65:swordsdance",
-    "67:psychocut",
-    "70:guillotine",
-    "tm:aerialace",
-    "tm:airslash",
-    "tm:brickbreak",
-    "tm:calmmind",
-    "tm:confide",
-    "tm:doubleteam",
-    "tm:endure",
-    "tm:falseswipe",
-    "tm:frustration",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:hiddenpower",
-    "tm:irondefense",
-    "tm:leafblade",
-    "tm:protect",
-    "tm:psychocut",
-    "tm:rest",
-    "tm:return",
-    "tm:round",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:snore",
-    "tm:solarblade",
-    "tm:substitute",
-    "tm:swagger",
-    "tm:swordsdance",
-    "tm:toxic",
-    "tm:xscissor",
-    "tutor:aircutter",
-    "tutor:airslash",
-    "tutor:defog",
-    "tutor:detect",
-    "tutor:gigadrain",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:laserfocus",
-    "tutor:lastresort",
-    "tutor:leafblade",
-    "tutor:snore",
-    "tutor:steelbeam",
-    "tutor:swordsdance",
-    "tutor:synthesis",
-    "tutor:tailwind",
-    "tutor:vacuumwave",
-    "tutor:xscissor"
-  ],
-  "labels": [
-    "gen7",
-    "ultra_beast"
-  ],
-  "pokedex": [
-    "cobblemon.species.kartana.desc"
-  ],
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -113,10 +38,17 @@
     "special_defence": 0,
     "speed": 0
   },
-  "height": 3,
-  "weight": 1,
-  "aspects": [],
-  "cannotDynamax": false,
+  "baseExperienceYield": 285,
+  "experienceGroup": "slow",
+  "catchRate": 45,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -126,5 +58,110 @@
       }
     ]
   },
-  "implemented": true
+  "moves": [
+    "1:vacuumwave",
+    "1:furycutter",
+    "5:razorleaf",
+    "10:falseswipe",
+    "15:cut",
+    "20:aircutter",
+    "25:aerialace",
+    "30:detect",
+    "35:nightslash",
+    "40:synthesis",
+    "45:laserfocus",
+    "50:defog",
+    "55:leafblade",
+    "60:sacredsword",
+    "65:swordsdance",
+    "70:guillotine",
+    "tm:aerialace",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:brickbreak",
+    "tm:calmmind",
+    "tm:cut",
+    "tm:defog",
+    "tm:endure",
+    "tm:falseswipe",
+    "tm:furycutter",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:irondefense",
+    "tm:knockoff",
+    "tm:laserfocus",
+    "tm:lastresort",
+    "tm:leafblade",
+    "tm:protect",
+    "tm:psychocut",
+    "tm:rest",
+    "tm:screech",
+    "tm:sleeptalk",
+    "tm:smartstrike",
+    "tm:solarblade",
+    "tm:steelbeam",
+    "tm:substitute",
+    "tm:swordsdance",
+    "tm:synthesis",
+    "tm:tailwind",
+    "tm:terablast",
+    "tm:vacuumwave",
+    "tm:xscissor",
+    "tutor:aerialace",
+    "tutor:aircutter",
+    "tutor:calmmind",
+    "tutor:defog",
+    "tutor:falseswipe",
+    "tutor:furycutter",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:irondefense",
+    "tutor:knockoff",
+    "tutor:laserfocus",
+    "tutor:lastresort",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:steelbeam",
+    "tutor:synthesis",
+    "tutor:tailwind",
+    "tutor:vacuumwave",
+    "tutor:xscissor",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
+  ],
+  "evolutions": [],
+  "behaviour": {
+    "resting": {
+      "willSleepOnBed": true,
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  }
 }

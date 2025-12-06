@@ -1,9 +1,25 @@
 {
-  "name": "Type: Null",
+  "implemented": true,
   "nationalPokedexNumber": 772,
+  "name": "Type: Null",
   "primaryType": "normal",
+  "maleRatio": -1,
+  "height": 19,
+  "weight": 1205,
+  "pokedex": [
+    "cobblemon.species.typenull.desc"
+  ],
+  "labels": [
+    "gen7",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
-    "battlearmor"
+    "battlearmor",
+    "h:battlearmor"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 95,
@@ -13,21 +29,31 @@
     "special_defence": 95,
     "speed": 59
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 107,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "moves": [
-    "1:imprison",
     "1:tackle",
+    "1:rage",
+    "1:pursuit",
+    "1:imprison",
     "5:aerialace",
-    "5:rage",
-    "10:pursuit",
     "10:scaryface",
     "15:doublehit",
     "20:metalsound",
@@ -38,73 +64,74 @@
     "45:ironhead",
     "50:takedown",
     "55:doubleedge",
-    "65:punishment",
-    "70:razorwind",
-    "85:healblock",
+    "egg:healblock",
+    "egg:punishment",
+    "egg:razorwind",
     "tm:aerialace",
     "tm:airslash",
-    "tm:confide",
-    "tm:doubleteam",
+    "tm:doubleedge",
     "tm:dragonclaw",
     "tm:endure",
     "tm:facade",
     "tm:flamecharge",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:hail",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:icywind",
     "tm:imprison",
     "tm:irondefense",
     "tm:ironhead",
+    "tm:lastresort",
+    "tm:magiccoat",
+    "tm:metalsound",
     "tm:payback",
     "tm:protect",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:roar",
     "tm:rockslide",
-    "tm:round",
     "tm:sandstorm",
     "tm:scaryface",
     "tm:shadowclaw",
+    "tm:signalbeam",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:swordsdance",
+    "tm:takedown",
+    "tm:terablast",
+    "tm:terrainpulse",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:triattack",
     "tm:uturn",
     "tm:workup",
     "tm:xscissor",
-    "tutor:airslash",
-    "tutor:crushclaw",
-    "tutor:doublehit",
+    "tutor:aerialace",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
     "tutor:icywind",
     "tutor:irondefense",
     "tutor:ironhead",
     "tutor:lastresort",
     "tutor:magiccoat",
-    "tutor:metalsound",
-    "tutor:scaryface",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:shadowclaw",
     "tutor:signalbeam",
-    "tutor:snore",
-    "tutor:takedown",
+    "tutor:sleeptalk",
+    "tutor:swift",
     "tutor:terrainpulse",
-    "tutor:triattack",
-    "tutor:xscissor"
-  ],
-  "labels": [
-    "gen7",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.typenull.desc"
+    "tutor:xscissor",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [
     {
@@ -123,24 +150,33 @@
       ]
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 0,
-  "evYield": {
-    "hp": 2,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 19,
-  "weight": 1205,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "2",
+      "toleratedLeaders": [
+        {
+          "pokemon": "typenull",
+          "tier": 1
+        },
+        {
+          "pokemon": "silvally",
+          "tier": 2
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

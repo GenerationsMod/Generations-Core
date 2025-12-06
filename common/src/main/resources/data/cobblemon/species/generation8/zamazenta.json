@@ -1,4 +1,5 @@
 {
+  "implemented": true,
   "nationalPokedexNumber": 889,
   "name": "Zamazenta",
   "primaryType": "fighting",
@@ -50,6 +51,46 @@
     "width": 1,
     "height": 1,
     "fixed": false
+  },
+  "behaviour": {
+    "entityInteract": {
+      "avoidedBySkeleton": true
+    },
+    "herd": {
+      "maxSize": "4",
+      "toleratedLeaders": [
+        {
+          "pokemon": "zacian",
+          "tier": 1
+        },
+        {
+          "pokemon": "zamazenta",
+          "tier": 1
+        },
+        {
+          "pokemon": "zacian crowned",
+          "tier": 2
+        },
+        {
+          "pokemon": "zamazenta crowned",
+          "tier": 2
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
   },
   "moves": [
     "1:wideguard",
@@ -139,7 +180,6 @@
     "tutor:irontail",
     "tutor:laserfocus",
     "tutor:playrough",
-    "tutor:psychic",
     "tutor:rest",
     "tutor:sleeptalk",
     "tutor:snarl",
@@ -147,7 +187,9 @@
     "tutor:stoneedge",
     "tutor:swift",
     "tutor:thunderfang",
-    "tutor:wildcharge"
+    "tutor:wildcharge",
+    "legacy:round",
+    "legacy:snore"
   ],
   "evolutions": [],
   "forms": [
@@ -160,105 +202,6 @@
       "weight": 7850,
       "pokedex": [
         "cobblemon.species.zamazenta-crowned.desc"
-      ],
-      "moves": [
-        "form_change:behemothbash",
-        "1:wideguard",
-        "1:metalclaw",
-        "1:howl",
-        "1:quickattack",
-        "1:bite",
-        "11:slash",
-        "22:irondefense",
-        "33:ironhead",
-        "44:metalburst",
-        "55:crunch",
-        "66:moonblast",
-        "77:closecombat",
-        "88:gigaimpact",
-        "tm:agility",
-        "tm:bodypress",
-        "tm:bodyslam",
-        "tm:brickbreak",
-        "tm:closecombat",
-        "tm:coaching",
-        "tm:crunch",
-        "tm:dazzlinggleam",
-        "tm:dig",
-        "tm:endure",
-        "tm:facade",
-        "tm:firefang",
-        "tm:flashcannon",
-        "tm:focusblast",
-        "tm:focusenergy",
-        "tm:gigaimpact",
-        "tm:guardswap",
-        "tm:heavyslam",
-        "tm:helpinghand",
-        "tm:hyperbeam",
-        "tm:hypervoice",
-        "tm:icefang",
-        "tm:imprison",
-        "tm:irondefense",
-        "tm:ironhead",
-        "tm:irontail",
-        "tm:laserfocus",
-        "tm:lightscreen",
-        "tm:metalclaw",
-        "tm:payback",
-        "tm:playrough",
-        "tm:powerswap",
-        "tm:protect",
-        "tm:psychicfangs",
-        "tm:raindance",
-        "tm:reflect",
-        "tm:rest",
-        "tm:retaliate",
-        "tm:revenge",
-        "tm:reversal",
-        "tm:roar",
-        "tm:safeguard",
-        "tm:sandstorm",
-        "tm:scaryface",
-        "tm:sleeptalk",
-        "tm:snarl",
-        "tm:solarbeam",
-        "tm:steelbeam",
-        "tm:stoneedge",
-        "tm:substitute",
-        "tm:sunnyday",
-        "tm:swift",
-        "tm:tailslap",
-        "tm:takedown",
-        "tm:terablast",
-        "tm:thunderfang",
-        "tm:trailblaze",
-        "tm:wildcharge",
-        "tm:workup",
-        "tutor:coaching",
-        "tutor:dazzlinggleam",
-        "tutor:firefang",
-        "tutor:flashcannon",
-        "tutor:focusenergy",
-        "tutor:gigaimpact",
-        "tutor:helpinghand",
-        "tutor:hyperbeam",
-        "tutor:hypervoice",
-        "tutor:icefang",
-        "tutor:irondefense",
-        "tutor:ironhead",
-        "tutor:irontail",
-        "tutor:laserfocus",
-        "tutor:playrough",
-        "tutor:psychic",
-        "tutor:rest",
-        "tutor:sleeptalk",
-        "tutor:snarl",
-        "tutor:steelbeam",
-        "tutor:stoneedge",
-        "tutor:swift",
-        "tutor:thunderfang",
-        "tutor:wildcharge"
       ],
       "labels": [
         "gen8",
@@ -278,7 +221,39 @@
       },
       "baseExperienceYield": 350,
       "evolutions": [],
-      "battleOnly": true
+      "battleOnly": true,
+      "behaviour": {
+        "herd": {
+          "maxSize": "5",
+          "toleratedLeaders": [
+            {
+              "pokemon": "zacian crowned",
+              "tier": 1
+            },
+            {
+              "pokemon": "zamazenta crowned",
+              "tier": 1
+            }
+          ]
+        },
+        "moving": {
+          "swim": {
+            "avoidsWater": true
+          }
+        },
+        "entityInteract": {
+          "avoidedBySkeleton": true
+        },
+        "combat": {
+          "willDefendSelf": true,
+          "willDefendOwner": true,
+          "willFlee": false
+        },
+        "resting": {
+          "drowsyChance": 0.0333,
+          "rouseChance": 0.0042
+        }
+      }
     }
   ],
   "drops": {

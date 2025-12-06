@@ -1,11 +1,26 @@
 {
-  "name": "Tapu Bulu",
+  "implemented": true,
   "nationalPokedexNumber": 787,
+  "name": "Tapu Bulu",
   "primaryType": "grass",
   "secondaryType": "fairy",
+  "maleRatio": -1,
+  "height": 19,
+  "weight": 455,
+  "pokedex": [
+    "cobblemon.species.tapubulu.desc"
+  ],
+  "labels": [
+    "gen7",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
     "grassysurge",
     "h:telepathy"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 70,
@@ -15,28 +30,36 @@
     "special_defence": 95,
     "speed": 75
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 15,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "moves": [
     "1:leafage",
+    "1:rototiller",
     "1:rocksmash",
-    "1:superpower",
     "5:withdraw",
     "10:disable",
-    "14:gigadrain",
     "15:leechseed",
     "20:megadrain",
     "25:whirlwind",
     "30:hornattack",
     "35:scaryface",
-    "38:rototiller",
     "40:hornleech",
     "45:zenheadbutt",
     "50:meanlook",
@@ -51,9 +74,9 @@
     "tm:bulletseed",
     "tm:calmmind",
     "tm:closecombat",
-    "tm:confide",
     "tm:darkestlariat",
     "tm:dazzlinggleam",
+    "tm:dualchop",
     "tm:echoedvoice",
     "tm:endure",
     "tm:energyball",
@@ -61,13 +84,12 @@
     "tm:falseswipe",
     "tm:fling",
     "tm:focusblast",
-    "tm:frustration",
+    "tm:focuspunch",
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:grassyterrain",
     "tm:guardswap",
-    "tm:hiddenpower",
     "tm:highhorsepower",
     "tm:hyperbeam",
     "tm:irondefense",
@@ -81,75 +103,87 @@
     "tm:psychup",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
     "tm:revenge",
     "tm:roar",
     "tm:rockslide",
+    "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
     "tm:safeguard",
     "tm:scaryface",
     "tm:seedbomb",
     "tm:sleeptalk",
     "tm:smartstrike",
     "tm:snarl",
-    "tm:snore",
     "tm:solarbeam",
     "tm:stoneedge",
     "tm:storedpower",
     "tm:substitute",
     "tm:sunnyday",
     "tm:superpower",
-    "tm:swagger",
     "tm:swordsdance",
+    "tm:synthesis",
     "tm:taunt",
+    "tm:telekinesis",
+    "tm:terablast",
     "tm:torment",
-    "tm:toxic",
     "tm:workup",
+    "tm:worryseed",
     "tm:zenheadbutt",
+    "tutor:bulkup",
+    "tutor:calmmind",
+    "tutor:dazzlinggleam",
     "tutor:dualchop",
+    "tutor:energyball",
+    "tutor:falseswipe",
     "tutor:focuspunch",
     "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
     "tutor:irondefense",
     "tutor:megahorn",
-    "tutor:naturesmadness",
-    "tutor:scaryface",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rocksmash",
     "tutor:seedbomb",
-    "tutor:skullbash",
-    "tutor:snore",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stoneedge",
     "tutor:superpower",
     "tutor:synthesis",
     "tutor:telekinesis",
-    "tutor:woodhammer",
     "tutor:worryseed",
-    "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen7",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.tapubulu.desc"
+    "tutor:zenheadbutt",
+    "legacy:confide",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 3,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 19,
-  "weight": 455,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

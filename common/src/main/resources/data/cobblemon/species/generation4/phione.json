@@ -1,9 +1,26 @@
 {
-  "name": "Phione",
+  "implemented": true,
   "nationalPokedexNumber": 489,
+  "name": "Phione",
   "primaryType": "water",
+  "maleRatio": -1,
+  "height": 4,
+  "weight": 31,
+  "pokedex": [
+    "cobblemon.species.phione.desc"
+  ],
+  "labels": [
+    "gen4",
+    "mythical"
+  ],
+  "aspects": [],
   "abilities": [
-    "hydration"
+    "hydration",
+    "h:hydration"
+  ],
+  "eggGroups": [
+    "water_1",
+    "fairy"
   ],
   "baseStats": {
     "hp": 80,
@@ -13,20 +30,69 @@
     "special_defence": 80,
     "speed": 80
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 216,
+  "evYield": {
+    "hp": 1,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 240,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 40,
-  "eggGroups": [
-    "water_1",
-    "fairy"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "canBreatheUnderwater": true,
+        "swimSpeed": "0.2"
+      },
+      "walk": {
+        "avoidsLand": true
+      }
+    },
+    "herd": {
+      "maxSize": "4",
+      "toleratedLeaders": [
+        {
+          "pokemon": "phione",
+          "tier": 1
+        },
+        {
+          "pokemon": "manaphy",
+          "tier": 2
+        }
+      ]
+    },
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  },
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:mystic_water"
+      }
+    ]
+  },
   "moves": [
     "1:bubble",
-    "1:watergun",
     "1:watersport",
+    "1:watergun",
     "9:charm",
     "16:supersonic",
     "24:bubblebeam",
@@ -38,48 +104,44 @@
     "69:raindance",
     "75:takeheart",
     "tm:alluringvoice",
+    "tm:ancientpower",
     "tm:batonpass",
     "tm:blizzard",
+    "tm:bounce",
     "tm:brine",
     "tm:charm",
     "tm:chillingwater",
-    "tm:confide",
+    "tm:covet",
     "tm:dazzlinggleam",
     "tm:disarmingvoice",
     "tm:dive",
-    "tm:doubleteam",
     "tm:endure",
     "tm:facade",
     "tm:fling",
     "tm:flipturn",
-    "tm:frustration",
     "tm:grassknot",
     "tm:hail",
     "tm:haze",
+    "tm:healbell",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hydropump",
     "tm:icebeam",
     "tm:icywind",
     "tm:knockoff",
+    "tm:lastresort",
     "tm:liquidation",
-    "tm:naturalgift",
     "tm:protect",
     "tm:psychup",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
-    "tm:round",
     "tm:safeguard",
     "tm:scald",
-    "tm:secretpower",
+    "tm:signalbeam",
     "tm:sleeptalk",
     "tm:substitute",
     "tm:surf",
-    "tm:swagger",
     "tm:swift",
     "tm:terablast",
-    "tm:toxic",
     "tm:uturn",
     "tm:waterfall",
     "tm:waterpulse",
@@ -89,60 +151,35 @@
     "tutor:ancientpower",
     "tutor:bounce",
     "tutor:covet",
+    "tutor:dazzlinggleam",
     "tutor:dive",
-    "tutor:grassknot",
+    "tutor:flipturn",
     "tutor:healbell",
     "tutor:helpinghand",
+    "tutor:icebeam",
     "tutor:icywind",
     "tutor:knockoff",
     "tutor:lastresort",
     "tutor:liquidation",
-    "tutor:mudslap",
-    "tutor:raindance",
     "tutor:rest",
     "tutor:signalbeam",
     "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:surf",
     "tutor:swift",
-    "tutor:uproar",
-    "tutor:waterpulse"
+    "tutor:waterpulse",
+    "tutor:zenheadbutt",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:mudslap",
+    "legacy:naturalgift",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic",
+    "legacy:uproar"
   ],
-  "labels": [
-    "gen4",
-    "mythical",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.phione.desc"
-  ],
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 1,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 4,
-  "weight": 31,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:mystic_water"
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

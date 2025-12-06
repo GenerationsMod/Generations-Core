@@ -1,10 +1,26 @@
 {
-  "name": "Chien-Pao",
+  "implemented": true,
   "nationalPokedexNumber": 1002,
+  "name": "Chien-Pao",
   "primaryType": "dark",
   "secondaryType": "ice",
+  "maleRatio": -1,
+  "height": 19,
+  "weight": 1522,
+  "pokedex": [
+    "cobblemon.species.chienpao.desc"
+  ],
+  "labels": [
+    "gen9",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
-    "swordofruin"
+    "swordofruin",
+    "h:swordofruin"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 80,
@@ -14,10 +30,6 @@
     "special_defence": 65,
     "speed": 135
   },
-  "catchRate": 6,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,19 +38,42 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 6,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
+  "behaviour": {
+    "entityInteract": {
+      "avoidedByCreeper": true,
+      "avoidedByPhantom": true
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    }
+  },
   "moves": [
-    "1:meanlook",
-    "1:powdersnow",
     "1:spite",
+    "1:powdersnow",
+    "1:meanlook",
     "5:icywind",
     "10:payback",
-    "15:haze",
     "15:mist",
+    "15:haze",
     "20:iceshard",
     "25:swordsdance",
     "30:snowscape",
@@ -69,6 +104,7 @@
     "tm:icespinner",
     "tm:icywind",
     "tm:lashout",
+    "tm:payback",
     "tm:protect",
     "tm:psychicfangs",
     "tm:raindance",
@@ -79,23 +115,26 @@
     "tm:snowscape",
     "tm:spite",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:swordsdance",
     "tm:takedown",
     "tm:taunt",
     "tm:terablast",
-    "tm:throatchop"
+    "tm:throatchop",
+    "tutor:aerialace",
+    "tutor:darkpulse",
+    "tutor:falseswipe",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:icefang",
+    "tutor:icywind",
+    "tutor:lashout",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:spite",
+    "tutor:suckerpunch",
+    "tutor:throatchop"
   ],
-  "labels": [
-    "gen9",
-    "legendary"
-  ],
-  "aspects": [],
-  "height": 19,
-  "weight": 1522,
-  "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.chienpao.desc"
-  ],
-  "implemented": true
+  "evolutions": []
 }

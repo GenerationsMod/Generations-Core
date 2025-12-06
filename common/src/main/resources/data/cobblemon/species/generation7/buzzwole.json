@@ -1,11 +1,54 @@
 {
-  "name": "Buzzwole",
+  "implemented": true,
   "nationalPokedexNumber": 794,
+  "name": "Buzzwole",
   "primaryType": "bug",
   "secondaryType": "fighting",
-  "abilities": [
-    "beastboost"
+  "maleRatio": -1,
+  "height": 24,
+  "weight": 3336,
+  "pokedex": [
+    "cobblemon.species.buzzwole.desc"
   ],
+  "labels": [
+    "gen7",
+    "ultra_beast"
+  ],
+  "aspects": [],
+  "abilities": [
+    "beastboost",
+    "h:beastboost"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "baseStats": {
+    "hp": 107,
+    "attack": 139,
+    "defence": 139,
+    "special_attack": 53,
+    "special_defence": 53,
+    "speed": 79
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 2,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 285,
+  "experienceGroup": "slow",
+  "catchRate": 45,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -15,35 +58,15 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 107,
-    "attack": 139,
-    "defence": 139,
-    "special_attack": 53,
-    "special_defence": 53,
-    "speed": 79
-  },
-  "catchRate": 45,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 285,
-  "experienceGroup": "slow",
-  "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
   "moves": [
     "1:harden",
-    "1:icepunch",
     "1:poweruppunch",
-    "1:thunderpunch",
+    "1:cometpunch",
     "5:taunt",
-    "7:cometpunch",
     "10:fellstinger",
     "15:vitalthrow",
     "20:bulkup",
     "25:endure",
-    "29:leechlife",
     "30:reversal",
     "35:megapunch",
     "40:lunge",
@@ -56,102 +79,111 @@
     "tm:bodyslam",
     "tm:bounce",
     "tm:brickbreak",
+    "tm:bugbite",
     "tm:bulkup",
     "tm:bulldoze",
     "tm:closecombat",
-    "tm:confide",
+    "tm:coaching",
     "tm:darkestlariat",
-    "tm:doubleteam",
     "tm:drainpunch",
+    "tm:dualchop",
+    "tm:dualwingbeat",
     "tm:earthquake",
+    "tm:endeavor",
     "tm:endure",
     "tm:facade",
     "tm:falseswipe",
     "tm:fling",
     "tm:focusenergy",
-    "tm:frustration",
+    "tm:focuspunch",
     "tm:gigaimpact",
     "tm:gyroball",
-    "tm:hiddenpower",
     "tm:highhorsepower",
     "tm:icepunch",
     "tm:ironhead",
     "tm:leechlife",
     "tm:lowsweep",
+    "tm:lunge",
     "tm:megapunch",
     "tm:outrage",
     "tm:payback",
     "tm:poisonjab",
+    "tm:poweruppunch",
     "tm:protect",
     "tm:rest",
-    "tm:return",
     "tm:revenge",
     "tm:reversal",
     "tm:rockslide",
     "tm:rocktomb",
     "tm:roost",
-    "tm:round",
     "tm:sleeptalk",
     "tm:smackdown",
-    "tm:snore",
     "tm:stompingtantrum",
     "tm:stoneedge",
     "tm:substitute",
     "tm:superpower",
-    "tm:swagger",
     "tm:taunt",
+    "tm:terablast",
     "tm:thunderpunch",
-    "tm:toxic",
     "tm:workup",
     "tutor:bounce",
     "tutor:bugbite",
+    "tutor:bulkup",
+    "tutor:bulldoze",
     "tutor:coaching",
-    "tutor:counter",
     "tutor:drainpunch",
     "tutor:dualchop",
     "tutor:dualwingbeat",
-    "tutor:dynamicpunch",
     "tutor:endeavor",
+    "tutor:falseswipe",
+    "tutor:focusenergy",
     "tutor:focuspunch",
-    "tutor:hammerarm",
+    "tutor:gigaimpact",
+    "tutor:highhorsepower",
     "tutor:icepunch",
     "tutor:ironhead",
     "tutor:leechlife",
-    "tutor:lunge",
     "tutor:outrage",
-    "tutor:poweruppunch",
-    "tutor:snore",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:roost",
+    "tutor:sleeptalk",
     "tutor:stompingtantrum",
+    "tutor:stoneedge",
     "tutor:superpower",
-    "tutor:taunt",
-    "tutor:thunderpunch"
-  ],
-  "labels": [
-    "gen7",
-    "ultra_beast"
-  ],
-  "pokedex": [
-    "cobblemon.species.buzzwole.desc"
+    "tutor:thunderpunch",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 0,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 2,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 24,
-  "weight": 3336,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    }
+  }
 }

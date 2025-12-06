@@ -1,9 +1,25 @@
 {
-  "name": "Regidrago",
+  "implemented": true,
   "nationalPokedexNumber": 895,
+  "name": "Regidrago",
   "primaryType": "dragon",
+  "maleRatio": -1,
+  "height": 21,
+  "weight": 2000,
+  "pokedex": [
+    "cobblemon.species.regidrago.desc"
+  ],
+  "labels": [
+    "gen8",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
-    "dragonsmaw"
+    "dragonsmaw",
+    "h:dragonsmaw"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 200,
@@ -13,15 +29,56 @@
     "special_defence": 50,
     "speed": 80
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 3,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 290,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 35,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 2,
+    "height": 2.75,
+    "fixed": false
+  },
+  "behaviour": {
+    "herd": {
+      "maxSize": "2",
+      "toleratedLeaders": [
+        {
+          "pokemon": "regigigas",
+          "tier": 1
+        }
+      ]
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  },
   "moves": [
     "1:twister",
     "1:visegrip",
@@ -34,10 +91,10 @@
     "48:dragondance",
     "54:thrash",
     "60:focusenergy",
-    "60:laserfocus",
     "66:dragonenergy",
     "72:hyperbeam",
     "78:explosion",
+    "tm:ancientpower",
     "tm:bodyslam",
     "tm:breakingswipe",
     "tm:crunch",
@@ -49,61 +106,48 @@
     "tm:earthpower",
     "tm:earthquake",
     "tm:endure",
+    "tm:explosion",
     "tm:facade",
     "tm:firefang",
     "tm:focusenergy",
     "tm:gigaimpact",
     "tm:hyperbeam",
     "tm:icefang",
+    "tm:laserfocus",
     "tm:lightscreen",
     "tm:outrage",
     "tm:protect",
     "tm:reflect",
     "tm:rest",
     "tm:reversal",
-    "tm:round",
     "tm:scaleshot",
     "tm:selfdestruct",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:substitute",
     "tm:swift",
     "tm:takedown",
     "tm:terablast",
     "tm:thunderfang",
+    "tm:twister",
+    "tutor:ancientpower",
     "tutor:dracometeor",
-    "tutor:dragonclaw",
-    "tutor:dragonenergy",
-    "tutor:hammerarm",
+    "tutor:dragonpulse",
+    "tutor:earthpower",
+    "tutor:firefang",
+    "tutor:focusenergy",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:icefang",
     "tutor:laserfocus",
-    "tutor:scaleshot"
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:scaleshot",
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:thunderfang",
+    "tutor:twister",
+    "legacy:round",
+    "legacy:snore"
   ],
-  "labels": [
-    "gen8",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.regidrago.desc"
-  ],
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 35,
-  "evYield": {
-    "hp": 3,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 21,
-  "weight": 2000,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "evolutions": []
 }
