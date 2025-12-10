@@ -1,11 +1,27 @@
 {
-  "name": "Baxcalibur",
+  "implemented": true,
   "nationalPokedexNumber": 998,
+  "name": "Baxcalibur",
   "primaryType": "dragon",
   "secondaryType": "ice",
+  "maleRatio": 0.5,
+  "height": 21,
+  "weight": 2100,
+  "pokedex": [
+    "cobblemon.species.baxcalibur.desc"
+  ],
+  "labels": [
+    "gen9",
+    "powerhouse"
+  ],
+  "aspects": [],
   "abilities": [
     "thermalexchange",
     "h:icebody"
+  ],
+  "eggGroups": [
+    "dragon",
+    "mineral"
   ],
   "baseStats": {
     "hp": 115,
@@ -15,10 +31,6 @@
     "special_defence": 86,
     "speed": 87
   },
-  "catchRate": 10,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 300,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 3,
@@ -27,20 +39,28 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "slow",
+  "catchRate": 10,
   "eggCycles": 40,
-  "eggGroups": [
-    "dragon",
-    "mineral"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:haban_berry",
+        "percentage": 10.0
+      }
+    ]
+  },
   "moves": [
+    "1:glaiverush",
+    "1:snowscape",
     "1:breakingswipe",
     "1:dragontail",
     "1:iceshard",
-    "1:leer",
-    "1:snowscape",
     "1:tackle",
-    "1:glaiverush",
+    "1:leer",
     "6:icywind",
     "12:dragonbreath",
     "18:focusenergy",
@@ -51,7 +71,12 @@
     "48:icebeam",
     "55:crunch",
     "62:iciclecrash",
+    "egg:aquatail",
+    "egg:dragonrush",
+    "egg:freezedry",
+    "egg:iciclespear",
     "tm:aerialace",
+    "tm:aquatail",
     "tm:avalanche",
     "tm:blizzard",
     "tm:bodypress",
@@ -72,6 +97,7 @@
     "tm:endure",
     "tm:facade",
     "tm:falseswipe",
+    "tm:focusenergy",
     "tm:gigaimpact",
     "tm:helpinghand",
     "tm:highhorsepower",
@@ -95,29 +121,49 @@
     "tm:takedown",
     "tm:terablast",
     "tm:thunderfang",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:aerialace",
+    "tutor:aquatail",
+    "tutor:bulldoze",
+    "tutor:dracometeor",
+    "tutor:dragonpulse",
+    "tutor:falseswipe",
+    "tutor:focusenergy",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
+    "tutor:icefang",
+    "tutor:icywind",
+    "tutor:ironhead",
+    "tutor:outrage",
+    "tutor:rest",
+    "tutor:scaleshot",
+    "tutor:sleeptalk",
+    "tutor:stompingtantrum",
+    "tutor:thunderfang",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "pseudo_legendary"
-  ],
-  "aspects": [],
-  "height": 21,
-  "weight": 2100,
   "preEvolution": "arctibax",
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.baxcalibur.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:haban_berry",
-        "percentage": 10.0
+  "behaviour": {
+    "herd": {
+      "maxSize": "7"
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
       }
-    ]
-  },
-  "implemented": true
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

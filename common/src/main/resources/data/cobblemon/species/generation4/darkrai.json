@@ -1,10 +1,53 @@
 {
-  "name": "Darkrai",
+  "implemented": true,
   "nationalPokedexNumber": 491,
+  "name": "Darkrai",
   "primaryType": "dark",
-  "abilities": [
-    "baddreams"
+  "maleRatio": -1,
+  "height": 15,
+  "weight": 505,
+  "pokedex": [
+    "cobblemon.species.darkrai.desc"
   ],
+  "labels": [
+    "gen4",
+    "mythical"
+  ],
+  "aspects": [],
+  "abilities": [
+    "baddreams",
+    "h:baddreams"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 90,
+    "defence": 90,
+    "special_attack": 135,
+    "special_defence": 90,
+    "speed": 125
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 2,
+    "special_defence": 0,
+    "speed": 1
+  },
+  "baseExperienceYield": 300,
+  "experienceGroup": "slow",
+  "catchRate": 3,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 5,
     "entries": [
@@ -17,47 +60,23 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 70,
-    "attack": 90,
-    "defence": 90,
-    "special_attack": 135,
-    "special_defence": 90,
-    "speed": 125
-  },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 270,
-  "experienceGroup": "slow",
-  "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
   "moves": [
-    "1:disable",
-    "1:nightshade",
     "1:ominouswind",
+    "1:disable",
     "11:quickattack",
     "20:hypnosis",
     "29:feintattack",
-    "29:pursuit",
-    "29:suckerpunch",
     "38:nightmare",
-    "38:nightshade",
     "47:doubleteam",
     "57:haze",
     "66:darkvoid",
-    "75:embargo",
     "75:nastyplot",
     "84:dreameater",
     "93:darkpulse",
-    "tm:aerialace",
     "tm:blizzard",
     "tm:brickbreak",
     "tm:calmmind",
     "tm:chargebeam",
-    "tm:confide",
     "tm:confuseray",
     "tm:curse",
     "tm:cut",
@@ -73,20 +92,20 @@
     "tm:focusblast",
     "tm:focuspunch",
     "tm:foulplay",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:haze",
+    "tm:headbutt",
     "tm:hex",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:icebeam",
     "tm:icywind",
     "tm:incinerate",
     "tm:knockoff",
     "tm:lashout",
+    "tm:lastresort",
     "tm:nastyplot",
-    "tm:naturalgift",
     "tm:nightshade",
+    "tm:ominouswind",
     "tm:payback",
     "tm:poisonjab",
     "tm:poweruppunch",
@@ -97,14 +116,11 @@
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:rockclimb",
     "tm:rockslide",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
     "tm:scaryface",
-    "tm:secretpower",
     "tm:shadowball",
     "tm:shadowclaw",
     "tm:shockwave",
@@ -115,8 +131,8 @@
     "tm:spite",
     "tm:strength",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:swift",
     "tm:swordsdance",
     "tm:taunt",
@@ -124,69 +140,87 @@
     "tm:thief",
     "tm:throatchop",
     "tm:thunder",
-    "tm:thunderbolt",
     "tm:thunderwave",
     "tm:torment",
-    "tm:toxic",
     "tm:trick",
     "tm:willowisp",
+    "tm:wonderroom",
     "tm:xscissor",
-    "tutor:darkvoid",
-    "tutor:doubleteam",
+    "tutor:calmmind",
+    "tutor:chargebeam",
+    "tutor:darkpulse",
     "tutor:drainpunch",
-    "tutor:feintattack",
     "tutor:focuspunch",
     "tutor:foulplay",
-    "tutor:headbutt",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
+    "tutor:icebeam",
     "tutor:icywind",
     "tutor:knockoff",
+    "tutor:lashout",
     "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:nightmare",
     "tutor:ominouswind",
-    "tutor:phantomforce",
-    "tutor:pursuit",
-    "tutor:quickattack",
-    "tutor:roaroftime",
+    "tutor:poisonjab",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rocksmash",
+    "tutor:shadowball",
+    "tutor:shadowclaw",
     "tutor:shockwave",
     "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:snarl",
     "tutor:snatch",
-    "tutor:snore",
-    "tutor:spacialrend",
     "tutor:spite",
     "tutor:suckerpunch",
     "tutor:swift",
     "tutor:throatchop",
     "tutor:trick",
-    "tutor:wonderroom"
-  ],
-  "labels": [
-    "gen4",
-    "mythical",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.darkrai.desc"
+    "tutor:wonderroom",
+    "tutor:xscissor",
+    "legacy:aerialace",
+    "legacy:confide",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:mudslap",
+    "legacy:naturalgift",
+    "legacy:pursuit",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:thunderbolt",
+    "legacy:toxic",
+    "special:phantomforce",
+    "special:roaroftime",
+    "special:spacialrend"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 0,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 2,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 15,
-  "weight": 505,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "resting": {
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  }
 }

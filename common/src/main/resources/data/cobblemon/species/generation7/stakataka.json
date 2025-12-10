@@ -1,10 +1,26 @@
 {
-  "name": "Stakataka",
+  "implemented": true,
   "nationalPokedexNumber": 805,
+  "name": "Stakataka",
   "primaryType": "rock",
   "secondaryType": "steel",
+  "maleRatio": -1,
+  "height": 55,
+  "weight": 8200,
+  "pokedex": [
+    "cobblemon.species.stakataka.desc"
+  ],
+  "labels": [
+    "gen7",
+    "ultra_beast"
+  ],
+  "aspects": [],
   "abilities": [
-    "beastboost"
+    "beastboost",
+    "h:beastboost"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 61,
@@ -14,22 +30,41 @@
     "special_defence": 101,
     "speed": 13
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 3,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:echo_shard",
+        "quantityRange": "1-3"
+      }
+    ]
+  },
   "moves": [
-    "1:harden",
     "1:tackle",
+    "1:bide",
+    "1:harden",
     "5:rockthrow",
     "10:protect",
     "15:stomp",
-    "17:bide",
     "20:block",
     "25:rockslide",
     "30:wideguard",
@@ -42,58 +77,67 @@
     "65:stealthrock",
     "70:doubleedge",
     "tm:allyswitch",
+    "tm:bind",
+    "tm:block",
     "tm:bodypress",
     "tm:bodyslam",
     "tm:brutalswing",
     "tm:bulldoze",
+    "tm:doubleedge",
     "tm:earthquake",
     "tm:endure",
     "tm:facade",
     "tm:flashcannon",
-    "tm:frustration",
     "tm:gigaimpact",
+    "tm:gravity",
     "tm:gyroball",
     "tm:heatcrash",
     "tm:heavyslam",
-    "tm:hiddenpower",
     "tm:highhorsepower",
     "tm:infestation",
     "tm:irondefense",
     "tm:ironhead",
     "tm:lightscreen",
+    "tm:magiccoat",
     "tm:magicroom",
+    "tm:magnetrise",
     "tm:megakick",
+    "tm:meteorbeam",
     "tm:protect",
+    "tm:recycle",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
     "tm:rockblast",
     "tm:rockpolish",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
+    "tm:roleplay",
     "tm:safeguard",
     "tm:sandstorm",
     "tm:skillswap",
     "tm:sleeptalk",
     "tm:smackdown",
-    "tm:snore",
     "tm:stealthrock",
+    "tm:steelbeam",
+    "tm:steelroller",
     "tm:stompingtantrum",
     "tm:stoneedge",
     "tm:substitute",
     "tm:superpower",
-    "tm:toxic",
+    "tm:takedown",
+    "tm:telekinesis",
+    "tm:terablast",
     "tm:trickroom",
     "tm:wonderroom",
     "tm:zenheadbutt",
     "tutor:allyswitch",
-    "tutor:autotomize",
     "tutor:bind",
     "tutor:block",
-    "tutor:brutalswing",
-    "tutor:doubleedge",
+    "tutor:bulldoze",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
     "tutor:gravity",
+    "tutor:highhorsepower",
     "tutor:irondefense",
     "tutor:ironhead",
     "tutor:magiccoat",
@@ -101,56 +145,49 @@
     "tutor:magnetrise",
     "tutor:meteorbeam",
     "tutor:recycle",
-    "tutor:rockblast",
+    "tutor:rest",
     "tutor:rockslide",
     "tutor:roleplay",
     "tutor:skillswap",
-    "tutor:snore",
+    "tutor:sleeptalk",
     "tutor:stealthrock",
     "tutor:steelbeam",
     "tutor:steelroller",
     "tutor:stompingtantrum",
+    "tutor:stoneedge",
     "tutor:superpower",
     "tutor:telekinesis",
-    "tutor:wideguard",
     "tutor:wonderroom",
-    "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen7",
-    "ultra_beast"
-  ],
-  "pokedex": [
-    "cobblemon.species.stakataka.desc"
+    "tutor:zenheadbutt",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:toxic"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 0,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 3,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 55,
-  "weight": 8200,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:echo_shard",
-        "quantityRange": "1-3"
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInWater": false
+      },
+      "fly": {
+        "canFly": true
       }
-    ]
-  },
-  "implemented": true
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    }
+  }
 }

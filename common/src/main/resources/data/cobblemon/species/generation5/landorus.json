@@ -1,11 +1,28 @@
 {
-  "name": "Landorus",
+  "implemented": true,
   "nationalPokedexNumber": 645,
+  "name": "Landorus",
   "primaryType": "ground",
   "secondaryType": "flying",
+  "maleRatio": 1,
+  "height": 15,
+  "weight": 680,
+  "pokedex": [
+    "cobblemon.species.landorus.desc"
+  ],
+  "labels": [
+    "gen5",
+    "legendary"
+  ],
+  "aspects": [
+    "incarnate-forme"
+  ],
   "abilities": [
     "sandforce",
     "h:sheerforce"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 89,
@@ -15,11 +32,6 @@
     "special_defence": 80,
     "speed": 101
   },
-  "catchRate": 3,
-  "maleRatio": 1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 300,
-  "baseFriendship": 90,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -28,22 +40,20 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 90,
   "moves": [
-    "1:mudshot",
+    "1:punishment",
     "1:rockthrow",
-    "1:sandtomb",
     "1:smackdown",
+    "1:sandtomb",
     "5:leer",
-    "7:punishment",
     "10:block",
     "15:bulldoze",
     "20:rocktomb",
-    "25:swordsdance",
     "30:imprison",
     "35:rockslide",
     "40:earthpower",
@@ -55,17 +65,16 @@
     "70:outrage",
     "75:fissure",
     "80:sandsearstorm",
-    "tm:attract",
+    "tm:block",
     "tm:bodyslam",
     "tm:brickbreak",
     "tm:brutalswing",
     "tm:bulkup",
     "tm:bulldoze",
     "tm:calmmind",
-    "tm:confide",
     "tm:crunch",
+    "tm:defog",
     "tm:dig",
-    "tm:doubleteam",
     "tm:earthpower",
     "tm:earthquake",
     "tm:endure",
@@ -74,11 +83,9 @@
     "tm:fling",
     "tm:fly",
     "tm:focusblast",
-    "tm:frustration",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:gravity",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:imprison",
     "tm:irontail",
@@ -91,23 +98,20 @@
     "tm:psychic",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:rockpolish",
     "tm:rockslide",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
+    "tm:roleplay",
     "tm:sandstorm",
     "tm:sandtomb",
     "tm:scaryface",
     "tm:scorchingsands",
-    "tm:secretpower",
     "tm:selfdestruct",
     "tm:sleeptalk",
     "tm:sludgebomb",
     "tm:sludgewave",
     "tm:smackdown",
-    "tm:snore",
     "tm:stealthrock",
     "tm:stompingtantrum",
     "tm:stoneedge",
@@ -115,56 +119,71 @@
     "tm:substitute",
     "tm:sunnyday",
     "tm:superpower",
-    "tm:swagger",
     "tm:swordsdance",
     "tm:takedown",
     "tm:taunt",
     "tm:terablast",
-    "tm:toxic",
     "tm:uturn",
     "tm:weatherball",
     "tutor:block",
+    "tutor:bulkup",
     "tutor:bulldoze",
+    "tutor:calmmind",
     "tutor:defog",
     "tutor:earthpower",
-    "tutor:earthquake",
-    "tutor:extrasensory",
-    "tutor:fissure",
-    "tutor:focusblast",
+    "tutor:gigaimpact",
     "tutor:gravity",
+    "tutor:hyperbeam",
     "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:mudshot",
+    "tutor:mudslap",
     "tutor:outrage",
+    "tutor:psychic",
+    "tutor:rest",
     "tutor:rockslide",
-    "tutor:rocktomb",
+    "tutor:rocksmash",
     "tutor:roleplay",
-    "tutor:sandstorm",
-    "tutor:sandtomb",
+    "tutor:scorchingsands",
     "tutor:sleeptalk",
-    "tutor:snore",
+    "tutor:sludgebomb",
     "tutor:stealthrock",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
     "tutor:superpower",
-    "tutor:swordsdance",
-    "tutor:uturn"
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:knockoff",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
-  "labels": [
-    "gen5",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.landorus.desc"
-  ],
-  "height": 15,
-  "weight": 680,
   "evolutions": [],
   "forms": [
     {
       "name": "Therian",
       "primaryType": "ground",
       "secondaryType": "flying",
+      "maleRatio": 1,
+      "height": 13,
+      "weight": 680,
+      "pokedex": [
+        "cobblemon.species.landorus-therian.desc"
+      ],
+      "labels": [
+        "gen5",
+        "legendary"
+      ],
+      "aspects": [
+        "therian-forme"
+      ],
       "abilities": [
-        "intimidate"
+        "intimidate",
+        "h:intimidate"
       ],
       "baseStats": {
         "hp": 89,
@@ -174,10 +193,6 @@
         "special_defence": 80,
         "speed": 91
       },
-      "catchRate": 3,
-      "maleRatio": 1,
-      "baseExperienceYield": 300,
-      "baseFriendship": 90,
       "evYield": {
         "hp": 0,
         "attack": 3,
@@ -186,25 +201,30 @@
         "special_defence": 0,
         "speed": 0
       },
-      "experienceGroup": "slow",
-      "eggCycles": 120,
-      "eggGroups": [
-        "undiscovered"
-      ],
-      "labels": [
-        "gen5",
-        "legendary"
-      ],
-      "aspects": [
-        "therian"
-      ],
-      "height": 13,
-      "weight": 680,
-      "cannotDynamax": false,
+      "evolutions": [],
       "battleOnly": false
     }
   ],
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

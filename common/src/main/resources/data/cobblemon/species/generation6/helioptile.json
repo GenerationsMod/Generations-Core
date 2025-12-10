@@ -1,12 +1,26 @@
 {
-  "name": "Helioptile",
   "nationalPokedexNumber": 694,
+  "name": "Helioptile",
   "primaryType": "electric",
   "secondaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 5,
+  "weight": 60,
+  "pokedex": [
+    "cobblemon.species.helioptile.desc"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
   "abilities": [
     "dryskin",
     "sandveil",
     "h:solarpower"
+  ],
+  "eggGroups": [
+    "monster",
+    "dragon"
   ],
   "baseStats": {
     "hp": 44,
@@ -16,47 +30,52 @@
     "special_defence": 43,
     "speed": 70
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 1
+  },
   "baseExperienceYield": 58,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "monster",
-    "dragon"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "moves": [
-    "1:mudslap",
     "1:tailwhip",
+    "1:mudslap",
     "4:pound",
     "8:thundershock",
     "12:quickattack",
     "16:charge",
     "20:bulldoze",
-    "22:razorwind",
     "24:voltswitch",
     "28:paraboliccharge",
     "32:thunderwave",
     "36:thunderbolt",
     "40:electrify",
     "44:thunder",
-    "egg:agility",
     "egg:camouflage",
     "egg:dragonrush",
     "egg:dragontail",
-    "egg:electricterrain",
     "egg:glare",
+    "egg:razorwind",
     "tm:agility",
     "tm:allyswitch",
-    "tm:attract",
     "tm:bulldoze",
+    "tm:charge",
     "tm:chargebeam",
-    "tm:confide",
     "tm:cut",
     "tm:darkpulse",
     "tm:dig",
-    "tm:doubleteam",
     "tm:dragontail",
     "tm:electricterrain",
     "tm:electroball",
@@ -64,50 +83,63 @@
     "tm:endure",
     "tm:facade",
     "tm:flash",
-    "tm:frustration",
     "tm:grassknot",
-    "tm:hiddenpower",
     "tm:irontail",
     "tm:lightscreen",
     "tm:lowsweep",
+    "tm:magnetrise",
+    "tm:mudslap",
     "tm:protect",
     "tm:psychup",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
+    "tm:risingvoltage",
     "tm:rockslide",
     "tm:rocktomb",
-    "tm:round",
     "tm:sandstorm",
-    "tm:secretpower",
+    "tm:scaleshot",
+    "tm:shockwave",
+    "tm:signalbeam",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:substitute",
     "tm:surf",
-    "tm:swagger",
     "tm:swift",
+    "tm:terablast",
     "tm:thunder",
     "tm:thunderbolt",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:uturn",
     "tm:voltswitch",
     "tm:wildcharge",
     "tutor:allyswitch",
+    "tutor:bulldoze",
+    "tutor:chargebeam",
+    "tutor:darkpulse",
     "tutor:electroweb",
     "tutor:irontail",
     "tutor:magnetrise",
+    "tutor:mudslap",
+    "tutor:rest",
     "tutor:risingvoltage",
+    "tutor:rockslide",
     "tutor:scaleshot",
     "tutor:shockwave",
     "tutor:signalbeam",
-    "tutor:snore"
-  ],
-  "labels": [
-    "gen6"
-  ],
-  "pokedex": [
-    "cobblemon.species.helioptile.desc"
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:thunderbolt",
+    "tutor:wildcharge",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [
     {
@@ -120,24 +152,19 @@
       "requiredContext": "cobblemon:sun_stone"
     }
   ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 1
-  },
-  "height": 5,
-  "weight": 60,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  }
 }

@@ -1,12 +1,53 @@
 {
-  "name": "Mothim",
+  "implemented": true,
   "nationalPokedexNumber": 414,
+  "name": "Mothim",
   "primaryType": "bug",
   "secondaryType": "flying",
+  "maleRatio": 1,
+  "height": 9,
+  "weight": 233,
+  "pokedex": [
+    "cobblemon.species.mothim.desc"
+  ],
+  "labels": [
+    "gen4"
+  ],
+  "aspects": [],
   "abilities": [
     "swarm",
     "h:tintedlens"
   ],
+  "eggGroups": [
+    "bug"
+  ],
+  "baseStats": {
+    "hp": 70,
+    "attack": 94,
+    "defence": 50,
+    "special_attack": 94,
+    "special_defence": 50,
+    "speed": 66
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 148,
+  "experienceGroup": "medium_fast",
+  "catchRate": 45,
+  "eggCycles": 15,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 2,
     "entries": [
@@ -20,128 +61,128 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 70,
-    "attack": 94,
-    "defence": 50,
-    "special_attack": 94,
-    "special_defence": 50,
-    "speed": 66
-  },
-  "catchRate": 45,
-  "maleRatio": 1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 148,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 15,
-  "eggGroups": [
-    "bug"
-  ],
   "moves": [
-    "1:bugbite",
-    "1:protect",
-    "1:quiverdance",
     "1:tackle",
-    "10:protect",
-    "15:bugbite",
-    "20:hiddenpower",
+    "1:protect",
+    "1:bugbite",
+    "1:quiverdance",
+    "20:stringshot",
     "23:confusion",
     "26:gust",
     "29:poisonpowder",
     "32:psybeam",
     "35:camouflage",
-    "38:silverwind",
+    "38:strugglebug",
     "41:airslash",
     "44:psychic",
-    "47:bugbuzz",
     "47:lunge",
     "50:bugbuzz",
-    "50:quiverdance",
     "tm:acrobatics",
     "tm:aerialace",
-    "tm:attract",
-    "tm:captivate",
-    "tm:confide",
+    "tm:aircutter",
+    "tm:airslash",
+    "tm:bugbite",
+    "tm:bugbuzz",
     "tm:defog",
-    "tm:doubleteam",
     "tm:dreameater",
+    "tm:dualwingbeat",
+    "tm:electroweb",
     "tm:endure",
     "tm:energyball",
     "tm:facade",
     "tm:flash",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:gigaimpact",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:infestation",
-    "tm:naturalgift",
+    "tm:lunge",
+    "tm:mudslap",
+    "tm:ominouswind",
     "tm:protect",
+    "tm:psybeam",
     "tm:psychic",
     "tm:psychup",
     "tm:raindance",
     "tm:rest",
-    "tm:return",
     "tm:roost",
-    "tm:round",
     "tm:safeguard",
-    "tm:secretpower",
     "tm:shadowball",
+    "tm:signalbeam",
     "tm:silverwind",
     "tm:skillswap",
     "tm:sleeptalk",
     "tm:solarbeam",
+    "tm:stringshot",
     "tm:strugglebug",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
+    "tm:tailwind",
+    "tm:terablast",
     "tm:thief",
-    "tm:toxic",
+    "tm:twister",
     "tm:uturn",
     "tm:venoshock",
+    "tutor:aerialace",
     "tutor:aircutter",
     "tutor:bugbite",
     "tutor:defog",
+    "tutor:dualwingbeat",
     "tutor:electroweb",
+    "tutor:energyball",
     "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:hyperbeam",
     "tutor:mudslap",
     "tutor:ominouswind",
+    "tutor:psychic",
+    "tutor:rest",
     "tutor:roost",
+    "tutor:shadowball",
     "tutor:signalbeam",
     "tutor:skillswap",
     "tutor:sleeptalk",
-    "tutor:snore",
     "tutor:stringshot",
-    "tutor:swift",
     "tutor:tailwind",
-    "tutor:twister"
-  ],
-  "labels": [
-    "gen4"
-  ],
-  "pokedex": [
-    "cobblemon.species.mothim.desc"
+    "tutor:twister",
+    "legacy:attract",
+    "legacy:captivate",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:naturalgift",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:swift",
+    "legacy:toxic"
   ],
   "preEvolution": "burmy",
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 1,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 9,
-  "weight": 233,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "resting": {
+      "willSleepOnBed": true,
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  }
 }

@@ -1,12 +1,53 @@
 {
-  "name": "Sawk",
+  "implemented": true,
   "nationalPokedexNumber": 539,
+  "name": "Sawk",
   "primaryType": "fighting",
+  "maleRatio": 1,
+  "height": 14,
+  "weight": 510,
+  "pokedex": [
+    "cobblemon.species.sawk.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "sturdy",
     "innerfocus",
     "h:moldbreaker"
   ],
+  "eggGroups": [
+    "human_like"
+  ],
+  "baseStats": {
+    "hp": 75,
+    "attack": 125,
+    "defence": 75,
+    "special_attack": 30,
+    "special_defence": 75,
+    "speed": 85
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 2,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 163,
+  "experienceGroup": "medium_fast",
+  "catchRate": 45,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -24,31 +65,14 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 75,
-    "attack": 125,
-    "defence": 75,
-    "special_attack": 30,
-    "special_defence": 75,
-    "speed": 85
-  },
-  "catchRate": 45,
-  "maleRatio": 1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 163,
-  "experienceGroup": "medium_fast",
-  "eggCycles": 20,
-  "eggGroups": [
-    "human_like"
-  ],
   "moves": [
-    "1:bide",
-    "1:leer",
     "1:rocksmash",
+    "1:leer",
+    "1:bide",
+    "1:karatechop",
     "5:focusenergy",
     "10:doublekick",
     "15:quickguard",
-    "17:karatechop",
     "20:lowsweep",
     "25:bulkup",
     "30:retaliate",
@@ -57,14 +81,14 @@
     "45:endure",
     "50:reversal",
     "55:closecombat",
-    "tm:attract",
+    "tm:block",
     "tm:brickbreak",
     "tm:bulkup",
     "tm:bulldoze",
     "tm:closecombat",
-    "tm:confide",
+    "tm:coaching",
     "tm:dig",
-    "tm:doubleteam",
+    "tm:dualchop",
     "tm:earthquake",
     "tm:endure",
     "tm:facade",
@@ -72,16 +96,18 @@
     "tm:fling",
     "tm:focusblast",
     "tm:focusenergy",
-    "tm:frustration",
+    "tm:focuspunch",
     "tm:gigaimpact",
     "tm:grassknot",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:icepunch",
+    "tm:knockoff",
+    "tm:laserfocus",
     "tm:lowkick",
     "tm:lowsweep",
     "tm:megakick",
     "tm:megapunch",
+    "tm:painsplit",
     "tm:payback",
     "tm:poisonjab",
     "tm:poweruppunch",
@@ -89,73 +115,76 @@
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:revenge",
     "tm:reversal",
     "tm:rockslide",
     "tm:rocksmash",
     "tm:rocktomb",
-    "tm:round",
     "tm:scaryface",
-    "tm:secretpower",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:stoneedge",
     "tm:strength",
     "tm:substitute",
     "tm:sunnyday",
     "tm:superpower",
-    "tm:swagger",
     "tm:taunt",
+    "tm:terablast",
     "tm:throatchop",
     "tm:thunderpunch",
-    "tm:toxic",
     "tm:workup",
     "tm:zenheadbutt",
     "tutor:block",
+    "tutor:bulkup",
+    "tutor:bulldoze",
     "tutor:coaching",
     "tutor:dualchop",
     "tutor:firepunch",
+    "tutor:focusenergy",
     "tutor:focuspunch",
+    "tutor:gigaimpact",
     "tutor:helpinghand",
     "tutor:icepunch",
     "tutor:knockoff",
     "tutor:laserfocus",
     "tutor:lowkick",
     "tutor:painsplit",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rockslide",
     "tutor:rocksmash",
     "tutor:sleeptalk",
-    "tutor:snore",
+    "tutor:stoneedge",
     "tutor:superpower",
     "tutor:throatchop",
     "tutor:thunderpunch",
-    "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.sawk.desc"
+    "tutor:zenheadbutt",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 2,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 14,
-  "weight": 510,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

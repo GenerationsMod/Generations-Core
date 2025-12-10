@@ -1,10 +1,24 @@
 {
-  "name": "Houndstone",
+  "implemented": true,
   "nationalPokedexNumber": 972,
+  "name": "Houndstone",
   "primaryType": "ghost",
+  "maleRatio": 0.5,
+  "height": 20,
+  "weight": 150,
+  "pokedex": [
+    "cobblemon.species.houndstone.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "sandrush",
     "h:fluffy"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 72,
@@ -14,10 +28,6 @@
     "special_defence": 97,
     "speed": 68
   },
-  "catchRate": 60,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 171,
-  "baseFriendship": 50,
   "evYield": {
     "hp": 0,
     "attack": 2,
@@ -26,18 +36,35 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 171,
   "experienceGroup": "medium_slow",
+  "catchRate": 60,
   "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
+  "baseFriendship": 50,
+  "drops": {
+    "amount": 6,
+    "entries": [
+      {
+        "item": "minecraft:bone",
+        "quantityRange": "1-3"
+      },
+      {
+        "item": "minecraft:rotten_flesh",
+        "quantityRange": "0-2"
+      },
+      {
+        "item": "cobblemon:kasib_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:growl",
-    "1:tackle",
     "1:lastrespects",
+    "1:tackle",
+    "1:growl",
     "3:lick",
-    "6:bite",
     "6:tailwhip",
+    "6:bite",
     "9:roar",
     "12:headbutt",
     "16:dig",
@@ -48,6 +75,14 @@
     "46:phantomforce",
     "51:charm",
     "58:doubleedge",
+    "egg:allyswitch",
+    "egg:destinybond",
+    "egg:disable",
+    "egg:howl",
+    "egg:memento",
+    "egg:shadowsneak",
+    "egg:yawn",
+    "tm:allyswitch",
     "tm:bodypress",
     "tm:bulldoze",
     "tm:charm",
@@ -60,6 +95,7 @@
     "tm:facade",
     "tm:firefang",
     "tm:gigaimpact",
+    "tm:headbutt",
     "tm:helpinghand",
     "tm:hex",
     "tm:hyperbeam",
@@ -90,36 +126,50 @@
     "tm:thunderfang",
     "tm:trick",
     "tm:uproar",
-    "tm:willowisp"
+    "tm:willowisp",
+    "tutor:allyswitch",
+    "tutor:bulldoze",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icefang",
+    "tutor:mudslap",
+    "tutor:painsplit",
+    "tutor:playrough",
+    "tutor:poltergeist",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:stompingtantrum",
+    "tutor:thunderfang",
+    "tutor:trick",
+    "tutor:uproar"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 20,
-  "weight": 150,
   "preEvolution": "greavard",
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.houndstone.desc"
-  ],
-  "drops": {
-    "amount": 6,
-    "entries": [
-      {
-        "item": "minecraft:bone",
-        "quantityRange": "1-3"
-      },
-      {
-        "item": "minecraft:rotten_flesh",
-        "quantityRange": "0-2"
-      },
-      {
-        "item": "cobblemon:kasib_berry",
-        "percentage": 5.0
+  "behaviour": {
+    "herd": {
+      "maxSize": "3"
+    },
+    "resting": {
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
       }
-    ]
-  },
-  "implemented": true
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  }
 }

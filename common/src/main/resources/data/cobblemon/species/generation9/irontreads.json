@@ -1,10 +1,26 @@
 {
-  "name": "Iron Treads",
+  "implemented": true,
   "nationalPokedexNumber": 990,
+  "name": "Iron Treads",
   "primaryType": "ground",
   "secondaryType": "steel",
+  "maleRatio": -1,
+  "height": 9,
+  "weight": 2400,
+  "pokedex": [
+    "cobblemon.species.irontreads.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 90,
@@ -14,10 +30,6 @@
     "special_defence": 70,
     "speed": 106
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,16 +38,16 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:defensecurl",
-    "1:electricterrain",
     "1:hornattack",
+    "1:defensecurl",
     "1:rollout",
+    "1:electricterrain",
     "7:bulldoze",
     "21:rapidspin",
     "28:ironhead",
@@ -70,6 +82,7 @@
     "tm:irondefense",
     "tm:ironhead",
     "tm:knockoff",
+    "tm:megahorn",
     "tm:metalsound",
     "tm:mudshot",
     "tm:mudslap",
@@ -77,12 +90,14 @@
     "tm:rest",
     "tm:rockslide",
     "tm:rocktomb",
+    "tm:rollout",
     "tm:sandstorm",
     "tm:scaryface",
     "tm:sleeptalk",
     "tm:smartstrike",
     "tm:stealthrock",
     "tm:steelbeam",
+    "tm:steelroller",
     "tm:stompingtantrum",
     "tm:stoneedge",
     "tm:substitute",
@@ -93,19 +108,60 @@
     "tm:thunderfang",
     "tm:voltswitch",
     "tm:wildcharge",
-    "tm:zenheadbutt"
+    "tm:zenheadbutt",
+    "tutor:bulldoze",
+    "tutor:earthpower",
+    "tutor:endeavor",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:highhorsepower",
+    "tutor:hyperbeam",
+    "tutor:icefang",
+    "tutor:irondefense",
+    "tutor:ironhead",
+    "tutor:knockoff",
+    "tutor:megahorn",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rockslide",
+    "tutor:rollout",
+    "tutor:sleeptalk",
+    "tutor:stealthrock",
+    "tutor:steelbeam",
+    "tutor:steelroller",
+    "tutor:stompingtantrum",
+    "tutor:stoneedge",
+    "tutor:thunderfang",
+    "tutor:wildcharge",
+    "tutor:zenheadbutt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 9,
-  "weight": 2400,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.irontreads.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4"
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInWater": false,
+        "canBreatheUnderwater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  },
+  "lightingData": {
+    "lightLevel": 7,
+    "liquidGlowMode": "BOTH"
+  }
 }

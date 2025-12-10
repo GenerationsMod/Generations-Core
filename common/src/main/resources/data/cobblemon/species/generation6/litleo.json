@@ -1,12 +1,25 @@
 {
-  "name": "Litleo",
   "nationalPokedexNumber": 667,
+  "name": "Litleo",
   "primaryType": "fire",
   "secondaryType": "normal",
+  "maleRatio": 0.125,
+  "height": 6,
+  "weight": 135,
+  "pokedex": [
+    "cobblemon.species.litleo.desc"
+  ],
+  "labels": [
+    "gen6"
+  ],
+  "aspects": [],
   "abilities": [
     "rivalry",
     "unnerve",
     "h:moxie"
+  ],
+  "eggGroups": [
+    "field"
   ],
   "baseStats": {
     "hp": 62,
@@ -16,129 +29,6 @@
     "special_defence": 54,
     "speed": 72
   },
-  "catchRate": 220,
-  "maleRatio": 0.125,
-  "shoulderMountable": false,
-  "baseExperienceYield": 74,
-  "experienceGroup": "medium_slow",
-  "eggCycles": 20,
-  "eggGroups": [
-    "field"
-  ],
-  "moves": [
-    "1:leer",
-    "1:tackle",
-    "5:ember",
-    "8:workup",
-    "11:headbutt",
-    "15:nobleroar",
-    "20:takedown",
-    "23:firefang",
-    "28:endeavor",
-    "33:echoedvoice",
-    "36:flamethrower",
-    "39:crunch",
-    "43:hypervoice",
-    "46:incinerate",
-    "50:overheat",
-    "egg:entrainment",
-    "egg:firespin",
-    "egg:flareblitz",
-    "egg:snatch",
-    "egg:yawn",
-    "tm:acrobatics",
-    "tm:attract",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:confide",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:doubleteam",
-    "tm:echoedvoice",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:frustration",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hiddenpower",
-    "tm:hypervoice",
-    "tm:incinerate",
-    "tm:mudslap",
-    "tm:overheat",
-    "tm:payback",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:return",
-    "tm:roar",
-    "tm:rocksmash",
-    "tm:round",
-    "tm:secretpower",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:solarbeam",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderfang",
-    "tm:toxic",
-    "tm:trailblaze",
-    "tm:wildcharge",
-    "tm:willowisp",
-    "tm:workup",
-    "tutor:endeavor",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:irontail",
-    "tutor:snatch",
-    "tutor:snore"
-  ],
-  "labels": [
-    "gen6"
-  ],
-  "pokedex": [
-    "cobblemon.species.litleo.desc"
-  ],
-  "evolutions": [
-    {
-      "id": "litleo_pyroar",
-      "variant": "level_up",
-      "result": "pyroar",
-      "consumeHeldItem": false,
-      "learnableMoves": [],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 35
-        }
-      ]
-    }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -147,10 +37,71 @@
     "special_defence": 0,
     "speed": 0
   },
-  "height": 6,
-  "weight": 135,
-  "aspects": [],
-  "cannotDynamax": false,
+  "baseExperienceYield": 74,
+  "experienceGroup": "medium_slow",
+  "catchRate": 220,
+  "eggCycles": 20,
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "entityInteract": {
+      "avoidedByCreeper": true,
+      "avoidedByPhantom": true
+    },
+    "herd": {
+      "maxSize": "6",
+      "toleratedLeaders": [
+        {
+          "pokemon": "shinx",
+          "tier": 1
+        },
+        {
+          "pokemon": "litleo",
+          "tier": 1
+        },
+        {
+          "pokemon": "luxio",
+          "tier": 2
+        },
+        {
+          "pokemon": "luxray female",
+          "tier": 3
+        },
+        {
+          "pokemon": "luxray male",
+          "tier": 4
+        },
+        {
+          "pokemon": "pyroar female",
+          "tier": 5
+        },
+        {
+          "pokemon": "pyroar male",
+          "tier": 6
+        }
+      ]
+    },
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInLava": true
+      }
+    },
+    "combat": {
+      "willDefendOwner": true
+    },
+    "fireImmune": true
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -168,5 +119,118 @@
       }
     ]
   },
-  "implemented": true
+  "moves": [
+    "1:tackle",
+    "1:leer",
+    "5:ember",
+    "8:workup",
+    "11:headbutt",
+    "15:nobleroar",
+    "20:takedown",
+    "23:firefang",
+    "28:endeavor",
+    "33:echoedvoice",
+    "36:flamethrower",
+    "39:crunch",
+    "43:hypervoice",
+    "46:incinerate",
+    "50:overheat",
+    "egg:entrainment",
+    "egg:firespin",
+    "egg:flareblitz",
+    "egg:yawn",
+    "tm:acrobatics",
+    "tm:bodyslam",
+    "tm:bulldoze",
+    "tm:crunch",
+    "tm:dig",
+    "tm:doubleedge",
+    "tm:echoedvoice",
+    "tm:endeavor",
+    "tm:endure",
+    "tm:facade",
+    "tm:fireblast",
+    "tm:firefang",
+    "tm:firespin",
+    "tm:flamecharge",
+    "tm:flamethrower",
+    "tm:flareblitz",
+    "tm:headbutt",
+    "tm:heatwave",
+    "tm:helpinghand",
+    "tm:hypervoice",
+    "tm:incinerate",
+    "tm:irontail",
+    "tm:mudslap",
+    "tm:overheat",
+    "tm:payback",
+    "tm:protect",
+    "tm:psychicfangs",
+    "tm:raindance",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:roar",
+    "tm:rocksmash",
+    "tm:sleeptalk",
+    "tm:snarl",
+    "tm:snatch",
+    "tm:solarbeam",
+    "tm:strength",
+    "tm:substitute",
+    "tm:sunnyday",
+    "tm:swift",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:thief",
+    "tm:thunderfang",
+    "tm:trailblaze",
+    "tm:wildcharge",
+    "tm:willowisp",
+    "tm:workup",
+    "tutor:bulldoze",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:flamethrower",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:hypervoice",
+    "tutor:irontail",
+    "tutor:mudslap",
+    "tutor:rest",
+    "tutor:rocksmash",
+    "tutor:sleeptalk",
+    "tutor:snarl",
+    "tutor:snatch",
+    "tutor:swift",
+    "tutor:thunderfang",
+    "tutor:wildcharge",
+    "legacy:attract",
+    "legacy:confide",
+    "legacy:darkpulse",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
+  ],
+  "evolutions": [
+    {
+      "id": "litleo_pyroar",
+      "variant": "level_up",
+      "result": "pyroar",
+      "consumeHeldItem": false,
+      "learnableMoves": [],
+      "requirements": [
+        {
+          "variant": "level",
+          "minLevel": 35
+        }
+      ]
+    }
+  ]
 }

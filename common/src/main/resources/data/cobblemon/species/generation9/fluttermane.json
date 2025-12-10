@@ -1,10 +1,26 @@
 {
-  "name": "Flutter Mane",
+  "implemented": true,
   "nationalPokedexNumber": 987,
+  "name": "Flutter Mane",
   "primaryType": "ghost",
   "secondaryType": "fairy",
+  "maleRatio": -1,
+  "height": 14,
+  "weight": 40,
+  "pokedex": [
+    "cobblemon.species.fluttermane.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "protosynthesis"
+    "protosynthesis",
+    "h:protosynthesis"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 55,
@@ -14,10 +30,6 @@
     "special_defence": 135,
     "speed": 135
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,15 +38,27 @@
     "special_defence": 1,
     "speed": 1
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "minecraft:phantom_membrane",
+        "quantityRange": "0-3"
+      },
+      {
+        "item": "cobblemon:fairy_feather"
+      }
+    ]
+  },
   "moves": [
-    "1:astonish",
     "1:confuseray",
     "1:spite",
+    "1:astonish",
     "1:sunnyday",
     "7:psybeam",
     "14:meanlook",
@@ -69,6 +93,7 @@
     "tm:imprison",
     "tm:magicalleaf",
     "tm:mistyterrain",
+    "tm:mysticalfire",
     "tm:nightshade",
     "tm:painsplit",
     "tm:phantomforce",
@@ -90,31 +115,61 @@
     "tm:thunder",
     "tm:thunderbolt",
     "tm:thunderwave",
-    "tm:trickroom"
+    "tm:trickroom",
+    "tutor:calmmind",
+    "tutor:chargebeam",
+    "tutor:darkpulse",
+    "tutor:dazzlinggleam",
+    "tutor:energyball",
+    "tutor:gigaimpact",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:hypervoice",
+    "tutor:icywind",
+    "tutor:magicalleaf",
+    "tutor:mysticalfire",
+    "tutor:painsplit",
+    "tutor:poltergeist",
+    "tutor:rest",
+    "tutor:shadowball",
+    "tutor:sleeptalk",
+    "tutor:spite",
+    "tutor:swift",
+    "tutor:thunderbolt"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 14,
-  "weight": 40,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.fluttermane.desc"
-  ],
-  "drops": {
-    "amount": 4,
-    "entries": [
-      {
-        "item": "minecraft:phantom_membrane",
-        "quantityRange": "0-3"
+  "behaviour": {
+    "herd": {
+      "maxSize": "4",
+      "toleratedLeaders": [
+        {
+          "pokemon": "fluttermane",
+          "tier": 1
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
       },
-      {
-        "item": "cobblemon:fairy_feather"
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
       }
-    ]
-  },
-  "implemented": true
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    }
+  }
 }

@@ -1,10 +1,26 @@
 {
-  "name": "Iron Moth",
+  "implemented": true,
   "nationalPokedexNumber": 994,
+  "name": "Iron Moth",
   "primaryType": "fire",
   "secondaryType": "poison",
+  "maleRatio": -1,
+  "height": 12,
+  "weight": 360,
+  "pokedex": [
+    "cobblemon.species.ironmoth.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
   "abilities": [
-    "quarkdrive"
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 80,
@@ -14,10 +30,6 @@
     "special_defence": 110,
     "speed": 110
   },
-  "catchRate": 30,
-  "maleRatio": -1,
-  "baseExperienceYield": 285,
-  "baseFriendship": 0,
   "evYield": {
     "hp": 0,
     "attack": 0,
@@ -26,17 +38,17 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 30,
   "eggCycles": 50,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 0,
   "moves": [
-    "1:acidspray",
-    "1:electricterrain",
-    "1:ember",
     "1:gust",
     "1:whirlwind",
+    "1:ember",
+    "1:acidspray",
+    "1:electricterrain",
     "7:strugglebug",
     "14:firespin",
     "21:takedown",
@@ -82,6 +94,7 @@
     "tm:protect",
     "tm:psychic",
     "tm:rest",
+    "tm:screech",
     "tm:sleeptalk",
     "tm:sludgewave",
     "tm:solarbeam",
@@ -94,19 +107,56 @@
     "tm:toxic",
     "tm:toxicspikes",
     "tm:uturn",
-    "tm:venoshock"
+    "tm:venoshock",
+    "tutor:chargebeam",
+    "tutor:dazzlinggleam",
+    "tutor:energyball",
+    "tutor:flamethrower",
+    "tutor:flashcannon",
+    "tutor:gigaimpact",
+    "tutor:heatwave",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:meteorbeam",
+    "tutor:psychic",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:swift"
   ],
-  "labels": [
-    "gen9",
-    "paradox"
-  ],
-  "aspects": [],
-  "height": 12,
-  "weight": 360,
   "evolutions": [],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.ironmoth.desc"
-  ],
-  "implemented": true
+  "behaviour": {
+    "herd": {
+      "maxSize": "4"
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canBreatheUnderwater": true,
+        "canSwimInLava": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "fireImmune": true
+  },
+  "lightingData": {
+    "lightLevel": 8,
+    "liquidGlowMode": "BOTH"
+  }
 }

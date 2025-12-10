@@ -1,0 +1,175 @@
+{
+  "implemented": true,
+  "nationalPokedexNumber": 1010,
+  "name": "Iron Leaves",
+  "primaryType": "grass",
+  "secondaryType": "psychic",
+  "maleRatio": -1,
+  "height": 15,
+  "weight": 1250,
+  "pokedex": [
+    "cobblemon.species.ironleaves.desc"
+  ],
+  "labels": [
+    "gen9",
+    "paradox"
+  ],
+  "aspects": [],
+  "abilities": [
+    "quarkdrive",
+    "h:quarkdrive"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "baseStats": {
+    "hp": 90,
+    "attack": 130,
+    "defence": 88,
+    "special_attack": 70,
+    "special_defence": 108,
+    "speed": 104
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 3,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 295,
+  "experienceGroup": "slow",
+  "catchRate": 5,
+  "eggCycles": 50,
+  "baseFriendship": 0,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.9,
+    "height": 2.3,
+    "fixed": false
+  },
+  "behaviour": {
+    "resting": {
+      "canSleep": true,
+      "light": "0-4",
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    },
+    "herd": {
+      "maxSize": "4"
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true,
+        "canSwimInWater": false,
+        "canBreatheUnderwater": true
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    }
+  },
+  "moves": [
+    "1:leer",
+    "1:quickattack",
+    "1:helpinghand",
+    "1:workup",
+    "1:quash",
+    "1:electricterrain",
+    "7:magicalleaf",
+    "14:retaliate",
+    "21:quickguard",
+    "28:nightslash",
+    "35:swordsdance",
+    "42:sacredsword",
+    "49:leafblade",
+    "56:psyblade",
+    "63:closecombat",
+    "70:imprison",
+    "77:megahorn",
+    "84:allyswitch",
+    "91:solarblade",
+    "tm:aerialace",
+    "tm:agility",
+    "tm:airslash",
+    "tm:allyswitch",
+    "tm:brickbreak",
+    "tm:calmmind",
+    "tm:closecombat",
+    "tm:coaching",
+    "tm:doubleedge",
+    "tm:electricterrain",
+    "tm:endure",
+    "tm:energyball",
+    "tm:facade",
+    "tm:falseswipe",
+    "tm:focusblast",
+    "tm:gigadrain",
+    "tm:gigaimpact",
+    "tm:grassknot",
+    "tm:grassyterrain",
+    "tm:gravity",
+    "tm:helpinghand",
+    "tm:hyperbeam",
+    "tm:imprison",
+    "tm:irondefense",
+    "tm:leafblade",
+    "tm:leafstorm",
+    "tm:magicalleaf",
+    "tm:megahorn",
+    "tm:metalsound",
+    "tm:protect",
+    "tm:psychicterrain",
+    "tm:quash",
+    "tm:rest",
+    "tm:retaliate",
+    "tm:reversal",
+    "tm:scaryface",
+    "tm:sleeptalk",
+    "tm:smartstrike",
+    "tm:solarbeam",
+    "tm:solarblade",
+    "tm:substitute",
+    "tm:swift",
+    "tm:swordsdance",
+    "tm:takedown",
+    "tm:taunt",
+    "tm:terablast",
+    "tm:throatchop",
+    "tm:trailblaze",
+    "tm:wildcharge",
+    "tm:workup",
+    "tm:xscissor",
+    "tutor:aerialace",
+    "tutor:allyswitch",
+    "tutor:calmmind",
+    "tutor:coaching",
+    "tutor:energyball",
+    "tutor:falseswipe",
+    "tutor:gigadrain",
+    "tutor:gigaimpact",
+    "tutor:gravity",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:irondefense",
+    "tutor:magicalleaf",
+    "tutor:megahorn",
+    "tutor:rest",
+    "tutor:sleeptalk",
+    "tutor:swift",
+    "tutor:throatchop",
+    "tutor:wildcharge",
+    "tutor:xscissor"
+  ],
+  "evolutions": [],
+  "lightingData": {
+    "lightLevel": 6,
+    "liquidGlowMode": "BOTH"
+  }
+}

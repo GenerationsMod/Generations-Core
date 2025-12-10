@@ -32,7 +32,7 @@ abstract class PokemonStoringItem(properties: Properties) : Item(properties), Po
             val item = player.getItemInHand(usedHand)
             val pokemon = item.getPokemon()
             if (pokemon != null) {
-                storage.getParty((player as ServerPlayer)).add(pokemon.also { it.uuid = UUID.randomUUID() }.also { it.refreshOriginalTrainer() })
+                storage.getParty((player as ServerPlayer)).add(pokemon.also { it.refreshOriginalTrainer() })
                 item.shrink(1)
                 item.removePokemon()
                 item.setLore(mutableListOf<Component>())

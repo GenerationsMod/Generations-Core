@@ -1,25 +1,26 @@
 {
-  "name": "Audino",
+  "implemented": true,
   "nationalPokedexNumber": 531,
+  "name": "Audino",
   "primaryType": "normal",
+  "maleRatio": 0.5,
+  "height": 11,
+  "weight": 310,
+  "pokedex": [
+    "cobblemon.species.audino.desc"
+  ],
+  "labels": [
+    "gen5"
+  ],
+  "aspects": [],
   "abilities": [
     "healer",
     "regenerator",
     "h:klutz"
   ],
-  "drops": {
-    "amount": 2,
-    "entries": [
-      {
-        "item": "cobblemon:oran_berry",
-        "percentage": 10.0
-      },
-      {
-        "item": "cobblemon:fairy_feather",
-        "percentage": 10.0
-      }
-    ]
-  },
+  "eggGroups": [
+    "fairy"
+  ],
   "baseStats": {
     "hp": 103,
     "attack": 60,
@@ -28,74 +29,51 @@
     "special_defence": 86,
     "speed": 50
   },
-  "catchRate": 255,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
-  "forms": [
-    {
-      "name": "Mega",
-      "primaryType": "normal",
-      "secondaryType": "fairy",
-      "abilities": [
-        "healer"
-      ],
-      "baseStats": {
-        "hp": 103,
-        "attack": 60,
-        "defence": 126,
-        "special_attack": 80,
-        "special_defence": 126,
-        "speed": 50
-      },
-      "catchRate": 255,
-      "maleRatio": 0.5,
-      "baseExperienceYield": 390,
-      "baseFriendship": 50,
-      "evYield": {
-        "hp": 2,
-        "attack": 0,
-        "defence": 0,
-        "special_attack": 0,
-        "special_defence": 0,
-        "speed": 0
-      },
-      "experienceGroup": "fast",
-      "eggCycles": 20,
-      "eggGroups": [
-        "fairy"
-      ],
-      "labels": [
-        "gen6",
-        "mega"
-      ],
-      "aspects": [
-        "mega"
-      ],
-      "height": 15,
-      "weight": 320,
-      "cannotDynamax": false,
-      "battleOnly": true
-    }
-  ],
+  "evYield": {
+    "hp": 2,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 0,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 390,
   "experienceGroup": "fast",
+  "catchRate": 255,
   "eggCycles": 20,
-  "eggGroups": [
-    "fairy"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "drops": {
+    "amount": 2,
+    "entries": [
+      {
+        "item": "cobblemon:oran_berry",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:fairy_feather",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:playnice",
     "1:pound",
+    "1:refresh",
+    "1:doubleslap",
+    "1:playnice",
+    "1:attract",
+    "1:secretpower",
     "4:disarmingvoice",
     "9:babydolleyes",
-    "9:refresh",
     "12:helpinghand",
     "16:growl",
-    "17:doubleslap",
     "20:zenheadbutt",
-    "21:attract",
     "24:lifedew",
-    "25:secretpower",
     "28:afteryou",
     "32:takedown",
     "36:simplebeam",
@@ -105,28 +83,26 @@
     "52:entrainment",
     "56:mistyterrain",
     "60:lastresort",
-    "egg:amnesia",
     "egg:bestow",
-    "egg:drainingkiss",
-    "egg:encore",
-    "egg:healbell",
     "egg:healingwish",
     "egg:luckychant",
-    "egg:sleeptalk",
     "egg:sweetkiss",
     "egg:wish",
     "egg:yawn",
+    "tm:afteryou",
     "tm:allyswitch",
     "tm:amnesia",
     "tm:attract",
+    "tm:babydolleyes",
     "tm:blizzard",
     "tm:bodyslam",
     "tm:calmmind",
     "tm:chargebeam",
-    "tm:confide",
+    "tm:covet",
     "tm:dazzlinggleam",
     "tm:dig",
-    "tm:doubleteam",
+    "tm:disarmingvoice",
+    "tm:doubleedge",
     "tm:drainingkiss",
     "tm:drainpunch",
     "tm:dreameater",
@@ -139,11 +115,12 @@
     "tm:flamethrower",
     "tm:flash",
     "tm:fling",
-    "tm:frustration",
+    "tm:focuspunch",
     "tm:gigaimpact",
     "tm:grassknot",
+    "tm:gravity",
+    "tm:healbell",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:hypervoice",
     "tm:icebeam",
@@ -151,11 +128,16 @@
     "tm:icywind",
     "tm:incinerate",
     "tm:irontail",
+    "tm:knockoff",
+    "tm:laserfocus",
+    "tm:lastresort",
     "tm:lightscreen",
     "tm:lowkick",
+    "tm:magiccoat",
     "tm:megakick",
     "tm:megapunch",
     "tm:mistyterrain",
+    "tm:painsplit",
     "tm:poweruppunch",
     "tm:protect",
     "tm:psychic",
@@ -165,27 +147,27 @@
     "tm:reflect",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
-    "tm:round",
+    "tm:roleplay",
     "tm:safeguard",
     "tm:secretpower",
     "tm:shadowball",
+    "tm:signalbeam",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
+    "tm:snatch",
     "tm:solarbeam",
     "tm:stompingtantrum",
     "tm:substitute",
     "tm:sunnyday",
     "tm:surf",
-    "tm:swagger",
+    "tm:takedown",
     "tm:telekinesis",
+    "tm:terablast",
     "tm:throatchop",
     "tm:thunder",
     "tm:thunderbolt",
     "tm:thunderpunch",
     "tm:thunderwave",
-    "tm:toxic",
     "tm:trickroom",
     "tm:uproar",
     "tm:wildcharge",
@@ -193,17 +175,22 @@
     "tm:zenheadbutt",
     "tutor:afteryou",
     "tutor:allyswitch",
+    "tutor:babydolleyes",
+    "tutor:calmmind",
+    "tutor:chargebeam",
     "tutor:covet",
-    "tutor:doubleslap",
+    "tutor:dazzlinggleam",
     "tutor:drainpunch",
-    "tutor:encore",
     "tutor:firepunch",
+    "tutor:flamethrower",
     "tutor:focuspunch",
+    "tutor:gigaimpact",
     "tutor:gravity",
     "tutor:healbell",
-    "tutor:healpulse",
     "tutor:helpinghand",
+    "tutor:hyperbeam",
     "tutor:hypervoice",
+    "tutor:icebeam",
     "tutor:icepunch",
     "tutor:icywind",
     "tutor:irontail",
@@ -213,50 +200,120 @@
     "tutor:lowkick",
     "tutor:magiccoat",
     "tutor:painsplit",
-    "tutor:present",
-    "tutor:refresh",
+    "tutor:psychic",
+    "tutor:rest",
     "tutor:roleplay",
+    "tutor:shadowball",
     "tutor:signalbeam",
-    "tutor:simplebeam",
     "tutor:skillswap",
     "tutor:sleeptalk",
     "tutor:snatch",
-    "tutor:snore",
     "tutor:stompingtantrum",
     "tutor:telekinesis",
     "tutor:throatchop",
     "tutor:thunderbolt",
     "tutor:thunderpunch",
-    "tutor:trickroom",
     "tutor:uproar",
-    "tutor:yawn",
-    "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen5"
-  ],
-  "pokedex": [
-    "cobblemon.species.audino.desc"
+    "tutor:wildcharge",
+    "tutor:zenheadbutt",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic",
+    "special:present"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 2,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 0,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 11,
-  "weight": 310,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "forms": [
+    {
+      "name": "Mega",
+      "primaryType": "normal",
+      "secondaryType": "fairy",
+      "maleRatio": 0.5,
+      "height": 15,
+      "weight": 320,
+      "pokedex": [
+        "cobblemon.species.audino-mega.desc"
+      ],
+      "labels": [
+        "gen6",
+        "mega"
+      ],
+      "aspects": [
+        "mega"
+      ],
+      "abilities": [
+        "healer",
+        "h:healer"
+      ],
+      "baseStats": {
+        "hp": 103,
+        "attack": 60,
+        "defence": 126,
+        "special_attack": 80,
+        "special_defence": 126,
+        "speed": 50
+      },
+      "baseExperienceYield": 425,
+      "dynamaxBlocked": true,
+      "evolutions": [],
+      "battleOnly": true,
+      "behaviour": {
+        "herd": {
+          "maxSize": "3",
+          "toleratedLeaders": [
+            {
+              "pokemon": "audino mega",
+              "tier": 1
+            }
+          ]
+        },
+        "moving": {
+          "swim": {
+            "avoidsWater": true
+          }
+        },
+        "combat": {
+          "willDefendSelf": true,
+          "willDefendOwner": true,
+          "willFlee": false
+        },
+        "resting": {
+          "drowsyChance": 0.0333,
+          "rouseChance": 0.0042
+        }
+      }
+    }
+  ],
+  "behaviour": {
+    "herd": {
+      "maxSize": "2",
+      "toleratedLeaders": [
+        {
+          "pokemon": "audino mega=false",
+          "tier": 1
+        },
+        {
+          "pokemon": "audino mega",
+          "tier": 2
+        }
+      ]
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "combat": {
+      "willDefendOwner": true
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

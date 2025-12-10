@@ -1,10 +1,24 @@
 {
-  "name": "Nymble",
+  "implemented": true,
   "nationalPokedexNumber": 919,
+  "name": "Nymble",
   "primaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 2,
+  "weight": 10,
+  "pokedex": [
+    "cobblemon.species.nymble.desc"
+  ],
+  "labels": [
+    "gen9"
+  ],
+  "aspects": [],
   "abilities": [
     "swarm",
     "h:tintedlens"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 33,
@@ -14,10 +28,6 @@
     "special_defence": 25,
     "speed": 45
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "baseExperienceYield": 42,
-  "baseFriendship": 20,
   "evYield": {
     "hp": 0,
     "attack": 1,
@@ -26,14 +36,23 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 42,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 20,
+  "drops": {
+    "amount": 1,
+    "entries": [
+      {
+        "item": "cobblemon:coba_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
-    "1:leer",
     "1:tackle",
+    "1:leer",
     "4:strugglebug",
     "6:astonish",
     "9:assurance",
@@ -48,6 +67,7 @@
     "egg:counter",
     "egg:skittersmack",
     "tm:agility",
+    "tm:assurance",
     "tm:bugbite",
     "tm:bugbuzz",
     "tm:endure",
@@ -57,24 +77,27 @@
     "tm:protect",
     "tm:raindance",
     "tm:rest",
+    "tm:screech",
     "tm:skittersmack",
     "tm:sleeptalk",
     "tm:strugglebug",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:takedown",
     "tm:terablast",
     "tm:thief",
     "tm:trailblaze",
     "tm:uturn",
-    "tm:xscissor"
+    "tm:xscissor",
+    "tutor:bugbite",
+    "tutor:leechlife",
+    "tutor:rest",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "tutor:suckerpunch",
+    "tutor:xscissor"
   ],
-  "labels": [
-    "gen9"
-  ],
-  "aspects": [],
-  "height": 2,
-  "weight": 10,
   "evolutions": [
     {
       "id": "nymble_lokix",
@@ -92,18 +115,19 @@
       ]
     }
   ],
-  "cannotDynamax": false,
-  "pokedex": [
-    "cobblemon.species.nymble.desc"
-  ],
-  "drops": {
-    "amount": 1,
-    "entries": [
-      {
-        "item": "cobblemon:coba_berry",
-        "percentage": 2.5
+  "behaviour": {
+    "resting": {
+      "willSleepOnBed": true,
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
       }
-    ]
-  },
-  "implemented": true
+    },
+    "combat": {
+      "willDefendOwner": true
+    }
+  }
 }

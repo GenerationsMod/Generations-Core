@@ -1,11 +1,26 @@
 {
-  "name": "Tapu Lele",
+  "implemented": true,
   "nationalPokedexNumber": 786,
+  "name": "Tapu Lele",
   "primaryType": "psychic",
   "secondaryType": "fairy",
+  "maleRatio": -1,
+  "height": 12,
+  "weight": 186,
+  "pokedex": [
+    "cobblemon.species.tapulele.desc"
+  ],
+  "labels": [
+    "gen7",
+    "legendary"
+  ],
+  "aspects": [],
   "abilities": [
     "psychicsurge",
     "h:telepathy"
+  ],
+  "eggGroups": [
+    "undiscovered"
   ],
   "baseStats": {
     "hp": 70,
@@ -15,20 +30,30 @@
     "special_defence": 115,
     "speed": 95
   },
-  "catchRate": 3,
-  "maleRatio": -1,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 3,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 285,
   "experienceGroup": "slow",
+  "catchRate": 3,
   "eggCycles": 15,
-  "eggGroups": [
-    "undiscovered"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "moves": [
     "1:astonish",
     "1:confusion",
+    "1:psywave",
     "5:withdraw",
-    "8:psywave",
     "10:aromatherapy",
     "15:drainingkiss",
     "20:psybeam",
@@ -47,9 +72,7 @@
     "tm:calmmind",
     "tm:chargebeam",
     "tm:charm",
-    "tm:confide",
     "tm:dazzlinggleam",
-    "tm:doubleteam",
     "tm:drainingkiss",
     "tm:echoedvoice",
     "tm:endure",
@@ -57,20 +80,21 @@
     "tm:facade",
     "tm:fling",
     "tm:focusblast",
-    "tm:frustration",
     "tm:futuresight",
     "tm:gigaimpact",
     "tm:grassknot",
+    "tm:gravity",
     "tm:guardswap",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:irondefense",
     "tm:lightscreen",
+    "tm:magiccoat",
     "tm:magicroom",
     "tm:naturepower",
     "tm:playrough",
     "tm:powerswap",
     "tm:protect",
+    "tm:psybeam",
     "tm:psychic",
     "tm:psychicterrain",
     "tm:psychocut",
@@ -78,68 +102,74 @@
     "tm:psyshock",
     "tm:reflect",
     "tm:rest",
-    "tm:return",
-    "tm:round",
     "tm:safeguard",
     "tm:shadowball",
     "tm:skillswap",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:speedswap",
     "tm:storedpower",
     "tm:substitute",
     "tm:sunnyday",
-    "tm:swagger",
     "tm:taunt",
+    "tm:telekinesis",
+    "tm:terablast",
     "tm:thief",
     "tm:thunder",
     "tm:thunderbolt",
     "tm:torment",
-    "tm:toxic",
     "tm:wonderroom",
     "tutor:allyswitch",
-    "tutor:charm",
-    "tutor:extrasensory",
-    "tutor:flatter",
+    "tutor:calmmind",
+    "tutor:chargebeam",
+    "tutor:dazzlinggleam",
+    "tutor:energyball",
+    "tutor:gigaimpact",
     "tutor:gravity",
+    "tutor:hyperbeam",
     "tutor:irondefense",
     "tutor:magiccoat",
     "tutor:magicroom",
-    "tutor:moonblast",
-    "tutor:naturesmadness",
     "tutor:playrough",
     "tutor:psychic",
+    "tutor:psychocut",
+    "tutor:rest",
+    "tutor:shadowball",
     "tutor:skillswap",
-    "tutor:snore",
+    "tutor:sleeptalk",
     "tutor:telekinesis",
-    "tutor:wonderroom"
-  ],
-  "labels": [
-    "gen7",
-    "legendary"
-  ],
-  "pokedex": [
-    "cobblemon.species.tapulele.desc"
+    "tutor:thunderbolt",
+    "tutor:wonderroom",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 3,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 12,
-  "weight": 186,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "drowsyChance": 0.0333,
+      "rouseChance": 0.0042
+    }
+  }
 }

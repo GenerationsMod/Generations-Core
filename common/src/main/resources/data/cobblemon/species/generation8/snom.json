@@ -1,11 +1,25 @@
 {
-  "name": "Snom",
+  "implemented": true,
   "nationalPokedexNumber": 872,
+  "name": "Snom",
   "primaryType": "ice",
   "secondaryType": "bug",
+  "maleRatio": 0.5,
+  "height": 3,
+  "weight": 38,
+  "pokedex": [
+    "cobblemon.species.snom.desc"
+  ],
+  "labels": [
+    "gen8"
+  ],
+  "aspects": [],
   "abilities": [
     "shielddust",
     "h:icescales"
+  ],
+  "eggGroups": [
+    "bug"
   ],
   "baseStats": {
     "hp": 30,
@@ -15,25 +29,74 @@
     "special_defence": 30,
     "speed": 20
   },
-  "catchRate": 190,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 0,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 37,
   "experienceGroup": "medium_fast",
+  "catchRate": 190,
   "eggCycles": 20,
-  "eggGroups": [
-    "bug"
-  ],
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    },
+    "herd": {
+      "maxSize": "6",
+      "toleratedLeaders": [
+        {
+          "pokemon": "snom",
+          "tier": 1
+        }
+      ]
+    },
+    "resting": {
+      "willSleepOnBed": true,
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    }
+  },
+  "drops": {
+    "amount": 3,
+    "entries": [
+      {
+        "item": "minecraft:snowball",
+        "quantityRange": "0-1"
+      },
+      {
+        "item": "cobblemon:silver_powder",
+        "percentage": 2.5
+      },
+      {
+        "item": "cobblemon:charti_berry",
+        "percentage": 2.5
+      }
+    ]
+  },
   "moves": [
     "1:powdersnow",
     "1:strugglebug",
     "egg:bugbite",
     "egg:fairywind",
     "egg:mirrorcoat",
-    "tm:attract",
     "tm:bugbite",
     "tm:bugbuzz",
-    "tm:endure",
     "tm:facade",
     "tm:iciclespear",
     "tm:icywind",
@@ -41,20 +104,20 @@
     "tm:pounce",
     "tm:protect",
     "tm:rest",
-    "tm:round",
     "tm:skittersmack",
     "tm:sleeptalk",
-    "tm:snore",
     "tm:strugglebug",
     "tm:substitute",
     "tm:terablast",
-    "tutor:skittersmack"
-  ],
-  "labels": [
-    "gen8"
-  ],
-  "pokedex": [
-    "cobblemon.species.snom.desc"
+    "tutor:bugbite",
+    "tutor:icywind",
+    "tutor:rest",
+    "tutor:skittersmack",
+    "tutor:sleeptalk",
+    "legacy:attract",
+    "legacy:endure",
+    "legacy:round",
+    "legacy:snore"
   ],
   "evolutions": [
     {
@@ -76,42 +139,5 @@
         }
       ]
     }
-  ],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 50,
-  "evYield": {
-    "hp": 0,
-    "attack": 0,
-    "defence": 0,
-    "special_attack": 1,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 3,
-  "weight": 38,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "minecraft:snowball",
-        "quantityRange": "0-1"
-      },
-      {
-        "item": "cobblemon:silver_powder",
-        "percentage": 2.5
-      },
-      {
-        "item": "cobblemon:charti_berry",
-        "percentage": 2.5
-      }
-    ]
-  },
-  "implemented": true
+  ]
 }

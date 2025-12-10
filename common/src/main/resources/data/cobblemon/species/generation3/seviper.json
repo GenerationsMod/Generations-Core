@@ -1,10 +1,25 @@
 {
-  "name": "Seviper",
+  "implemented": true,
   "nationalPokedexNumber": 336,
+  "name": "Seviper",
   "primaryType": "poison",
+  "maleRatio": 0.5,
+  "height": 27,
+  "weight": 525,
+  "pokedex": [
+    "cobblemon.species.seviper.desc"
+  ],
+  "labels": [
+    "gen3"
+  ],
+  "aspects": [],
   "abilities": [
     "shedskin",
     "h:infiltrator"
+  ],
+  "eggGroups": [
+    "field",
+    "dragon"
   ],
   "baseStats": {
     "hp": 73,
@@ -14,19 +29,84 @@
     "special_defence": 60,
     "speed": 65
   },
-  "catchRate": 90,
-  "maleRatio": 0.5,
-  "shoulderMountable": false,
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 0,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
   "baseExperienceYield": 160,
   "experienceGroup": "fluctuating",
+  "catchRate": 90,
   "eggCycles": 20,
-  "eggGroups": [
-    "field",
-    "dragon"
+  "baseFriendship": 50,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
+  "behaviour": {
+    "combat": {
+      "fightsMelee": true,
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "day"
+      ],
+      "drowsyChance": 0.0033,
+      "rouseChance": 0.0042
+    },
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      }
+    }
+  },
+  "ai": [
+    {
+      "type": "cobblemon:add_tasks_to_activity",
+      "activity": "idle",
+      "tasksByPriority": {
+        "7": [
+          {
+            "type": "cobblemon:hate_entity",
+            "entityCondition": "q.entity.is_pokemon && q.entity.species.identifier == 'cobblemon:zangoose'"
+          }
+        ]
+      }
+    }
   ],
+  "drops": {
+    "amount": 4,
+    "entries": [
+      {
+        "item": "cobblemon:razor_fang",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:poison_barb",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:shed_shell",
+        "percentage": 5.0
+      },
+      {
+        "item": "cobblemon:persim_berry",
+        "percentage": 5.0
+      }
+    ]
+  },
   "moves": [
-    "1:swagger",
     "1:wrap",
+    "1:wringout",
+    "1:swagger",
     "4:bite",
     "6:lick",
     "9:poisontail",
@@ -34,22 +114,17 @@
     "14:screech",
     "19:glare",
     "21:poisonfang",
-    "24:venomdrench",
     "24:venoshock",
-    "26:nightslash",
     "29:gastroacid",
     "31:poisonjab",
     "34:haze",
-    "36:swordsdance",
     "39:crunch",
     "41:belch",
     "44:coil",
     "46:sludgebomb",
-    "46:wringout",
     "egg:assurance",
     "egg:bodyslam",
     "egg:finalgambit",
-    "egg:irontail",
     "egg:nightslash",
     "egg:punishment",
     "egg:scaryface",
@@ -59,34 +134,33 @@
     "egg:switcheroo",
     "egg:wringout",
     "tm:acidspray",
-    "tm:attract",
+    "tm:aquatail",
+    "tm:assurance",
+    "tm:bind",
     "tm:bodyslam",
     "tm:breakingswipe",
     "tm:brickbreak",
     "tm:brutalswing",
     "tm:bulldoze",
-    "tm:captivate",
-    "tm:confide",
     "tm:crunch",
     "tm:curse",
     "tm:darkpulse",
     "tm:dig",
     "tm:doubleedge",
-    "tm:doubleteam",
-    "tm:dragontail",
     "tm:earthquake",
     "tm:endeavor",
     "tm:endure",
     "tm:facade",
     "tm:firefang",
     "tm:flamethrower",
-    "tm:frustration",
+    "tm:furycutter",
+    "tm:gastroacid",
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:gunkshot",
     "tm:haze",
+    "tm:headbutt",
     "tm:helpinghand",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:icefang",
     "tm:infestation",
@@ -94,22 +168,20 @@
     "tm:irontail",
     "tm:knockoff",
     "tm:lashout",
-    "tm:naturalgift",
     "tm:payback",
     "tm:poisonjab",
     "tm:poisontail",
     "tm:pounce",
+    "tm:powerwhip",
     "tm:protect",
     "tm:psychicfangs",
     "tm:raindance",
     "tm:rest",
     "tm:retaliate",
-    "tm:return",
     "tm:reversal",
     "tm:rocksmash",
-    "tm:round",
     "tm:scaryface",
-    "tm:secretpower",
+    "tm:screech",
     "tm:seedbomb",
     "tm:skittersmack",
     "tm:sleeptalk",
@@ -119,6 +191,7 @@
     "tm:snatch",
     "tm:strength",
     "tm:substitute",
+    "tm:suckerpunch",
     "tm:sunnyday",
     "tm:swagger",
     "tm:swordsdance",
@@ -130,81 +203,58 @@
     "tm:thunderfang",
     "tm:toxic",
     "tm:trailblaze",
+    "tm:venomdrench",
     "tm:venoshock",
     "tm:xscissor",
     "tm:zenheadbutt",
     "tutor:aquatail",
     "tutor:bind",
-    "tutor:bite",
-    "tutor:bodyslam",
-    "tutor:crunch",
+    "tutor:bulldoze",
     "tutor:darkpulse",
-    "tutor:doubleedge",
-    "tutor:endure",
+    "tutor:endeavor",
+    "tutor:firefang",
+    "tutor:flamethrower",
     "tutor:furycutter",
     "tutor:gastroacid",
     "tutor:gigadrain",
-    "tutor:glare",
-    "tutor:headbutt",
+    "tutor:gigaimpact",
+    "tutor:gunkshot",
+    "tutor:helpinghand",
+    "tutor:hyperbeam",
+    "tutor:icefang",
+    "tutor:ironhead",
     "tutor:irontail",
     "tutor:knockoff",
-    "tutor:lick",
-    "tutor:mimic",
-    "tutor:mudslap",
-    "tutor:poisontail",
-    "tutor:screech",
+    "tutor:lashout",
+    "tutor:poisonjab",
+    "tutor:rest",
+    "tutor:rocksmash",
+    "tutor:seedbomb",
+    "tutor:skittersmack",
     "tutor:sleeptalk",
+    "tutor:sludgebomb",
+    "tutor:snarl",
     "tutor:snatch",
-    "tutor:snore",
-    "tutor:substitute",
     "tutor:suckerpunch",
-    "tutor:swagger",
-    "tutor:swift",
     "tutor:throatchop",
-    "tutor:wrap"
+    "tutor:thunderfang",
+    "tutor:xscissor",
+    "tutor:zenheadbutt",
+    "legacy:attract",
+    "legacy:captivate",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:dragontail",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:mimic",
+    "legacy:mudslap",
+    "legacy:naturalgift",
+    "legacy:return",
+    "legacy:round",
+    "legacy:secretpower",
+    "legacy:snore",
+    "legacy:swift"
   ],
-  "labels": [
-    "gen3"
-  ],
-  "pokedex": [
-    "cobblemon.species.seviper.desc"
-  ],
-  "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 70,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 0,
-    "special_attack": 1,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 27,
-  "weight": 525,
-  "aspects": [],
-  "cannotDynamax": false,
-  "drops": {
-    "amount": 3,
-    "entries": [
-      {
-        "item": "cobblemon:razor_fang",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:poison_barb",
-        "percentage": 5.0
-      },
-      {
-        "item": "cobblemon:persim_berry",
-        "percentage": 5.0
-      }
-    ]
-  },
-  "implemented": true
+  "evolutions": []
 }

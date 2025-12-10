@@ -1,11 +1,54 @@
 {
-  "name": "Celesteela",
+  "implemented": true,
   "nationalPokedexNumber": 797,
+  "name": "Celesteela",
   "primaryType": "steel",
   "secondaryType": "flying",
-  "abilities": [
-    "beastboost"
+  "maleRatio": -1,
+  "height": 92,
+  "weight": 9999,
+  "pokedex": [
+    "cobblemon.species.celesteela.desc"
   ],
+  "labels": [
+    "gen7",
+    "ultra_beast"
+  ],
+  "aspects": [],
+  "abilities": [
+    "beastboost",
+    "h:beastboost"
+  ],
+  "eggGroups": [
+    "undiscovered"
+  ],
+  "baseStats": {
+    "hp": 97,
+    "attack": 101,
+    "defence": 103,
+    "special_attack": 107,
+    "special_defence": 101,
+    "speed": 61
+  },
+  "evYield": {
+    "hp": 0,
+    "attack": 1,
+    "defence": 1,
+    "special_attack": 1,
+    "special_defence": 0,
+    "speed": 0
+  },
+  "baseExperienceYield": 285,
+  "experienceGroup": "slow",
+  "catchRate": 45,
+  "eggCycles": 120,
+  "baseFriendship": 0,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "drops": {
     "amount": 3,
     "entries": [
@@ -15,38 +58,18 @@
       }
     ]
   },
-  "baseStats": {
-    "hp": 97,
-    "attack": 101,
-    "defence": 103,
-    "special_attack": 107,
-    "special_defence": 101,
-    "speed": 61
-  },
-  "catchRate": 45,
-  "maleRatio": -1,
-  "shoulderMountable": false,
-  "baseExperienceYield": 285,
-  "experienceGroup": "slow",
-  "eggCycles": 120,
-  "eggGroups": [
-    "undiscovered"
-  ],
   "moves": [
     "1:absorb",
-    "1:airslash",
     "1:tackle",
     "5:harden",
     "10:wideguard",
     "15:megadrain",
     "20:smackdown",
     "25:ingrain",
-    "29:ironhead",
     "30:autotomize",
     "35:gigadrain",
     "40:flashcannon",
     "45:metalsound",
-    "47:seedbomb",
     "50:irondefense",
     "55:leechseed",
     "60:heavyslam",
@@ -54,11 +77,11 @@
     "70:skullbash",
     "tm:acrobatics",
     "tm:airslash",
+    "tm:block",
     "tm:bodyslam",
     "tm:brutalswing",
     "tm:bulldoze",
-    "tm:confide",
-    "tm:doubleteam",
+    "tm:doubleedge",
     "tm:earthquake",
     "tm:endure",
     "tm:energyball",
@@ -69,84 +92,96 @@
     "tm:flamethrower",
     "tm:flashcannon",
     "tm:fly",
-    "tm:frustration",
     "tm:gigadrain",
     "tm:gigaimpact",
     "tm:grassknot",
+    "tm:gravity",
     "tm:gyroball",
     "tm:heavyslam",
-    "tm:hiddenpower",
     "tm:hyperbeam",
     "tm:irondefense",
     "tm:ironhead",
+    "tm:magnetrise",
     "tm:megahorn",
+    "tm:metalsound",
+    "tm:meteorbeam",
     "tm:protect",
     "tm:rest",
-    "tm:return",
     "tm:rockslide",
-    "tm:round",
     "tm:seedbomb",
     "tm:selfdestruct",
+    "tm:shockwave",
     "tm:sleeptalk",
     "tm:smackdown",
     "tm:smartstrike",
-    "tm:snore",
     "tm:solarbeam",
+    "tm:steelbeam",
+    "tm:steelroller",
     "tm:stompingtantrum",
     "tm:stoneedge",
     "tm:substitute",
     "tm:superpower",
-    "tm:swagger",
-    "tm:toxic",
+    "tm:terablast",
     "tm:zenheadbutt",
-    "tutor:autotomize",
     "tutor:block",
-    "tutor:earthquake",
+    "tutor:bulldoze",
+    "tutor:energyball",
+    "tutor:flamethrower",
+    "tutor:flashcannon",
     "tutor:gigadrain",
+    "tutor:gigaimpact",
     "tutor:gravity",
-    "tutor:gyroball",
+    "tutor:hyperbeam",
     "tutor:irondefense",
     "tutor:ironhead",
-    "tutor:leechseed",
     "tutor:magnetrise",
+    "tutor:megahorn",
     "tutor:meteorbeam",
+    "tutor:rest",
+    "tutor:rockslide",
     "tutor:seedbomb",
     "tutor:shockwave",
-    "tutor:skullbash",
-    "tutor:smackdown",
-    "tutor:snore",
+    "tutor:sleeptalk",
     "tutor:steelbeam",
     "tutor:steelroller",
     "tutor:stompingtantrum",
+    "tutor:stoneedge",
     "tutor:superpower",
-    "tutor:zenheadbutt"
-  ],
-  "labels": [
-    "gen7",
-    "ultra_beast"
-  ],
-  "pokedex": [
-    "cobblemon.species.celesteela.desc"
+    "tutor:zenheadbutt",
+    "legacy:confide",
+    "legacy:doubleteam",
+    "legacy:frustration",
+    "legacy:hiddenpower",
+    "legacy:return",
+    "legacy:round",
+    "legacy:snore",
+    "legacy:swagger",
+    "legacy:toxic"
   ],
   "evolutions": [],
-  "baseScale": 1,
-  "hitbox": {
-    "width": 1,
-    "height": 1,
-    "fixed": false
-  },
-  "baseFriendship": 0,
-  "evYield": {
-    "hp": 0,
-    "attack": 1,
-    "defence": 1,
-    "special_attack": 1,
-    "special_defence": 0,
-    "speed": 0
-  },
-  "height": 92,
-  "weight": 9999,
-  "aspects": [],
-  "cannotDynamax": false,
-  "implemented": true
+  "behaviour": {
+    "moving": {
+      "swim": {
+        "avoidsWater": true
+      },
+      "fly": {
+        "canFly": true
+      },
+      "walk": {
+        "canWalk": false
+      }
+    },
+    "combat": {
+      "willDefendSelf": true,
+      "willDefendOwner": true,
+      "willFlee": false
+    },
+    "resting": {
+      "times": [
+        "any"
+      ],
+      "drowsyChance": 0.0014,
+      "rouseChance": 0.0042
+    }
+  }
 }
