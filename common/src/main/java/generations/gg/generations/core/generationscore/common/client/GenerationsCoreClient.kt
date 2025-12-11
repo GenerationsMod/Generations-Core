@@ -141,7 +141,7 @@ object GenerationsCoreClient {
         VaryingModelRepository.registerFactory(".pk", { resourceLocation, resource ->
             ResourceLocation.fromNamespaceAndPath(resourceLocation.namespace, File(resourceLocation.path).getName()) to
                     (ModelPart(
-                        RareCandyBone.CUBE_LIST,
+                        emptyList(),
                         mapOf("root" to RareCandyBone(resourceLocation))
                     )) as Bone
 

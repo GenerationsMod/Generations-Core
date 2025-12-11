@@ -9,6 +9,7 @@ import com.cobblemon.mod.common.util.readUUID
 import com.cobblemon.mod.common.util.writeString
 import com.cobblemon.mod.common.util.writeUUID
 import net.minecraft.network.RegistryFriendlyByteBuf
+import net.minecraft.world.item.Item
 import java.util.UUID
 
 /**
@@ -19,19 +20,34 @@ import java.util.UUID
  * @author Village
  * @since January 7th, 2023
  */
-class GensInteractPokemonUIPacket(val pokemonID: UUID, val canMountShoulder: Boolean, val changeFormData: Pair<Boolean, String>): NetworkPacket<GensInteractPokemonUIPacket> {
+class GensInteractPokemonUIPacket(
+    val pokemonID: UUID,
+    val canMountShoulder: Boolean,
+    val canGiveHeld: Boolean,
+    val canGiveCosmetic: Boolean,
+    val canRide: Boolean,
+    val changeFormData: Pair<Boolean, String>): NetworkPacket<GensInteractPokemonUIPacket> {
 
     override val id = ID
 
     override fun encode(buffer: RegistryFriendlyByteBuf) {
         buffer.writeUUID(pokemonID)
         buffer.writeBoolean(canMountShoulder)
+        buffer.writeBoolean(canGiveHeld)
+        buffer.writeBoolean(canGiveCosmetic)
+        buffer.writeBoolean(canRide)
         buffer.writeBoolean(changeFormData.first)
         buffer.writeString(changeFormData.second)
     }
 
     companion object {
         val ID = cobblemonResource("gens_interact_pokemon_ui")
-        fun decode(buffer: RegistryFriendlyByteBuf) = GensInteractPokemonUIPacket(buffer.readUUID(), buffer.readBoolean(), Pair(buffer.readBoolean(), buffer.readString()))
+        fun decode(buffer: RegistryFriendlyByteBuf) = GensInteractPokemonUIPacket(
+            buffer.readUUID(),
+            buffer.readBoolean(),
+            buffer.readBoolean(),
+            buffer.readBoolean(),
+            buffer.readBoolean(),
+            Pair(buffer.readBoolean(), buffer.readString()))
     }
 }

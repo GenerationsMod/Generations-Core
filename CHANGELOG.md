@@ -1,31 +1,38 @@
 # 1.2.0
 
 Additions
-- Added Cobblemon 1.7 compatibility
+- Added Cobblemon 1.7 compatibility!
+
+Known Issues
+- Pokemon riding anchoring is a bit below where it should be, riding is functional and intact, bar multi-seaters. Improvements for this go hand-in-hand with how models animate on our end, so we'll be resolving this as part of our renderer rewrite already in progress
+
 
 # 1.1.0
 
 Additions
-- Added Cobblemon 1.6 compatibility
-   - Please be sure to update your Generations 1-9 Resource Packs to avoid any model issues!
-- Added Terastallization!
-
-   - ---Explaination---
+- Added Cobblemon 1.6 compatibility!
+   - Please be sure to update your Generations 1-9 Resource Packs to patch up model issues!
+- Added Terastallization for devs and server owners!
+   - Have a Tera Orb in your inventory to Terastallizatize during battle!
+   - Use 50 Tera Shards to change a Pokemon's Tera Type
    - Comes with a Tera battle overlay effect, Tera sound, and visual effect
-- Legendary Pokemon will now be guaranteed 3 Perfect IVs
+   - We'll add a proper singleplayer obtainment method, like Tera Ores or the like, in a future update
 - Added Pokemon icons for profiles and portraits
 - Added Exp All functionality
 - Added world and Time Capsule conversions for all Generations items
+- Legendary Pokemon will now be guaranteed 3 Perfect IVs
 - Added external transformations to the shift right click wheel
-   - Perfect for Mega Evolving your favorites outside of battle!
+   - Try Mega Evolving your favorites outside of battle!
 - Added Statue functionality for non-OP players
-   - Up to 2 statues can be placed per chunk
-- Added a Brazilian Portuguese translation— thanks ednzinho!
-- Rewrote a majority of the codebase from Java to Kotlin
+   - Up to 2 statues can be placed per chunk using a Chisel
+- Added a Brazilian Portuguese translation (Thanks ednzinho!)
 
 Changes
+- Rewrote a majority of the codebase from Java to Kotlin
 - Updated to Cobblemon species and spawn files for all new Cobblemon
+- Adjusted Legendary spawn weights to factor in Cobblemon's Pokemon spawn weight changes
 - Moved Ruby Rod to use Cobblemon 1.6's fishing loot table
+- Adjusted DNA Splicer stackability to 1
 - Improved Pokemon shoulder rendering
 
 Bug Fixes
@@ -36,13 +43,20 @@ Bug Fixes
 - Fixed Calyrex Rider form not receiving typing, ability, or stats
 - Fixed Kyurem retaining Fusion Bolt/Flare after fusing and unfusing
 - Fixed Rotom being unable to learn certain moves in certain forms
-- Fixed Rusty Shield not transforming into Crowned Shield upon summoning of Doggo
-- Add movepool to Crowned forms of Doggos
+- Fixed Rusty Shield not transforming into Crowned Shield upon summoning of Zacian/Zamazenta
+- Add movepool to Crowned forms of Zacian/Zamazenta
    - Zacian/Zamazenta: Iron Head should transform into Behemoth Blade/Bash in battle
 - Fixed Abundant Shrine lang
 - Fixed Special textures not working for statues on servers
 - Fixed High Plains Vivillon texture
 - Fixed Shiny Entei Doll appearing as a regular Entei
+- Fixed mipmapping due to certain icon texture sizes
+
+Known Issues
+- Uncommonly, there may be a black screen on the upper right quadrant from the cursor. Sorry! It's not worth delaying updates any longer than we already have, but any leads on this are appreciated, please let us know! So far we've had this related to hotbar items overlaying when Time Capsuled Pokemon are in or out of inventory, and resource packs, sometimes F3 + T reloading resolving it
+- Opening the Pokedex attempting to load non-Cobblemon sprites of certain species will cause fps strain on the client until reboot. This would be caused by a Pokemon form or species missed when mapping sprites
+- If you're interested in helping beta test future updates, please apply in our Discord's #apply channel!
+
 
 # 1.0.2
 
@@ -53,6 +67,7 @@ Changelog
 - Tweaked Ogerpon details to support future Tera implementation
 
 Next up: 1.21.1!
+
 
 # 1.0.1
 
@@ -85,6 +100,7 @@ Changelog
 
 Known Issues
 - Client-side invisibility and log spam at times, fixed in 1.0.2.
+
 
 # 1.0
 Haven't been following the BETA's? Here's a quick recap:
@@ -198,6 +214,7 @@ From our last beta, here's the changes/fixes:
 - Fixed Chisel menu not updating. Statue GUI picture should now update when you change things
 - Fixed Time Capsules ignoring untradeable tags
 
+
 # BETA 5.0.0
 Our FINAL BETA is here!
 Please report bugs- new and old in case we missed something important. We hope to have our official release in a couple weeks, we just want some time to collect new bug report and have some time to fix any that arise.
@@ -240,12 +257,12 @@ We believe it is safe enough to use in production now. If you've generated a wor
 Note: This is BETA 5.0. When we release, we're going back down to 1.0 and adjust any improperly labeled versions and/or remove old/confusing ones on our Curse/Modrinth pages.
 
 
-
 # BETA 4.1.1
 - Fix Server Load Crash
 - Fix Wooden Fence Gates missing from Forge fence_gates/wooden tag
 - Fix Gates ItemTag missing
 - Make Snow Layer not survival on Ball Loots, Display Blocks and Pokedolls
+
 
 # BETA 4.1.0
 Model Loading: 
@@ -267,8 +284,10 @@ Shrines:
 Overlays: 
 - Revised overlay code to support hotbar display in the camera and accommodate pumpkin overlays.
 
+
 # BETA 4.0.2
 - Fix Crash when trying to render the Celestial Altar
+
 
 # BETA 4.0.1
 - Fix Rendering not displaying on MacOS and Linux

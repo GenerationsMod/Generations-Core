@@ -7,6 +7,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.MASTERBALL_CHEST
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.POKEBALL_CHEST
 import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsBlocks.ULTRABALL_CHEST
+import generations.gg.generations.core.generationscore.common.world.level.block.GenerationsDecorationBlocks.FRIDGE
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.generic.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.*
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.CelestialAltarBlockEntity
@@ -105,7 +106,8 @@ object GenerationsBlockEntities: PlatformRegistry<BlockEntityType<*>>(Registries
         GenerationsDecorationBlocks.MASTERBALL_CUSHION, GenerationsDecorationBlocks.DESK, GenerationsDecorationBlocks.DOUBLE_STREET_LAMP, GenerationsDecorationBlocks.HDTV,
         GenerationsShrines.DARK_CRYSTAL, GenerationsShrines.LIGHT_CRYSTAL, GenerationsDecorationBlocks.POKEBALL_PILLAR, GenerationsShrines.PRISON_BOTTLE,
         GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_1, GenerationsDecorationBlocks.SHOP_DISPLAY_CASE_2, GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_1, GenerationsDecorationBlocks.SHOP_DISPLAY_SMALL_2,
-        GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1, GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2
+        GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_1, GenerationsDecorationBlocks.SHOP_DISPLAY_LARGE_SHELF_2,
+        GenerationsDecorationBlocks.FRIDGE
     )
     val TRASH_CAN = registerRegular("trash_can", ::TrashCanBlockEntity, GenerationsUtilityBlocks.TRASH_CAN)
 

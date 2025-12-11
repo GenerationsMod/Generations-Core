@@ -225,15 +225,14 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
             .map { a: RecipeHolder<*> -> a as RecipeHolder<RksRecipe> }
     }
 
-    private val result: Optional<ItemStack>
+    private val result: ItemStack
         get() {
-            val maybe_result = currentRecipe.map { recipe: RecipeHolder<RksRecipe> ->
+            return server()?.registryAccess()?.let { server -> currentRecipe.map { recipe: RecipeHolder<RksRecipe> ->
                 recipe.value().assemble(
-                    craftingInput, server()!!.registryAccess()
-                )
-            }
-
-            return Optional.of(maybe_result.orElse(ItemStack.EMPTY))
+                        craftingInput, server
+                    )
+                }.getOrNull()
+            } ?: ItemStack.EMPTY
         }
 
     protected fun canSmelt(result: ItemStack, recipe: RksRecipe): Boolean {
@@ -357,10 +356,9 @@ open class RksMachineBlockEntity(pos: BlockPos, state: BlockState) :
             val flag1 = false
 
             if (tile.isToggled) {
-                val result = tile.result.orElse(ItemStack.EMPTY)
+                val result = tile.result;
 
-                val recipe =
-                    tile.currentRecipe
+                val recipe = tile.currentRecipe
 
                 if (recipe.isPresent && (!tile.isInputEmpty)) {
                     if (tile.canSmelt(result, recipe.get().value())) {

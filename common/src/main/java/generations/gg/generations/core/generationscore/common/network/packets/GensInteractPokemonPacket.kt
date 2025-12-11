@@ -18,16 +18,14 @@ import java.util.UUID
  * @author Village
  * @since January 7th, 2023
  */
-class GensInteractPokemonPacket(val pokemonID: UUID, val mountShoulder: Boolean, val changeFormData: Pair<Boolean, String>) : NetworkPacket<GensInteractPokemonPacket> {
+class GensInteractPokemonPacket(val pokemonID: UUID, val changeFormData: String) : NetworkPacket<GensInteractPokemonPacket> {
     override val id = ID
     override fun encode(buffer: RegistryFriendlyByteBuf) {
         buffer.writeUUID(pokemonID)
-        buffer.writeBoolean(mountShoulder)
-        buffer.writeBoolean(changeFormData.first)
-        buffer.writeString(changeFormData.second)
+        buffer.writeString(changeFormData)
     }
     companion object {
         val ID = cobblemonResource("gens_interact_pokemon")
-        fun decode(buffer: RegistryFriendlyByteBuf) = GensInteractPokemonPacket(buffer.readUUID(), buffer.readBoolean(), Pair(buffer.readBoolean(), buffer.readString()))
+        fun decode(buffer: RegistryFriendlyByteBuf) = GensInteractPokemonPacket(buffer.readUUID(), buffer.readString())
     }
 }
