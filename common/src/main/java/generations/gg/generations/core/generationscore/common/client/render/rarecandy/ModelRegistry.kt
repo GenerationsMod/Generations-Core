@@ -1,5 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy
 
+import com.mojang.blaze3d.pipeline.RenderCall
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
@@ -21,52 +22,64 @@ import java.util.concurrent.TimeUnit
 import java.util.function.BiConsumer
 
 object ModelRegistry {
-    private const val DUMMY = "dummy"
+    private val modelsToLoad: MutableList<ResourceLocation> = mutableListOf()
 
-//    val CACHE = TimedCache(Duration.ofMinutes(1), BiConsumer<ResourceLocation, CompiledModel>{
-//        key, value ->
-////        System.out.println("DELETING: $key")
-//        RenderSystem.recordRenderCall { value.delete() }
-//    }, Function {
-//        val resourceManager = Minecraft.getInstance().resourceManager
-//        try {
-//            of(it, resourceManager.getResourceOrThrow(it))
-//        } catch (e: Exception) {
-//            throw RuntimeException(e)
-//        }
-//    });
+    private val CACHE = mutableMapOf<ResourceLocation, CompiledModel>()
+    private val TIMES = mutableMapOf<ResourceLocation, Double>()
 
-    private val LOADER = Caffeine.newBuilder().executor(Minecraft.getInstance()).expireAfterAccess(2, TimeUnit.MINUTES)
-        .removalListener { key: ResourceLocation, value: CompiledModel, cause: RemovalCause ->
-            if(GenerationsCore.CONFIG.client.logModelLoading) GenerationsCore.LOGGER.info(String.format("%s was removed from cache. Deleting GPU Resouces next.", key, cause))
-            RenderSystem.recordRenderCall { value.delete() }
-        }
-        .buildAsync<ResourceLocation, CompiledModel>(
-            CacheLoader { key ->
-                val resourceManager = Minecraft.getInstance().resourceManager
-                try {
-                    return@CacheLoader of(key, resourceManager.getResourceOrThrow(key))
-                } catch (e: Exception) {
-                    throw RuntimeException(e)
-                }
-            })
     @JvmStatic
     operator fun get(modelProvider: ModelContextProviders.ModelProvider): CompiledModel? {
         return modelProvider.model?.let(::get)
     }
 
     @JvmStatic
-    fun cache() = LOADER
+    fun clear() {
+       ensureOnRenderThread {
+            CACHE.forEach { (_, value) -> value.delete() }
 
-    @JvmStatic
-    fun clear() = LOADER.asMap().clear()
+            CACHE.clear()
+        }
+    }
 
-    fun tick() = /*CACHE.tick()*/ {}
+    fun ensureOnRenderThread(runnable: RenderCall) {
+        if (RenderSystem.isOnRenderThread()) {
+            runnable.execute()
+        } else {
+            RenderSystem.recordRenderCall(runnable)
+        }
+    }
+
+    fun tick() {
+        ensureOnRenderThread {
+            val time = MinecraftClientGameProvider.getTimePassed();
+
+            modelsToLoad.forEach {
+                CACHE[it] = of(it);
+                TIMES[it] = time
+            }
+
+            modelsToLoad.clear()
+
+            val keys = TIMES.filter { time - it.value >= 5.0 }.map { it.key }
+
+            for(key in keys) {
+                CACHE[key]?.also {
+                    it.delete()
+                }
+
+                CACHE.remove(key)
+                TIMES.remove(key)
+            }
+        }
+    }
 
     @JvmStatic
     operator fun get(location: ResourceLocation): CompiledModel? {
         return try {
-            LOADER[location].getNow(null)
+            if(modelsToLoad.contains(location)) return null;
+            else {
+                CACHE[location]?.also { TIMES[location] = MinecraftClientGameProvider.getTimePassed() } ?: run { modelsToLoad += location }.let { null }
+            }
         } catch (e: Exception) {
             null
         }

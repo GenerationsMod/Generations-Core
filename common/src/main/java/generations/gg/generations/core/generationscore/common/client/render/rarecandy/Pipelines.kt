@@ -99,14 +99,14 @@ object Pipelines {
         .supplyMat4("projectionMatrix") { MatrixCache.projectionMatrix }
         .supplyVec2("uvOffset") { it.transform.offset() ?: Transform.DEFAULT_OFFSET }
         .supplyVec2("uvScale") { it.transform.scale() ?: Transform.DEFAULT_SCALE }
-        .supplyMat4s("boneTransforms") { ctx -> ctx.instance.instanceOrNull<AnimatedObjectInstance>()?.transforms ?: AnimationController.NO_ANIMATION }
+        .supplyMat4s("boneTransforms") { ctx -> ctx.instance().instanceOrNull<AnimatedObjectInstance>()?.transforms ?: AnimationController.NO_ANIMATION }
 
         .supplyColorArray("ColorModulator") { RenderSystem.getShaderColor() }
         .supplyFloatUniform("FogStart") { RenderSystem.getShaderFogStart() }
         .supplyFloatUniform("FogEnd") { RenderSystem.getShaderFogEnd() }
         .supplyColorArray("FogColor") { RenderSystem.getShaderFogColor() }
 
-        .supplyTexture("diffuse", 0) { it.instance.instanceOrNull<StatueInstance>()?.material?.let { GenerationsTextureLoader.getTextureOrNull(it) } ?: it.getTextureOrOther({ it.material.images().diffuse }) { ITextureLoader.instance().nuetralFallback } }
+        .supplyTexture("diffuse", 0) { it.instance().instanceOrNull<StatueInstance>()?.material?.let { GenerationsTextureLoader.getTextureOrNull(it) } ?: it.getTextureOrOther({ it.material.images().diffuse }) { ITextureLoader.instance().nuetralFallback } }
         .supplyTexture("mask", 1) { it.getTextureOrOther({ it.material.images().mask }) { ITextureLoader.instance().darkFallback } }
         .supplyTexture("layer", 2) { it.getTextureOrOther({ it.material.images().layer }) { ITextureLoader.instance().darkFallback } }
         .supplyTexture("lightmap", 3) { Minecraft.getInstance().gameRenderer.lightTexture() as ITexture }
@@ -121,11 +121,11 @@ object Pipelines {
             ctx.uniform().upload2i(light and 0xFFFF, light shr 16 and 0xFFFF)
         }
 
-        .supplyVec3("tint") { it.instance.instanceOrNull<CobblemonInstance>()?.tint?.takeIf { it != ZERO } ?: ONE }
+        .supplyVec3("tint") { it.instance().instanceOrNull<CobblemonInstance>()?.tint?.takeIf { it != ZERO } ?: ONE }
 
         .supplyInt("frame") { pingpong(MinecraftClientGameProvider.getTimePassed()).toInt() }
 
-        .supplyVec3("baseColor1") { ctx -> ctx.instance.instanceOrNull<TintProvider>()?.tint ?: ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor1 ?: ONE }
+        .supplyVec3("baseColor1") { ctx -> ctx.instance().instanceOrNull<TintProvider>()?.tint ?: ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor1 ?: ONE }
         .supplyVec3("baseColor2") { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor2 ?: ONE }
         .supplyVec3("baseColor3") { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor3 ?: ONE }
         .supplyVec3("baseColor4") { ctx -> ctx.takeIf { !it.isStatueMaterial }?.material?.values()?.baseColor4 ?: ONE }
@@ -146,10 +146,10 @@ object Pipelines {
         .supplyVec3("Light1_Direction") { RenderSystem.shaderLightDirections[1] }
 
         .supplyBooleanUniform("useTera") {
-            val isActive = it.instance.instanceOrNull<CobblemonInstance>()?.teraActive ?: false
+            val isActive = it.instance().instanceOrNull<CobblemonInstance>()?.teraActive ?: false
             return@supplyBooleanUniform isActive
         }
-        .supplyVec3("teraTint") { it.instance.instanceOrNull<CobblemonInstance>()?.teraTint?.takeIf { it != ZERO } ?: ONE }
+        .supplyVec3("teraTint") { it.instance().instanceOrNull<CobblemonInstance>()?.teraTint?.takeIf { it != ZERO } ?: ONE }
 
         .prePostDraw({ material ->
             if (material.cullType() != CullType.None) {
@@ -178,26 +178,26 @@ fun pingpong(time: Double): Double = (sin(time * Math.PI * 2) * 7 + 7).toInt().t
 
 private fun Pipeline.Builder.supplyColorArray(name: String, function: (UniformUploadContext) -> FloatArray): Pipeline.Builder = this.supplyUniform(name) {
     val color = function.invoke(it)
-    it.uniform.upload4f(color[0], color[1], color[2], color[3])
+    it.uniform().upload4f(color[0], color[1], color[2], color[3])
 }
 
-private fun Pipeline.Builder.supplyMat4s(name: String, function: (UniformUploadContext) -> Array<Matrix4f>): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadMat4fs(function.invoke(it)) }
-private fun Pipeline.Builder.supplyMat4(name: String, function: (UniformUploadContext) -> Matrix4f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadMat4f(function.invoke(it)) }
-private fun Pipeline.Builder.supplyVec2(name: String, function: (UniformUploadContext) -> Vector2f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadVec2f(function.invoke(it)) }
-private fun Pipeline.Builder.supplyVec3(name: String, function: (UniformUploadContext) -> Vector3f): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadVec3f(function.invoke(it))}
-private fun Pipeline.Builder.supplyFloatUniform(name: String, function: (UniformUploadContext) -> Float): Pipeline.Builder = this.supplyUniform(name) { it.uniform.uploadFloat(function.invoke(it)) }
+private fun Pipeline.Builder.supplyMat4s(name: String, function: (UniformUploadContext) -> Array<Matrix4f>): Pipeline.Builder = this.supplyUniform(name) { it.uniform().uploadMat4fs(function.invoke(it)) }
+private fun Pipeline.Builder.supplyMat4(name: String, function: (UniformUploadContext) -> Matrix4f): Pipeline.Builder = this.supplyUniform(name) { it.uniform().uploadMat4f(function.invoke(it)) }
+private fun Pipeline.Builder.supplyVec2(name: String, function: (UniformUploadContext) -> Vector2f): Pipeline.Builder = this.supplyUniform(name) { it.uniform().uploadVec2f(function.invoke(it)) }
+private fun Pipeline.Builder.supplyVec3(name: String, function: (UniformUploadContext) -> Vector3f): Pipeline.Builder = this.supplyUniform(name) { it.uniform().uploadVec3f(function.invoke(it))}
+private fun Pipeline.Builder.supplyFloatUniform(name: String, function: (UniformUploadContext) -> Float): Pipeline.Builder = this.supplyUniform(name) { it.uniform().uploadFloat(function.invoke(it)) }
 private fun Pipeline.Builder.supplyEnumUniform(name: String, value: Enum<*>): Pipeline.Builder = this.supplyInt(name) { value.ordinal }
-private fun Pipeline.Builder.supplyInt(name: String, function: (UniformUploadContext) -> Int): Pipeline.Builder = this.also { this.supplyUniform(name) { it.uniform.uploadInt(function.invoke(it)) } }
+private fun Pipeline.Builder.supplyInt(name: String, function: (UniformUploadContext) -> Int): Pipeline.Builder = this.also { this.supplyUniform(name) { it.uniform().uploadInt(function.invoke(it)) } }
 public inline fun <reified T> Any?.instanceOrNull(): T? = if(this is T) this else null
 
 private val UniformUploadContext.isStatueMaterial: Boolean
     get() = statueMaterial != null
 
 private val UniformUploadContext.statueMaterial: String?
-    get() = this.instance.instanceOrNull<StatueInstance>()?.material?.takeIf { GenerationsTextureLoader.has(it) }
+    get() = this.instance().instanceOrNull<StatueInstance>()?.material?.takeIf { GenerationsTextureLoader.has(it) }
 
 private val UniformUploadContext.transform: Transform
-    get() = this.instance.instanceOrNull<AnimatedObjectInstance>()?.getTransform(this.material.materialName)?.takeIf { !it.isUnit } ?: this.`object`().getTransform(this.instance.variant())
+    get() = this.instance().instanceOrNull<AnimatedObjectInstance>()?.getTransform(this.material.materialName)?.takeIf { !it.isUnit } ?: this.`object`().getTransform(this.instance().variant())
 
 
 private fun UniformUploadContext.getTextureOrOther(function: (UniformUploadContext) -> String?, supplier: () -> ITexture): ITexture = GenerationsTextureLoader.getTexture(function.invoke(this))?.takeUnless { texture -> texture === GenerationsTextureLoader.MissingTextureProxy } ?: supplier.invoke()
@@ -209,7 +209,7 @@ private fun Pipeline.Builder.supplyTexture(name: String, slot: Int, function: (U
     it.uniform().uploadInt(slot)
 }
 
-private fun Pipeline.Builder.supplyBooleanUniform(name: String, function: (UniformUploadContext) -> Boolean): Pipeline.Builder { return this.supplyUniform(name) { it.uniform.uploadBoolean(function.invoke(it)) } }
+private fun Pipeline.Builder.supplyBooleanUniform(name: String, function: (UniformUploadContext) -> Boolean): Pipeline.Builder { return this.supplyUniform(name) { it.uniform().uploadBoolean(function.invoke(it)) } }
 
 fun read(manager: ResourceManager, name: ResourceLocation): String {
     try {
