@@ -1,3 +1,16 @@
+# 1.2.1
+
+Bug Fixes
+- Resolved FPS decay when using smooth models (finally!)
+- Fixed a Fridge crash
+- Fixed a client crash that occurred with RKS Machine
+- Fixed a post battle conditional crash
+- Fixed Cobblemon profiles and portraits appearing a couple pixels up
+- Fixed Therian form changes
+- Adjusted Gible and Clefairy evolution line spawn rates in the End to account for some modded biomes and Ultra Beast rates
+- Adjusted sound volumes for Elevator and Meloetta Relic Song
+
+
 # 1.2.0
 
 Additions

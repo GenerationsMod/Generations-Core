@@ -17,13 +17,13 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.Level
 
-fun <T> Iterable<T>?.any(predicate: (T) -> Boolean): Boolean = this?.any(predicate) ?: false
+fun <T> Iterable<T>?.anySafe(predicate: (T) -> Boolean): Boolean = this?.any(predicate) ?: false
 
 class MeltanBox(settings: Properties) : PostBattleUpdatingWithItem(
     settings,
     LegendKeys.MELMETAL,
     "pixelmon.meltanbox.amountfull", { player, _, battle: BattleData ->
-        player.entity?.party()?.map(Pokemon::species)?.map(Species::resourceIdentifier)?.map(ResourceLocation::toString).any { it == "cobblemon:meltan" } && battle.pokemon.types.any { it == ElementalTypes.STEEL }
+        player.entity?.party()?.map(Pokemon::species)?.map(Species::resourceIdentifier)?.map(ResourceLocation::toString).anySafe { it == "cobblemon:meltan" } && battle.pokemon.types.anySafe { it == ElementalTypes.STEEL }
     }) {
 
     override fun postSpawn(level: Level, player: Player, usedHand: InteractionHand) {
