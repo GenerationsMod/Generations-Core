@@ -66,8 +66,10 @@ class CompiledModel @JvmOverloads constructor(
     }
 
     private fun renderRareCandy(instance: ObjectInstance, objectManager: ObjectManager) {
-        if(instance.isLinked) instance.use()
-        else objectManager.add(renderObject!!, instance)
+        if (!instance.isLinked) {
+            objectManager.add(renderObject!!, instance)
+        }
+        instance.use()
     }
 
     fun delete() {

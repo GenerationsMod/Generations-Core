@@ -76,7 +76,7 @@ object ModelRegistry {
     @JvmStatic
     operator fun get(location: ResourceLocation): CompiledModel? {
         return try {
-            if(modelsToLoad.contains(location)) return null;
+            if(modelsToLoad.contains(location)) null;
             else {
                 CACHE[location]?.also { TIMES[location] = MinecraftClientGameProvider.getTimePassed() } ?: run { modelsToLoad += location }.let { null }
             }
