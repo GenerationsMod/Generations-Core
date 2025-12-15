@@ -65,13 +65,16 @@ configurations {
         "shadowBundle"(project(":common", "transformProductionNeoForge"))
 
 //        modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-neoforge-1.21.1", version = "0.0.7")
+        "shadowBundle"(
+        forgeRuntimeLibrary(files("../libs/RareCandy-2.14.1.jar"))!!
+        )
 
-        forgeRuntimeLibrary(
-            "shadowBundle"(
-                "gg.generations",
-                "RareCandy",
-                "${project.properties["rareCandy"]}"
-            ) { isTransitive = false })!!
+//        forgeRuntimeLibrary(
+//            "shadowBundle"(
+//                "gg.generations",
+//                "RareCandy",
+//                "${project.properties["rareCandy"]}"
+//            ) { isTransitive = false })!!
 
         modCompileOnly("mcp.mobius.waila:wthit-api:neo-${project.properties["WTHIT"]}")
         modRuntimeOnly("mcp.mobius.waila:wthit:neo-${project.properties["WTHIT"]}+")
