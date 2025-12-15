@@ -9,7 +9,8 @@
   "generations_core.item.meloettas_relic_song": {
     "sounds": [
       {
-        "name": "generations_core:items/meloettas_relic_song"
+        "name": "generations_core:items/meloettas_relic_song",
+		"volume": 0.5
       }
     ]
   },
@@ -37,7 +38,8 @@
   "generations_core.block.elevator": {
     "sounds": [
       {
-        "name": "generations_core:block/elevator"
+        "name": "generations_core:block/elevator",
+		"volume": 0.3
       }
     ]
   },
