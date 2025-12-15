@@ -122,3 +122,5 @@ common/src/main/generated/resources/.cache
 fabric/src/main/generated/.cache
 
 /.kotlin/
+
+!/libs/*.jar
