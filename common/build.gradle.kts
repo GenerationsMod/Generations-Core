@@ -17,7 +17,7 @@ dependencies {
 
 //    modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-common-1.21.1", version = "0.0.7")
 
-    implementation(files("../libs/RareCandy-2.14.1.jar"))
+    implementation(files("../libs/RareCandy-2.14.2.jar"))
 
 //    implementation("gg.generations:RareCandy:${project.properties["rareCandy"]}"){isTransitive = false}
 
