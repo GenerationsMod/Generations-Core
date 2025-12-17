@@ -3,12 +3,14 @@ package generations.gg.generations.core.generationscore.common.api
 import com.bedrockk.molang.runtime.MoParams
 import com.bedrockk.molang.runtime.value.DoubleValue
 import com.bedrockk.molang.runtime.value.StringValue
+import com.cobblemon.mod.common.api.abilities.Abilities
 import com.cobblemon.mod.common.api.molang.MoLangFunctions
 import com.cobblemon.mod.common.api.molang.MoLangFunctions.addFunctions
 import com.cobblemon.mod.common.api.molang.ObjectValue
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.feature.*
 import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
+import com.cobblemon.mod.common.api.storage.party.PartyPosition
 import com.cobblemon.mod.common.api.storage.party.PartyStore
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.*
@@ -83,6 +85,16 @@ object GenerationsMolangFunctions {
 
                         DoubleValue.ZERO
                     },
+                    "get_ability" to Function {
+                        StringValue(pokemon.ability.name)
+                    },
+                    "set_ability" to Function {
+                        val ability = it.getStringOrNull(0)?.let { Abilities.get(it) }?.create() ?: return@Function DoubleValue.ZERO
+
+                        pokemon.updateAbility(ability)
+
+                        DoubleValue.ZERO
+                    },
 
                     "remove_rotom_move" to Function {
                         pokemon.removeMove("overheat")
@@ -112,8 +124,13 @@ object GenerationsMolangFunctions {
                         toInt()?.let {
                             party.get(it)
                         }?.asMoLangValue() ?: DoubleValue(0.0) },
-                    "add" to java.util.function.Function {
+                    "add" to Function {
                         it.getStringOrNull(0)?.toProperties()?.also { party.add(it.create()) }
+
+                        return@Function Unit
+                    },
+                    "remove" to Function {
+                        it.getIntOrNull(0)?.also { party.remove(PartyPosition(it)) }
 
                         return@Function Unit
                     }

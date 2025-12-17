@@ -10,70 +10,543 @@
   },
   "pages": [
     {
-      "id": "selection",
+      "id": "main_menu",
+      "speaker": "player",
       "lines": [
-        "Select what you want to do.",
+        "Zygarde Cube",
         {
           "type": "expression",
-          "expression": "'You currently have ' + q.player.selected_item.damage_as_string + ' cells available."
+          "expression": "'You currently have ' + q.player.selected_item.damage + ' cells available.'"
         }
       ],
       "input": {
         "type": "option",
         "options": [
           {
-            "text": "Create",
-            "isVisible": "q.player.capped('cobblemon:zygarde') && q.player.selected_item.damage >= 10",
-            "action": [
-              "v.cells = q.player.selected_item.damage;",
-              "q.dialogue.set_page('form');"
-            ]
+            "text": "Create New Zygarde",
+            "value": "create",
+            "isVisible": "q.player.selected_item.damage >= 10",
+            "action": "q.dialogue.set_page('create_form');"
           },
           {
-            "text": "No actions available",
-            "isVisible": "(!q.player.has_in_party('cobblemon:zygarde') || !q.player.capped('cobblemon:zygarde')) && q.player.selected_item.damage < 10",
-            "action": [
-              "q.dialogue.close();"
-            ]
+            "text": "Modify Zygarde",
+            "value": "modify",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde')",
+            "action": "q.dialogue.set_page('select_zygarde_modify');"
+          },
+          {
+            "text": "Dissolve Zygarde",
+            "value": "dissolve",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde')",
+            "action": "q.dialogue.set_page('select_zygarde_dissolve');"
+          },
+          {
+            "text": "Close",
+            "value": "close",
+            "action": "q.dialogue.close();"
           }
         ]
       }
     },
     {
-      "id": "form",
+      "id": "select_zygarde_modify",
+      "speaker": "player",
       "lines": [
-        "Which type of zygarde do you want to create?"
+        "Select which Zygarde to modify:"
       ],
       "input": {
         "type": "option",
         "options": [
           {
-            "text": "10%",
-            "value": "10",
-            "isVisible": "v.cells >= 10",
+            "text": "Slot 1",
+            "value": "slot1",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 0)",
             "action": [
-              "v.form = '10%';",
-              "v.cells_needed = 10;",
-              "q.dialogue.set_page('ability');"
+              "v.slot = 0;",
+              "v.pokemon = q.player.party.get(0);",
+              "v.current_form = v.pokemon.get_feature('zygarde_form');",
+              "v.current_ability = v.pokemon.get_ability();",
+              "q.dialogue.set_page('modify_options');"
             ]
           },
           {
-            "text": "50%",
-            "value": "50",
-            "isVisible": "v.cells >= 50",
+            "text": "Slot 2",
+            "value": "slot2",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 1)",
             "action": [
-              "v.form = '50%';",
-              "v.cells_needed = 50;",
-              "q.dialogue.set_page('ability');"
+              "v.slot = 1;",
+              "v.pokemon = q.player.party.get(1);",
+              "v.current_form = v.pokemon.get_feature('zygarde_form');",
+              "v.current_ability = v.pokemon.get_ability();",
+              "q.dialogue.set_page('modify_options');"
             ]
+          },
+          {
+            "text": "Slot 3",
+            "value": "slot3",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 2)",
+            "action": [
+              "v.slot = 2;",
+              "v.pokemon = q.player.party.get(2);",
+              "v.current_form = v.pokemon.get_feature('zygarde_form');",
+              "v.current_ability = v.pokemon.get_ability();",
+              "q.dialogue.set_page('modify_options');"
+            ]
+          },
+          {
+            "text": "Slot 4",
+            "value": "slot4",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 3)",
+            "action": [
+              "v.slot = 3;",
+              "v.pokemon = q.player.party.get(3);",
+              "v.current_form = v.pokemon.get_feature('zygarde_form');",
+              "v.current_ability = v.pokemon.get_ability();",
+              "q.dialogue.set_page('modify_options');"
+            ]
+          },
+          {
+            "text": "Slot 5",
+            "value": "slot5",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 4)",
+            "action": [
+              "v.slot = 4;",
+              "v.pokemon = q.player.party.get(4);",
+              "v.current_form = v.pokemon.get_feature('zygarde_form');",
+              "v.current_ability = v.pokemon.get_ability();",
+              "q.dialogue.set_page('modify_options');"
+            ]
+          },
+          {
+            "text": "Slot 6",
+            "value": "slot6",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 5)",
+            "action": [
+              "v.slot = 5;",
+              "v.pokemon = q.player.party.get(5);",
+              "v.current_form = v.pokemon.get_feature('zygarde_form');",
+              "v.current_ability = v.pokemon.get_ability();",
+              "q.dialogue.set_page('modify_options');"
+            ]
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
           }
         ]
       }
     },
     {
-      "id": "ability",
+      "id": "modify_options",
+      "speaker": "player",
       "lines": [
-        "Which ability should your new Zygarde have?"
+        {
+          "type": "expression",
+          "expression": "'Current Form: ' + v.current_form"
+        },
+        {
+          "type": "expression",
+          "expression": "'Current Ability: ' + v.current_ability"
+        },
+        "What would you like to modify?"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Change Form",
+            "value": "form",
+            "action": "q.dialogue.set_page('modify_form');"
+          },
+          {
+            "text": "Change Ability",
+            "value": "ability",
+            "action": "q.dialogue.set_page('modify_ability');"
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
+          }
+        ]
+      }
+    },
+    {
+      "id": "modify_form",
+      "speaker": "player",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'Current Form: ' + v.current_form"
+        },
+        {
+          "type": "expression",
+          "expression": "'Available Cells: ' + q.player.selected_item.damage"
+        },
+        "Select new form:"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "10% Form",
+            "value": "10",
+            "isVisible": "v.current_form != '10%'",
+            "action": [
+              "v.new_form = '10%';",
+              "v.new_form_cost = 10;",
+              "v.old_form_cost = v.current_form == '50%' ? 50 : 100;",
+              "v.cell_diff = v.new_form_cost - v.old_form_cost;",
+              "q.dialogue.set_page('confirm_form_change');"
+            ]
+          },
+          {
+            "text": "50% Form",
+            "value": "50",
+            "isVisible": "v.current_form != '50%'",
+            "action": [
+              "v.new_form = '50%';",
+              "v.new_form_cost = 50;",
+              "v.old_form_cost = v.current_form == '10%' ? 10 : 100;",
+              "v.cell_diff = v.new_form_cost - v.old_form_cost;",
+              "q.dialogue.set_page('confirm_form_change');"
+            ]
+          },
+          {
+            "text": "100% Form (Complete)",
+            "value": "100",
+            "isVisible": "v.current_form != '100%'",
+            "action": [
+              "v.new_form = '100%';",
+              "v.new_form_cost = 100;",
+              "v.old_form_cost = v.current_form == '10%' ? 10 : 50;",
+              "v.cell_diff = v.new_form_cost - v.old_form_cost;",
+              "q.dialogue.set_page('confirm_form_change');"
+            ]
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
+          }
+        ]
+      }
+    },
+    {
+      "id": "confirm_form_change",
+      "speaker": "player",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "v.cell_diff > 0 ? ('Upgrading from ' + v.current_form + ' to ' + v.new_form + ' will consume ' + v.cell_diff + ' cells.') : ('Downgrading from ' + v.current_form + ' to ' + v.new_form + ' will return ' + (-v.cell_diff) + ' cells.')"
+        },
+        {
+          "type": "expression",
+          "expression": "'You currently have ' + q.player.selected_item.damage + ' cells.'"
+        },
+        "Proceed?"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Confirm",
+            "value": "confirm",
+            "isVisible": "v.cell_diff <= 0 || q.player.selected_item.damage >= v.cell_diff",
+            "action": [
+              "q.player.selected_item.damage(-v.cell_diff);",
+              "v.pokemon.set_feature('zygarde_form', v.new_form);",
+              "q.dialogue.set_page('form_changed');"
+            ]
+          },
+          {
+            "text": "Not enough cells!",
+            "value": "no_cells",
+            "isVisible": "v.cell_diff > 0 && q.player.selected_item.damage < v.cell_diff",
+            "action": "q.dialogue.set_page('modify_form');"
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
+          }
+        ]
+      }
+    },
+    {
+      "id": "form_changed",
+      "speaker": "player",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'Zygarde form changed to ' + v.new_form + '!'"
+        }
+      ],
+      "input": {
+        "type": "auto-continue",
+        "delay": 2,
+        "allowSkip": false,
+        "action": "q.dialogue.close();"
+      }
+    },
+    {
+      "id": "modify_ability",
+      "speaker": "player",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'Current Ability: ' + v.current_ability"
+        },
+        {
+          "type": "expression",
+          "expression": "'Current Form: ' + v.current_form"
+        },
+        "Select new ability:"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Aura Break",
+            "value": "aurabreak",
+            "isVisible": "v.current_ability != 'aurabreak'",
+            "action": [
+              "v.pokemon.set_ability('aurabreak');",
+              "q.dialogue.set_page('ability_changed');"
+            ]
+          },
+          {
+            "text": "Power Construct",
+            "value": "powerconstruct",
+            "isVisible": "v.current_ability != 'powerconstruct' && (v.current_form == '50%' || v.current_form == '100%')",
+            "action": [
+              "v.pokemon.set_ability('powerconstruct');",
+              "q.dialogue.set_page('ability_changed');"
+            ]
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ability_changed",
+      "speaker": "player",
+      "lines": [
+        "Ability changed successfully!"
+      ],
+      "input": {
+        "type": "auto-continue",
+        "delay": 2,
+        "allowSkip": false,
+        "action": "q.dialogue.close();"
+      }
+    },
+    {
+      "id": "select_zygarde_dissolve",
+      "speaker": "player",
+      "lines": [
+        "Select which Zygarde to dissolve:",
+        "WARNING: This will remove the Pokémon from your party!"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Slot 1",
+            "value": "slot1",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 0)",
+            "action": [
+              "v.slot = 0;",
+              "v.pokemon = q.player.party.get(0);",
+              "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
+              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "q.dialogue.set_page('confirm_dissolve');"
+            ]
+          },
+          {
+            "text": "Slot 2",
+            "value": "slot2",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 1)",
+            "action": [
+              "v.slot = 1;",
+              "v.pokemon = q.player.party.get(1);",
+              "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
+              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "q.dialogue.set_page('confirm_dissolve');"
+            ]
+          },
+          {
+            "text": "Slot 3",
+            "value": "slot3",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 2)",
+            "action": [
+              "v.slot = 2;",
+              "v.pokemon = q.player.party.get(2);",
+              "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
+              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "q.dialogue.set_page('confirm_dissolve');"
+            ]
+          },
+          {
+            "text": "Slot 4",
+            "value": "slot4",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 3)",
+            "action": [
+              "v.slot = 3;",
+              "v.pokemon = q.player.party.get(3);",
+              "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
+              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "q.dialogue.set_page('confirm_dissolve');"
+            ]
+          },
+          {
+            "text": "Slot 5",
+            "value": "slot5",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 4)",
+            "action": [
+              "v.slot = 4;",
+              "v.pokemon = q.player.party.get(4);",
+              "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
+              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "q.dialogue.set_page('confirm_dissolve');"
+            ]
+          },
+          {
+            "text": "Slot 6",
+            "value": "slot6",
+            "isVisible": "q.player.has_in_party('cobblemon:zygarde', 5)",
+            "action": [
+              "v.slot = 5;",
+              "v.pokemon = q.player.party.get(5);",
+              "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
+              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "q.dialogue.set_page('confirm_dissolve');"
+            ]
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
+          }
+        ]
+      }
+    },
+    {
+      "id": "confirm_dissolve",
+      "speaker": "player",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'Are you sure you want to dissolve this ' + v.dissolve_form + ' Zygarde?'"
+        },
+        {
+          "type": "expression",
+          "expression": "'You will receive ' + v.cells_to_return + ' cells back.'"
+        },
+        "This cannot be undone!"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Yes, dissolve it",
+            "value": "yes",
+            "action": [
+              "q.player.selected_item.damage(v.cells_to_return);",
+              "q.player.party.remove(v.slot);",
+              "q.dialogue.set_page('dissolved');"
+            ]
+          },
+          {
+            "text": "No, cancel",
+            "value": "no",
+            "action": "q.dialogue.close();"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dissolved",
+      "speaker": "player",
+      "lines": [
+        "Zygarde dissolved successfully!",
+        {
+          "type": "expression",
+          "expression": "v.cells_to_return + ' cells returned to your Zygarde Cube.'"
+        }
+      ],
+      "input": {
+        "type": "auto-continue",
+        "delay": 2,
+        "allowSkip": false,
+        "action": "q.dialogue.close();"
+      }
+    },
+    {
+      "id": "create_form",
+      "speaker": "player",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'Available Cells: ' + q.player.selected_item.damage"
+        },
+        "Which form of Zygarde do you want to create?"
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "10% Form (10 cells)",
+            "value": "10",
+            "isVisible": "q.player.selected_item.damage >= 10",
+            "action": [
+              "v.form = '10%';",
+              "v.cells_needed = 10;",
+              "q.dialogue.set_page('create_ability');"
+            ]
+          },
+          {
+            "text": "50% Form (50 cells)",
+            "value": "50",
+            "isVisible": "q.player.selected_item.damage >= 50",
+            "action": [
+              "v.form = '50%';",
+              "v.cells_needed = 50;",
+              "q.dialogue.set_page('create_ability');"
+            ]
+          },
+          {
+            "text": "100% Form (Complete) (100 cells)",
+            "value": "100",
+            "isVisible": "q.player.selected_item.damage >= 100",
+            "action": [
+              "v.form = '100%';",
+              "v.cells_needed = 100;",
+              "q.dialogue.set_page('create_ability');"
+            ]
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
+          }
+        ]
+      }
+    },
+    {
+      "id": "create_ability",
+      "speaker": "player",
+      "lines": [
+        {
+          "type": "expression",
+          "expression": "'Creating ' + v.form + ' Zygarde'"
+        },
+        "Which ability should it have?"
       ],
       "input": {
         "type": "option",
@@ -83,39 +556,41 @@
             "value": "aurabreak",
             "action": [
               "v.ability = 'aurabreak';",
-              "v.ability_name = 'Aura Break';",
               "q.dialogue.set_page('create_congrats');"
             ]
           },
           {
             "text": "Power Construct",
             "value": "powerconstruct",
-            "isVisible": "v.cells >= (100 - v.cell_needed)",
+            "isVisible": "v.form == '50%' || v.form == '100%'",
             "action": [
               "v.ability = 'powerconstruct';",
-              "v.ability_name = 'Power Construct';",
-              "v.cells_needed = 100;",
               "q.dialogue.set_page('create_congrats');"
             ]
+          },
+          {
+            "text": "Cancel",
+            "value": "cancel",
+            "action": "q.dialogue.close();"
           }
         ]
       }
     },
     {
       "id": "create_congrats",
-      "allowSkip": false,
+      "speaker": "player",
       "lines": [
         "Congratulations!",
         {
           "type": "expression",
-          "expression": "'You created have created a ' + v.form + ' zygarde with the ability ' + v.ability_name + '."
+          "expression": "'You have created a ' + v.form + ' Zygarde with ' + v.ability + '!'"
         },
         "It was added to your party."
       ],
       "input": {
         "type": "auto-continue",
+        "delay": 2,
         "allowSkip": false,
-        "delay": 1,
         "action": [
           "q.player.selected_item.damage(-v.cells_needed);",
           "q.player.party.add('zygarde lvl=70 zygarde_form=' + v.form + ' ability=' + v.ability);",
