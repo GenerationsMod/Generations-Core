@@ -13,7 +13,7 @@
       "id": "main_menu",
       "speaker": "player",
       "lines": [
-        "Zygarde Cube",
+        "What would you like to do?",
         {
           "type": "expression",
           "expression": "'You currently have ' + q.player.selected_item.damage + ' cells available.'"
@@ -23,19 +23,13 @@
         "type": "option",
         "options": [
           {
-            "text": "Create New Zygarde",
+            "text": "Create",
             "value": "create",
             "isVisible": "q.player.selected_item.damage >= 10",
             "action": "q.dialogue.set_page('create_form');"
           },
           {
-            "text": "Modify Zygarde",
-            "value": "modify",
-            "isVisible": "q.player.has_in_party('cobblemon:zygarde')",
-            "action": "q.dialogue.set_page('select_zygarde_modify');"
-          },
-          {
-            "text": "Dissolve Zygarde",
+            "text": "Disassemble",
             "value": "dissolve",
             "isVisible": "q.player.has_in_party('cobblemon:zygarde')",
             "action": "q.dialogue.set_page('select_zygarde_dissolve');"
@@ -350,8 +344,8 @@
       "id": "select_zygarde_dissolve",
       "speaker": "player",
       "lines": [
-        "Select which Zygarde to dissolve:",
-        "WARNING: This will remove the Pokémon from your party!"
+        "Which Zygarde would you like to disassemble?",
+        "WARNING: This will remove the Zygarde completely!"
       ],
       "input": {
         "type": "option",
@@ -364,7 +358,7 @@
               "v.slot = 0;",
               "v.pokemon = q.player.party.get(0);",
               "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
-              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "v.cells_to_return = (v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100)) + (v.pokemon.get_ability() == 'powerconstruct' ? 50 : 0);",
               "q.dialogue.set_page('confirm_dissolve');"
             ]
           },
@@ -376,7 +370,7 @@
               "v.slot = 1;",
               "v.pokemon = q.player.party.get(1);",
               "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
-              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "v.cells_to_return = (v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100)) + (v.pokemon.get_ability() == 'powerconstruct' ? 50 : 0);",
               "q.dialogue.set_page('confirm_dissolve');"
             ]
           },
@@ -388,7 +382,7 @@
               "v.slot = 2;",
               "v.pokemon = q.player.party.get(2);",
               "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
-              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "v.cells_to_return = (v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100)) + (v.pokemon.get_ability() == 'powerconstruct' ? 50 : 0);",
               "q.dialogue.set_page('confirm_dissolve');"
             ]
           },
@@ -400,7 +394,7 @@
               "v.slot = 3;",
               "v.pokemon = q.player.party.get(3);",
               "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
-              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "v.cells_to_return = (v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100)) + (v.pokemon.get_ability() == 'powerconstruct' ? 50 : 0);",
               "q.dialogue.set_page('confirm_dissolve');"
             ]
           },
@@ -412,7 +406,7 @@
               "v.slot = 4;",
               "v.pokemon = q.player.party.get(4);",
               "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
-              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "v.cells_to_return = (v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100)) + (v.pokemon.get_ability() == 'powerconstruct' ? 50 : 0);",
               "q.dialogue.set_page('confirm_dissolve');"
             ]
           },
@@ -424,7 +418,7 @@
               "v.slot = 5;",
               "v.pokemon = q.player.party.get(5);",
               "v.dissolve_form = v.pokemon.get_feature('zygarde_form');",
-              "v.cells_to_return = v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100);",
+              "v.cells_to_return = (v.dissolve_form == '10%' ? 10 : (v.dissolve_form == '50%' ? 50 : 100)) + (v.pokemon.get_ability() == 'powerconstruct' ? 50 : 0);",
               "q.dialogue.set_page('confirm_dissolve');"
             ]
           },
@@ -442,7 +436,7 @@
       "lines": [
         {
           "type": "expression",
-          "expression": "'Are you sure you want to dissolve this ' + v.dissolve_form + ' Zygarde?'"
+          "expression": "'Are you sure you want to disassemble this ' + v.dissolve_form + ' Zygarde?'"
         },
         {
           "type": "expression",
@@ -454,7 +448,7 @@
         "type": "option",
         "options": [
           {
-            "text": "Yes, dissolve it",
+            "text": "Yes",
             "value": "yes",
             "action": [
               "q.player.selected_item.damage(v.cells_to_return);",
@@ -463,7 +457,7 @@
             ]
           },
           {
-            "text": "No, cancel",
+            "text": "No",
             "value": "no",
             "action": "q.dialogue.close();"
           }
@@ -474,10 +468,10 @@
       "id": "dissolved",
       "speaker": "player",
       "lines": [
-        "Zygarde dissolved successfully!",
+        "Zygarde disassembled successfully!",
         {
           "type": "expression",
-          "expression": "v.cells_to_return + ' cells returned to your Zygarde Cube.'"
+          "expression": "v.cells_to_return + ' cells have been reassembled into your Zygarde Cube.'"
         }
       ],
       "input": {
@@ -501,33 +495,51 @@
         "type": "option",
         "options": [
           {
-            "text": "10% Form (10 cells)",
+            "text": "10% Aura Break",
             "value": "10",
             "isVisible": "q.player.selected_item.damage >= 10",
             "action": [
               "v.form = '10%';",
               "v.cells_needed = 10;",
-              "q.dialogue.set_page('create_ability');"
+			  "v.ability = 'aurabreak';",
+			  "v.ability_string_cheese = 'Aura Break';",
+              "q.dialogue.set_page('confirm_create');"
+            ]
+          },
+		  {
+            "text": "10% PowerConstruct",
+            "value": "60",
+            "isVisible": "q.player.selected_item.damage >= 60",
+            "action": [
+              "v.form = '10%';",
+              "v.cells_needed = 60;",
+			  "v.ability = 'powerconstruct';",
+			  "v.ability_string_cheese = 'Power Construct';",
+              "q.dialogue.set_page('confirm_create');"
             ]
           },
           {
-            "text": "50% Form (50 cells)",
+            "text": "50% Aura Break",
             "value": "50",
             "isVisible": "q.player.selected_item.damage >= 50",
             "action": [
               "v.form = '50%';",
               "v.cells_needed = 50;",
-              "q.dialogue.set_page('create_ability');"
+			  "v.ability = 'aurabreak';",
+			  "v.ability_string_cheese = 'Aura Break';",
+              "q.dialogue.set_page('confirm_create');"
             ]
           },
           {
-            "text": "100% Form (Complete) (100 cells)",
+            "text": "50% PowerConstruct",
             "value": "100",
             "isVisible": "q.player.selected_item.damage >= 100",
             "action": [
-              "v.form = '100%';",
+              "v.form = '50%';",
               "v.cells_needed = 100;",
-              "q.dialogue.set_page('create_ability');"
+			  "v.ability = 'powerconstruct';",
+			  "v.ability_string_cheese = 'Power Construct';",
+              "q.dialogue.set_page('confirm_create');"
             ]
           },
           {
@@ -539,38 +551,31 @@
       }
     },
     {
-      "id": "create_ability",
+      "id": "confirm_create",
       "speaker": "player",
       "lines": [
         {
           "type": "expression",
-          "expression": "'Creating ' + v.form + ' Zygarde'"
+          "expression": "'Are you sure you want to create a ' + v.ability_string_cheese + ' ' + v.form + ' Zygarde?'"
         },
-        "Which ability should it have?"
+        {
+          "type": "expression",
+          "expression": "'This will use ' + v.cells_needed + ' cells.'"
+        }
       ],
       "input": {
         "type": "option",
         "options": [
           {
-            "text": "Aura Break",
-            "value": "aurabreak",
+            "text": "Yes",
+            "value": "yes",
             "action": [
-              "v.ability = 'aurabreak';",
               "q.dialogue.set_page('create_congrats');"
             ]
           },
           {
-            "text": "Power Construct",
-            "value": "powerconstruct",
-            "isVisible": "v.form == '50%' || v.form == '100%'",
-            "action": [
-              "v.ability = 'powerconstruct';",
-              "q.dialogue.set_page('create_congrats');"
-            ]
-          },
-          {
-            "text": "Cancel",
-            "value": "cancel",
+            "text": "No",
+            "value": "no",
             "action": "q.dialogue.close();"
           }
         ]
@@ -583,7 +588,7 @@
         "Congratulations!",
         {
           "type": "expression",
-          "expression": "'You have created a ' + v.form + ' Zygarde with ' + v.ability + '!'"
+          "expression": "'You have created a ' + v.form + ' Zygarde with ' + v.ability_string_cheese + '!'"
         },
         "It was added to your party."
       ],
