@@ -16,6 +16,6 @@ develocity.buildScan {
     termsOfUseAgree = "yes"
 }
 
-include("common", "fabric")
+include("common", "fabric", "neoforge")
 
 rootProject.name = "Generations-Core"
