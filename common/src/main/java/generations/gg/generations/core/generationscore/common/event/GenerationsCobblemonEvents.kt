@@ -81,9 +81,8 @@ class GenerationsCobblemonEvents {
                     .filter { battleActor -> battleActor is PlayerBattleActor }
                     .map { battleActor -> battleActor as PlayerBattleActor }
                     .forEach { actor ->
-                        actor.entity?.inventory?.items?.asSequence()
-                            ?.filter { a -> a.item is PostBattleUpdatingItem }
-                            ?.forEach { a -> (a.item as PostBattleUpdatingItem).afterBattle(actor, a, data) }
+                        val stack = actor.entity?.inventory?.items?.first { a -> a.item is PostBattleUpdatingItem }
+                        stack.item.instanceOrNull<PostBattleUpdatingItem>()?.afterBattle(actor, stack, data)
 
                         actor.pokemonList.asSequence().map { it.originalPokemon }.forEach { originalPokemon ->
                             val it: ItemStack = originalPokemon.heldItem()
