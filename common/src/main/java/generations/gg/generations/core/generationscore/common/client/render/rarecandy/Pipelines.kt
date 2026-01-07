@@ -153,9 +153,13 @@ object Pipelines {
     @JvmStatic
     fun transformVertices(`object`: MultiRenderObject, instanceId: Int) {
         this.instanceId = instanceId
+        System.out.println("Blep1")
         TRANSFORM.useProgram()
+        System.out.println("Blep2")
         TRANSFORM.bindGlobal()
+        System.out.println("Blep3")
         TRANSFORM.bindModel(`object`)
+        System.out.println("Blep4")
         TRANSFORM.dispatch(
             GL43C.GL_SHADER_STORAGE_BARRIER_BIT,
             (`object`.maxVertex + 255) / 256,
@@ -172,7 +176,7 @@ object Pipelines {
     }
 
     fun opengGl() {
-        vao = RareCandyVertexArray(80)
+        vao = RareCandyVertexArray()
         textures = Array(3) {
             BlankTexture(Type.RGBA_BYTE, 1024, 1024, ITexture.ComputeAccess.READ_WRITE)
         }
@@ -193,7 +197,10 @@ object Pipelines {
             .addSSBO(Scope.MODEL, "TransformBuffer", 4, { ctx -> ctx.`object`.uvTransformBuffer.bufferId })
             .addSSBO(Scope.MODEL, "DstBuffer", 5, { ctx -> ctx.`object`.destBuffer })
             .addUniform(Scope.MODEL, "variantSize", { uniform, ctx -> uniform.uploadInt(ctx.`object`.meshes.size) })
-            .addUniform(Scope.GLOBAL, "instanceId", { uniform, ctx -> uniform.uploadInt(instanceId) })
+            .addUniform(Scope.GLOBAL, "instanceId", { uniform, ctx ->
+                System.out.println("I'm a retard")
+                uniform.uploadInt(instanceId)
+                System.out.println("wtf")})
             .build()
         PARADOX = manager.shader("paradox")
             .autoInt(Scope.GLOBAL, "frame", { pingpong(MinecraftClientGameProvider.getTimePassed()) })

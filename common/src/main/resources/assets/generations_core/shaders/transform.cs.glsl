@@ -38,8 +38,8 @@ struct Transform {
     vec2 offset;
 };
 
-uniform uint variantSize;
-uniform uint instanceId;
+uniform int variantSize;
+uniform int instanceId;
 
 layout(std430, binding = 0) readonly  buffer SrcBuffer       { SourceVertex src[]; };
 layout(std430, binding = 1) readonly  buffer IndexBuffer     { uint indices[]; };

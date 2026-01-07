@@ -47,10 +47,7 @@ public class GenerationsMultiRenderObject extends MultiRenderObject {
         updateSSBOs();
 
         System.out.println("vao=" + Pipelines.vao);
-        Pipelines.vao.bind();
-
-        System.out.println("glBindBuffer ARRAY_BUFFER destBuffer=" + destBuffer);
-        RenderSystem.glBindBuffer(GL43.GL_ARRAY_BUFFER, destBuffer);
+        Pipelines.vao.bind(destBuffer);
 
         for (int i = 0; i < instances.size(); i++) {
             System.out.println("instanceIndex=" + i);
