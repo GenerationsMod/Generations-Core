@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.client.render.entity;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
@@ -30,7 +29,7 @@ public class ZygardeCellRenderer extends EntityRenderer<ZygardeCellEntity> {
         instance.transformationMatrix().set(poseStack.last().pose());
         instance.setLight(packedLight);
         poseStack.popPose();
-        model.render(instance, buffer);
+        model.render(instance);
 
         super.render(entity, entityYaw, partialTick, poseStack, buffer, packedLight);
     }

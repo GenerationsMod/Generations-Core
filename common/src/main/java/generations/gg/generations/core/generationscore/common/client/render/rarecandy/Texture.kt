@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.util.asResource
 import com.mojang.blaze3d.platform.NativeImage
 import com.mojang.blaze3d.systems.RenderSystem
 import generations.gg.generations.core.generationscore.common.GenerationsCore.id
+import gg.generations.rarecandy.renderer.textures.ITexture
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.DynamicTexture
 import net.minecraft.resources.ResourceLocation
@@ -30,6 +31,9 @@ class Texture(override var location: ResourceLocation, image: NativeImage) : Dyn
 
     override fun width(): Int = width
     override fun height(): Int = height
+    override fun getType(): ITexture.Type {
+        return ITexture.Type.RGBA_BYTE;
+    }
 
     @Throws(IOException::class)
     override fun load(resourceManager: ResourceManager) {

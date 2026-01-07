@@ -3,6 +3,7 @@ package generations.gg.generations.core.generationscore.common;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
+import gg.generations.rarecandy.renderer.storage.SSBOBuffer;
 
 import java.io.IOException;
 import java.nio.file.FileVisitOption;

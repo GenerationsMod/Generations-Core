@@ -9,7 +9,6 @@ import com.cobblemon.mod.common.client.render.models.blockbench.repository.Varyi
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.pokemon.FormData
 import com.cobblemon.mod.common.pokemon.Species
-import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.blaze3d.vertex.VertexConsumer
 import com.mojang.math.Axis
@@ -20,11 +19,8 @@ import generations.gg.generations.core.generationscore.common.client.render.rare
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.client.render.tera.tint
 import generations.gg.generations.core.generationscore.common.util.extensions.battleTeraType
-import net.minecraft.client.Minecraft
 import net.minecraft.client.model.geom.ModelPart
-import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
-import org.joml.Vector3f
 import java.util.*
 import java.util.function.Supplier
 
@@ -70,17 +66,21 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             let {  }
         }
 
-        val model = objectSupplier.invoke()
-        if (model?.renderObject == null) return
+        val compiledModel = objectSupplier.invoke() ?: return
+        val model = compiledModel.renderObject ?: return
 
-        var scale = model.renderObject!!.scale // / context.requires(RenderContext.SCALE)
+
+        var scale = model.scale // / context.requires(RenderContext.SCALE)
         if (instance == null) {
             return
         } else {
             scale *= 1f / (context.form?.baseScale ?: 1f)
         }
-        if (model.renderObject!!.isReady) {
+
+//        if (model.renderObject!!.isReady) {
             instance.light = packedLight
+            instance.tint = color
+            instance.overlay = packedOverlay
             instance.teraActive = context.request(RenderContext.ASPECTS)?.contains("terastal_active") ?: false
             if (instance.teraActive) {
                 context.entity.instanceOrNull<PokemonEntity>()?.battleTeraType?.let {
@@ -88,8 +88,8 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
                 }
             }
 //            instance.tint.set(r, g, b) TODO: convert color int into its float components for tint.
-            val variant = getVariant(context)
-            if (variant != null) {
+            val variant = getVariant(context)?.let { model.variantNameToId[it] } ?: -1
+            if (variant > 0) {
                 instance.setVariant(variant)
             }
 
@@ -99,8 +99,8 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
             instance.transformationMatrix().set(stack.last().pose())
             stack.popPose()
 
-            model.render(instance, Minecraft.getInstance().renderBuffers().bufferSource())
-        }
+            compiledModel.render(instance)
+//        }
     }
 
     private fun getVariant(context: RenderContext): String? {

@@ -30,4 +30,9 @@ public abstract class LightTextureMixin implements ILightTexture {
     public int height() {
         return 16;
     }
+
+    @Override
+    public Type getType() {
+        return Type.RGBA_BYTE;
+    }
 }

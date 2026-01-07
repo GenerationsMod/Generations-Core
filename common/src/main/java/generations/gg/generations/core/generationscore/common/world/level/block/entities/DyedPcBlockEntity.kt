@@ -13,8 +13,8 @@ class DyedPcBlockEntity(blockPos: BlockPos, blockState: BlockState) : PcBlockEnt
     val color: DyeColor
         get() = (blockState.block as DyeableBlock).color
 
-    override fun getTint(): Vector3f? {
-        return DyedVariantBlockEntity.COLOR_MAP.getOrDefault(color, null)
+    override fun getTint(): Int {
+        return DyedVariantBlockEntity.COLOR_MAP[color] ?: super<TintProvider>.tint
     }
 
     companion object {

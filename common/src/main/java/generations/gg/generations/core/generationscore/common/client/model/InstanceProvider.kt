@@ -1,9 +1,10 @@
 package generations.gg.generations.core.generationscore.common.client.model
 
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 
 interface InstanceProvider {
-    fun generateInstance(): ObjectInstance?
+    fun generateInstance(): CobblemonInstance
 
-    var instanceArray: Array<ObjectInstance?>?
+    var instanceArray: MutableList<CobblemonInstance>?
 }

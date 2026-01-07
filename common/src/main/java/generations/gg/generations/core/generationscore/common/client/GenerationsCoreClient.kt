@@ -24,6 +24,7 @@ import generations.gg.generations.core.generationscore.common.client.render.Rend
 import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRender
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.*
 import generations.gg.generations.core.generationscore.common.client.render.entity.*
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.MinecraftClientGameProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines
@@ -46,6 +47,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.shrines.altar.TimeSpaceAltarBlockEntity
 import generations.gg.generations.core.generationscore.common.world.sound.WalkmonSoundManager
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
+import gg.generations.rarecandy.renderer.components.InstanceDetails
 import gg.generations.rarecandy.renderer.rendering.RareCandy
 import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.minecraft.client.Camera
@@ -128,13 +130,13 @@ object GenerationsCoreClient {
 //            }
 //        }
 
+        InstanceDetails.size = CobblemonInstance.SIZE
+
         ITextureLoader.setInstance(GenerationsTextureLoader)
 
         implementation.registerResourceReloader(GenerationsCore.id("model_registry"), CompiledModelLoader(), emptyList())
 
         GenerationsClientMolangFunctions.addAnimationFunctions()
-
-        RareCandy.DEBUG_THREADS = true
 
         VaryingModelRepository.inbuilt("strange_ball", ::PokeBallModel)
 
@@ -174,9 +176,10 @@ object GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE)
             addWoodType(GenerationsWoodTypes.ULTRA_DARK)
             addWoodType(GenerationsWoodTypes.GHOST)
-            Pipelines.REGISTER.subscribe(handler = Pipelines::initGenerationsPipelines)
 
             Pipelines.onInitialize(event.resourceManager)
+
+
 
             registerScreens()
         })
@@ -574,7 +577,7 @@ object GenerationsCoreClient {
         RenderStateRecord.push()
 
         renderRareCandySolid()
-        renderRareCandyTransparent()
+//        renderRareCandyTransparent()
 
         RenderStateRecord.pop()
     }
@@ -595,7 +598,7 @@ object GenerationsCoreClient {
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
 
-        ModelRegistry.worldRareCandy.render(stage, false)
+        ModelRegistry.worldRareCandy.render(stage)
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms")
     }
 }

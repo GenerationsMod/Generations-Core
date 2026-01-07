@@ -13,7 +13,7 @@ public class PosableStateMixin implements CobblemonInstanceProvider {
 
     public @NotNull CobblemonInstance getInstance() {
         if (instance == null) {
-            instance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);
+            instance = new CobblemonInstance();
         }
 
         return instance;

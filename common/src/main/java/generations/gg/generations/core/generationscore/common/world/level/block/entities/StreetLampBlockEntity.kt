@@ -5,7 +5,7 @@ import net.minecraft.world.level.block.state.BlockState
 import org.joml.Vector3f
 
 class StreetLampBlockEntity(arg2: BlockPos, arg3: BlockState) : DyedVariantBlockEntity(GenerationsBlockEntities.STREET_LAMP, arg2, arg3) {
-    override fun getTint(): Vector3f? {
-        return COLOR_MAP[color]
+    override fun getTint(): Int {
+        return COLOR_MAP[color] ?: super.tint
     }
 }

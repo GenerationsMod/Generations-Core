@@ -4,7 +4,7 @@ import generations.gg.generations.core.generationscore.common.client.model.Insta
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.AngleProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.ModelProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.world.entity.block.PokemonUtil
@@ -51,11 +51,11 @@ class MeloettaMusicBoxBlockEntity(pos: BlockPos, state: BlockState) : JukeboxBlo
 
     override fun getVariant(): String? = null
 
-    override fun generateInstance(): ObjectInstance = BlockObjectInstance(Matrix4f(), null)
+    override fun generateInstance(): CobblemonInstance = CobblemonInstance()
 
-    var objectInstance: Array<ObjectInstance?>? = null
+    var objectInstance: MutableList<CobblemonInstance>? = mutableListOf()
 
-    override var instanceArray: Array<ObjectInstance?>?
+    override var instanceArray: MutableList<CobblemonInstance>?
         get() = objectInstance
         set(value) {
             objectInstance = value

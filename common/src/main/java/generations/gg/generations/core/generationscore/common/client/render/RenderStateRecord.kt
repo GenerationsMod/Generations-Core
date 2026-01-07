@@ -1,8 +1,6 @@
 package generations.gg.generations.core.generationscore.common.client.render
 
-import com.mojang.blaze3d.platform.GlStateManager
 import com.mojang.blaze3d.systems.RenderSystem
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.read
 
 object RenderStateRecord {
     private var readOnly = false

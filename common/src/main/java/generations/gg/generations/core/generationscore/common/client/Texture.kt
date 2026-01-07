@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.client
 
-import gg.generations.rarecandy.renderer.loading.ITexture
+import gg.generations.rarecandy.renderer.textures.ITexture
+import gg.generations.rarecandy.renderer.textures.ITexture.*
 import org.lwjgl.opengl.GL11
 import org.lwjgl.opengl.GL11C
 import org.lwjgl.opengl.GL13C
@@ -12,7 +13,7 @@ import java.io.IOException
 import java.nio.ByteBuffer
 
 class Texture(private var details: TextureDetails?) : ITexture {
-    var id: Int = 0
+    var textureId: Int = 0
 
     @JvmRecord
     data class TextureDetails(val buffer: ByteBuffer, val type: Type, val width: Int, val height: Int) :
@@ -50,11 +51,11 @@ class Texture(private var details: TextureDetails?) : ITexture {
 
     override fun bind(slot: Int) {
         if (details != null) {
-            this.id = details!!.init()
+            this.textureId = details!!.init()
             details = null
         }
 
-        assert(slot >= 0 && slot <= 31)
+        assert(slot in 0..31)
         GL13C.glActiveTexture(GL13C.GL_TEXTURE0 + slot)
         GL11C.glBindTexture(GL11C.GL_TEXTURE_2D, this.id)
     }
@@ -67,14 +68,17 @@ class Texture(private var details: TextureDetails?) : ITexture {
         return 0
     }
 
+    override fun getId(): Int {
+        return textureId;
+    }
+
+    override fun getType(): Type {
+        return Type.RGBA_BYTE;
+    }
+
     @Throws(IOException::class)
     override fun close() {
         GL11.glDeleteTextures(id)
-    }
-
-    enum class Type(internal val internalFormat: Int, val format: Int, val type: Int) {
-        RGBA_BYTE(GL30.GL_RGBA8, GL30.GL_RGBA, GL30.GL_UNSIGNED_BYTE),
-        RGB_BYTE(GL30.GL_RGB8, GL30.GL_RGB, GL30.GL_UNSIGNED_BYTE)
     }
 
     companion object {

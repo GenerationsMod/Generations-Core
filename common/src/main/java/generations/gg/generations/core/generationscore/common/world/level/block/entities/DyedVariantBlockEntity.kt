@@ -27,12 +27,12 @@ abstract class DyedVariantBlockEntity(
     val color: DyeColor
         get() = (blockState.block as DyeableBlock).color
 
-    override fun getTint(): Vector3f? {
-        return COLOR_MAP[color]
+    override fun getTint(): Int {
+        return COLOR_MAP[color] ?: super.getTint();
     }
 
     companion object {
         @JvmField
-        val COLOR_MAP: Map<DyeColor, Vector3f?> = DyeColor.entries.associateWith { it.textureDiffuseColor.toVec3f() }
+        val COLOR_MAP: Map<DyeColor, Int> = DyeColor.entries.associateWith { it.textureDiffuseColor }
     }
 }

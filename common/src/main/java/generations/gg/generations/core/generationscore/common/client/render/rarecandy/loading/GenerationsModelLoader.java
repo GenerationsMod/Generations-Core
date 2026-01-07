@@ -3,50 +3,69 @@ package generations.gg.generations.core.generationscore.common.client.render.rar
 import generations.gg.generations.core.generationscore.common.GenerationsCore;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel;
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance;
+import gg.generations.rarecandy.pokeutils.MaterialReference;
 import gg.generations.rarecandy.pokeutils.PixelAsset;
-import gg.generations.rarecandy.renderer.components.MeshObject;
 import gg.generations.rarecandy.renderer.components.MultiRenderObject;
 import gg.generations.rarecandy.renderer.loading.ModelLoader;
-import gg.generations.rarecandy.renderer.model.GLModel;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.texture.AbstractTexture;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.ResourceManager;
-import org.jetbrains.annotations.NotNull;
+import gg.generations.rarecandy.renderer.model.material.Material;
 import org.joml.Matrix4f;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class GenerationsModelLoader extends ModelLoader {
-    public GenerationsModelLoader(int numThreads) {
-        super(numThreads);
-    }
-    public MultiRenderObject<MeshObject> compiledModelMethod(CompiledModel model, InputStream stream, Supplier<MeshObject> supplier, String name, boolean requiresVariantTexture) {
-        return createObject(
+public class GenerationsModelLoader {
+
+    public static GenerationsMultiRenderObject compiledModelMethod(CompiledModel model, InputStream stream, String name) {
+        return (GenerationsMultiRenderObject) ModelLoader.createObject(
+                GenerationsMultiRenderObject::new,
                 () -> new PixelAsset(stream, name),
-                (gltfModel, animResources, textures, config, object) -> {
-                    var glCalls = new ArrayList<Runnable>();
-                    try {
-                        if(GenerationsCore.CONFIG.client.useVanilla) {
-                            VanillaModelLoader.processModel(object, gltfModel, animResources, textures, config, glCalls, supplier);
-                        } else {
-                            processModel(object, gltfModel, animResources, textures, config, glCalls, supplier, GLModel::new);
-                        }
-                    } catch (Exception e) {
-                        System.out.println("Oh no! Model : " + name + " didn't properly load!");
-                        e.printStackTrace();
-                    }
-                    return glCalls;
-                },
-                object -> {
-                    model.guiInstance = new CobblemonInstance(new Matrix4f(), new Matrix4f(), null);
+                GenerationsModelLoader::process, object -> {
+                    model.guiInstance = new CobblemonInstance();
                     model.guiInstance.link(object);
                     if(object.scale == 0f) object.scale = 1.0f;
 
                     if(GenerationsCore.CONFIG.client.logModelLoading) GenerationsCore.LOGGER.info("Done Loading: " + name);
                 }
+        );
+    }
+
+    public static Material process(MaterialReference reference, List<String> imageNames) {
+        var images = reference.images.toArray(imageNames);
+
+        int method = 0;
+        if (reference.shader != null) {
+            method = switch (reference.shader) {
+                case "layered" -> 1;
+                case "masked" -> 2;
+                default -> 0;
+            };
+        } else {
+            System.out.println();
+        }
+
+        int effect = 0;
+        if (reference.effect != null) {
+            effect = switch (reference.effect) {
+                case "galaxy" -> 1;
+                case "pastel" -> 2;
+                case "shadow" -> 3;
+                case "sketch" -> 4;
+                case "vintage" -> 5;
+                default -> 0;
+            };
+        }
+
+        return new Material(
+                images,
+                reference.values,
+                reference.cull,
+                reference.blend,
+                method,
+                effect
         );
     }
 }

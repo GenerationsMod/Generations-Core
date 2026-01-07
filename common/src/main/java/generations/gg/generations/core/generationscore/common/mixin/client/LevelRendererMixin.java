@@ -19,17 +19,19 @@
 package generations.gg.generations.core.generationscore.common.mixin.client;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexFormat;
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient;
 import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClientKt;
 import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord;
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.Pipelines;
 import gg.generations.rarecandy.renderer.rendering.RenderStage;
+import net.minecraft.Util;
 import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.client.renderer.LevelRenderer;
-import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.client.renderer.*;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.slf4j.Logger;
@@ -39,6 +41,9 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import static com.mojang.blaze3d.vertex.VertexFormat.*;
+import static net.minecraft.client.renderer.RenderStateShard.*;
 
 @Mixin(LevelRenderer.class)
 public abstract class LevelRendererMixin {
@@ -51,6 +56,4 @@ public abstract class LevelRendererMixin {
     private void pokecraft$secondPass(DeltaTracker deltaTracker, boolean renderBlockOutline, Camera camera, GameRenderer gameRenderer, LightTexture lightTexture, Matrix4f frustumMatrix, Matrix4f projectionMatrix, CallbackInfo ci) {
         GenerationsCoreClient.INSTANCE.secondRenderPass();
     }
-
-
 }

@@ -3,8 +3,7 @@ package generations.gg.generations.core.generationscore.common.world.level.block
 import generations.gg.generations.core.generationscore.common.client.model.InstanceProvider
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.VariantProvider
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockAnimatedObjectInstance
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericModelBlock
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
@@ -15,16 +14,15 @@ import net.minecraft.world.level.block.entity.BlockEntityType
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.AABB
 import net.minecraft.world.phys.Vec3
-import org.joml.Matrix4f
 
 abstract class ModelProvidingBlockEntity(
     type: Holder<BlockEntityType<*>>,
     pos: BlockPos,
     state: BlockState
 ) : SimpleBlockEntity(type, pos, state), ModelContextProviders.ModelProvider, VariantProvider, InstanceProvider {
-    private var objectInstance: Array<ObjectInstance?>? = null
+    private var objectInstance: MutableList<CobblemonInstance>? = null
 
-    override var instanceArray: Array<ObjectInstance?>?
+    override var instanceArray: MutableList<CobblemonInstance>?
         get() = objectInstance
         set(value) {
             this.objectInstance = value
@@ -47,11 +45,7 @@ abstract class ModelProvidingBlockEntity(
 
     override fun getVariant(): String? = blockState.block.instanceOrNull<VariantProvider>()?.variant
 
-    override fun generateInstance(): ObjectInstance {
-        return if (isAnimated) BlockAnimatedObjectInstance(Matrix4f(), null, null) else BlockObjectInstance(
-            Matrix4f(), null
-        )
-    }
+    override fun generateInstance(): CobblemonInstance = CobblemonInstance()
 
     companion object {
         fun defaultAABB(pos: BlockPos): AABB {

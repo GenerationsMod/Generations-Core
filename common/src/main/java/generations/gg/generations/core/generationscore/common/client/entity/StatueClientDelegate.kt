@@ -14,7 +14,7 @@ import net.minecraft.world.entity.Entity
 import org.joml.Matrix4f
 
 class StatueClientDelegate(entity: StatueEntity) : StatueSideDelegate, PosableState(), CobblemonInstanceProvider {
-    override var instance = StatueInstance(Matrix4f(), Matrix4f(), null)
+    override var instance = StatueInstance()
     var currentEntity: StatueEntity = entity
 
 

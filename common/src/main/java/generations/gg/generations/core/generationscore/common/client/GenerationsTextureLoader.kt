@@ -11,7 +11,7 @@ import generations.gg.generations.core.generationscore.common.client.model.Sprit
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ITextureWithResourceLocation
 import generations.gg.generations.core.generationscore.common.util.GenerationsUtils
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
-import gg.generations.rarecandy.renderer.loading.ITexture
+import gg.generations.rarecandy.renderer.textures.ITexture
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.texture.MissingTextureAtlasSprite
 import net.minecraft.client.renderer.texture.SimpleTexture
@@ -40,15 +40,20 @@ object GenerationsTextureLoader : ITextureLoader() {
         override fun close() {
         }
         override fun bind(slot: Int) {
-            var texture = Minecraft.getInstance().textureManager.getTexture(MissingTextureAtlasSprite.getLocation())
-
             RenderSystem.activeTexture(GL13C.GL_TEXTURE0 + slot)
-            RenderSystem.bindTexture(texture.id)
+            RenderSystem.bindTexture(id)
         }
 
         override fun width(): Int = 16
 
         override fun height(): Int = 16
+        override fun getId(): Int {
+             return Minecraft.getInstance().textureManager.getTexture(MissingTextureAtlasSprite.getLocation()).id
+        }
+
+        override fun getType(): ITexture.Type? {
+            TODO("Not yet implemented")
+        }
 
     }
 
@@ -77,7 +82,7 @@ object GenerationsTextureLoader : ITextureLoader() {
     }
 
 
-    override fun getTexture(s: String?): ITexture? {
+    override fun getTexture(s: String?): ITexture {
         val texture = REGULAR.getOrDefault(s, null)?.let { Minecraft.getInstance().textureManager.getTexture(it, null) }.takeIf { it is ITextureWithResourceLocation } ?: return MissingTextureProxy
 
         return texture as ITexture
@@ -138,6 +143,14 @@ object GenerationsTextureLoader : ITextureLoader() {
         override fun height(): Int {
             TODO("Not yet implemented")
         }
+
+        override fun getType(): ITexture.Type {
+            return ITexture.Type.RGBA_BYTE
+        }
+
+        override fun close() {
+            Minecraft.getInstance().textureManager.release(location)
+        }
     }
 
     private class SimpleTextureIndependentData(override var location: ResourceLocation, private val texture: ByteArray?) : SimpleTexture(location), ITextureWithResourceLocation {
@@ -157,6 +170,14 @@ object GenerationsTextureLoader : ITextureLoader() {
 
         override fun height(): Int {
             TODO("Not yet implemented")
+        }
+
+        override fun close() {
+            Minecraft.getInstance().textureManager.release(location)
+        }
+
+        override fun getType(): ITexture.Type {
+            return ITexture.Type.RGBA_BYTE
         }
 
         override fun getTextureImage(resourceManager: ResourceManager): TextureImage {

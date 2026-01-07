@@ -1,7 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.entity
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance
+import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CobblemonInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
 import generations.gg.generations.core.generationscore.common.world.item.ZygardeCubeItem
@@ -21,7 +21,7 @@ import org.joml.Matrix4f
 
 class ZygardeCellEntity : Entity {
     @JvmField
-    var instance: BlockObjectInstance = BlockObjectInstance(Matrix4f(), null)
+    var instance = CobblemonInstance()
 
     constructor(level: Level) : super(GenerationsEntities.ZYGARDE_CELL.value(), level)
 

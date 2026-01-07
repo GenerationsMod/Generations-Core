@@ -66,7 +66,7 @@ configurations {
 
 //        modImplementation(group = "earth.terrarium.common_storage_lib", name = "common-storage-lib-neoforge-1.21.1", version = "0.0.7")
         "shadowBundle"(
-        forgeRuntimeLibrary(files("../libs/RareCandy-2.14.2.jar"))!!
+        forgeRuntimeLibrary(files("../libs/RareCandy-3.0.0.jar"))!!
         )
 
 //        forgeRuntimeLibrary(

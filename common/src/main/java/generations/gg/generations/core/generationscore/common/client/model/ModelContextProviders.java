@@ -32,7 +32,9 @@ public class ModelContextProviders {
     }
 
     public interface TintProvider {
-        @Nullable Vector3f getTint();
+        default int getTint() {
+            return 0xffffffff;
+        }
     }
 
 }
