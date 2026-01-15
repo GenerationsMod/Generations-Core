@@ -1646,7 +1646,7 @@ object GenerationsItems: ItemPlatformRegistry() {
             createFormChangingItem(
                 it,
                 "type",
-                type.name,
+                type.showdownId,
                 cobblemonResource("arceus")
             ).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "")) }
         },
@@ -1672,7 +1672,7 @@ object GenerationsItems: ItemPlatformRegistry() {
             createFormChangingItem(
                 it,
                 "type",
-                type.name,
+                type.showdownId(),
                 cobblemonResource("silvally")
             ).also { CobblemonHeldItemManager.registerRemap(it, name.replace("_", "").replace("drive", "")) }
         },
