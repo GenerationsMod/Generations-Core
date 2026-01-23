@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "tera_infused_stone_stairs",
+  "key": {
+    "#": {
+      "item": "generations_core:tera_infused_stone"
+    }
+  },
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "result": {
+    "count": 4,
+    "id": "generations_core:tera_infused_stone_stairs"
+  }
+}

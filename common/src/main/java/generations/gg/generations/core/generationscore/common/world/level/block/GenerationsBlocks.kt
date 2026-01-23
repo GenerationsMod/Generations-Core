@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.level.block
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
+import generations.gg.generations.core.generationscore.common.tags.GenerationsItemTags
 import generations.gg.generations.core.generationscore.common.util.ItemPlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems.BLOCK_ITEMS
 import generations.gg.generations.core.generationscore.common.world.item.GenericChestBlockItem
@@ -208,8 +209,13 @@ object GenerationsBlocks: BlockPlatformRegistry() {
      * Full ChargeStone Pallet
      */
     val CHARGE_STONE_SET: GenerationsFullBlockSet = GenerationsFullBlockSet("charge_stone", GenerationsBlockSetTypes.CHARGE_STONE)
+    val TERA_INFUSED_STONE_SET: GenerationsFullBlockSet = GenerationsFullBlockSet("tera_infused_stone", GenerationsBlockSetTypes.TERA_INFUSED_STONE)
+    val TERA_INFUSED_DEEPSLATE_SET: GenerationsFullBlockSet = GenerationsFullBlockSet("tera_infused_deepslate", GenerationsBlockSetTypes.TERA_INFUSED_DEEPSLATE)
     val CHARGE_COBBLESTONE_SET: GenerationsBlockSet = GenerationsBlockSet("charge_cobblestone", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE))
     val MOSSY_CHARGE_COBBLESTONE_SET: GenerationsBlockSet = GenerationsBlockSet("mossy_charge_cobblestone", BlockBehaviour.Properties.ofFullCopy(Blocks.MOSSY_COBBLESTONE))
+
+    val TERA_CRYSTAL_BLOCK = registerBlockItem("tera_crystal_block", { Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).lightLevel { 12 }) })
+    val TERA_CRYSTAL_CLUSTER = registerBlockItem("tera_crystal_cluster", { RandomShardClusterBlock(GenerationsItemTags.TERA_SHARDS, 7.0f, 3.0f, BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).lightLevel { 11 } ) })
 
     //Smooth ChargeStone
     val SMOOTH_CHARGE_STONE = registerStone("smooth_charge_stone") { Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SMOOTH_STONE)) }

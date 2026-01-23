@@ -20,6 +20,7 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore.LO
 import generations.gg.generations.core.generationscore.common.client.model.GenerationsClientMolangFunctions
 import generations.gg.generations.core.generationscore.common.client.model.RareCandyBone
 import generations.gg.generations.core.generationscore.common.client.model.inventory.GenericChestItemStackRenderer
+import generations.gg.generations.core.generationscore.common.client.particle.GenerationsParticles
 import generations.gg.generations.core.generationscore.common.client.render.RenderStateRecord
 import generations.gg.generations.core.generationscore.common.client.render.TimeCapsuleItemRender
 import generations.gg.generations.core.generationscore.common.client.render.block.entity.*
@@ -59,6 +60,10 @@ import net.minecraft.client.model.geom.ModelLayerLocation
 import net.minecraft.client.model.geom.ModelPart
 import net.minecraft.client.model.geom.builders.LayerDefinition
 import net.minecraft.client.multiplayer.ClientLevel
+import net.minecraft.client.particle.EndRodParticle
+import net.minecraft.client.particle.ParticleProvider
+import net.minecraft.client.particle.SpitParticle
+import net.minecraft.client.particle.SpriteSet
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.Sheets
@@ -72,6 +77,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer
 import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Holder
+import net.minecraft.core.particles.SimpleParticleType
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.util.Mth
@@ -96,6 +102,7 @@ import net.minecraft.world.phys.shapes.VoxelShape
 import org.joml.Matrix4f
 import org.joml.Vector4f
 import java.io.File
+import java.util.function.BiConsumer
 import java.util.function.Function
 
 private operator fun BlockPos.minus(pos: BlockPos): BlockPos {
@@ -290,6 +297,10 @@ object GenerationsCoreClient {
             chest.asItem(),
             GenericChestItemStackRenderer({ GenericChestBlockEntity(BlockPos.ZERO, chest.defaultBlockState()) })
         )
+    }
+
+    fun registerParticles(consumer: BiConsumer<SimpleParticleType, Function<SpriteSet, ParticleProvider<SimpleParticleType>>>) {
+        consumer.accept(GenerationsParticles.TERASTAL_CAVES_PARTICLE.get(), Function { sprites -> EndRodParticle.Provider(sprites) })
     }
 
     private fun addWoodType(woodType: WoodType) {

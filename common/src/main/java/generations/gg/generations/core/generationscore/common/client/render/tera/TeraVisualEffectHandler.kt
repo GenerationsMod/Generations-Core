@@ -1,6 +1,7 @@
 package generations.gg.generations.core.generationscore.common.client.render.tera
 
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
+import generations.gg.generations.core.generationscore.common.client.particle.GenerationsParticles
 import net.minecraft.client.Minecraft
 import net.minecraft.core.particles.ParticleTypes
 import net.minecraft.sounds.SoundEvents
@@ -14,7 +15,7 @@ object TeraVisualEffectHandler {
 
         for (i in 0..99) {
             level.addParticle(
-                ParticleTypes.END_ROD,
+                GenerationsParticles.TERASTAL_CAVES_PARTICLE.get(),
                 entity.getX() + (Math.random() - 0.5),
                 entity.getY() + (Math.random() - 0.5),
                 entity.getZ() + (Math.random() - 0.5),

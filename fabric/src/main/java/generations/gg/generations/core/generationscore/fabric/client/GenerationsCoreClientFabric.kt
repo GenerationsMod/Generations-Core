@@ -21,6 +21,7 @@ import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientLifecycleEvents
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
@@ -63,6 +64,10 @@ class GenerationsCoreClientFabric : ClientModInitializer, GenerationsCoreClientI
         GenerationsCoreFabric.networkManager.registerClientHandlers()
 
         onInitialize(this)
+
+        GenerationsCoreClient.registerParticles({ type, spriteProviderFactory ->
+            ParticleFactoryRegistry.getInstance().register(type, spriteProviderFactory::apply)
+        })
 
         GenerationsCoreClient.TOGGLE_CONDITIONS_KEY =
             KeyBindingHelper.registerKeyBinding(
@@ -109,6 +114,7 @@ class GenerationsCoreClientFabric : ClientModInitializer, GenerationsCoreClientI
                 else if (block is TransparentBlock) renderLayerMap.putBlock(block, RenderType.cutoutMipped())
             }
             renderLayerMap.putBlock(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value(), RenderType.cutout())
+//            renderLayerMap.putBlock(GenerationsBlocks.TERA_CRYSTAL_CLUSTER.value(), RenderType.cutout())
         }
     }
 

@@ -10,8 +10,10 @@ import com.cobblemon.mod.common.api.types.tera.TeraTypes
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
+import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
+import com.cobblemon.mod.common.util.getPlayer
 import com.cobblemon.mod.common.util.giveOrDropItemStack
 import com.cobblemon.mod.common.util.isInBattle
 import generations.gg.generations.core.generationscore.common.GenerationsCore
@@ -22,6 +24,7 @@ import generations.gg.generations.core.generationscore.common.battle.BattleCondi
 import generations.gg.generations.core.generationscore.common.battle.BattleSideData
 import generations.gg.generations.core.generationscore.common.battle.ConditionsData
 import generations.gg.generations.core.generationscore.common.battle.GenerationsInstructionProcessor
+import generations.gg.generations.core.generationscore.common.battle.grantExpAll
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -37,6 +40,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 import org.joml.Vector3f
+import kotlin.math.PI
 
 class GenerationsCobblemonEvents {
 

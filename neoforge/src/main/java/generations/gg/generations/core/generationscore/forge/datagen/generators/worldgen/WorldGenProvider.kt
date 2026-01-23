@@ -4,15 +4,13 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures
 import generations.gg.generations.core.generationscore.forge.worldgen.GenerationsForgeBiomemodifiers
+import generations.gg.generations.core.generationscore.common.world.biome.GenerationsBiomes
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsFeatures
 import net.minecraft.core.HolderLookup
 import net.minecraft.core.RegistrySetBuilder
 import net.minecraft.core.registries.Registries
 import net.minecraft.data.PackOutput
-import net.minecraft.data.worldgen.BootstrapContext
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature
-import net.minecraft.world.level.levelgen.placement.PlacedFeature
 import net.neoforged.neoforge.common.data.DatapackBuiltinEntriesProvider
-import net.neoforged.neoforge.common.world.BiomeModifier
 import net.neoforged.neoforge.registries.NeoForgeRegistries
 import java.util.Set
 import java.util.concurrent.CompletableFuture
@@ -24,5 +22,6 @@ class WorldGenProvider(output: PackOutput, registries: CompletableFuture<HolderL
             .add(Registries.CONFIGURED_FEATURE, GenerationsConfiguredFeatures::bootStrap)
             .add(Registries.PLACED_FEATURE, GenerationsPlacedFeatures::bootStrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, GenerationsForgeBiomemodifiers::bootstrap)
+            .add(Registries.BIOME, GenerationsBiomes::bootstrap)
     }
 }

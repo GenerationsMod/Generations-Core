@@ -76,6 +76,8 @@ configurations {
 //                "${project.properties["rareCandy"]}"
 //            ) { isTransitive = false })!!
 
+        modApi("com.github.glitchfiend:TerraBlender-neoforge:$minecraftVersion-${project.properties["terrablender_version"]}")
+
         modCompileOnly("mcp.mobius.waila:wthit-api:neo-${project.properties["WTHIT"]}")
         modRuntimeOnly("mcp.mobius.waila:wthit:neo-${project.properties["WTHIT"]}+")
         modRuntimeOnly("lol.bai:badpackets:neo-${project.properties["badPackets"]}")

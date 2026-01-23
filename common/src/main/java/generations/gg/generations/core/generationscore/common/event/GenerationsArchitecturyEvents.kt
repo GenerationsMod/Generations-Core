@@ -4,13 +4,18 @@ import com.cobblemon.mod.common.CobblemonEntities
 import com.cobblemon.mod.common.api.dialogue.Dialogue
 import com.cobblemon.mod.common.api.dialogue.Dialogues
 import com.cobblemon.mod.common.api.events.CobblemonEvents
+import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
+import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
+import com.cobblemon.mod.common.api.types.tera.TeraTypes
 import com.cobblemon.mod.common.entity.pokemon.PokemonEntity
 import com.cobblemon.mod.common.util.openDialogue
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.api.events.TriState
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
 import generations.gg.generations.core.generationscore.common.api.events.general.InteractionEvents
+import generations.gg.generations.core.generationscore.common.battle.applyBattleFeature
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
+import generations.gg.generations.core.generationscore.common.world.biome.GenerationsBiomes
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
@@ -20,6 +25,7 @@ import generations.gg.generations.core.generationscore.common.world.level.block.
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.VendingMachineBlock
 import generations.gg.generations.core.generationscore.common.world.level.block.shrines.RegiShrineBlock
 import net.minecraft.core.Direction
+import net.minecraft.core.registries.Registries
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.InteractionHand
 
@@ -35,11 +41,13 @@ object GenerationsArchitecturyEvents {
         CobblemonEvents.ENTITY_SPAWN.subscribe { //TODO: add exceptions and maybe a scarcrow tag
             val entity = it.entity
             val level = it.spawnablePosition.world
+            val pos = it.spawnablePosition.position
+            val biome = it.spawnablePosition.biome
             if(entity.type == CobblemonEntities.POKEMON || entity.type == GenerationsEntities.ZYGARDE_CELL) {
 
                 val list = RegiShrineBlock.Companion.searchForBlock(
                     level,
-                    entity.blockPosition(),
+                    pos,
                     GenerationsCore.CONFIG.blocks.scarecrowRadius.x,
                     GenerationsCore.CONFIG.blocks.scarecrowRadius.y,
                     GenerationsCore.CONFIG.blocks.scarecrowRadius.z,
@@ -47,6 +55,21 @@ object GenerationsArchitecturyEvents {
                 ) { world, pos -> world.getBlockState(pos).`is`(GenerationsUtilityBlocks.SCARECROW.value()) }
                 if (list.isNotEmpty()) {
                     it.cancel()
+                }
+
+                val biomeRegistry = level.registryAccess().registryOrThrow(Registries.BIOME)
+                if (biome == biomeRegistry.get(GenerationsBiomes.TERASTAL_CAVES)) {
+                    if (entity.type == CobblemonEntities.POKEMON) {
+                        val pokemonEntity = entity as PokemonEntity
+                        val pokemon = pokemonEntity.pokemon
+
+                        val random = (0..4).random()
+                        if (random == 0) {
+                            pokemon.teraType = TeraTypes.random(true)
+                            val teraCheck = FlagSpeciesFeature("terastal_active", true)
+                            pokemon.applyBattleFeature(teraCheck)
+                        }
+                    }
                 }
             }
         }

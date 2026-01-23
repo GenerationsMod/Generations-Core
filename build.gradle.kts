@@ -34,6 +34,7 @@ subprojects {
         mavenCentral()
         mavenLocal()
         maven("https://repo1.maven.org/maven2")
+        maven("https://maven.minecraftforge.net/")
         maven("https://jitpack.io")
         maven("https://maven.generations.gg/snapshots")
         maven("https://maven.generations.gg/releases")

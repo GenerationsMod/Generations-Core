@@ -26,6 +26,7 @@ import generations.gg.generations.core.generationscore.common.event.GenerationsC
 import generations.gg.generations.core.generationscore.common.recipe.GenerationsIngredidents
 import generations.gg.generations.core.generationscore.common.world.container.GenerationsContainers
 import generations.gg.generations.core.generationscore.common.world.entity.GenerationsEntities
+import generations.gg.generations.core.generationscore.common.world.feature.PlatformFeatureRegistry
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsArmor
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsCobblemonInteractions.registerDefaultCustomInteractions
 import generations.gg.generations.core.generationscore.common.world.item.GenerationsItems
@@ -82,6 +83,7 @@ object GenerationsCore {
 
 	lateinit var CONFIG: Config
 	lateinit var implementation: GenerationsImplementation
+    lateinit var PLATFORM_FEATURE_REGISTRY: PlatformFeatureRegistry
 
     @JvmField
 	var dataProvider: DataProvider = GenerationsDataProvider.INSTANCE

@@ -15,8 +15,11 @@ import generations.gg.generations.core.generationscore.common.util.EntryRegister
 import generations.gg.generations.core.generationscore.common.util.PlatformRegistry
 import generations.gg.generations.core.generationscore.common.world.container.ExtendedMenuProvider
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsConfiguredFeatures
+import generations.gg.generations.core.generationscore.common.world.feature.GenerationsFeatures
 import generations.gg.generations.core.generationscore.common.world.feature.GenerationsPlacedFeatures
+import generations.gg.generations.core.generationscore.common.world.feature.PlatformFeatureRegistry
 import generations.gg.generations.core.generationscore.common.world.item.creativetab.GenerationsCreativeTabs
+import generations.gg.generations.core.generationscore.common.client.particle.GenerationsParticles
 import generations.gg.generations.core.generationscore.fabric.AnvilEvents.AnvilChange
 import generations.gg.generations.core.generationscore.fabric.networking.GenerationsFabricNetwork
 import generations.gg.generations.core.generationscore.fabric.worldgen.GenerationsFabricBiomemodifiers
@@ -88,11 +91,20 @@ import kotlin.jvm.optionals.getOrNull
 object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLaunchEntrypoint {
     private var serverBacking: MinecraftServer? = null
 
+    var isInitialized = false
+        private set
+
     override fun onInitialize() {
+        if (isInitialized) return
+
         init(this)
 
         networkManager.registerMessages()
         networkManager.registerServerHandlers()
+
+        PlatformFeatureRegistry.INSTANCE = FabricPlatformFeatureRegistry
+        GenerationsFeatures.init()
+        GenerationsParticles.init()
 
         VanillaCompat.setup()
 
@@ -158,6 +170,8 @@ object GenerationsCoreFabric : ModInitializer, GenerationsImplementation, PreLau
         GenerationsPlacedFeatures.init()
         GenerationsFabricBiomemodifiers.generateOres()
         VanillaCompat.dispenserBehavior()
+
+        isInitialized = true
     }
 
     override fun registerStrippable(log: Holder<out Block>, stripped: Holder<out Block>) {

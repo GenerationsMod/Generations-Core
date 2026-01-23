@@ -463,7 +463,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItem(GenerationsItems.ADAMANT_CRYSTAL, "legend_items/")
         createItem(GenerationsItems.GRISEOUS_CORE, "legend_items/")
         createItem(GenerationsItems.FADED_JADE_ORB, "legend_items/")
-        createItem(GenerationsItems.MELTAN_BOX_CHARGED.value(), "legend_items/", "meltan_box")
+//        createItem(GenerationsItems.MELTAN_BOX_CHARGED.value(), "legend_items/", "meltan_box")
         createItem(GenerationsItems.MEW_DNA_FIBER, "legend_items/")
         createItem(GenerationsItems.MEW_FOSSIL, "legend_items/")
         createItem(GenerationsItems.LIGHT_SOUL, "legend_items/")
@@ -987,6 +987,7 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItemBlock(GenerationsBlocks.POKECENTER_SCARLET_SIGN, "item/blocks/sign/")
 
         createPointedDripstoneItem(GenerationsBlocks.POINTED_CHARGE_DRIPSTONE.value(), "item/blocks/dripstone/")
+//        createClusterItem(GenerationsBlocks.TERA_CRYSTAL_CLUSTER.value(), "item/blocks/cluster")
 
         //        GenerationsShrines.SHRINES.forEach(shrine -> createItemBlock(shrine, "item/blocks/shrines/"));
         createItemBlock(GenerationsBlocks.POKECENTER_DOOR, "item/blocks/doors/")
@@ -1209,6 +1210,11 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
     fun createPointedDripstoneItem(block: Block, directory: String) {
         val key = block.getModelKey()
         singleTexture(key.path, mcLoc("item/pointed_dripstone"), "layer0", "$directory${key.path}".id())
+    }
+
+    fun createClusterItem(block: Block, textureFolder: String) {
+        val key = block.getModelKey()
+        singleTexture(key.path, mcLoc("item/amethyst_cluster"), "layer0", "$textureFolder/${key.path}".id())
     }
 
     fun ItemLike.getModelKey(): ResourceLocation {

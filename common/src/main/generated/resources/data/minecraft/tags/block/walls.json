@@ -52,6 +52,8 @@
     "generations_core:magenta_marble_wall",
     "generations_core:pink_marble_wall",
     "generations_core:charge_stone_wall",
+    "generations_core:tera_infused_stone_wall",
+    "generations_core:tera_infused_deepslate_wall",
     "generations_core:charge_cobblestone_wall",
     "generations_core:mossy_charge_cobblestone_wall",
     "generations_core:mossy_charge_stone_brick_wall",

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "tera_infused_stone_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:tera_infused_stone"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:tera_infused_stone_wall"
+  }
+}

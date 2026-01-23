@@ -52,6 +52,7 @@ import com.cobblemon.mod.common.pokemon.Gender
 import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.pokemon.Species
 import com.cobblemon.mod.common.pokemon.status.PersistentStatus
+import com.cobblemon.mod.common.util.asIdentifierDefaultingNamespace
 import com.cobblemon.mod.common.util.cobblemonResource
 import com.cobblemon.mod.common.util.lang
 import com.mojang.blaze3d.platform.Lighting
@@ -241,6 +242,10 @@ object BattleOverlayProxy {
             0.0
         )
 
+        if (reversed) {
+            matrixStack.scale(-1F, 1F, 1F)
+        }
+
         if (ballState != null && ballState.currentPose != "shut")  {
             ballState.currentPose = "shut"
         }
@@ -253,6 +258,10 @@ object BattleOverlayProxy {
                 partialTicks = partialTicks
             )
         } else {
+            if (reversed) {
+                RenderSystem.disableCull()
+            }
+
             drawPosablePortrait(
                 identifier = species.resourceIdentifier,
                 matrixStack = matrixStack,
@@ -262,6 +271,10 @@ object BattleOverlayProxy {
                 state = state,
                 partialTicks = partialTicks
             )
+
+            if (reversed) {
+                RenderSystem.enableCull()
+            }
         }
 
 

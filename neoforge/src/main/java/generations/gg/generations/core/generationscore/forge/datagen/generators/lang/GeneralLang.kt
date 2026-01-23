@@ -479,14 +479,17 @@ class GeneralLang(packOutput: PackOutput, locale: String) :
         )
 
         //Melmetal
-        addTooltip(
-            GenerationsItems.MELTAN_BOX,
-            "§7HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course."
-        )
-        addTooltip(
-            GenerationsItems.MELTAN_BOX_CHARGED,
-            "§7HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course."
-        )
+        addTooltip(GenerationsItems.MELTAN_BOX, "lore1", "§7HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course.")
+        addTooltip(GenerationsItems.MELTAN_BOX, "lore2", "Collect enough Meltan to evolve one of your own to Melmetal!")
+        addTooltip(GenerationsItems.MELTAN_BOX, "lore3", "Meltan collected: %s/%s")
+        addTooltip(GenerationsItems.MELTAN_BOX, "meltan_add", "Meltan collected!")
+        addTooltip(GenerationsItems.MELTAN_BOX, "meltan_full", "The Meltan Box is full!")
+        addTooltip(GenerationsItems.MELTAN_BOX, "meltan_none", "There are no Meltans in your party.")
+        addTooltip(GenerationsItems.MELTAN_BOX, "meltan_convert", "Your Meltan has evolved into Melmetal!")
+//        addTooltip(
+//            GenerationsItems.MELTAN_BOX_CHARGED,
+//            "§7HINT: Meltan oddly find peace in this box. Collect an army colony of Meltan! For science, of course."
+//        )
 
         //Hero Duo
         addTooltip(

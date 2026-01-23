@@ -1,0 +1,22 @@
+{
+  "type": "generations_core:large_tera_crystal",
+  "config": {
+    "column_radius": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 4,
+      "min_inclusive": 3
+    },
+    "floor_to_ceiling_search_range": 40,
+    "height_scale": 2.0,
+    "max_column_radius_to_cave_height_ratio": 0.9,
+    "min_bluntness_for_wind": 0.25,
+    "min_radius_for_wind": 3,
+    "stalactite_bluntness": 0.8,
+    "stalagmite_bluntness": 0.8,
+    "wind_speed": {
+      "type": "minecraft:uniform",
+      "max_exclusive": 0.3,
+      "min_inclusive": 0.2
+    }
+  }
+}

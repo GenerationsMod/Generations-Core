@@ -20,6 +20,7 @@ import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.neoforged.neoforge.client.model.generators.*
 import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile
 import java.util.*
@@ -328,6 +329,9 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
 //        registerBlockItem(GenerationsBlocks.MACHINE_BLOCK.asValue())
         registerBlockItem(GenerationsBlocks.RUINS_SAND.asValue())
         registerBlockItem(GenerationsBlocks.BURST_TURF.asValue())
+
+        registerBlockItem(GenerationsBlocks.TERA_CRYSTAL_BLOCK.asValue())
+//        registerCluster(GenerationsBlocks.TERA_CRYSTAL_CLUSTER.asValue())
 
         registerBlockItem(GenerationsBlocks.WARNING_BLOCK.asValue())
 
@@ -646,6 +650,39 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             dropSelfList.add(cutSandstone)
         }
     }
+
+    private fun registerCluster(cluster: AmethystClusterBlock) {
+        val name = cluster.id.path
+        val texturePath = "block/$name"
+
+        models()
+            .withExistingParent(name, mcLoc("block/amethyst_cluster"))
+            .texture("cross", modLoc(texturePath))
+            .renderType("cutout")
+
+        getVariantBuilder(cluster).forAllStates { state ->
+            val facing = state.getValue(BlockStateProperties.FACING)
+            val (x, y) = when (facing) {
+                Direction.UP    -> 0 to 0
+                Direction.DOWN  -> 180 to 0
+                Direction.NORTH -> 90 to 0
+                Direction.SOUTH -> 270 to 0
+                Direction.WEST  -> 90 to 270
+                Direction.EAST  -> 90 to 90
+                else -> 0 to 0
+            }
+
+            ConfiguredModel.builder()
+                .modelFile(models().getExistingFile(modLoc(name)))
+                .rotationX(x)
+                .rotationY(y)
+                .build()
+        }
+
+        simpleBlockItem(cluster, models().getExistingFile(modLoc(name)))
+    }
+
+
 
     private fun registerStairs(stairs: StairBlock, texturedBlock: Block) {
         val texture = ModelLocationUtils.getModelLocation(texturedBlock)

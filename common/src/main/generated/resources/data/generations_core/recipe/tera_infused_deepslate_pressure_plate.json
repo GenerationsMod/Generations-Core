@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "tera_infused_deepslate_pressure_plate",
+  "key": {
+    "#": {
+      "item": "generations_core:tera_infused_deepslate"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "generations_core:tera_infused_deepslate_pressure_plate"
+  }
+}

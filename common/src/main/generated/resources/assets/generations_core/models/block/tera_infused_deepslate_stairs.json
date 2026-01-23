@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "generations_core:block/tera_infused_deepslate",
+    "side": "generations_core:block/tera_infused_deepslate",
+    "top": "generations_core:block/tera_infused_deepslate"
+  }
+}
