@@ -1,14 +1,13 @@
 package generations.gg.generations.core.generationscore.common.client.render.rarecandy
 
 import generations.gg.generations.core.generationscore.common.GenerationsCore
-import generations.gg.generations.core.generationscore.common.client.GenerationsCoreClient
-import generations.gg.generations.core.generationscore.common.client.render.rarecandy.ModelRegistry.worldRareCandy
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.loading.GenerationsModelLoader
 import generations.gg.generations.core.generationscore.common.util.TaskQueue
+import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
 import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
-import gg.generations.rarecandy.renderer.rendering.RareCandy
+import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
@@ -18,43 +17,41 @@ import net.minecraft.server.packs.resources.Resource
  */
 class CompiledModel(
     val name: ResourceLocation,
-    stream: Resource?
+    stream: Resource
 ) {
+    val empty: Boolean
+        get() = renderObject?.isEmpty ?: false
+
     @JvmField
     var renderObject: MultiRenderObject? = null
-    val map: List<String> = ArrayList()
 
     @JvmField
     var guiInstance: CobblemonInstance? = null
 
     init {
-        RareCandy.runLater {
-            if(GenerationsCore.CONFIG.client.logModelLoading) GenerationsCore.LOGGER.info("Loading PK: $name")
+        ModelRegistry.runLater {
+            /*if(GenerationsCore.CONFIG.client.logModelLoading) */GenerationsCore.LOGGER.info("Loading PK: $name")
             renderObject = GenerationsModelLoader.compiledModelMethod(this, stream?.open(), name.toString())
         }
     }
 
     fun render(instance: ObjectInstance) {
         if (renderObject == null) return
-//        if (!renderObject!!.isReady) return
 
-//        if(GenerationsCore.CONFIG.client.useVanilla) {
-//            renderVanilla(instance, source)
-//        } else {
-            renderRareCandy(instance, ModelRegistry.worldRareCandy)
-//        }
-    }
-
-    private fun renderRareCandy(instance: ObjectInstance, renderer: RareCandy) {
         renderObject?.run {
-            renderer.add(this, instance)
+            this.add(instance)
             instance.use()
         }
     }
 
     fun delete() {
         if(GenerationsCore.CONFIG.client.logModelLoading) println("Deleting GPU Resources for: $name")
-        renderObject?.close()
+        renderObject?.run {
+            this.close()
+            this.imageNameToId.keys.forEach {
+                ITextureLoader.instance().remove(it)
+            }
+        }
     }
 
     fun getVariantId(variant: String?): Int {
@@ -65,6 +62,14 @@ class CompiledModel(
         val model = renderObject ?: return null
 
         return model.animationNameToId[animation]?.let { model.animations[it] }
+    }
+
+    fun render(stage: RenderStage) {
+        renderObject?.render(stage)
+    }
+
+    fun update(time: Double) {
+        renderObject?.update(time)
     }
 
     companion object {

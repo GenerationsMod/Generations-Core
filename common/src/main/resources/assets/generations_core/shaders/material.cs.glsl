@@ -12,7 +12,7 @@ uniform sampler2D layer;
 uniform sampler2D mask;
 uniform sampler2D paradoxTexture;
 
-layout(std140, binding = 0) uniform Material {
+struct Material {
     vec3 baseColor1;
     vec3 baseColor2;
     vec3 baseColor3;
@@ -32,9 +32,34 @@ layout(std140, binding = 0) uniform Material {
     float emiIntensity5;
 
     int colorMethod;
+};
+
+struct Variant {
+    int material;
     int effect;
     bool paradox;
 };
+
+struct Transform {
+    vec2 scale;
+    vec2 offset;
+    int variant;
+};
+
+uniform int variantSize;
+
+uniform int instanceId;
+uniform int meshId;
+
+layout(std430, binding = 0) readonly  buffer MaterialBuffer {
+    Material materials[];
+};
+
+layout(std430, binding = 1) readonly  buffer VariantBuffer {
+    Variant variants[];
+};
+
+layout(std430, binding = 2) readonly  buffer TransformBuffer { Transform transforms[]; };
 
 vec4 adjust(vec4 color) {
     return clamp(color * 2.0, 0.0, 1.0);
@@ -48,37 +73,37 @@ vec3 applyEmission(vec3 base, vec3 emissionColor, float intensity) {
     return base + (emissionColor - base) * intensity;
 }
 
-vec4 layered(vec2 uv) {
+vec4 layered(vec2 uv, Material material) {
     vec4 color = texture(diffuse, uv);
     vec4 layerMasks = adjust(texture(layer, uv));
     float maskColor = adjustScalar(texture(mask, uv).r);
 
-    vec3 base = mix(color.rgb, color.rgb * baseColor1, layerMasks.r);
-    base = mix(base, color.rgb * baseColor2, layerMasks.g);
-    base = mix(base, color.rgb * baseColor3, layerMasks.b);
-    base = mix(base, color.rgb * baseColor4, layerMasks.a);
-    base = mix(base, color.rgb * baseColor5, maskColor);
+    vec3 base = mix(color.rgb, color.rgb * material.baseColor1, layerMasks.r);
+    base = mix(base, color.rgb * material.baseColor2, layerMasks.g);
+    base = mix(base, color.rgb * material.baseColor3, layerMasks.b);
+    base = mix(base, color.rgb * material.baseColor4, layerMasks.a);
+    base = mix(base, color.rgb * material.baseColor5, maskColor);
 
-    base = mix(base, applyEmission(base, emiColor1, emiIntensity1), layerMasks.r);
-    base = mix(base, applyEmission(base, emiColor2, emiIntensity2), layerMasks.g);
-    base = mix(base, applyEmission(base, emiColor3, emiIntensity3), layerMasks.b);
-    base = mix(base, applyEmission(base, emiColor4, emiIntensity4), layerMasks.a);
-    base = mix(base, applyEmission(vec3(0.0), emiColor5, emiIntensity5), maskColor);
+    base = mix(base, applyEmission(base, material.emiColor1, material.emiIntensity1), layerMasks.r);
+    base = mix(base, applyEmission(base, material.emiColor2, material.emiIntensity2), layerMasks.g);
+    base = mix(base, applyEmission(base, material.emiColor3, material.emiIntensity3), layerMasks.b);
+    base = mix(base, applyEmission(base, material.emiColor4, material.emiIntensity4), layerMasks.a);
+    base = mix(base, applyEmission(vec3(0.0), material.emiColor5, material.emiIntensity5), maskColor);
 
     return vec4(base, color.a);
 }
 
-vec4 masked(vec2 uv) {
+vec4 masked(vec2 uv, Material material) {
     vec4 color = texture(diffuse, uv);
     float maskColor = texture(mask, uv).r;
-    color.rgb = mix(color.rgb, color.rgb * baseColor1, maskColor);
+    color.rgb = mix(color.rgb, color.rgb * material.baseColor1, maskColor);
     return color;
 }
 
-vec4 baseColor(vec2 uv) {
-    if (colorMethod == 0) return texture(diffuse, uv);
-    else if (colorMethod == 1) return layered(uv);
-    else if (colorMethod == 2) return masked(uv);
+vec4 baseColor(vec2 uv, Material material) {
+    if (material.colorMethod == 0) return texture(diffuse, uv);
+    else if (material.colorMethod == 1) return layered(uv, material);
+    else if (material.colorMethod == 2) return masked(uv, material);
     else return texture(diffuse, uv);
 }
 
@@ -181,7 +206,7 @@ vec4 vintage(vec4 inColor) {
     return vec4(vec3(grayscale), inColor.a);
 }
 
-vec4 process(vec4 color, vec2 uv, vec2 texel) {
+vec4 process(vec4 color, vec2 uv, vec2 texel, int effect) {
     if (effect == 0) return color;
     else if (effect == 1) return galaxy(color);
     else if (effect == 2) return pastel(color, uv);
@@ -196,10 +221,14 @@ void main() {
     vec2 uv = (vec2(pixel) + 0.5) / outputSize;
     vec2 texel = 1.0 / outputSize;
 
-    vec4 color = baseColor(uv);
-    color = process(color, uv, texel);
+    Transform transform = transforms[instanceId * variantSize + meshId];
+    Variant variant = variants[transform.variant];
+    Material material = materials[variant.material];
 
-    if (paradox) {
+    vec4 color = baseColor(uv, material);
+    color = process(color, uv, texel, variant.effect);
+
+    if (variant.paradox) {
         color.rgb = mix(color.rgb, vec3(1.0), texture(paradoxTexture, uv).r);
     }
 

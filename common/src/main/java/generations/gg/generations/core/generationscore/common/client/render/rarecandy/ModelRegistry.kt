@@ -4,28 +4,22 @@ import com.mojang.blaze3d.pipeline.RenderCall
 import com.mojang.blaze3d.systems.RenderSystem
 import com.mojang.blaze3d.vertex.PoseStack
 import com.mojang.math.Axis
-import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders
 import generations.gg.generations.core.generationscore.common.client.model.ModelContextProviders.AngleProvider
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.CompiledModel.Companion.of
 import generations.gg.generations.core.generationscore.common.world.level.block.entities.ModelProvidingBlockEntity
 import generations.gg.generations.core.generationscore.common.world.level.block.generic.GenericRotatableModelBlock
-import gg.generations.rarecandy.renderer.animation.Animation
 import gg.generations.rarecandy.renderer.rendering.RareCandy
-import gg.generations.rarecandy.shaded.caffeine.cache.CacheLoader
-import gg.generations.rarecandy.shaded.caffeine.cache.Caffeine
-import gg.generations.rarecandy.shaded.caffeine.cache.RemovalCause
-import net.minecraft.client.Minecraft
+import gg.generations.rarecandy.renderer.rendering.RenderStage
 import net.minecraft.core.Direction
 import net.minecraft.resources.ResourceLocation
-import java.util.concurrent.TimeUnit
-import java.util.function.BiConsumer
+import java.util.concurrent.ConcurrentLinkedQueue
 
 object ModelRegistry {
-    private val modelsToLoad: MutableList<ResourceLocation> = mutableListOf()
-
-    private val CACHE = mutableMapOf<ResourceLocation, CompiledModel>()
-    private val TIMES = mutableMapOf<ResourceLocation, Double>()
+    val TASKS = ConcurrentLinkedQueue<Runnable>()
+    private val modelsToLoad = mutableListOf<ResourceLocation>()
+    private val models = mutableMapOf<ResourceLocation, CompiledModel>()
+    private val modelsToUnload = mutableListOf<ResourceLocation>()
 
     @JvmStatic
     operator fun get(modelProvider: ModelContextProviders.ModelProvider): CompiledModel? {
@@ -34,10 +28,15 @@ object ModelRegistry {
 
     @JvmStatic
     fun clear() {
-       ensureOnRenderThread {
-            CACHE.forEach { (_, value) -> value.delete() }
+        runLater {
+           modelsToUnload.clear()
+           modelsToLoad.clear()
 
-            CACHE.clear()
+           for(model in models.values) {
+               model.delete()
+           }
+
+           models.clear()
         }
     }
 
@@ -49,26 +48,38 @@ object ModelRegistry {
         }
     }
 
-    fun tick() {
-        ensureOnRenderThread {
-            val time = MinecraftClientGameProvider.getTimePassed();
+    fun tick(time: Double) {
+        var task = TASKS.poll()
+        while (task != null) {
+            task.run()
+            task = TASKS.poll()
+        }
 
-            modelsToLoad.forEach {
-                CACHE[it] = of(it);
-                TIMES[it] = time
+        for ((key, model) in models) {
+            model.update(time)
+            model.takeIf({ it.empty })?.run { modelsToUnload.add(key) }
+        }
+
+        if(modelsToLoad.isEmpty() and modelsToUnload.isEmpty()) return
+
+        ensureOnRenderThread {
+            if(modelsToLoad.isNotEmpty()) {
+                for (key in modelsToLoad) {
+                    models[key] = of(key);
+                }
+                modelsToLoad.clear()
             }
 
-            modelsToLoad.clear()
+            if(modelsToLoad.isNotEmpty()) {
+                for (key in modelsToUnload) {
+                    models[key]?.also {
+                        it.delete()
 
-            val keys = TIMES.filter { time - it.value >= 5.0 }.map { it.key }
-
-            for(key in keys) {
-                CACHE[key]?.also {
-                    it.delete()
+                    }
+                    models.remove(key)
                 }
 
-                CACHE.remove(key)
-                TIMES.remove(key)
+                modelsToUnload.clear()
             }
         }
     }
@@ -78,7 +89,7 @@ object ModelRegistry {
         return try {
             if(modelsToLoad.contains(location)) null;
             else {
-                CACHE[location]?.also { TIMES[location] = MinecraftClientGameProvider.getTimePassed() } ?: run { modelsToLoad += location }.let { null }
+                models[location] ?: run { modelsToLoad += location }.let { null }
             }
         } catch (e: Exception) {
             null
@@ -88,6 +99,12 @@ object ModelRegistry {
     @JvmStatic
     fun init() {
         CompiledModel.init()
+    }
+
+    fun render(stage: RenderStage) {
+        models.values.forEach {
+            it.render(stage)
+        }
     }
 
     fun prepForBER(stack: PoseStack, supplier: AngleProvider) {
@@ -117,10 +134,8 @@ object ModelRegistry {
         }
     }
 
-    @JvmStatic
-    val worldRareCandy: RareCandy = RareCandy().also {
-        Animation.animationModifier = BiConsumer { animation: Animation, s: String ->
-            if (s == "gfb") animation.ticksPerSecond = 60000f // 60 fps. 1000 ticks per frame?
-        }
+    fun runLater(runnable: Runnable) {
+        TASKS += runnable
     }
+
 }

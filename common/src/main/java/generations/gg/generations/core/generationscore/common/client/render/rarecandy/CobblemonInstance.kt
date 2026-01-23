@@ -6,6 +6,7 @@ import gg.generations.rarecandy.renderer.animation.AnimationInstance
 import gg.generations.rarecandy.renderer.animation.Transform
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance
 import gg.generations.rarecandy.renderer.storage.SSBOBuffer
+import net.minecraft.util.FastColor.ABGR32
 import org.joml.Matrix4f
 import org.joml.Vector3f
 import org.lwjgl.system.MemoryUtil
@@ -22,13 +23,14 @@ open class CobblemonInstance(var light: Int = 0, var overlay: Int = 0, var tint:
     override fun update(instanceBuffer: SSBOBuffer) {
         super.update(instanceBuffer)
 
-        instanceBuffer.put(tint)
+        instanceBuffer.putRgba(tint)
         instanceBuffer.put(teraTint.x)
         instanceBuffer.put(teraTint.y)
         instanceBuffer.put(teraTint.z)
         instanceBuffer.put(if (teraActive) 1 else 0)  // uint teraActive
-        instanceBuffer.put(light)
-        instanceBuffer.put(overlay)
+
+        instanceBuffer.putPackedUv(light)
+        instanceBuffer.putPackedUv(overlay)
     }
 
     override fun changeAnimation(newAnimation: AnimationInstance?) = Unit
@@ -58,4 +60,13 @@ open class CobblemonInstance(var light: Int = 0, var overlay: Int = 0, var tint:
             }
         }
     }
+}
+
+fun SSBOBuffer.putRgba(color: Int) {
+    this.put(ABGR32.fromArgb32(color))
+}
+
+fun SSBOBuffer.putPackedUv(uv: Int) {
+    this.put((uv and '\uffff'.code).toShort())
+    this.put((uv shr 16 and '\uffff'.code).toShort())
 }

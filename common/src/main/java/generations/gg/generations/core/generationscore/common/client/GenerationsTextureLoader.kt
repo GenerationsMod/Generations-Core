@@ -81,6 +81,7 @@ object GenerationsTextureLoader : ITextureLoader() {
         }
     }
 
+    override fun contains(p0: String?): Boolean = REGULAR.containsKey(p0)
 
     override fun getTexture(s: String?): ITexture {
         val texture = REGULAR.getOrDefault(s, null)?.let { Minecraft.getInstance().textureManager.getTexture(it, null) }.takeIf { it is ITextureWithResourceLocation } ?: return MissingTextureProxy

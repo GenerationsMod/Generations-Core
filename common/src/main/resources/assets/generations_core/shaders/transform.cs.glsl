@@ -10,12 +10,15 @@ struct SourceVertex {
 };
 
 struct TargetVertex {
-    vec3 position;
-    vec4 color;
-    vec2 uv0;
-    ivec2 uv1;
-    ivec2 uv2;
-    vec3 normal;
+    float x;
+    float y;
+    float z;
+    uint color;
+    float u0;
+    float v0;
+    uint uv1;
+    uint uv2;
+    uint normal;
 };
 
 struct DrawCmd {
@@ -29,13 +32,14 @@ struct Instance {
     vec4 tint;
     vec3 teraTint;
     uint teraActive;
-    ivec2 light;
-    ivec2 overlay;
+    uint light;
+    uint overlay;
 };
 
 struct Transform {
     vec2 scale;
     vec2 offset;
+    int variant;
 };
 
 uniform int variantSize;
@@ -52,10 +56,10 @@ mat4 getBoneTransform(Instance instance, uvec4 joints, vec4 weights) {
     mat4[] bone = instance.boneTransforms;
 
     return
-        bone[joints.x] * weights.x +
-        bone[joints.y] * weights.y +
-        bone[joints.z] * weights.z +
-        bone[joints.w] * weights.w;
+    bone[joints.x] * weights.x +
+    bone[joints.y] * weights.y +
+    bone[joints.z] * weights.z +
+    bone[joints.w] * weights.w;
 }
 
 void main() {
@@ -72,16 +76,22 @@ void main() {
 
     Instance instance = instances[instanceId];
 
-    vec4 pos = getBoneTransform(instance, src.joints, src.weights) * vec4(src.position, 1.0) * instance.modelMatrix;
+    vec4 pos = instance.modelMatrix * (getBoneTransform(instance, src.joints, src.weights) * vec4(src.position, 1.0));
 
     Transform uvTransform = transforms[instanceId * variantSize + meshId];
+    vec2 uv0 = src.texcoord * uvTransform.scale + uvTransform.offset;
 
-    outV.position = pos.xyz;
-    outV.color = instance.tint;
-    outV.uv0 = src.texcoord * uvTransform.scale + uvTransform.offset;
+    outV.x = pos.x;
+    outV.y = pos.y;
+    outV.z = pos.z;
+    outV.color = 0xFFFFFFFFu;
+    outV.u0 = uv0.x;
+    outV.v0 = uv0.y;
     outV.uv1 = instance.light;
     outV.uv2 = instance.overlay;
-    outV.normal   = src.normal;
+
+    ivec3 normalPacked = ivec3(clamp(src.normal * 127.0, -128.0, 127.0));
+    outV.normal = uint(normalPacked.x & 0xFF) | (uint(normalPacked.y & 0xFF) << 8) | (uint(normalPacked.z & 0xFF) << 16);
 
     dst[idx] = outV;
 }

@@ -28,14 +28,14 @@ public final class RareCandyVertexArray {
         GL43.glVertexAttribFormat(2, 2, GL43.GL_FLOAT, false, 16);
         GL43.glVertexAttribBinding(2, BINDING);
 
-        // UV1
+// UV1
         GL43.glEnableVertexAttribArray(3);
-        GL43.glVertexAttribIFormat(3, 2, GL43.GL_SHORT, 24);
+        GL43.glVertexAttribFormat(3, 2, GL43.GL_SHORT, false, 24);  // NOT normalized
         GL43.glVertexAttribBinding(3, BINDING);
 
-        // UV2
+// UV2
         GL43.glEnableVertexAttribArray(4);
-        GL43.glVertexAttribIFormat(4, 2, GL43.GL_SHORT, 28);
+        GL43.glVertexAttribFormat(4, 2, GL43.GL_SHORT, false, 28);  // NOT normalized
         GL43.glVertexAttribBinding(4, BINDING);
 
         // Normal

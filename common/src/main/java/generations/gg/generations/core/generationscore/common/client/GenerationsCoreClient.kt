@@ -124,7 +124,7 @@ object GenerationsCoreClient {
     fun onInitialize(implementation: GenerationsCoreClientImplementation) {
 //        if (GenerationsCore.CONFIG.client.useRenderDoc) {
 //            try {
-//                System.loadLibrary("renderdoc")
+                System.loadLibrary("renderdoc")
 //            } catch (e: UnsatisfiedLinkError) {
 //                LOGGER.warn("Attempted to use renderdoc without renderdoc installed.")
 //            }
@@ -162,7 +162,7 @@ object GenerationsCoreClient {
 
 
     fun setupClient(event: Minecraft) {
-
+        Pipelines.onInitialize(event.resourceManager)
         event.tell({
             val renderer = TimeCapsuleItemRender()
 
@@ -176,9 +176,6 @@ object GenerationsCoreClient {
             addWoodType(GenerationsWoodTypes.ULTRA_JUNGLE)
             addWoodType(GenerationsWoodTypes.ULTRA_DARK)
             addWoodType(GenerationsWoodTypes.GHOST)
-
-            Pipelines.onInitialize(event.resourceManager)
-
 
 
             registerScreens()
@@ -554,6 +551,8 @@ object GenerationsCoreClient {
     }
 
     fun secondRenderPass() {
+        if(!Pipelines.initialized) return
+
 //        renderHighlightedPath(stack, Minecraft.getInstance().levelRenderer.ticks, camera)
 
         RenderStateRecord.push()
@@ -563,13 +562,11 @@ object GenerationsCoreClient {
         renderRareCandyTransparent()
         RenderStateRecord.pop()
 
-        ModelRegistry.worldRareCandy.end()
-
-        ModelRegistry.tick()
+        ModelRegistry.tick(MinecraftClientGameProvider.getTimePassed())
     }
 
     fun firstRenderPass() {
-        ModelRegistry.worldRareCandy.update(MinecraftClientGameProvider.getTimePassed())
+        if(!Pipelines.initialized) return
 
         MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
         MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
@@ -598,7 +595,7 @@ object GenerationsCoreClient {
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
 
-        ModelRegistry.worldRareCandy.render(stage)
+        ModelRegistry.render(stage)
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms")
     }
 }

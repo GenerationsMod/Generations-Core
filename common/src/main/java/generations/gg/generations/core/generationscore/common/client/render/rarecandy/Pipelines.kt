@@ -6,7 +6,6 @@ import com.mojang.blaze3d.systems.RenderSystem
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import gg.generations.rarecandy.pokeutils.reader.ITextureLoader
 import gg.generations.rarecandy.renderer.components.MultiRenderObject
-import gg.generations.rarecandy.renderer.model.material.MaterialUploader
 import gg.generations.rarecandy.renderer.pipeline.Pipelines
 import gg.generations.rarecandy.renderer.pipeline.compute.ComputePipeline
 import gg.generations.rarecandy.renderer.pipeline.traditional.TraditionalPipeline
@@ -145,6 +144,8 @@ object Pipelines {
 
     var instanceId: Int = 0
 
+    var initialized = false
+
     lateinit var textures: Array<ITexture>
 
     lateinit var vao: RareCandyVertexArray
@@ -153,15 +154,11 @@ object Pipelines {
     @JvmStatic
     fun transformVertices(`object`: MultiRenderObject, instanceId: Int) {
         this.instanceId = instanceId
-        System.out.println("Blep1")
         TRANSFORM.useProgram()
-        System.out.println("Blep2")
         TRANSFORM.bindGlobal()
-        System.out.println("Blep3")
         TRANSFORM.bindModel(`object`)
-        System.out.println("Blep4")
         TRANSFORM.dispatch(
-            GL43C.GL_SHADER_STORAGE_BARRIER_BIT,
+            GL43C.GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT,
             (`object`.maxVertex + 255) / 256,
             `object`.meshes.size,
             1
@@ -180,7 +177,6 @@ object Pipelines {
         textures = Array(3) {
             BlankTexture(Type.RGBA_BYTE, 1024, 1024, ITexture.ComputeAccess.READ_WRITE)
         }
-        MaterialUploader.setup()
     }
 
     /**
@@ -190,17 +186,14 @@ object Pipelines {
     fun onInitialize(manager: ResourceManager) {
         opengGl()
         TRANSFORM = manager.shader("transform")
-            .addSSBORange(Scope.MODEL, "SrcBuffer", 0, {ctx -> ctx.`object`.modelBuffer}, {ctx -> ctx.`object`.vertex })
-            .addSSBORange(Scope.MODEL, "IndexBuffer", 1, {ctx -> ctx.`object`.modelBuffer }, { ctx -> ctx.`object`.index })
-            .addSSBORange(Scope.MODEL, "DrawCommands", 2, { ctx -> ctx.`object`.modelBuffer }, { ctx -> ctx.`object`.draw})
-            .addSSBO(Scope.MODEL, "InstanceBuffer", 3, { ctx -> ctx.`object`.instanceBuffer.bufferId })
-            .addSSBO(Scope.MODEL, "TransformBuffer", 4, { ctx -> ctx.`object`.uvTransformBuffer.bufferId })
-            .addSSBO(Scope.MODEL, "DstBuffer", 5, { ctx -> ctx.`object`.destBuffer })
-            .addUniform(Scope.MODEL, "variantSize", { uniform, ctx -> uniform.uploadInt(ctx.`object`.meshes.size) })
-            .addUniform(Scope.GLOBAL, "instanceId", { uniform, ctx ->
-                System.out.println("I'm a retard")
-                uniform.uploadInt(instanceId)
-                System.out.println("wtf")})
+            .addSSBORange(Scope.MODEL, "SrcBuffer", 0, {ctx -> ctx.`object`().modelBuffer}, {ctx -> ctx.`object`().vertex })
+            .addSSBORange(Scope.MODEL, "IndexBuffer", 1, {ctx -> ctx.`object`().modelBuffer }, { ctx -> ctx.`object`().index })
+            .addSSBORange(Scope.MODEL, "DrawCommands", 2, { ctx -> ctx.`object`().modelBuffer }, { ctx -> ctx.`object`().draw})
+            .addSSBO(Scope.MODEL, "InstanceBuffer", 3, { ctx -> ctx.`object`().instanceBuffer.bufferId })
+            .addSSBO(Scope.MODEL, "TransformBuffer", 4, { ctx -> ctx.`object`().uvTransformBuffer.bufferId })
+            .addSSBO(Scope.MODEL, "DstBuffer", 5, { ctx -> ctx.`object`().destBuffer })
+            .addUniform(Scope.MODEL, "variantSize", { uniform, ctx -> uniform.uploadInt(ctx.`object`().meshes.size) })
+            .addUniform(Scope.GLOBAL, "instanceId", { uniform, ctx -> uniform.uploadInt(instanceId) })
             .build()
         PARADOX = manager.shader("paradox")
             .autoInt(Scope.GLOBAL, "frame", { pingpong(MinecraftClientGameProvider.getTimePassed()) })
@@ -213,10 +206,17 @@ object Pipelines {
             .autoSampler2D(Scope.DRAW, "layer", 2, createMaterialTextureProvider(2))
             .autoSampler2D(Scope.DRAW, "mask", 3, createMaterialTextureProvider(3))
             .autoSampler2D(Scope.DRAW, "paradoxTexture", 4, { textures[0].id })
-            .addUBO(Scope.DRAW, "Material", 0, { it.`object`().getMaterial(it.mesh(), it.instance().variant()).bindMaterial() })
+            .addUniform(Scope.DRAW, "instanceId", { uniform, _ -> uniform.uploadInt(instanceId) })
+            .addUniform(Scope.DRAW, "meshId", { uniform, ctx -> uniform.uploadInt(ctx.mesh()) })
+            .addUniform(Scope.DRAW, "variantSize", { uniform, ctx -> uniform.uploadInt(ctx.`object`().meshes.size) })
+            .addSSBORange(Scope.DRAW, "MaterialBuffer", 0, { ctx -> ctx.`object`().modelBuffer }, {ctx -> ctx.`object`().material })
+            .addSSBORange(Scope.DRAW, "VariantBuffer", 1, { ctx -> ctx.`object`.modelBuffer }, { ctx -> ctx.`object`.variant })
+            .addSSBO(Scope.DRAW, "TransformBuffer", 2, { ctx -> ctx.`object`.uvTransformBuffer.bufferId })
             .autoImage2D(Scope.DRAW, "solidTex", 0, { textures[1] })
             .autoImage2D(Scope.DRAW, "litTex", 1, { textures[2] })
             .build()
+
+        initialized = true
 
     }
 
@@ -262,8 +262,8 @@ object Pipelines {
 
     @JvmStatic
     fun solidOn() {
+        RenderSystem.setShader({ GameRenderer.getRendertypeEntityTranslucentShader() })
         RenderSystem.setShaderTexture(0, textures[2].id)
-        RenderSystem.setShader(Supplier { GameRenderer.getRendertypeEntityTranslucentShader() })
         LIGHTMAP.setupRenderState()
     }
 

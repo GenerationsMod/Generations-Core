@@ -54,7 +54,8 @@
     "client.PokemonOnShoulderRenderMixin",
     "client.PosableStateMixin",
     "client.RenderSystemMixin",
-    "client.SummaryMixin"
+    "client.SummaryMixin",
+    "client.WindowMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -51,7 +51,7 @@ dependencies {
 
     modLocalRuntime("me.djtheredstoner:DevAuth-fabric:${project.properties["devauth_version"]}")
 
-    "shadowBundle"(implementation(files("../libs/RareCandy-3.0.0.jar"))!!)
+    "shadowBundle"(implementation(files("../libs/RareCandy-3.1.0.jar"))!!)
 //    implementation("shadowBundle"("gg.generations", "RareCandy", "${project.properties["rareCandy"]}") {isTransitive = false})!!
 
     implementation("shadowBundle"("com.github.Chocohead:Fabric-ASM:v2.3")!!)
