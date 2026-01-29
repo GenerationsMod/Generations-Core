@@ -179,15 +179,15 @@ class ItemRecipeDatagen(arg: PackOutput, registries: CompletableFuture<HolderLoo
             unlockedByHolder(GenerationsItems.CRYSTAL_OF_KNOWLEDGE)
         }
 
-        recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.RUBY_ROD) {
-            define('R', GenerationsItems.RUBY)
-            define('S', Items.STRING)
-            define('O', GenerationsItems.ORB)
-            pattern("  R")
-            pattern(" RS")
-            pattern("R O")
-            unlockedByItem(Items.STRING)
-        }
+//        recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.RUBY_ROD) {
+//            define('R', GenerationsItems.RUBY)
+//            define('S', Items.STRING)
+//            define('O', GenerationsItems.ORB)
+//            pattern("  R")
+//            pattern(" RS")
+//            pattern("R O")
+//            unlockedByItem(Items.STRING)
+//        }
 
         recipeOutput.shaped(RecipeCategory.MISC, GenerationsItems.RUSTY_SWORD) {
             define('F', GenerationsItems.RUSTY_FRAGMENT)
