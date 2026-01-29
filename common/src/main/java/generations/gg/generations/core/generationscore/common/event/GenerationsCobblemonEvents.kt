@@ -5,16 +5,13 @@ import com.cobblemon.mod.common.api.Priority
 import com.cobblemon.mod.common.api.battles.model.actor.ActorType
 import com.cobblemon.mod.common.api.events.CobblemonEvents
 import com.cobblemon.mod.common.api.events.drops.LootDroppedEvent
-import com.cobblemon.mod.common.api.tags.CobblemonItemTags
 import com.cobblemon.mod.common.api.text.text
 import com.cobblemon.mod.common.api.types.tera.TeraTypes
 import com.cobblemon.mod.common.battles.actor.PlayerBattleActor
 import com.cobblemon.mod.common.client.gui.interact.wheel.InteractWheelOption
 import com.cobblemon.mod.common.client.gui.interact.wheel.Orientation
-import com.cobblemon.mod.common.pokemon.Pokemon
 import com.cobblemon.mod.common.util.asTranslated
 import com.cobblemon.mod.common.util.cobblemonResource
-import com.cobblemon.mod.common.util.getPlayer
 import com.cobblemon.mod.common.util.giveOrDropItemStack
 import com.cobblemon.mod.common.util.isInBattle
 import generations.gg.generations.core.generationscore.common.GenerationsCore
@@ -24,10 +21,7 @@ import generations.gg.generations.core.generationscore.common.battle.BattleCondi
 import generations.gg.generations.core.generationscore.common.battle.BattleConditionsProcessor.sendToPlayersAndSpectators
 import generations.gg.generations.core.generationscore.common.battle.BattleSideData
 import generations.gg.generations.core.generationscore.common.battle.ConditionsData
-import generations.gg.generations.core.generationscore.common.battle.ExpAllCalculator.calculateMultiplier
-import generations.gg.generations.core.generationscore.common.battle.ExpAllCalculator.hasExpAll
 import generations.gg.generations.core.generationscore.common.battle.GenerationsInstructionProcessor
-import generations.gg.generations.core.generationscore.common.battle.grantExpAll
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
 import generations.gg.generations.core.generationscore.common.config.LegendKeys
 import generations.gg.generations.core.generationscore.common.config.SpeciesKey
@@ -43,7 +37,6 @@ import net.minecraft.client.Minecraft
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.ItemStack
 import org.joml.Vector3f
-import kotlin.math.PI
 
 class GenerationsCobblemonEvents {
 
@@ -81,9 +74,10 @@ class GenerationsCobblemonEvents {
                     .filter { battleActor -> battleActor is PlayerBattleActor }
                     .map { battleActor -> battleActor as PlayerBattleActor }
                     .forEach { actor ->
-                        actor.entity?.inventory?.items?.asSequence()
-                            ?.filter { a -> a.item is PostBattleUpdatingItem }
-                            ?.forEach { a -> (a.item as PostBattleUpdatingItem).afterBattle(actor, a, data) }
+                        actor.entity?.inventory?.items?.filter { a -> a.item is PostBattleUpdatingItem }?.distinctBy { it.item }?.forEach { stack ->
+                            (stack.item as PostBattleUpdatingItem).afterBattle(actor, stack, data)
+                        }
+
 
                         actor.pokemonList.asSequence().map { it.originalPokemon }.forEach { originalPokemon ->
                             val it: ItemStack = originalPokemon.heldItem()

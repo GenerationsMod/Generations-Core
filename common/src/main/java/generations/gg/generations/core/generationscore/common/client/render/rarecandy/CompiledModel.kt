@@ -11,6 +11,7 @@ import gg.generations.rarecandy.renderer.components.MultiRenderObject
 import gg.generations.rarecandy.renderer.rendering.ObjectInstance
 import gg.generations.rarecandy.renderer.storage.AnimatedObjectInstance
 import gg.generations.rarecandy.renderer.storage.ObjectManager
+import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.MultiBufferSource
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.server.packs.resources.Resource
@@ -65,7 +66,10 @@ class CompiledModel @JvmOverloads constructor(
     }
 
     private fun renderRareCandy(instance: ObjectInstance, objectManager: ObjectManager) {
-        objectManager.add(renderObject!!, instance)
+        if (!instance.isLinked) {
+            objectManager.add(renderObject!!, instance)
+        }
+        instance.use()
     }
 
     fun delete() {
@@ -84,11 +88,13 @@ class CompiledModel @JvmOverloads constructor(
         fun init() {}
 
         @JvmStatic
-        fun of(pair: ResourceLocation, resource: Resource): CompiledModel {
+        fun of(key: ResourceLocation): CompiledModel {
             return try {
-                CompiledModel(pair, resource, { AnimatedMeshObject() })
+                val resource = Minecraft.getInstance().resourceManager.getResourceOrThrow(key)
+
+                CompiledModel(key, resource, { AnimatedMeshObject() })
             } catch (e: Exception) {
-                val path = pair.toString()
+                val path = key.toString()
                 if (path.endsWith(".smdx") || path.endsWith(".pqc")) throw RuntimeException("Tried reading a 1.12 .smdx or .pqc")
                 throw RuntimeException("Failed to load $path", e)
             }

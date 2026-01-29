@@ -557,11 +557,16 @@ object GenerationsCoreClient {
         RenderSystem.enableDepthTest()
         RenderSystem.defaultBlendFunc()
         RenderSystem.enableBlend()
-        renderRareCandyTransparent(true)
+        renderRareCandyTransparent()
         RenderStateRecord.pop()
+
+        ModelRegistry.worldRareCandy.end()
+
+        ModelRegistry.tick()
     }
 
     fun firstRenderPass() {
+        ModelRegistry.worldRareCandy.update(MinecraftClientGameProvider.getTimePassed())
 
         MatrixCache.projectionMatrix = RenderSystem.getProjectionMatrix()
         MatrixCache.viewMatrix = RenderSystem.getModelViewMatrix()
@@ -576,21 +581,21 @@ object GenerationsCoreClient {
 
 
     fun renderRareCandySolid() {
-        renderRareCandy(RenderStage.SOLID, false)
+        renderRareCandy(RenderStage.SOLID)
     }
 
-    fun renderRareCandyTransparent(clear: Boolean = false) {
-        renderRareCandy(RenderStage.TRANSPARENT, clear)
+    fun renderRareCandyTransparent() {
+        renderRareCandy(RenderStage.TRANSPARENT)
     }
 
-    fun renderRareCandy(stage: RenderStage, clear: Boolean) {
+    fun renderRareCandy(stage: RenderStage) {
         if (GenerationsCore.CONFIG.client.useVanilla) return
 
         var startTime = System.currentTimeMillis()
         RenderSystem.enableDepthTest()
         BufferUploader.reset()
 
-        ModelRegistry.worldRareCandy.render(stage, clear, MinecraftClientGameProvider.getTimePassed())
+        ModelRegistry.worldRareCandy.render(stage, false)
         if (shouldRenderFpsPie()) LOGGER.warn("RareCandy render took " + (System.currentTimeMillis() - startTime) + "ms")
     }
 }
