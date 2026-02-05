@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "generations_core:block/ultrite_debris_bottom",
+    "side": "generations_core:block/ultrite_debris_side",
+    "top": "generations_core:block/ultrite_debris_top"
+  }
+}

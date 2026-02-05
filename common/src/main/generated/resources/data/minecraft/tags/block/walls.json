@@ -124,6 +124,8 @@
     "generations_core:magenta_shingles_wall",
     "generations_core:pink_shingles_wall",
     "generations_core:cool_stone_wall",
+    "generations_core:ultra_crystal_wall",
+    "generations_core:ultra_cobblestone_wall",
     "generations_core:ultra_white_wall",
     "generations_core:ultra_light_gray_wall",
     "generations_core:ultra_gray_wall",

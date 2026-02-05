@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "generations_core:block/ultra_crystal_slab"
+    },
+    "type=double": {
+      "model": "generations_core:block/ultra_crystal"
+    },
+    "type=top": {
+      "model": "generations_core:block/ultra_crystal_slab_top"
+    }
+  }
+}

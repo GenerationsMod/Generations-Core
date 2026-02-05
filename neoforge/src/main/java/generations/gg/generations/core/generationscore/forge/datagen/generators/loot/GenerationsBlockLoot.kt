@@ -151,6 +151,7 @@ internal class GenerationsBlockLoot(provider: HolderLookup.Provider) : BlockLoot
         //Ultra Space
         dropSelf(GenerationsBlocks.ULTRA_SAND)
         dropWhenSilkTouch(GenerationsBlocks.GHOST_LANTERN.value())
+        addOreSet(GenerationsBlocks.ULTRITE_BLOCK.value(), GenerationsItems.ULTRITE_REMNANT.value())
 //        add(GenerationsBlocks.MACHINE_BLOCK.value(), createSingleItemTable(GenerationsBlocks.MACHINE_BLOCK.value()))
         dropSelf(GenerationsBlocks.RUINS_SAND)
         dropSelf(GenerationsBlocks.RICH_SOIL_1)

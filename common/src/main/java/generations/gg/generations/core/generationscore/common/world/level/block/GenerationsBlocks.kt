@@ -90,6 +90,9 @@ object GenerationsBlocks: BlockPlatformRegistry() {
     val BROKEN_DARK_PRISMARINE_PILLAR = registerBlockItem("dark_prismarine_pillar_broken", { PillarBlock(STONE_PROPERTY) })
     val HAUNTED_PILLAR = registerBlockItem("haunted_pillar", { PillarBlock(STONE_PROPERTY) })
     val BROKEN_HAUNTED_PILLAR = registerBlockItem("haunted_pillar_broken", { PillarBlock(STONE_PROPERTY) })
+    val ULTRA_PILLAR = registerBlockItem("ultra_pillar", { PillarBlock(STONE_PROPERTY) })
+    val BROKEN_ULTRA_PILLAR = registerBlockItem("ultra_pillar_broken", { PillarBlock(STONE_PROPERTY) })
+
 
     val DAWN_STONE_BLOCK = registerBlockItem("dawn_stone_block", { Block(STONE_PROPERTY) })
     val DUSK_STONE_BLOCK = registerBlockItem("dusk_stone_block", { Block(STONE_PROPERTY) })
@@ -481,6 +484,35 @@ object GenerationsBlocks: BlockPlatformRegistry() {
     val GREATBALL_CHEST = registerChestBlockItem("greatball_chest", { GenericChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST), 9, 5, "greatball_chest") })
     val ULTRABALL_CHEST = registerChestBlockItem("ultraball_chest", { GenericChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST), 9, 6, "ultraball_chest") })
     val MASTERBALL_CHEST = registerChestBlockItem("masterball_chest", { GenericChestBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CHEST), 12, 8, "masterball_chest") })
+
+    /**
+     * Ultraspace Blocks
+     */
+    val ULTRITE_DEBRIS = registerBlockItem(
+        "ultrite_debris",
+        {
+            Block(
+                BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).requiresCorrectToolForDrops()
+                    .strength(30.0F, 1200.0F).sound(SoundType.ANCIENT_DEBRIS)
+            )
+        })
+
+    val ULTRA_CRYSTAL_SET = GenerationsBlockSet("ultra_crystal", BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK))
+    val ULTRA_COBBLESTONE_SET = GenerationsBlockSet("ultra_cobblestone", BlockBehaviour.Properties.ofFullCopy(Blocks.COBBLESTONE))
+
+    val CALIL = registerBlockItem("calil", { DoublePlantBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val DICHRO_EULB = registerBlockItem("dichro_eulb", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val MUILLA = registerBlockItem("muilla", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val NOILEDNAD = registerBlockItem("noilednad", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val PILUT_DER = registerBlockItem("pilut_der", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val PILUT_EGNARO = registerBlockItem("pilut_egnaro", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val PILUT_ETIHW = registerBlockItem("pilut_etihw", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val PILUT_KNIP = registerBlockItem("pilut_knip", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val REWOLFNROC = registerBlockItem("rewolfnroc", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val YELLAV_EHT_FO_YLIL = registerBlockItem("yellav_eht_fo_ylil", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val YNOEP = registerBlockItem("ynoep", { TallFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val YPPOP = registerBlockItem("yppop", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
+    val YSIAD_EYEXO = registerBlockItem("ysiad_eyexo", { FlabebeFlowerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.VINE).strength(0.8f).sound(SoundType.FLOWERING_AZALEA)) })
 
     fun <T : Block> registerBlockItem(
         name: String,
