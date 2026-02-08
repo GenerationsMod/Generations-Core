@@ -54,7 +54,11 @@ object GenerationsInstructionProcessor {
         val name = s3[1]
 
         val ability = battlePokemon.originalPokemon.ability.name
-        battlePokemon.originalPokemon.persistentData.putString("original_ability", ability)
+
+        // Prevent terapagos original ability from becoming tera shell instead of tera shift
+        if (name != "stellar") {
+            battlePokemon.originalPokemon.persistentData.putString("original_ability", ability)
+        }
 
         if (effectedPokemon.form.name.equals("Dusk-Mane")) {
             battlePokemon.originalPokemon.persistentData.putString("necro_fusion", "dusk")
