@@ -4,21 +4,22 @@
     "neededUninstalledMods": [],
     "spawns": [
         {
-            "id": "cherrim-1",
-            "pokemon": "cherrim",
+            "id": "rotom-1",
+            "pokemon": "rotom",
             "presets": [
                 "natural"
             ],
             "type": "pokemon",
             "spawnablePositionType": "grounded",
-            "bucket": "rare",
-            "level": "25-50",
+            "bucket": "ultra-rare",
+            "level": "12-60",
             "weight": 9.0,
             "condition": {
                 "canSeeSky": true,
                 "biomes": [
-                    "#cobblemon:is_forest"
-                ]
+                    "#cobblemon:is_temperate"
+                ],
+                "timeRange": "night"
             }
         }
     ]

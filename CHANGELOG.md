@@ -1,3 +1,26 @@
+# 1.2.2
+
+Additions
+- Added Cobblemon 1.7.2 compatibility!
+- Added an S icon to PC for Galaxy, Pastel, Shadow, Sketch, and Vintage Pokemon
+
+Changes
+- Removed Ruby Rod recipe, Lake Guardian Crystals can be obtained from Cobblemon's fishing treasure loot table
+- Changed Legendary Pokemon Wing items to stack at 64
+- Shifted most Legendaries to only spawn above ground
+
+Bug Fixes
+- Fixed Galarian Articuno/Moltres/Zapdos summoning as Kantoian
+- Fixed Mythicals not having 3 guaranteed 31 IVs
+- Fixed Arceus/Silvally types not changing
+- Fixed Terapagos abilities
+- Fixed external transformations on shift right click, eg. mega
+- Fixed Legendary item charging overflowing into all in inventory
+- Fixed Rotom spawns
+- Fixed some Pokemon not appearing as implemented for Pokedex completion
+- Fixed Pokemon spawn context to spawnablePositionType
+
+
 # 1.2.1
 
 Bug Fixes

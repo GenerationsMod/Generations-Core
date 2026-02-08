@@ -10,11 +10,13 @@
                 "natural"
             ],
             "type": "pokemon",
-            "context": "grounded",
+            "spawnablePositionType": "grounded",
             "bucket": "ultra-rare",
             "level": "70-75",
             "weight": 2.0,
             "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
                 "timeRange": "day",
                 "biomes": [
                     "#cobblemon:is_jungle"
