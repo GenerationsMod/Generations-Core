@@ -961,6 +961,20 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_WHITE, "block/flowers/")
         createItemBlock(GenerationsBlocks.FLABEBE_FLOWER_YELLOW, "block/flowers/")
 
+        createItemBlock(GenerationsBlocks.CALIL, "block/flowers/", "_top");
+        createItemBlock(GenerationsBlocks.DICHRO_EULB, "block/flowers/");
+        createItemBlock(GenerationsBlocks.MUILLA, "block/flowers/");
+        createItemBlock(GenerationsBlocks.NOILEDNAD, "block/flowers/");
+        createItemBlock(GenerationsBlocks.PILUT_DER, "block/flowers/");
+        createItemBlock(GenerationsBlocks.PILUT_EGNARO, "block/flowers/");
+        createItemBlock(GenerationsBlocks.PILUT_ETIHW, "block/flowers/");
+        createItemBlock(GenerationsBlocks.PILUT_KNIP, "block/flowers/");
+        createItemBlock(GenerationsBlocks.REWOLFNROC, "block/flowers/");
+        createItemBlock(GenerationsBlocks.YELLAV_EHT_FO_YLIL, "block/flowers/");
+        createItemBlock(GenerationsBlocks.YNOEP, "block/flowers/", "_top");
+        createItemBlock(GenerationsBlocks.YPPOP, "block/flowers/");
+        createItemBlock(GenerationsBlocks.YSIAD_EYEXO, "block/flowers/");
+
         //        createItemBlock(GenerationsDecorationBlocks.SNORLAX_BEAN_BAG, "item/blocks/bean_bags/");
 //        createItemBlock(GenerationsDecorationBlocks.HOUSE_LAMP, "item/blocks/decorations/");
 //        createItemBlock(GenerationsDecorationBlocks.SWITCH, "item/blocks/decorations/");
@@ -1201,9 +1215,9 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         generated(key.path, texPath)
     }
 
-    fun createItemBlock(block: Holder<out Block>, directory: String): ItemModelBuilder {
+    fun createItemBlock(block: Holder<out Block>, directory: String, suffix: String = ""): ItemModelBuilder {
         val key = block.value().getModelKey()
-        return generated(key.path, GenerationsCore.id(directory + key.path))
+        return generated(key.path, GenerationsCore.id(directory + key.path + ""))
     }
 
     fun createPointedDripstoneItem(block: Block, directory: String) {

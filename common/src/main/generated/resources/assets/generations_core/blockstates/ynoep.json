@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "generations_core:block/ynoep_bottom"
+    },
+    "half=upper": {
+      "model": "generations_core:block/ynoep_top"
+    }
+  }
+}

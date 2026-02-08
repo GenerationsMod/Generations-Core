@@ -19,7 +19,10 @@ import net.minecraft.data.DataProvider
 import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.*
+import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.world.level.block.state.properties.BlockStateProperties
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf
 import net.neoforged.neoforge.client.model.generators.*
 import net.neoforged.neoforge.client.model.generators.ModelFile.UncheckedModelFile
 import java.util.*
@@ -278,6 +281,7 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
             null,
             true
         )
+
         registerBlockItem(GenerationsBlocks.CRYSTAL_LIGHT.asValue())
         registerBlockItem(GenerationsBlocks.SILICON_BLOCK.asValue())
         registerBlockItem(GenerationsBlocks.Z_BLOCK.asValue())
@@ -309,6 +313,20 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_RED.asValue())
         registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_WHITE.asValue())
         registerFlabebeFlower(GenerationsBlocks.FLABEBE_FLOWER_YELLOW.asValue())
+
+        registerDoubleFlower(GenerationsBlocks.CALIL.asValue())
+        registerFlabebeFlower(GenerationsBlocks.DICHRO_EULB.asValue())
+        registerFlabebeFlower(GenerationsBlocks.MUILLA.asValue())
+        registerFlabebeFlower(GenerationsBlocks.NOILEDNAD.asValue())
+        registerFlabebeFlower(GenerationsBlocks.PILUT_DER.asValue())
+        registerFlabebeFlower(GenerationsBlocks.PILUT_EGNARO.asValue())
+        registerFlabebeFlower(GenerationsBlocks.PILUT_ETIHW.asValue())
+        registerFlabebeFlower(GenerationsBlocks.PILUT_KNIP.asValue())
+        registerFlabebeFlower(GenerationsBlocks.REWOLFNROC.asValue())
+        registerFlabebeFlower(GenerationsBlocks.YELLAV_EHT_FO_YLIL.asValue())
+        registerDoubleFlower(GenerationsBlocks.YNOEP.asValue())
+        registerFlabebeFlower(GenerationsBlocks.YPPOP.asValue())
+        registerFlabebeFlower(GenerationsBlocks.YSIAD_EYEXO.asValue())
 
         //Ultra Space
         registerSandStonePallet(
@@ -472,6 +490,8 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         )
 
         registerBox()
+
+        registerUltriteDebris()
     }
 
     private fun registerBox() {
@@ -744,7 +764,26 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
         MUSHROOM_BLOCKS.add(crossBlock)
     }
 
-    private fun registerFlabebeFlower(crossBlock: FlabebeFlowerBlock) {
+    private fun registerDoubleFlower(crossBlock: Block) {
+        val name = key(crossBlock)
+        val location = ResourceLocation.fromNamespaceAndPath(name.namespace, ModelProvider.BLOCK_FOLDER + "/flowers/" + name.path)
+
+        val top = ConfiguredModel.builder().modelFile(models().cross(crossBlock.id.path + "_top", location.withSuffix("_top")).renderType("cutout")).build()
+        val bottom = ConfiguredModel.builder().modelFile(models().cross(crossBlock.id.path + "_bottom", location.withSuffix("_bottom")).renderType("cutout")).build()
+
+        getVariantBuilder(crossBlock).forAllStates { state ->
+            if(state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.UPPER) {
+                top
+            } else {
+                bottom
+            }
+
+        }
+
+        dropSelfList.add(crossBlock)
+    }
+
+    private fun registerFlabebeFlower(crossBlock: Block) {
         val name = key(crossBlock)
         val location = ResourceLocation.fromNamespaceAndPath(name.namespace, ModelProvider.BLOCK_FOLDER + "/flowers/" + name.path)
 
@@ -769,6 +808,16 @@ class BlockDatagen(provider: GenerationsBlockStateProvider) : GenerationsBlockSt
     private fun registerBlockItem(block: Block) {
         simpleBlockWithItem(block, cubeAll(block))
         dropSelfList.add(block)
+    }
+
+    private fun registerUltriteDebris() {
+        var block = GenerationsBlocks.ULTRITE_DEBRIS;
+        var model = blockTexture(block.value());
+
+        simpleBlockWithItem(block.value(), models().cubeBottomTop(block.key!!.location().path,
+            model.withSuffix("_side"),
+            model.withSuffix("_bottom"),
+            model.withSuffix("_top")))
     }
 
     private fun registerPillar(block: Block) {

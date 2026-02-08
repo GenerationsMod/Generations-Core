@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "generations_core:block/calil_bottom"
+    },
+    "half=upper": {
+      "model": "generations_core:block/calil_top"
+    }
+  }
+}

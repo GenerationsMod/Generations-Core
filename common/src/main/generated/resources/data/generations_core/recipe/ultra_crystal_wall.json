@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ultra_crystal_wall",
+  "key": {
+    "#": {
+      "item": "generations_core:ultra_crystal"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "generations_core:ultra_crystal_wall"
+  }
+}
