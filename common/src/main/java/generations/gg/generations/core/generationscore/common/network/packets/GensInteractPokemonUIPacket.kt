@@ -26,7 +26,8 @@ class GensInteractPokemonUIPacket(
     val canGiveHeld: Boolean,
     val canGiveCosmetic: Boolean,
     val canRide: Boolean,
-    val changeFormData: Pair<Boolean, String>): NetworkPacket<GensInteractPokemonUIPacket> {
+    val changeFormData: Pair<Boolean, String>
+): NetworkPacket<GensInteractPokemonUIPacket> {
 
     override val id = ID
 

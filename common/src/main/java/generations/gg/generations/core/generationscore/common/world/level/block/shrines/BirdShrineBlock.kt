@@ -61,7 +61,7 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
             if (MelodyFluteItem.isFlute(stack)) {
                 val imbuedStack = MelodyFluteItem.getImbuedItem(stack)
                 if (imbuedStack.isEmpty || allowedImbuedItems.none { a -> imbuedStack.`is` { item -> item.`is`(a) } }) return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION
-                val pokemonProperties = getProperties(imbuedStack)
+                val pokemonProperties = getPropertiesDebug(imbuedStack)
 
                 if (!isActive(state) && stack.damageValue >= stack.maxDamage && pokemonProperties != null) {
                     toggleActive(level, pos)
@@ -86,6 +86,26 @@ abstract class BirdShrineBlock @SafeVarargs constructor(
 
     fun getProperties(stack: ItemStack): Pokemon? = stack.item.instanceOrNull<WingItem>()?.key?.createPokemon(70)
 
+    fun getPropertiesDebug(stack: ItemStack): Pokemon? {
+        println("=== Debug Start ===")
+
+        println("Stack: $stack")
+        println("Stack.item: ${stack.item}")
+
+        val itemInstance = stack.item.instanceOrNull<WingItem>()
+        println("Item instance (WingItem?): $itemInstance")
+
+        val key = itemInstance?.key
+        println("Key: $key")
+
+        val pokemon = key?.createPokemon(70)
+        println("Created Pokemon: $pokemon")
+        println("Pokemon Aspects ${pokemon?.aspects}")
+
+        println("=== Debug End ===")
+
+        return pokemon
+    }
 
     override val isActivatable: Boolean
         get() = true

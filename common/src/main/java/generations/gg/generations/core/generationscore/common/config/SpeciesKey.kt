@@ -43,7 +43,7 @@ data class SpeciesKey(val species: ResourceLocation, val aspects: Set<String> = 
         val properties = createProperties()
         properties.level = level
         val pokemon = properties.create()
-        //        pokemon.setAspects(aspects());
+        pokemon.forcedAspects = aspects
         return pokemon
     }
 

@@ -189,7 +189,7 @@ fun ItemStack.getPokemon(): Pokemon? {
 
 fun Pokemon.fixIVS() {
     println("Name: ${this.species.name}")
-    val special = isLegendary() || isUltraBeast() || species.name == "ursaluna-bloodmoon" || species.name in setOf(
+    val special = isLegendary() || isUltraBeast() || isMythical() || species.name == "ursaluna-bloodmoon" || species.name in setOf(
         "Gouging Fire",
         "Raging Bolt",
         "Walking Wake",
