@@ -1,7 +1,6 @@
-# 1.2.2
+# 1.2.4
 
 Additions
-- Added Cobblemon 1.7.2 compatibility!
 - Added an S icon to PC for Galaxy, Pastel, Shadow, Sketch, and Vintage Pokemon
 
 Changes
@@ -16,9 +15,22 @@ Bug Fixes
 - Fixed Terapagos abilities
 - Fixed external transformations on shift right click, eg. mega
 - Fixed Legendary item charging overflowing into all in inventory
+- Fixed Zacian and Zamazenta summon drops
 - Fixed Rotom spawns
+- Fixed certain modded biomes not having proper spawns
 - Fixed some Pokemon not appearing as implemented for Pokedex completion
 - Fixed Pokemon spawn context to spawnablePositionType
+
+
+# 1.2.3
+
+Additions
+- Added Cobblemon 1.7.3 compatibility!
+
+# 1.2.2
+
+Additions
+- Added Cobblemon 1.7.2 compatibility!
 
 
 # 1.2.1

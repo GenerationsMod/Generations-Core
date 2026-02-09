@@ -256,7 +256,7 @@
     "amount": 1,
     "entries": [
       {
-        "item": "minecraft:diamond_sword"
+        "item": "generations_core:crowned_sword"
       }
     ]
   }

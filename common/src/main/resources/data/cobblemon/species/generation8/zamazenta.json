@@ -260,7 +260,7 @@
     "amount": 1,
     "entries": [
       {
-        "item": "cobblemon:ability_shield"
+        "item": "generations_core:crowned_shield"
       }
     ]
   }
