@@ -1,3 +1,15 @@
+# 1.2.5
+
+Additions
+- 
+
+Changes
+- 
+
+Bug Fixes
+- Fixed Hoopa Unbound Prison Bottle form change
+
+
 # 1.2.4
 
 Additions

@@ -15,12 +15,13 @@ import net.minecraft.world.level.block.Block
 
 open class PokemonInteractBlockItem(block: Holder<Block>, properties: Item.Properties, val form: String): BlockItemWithLang(block, properties), GenerationsCobblemonInteractions.PokemonInteraction {
     override fun processInteraction(player: ServerPlayer, entity: PokemonEntity, stack: ItemStack): Boolean {
-
-        val provider = entity.pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>("form") ?: return false
+        val provider = entity.pokemon.getProviderOrNull<FlagSpeciesFeatureProvider>(form) ?: return false
         val feature = provider.getOrCreate(entity.pokemon)
 
         feature.enabled = !feature.enabled
-        feature.apply(entity)
+        entity.pokemon.markFeatureDirty(feature)
+        entity.pokemon.updateAspects()
+
         player.sendSystemMessage("generations_core.ability.formchange".asTranslated(entity.pokemon.getDisplayName().string), true)
         return true
     }
