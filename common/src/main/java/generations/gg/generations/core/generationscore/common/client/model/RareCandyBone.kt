@@ -117,7 +117,11 @@ class RareCandyBone /*Remove when cobblemon doesn't have parts of code that assu
     override fun get(): Bone = this
 
     companion object {
-        private val MAP = mapOf(PREFIX + "seat_1" to ModelPart(mutableListOf(), mapOf()))
+        private val MAP = mapOf(
+            PREFIX + "seat_1" to ModelPart(mutableListOf(), mapOf()).also {
+                it.setPos(0f, -35f, 0f)
+            }
+        )
         private val ROTATION_CORRECTION = Axis.YP.rotationDegrees(180f)
     }
 }

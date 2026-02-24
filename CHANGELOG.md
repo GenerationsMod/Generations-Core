@@ -1,13 +1,15 @@
 # 1.2.5
 
-Additions
+### Additions
 - 
 
-Changes
+### Changes
 - 
 
-Bug Fixes
+### Bug Fixes
+- Adjusted default sitting position offset slightly, until we can get this properly scaled per Pokemon JSON
 - Fixed Hoopa Unbound Prison Bottle form change
+- Fixed Lunar Shrine summon eating from your hand
 
 
 # 1.2.4

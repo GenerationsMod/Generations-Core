@@ -87,7 +87,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
             if (list.isNotEmpty() && shrine != null) {
                 if (list.size == 5) {
                     list.forEach(Consumer { a -> level.destroyBlock(a, false) })
-                    player.getItemInHand(hand).shrink(1)
+//                    player.getItemInHand(hand).shrink(1)
                     PokemonUtil.spawn(key.createProperties(70), level, shrine.blockPos.above())
 
                     return ItemInteractionResult.SUCCESS
