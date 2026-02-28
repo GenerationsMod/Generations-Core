@@ -1,15 +1,10 @@
 # 1.2.5
 
-### Additions
-- 
-
-### Changes
-- 
-
-### Bug Fixes
-- Adjusted default sitting position offset slightly, until we can get this properly scaled per Pokemon JSON
+Bug Fixes
+- Adjusted default sitting position offset slightly
 - Fixed Hoopa Unbound Prison Bottle form change
 - Fixed Lunar Shrine summon eating from your hand
+- Fixed Generations Pokeloot drops
 
 
 # 1.2.4
