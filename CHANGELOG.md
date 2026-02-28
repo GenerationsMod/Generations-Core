@@ -1,5 +1,8 @@
 # 1.2.5
 
+Changes
+- Removed battle move descriptions
+
 Bug Fixes
 - Adjusted default sitting position offset slightly
 - Fixed Hoopa Unbound Prison Bottle form change

@@ -38,7 +38,6 @@
   ],
   "client": [
     "client.BattleGimmickButtonMixin",
-    "client.BattleMoveSelectionGUIMixin",
     "client.BattleOverlayMixin",
     "client.BattleTransformPokemonHandlerMixin",
     "client.ClientRecipeBookMixin",
