@@ -15,7 +15,7 @@ interface LangTooltip {
         isAdvanced: TooltipFlag
     ) {
         val tooltipId = tooltipId(stack)
-        if (Language.getInstance().has(self().getDescriptionId(stack))) tooltipComponents.add(
+        if (Language.getInstance().has(tooltipId)) tooltipComponents.add(
             Component.translatable(
                 tooltipId
             )
