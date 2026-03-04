@@ -6,8 +6,8 @@ Changes
 Bug Fixes
 - Adjusted default sitting position offset slightly
 - Fixed Hoopa Unbound Prison Bottle form change
-- Fixed Lunar Shrine summon eating from your hand
 - Fixed Generations Pokeloot drops
+- Fixed item description tooltips
 
 
 # 1.2.4
