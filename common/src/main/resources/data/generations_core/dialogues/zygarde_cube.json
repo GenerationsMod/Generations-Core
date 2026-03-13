@@ -35,11 +35,62 @@
             "action": "q.dialogue.set_page('select_zygarde_dissolve');"
           },
           {
+            "text": "Delete Cells",
+            "value": "delete_cells",
+            "isVisible": "q.player.selected_item.damage > 0",
+            "action": [
+              "v.cells_to_delete = q.player.selected_item.damage;",
+              "q.dialogue.set_page('confirm_delete_cells');"
+            ]
+          },
+          {
             "text": "Close",
             "value": "close",
             "action": "q.dialogue.close();"
           }
         ]
+      }
+    },
+    {
+      "id": "confirm_delete_cells",
+      "speaker": "player",
+      "lines": [
+        "Are you sure? This cannot be undone!",
+        {
+          "type": "expression",
+          "expression": "'All ' + v.cells_to_delete + ' cells will be permanently deleted.'"
+        }
+      ],
+      "input": {
+        "type": "option",
+        "options": [
+          {
+            "text": "Yes, delete them",
+            "value": "confirm",
+            "action": [
+              "q.player.selected_item.damage(-v.cells_to_delete);",
+              "q.dialogue.set_page('cells_deleted');"
+            ]
+          },
+          {
+            "text": "No, keep them",
+            "value": "cancel",
+            "action": "q.dialogue.set_page('main_menu');"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cells_deleted",
+      "speaker": "player",
+      "lines": [
+        "All cells have been deleted from your Zygarde Cube."
+      ],
+      "input": {
+        "type": "auto-continue",
+        "delay": 2,
+        "allowSkip": false,
+        "action": "q.dialogue.close();"
       }
     },
     {
@@ -501,20 +552,20 @@
             "action": [
               "v.form = '10%';",
               "v.cells_needed = 10;",
-			  "v.ability = 'aurabreak';",
-			  "v.ability_string_cheese = 'Aura Break';",
+              "v.ability = 'aurabreak';",
+              "v.ability_string_cheese = 'Aura Break';",
               "q.dialogue.set_page('confirm_create');"
             ]
           },
-		  {
+          {
             "text": "10% PowerConstruct",
             "value": "60",
             "isVisible": "q.player.selected_item.damage >= 60",
             "action": [
               "v.form = '10%';",
               "v.cells_needed = 60;",
-			  "v.ability = 'powerconstruct';",
-			  "v.ability_string_cheese = 'Power Construct';",
+              "v.ability = 'powerconstruct';",
+              "v.ability_string_cheese = 'Power Construct';",
               "q.dialogue.set_page('confirm_create');"
             ]
           },
@@ -525,8 +576,8 @@
             "action": [
               "v.form = '50%';",
               "v.cells_needed = 50;",
-			  "v.ability = 'aurabreak';",
-			  "v.ability_string_cheese = 'Aura Break';",
+              "v.ability = 'aurabreak';",
+              "v.ability_string_cheese = 'Aura Break';",
               "q.dialogue.set_page('confirm_create');"
             ]
           },
@@ -537,8 +588,8 @@
             "action": [
               "v.form = '50%';",
               "v.cells_needed = 100;",
-			  "v.ability = 'powerconstruct';",
-			  "v.ability_string_cheese = 'Power Construct';",
+              "v.ability = 'powerconstruct';",
+              "v.ability_string_cheese = 'Power Construct';",
               "q.dialogue.set_page('confirm_create');"
             ]
           },

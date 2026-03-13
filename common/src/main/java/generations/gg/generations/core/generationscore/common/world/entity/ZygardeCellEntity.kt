@@ -1,5 +1,7 @@
 package generations.gg.generations.core.generationscore.common.world.entity
 
+import com.cobblemon.mod.common.api.dialogue.Dialogues
+import com.cobblemon.mod.common.util.openDialogue
 import generations.gg.generations.core.generationscore.common.GenerationsCore
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.BlockObjectInstance
 import generations.gg.generations.core.generationscore.common.client.render.rarecandy.instanceOrNull
@@ -37,9 +39,15 @@ class ZygardeCellEntity : Entity {
     }
 
     override fun interact(player: Player, hand: InteractionHand): InteractionResult {
-        if(hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
-        val serverPlayer = player.instanceOrNull<ServerPlayer>() ?: return InteractionResult.PASS;
+        if (hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS
+        val serverPlayer = player.instanceOrNull<ServerPlayer>() ?: return InteractionResult.PASS
         val stack = player.mainHandItem.takeIf { it.`is`(GenerationsItems.ZYGARDE_CUBE) } ?: return InteractionResult.PASS
+
+        if (serverPlayer.isShiftKeyDown) {
+            val dialogue = Dialogues.dialogues[GenerationsCore.id("zygarde_cell")] ?: return InteractionResult.PASS
+            serverPlayer.openDialogue(dialogue)
+            return InteractionResult.SUCCESS
+        }
 
         //Note: I'm treating Boolean? like a tristate here. True and null allow while false doesn't. This is to allow an alternate overflow message when taking a cell when full.
         val allowed = if(stack.damageValue != ZygardeCubeItem.FULL) true else if(GenerationsCore.CONFIG.legendary.enableZygardeCubeOverflow) null else false
@@ -57,7 +65,6 @@ class ZygardeCellEntity : Entity {
                 0.2f,
                 1.0f
             )
-
 
             remove(RemovalReason.DISCARDED)
 

@@ -90,7 +90,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
 //                    player.getItemInHand(hand).shrink(1)
                     PokemonUtil.spawn(key.createProperties(70), level, shrine.blockPos.above())
 
-                    return ItemInteractionResult.SUCCESS
+                    return ItemInteractionResult.CONSUME
                 }
             }
         }
