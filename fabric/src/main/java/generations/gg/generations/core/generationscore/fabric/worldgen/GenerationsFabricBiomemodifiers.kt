@@ -5,7 +5,7 @@ import generations.gg.generations.core.generationscore.common.world.feature.Gene
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags
 import net.minecraft.resources.ResourceKey
 import net.minecraft.tags.BiomeTags
 import net.minecraft.world.level.levelgen.GenerationStep
@@ -30,7 +30,7 @@ object GenerationsFabricBiomemodifiers {
         )
 
         registerUnderGroundOres(
-            BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_WET),
+            BiomeSelectors.tag(ConventionalBiomeTags.IS_WET_OVERWORLD),
             GenerationsPlacedFeatures.ORE_SAPPHIRE,
             GenerationsPlacedFeatures.ORE_SAPPHIRE_BURIED
         )
@@ -41,7 +41,7 @@ object GenerationsFabricBiomemodifiers {
         )
 
         registerUnderGroundOres(
-            BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_HOT),
+            BiomeSelectors.tag(ConventionalBiomeTags.IS_HOT_OVERWORLD),
             GenerationsPlacedFeatures.ORE_RUBY,
             GenerationsPlacedFeatures.ORE_RUBY_BURIED
         )
@@ -52,7 +52,7 @@ object GenerationsFabricBiomemodifiers {
         )
 
         registerUnderGroundOres(
-            BiomeSelectors.tag(ConventionalBiomeTags.CLIMATE_COLD),
+            BiomeSelectors.tag(ConventionalBiomeTags.IS_COLD_OVERWORLD),
             GenerationsPlacedFeatures.ORE_CRYSTAL,
             GenerationsPlacedFeatures.ORE_CRYSTAL_BURIED
         )

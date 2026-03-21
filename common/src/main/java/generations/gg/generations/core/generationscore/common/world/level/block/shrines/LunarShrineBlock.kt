@@ -42,8 +42,8 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
         builder.add(IS_LIGHT)
     }
 
-    override fun codec(): MapCodec<LunarShrineBlock> = CODEC 
-    
+    override fun codec(): MapCodec<LunarShrineBlock> = CODEC
+
     override fun createDefaultState(): BlockState = super.createDefaultState().setValue(IS_LIGHT, false)
 
     override fun <T : BlockEntity?> getTicker(
@@ -61,7 +61,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
                 world.setBlockAndUpdate(pos, blockstate)
             })
     }
-    
+
     override fun useItemOn(
         stack: ItemStack,
         state: BlockState,
@@ -83,14 +83,14 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
             }
 
             val shrine = level.getBlockEntity(pos).instanceOrNull<ShrineBlockEntity>()
-            
+
             if (list.isNotEmpty() && shrine != null) {
                 if (list.size == 5) {
                     list.forEach(Consumer { a -> level.destroyBlock(a, false) })
 //                    player.getItemInHand(hand).shrink(1)
                     PokemonUtil.spawn(key.createProperties(70), level, shrine.blockPos.above())
 
-                    return ItemInteractionResult.SUCCESS
+                    return ItemInteractionResult.CONSUME
                 }
             }
         }
@@ -118,7 +118,7 @@ class LunarShrineBlock(properties: Properties) : ShrineBlock(properties = proper
             GenerationsVoxelShapes.generateDirectionVoxelShape(Shapes.box(0.0, 0.0, 0.0, 1.0, 0.5625, 1.0))
 
         val IS_LIGHT: BooleanProperty = BooleanProperty.create("is_light")
-        
-        val CODEC: MapCodec<LunarShrineBlock> = simpleCodec(::LunarShrineBlock)        
+
+        val CODEC: MapCodec<LunarShrineBlock> = simpleCodec(::LunarShrineBlock)
     }
 }
