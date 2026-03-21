@@ -13,6 +13,7 @@ import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundSource
 import net.minecraft.world.InteractionHand
 import net.minecraft.world.InteractionResult
+import net.minecraft.world.damagesource.DamageSource
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.player.Player
@@ -36,6 +37,14 @@ class ZygardeCellEntity : Entity {
     override fun addAdditionalSaveData(compound: CompoundTag) {
     }
 
+    override fun hurt(source: DamageSource, amount: Float): Boolean {
+        if (level().isClientSide) return false
+        // Broadcast hurt animation (entity event 2) to all nearby clients
+        level().broadcastEntityEvent(this, 2)
+        remove(RemovalReason.KILLED)
+        return true
+    }
+
     override fun interact(player: Player, hand: InteractionHand): InteractionResult {
         if(hand != InteractionHand.MAIN_HAND) return InteractionResult.PASS;
         val serverPlayer = player.instanceOrNull<ServerPlayer>() ?: return InteractionResult.PASS;
@@ -57,7 +66,6 @@ class ZygardeCellEntity : Entity {
                 0.2f,
                 1.0f
             )
-
 
             remove(RemovalReason.DISCARDED)
 
