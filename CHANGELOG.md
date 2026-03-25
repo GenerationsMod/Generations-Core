@@ -1,3 +1,14 @@
+# 1.2.6
+
+Changes
+- Punching a Zygarde Cell will now remove it
+- Removed wthit accidentally being a dependency for NeoForge
+
+Bug Fixes
+- Fixed Crystal, Ruby, and Sapphire Ores not generating on Fabric worlds
+- Fixed Lunar Shrine summon eating from your hand
+
+
 # 1.2.5
 
 Changes

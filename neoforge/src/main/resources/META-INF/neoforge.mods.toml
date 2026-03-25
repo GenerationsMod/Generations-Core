@@ -40,8 +40,8 @@ config="GenerationsCore-common.mixins.json"
    ordering="AFTER"
    side="BOTH"
 
-[[dependencies.generations_core]]
-   modId="wthit"
-   mandatory=false
-   versionRange="[${wthit},)"
-   ordering="NONE"
+#[[dependencies.generations_core]]
+#   modId="wthit"
+#   mandatory=false
+#   versionRange="[${wthit},)"
+#   ordering="NONE"
