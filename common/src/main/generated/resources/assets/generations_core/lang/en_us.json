@@ -1915,7 +1915,7 @@
   "item.generations_core.eterna_city_disc": "Eterna City Disc",
   "item.generations_core.event_ribbon": "Event Ribbon",
   "item.generations_core.exp_all": "Exp All",
-  "item.generations_core.exp_all.desc": "Not currently implemented",
+  "item.generations_core.exp_all.desc": "Shares battle Exp. Points with all party members.",
   "item.generations_core.exp_charm": "Exp Charm",
   "item.generations_core.expert_battler_ribbon": "Expert Battler Ribbon",
   "item.generations_core.explorer_kit": "Explorer Kit",
