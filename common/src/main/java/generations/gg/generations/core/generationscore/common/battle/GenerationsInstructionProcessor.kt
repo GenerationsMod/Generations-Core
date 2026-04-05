@@ -9,6 +9,7 @@ import com.cobblemon.mod.common.api.battles.model.PokemonBattle
 import com.cobblemon.mod.common.api.battles.model.actor.BattleActor
 import com.cobblemon.mod.common.api.events.battles.BattleStartedEvent
 import com.cobblemon.mod.common.api.events.battles.instruction.TerastallizationEvent
+import com.cobblemon.mod.common.api.pokemon.experience.BattleExperienceSource
 import com.cobblemon.mod.common.api.pokemon.feature.FlagSpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.SpeciesFeature
 import com.cobblemon.mod.common.api.pokemon.feature.StringSpeciesFeature
@@ -277,21 +278,30 @@ fun grantExp(battle: PokemonBattle, actor: BattleActor) {
 
 
 fun grantExpAll(battle: PokemonBattle, opponent: BattleActor, faintedPokemonList: List<BattlePokemon>) {
-    val opponentNonFaintedPokemonList = opponent.pokemonList.filter {it.health > 0}
+    val player = opponent.uuid.getPlayer() ?: return
+    val opponentNonFaintedPokemonList = opponent.pokemonList.filter { it.health > 0 }
 
     faintedPokemonList.forEach { faintedPokemon ->
         for (opponentPokemon in opponentNonFaintedPokemonList) {
-            val multiplier = opponentPokemon.calculateMultiplier()
             val facedFainted = opponentPokemon.facedOpponents.contains(faintedPokemon)
+
+            // Skip participants — Cobblemon's own system already handled them
+            if (facedFainted) continue
+
+            val multiplier = 0.5 // non-participant multiplier
             val experience = Cobblemon.experienceCalculator.calculate(opponentPokemon, faintedPokemon, multiplier)
             val grantedEvs = Cobblemon.evYieldCalculator.calculate(opponentPokemon, faintedPokemon)
 
             if (experience > 0) {
-                opponent.awardExperience(opponentPokemon, experience)
-                if (!facedFainted) {
-                    grantedEvs.forEach { stat, value -> opponentPokemon.effectedPokemon.evs.add(stat, value,
-                        BattleEvSource(battle, listOf(faintedPokemon), opponentPokemon.effectedPokemon))
-                    } //TODO: Decide how to handle
+                // Bypass awardExperience — use faintedPokemon as source so Cobblemon accepts it
+                val source = BattleExperienceSource(battle, listOf(faintedPokemon))
+                opponentPokemon.effectedPokemon.addExperienceWithPlayer(player, source, experience)
+
+                grantedEvs.forEach { stat, value ->
+                    opponentPokemon.effectedPokemon.evs.add(
+                        stat, value,
+                        BattleEvSource(battle, listOf(faintedPokemon), opponentPokemon.effectedPokemon)
+                    )
                 }
             }
         }
