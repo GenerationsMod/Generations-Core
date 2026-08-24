@@ -7,6 +7,8 @@ import com.cobblemon.mod.common.api.abilities.Abilities
 import com.cobblemon.mod.common.api.molang.MoLangFunctions
 import com.cobblemon.mod.common.api.molang.MoLangFunctions.addFunctions
 import com.cobblemon.mod.common.api.molang.ObjectValue
+import com.cobblemon.mod.common.api.molang.function.GeneralMoLangFunctions
+import com.cobblemon.mod.common.api.molang.function.PlayerMoLangFunctions
 import com.cobblemon.mod.common.api.pokemon.PokemonProperties
 import com.cobblemon.mod.common.api.pokemon.feature.*
 import com.cobblemon.mod.common.api.properties.CustomPokemonPropertyType
@@ -146,40 +148,41 @@ object GenerationsMolangFunctions {
             return value
         }
 
-        MoLangFunctions.playerFunctions.add { player ->
-            var selected = player.inventory.selected;
-            hashMapOf(
-                "capped" to Function<MoParams, Any> {
+        PlayerMoLangFunctions.custom.add { player ->
+            val selected = player.inventory.selected;
+
+            mapOf<String, (MoParams) -> Any>(
+                "capped" to capped@{
                     val speciesKey = it.getStringOrNull(0)?.let { SpeciesKey.fromString(it) }
 
-                    if(speciesKey == null) return@Function DoubleValue(1.0)
+                    if(speciesKey == null) return@capped DoubleValue(1.0)
 
-                    return@Function DoubleValue(if (player is ServerPlayer && GenerationsCore.CONFIG.caught.capped(player, speciesKey)) 1.0 else 0.0)
+                    return@capped DoubleValue(if (player is ServerPlayer && GenerationsCore.CONFIG.caught.capped(player, speciesKey)) 1.0 else 0.0)
                 },
-                "main_hand" to Function<MoParams, Any> {
+                "main_hand" to {
                     player.mainHandItem.toMolang()
                 },
-                "selected_item" to Function<MoParams, Any> {
+                "selected_item" to {
                     player.inventory.getItem(selected).toMolang()
                 },
 
 
-                "party" to Function<MoParams, Any> {
+                "party" to {
                     if(player is ServerPlayer) player.party().asMoLangValue()
                     else DoubleValue.ZERO
                 },
 
-                "has_in_party" to Function<MoParams, Any> {
+                "has_in_party" to hasInParty@{
                     if(player is ServerPlayer) {
                         val properties = it.getStringOrNull(0)?.let { SpeciesKey.fromString(it) }?.createProperties()
 
-                        if (properties == null) return@Function DoubleValue(1.0)
+                        if (properties == null) return@hasInParty DoubleValue(1.0)
 
                         val index = it.getDoubleOrNull(1)?.toInt()
 
-                        if (index != null) return@Function DoubleValue(
+                        if (index != null) return@hasInParty DoubleValue(
                             if (player.party().get(index)?.takeIf { properties.matches(it) } != null) 1.0 else 0.0)
-                        else return@Function DoubleValue(
+                        else return@hasInParty DoubleValue(
                             if (player.party().any { properties.matches(it) }) 1.0 else 0.0
                         )
                     } else DoubleValue.ZERO
@@ -187,14 +190,14 @@ object GenerationsMolangFunctions {
             //TODO: Add money support
         }
 
-        MoLangFunctions.generalFunctions["spawn_pokemon"] = Function<MoParams, Any> {
-            val player = it.getServerPlayerOrNull(0) ?: return@Function Unit
-            val properties = it.getStringOrNull(1)?.asProperties() ?: return@Function Unit
+        GeneralMoLangFunctions.holder["spawn_pokemon"] = spawnPokemon@{
+            val player = it.getServerPlayerOrNull(0) ?: return@spawnPokemon Unit
+            val properties = it.getStringOrNull(1)?.asProperties() ?: return@spawnPokemon Unit
             val pos = (it.getStringOrNull(2)?.parsePos(player) ?: player.position()).add(0.0, 1.0, 0.0)
             val yaw = it.getStringOrNull(3)?.parseYaw(player) ?: player.yRot
 
             PokemonUtil.spawn(properties, player.serverLevel(), pos, yaw)
-            return@Function Unit
+            return@spawnPokemon Unit
         }
     }
 }

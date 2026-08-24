@@ -299,7 +299,7 @@ object BattleOverlayProxy {
                 blue = b
             )
 
-            if (dexState == PokedexEntryProgress.CAUGHT) {
+            if (dexState == PokedexEntryProgress.OWNED) {
                 blitk(
                     matrixStack = matrixStack,
                     texture = caughtIndicator,
@@ -319,7 +319,7 @@ object BattleOverlayProxy {
             context = context,
             font = CobblemonResources.DEFAULT_LARGE,
             text = displayName.bold(),
-            x = infoBoxX + (if (dexState == PokedexEntryProgress.CAUGHT) 7 else 0),
+            x = infoBoxX + (if (dexState == PokedexEntryProgress.OWNED) 7 else 0),
             y = y + if (isCompact) 5 else 7,
             opacity = opacity,
             shadow = true

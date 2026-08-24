@@ -1,6 +1,5 @@
 package generations.gg.generations.core.generationscore.common.world.spawning
 
-import com.cobblemon.mod.common.api.spawning.SpawnBucket
 import com.cobblemon.mod.common.api.spawning.detail.SpawnAction
 import com.cobblemon.mod.common.api.spawning.detail.SpawnDetail
 import com.cobblemon.mod.common.api.spawning.position.SpawnablePosition
@@ -17,7 +16,7 @@ class ZygardeCellDetail : SpawnDetail() {
 
     override fun createSpawnAction(
         spawnablePosition: SpawnablePosition,
-        bucket: SpawnBucket,
+        bucket: String,
         selectionData: SpawnSelectionData
     ): SpawnAction<*> = ZygardeCellSpawnActon(spawnablePosition, bucket, ZygardeCellDetail())
 
