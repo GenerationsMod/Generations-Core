@@ -9,7 +9,6 @@ import generations.gg.generations.core.generationscore.common.GenerationsCore.on
 import generations.gg.generations.core.generationscore.common.GenerationsImplementation
 import generations.gg.generations.core.generationscore.common.api.events.general.EntityEvents
 import generations.gg.generations.core.generationscore.common.api.events.general.InteractionEvents
-import generations.gg.generations.core.generationscore.common.compat.ImpactorCompat
 import generations.gg.generations.core.generationscore.common.compat.VanillaCompat
 import generations.gg.generations.core.generationscore.common.config.ConfigLoader.setConfigDirectory
 import generations.gg.generations.core.generationscore.common.event.PlayerJoinHandler

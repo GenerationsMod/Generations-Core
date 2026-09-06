@@ -34,5 +34,4 @@ dependencies {
     //Cobblemon
     implementation(kotlin("stdlib-jdk8"))
     modCompileOnly("com.cobblemon:mod:${project.properties["cobblemon_version"]}")
-    modImplementation("net.impactdev.impactor.api:economy:5.1.1+1.20.1")
 }
