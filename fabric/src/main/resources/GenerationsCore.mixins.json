@@ -9,11 +9,11 @@
     "BaseFireBlockMixin",
     "BlockMixin",
     "ItemCombinerMenuMixin",
-    "ItemStackMixin",
     "LivingEntityMixin",
     "MagmaCubeMixin",
     "MixinPlayer",
-    "PortalShapeMixin"
+    "PortalShapeMixin",
+    "ShowdownThreadMixin"
   ],
   "client": [
     "client.KeyboardHandlerMixin",

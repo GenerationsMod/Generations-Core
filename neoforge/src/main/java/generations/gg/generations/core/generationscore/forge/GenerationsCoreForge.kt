@@ -162,7 +162,6 @@ class GenerationsCoreForge(bus: IEventBus) : GenerationsImplementation {
 
             addListener(::onReload)
         }
-        if (ModList.get().isLoaded("impactor")) ImpactorCompat.init()
     }
 
     override fun registerStrippable(log: Holder<out Block>, stripped: Holder<out Block>) {

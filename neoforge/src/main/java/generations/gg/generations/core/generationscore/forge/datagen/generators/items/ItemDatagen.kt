@@ -933,7 +933,6 @@ class ItemDatagen(packOutput: PackOutput, existingFileHelper: ExistingFileHelper
         createCelestialAltar()
         createTimeCapsule()
         createLunarShrine()
-        createTm(GenerationsItems.CUSTOM_TM)
 
         GenerationsItems.TMS.forEach(this::createTm)
 

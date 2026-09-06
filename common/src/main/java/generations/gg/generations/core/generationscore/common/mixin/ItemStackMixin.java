@@ -1,8 +1,9 @@
-package generations.gg.generations.core.generationscore.fabric.mixin;
+package generations.gg.generations.core.generationscore.common.mixin;
 
 import generations.gg.generations.core.generationscore.common.datafixer.GenerationsSchemas;
 import net.minecraft.core.component.PatchedDataComponentMap;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin {
+
 
     @ModifyArg(
             method = "parse(Lnet/minecraft/core/HolderLookup$Provider;Lnet/minecraft/nbt/Tag;)Ljava/util/Optional;",
@@ -27,7 +29,19 @@ public abstract class ItemStackMixin {
             var id = compound.getString("id");
 
             if(GenerationsSchemas.getADDED_TO_1_6_COBBLEMON().containsKey(id)) compound.putString("id", GenerationsSchemas.getADDED_TO_1_6_COBBLEMON().get(id));
+            else if(GenerationsSchemas.getTMS_TO_CONVERT_IN_1_8_COBBLEMON().containsKey(id)) {
+                compound.putString("id", "cobblemon:technical_machine");
+
+                var components = compound.contains("components", Tag.TAG_COMPOUND) ? compound.getCompound("components") : new CompoundTag();
+
+                var moveComponent = new CompoundTag();
+                moveComponent.putString("move", GenerationsSchemas.getTMS_TO_CONVERT_IN_1_8_COBBLEMON().get(id));
+                components.put("cobblemon:tm_move", moveComponent);
+
+                compound.put("components", components);
+            }
         }
+
         return tag;
     }
 }
