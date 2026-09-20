@@ -190,7 +190,7 @@ object GenerationsMolangFunctions {
             //TODO: Add money support
         }
 
-        GeneralMoLangFunctions.holder["spawn_pokemon"] = spawnPokemon@{
+        GeneralMoLangFunctions.functions["spawn_pokemon"] = spawnPokemon@{ it: MoParams ->
             val player = it.getServerPlayerOrNull(0) ?: return@spawnPokemon Unit
             val properties = it.getStringOrNull(1)?.asProperties() ?: return@spawnPokemon Unit
             val pos = (it.getStringOrNull(2)?.parsePos(player) ?: player.position()).add(0.0, 1.0, 0.0)
